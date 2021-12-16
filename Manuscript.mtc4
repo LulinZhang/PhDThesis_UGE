@@ -1,0 +1,18 @@
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {3.1}Introduction}{\reset@font\mtcSfont 11}{section.3.1}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {3.1.1}Motivation}{\reset@font\mtcSSfont 11}{subsection.3.1.1}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {3.1.2}Contribution}{\reset@font\mtcSSfont 11}{subsection.3.1.2}}
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {3.2}Methodology}{\reset@font\mtcSfont 11}{section.3.2}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {3.2.1}Strategy 1: Match image pairs}{\reset@font\mtcSSfont 11}{subsection.3.2.1}}
+{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \numberline {3.2.1.1}SIFT}{\reset@font\mtcSSSfont 12}{subsubsection.3.2.1.1}}
+{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \numberline {3.2.1.2}SuperGlue}{\reset@font\mtcSSSfont 12}{subsubsection.3.2.1.2}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {3.2.2}Strategy 2: Match DSM/Orthophoto}{\reset@font\mtcSSfont 12}{subsection.3.2.2}}
+{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \numberline {3.2.2.1}SIFT}{\reset@font\mtcSSSfont 12}{subsubsection.3.2.2.1}}
+{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \numberline {3.2.2.2}SuperGlue}{\reset@font\mtcSSSfont 12}{subsubsection.3.2.2.2}}
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {3.3}Experiments}{\reset@font\mtcSfont 12}{section.3.3}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {3.3.1}Datasets}{\reset@font\mtcSSfont 12}{subsection.3.3.1}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {3.3.2}Evaluation}{\reset@font\mtcSSfont 12}{subsection.3.3.2}}
+{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \numberline {3.3.2.1}Quantitative evaluation}{\reset@font\mtcSSSfont 12}{subsubsection.3.3.2.1}}
+{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \numberline {3.3.2.2}Qualitative evaluation}{\reset@font\mtcSSSfont 12}{subsubsection.3.3.2.2}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {3.3.3}Comparison}{\reset@font\mtcSSfont 12}{subsection.3.3.3}}
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {3.4}Conclusion}{\reset@font\mtcSfont 12}{section.3.4}}
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {3.5}Discussion}{\reset@font\mtcSfont 12}{section.3.5}}

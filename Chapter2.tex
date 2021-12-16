@@ -1,0 +1,68 @@
+%!TEX root = Manuscript.tex
+
+\chapter{Literature review}
+\label{chap:intro}
+\minitoc
+
+\section{Local feature matching}
+Local feature refers to finding a discriminative structure found in an image, such as a point, corner, blob, edge or image patch. It is often accompanied with a descriptor, which is a compact vector representing the local neighborhood.
+\par
+According to the different data storage types, descriptors can be divided into two categories: floating-point descriptors and binary descriptors. The former is recorded in floating-point format, which has the advantage of being informative. It is widely used in various matching scenarios.
+The latter is stored in binary type, which guarantees faster processing while demanding less memory. It is particularly suitable for real-time and/or smartphone applications.
+Since our goal is to match multi-epoch images for high accuracy ground survey, we are interested in floating-point descriptors rather than binary ones.
+\par
+According to whether machine learning techniques are applied, local features can be categorized as hand-crafted or learned. We will subsequently elaborate on the two categories of approaches.
+\subsection{Hand-crafted methods}
+In the early stage, Moravec detects corner feature by measuring the sum-of-squared-differences (SSD) by applying a small shift in a number of directions to the patch around a candidate feature \cite{moravec1980obstacle}. Based on this, Harris computes an approximation to the second derivative of the SSD with respect to the shift \cite{harris1988combined}. Since both Moravec and Harris are sensitive to changes in image scale, algorithms invariant to scale and affine transformations based on Harris are presented \cite{mikolajczyk2004scale}. Other than corner feature, SIFT (Scale-invariant feature transform) \cite{lowe2004distinctive} detects blob feature in scale-space, which is an entire pipeline including detection and description. It uses a difference-of-Gaussian function to identify potential feature points that are invariant to scale and orientation. SIFT is a milestone among hand-crafted features, and comparable with machine learning alternatives. RootSIFT \cite{arandjelovic2012three} uses a square root (Hellinger) kernel instead of the standard Euclidean distance to measure the similarity between SIFT descriptors, which leads to a dramatic performance boost. Similar to SIFT, SURF \cite{bay2006surf} resorts to integral images and Haar filters to extract blob feature in a computationally efficient way. DAISY \cite{tola2009daisy} is a local image descriptor, which uses convolutions of gradients in specific directions with several Gaussian filters to make it very efficient to extract dense descriptors. KAZE \cite{alcantarilla2012kaze} is an algorithm that detects and describes multi-scale 2D feature in nonlinear scale spaces. AKAZE \cite{Alcantarilla13bmvc} is an accelerated version based on KAZE.
+\subsection{Learned methods}
+With the rise of machine learning, learned features have shown their feasibility in the image matching problem when enough ground truth data is available. 
+FAST \cite{rosten2006machine} uses decision tree to speed up the process of finding corner feature. 
+LIFT (Learned Invariant Feature Transform) \cite{yi2016lift} is a deep network architecture that implements a full pipeline including detection, orientation estimation and feature description. It is based on the previous work TILDE \cite{verdie2015tilde}, the method of \cite{moo2016learning} and DeepDesc \cite{simo2015discriminative}. 
+Tian et al. introduced L2-Net~\cite{tian2017l2} to learn high performance descriptor in Euclidean space via the Convolutional Neural Network (CNN). 
+Afterwards Mishchuk et al.~\cite{mishchuk2017working} introduced a compact descriptor named HardNet, by applying a novel loss to L2Net \cite{tian2017l2}. 
+DELF \cite{noh2017DELF} is an attentive local feature descriptor based on CNN, which works particularly well for illumination changes.
+SuperPoint \cite{detone2018superpoint} is a self-supervised, fully-convolutional model that operates on full-sized images and jointly computes pixel-level feature point locations and associated descriptors in one forward pass. 
+LF-Net \cite{ono2018lf} is a deep architecture that embeds the entire feature extraction pipeline, and can be trained end-to-end with just a collection of images. 
+D2-Net \cite{dusmanu2019d2} is a single neural network that works as a \textit{dense} feature descriptor and a feature detector simultaneously, but their keypoints are less accurate compared to classical features since they are extracted on feature maps which have a resolution of 1/4 of the input resolution.
+ASLFeat~\cite{luo2020aslfeat} improves shape-awareness and localization accuracy by applying light-weight yet effective modifications on an improved D2-Net.
+R2D2 \cite{revaud2019r2d2} is a CNN architecture that learns \textit{dense} local descriptors (one for each pixel) as well as two associated repeatability and reliability confidence maps.
+Contextdesc ~\cite{luo2019contextdesc} is a unified learning framework that leverages and aggregates the cross-modality contextual information.
+D2D \cite{wiles2020d2d} allows \textit{dense} features to be modified based on the differences between the images by conditioning the feature maps on both images. 
+Different than the aforementioned feature extraction methods, SuperGlue \cite{sarlin2020superglue} presents a new way of thinking about the feature matching problem. 
+%Instead of learning better task-agnostic local features followed by simple matching heuristics and tricks, SuperGlue
+%It learns the matching process from pre-existing local features 
+It matches two sets of pre-existing local features by adopting a flexible context aggregation mechanism based on attention to jointly find correspondences and reject non-matchable points.
+\par
+Early learned methods (LIFT ~\cite{yi2016lift}, L2-Net~\cite{tian2017l2}, HardNet~\cite{mishchuk2017working}, DELF ~\cite{noh2017DELF}, SuperPoint ~\cite{detone2018superpoint}, LF-Net ~\cite{ono2018lf}) use only intermediate metrics (e.g., repeatability, matching score, mean matching accuracy, etc.) to evaluate the matching performance. 
+Even though they demonstrate better performance when compared to hand-crafted features on certain benchmark, it does not necessarily imply a better performance in terms of subsequent processing steps. For example, in the context of Structure from Motion (SfM), finding additional correspondences for image pairs where SIFT already provides enough matches does not necessarily results in more accurate or complete reconstructions \cite{schonberger2017comparative}.
+Jin et al.~\cite{jin2020image} introduced a comprehensive benchmark for local features and robust estimation algorithms, focusing on the accuracy of the reconstructed camera pose as the primary metric. Using the new metric, SIFT ~\cite{lowe2004distinctive} and SuperGlue ~\cite{sarlin2020superglue} take the lead~\cite{imagematchingchallenge2020}.
+
+\section{Historical image processing}
+%\subsection{General processing pipeline}
+%Archiving and geoprocessing of historical aerial images: current status in europe,official publication no 70. European Spatial Data Research~\cite{sebastien2019archiving}
+%\subsection{Inter-epoch historical images alignment}
+When it comes to inter-epoch historical images, however, directly applying SIFT or SuperGlue often results in inferior results due to large radiometric differences.
+In Figure~\ref{comparison} we showed an example where SIFT and SuperGlue failed on an inter-epoch image pair with drastic scene changes. It is understandable as (1) SIFT is not sufficiently invariant over time, while (2) SuperGlue is not invariant to rotations and it underperforms on larger images because it was presumably trained on small images.\\
+Therefore, many previous researches bypassed the task of extracting inter-epoch correspondences by processing different epochs separately followed by an inter-epoch co-registration relying on Ground Control Points(GCPs).
+Between 10 and 169 GCPs are required in ~\cite{pinto2019archived},~\cite{bozek2019analysis},~\cite{persia2020archival},~\cite{micheletti2015application},~\cite{molg2017structure}.
+GCPs are usually measured with the help of photointerpretation on recent orthophotos, however, it is still monotonous and time-consuming. Furthermore, it is difficult to find salient points that are stable over time.\\
+Certain attempts were made to extract inter-epoch correspondences. Giordano et al.~\cite{giordano2018toward} extract feature correspondences between historical and recent images relying on HoG descriptors~\cite{dalal2005histograms}. The authors require flight plans as input, which are not commonly available as mentioned in Section 1. Feurer et al.~\cite{feurer2018joining}, Filhol et al.~\cite{filhol2019time}, Cook et al.~\cite{cook2019simple}, Parente et al.~\cite{parente2021automated} and Blanch et al.~\cite{blanch2021multi} assume that a sufficient number of keypoints remain invariant across time and employ SIFT to extract inter-epoch feature correspondences. It remains questionable whether the method is capable of handling drastic scene changes.
+Zhang et al.~\cite{zhang2020guided} extract inter-epoch correspondences from SIFT-detected keypoints based on the hypothesis that points follow 2D and 3D spatial similarity model. This method works in simple cases with few scene changes.
+{Additionally, a stream of research works focuses on historical terrestrial images (~\cite{maiwald2021automatic}, ~\cite{beltrami20193d}, ~\cite{bevilacqua2019reconstruction}, ~\cite{maiwald2019generation}) and historical video recordings (~\cite{maiwald2019generation}). However, their algorithms are not suitable to the aerial case.}\\
+This work is an extention of~\cite{zhang2020guided}. Unlike in~\cite{zhang2020guided}, we introduce a rough co-registration between different epochs based on matching DSMs with SuperGlue, and use it to guide a precise matching. Our rough co-registration is robust under extreme scene changes because (1) SuperGlue utilizes context to enhance feature descriptors and (2) DSMs are generally stable over time. With the guidance of roughly co-registered orientations and DSMs, both SIFT and SuperGlue achieved good performance, as shown in our experiments.
+\section{Robust matching}
+The goal of robust matching is to tell apart inliers from outliers, and eliminate the latter from further processing.
+\par
+Typically, an iterative sampling strategy based on RANSAC (Random Sample Consensus) \cite{fischler1981random} relying on some mathematical model, such as homography \cite{sonka2014image} or essential matrix \cite{sonka2014image} is carried out to remove outliers. 
+This is an important issue which was often not given sufficient attention.
+LMedS (Least Median of Squares) \cite{leroy1987robust} is a meaningful groundwork before RANSAC, which is also commonly used to replace RANSAC.
+MLESAC (Maximum Likelihood SAC)  \cite{torr2000mlesac} adopts the same sampling strategy as RANSAC but chooses the solution that maximizes the likelihood instead of the number of inliers. PROSAC (Progressive Sample Consensus ) \cite{chum2005matching} chooses samples from progressively larger sets of top-ranked correspondences, which makes it significantly faster than RANSAC. DEGENSAC \cite{chum2005two} is an algorithm for epipolar geometry estimation unaffected by planar degeneracy. It is widely used in the 2020 image matching challenge \cite{imagematchingchallenge2020}.
+USAC (Universal RANSAC) \cite{raguram2012usac} framework is a synthesis of the various optimizations and improvements that have been proposed to RANSAC.
+GC-RANSAC (Graph-Cut RANSAC) \cite{barath2018graph} runs graph-cut algorithm in the local optimization step.
+MAGSAC \cite{barath2019magsac} eliminates the need for a user-defined inlier-outlier threshold with marginalization.
+\par
+Various deep learning methods have also been developed to handle the erroneous matches.
+DSAC (the differentiable counterpart of RANSAC) \cite{brachmann2017dsac} replaces the deterministic hypothesis selection by a probabilistic selection.
+CNe (Context Networks) \cite{moo2018learning} trains deep networks in an end-to-end fashion to label the correspondences as inliers or outliers, known intrinsics are required as input, and a post-processing with RANSAC is often tasked. CNe was embedded into the framework of \cite{jin2020image} to remove outliers, paired with DEGENSAC, PyRANSAC (a variant of DEGENSAC by disabling the degeneracy check, introduced in \cite{jin2020image}) and MAGSAC. The results showed that with SIFT used to train CNe, about 80\% of the outliers were filtered out. Nearly all classical methods benefited from CNe, but not the learned ones. Jin et al. \cite{jin2020image} also stated that RANSAC should be tuned to particular feature detector and descriptor, and specific settings should be selected for a particular RANSAC variant.
+\par
+In this research, we use RANSAC to estimate the 3D Helmert transformation between surfaces (i.e., DSMs) calculated in different epochs. Compared to the classical essential/fundamental matrix filtering, with less data (3 versus 5 points) we impose stricter rules on the sets of points. Lastly, we eliminate the remaining false correspondences by looking at their cross-correlation.

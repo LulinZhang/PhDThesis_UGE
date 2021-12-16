@@ -1,0 +1,418 @@
+\begin{thebibliography}{xxxx}
+
+\bibitem[Alcantarilla \textit{et~al.}~2012]{alcantarilla2012kaze}
+Pablo~Fern{\'a}ndez Alcantarilla, Adrien Bartoli and Andrew~J Davison.
+\newblock {\em KAZE features}.
+\newblock In European Conference on Computer Vision, pages 214--227, 2012.
+
+\bibitem[Alcantarilla \textit{et~al.}~2013]{Alcantarilla13bmvc}
+P.~F. Alcantarilla, J.~Nuevo and A.~Bartoli.
+\newblock {\em Fast Explicit Diffusion for Accelerated Features in Nonlinear
+  Scale Spaces}.
+\newblock In British Machine Vision Conf. (BMVC), 2013.
+
+\bibitem[Arandjelovi{\'c} \& Zisserman~2012]{arandjelovic2012three}
+Relja Arandjelovi{\'c} and Andrew Zisserman.
+\newblock {\em Three things everyone should know to improve object retrieval}.
+\newblock In 2012 IEEE Conference on Computer Vision and Pattern Recognition,
+  pages 2911--2918. IEEE, 2012.
+
+\bibitem[Barath \& Matas~2018]{barath2018graph}
+Daniel Barath and Ji{\v{r}}{\'\i} Matas.
+\newblock {\em Graph-cut RANSAC}.
+\newblock In Proceedings of the IEEE Conference on Computer Vision and Pattern
+  Recognition, pages 6733--6741, 2018.
+
+\bibitem[Barath \textit{et~al.}~2019]{barath2019magsac}
+Daniel Barath, Jiri Matas and Jana Noskova.
+\newblock {\em Magsac: marginalizing sample consensus}.
+\newblock In Proceedings of the IEEE Conference on Computer Vision and Pattern
+  Recognition, pages 10197--10205, 2019.
+
+\bibitem[Bay \textit{et~al.}~2006]{bay2006surf}
+Herbert Bay, Tinne Tuytelaars and Luc Van~Gool.
+\newblock {\em Surf: Speeded up robust features}.
+\newblock In European conference on computer vision, pages 404--417, 2006.
+
+\bibitem[Beltrami \textit{et~al.}~2019]{beltrami20193d}
+C~Beltrami, D~Cavezzali, F~Chiabrando, A~Iaccarino~Idelson, G~Patrucco and
+  F~Rinaudo.
+\newblock {\em 3D Digital and Physical Reconstruction of a Collapsed Dome Using
+  SFM Techniques From Historical Images.}
+\newblock International Archives of the Photogrammetry, Remote Sensing \&
+  Spatial Information Sciences, 2019.
+
+\bibitem[Bevilacqua \textit{et~al.}~2019]{bevilacqua2019reconstruction}
+MG~Bevilacqua, G~Caroti, A~Piemonte and D~Ulivieri.
+\newblock {\em Reconstruction of lost architectural volumes by integration of
+  photogrammetry from archive imagery with 3D models of the status quo.}
+\newblock International Archives of the Photogrammetry, Remote Sensing \&
+  Spatial Information Sciences, 2019.
+
+\bibitem[Blanch \textit{et~al.}~2021]{blanch2021multi}
+Xabier Blanch, Anette Eltner, Marta Guinau and Antonio Abellan.
+\newblock {\em Multi-Epoch and Multi-Imagery (MEMI) Photogrammetric Workflow
+  for Enhanced Change Detection Using Time-Lapse Cameras}.
+\newblock Remote Sensing, vol.~13, no.~8, page 1460, 2021.
+
+\bibitem[Bo{\.z}ek \textit{et~al.}~2019]{bozek2019analysis}
+Piotr Bo{\.z}ek, Jaroslaw Janus and Bartosz Mitka.
+\newblock {\em Analysis of changes in forest structure using point clouds from
+  historical aerial photographs}.
+\newblock Remote Sensing, vol.~11, no.~19, page 2259, 2019.
+
+\bibitem[Brachmann \textit{et~al.}~2017]{brachmann2017dsac}
+Eric Brachmann, Alexander Krull, Sebastian Nowozin, Jamie Shotton, Frank
+  Michel, Stefan Gumhold and Carsten Rother.
+\newblock {\em Dsac-differentiable ransac for camera localization}.
+\newblock In Proceedings of the IEEE Conference on Computer Vision and Pattern
+  Recognition, pages 6684--6692, 2017.
+
+\bibitem[Cardenal \textit{et~al.}~2006]{cardenal2006use}
+Javier Cardenal, Jorge Delgado, Emilio Mata, Alberto Gonz{\'a}lez and Ignacio
+  Olague.
+\newblock {\em Use of historical flight for landslide monitoring}.
+\newblock Proceedings of the Spatial Accuracy, pages 129--138, 2006.
+
+\bibitem[Chum \& Matas~2005]{chum2005matching}
+Ondrej Chum and Jiri Matas.
+\newblock {\em Matching with PROSAC-progressive sample consensus}.
+\newblock In 2005 IEEE computer society conference on computer vision and
+  pattern recognition (CVPR'05), volume~1, pages 220--226. IEEE, 2005.
+
+\bibitem[Chum \textit{et~al.}~2005]{chum2005two}
+Ondrej Chum, Tomas Werner and Jiri Matas.
+\newblock {\em Two-view geometry estimation unaffected by a dominant plane}.
+\newblock In 2005 IEEE Computer Society Conference on Computer Vision and
+  Pattern Recognition (CVPR'05), volume~1, pages 772--779. IEEE, 2005.
+
+\bibitem[Cook \& Dietze~2019]{cook2019simple}
+Kristen~L Cook and Michael Dietze.
+\newblock {\em A simple workflow for robust low-cost UAV-derived change
+  detection without ground control points}.
+\newblock Earth Surface Dynamics, vol.~7, no.~4, pages 1009--1017, 2019.
+
+\bibitem[Dalal \& Triggs~2005]{dalal2005histograms}
+Navneet Dalal and Bill Triggs.
+\newblock {\em Histograms of oriented gradients for human detection}.
+\newblock In 2005 IEEE computer society conference on computer vision and
+  pattern recognition (CVPR'05), volume~1, pages 886--893. Ieee, 2005.
+
+\bibitem[DeTone \textit{et~al.}~2018]{detone2018superpoint}
+Daniel DeTone, Tomasz Malisiewicz and Andrew Rabinovich.
+\newblock {\em Superpoint: Self-supervised interest point detection and
+  description}.
+\newblock In Proceedings of the IEEE Conference on Computer Vision and Pattern
+  Recognition Workshops, pages 224--236, 2018.
+
+\bibitem[Dusmanu \textit{et~al.}~2019]{dusmanu2019d2}
+Mihai Dusmanu, Ignacio Rocco, Tomas Pajdla, Marc Pollefeys, Josef Sivic,
+  Akihiko Torii and Torsten Sattler.
+\newblock {\em D2-Net: A Trainable CNN for Joint Detection and Description of
+  Local Features}.
+\newblock In 2019 IEEE Conference on Computer Vision and Pattern Recognition,
+  pages 8092--8101, 2019.
+
+\bibitem[Ellis \textit{et~al.}~2006]{ellis2006measuring}
+Erle~C Ellis, Hongqing Wang, Hong~Sheng Xiao, Kui Peng, Xin~Ping Liu,
+  Shou~Cheng Li, Hua Ouyang, Xu~Cheng and Lin~Zhang Yang.
+\newblock {\em Measuring long-term ecological changes in densely populated
+  landscapes using current and historical high resolution imagery}.
+\newblock Remote Sensing of Environment, vol.~100, no.~4, pages 457--473, 2006.
+
+\bibitem[Feurer \& Vinatier~2018]{feurer2018joining}
+Denis Feurer and F~Vinatier.
+\newblock {\em Joining multi-epoch archival aerial images in a single SfM block
+  allows 3-D change detection with almost exclusively image information}.
+\newblock ISPRS journal of photogrammetry and remote sensing, vol.~146, pages
+  495--506, 2018.
+
+\bibitem[Filhol \textit{et~al.}~2019]{filhol2019time}
+S~Filhol, A~Perret, L~Girod, G~Sutter, TV~Schuler and JF~Burkhart.
+\newblock {\em Time-Lapse Photogrammetry of Distributed Snow Depth During
+  Snowmelt}.
+\newblock Water Resources Research, vol.~55, no.~9, pages 7916--7926, 2019.
+
+\bibitem[Fischler \& Bolles~1981]{fischler1981random}
+Martin~A Fischler and Robert~C Bolles.
+\newblock {\em Random sample consensus: a paradigm for model fitting with
+  applications to image analysis and automated cartography}.
+\newblock Communications of the ACM, vol.~24, no.~6, pages 381--395, 1981.
+
+\bibitem[Ford~2013]{ford2013shoreline}
+Murray Ford.
+\newblock {\em Shoreline changes interpreted from multi-temporal aerial
+  photographs and high resolution satellite images: Wotje Atoll, Marshall
+  Islands}.
+\newblock Remote Sensing of Environment, vol.~135, pages 130--140, 2013.
+
+\bibitem[Fox \& Cziferszky~2008]{fox2008unlocking}
+Adrian~J Fox and Andreas Cziferszky.
+\newblock {\em Unlocking the time capsule of historic aerial photography to
+  measure changes in Antarctic Peninsula glaciers}.
+\newblock The Photogrammetric Record, vol.~23, no.~121, pages 51--68, 2008.
+
+\bibitem[Giordano \& Mallet~2019]{sebastien2019archiving}
+S{\'e}bastien Giordano and Cl{\'e}ment Mallet.
+\newblock {\em Archiving and geoprocessing of historical aerial images: current
+  status in Europe, Official Publication No 70}.
+\newblock In European Spatial Data Research, 2019.
+
+\bibitem[Giordano \textit{et~al.}~2018]{giordano2018toward}
+S~Giordano, A~Le~Bris and C~Mallet.
+\newblock {\em Toward automatic georeferencing of archival aerial
+  photogrammetric surveys}.
+\newblock ISPRS Annals of Photogrammetry, Remote Sensing and Spatial
+  Information Sciences, vol.~IV-2, pages 105--112, 2018.
+
+\bibitem[Harris \& Stephens~1988]{harris1988combined}
+Chris Harris and Mike Stephens.
+\newblock {\em A combined corner and edge detector.}
+\newblock In In Proc. of Fourth Alvey Vision Conference, pages 147--151, 1988.
+
+\bibitem[IGN~2019]{remonterletemps}
+IGN.
+\newblock {\em {remonterletemps}}.
+\newblock https://remonterletemps.ign.fr/, 2019.
+
+\bibitem[Jin \textit{et~al.}~2020]{jin2020image}
+Yuhe Jin, Dmytro Mishkin, Anastasiia Mishchuk, Jiri Matas, Pascal Fua,
+  Kwang~Moo Yi and Eduard Trulls.
+\newblock {\em Image Matching across Wide Baselines: From Paper to Practice}.
+\newblock 2020 IEEE Conference on Computer Vision and Pattern Recognition,
+  2020.
+
+\bibitem[Leroy \& Rousseeuw~1987]{leroy1987robust}
+Annick~M Leroy and Peter~J Rousseeuw.
+\newblock {\em Robust regression and outlier detection}.
+\newblock Wiley, 1987.
+
+\bibitem[Lowe~2004]{lowe2004distinctive}
+David~G Lowe.
+\newblock {\em Distinctive image features from scale-invariant keypoints}.
+\newblock International journal of computer vision, vol.~60, no.~2, pages
+  91--110, 2004.
+
+\bibitem[Luo \textit{et~al.}~2019]{luo2019contextdesc}
+Zixin Luo, Tianwei Shen, Lei Zhou, Jiahui Zhang, Yao Yao, Shiwei Li, Tian Fang
+  and Long Quan.
+\newblock {\em Contextdesc: Local descriptor augmentation with cross-modality
+  context}.
+\newblock In Proceedings of the IEEE Conference on Computer Vision and Pattern
+  Recognition, pages 2527--2536, 2019.
+
+\bibitem[Luo \textit{et~al.}~2020]{luo2020aslfeat}
+Zixin Luo, Lei Zhou, Xuyang Bai, Hongkai Chen, Jiahui Zhang, Yao Yao, Shiwei
+  Li, Tian Fang and Long Quan.
+\newblock {\em Aslfeat: Learning local features of accurate shape and
+  localization}.
+\newblock In Proceedings of the IEEE/CVF Conference on Computer Vision and
+  Pattern Recognition, pages 6589--6598, 2020.
+
+\bibitem[Maiwald \& Maas~2021]{maiwald2021automatic}
+Ferdinand Maiwald and Hans-Gerd Maas.
+\newblock {\em An automatic workflow for orientation of historical images with
+  large radiometric and geometric differences}.
+\newblock The Photogrammetric Record, 2021.
+
+\bibitem[Maiwald~2019]{maiwald2019generation}
+F~Maiwald.
+\newblock {\em Generation of a Benchmark Dataset Using Historical Photographs
+  for an Automated Evaluation of Different Feature Matching Methods.}
+\newblock International Archives of the Photogrammetry, Remote Sensing \&
+  Spatial Information Sciences, 2019.
+
+\bibitem[Micheletti \textit{et~al.}~2015]{micheletti2015application}
+Natan Micheletti, Stuart~N Lane and Jim~H Chandler.
+\newblock {\em Application of archival aerial photogrammetry to quantify
+  climate forcing of alpine landscapes}.
+\newblock The Photogrammetric Record, vol.~30, no.~150, pages 143--165, 2015.
+
+\bibitem[Mikolajczyk \& Schmid~2004]{mikolajczyk2004scale}
+Krystian Mikolajczyk and Cordelia Schmid.
+\newblock {\em Scale \& affine invariant interest point detectors}.
+\newblock International journal of computer vision, vol.~60, no.~1, pages
+  63--86, 2004.
+
+\bibitem[Mishchuk \textit{et~al.}~2017]{mishchuk2017working}
+Anastasiia Mishchuk, Dmytro Mishkin, Filip Radenovic and Jiri Matas.
+\newblock {\em Working hard to know your neighbor's margins: Local descriptor
+  learning loss}.
+\newblock In Advances in Neural Information Processing Systems, pages
+  4826--4837, 2017.
+
+\bibitem[M{\"o}lg \& Bolch~2017]{molg2017structure}
+Nico M{\"o}lg and Tobias Bolch.
+\newblock {\em Structure-from-motion using historical aerial images to analyse
+  changes in glacier surface elevation}.
+\newblock Remote Sensing, vol.~9, no.~10, page 1021, 2017.
+
+\bibitem[Moo~Yi \textit{et~al.}~2016]{moo2016learning}
+Kwang Moo~Yi, Yannick Verdie, Pascal Fua and Vincent Lepetit.
+\newblock {\em Learning to assign orientations to feature points}.
+\newblock In Proceedings of the IEEE Conference on Computer Vision and Pattern
+  Recognition, pages 107--116, 2016.
+
+\bibitem[Moo~Yi \textit{et~al.}~2018]{moo2018learning}
+Kwang Moo~Yi, Eduard Trulls, Yuki Ono, Vincent Lepetit, Mathieu Salzmann and
+  Pascal Fua.
+\newblock {\em Learning to find good correspondences}.
+\newblock In Proceedings of the IEEE Conference on Computer Vision and Pattern
+  Recognition, pages 2666--2674, 2018.
+
+\bibitem[Moravec~1980]{moravec1980obstacle}
+Hans Moravec.
+\newblock {\em Obstacle avoidance and navigation in the real world by a seeing
+  robot rover.}
+\newblock Technical report CMU-RI-TR-80-03, Carnegie Mellon University,
+  Pittsburgh, PA, 1980.
+
+\bibitem[Noh \textit{et~al.}~2017]{noh2017DELF}
+Hyeonwoo Noh, Andre Araujo, Jack Sim, Tobias Weyand and Bohyung Han.
+\newblock {\em Large-scale image retrieval with attentive deep local features}.
+\newblock In Proceedings of the IEEE international conference on computer
+  vision, pages 3456--3465, 2017.
+
+\bibitem[Nurminen \textit{et~al.}~2015]{nurminen2015automation}
+Kimmo Nurminen, Paula Litkey, Eija Honkavaara, Mikko Vastaranta, Markus
+  Holopainen, P{\"a}ivi Lyytik{\"a}inen-Saarenmaa, Tuula Kantola and Minna
+  Lyytik{\"a}inen.
+\newblock {\em Automation aspects for the georeferencing of photogrammetric
+  aerial image archives in forested scenes}.
+\newblock Remote Sensing, vol.~7, no.~2, pages 1565--1593, 2015.
+
+\bibitem[Ono \textit{et~al.}~2018]{ono2018lf}
+Yuki Ono, Eduard Trulls, Pascal Fua and Kwang~Moo Yi.
+\newblock {\em LF-Net: learning local features from images}.
+\newblock In Advances in Neural Information Processing Systems, pages
+  6234--6244, 2018.
+
+\bibitem[Parente \textit{et~al.}~2021]{parente2021automated}
+Luigi Parente, Jim~H Chandler and Neil Dixon.
+\newblock {\em Automated Registration of SfM-MVS Multitemporal Datasets Using
+  Terrestrial and Oblique Aerial Images}.
+\newblock The Photogrammetric Record, vol.~36, no.~173, pages 12--35, 2021.
+
+\bibitem[Persia \textit{et~al.}~2020]{persia2020archival}
+Manuela Persia, Emanuele Barca, Roberto Greco, Maria Marzulli and Patrizia
+  Tartarino.
+\newblock {\em Archival Aerial Images Georeferencing: A Geostatistically-Based
+  Approach for Improving Orthophoto Accuracy with Minimal Number of Ground
+  Control Points}.
+\newblock Remote Sensing, vol.~12, no.~14, page 2232, 2020.
+
+\bibitem[Pinto \textit{et~al.}~2019]{pinto2019archived}
+Ana~Teresa Pinto, Jos{\'e}~A Gon{\c{c}}alves, Pedro Beja and Jo{\~a}o
+  Pradinho~Honrado.
+\newblock {\em From archived historical aerial imagery to informative
+  orthophotos: A framework for retrieving the past in long-term socioecological
+  research}.
+\newblock Remote Sensing, vol.~11, no.~11, page 1388, 2019.
+
+\bibitem[Raguram \textit{et~al.}~2012]{raguram2012usac}
+Rahul Raguram, Ondrej Chum, Marc Pollefeys, Jiri Matas and Jan-Michael Frahm.
+\newblock {\em USAC: a universal framework for random sample consensus}.
+\newblock IEEE transactions on pattern analysis and machine intelligence,
+  vol.~35, no.~8, pages 2022--2038, 2012.
+
+\bibitem[Revaud \textit{et~al.}~2019]{revaud2019r2d2}
+Jerome Revaud, Cesar De~Souza, Martin Humenberger and Philippe Weinzaepfel.
+\newblock {\em R2d2: Reliable and repeatable detector and descriptor}.
+\newblock In Advances in Neural Information Processing Systems, pages
+  12405--12415, 2019.
+
+\bibitem[Rosten \& Drummond~2006]{rosten2006machine}
+Edward Rosten and Tom Drummond.
+\newblock {\em Machine learning for high-speed corner detection}.
+\newblock In European conference on computer vision, pages 430--443, 2006.
+
+\bibitem[Sarlin \textit{et~al.}~2020]{sarlin2020superglue}
+Paul-Edouard Sarlin, Daniel DeTone, Tomasz Malisiewicz and Andrew Rabinovich.
+\newblock {\em Superglue: Learning feature matching with graph neural
+  networks}.
+\newblock In Proceedings of the IEEE/CVF Conference on Computer Vision and
+  Pattern Recognition, pages 4938--4947, 2020.
+
+\bibitem[Schonberger \textit{et~al.}~2017]{schonberger2017comparative}
+Johannes~L Schonberger, Hans Hardmeier, Torsten Sattler and Marc Pollefeys.
+\newblock {\em Comparative evaluation of hand-crafted and learned local
+  features}.
+\newblock In Proceedings of the IEEE Conference on Computer Vision and Pattern
+  Recognition, pages 1482--1491, 2017.
+
+\bibitem[Simo-Serra \textit{et~al.}~2015]{simo2015discriminative}
+Edgar Simo-Serra, Eduard Trulls, Luis Ferraz, Iasonas Kokkinos, Pascal Fua and
+  Francesc Moreno-Noguer.
+\newblock {\em Discriminative learning of deep convolutional feature point
+  descriptors}.
+\newblock In Proceedings of the IEEE International Conference on Computer
+  Vision, pages 118--126, 2015.
+
+\bibitem[Sonka \textit{et~al.}~2014]{sonka2014image}
+Milan Sonka, Vaclav Hlavac and Roger Boyle.
+\newblock Image processing, analysis, and machine vision.
+\newblock Cengage Learning, 2014.
+
+\bibitem[Tian \textit{et~al.}~2017]{tian2017l2}
+Yurun Tian, Bin Fan and Fuchao Wu.
+\newblock {\em L2-net: Deep learning of discriminative patch descriptor in
+  euclidean space}.
+\newblock In Proceedings of the IEEE Conference on Computer Vision and Pattern
+  Recognition, pages 661--669, 2017.
+
+\bibitem[Tola \textit{et~al.}~2009]{tola2009daisy}
+Engin Tola, Vincent Lepetit and Pascal Fua.
+\newblock {\em Daisy: An efficient dense descriptor applied to wide-baseline
+  stereo}.
+\newblock IEEE transactions on pattern analysis and machine intelligence,
+  vol.~32, no.~5, pages 815--830, 2009.
+
+\bibitem[Torr \& Zisserman~2000]{torr2000mlesac}
+Philip~HS Torr and Andrew Zisserman.
+\newblock {\em MLESAC: A new robust estimator with application to estimating
+  image geometry}.
+\newblock Computer vision and image understanding, vol.~78, no.~1, pages
+  138--156, 2000.
+
+\bibitem[Trulls \textit{et~al.}~2020]{imagematchingchallenge2020}
+Eduard Trulls, Yuhe Jin, Kwang~Moo Yi, Dmytro Mishkin, Jiri Matas and Pascal
+  Fua.
+\newblock {\em {Image Matching Challenge 2020}}.
+\newblock https://vision.uvic.ca/image-matching-challenge/, 2020.
+
+\bibitem[USGS~2019]{earthexplorer}
+USGS.
+\newblock {\em {earthexplorer}}.
+\newblock https://earthexplorer.usgs.gov/, 2019.
+
+\bibitem[Verdie \textit{et~al.}~2015]{verdie2015tilde}
+Yannick Verdie, Kwang Yi, Pascal Fua and Vincent Lepetit.
+\newblock {\em TILDE: a temporally invariant learned detector}.
+\newblock In Proceedings of the IEEE Conference on Computer Vision and Pattern
+  Recognition, pages 5279--5288, 2015.
+
+\bibitem[Walstra \textit{et~al.}~2004]{walstra2004time}
+Jan Walstra, JH~Chandler, N~Dixon and TA~Dijkstra.
+\newblock {\em Time for change-quantifying landslide evolution using historical
+  aerial photographs and modern photogrammetric methods}.
+\newblock International Archives of Photogrammetry, Remote Sensing and Spatial
+  Information Sciences, vol.~35, no.~B4, 2004.
+
+\bibitem[Wiles \textit{et~al.}~2020]{wiles2020d2d}
+Olivia Wiles, Sebastien Ehrhardt and Andrew Zisserman.
+\newblock {\em D2D: Learning to find good correspondences for image matching
+  and manipulation}.
+\newblock arXiv preprint arXiv:2007.08480, 2020.
+
+\bibitem[Yi \textit{et~al.}~2016]{yi2016lift}
+Kwang~Moo Yi, Eduard Trulls, Vincent Lepetit and Pascal Fua.
+\newblock {\em Lift: Learned invariant feature transform}.
+\newblock In European Conference on Computer Vision, pages 467--483, 2016.
+
+\bibitem[Zhang \textit{et~al.}~2020]{zhang2020guided}
+Lulin Zhang, Ewelina Rupnik and Marc Pierrot-Deseilligny.
+\newblock {\em Guided feature matching for multi-epoch historical image blocks
+  pose estimation}.
+\newblock In ISPRS Ann. Photogramm. Remote Sens. Spatial Inf. Sci., 2020.
+
+\end{thebibliography}

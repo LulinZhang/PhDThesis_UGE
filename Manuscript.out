@@ -1,0 +1,38 @@
+\BOOKMARK [0][]{chapter*.3}{List of Acronyms}{}% 1
+\BOOKMARK [0][]{chapter.1}{Introduction}{}% 2
+\BOOKMARK [1][]{section.1.1}{Motivation}{chapter.1}% 3
+\BOOKMARK [1][]{section.1.2}{Objective}{chapter.1}% 4
+\BOOKMARK [1][]{section.1.3}{Contribution}{chapter.1}% 5
+\BOOKMARK [1][]{section.1.4}{Organization of the thesis}{chapter.1}% 6
+\BOOKMARK [0][]{chapter.2}{Literature review}{}% 7
+\BOOKMARK [1][]{section.2.1}{Local feature matching}{chapter.2}% 8
+\BOOKMARK [2][]{subsection.2.1.1}{Hand-crafted methods}{section.2.1}% 9
+\BOOKMARK [2][]{subsection.2.1.2}{Learned methods}{section.2.1}% 10
+\BOOKMARK [1][]{section.2.2}{Historical image processing}{chapter.2}% 11
+\BOOKMARK [1][]{section.2.3}{Robust matching}{chapter.2}% 12
+\BOOKMARK [0][]{chapter.3}{Rough co-registration}{}% 13
+\BOOKMARK [1][]{section.3.1}{Introduction}{chapter.3}% 14
+\BOOKMARK [2][]{subsection.3.1.1}{Motivation}{section.3.1}% 15
+\BOOKMARK [2][]{subsection.3.1.2}{Contribution}{section.3.1}% 16
+\BOOKMARK [1][]{section.3.2}{Methodology}{chapter.3}% 17
+\BOOKMARK [2][]{subsection.3.2.1}{Strategy 1: Match image pairs}{section.3.2}% 18
+\BOOKMARK [2][]{subsection.3.2.2}{Strategy 2: Match DSM/Orthophoto}{section.3.2}% 19
+\BOOKMARK [1][]{section.3.3}{Experiments}{chapter.3}% 20
+\BOOKMARK [2][]{subsection.3.3.1}{Datasets}{section.3.3}% 21
+\BOOKMARK [2][]{subsection.3.3.2}{Evaluation}{section.3.3}% 22
+\BOOKMARK [2][]{subsection.3.3.3}{Comparison}{section.3.3}% 23
+\BOOKMARK [1][]{section.3.4}{Conclusion}{chapter.3}% 24
+\BOOKMARK [1][]{section.3.5}{Discussion}{chapter.3}% 25
+\BOOKMARK [0][]{chapter.4}{Precise matching}{}% 26
+\BOOKMARK [1][]{section.4.1}{Introduction}{chapter.4}% 27
+\BOOKMARK [2][]{subsection.4.1.1}{Motivation}{section.4.1}% 28
+\BOOKMARK [2][]{subsection.4.1.2}{Contribution}{section.4.1}% 29
+\BOOKMARK [1][]{section.4.2}{Methodology}{chapter.4}% 30
+\BOOKMARK [1][]{section.4.3}{Experiments}{chapter.4}% 31
+\BOOKMARK [1][]{section.4.4}{Conclusion}{chapter.4}% 32
+\BOOKMARK [1][]{section.4.5}{Discussion}{chapter.4}% 33
+\BOOKMARK [0][]{chapter.5}{Conclusion and Perspective}{}% 34
+\BOOKMARK [-1][]{chapter.5}{Appendices}{}% 35
+\BOOKMARK [0][]{appendix.A}{Appendix Example}{chapter.5}% 36
+\BOOKMARK [1][]{section.A.1}{Appendix Example section}{appendix.A}% 37
+\BOOKMARK [0][]{appendix*.5}{Bibliography}{chapter.5}% 38

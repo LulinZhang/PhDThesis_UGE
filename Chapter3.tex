@@ -1,0 +1,49 @@
+%!TEX root = Manuscript.tex
+
+\chapter{Rough co-registration}
+\label{chap:intro}
+\minitoc
+
+\section{Introduction}
+\subsection{Motivation}
+\textit{state-of-the-art} feature matching methods (SIFT and SuperGlue) fail on inter-epoch image pairs.
+\subsection{Contribution}
+
+\section{Methodology}
+Our goal is to improve robustness by building globally consistent transformation model over the whole block.
+(1) matching each potential image pair followed with global filtering based on 3D RANSAC
+(2) get a global image for each epoch first, apply matching and 2D RANSAC
+%零碎匹配，整体inlier
+%整体匹配
+
+\subsection{Strategy 1: Match image pairs}
+%\subsection{Strategy 1: global filtering}
+CoReg-R3D
+\subsubsection{SIFT}
+\subsubsection{SuperGlue}
+\subsection{Strategy 2: Match DSM/Orthophoto}
+%\subsection{trategy 2: global matching}
+CoReg-DSM
+CoReg-Ortho
+\subsubsection{SIFT}
+\subsubsection{SuperGlue}
+
+\section{Experiments}
+\subsection{Datasets}
+Frejus, Pezenas, Kobe\\
+Show piled image of each epoch?
+\subsection{Evaluation}
+\subsubsection{Quantitative evaluation}
+(1)inlier ratio (RANSAC and GT)
+(2)Check point diff
+(3)DoD (picture and statistics)
+\subsubsection{Qualitative evaluation}
+inlier tie points with orthophotos as background
+\subsection{Comparison}
+%分三部分分别展示3组数据的结果
+3*2 methods:
+%1张表表示6种方法的(1)和(2)，1张大图放6种方法的DoD, inlier tie pt图（R3D, DSM, ortho各3张（无点图，SIFT点图，SpG点图））
+
+\section{Conclusion}
+
+\section{Discussion}
