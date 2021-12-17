@@ -1,36 +1,35 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.5.15)  17 DEC 2021 16:32
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2021.10.8)  17 DEC 2021 20:00
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
 **Manuscript.tex
 (./Manuscript.tex
-LaTeX2e <2017-04-15>
-Babel <3.18> and hyphenation patterns for 3 language(s) loaded.
-(./ThesisStyle.cls
+LaTeX2e <2020-02-02> patch level 2
+L3 programming layer <2020-02-14> (./ThesisStyle.cls
 Document Class: ThesisStyle 2004/02/16 v1.4f Standard LaTeX document class
 (/usr/share/texlive/texmf-dist/tex/latex/base/bk11.clo
-File: bk11.clo 2014/09/29 v1.4h Standard LaTeX file (size option)
+File: bk11.clo 2019/12/20 v1.4l Standard LaTeX file (size option)
 )
-\c@part=\count79
-\c@chapter=\count80
-\c@section=\count81
-\c@subsection=\count82
-\c@subsubsection=\count83
-\c@paragraph=\count84
-\c@subparagraph=\count85
-\c@figure=\count86
-\c@table=\count87
-\abovecaptionskip=\skip41
-\belowcaptionskip=\skip42
-\bibindent=\dimen102
+\c@part=\count167
+\c@chapter=\count168
+\c@section=\count169
+\c@subsection=\count170
+\c@subsubsection=\count171
+\c@paragraph=\count172
+\c@subparagraph=\count173
+\c@figure=\count174
+\c@table=\count175
+\abovecaptionskip=\skip47
+\belowcaptionskip=\skip48
+\bibindent=\dimen134
 )
 \@input{formatAndDefs.aux}
 \openout2 = `formatAndDefs.aux'.
 
 (./formatAndDefs.tex
 (/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsmath.sty
-Package: amsmath 2017/09/02 v2.17a AMS math features
-\@mathmargin=\skip43
+Package: amsmath 2020/01/20 v2.17e AMS math features
+\@mathmargin=\skip49
 
 For additional information on amsmath, use the `?' option.
 (/usr/share/texlive/texmf-dist/tex/latex/amsmath/amstext.sty
@@ -39,52 +38,52 @@ Package: amstext 2000/06/29 v2.01 AMS text
 (/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsgen.sty
 File: amsgen.sty 1999/11/30 v2.0 generic functions
 \@emptytoks=\toks14
-\ex@=\dimen103
+\ex@=\dimen135
 ))
 (/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsbsy.sty
 Package: amsbsy 1999/11/29 v1.2d Bold Symbols
-\pmbraise@=\dimen104
+\pmbraise@=\dimen136
 )
 (/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsopn.sty
 Package: amsopn 2016/03/08 v2.02 operator names
 )
-\inf@bad=\count88
-LaTeX Info: Redefining \frac on input line 213.
-\uproot@=\count89
-\leftroot@=\count90
-LaTeX Info: Redefining \overline on input line 375.
-\classnum@=\count91
-\DOTSCASE@=\count92
-LaTeX Info: Redefining \ldots on input line 472.
-LaTeX Info: Redefining \dots on input line 475.
-LaTeX Info: Redefining \cdots on input line 596.
-\Mathstrutbox@=\box26
-\strutbox@=\box27
-\big@size=\dimen105
-LaTeX Font Info:    Redeclaring font encoding OML on input line 712.
-LaTeX Font Info:    Redeclaring font encoding OMS on input line 713.
-\macc@depth=\count93
-\c@MaxMatrixCols=\count94
-\dotsspace@=\muskip10
-\c@parentequation=\count95
-\dspbrk@lvl=\count96
+\inf@bad=\count176
+LaTeX Info: Redefining \frac on input line 227.
+\uproot@=\count177
+\leftroot@=\count178
+LaTeX Info: Redefining \overline on input line 389.
+\classnum@=\count179
+\DOTSCASE@=\count180
+LaTeX Info: Redefining \ldots on input line 486.
+LaTeX Info: Redefining \dots on input line 489.
+LaTeX Info: Redefining \cdots on input line 610.
+\Mathstrutbox@=\box45
+\strutbox@=\box46
+\big@size=\dimen137
+LaTeX Font Info:    Redeclaring font encoding OML on input line 733.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 734.
+\macc@depth=\count181
+\c@MaxMatrixCols=\count182
+\dotsspace@=\muskip16
+\c@parentequation=\count183
+\dspbrk@lvl=\count184
 \tag@help=\toks15
-\row@=\count97
-\column@=\count98
-\maxfields@=\count99
+\row@=\count185
+\column@=\count186
+\maxfields@=\count187
 \andhelp@=\toks16
-\eqnshift@=\dimen106
-\alignsep@=\dimen107
-\tagshift@=\dimen108
-\tagwidth@=\dimen109
-\totwidth@=\dimen110
-\lineht@=\dimen111
+\eqnshift@=\dimen138
+\alignsep@=\dimen139
+\tagshift@=\dimen140
+\tagwidth@=\dimen141
+\totwidth@=\dimen142
+\lineht@=\dimen143
 \@envbody=\toks17
-\multlinegap=\skip44
-\multlinetaggap=\skip45
+\multlinegap=\skip50
+\multlinetaggap=\skip51
 \mathdisplay@stack=\toks18
-LaTeX Info: Redefining \[ on input line 2817.
-LaTeX Info: Redefining \] on input line 2818.
+LaTeX Info: Redefining \[ on input line 2859.
+LaTeX Info: Redefining \] on input line 2860.
 )
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amssymb.sty
 Package: amssymb 2013/01/14 v3.01 AMS font symbols
@@ -93,407 +92,89 @@ Package: amssymb 2013/01/14 v3.01 AMS font symbols
 Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
 \symAMSa=\mathgroup4
 \symAMSb=\mathgroup5
+LaTeX Font Info:    Redeclaring math symbol \hbar on input line 98.
 LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 (Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
 ))
 (/usr/share/texlive/texmf-dist/tex/latex/base/fontenc.sty
-Package: fontenc 2017/04/05 v2.0i Standard LaTeX package
-
-(/usr/share/texlive/texmf-dist/tex/latex/base/t1enc.def
-File: t1enc.def 2017/04/05 v2.0i Standard LaTeX file
-LaTeX Font Info:    Redeclaring font encoding T1 on input line 48.
-))
+Package: fontenc 2020/02/11 v2.0o Standard LaTeX package
+)
 (/usr/share/texlive/texmf-dist/tex/latex/base/inputenc.sty
-Package: inputenc 2015/03/17 v1.2c Input encoding file
+Package: inputenc 2018/08/11 v1.3c Input encoding file
 \inpenc@prehook=\toks19
 \inpenc@posthook=\toks20
-
-(/usr/share/texlive/texmf-dist/tex/latex/base/utf8.def
-File: utf8.def 2017/01/28 v1.1t UTF-8 support for inputenc
-Now handling font encoding OML ...
-... no UTF-8 mapping file for font encoding OML
-Now handling font encoding T1 ...
-... processing UTF-8 mapping file for font encoding T1
-
-(/usr/share/texlive/texmf-dist/tex/latex/base/t1enc.dfu
-File: t1enc.dfu 2017/01/28 v1.1t UTF-8 support for inputenc
-   defining Unicode char U+00A0 (decimal 160)
-   defining Unicode char U+00A1 (decimal 161)
-   defining Unicode char U+00A3 (decimal 163)
-   defining Unicode char U+00AB (decimal 171)
-   defining Unicode char U+00AD (decimal 173)
-   defining Unicode char U+00BB (decimal 187)
-   defining Unicode char U+00BF (decimal 191)
-   defining Unicode char U+00C0 (decimal 192)
-   defining Unicode char U+00C1 (decimal 193)
-   defining Unicode char U+00C2 (decimal 194)
-   defining Unicode char U+00C3 (decimal 195)
-   defining Unicode char U+00C4 (decimal 196)
-   defining Unicode char U+00C5 (decimal 197)
-   defining Unicode char U+00C6 (decimal 198)
-   defining Unicode char U+00C7 (decimal 199)
-   defining Unicode char U+00C8 (decimal 200)
-   defining Unicode char U+00C9 (decimal 201)
-   defining Unicode char U+00CA (decimal 202)
-   defining Unicode char U+00CB (decimal 203)
-   defining Unicode char U+00CC (decimal 204)
-   defining Unicode char U+00CD (decimal 205)
-   defining Unicode char U+00CE (decimal 206)
-   defining Unicode char U+00CF (decimal 207)
-   defining Unicode char U+00D0 (decimal 208)
-   defining Unicode char U+00D1 (decimal 209)
-   defining Unicode char U+00D2 (decimal 210)
-   defining Unicode char U+00D3 (decimal 211)
-   defining Unicode char U+00D4 (decimal 212)
-   defining Unicode char U+00D5 (decimal 213)
-   defining Unicode char U+00D6 (decimal 214)
-   defining Unicode char U+00D8 (decimal 216)
-   defining Unicode char U+00D9 (decimal 217)
-   defining Unicode char U+00DA (decimal 218)
-   defining Unicode char U+00DB (decimal 219)
-   defining Unicode char U+00DC (decimal 220)
-   defining Unicode char U+00DD (decimal 221)
-   defining Unicode char U+00DE (decimal 222)
-   defining Unicode char U+00DF (decimal 223)
-   defining Unicode char U+00E0 (decimal 224)
-   defining Unicode char U+00E1 (decimal 225)
-   defining Unicode char U+00E2 (decimal 226)
-   defining Unicode char U+00E3 (decimal 227)
-   defining Unicode char U+00E4 (decimal 228)
-   defining Unicode char U+00E5 (decimal 229)
-   defining Unicode char U+00E6 (decimal 230)
-   defining Unicode char U+00E7 (decimal 231)
-   defining Unicode char U+00E8 (decimal 232)
-   defining Unicode char U+00E9 (decimal 233)
-   defining Unicode char U+00EA (decimal 234)
-   defining Unicode char U+00EB (decimal 235)
-   defining Unicode char U+00EC (decimal 236)
-   defining Unicode char U+00ED (decimal 237)
-   defining Unicode char U+00EE (decimal 238)
-   defining Unicode char U+00EF (decimal 239)
-   defining Unicode char U+00F0 (decimal 240)
-   defining Unicode char U+00F1 (decimal 241)
-   defining Unicode char U+00F2 (decimal 242)
-   defining Unicode char U+00F3 (decimal 243)
-   defining Unicode char U+00F4 (decimal 244)
-   defining Unicode char U+00F5 (decimal 245)
-   defining Unicode char U+00F6 (decimal 246)
-   defining Unicode char U+00F8 (decimal 248)
-   defining Unicode char U+00F9 (decimal 249)
-   defining Unicode char U+00FA (decimal 250)
-   defining Unicode char U+00FB (decimal 251)
-   defining Unicode char U+00FC (decimal 252)
-   defining Unicode char U+00FD (decimal 253)
-   defining Unicode char U+00FE (decimal 254)
-   defining Unicode char U+00FF (decimal 255)
-   defining Unicode char U+0100 (decimal 256)
-   defining Unicode char U+0101 (decimal 257)
-   defining Unicode char U+0102 (decimal 258)
-   defining Unicode char U+0103 (decimal 259)
-   defining Unicode char U+0104 (decimal 260)
-   defining Unicode char U+0105 (decimal 261)
-   defining Unicode char U+0106 (decimal 262)
-   defining Unicode char U+0107 (decimal 263)
-   defining Unicode char U+0108 (decimal 264)
-   defining Unicode char U+0109 (decimal 265)
-   defining Unicode char U+010A (decimal 266)
-   defining Unicode char U+010B (decimal 267)
-   defining Unicode char U+010C (decimal 268)
-   defining Unicode char U+010D (decimal 269)
-   defining Unicode char U+010E (decimal 270)
-   defining Unicode char U+010F (decimal 271)
-   defining Unicode char U+0110 (decimal 272)
-   defining Unicode char U+0111 (decimal 273)
-   defining Unicode char U+0112 (decimal 274)
-   defining Unicode char U+0113 (decimal 275)
-   defining Unicode char U+0114 (decimal 276)
-   defining Unicode char U+0115 (decimal 277)
-   defining Unicode char U+0116 (decimal 278)
-   defining Unicode char U+0117 (decimal 279)
-   defining Unicode char U+0118 (decimal 280)
-   defining Unicode char U+0119 (decimal 281)
-   defining Unicode char U+011A (decimal 282)
-   defining Unicode char U+011B (decimal 283)
-   defining Unicode char U+011C (decimal 284)
-   defining Unicode char U+011D (decimal 285)
-   defining Unicode char U+011E (decimal 286)
-   defining Unicode char U+011F (decimal 287)
-   defining Unicode char U+0120 (decimal 288)
-   defining Unicode char U+0121 (decimal 289)
-   defining Unicode char U+0122 (decimal 290)
-   defining Unicode char U+0123 (decimal 291)
-   defining Unicode char U+0124 (decimal 292)
-   defining Unicode char U+0125 (decimal 293)
-   defining Unicode char U+0128 (decimal 296)
-   defining Unicode char U+0129 (decimal 297)
-   defining Unicode char U+012A (decimal 298)
-   defining Unicode char U+012B (decimal 299)
-   defining Unicode char U+012C (decimal 300)
-   defining Unicode char U+012D (decimal 301)
-   defining Unicode char U+012E (decimal 302)
-   defining Unicode char U+012F (decimal 303)
-   defining Unicode char U+0130 (decimal 304)
-   defining Unicode char U+0131 (decimal 305)
-   defining Unicode char U+0132 (decimal 306)
-   defining Unicode char U+0133 (decimal 307)
-   defining Unicode char U+0134 (decimal 308)
-   defining Unicode char U+0135 (decimal 309)
-   defining Unicode char U+0136 (decimal 310)
-   defining Unicode char U+0137 (decimal 311)
-   defining Unicode char U+0139 (decimal 313)
-   defining Unicode char U+013A (decimal 314)
-   defining Unicode char U+013B (decimal 315)
-   defining Unicode char U+013C (decimal 316)
-   defining Unicode char U+013D (decimal 317)
-   defining Unicode char U+013E (decimal 318)
-   defining Unicode char U+0141 (decimal 321)
-   defining Unicode char U+0142 (decimal 322)
-   defining Unicode char U+0143 (decimal 323)
-   defining Unicode char U+0144 (decimal 324)
-   defining Unicode char U+0145 (decimal 325)
-   defining Unicode char U+0146 (decimal 326)
-   defining Unicode char U+0147 (decimal 327)
-   defining Unicode char U+0148 (decimal 328)
-   defining Unicode char U+014A (decimal 330)
-   defining Unicode char U+014B (decimal 331)
-   defining Unicode char U+014C (decimal 332)
-   defining Unicode char U+014D (decimal 333)
-   defining Unicode char U+014E (decimal 334)
-   defining Unicode char U+014F (decimal 335)
-   defining Unicode char U+0150 (decimal 336)
-   defining Unicode char U+0151 (decimal 337)
-   defining Unicode char U+0152 (decimal 338)
-   defining Unicode char U+0153 (decimal 339)
-   defining Unicode char U+0154 (decimal 340)
-   defining Unicode char U+0155 (decimal 341)
-   defining Unicode char U+0156 (decimal 342)
-   defining Unicode char U+0157 (decimal 343)
-   defining Unicode char U+0158 (decimal 344)
-   defining Unicode char U+0159 (decimal 345)
-   defining Unicode char U+015A (decimal 346)
-   defining Unicode char U+015B (decimal 347)
-   defining Unicode char U+015C (decimal 348)
-   defining Unicode char U+015D (decimal 349)
-   defining Unicode char U+015E (decimal 350)
-   defining Unicode char U+015F (decimal 351)
-   defining Unicode char U+0160 (decimal 352)
-   defining Unicode char U+0161 (decimal 353)
-   defining Unicode char U+0162 (decimal 354)
-   defining Unicode char U+0163 (decimal 355)
-   defining Unicode char U+0164 (decimal 356)
-   defining Unicode char U+0165 (decimal 357)
-   defining Unicode char U+0168 (decimal 360)
-   defining Unicode char U+0169 (decimal 361)
-   defining Unicode char U+016A (decimal 362)
-   defining Unicode char U+016B (decimal 363)
-   defining Unicode char U+016C (decimal 364)
-   defining Unicode char U+016D (decimal 365)
-   defining Unicode char U+016E (decimal 366)
-   defining Unicode char U+016F (decimal 367)
-   defining Unicode char U+0170 (decimal 368)
-   defining Unicode char U+0171 (decimal 369)
-   defining Unicode char U+0172 (decimal 370)
-   defining Unicode char U+0173 (decimal 371)
-   defining Unicode char U+0174 (decimal 372)
-   defining Unicode char U+0175 (decimal 373)
-   defining Unicode char U+0176 (decimal 374)
-   defining Unicode char U+0177 (decimal 375)
-   defining Unicode char U+0178 (decimal 376)
-   defining Unicode char U+0179 (decimal 377)
-   defining Unicode char U+017A (decimal 378)
-   defining Unicode char U+017B (decimal 379)
-   defining Unicode char U+017C (decimal 380)
-   defining Unicode char U+017D (decimal 381)
-   defining Unicode char U+017E (decimal 382)
-   defining Unicode char U+01CD (decimal 461)
-   defining Unicode char U+01CE (decimal 462)
-   defining Unicode char U+01CF (decimal 463)
-   defining Unicode char U+01D0 (decimal 464)
-   defining Unicode char U+01D1 (decimal 465)
-   defining Unicode char U+01D2 (decimal 466)
-   defining Unicode char U+01D3 (decimal 467)
-   defining Unicode char U+01D4 (decimal 468)
-   defining Unicode char U+01E2 (decimal 482)
-   defining Unicode char U+01E3 (decimal 483)
-   defining Unicode char U+01E6 (decimal 486)
-   defining Unicode char U+01E7 (decimal 487)
-   defining Unicode char U+01E8 (decimal 488)
-   defining Unicode char U+01E9 (decimal 489)
-   defining Unicode char U+01EA (decimal 490)
-   defining Unicode char U+01EB (decimal 491)
-   defining Unicode char U+01F0 (decimal 496)
-   defining Unicode char U+01F4 (decimal 500)
-   defining Unicode char U+01F5 (decimal 501)
-   defining Unicode char U+0218 (decimal 536)
-   defining Unicode char U+0219 (decimal 537)
-   defining Unicode char U+021A (decimal 538)
-   defining Unicode char U+021B (decimal 539)
-   defining Unicode char U+0232 (decimal 562)
-   defining Unicode char U+0233 (decimal 563)
-   defining Unicode char U+1E02 (decimal 7682)
-   defining Unicode char U+1E03 (decimal 7683)
-   defining Unicode char U+200C (decimal 8204)
-   defining Unicode char U+2010 (decimal 8208)
-   defining Unicode char U+2011 (decimal 8209)
-   defining Unicode char U+2012 (decimal 8210)
-   defining Unicode char U+2013 (decimal 8211)
-   defining Unicode char U+2014 (decimal 8212)
-   defining Unicode char U+2015 (decimal 8213)
-   defining Unicode char U+2018 (decimal 8216)
-   defining Unicode char U+2019 (decimal 8217)
-   defining Unicode char U+201A (decimal 8218)
-   defining Unicode char U+201C (decimal 8220)
-   defining Unicode char U+201D (decimal 8221)
-   defining Unicode char U+201E (decimal 8222)
-   defining Unicode char U+2030 (decimal 8240)
-   defining Unicode char U+2031 (decimal 8241)
-   defining Unicode char U+2039 (decimal 8249)
-   defining Unicode char U+203A (decimal 8250)
-   defining Unicode char U+2423 (decimal 9251)
-   defining Unicode char U+1E20 (decimal 7712)
-   defining Unicode char U+1E21 (decimal 7713)
 )
-Now handling font encoding OT1 ...
-... processing UTF-8 mapping file for font encoding OT1
-
-(/usr/share/texlive/texmf-dist/tex/latex/base/ot1enc.dfu
-File: ot1enc.dfu 2017/01/28 v1.1t UTF-8 support for inputenc
-   defining Unicode char U+00A0 (decimal 160)
-   defining Unicode char U+00A1 (decimal 161)
-   defining Unicode char U+00A3 (decimal 163)
-   defining Unicode char U+00AD (decimal 173)
-   defining Unicode char U+00B8 (decimal 184)
-   defining Unicode char U+00BF (decimal 191)
-   defining Unicode char U+00C5 (decimal 197)
-   defining Unicode char U+00C6 (decimal 198)
-   defining Unicode char U+00D8 (decimal 216)
-   defining Unicode char U+00DF (decimal 223)
-   defining Unicode char U+00E6 (decimal 230)
-   defining Unicode char U+00EC (decimal 236)
-   defining Unicode char U+00ED (decimal 237)
-   defining Unicode char U+00EE (decimal 238)
-   defining Unicode char U+00EF (decimal 239)
-   defining Unicode char U+00F8 (decimal 248)
-   defining Unicode char U+0131 (decimal 305)
-   defining Unicode char U+0141 (decimal 321)
-   defining Unicode char U+0142 (decimal 322)
-   defining Unicode char U+0152 (decimal 338)
-   defining Unicode char U+0153 (decimal 339)
-   defining Unicode char U+0174 (decimal 372)
-   defining Unicode char U+0175 (decimal 373)
-   defining Unicode char U+0176 (decimal 374)
-   defining Unicode char U+0177 (decimal 375)
-   defining Unicode char U+0218 (decimal 536)
-   defining Unicode char U+0219 (decimal 537)
-   defining Unicode char U+021A (decimal 538)
-   defining Unicode char U+021B (decimal 539)
-   defining Unicode char U+2013 (decimal 8211)
-   defining Unicode char U+2014 (decimal 8212)
-   defining Unicode char U+2018 (decimal 8216)
-   defining Unicode char U+2019 (decimal 8217)
-   defining Unicode char U+201C (decimal 8220)
-   defining Unicode char U+201D (decimal 8221)
-)
-Now handling font encoding OMS ...
-... processing UTF-8 mapping file for font encoding OMS
-
-(/usr/share/texlive/texmf-dist/tex/latex/base/omsenc.dfu
-File: omsenc.dfu 2017/01/28 v1.1t UTF-8 support for inputenc
-   defining Unicode char U+00A7 (decimal 167)
-   defining Unicode char U+00B6 (decimal 182)
-   defining Unicode char U+00B7 (decimal 183)
-   defining Unicode char U+2020 (decimal 8224)
-   defining Unicode char U+2021 (decimal 8225)
-   defining Unicode char U+2022 (decimal 8226)
-)
-Now handling font encoding OMX ...
-... no UTF-8 mapping file for font encoding OMX
-Now handling font encoding U ...
-... no UTF-8 mapping file for font encoding U
-   defining Unicode char U+00A9 (decimal 169)
-   defining Unicode char U+00AA (decimal 170)
-   defining Unicode char U+00AE (decimal 174)
-   defining Unicode char U+00BA (decimal 186)
-   defining Unicode char U+02C6 (decimal 710)
-   defining Unicode char U+02DC (decimal 732)
-   defining Unicode char U+200C (decimal 8204)
-   defining Unicode char U+2026 (decimal 8230)
-   defining Unicode char U+2122 (decimal 8482)
-   defining Unicode char U+2423 (decimal 9251)
-))
 (/usr/share/texlive/texmf-dist/tex/generic/babel/babel.sty
-Package: babel 2018/02/14 3.18 The Babel package
+Package: babel 2020/02/14 3.40 The Babel package
 
 (/usr/share/texlive/texmf-dist/tex/generic/babel/switch.def
-File: switch.def 2018/02/14 3.18 Babel switching mechanism
+File: switch.def 2020/02/14 3.40 Babel switching mechanism
 )
 (/usr/share/texlive/texmf-dist/tex/generic/babel-english/english.ldf
 Language: english 2017/06/06 v3.3r English support from the babel system
 
 (/usr/share/texlive/texmf-dist/tex/generic/babel/babel.def
-File: babel.def 2018/02/14 3.18 Babel common definitions
-\babel@savecnt=\count100
-\U@D=\dimen112
+File: babel.def 2020/02/14 3.40 Babel common definitions
+\babel@savecnt=\count188
+\U@D=\dimen144
 
 (/usr/share/texlive/texmf-dist/tex/generic/babel/txtbabel.def)
-\bbl@dirlevel=\count101
+\bbl@readstream=\read2
+\bbl@dirlevel=\count189
 )
-\l@british = a dialect from \language\l@english 
-\l@UKenglish = a dialect from \language\l@english 
-\l@canadian = a dialect from \language\l@american 
-\l@australian = a dialect from \language\l@british 
-\l@newzealand = a dialect from \language\l@british 
+Package babel Info: \l@canadian = using hyphenrules for english
+(babel)             (\language0) on input line 102.
+Package babel Info: \l@australian = using hyphenrules for ukenglish
+(babel)             (\language54) on input line 105.
+Package babel Info: \l@newzealand = using hyphenrules for ukenglish
+(babel)             (\language54) on input line 108.
 ))
 (/usr/share/texlive/texmf-dist/tex/latex/geometry/geometry.sty
-Package: geometry 2010/09/12 v5.6 Page Geometry
+Package: geometry 2020/01/02 v5.9 Page Geometry
 
 (/usr/share/texlive/texmf-dist/tex/latex/graphics/keyval.sty
 Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
 \KV@toks@=\toks21
 )
-(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ifpdf.sty
-Package: ifpdf 2017/03/15 v3.2 Provides the ifpdf switch
-)
-(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ifvtex.sty
-Package: ifvtex 2016/05/16 v1.6 Detect VTeX and its facilities (HO)
-Package ifvtex Info: VTeX not detected.
-)
-(/usr/share/texlive/texmf-dist/tex/generic/ifxetex/ifxetex.sty
-Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
-)
-\Gm@cnth=\count102
-\Gm@cntv=\count103
-\c@Gm@tempcnt=\count104
-\Gm@bindingoffset=\dimen113
-\Gm@wd@mp=\dimen114
-\Gm@odd@mp=\dimen115
-\Gm@even@mp=\dimen116
-\Gm@layoutwidth=\dimen117
-\Gm@layoutheight=\dimen118
-\Gm@layouthoffset=\dimen119
-\Gm@layoutvoffset=\dimen120
+(/usr/share/texlive/texmf-dist/tex/generic/iftex/ifvtex.sty
+Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
+
+(/usr/share/texlive/texmf-dist/tex/generic/iftex/iftex.sty
+Package: iftex 2019/11/07 v1.0c TeX engine tests
+))
+\Gm@cnth=\count190
+\Gm@cntv=\count191
+\c@Gm@tempcnt=\count192
+\Gm@bindingoffset=\dimen145
+\Gm@wd@mp=\dimen146
+\Gm@odd@mp=\dimen147
+\Gm@even@mp=\dimen148
+\Gm@layoutwidth=\dimen149
+\Gm@layoutheight=\dimen150
+\Gm@layouthoffset=\dimen151
+\Gm@layoutvoffset=\dimen152
 \Gm@dimlist=\toks22
 )
 (/usr/share/texlive/texmf-dist/tex/latex/silence/silence.sty
 Package: silence 2012/07/02 v1.5b Selective filtering of warnings and error mes
 sages
-\sl@Save=\count105
-\sl@StateNumber=\count106
-\sl@MessageCount=\count107
-\sl@Casualties=\count108
+\sl@Save=\count193
+\sl@StateNumber=\count194
+\sl@MessageCount=\count195
+\sl@Casualties=\count196
 \sl@Filter=\toks23
 \sl@Message=\toks24
 \sl@UnexpandedMessage=\toks25
 \sl@Mess@ge=\toks26
-\sl@WarningCount=\count109
-\sl@WarningNumber=\count110
-\sl@WarningCasualties=\count111
+\sl@WarningCount=\count197
+\sl@WarningNumber=\count198
+\sl@WarningCasualties=\count199
 \sl@TempBOW=\toks27
 \sl@BankOfWarnings=\toks28
 LaTeX Info: Redefining \GenericWarning on input line 433.
-\sl@ErrorCount=\count112
-\sl@ErrorNumber=\count113
-\sl@ErrorCasualties=\count114
+\sl@ErrorCount=\count266
+\sl@ErrorNumber=\count267
+\sl@ErrorCasualties=\count268
 \sl@TempBOE=\toks29
 \sl@BankOfErrors=\toks30
 LaTeX Info: Redefining \GenericError on input line 601.
@@ -502,30 +183,32 @@ LaTeX Info: Redefining \GenericError on input line 601.
 Package: aecompl 1998/07/23 0.9 T1 Complements for AE fonts (D. Roegel)
 )
 (/usr/share/texlive/texmf-dist/tex/latex/url/url.sty
-\Urlmuskip=\muskip11
+\Urlmuskip=\muskip17
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 )
 (/usr/share/texlive/texmf-dist/tex/latex/acronym/acronym.sty
-Package: acronym 2015/03/21 v1.41 Support for acronyms (Tobias Oetiker)
+Package: acronym 2019/11/11 v1.42 Support for acronyms (Tobias Oetiker)
 
 (/usr/share/texlive/texmf-dist/tex/latex/bigfoot/suffix.sty
 Package: suffix 2006/07/15 1.5a Variant command support
 )
 (/usr/share/texlive/texmf-dist/tex/generic/xstring/xstring.sty
 (/usr/share/texlive/texmf-dist/tex/generic/xstring/xstring.tex
-\@xs@message=\write3
-\integerpart=\count115
-\decimalpart=\count116
+\integerpart=\count269
+\decimalpart=\count270
 )
-Package: xstring 2013/10/13  v1.7c  String manipulations (C Tellechea)
+Package: xstring 2019/02/06 v1.83 String manipulations (CT)
 )
 \AC@clearlist=\toks31
 )
+(/usr/share/texlive/texmf-dist/tex/generic/iftex/ifpdf.sty
+Package: ifpdf 2019/10/25 v3.4 ifpdf legacy package. Use iftex instead.
+)
 (/usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
-Package: graphicx 2017/06/01 v1.1a Enhanced LaTeX Graphics (DPC,SPQR)
+Package: graphicx 2019/11/30 v1.2a Enhanced LaTeX Graphics (DPC,SPQR)
 
 (/usr/share/texlive/texmf-dist/tex/latex/graphics/graphics.sty
-Package: graphics 2017/06/25 v1.2c Standard LaTeX Graphics (DPC,SPQR)
+Package: graphics 2019/11/30 v1.4a Standard LaTeX Graphics (DPC,SPQR)
 
 (/usr/share/texlive/texmf-dist/tex/latex/graphics/trig.sty
 Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
@@ -533,16 +216,16 @@ Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
 (/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
 File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
 )
-Package graphics Info: Driver file: pdftex.def on input line 99.
+Package graphics Info: Driver file: pdftex.def on input line 105.
 
 (/usr/share/texlive/texmf-dist/tex/latex/graphics-def/pdftex.def
 File: pdftex.def 2018/01/08 v1.0l Graphics/color driver for pdftex
 ))
-\Gin@req@height=\dimen121
-\Gin@req@width=\dimen122
+\Gin@req@height=\dimen153
+\Gin@req@width=\dimen154
 )
 (/usr/share/texlive/texmf-dist/tex/latex/graphics/color.sty
-Package: color 2016/07/10 v1.1e Standard LaTeX Color (DPC)
+Package: color 2019/11/23 v1.2a Standard LaTeX Color (DPC)
 
 (/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/color.cfg
 File: color.cfg 2016/01/02 v1.6 sample color configuration
@@ -557,16 +240,16 @@ Package tocbibind Info: The document has chapter divisions on input line 50.
 Package tocbibind Note: Using chapter style headings, unless overridden.
 
 ) (/usr/share/texlive/texmf-dist/tex/latex/minitoc/minitoc.sty
-Package: minitoc 2015/07/13 v61 Package minitoc
+Package: minitoc 2018/07/12 v62 Package minitoc
 
 (/usr/share/texlive/texmf-dist/tex/latex/minitoc/mtcmess.sty
 Package: mtcmess 2006/03/14
 )
 Package minitoc Info: I0001
-(minitoc)             *** minitoc package, version 61 ***.
-\tf@mtc=\write4
-\mtcindent=\skip46
-\mtcskipamount=\skip47
+(minitoc)             *** minitoc package, version 62 ***.
+\tf@mtc=\write3
+\mtcindent=\skip52
+\mtcskipamount=\skip53
 Package minitoc Info: I0005
 (minitoc)             compatible with hyperref.
 Package minitoc Info: I0023
@@ -574,13 +257,13 @@ Package minitoc Info: I0023
 Package minitoc Info: I0003
 (minitoc)             chapter level macros available.
 \mtc@toks=\toks32
-\mtc@strutbox=\box28
-\mtc@hstrutbox=\box29
+\mtc@strutbox=\box47
+\mtc@hstrutbox=\box48
 Package minitoc Info: I0002
 (minitoc)             Autoconfiguration of extensions.
-\openout4 = `Manuscript.mtc0'.
+\openout3 = `Manuscript.mtc0'.
 
-\openout4 = `Manuscript.mtc'.
+\openout3 = `Manuscript.mtc'.
 
 
 (./Manuscript.mtc0)
@@ -589,18 +272,18 @@ Package minitoc Info: I0012
 Package minitoc Info: I0031
 (minitoc)             ==> this version is configured for UNIX-like 
 (minitoc)                 (long extensions) file names.
-\openout4 = `Manuscript.mtc'.
+\openout3 = `Manuscript.mtc'.
 
-\openout4 = `Manuscript.mtc0'.
+\openout3 = `Manuscript.mtc0'.
 
-\c@mtc=\count117
-\c@minitocdepth=\count118
-\c@ptc=\count119
-\c@parttocdepth=\count120
-\ptcindent=\skip48
+\c@mtc=\count271
+\c@minitocdepth=\count272
+\c@ptc=\count273
+\c@parttocdepth=\count274
+\ptcindent=\skip54
 Package minitoc Info: I0010
 (minitoc)             The english language is selected.
-(minitoc)              on input line 4909.
+(minitoc)              on input line 4910.
 
 (/usr/share/texlive/texmf-dist/tex/latex/minitoc/english.mld
 File: english.mld 2006/01/13
@@ -614,233 +297,247 @@ Package: rotating 2016/08/11 v2.16d rotated objects in LaTeX
 (/usr/share/texlive/texmf-dist/tex/latex/base/ifthen.sty
 Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
 )
-\c@r@tfl@t=\count121
-\rotFPtop=\skip49
-\rotFPbot=\skip50
-\rot@float@box=\box30
+\c@r@tfl@t=\count275
+\rotFPtop=\skip55
+\rotFPbot=\skip56
+\rot@float@box=\box49
 \rot@mess@toks=\toks33
 )
 (/usr/share/texlive/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty
-Package: fancyhdr 2017/06/30 v3.9a Extensive control of page headers and footer
+Package: fancyhdr 2019/01/31 v3.10 Extensive control of page headers and footer
 s
-\f@nch@headwidth=\skip51
-\f@nch@O@elh=\skip52
-\f@nch@O@erh=\skip53
-\f@nch@O@olh=\skip54
-\f@nch@O@orh=\skip55
-\f@nch@O@elf=\skip56
-\f@nch@O@erf=\skip57
-\f@nch@O@olf=\skip58
-\f@nch@O@orf=\skip59
+\f@nch@headwidth=\skip57
+\f@nch@O@elh=\skip58
+\f@nch@O@erh=\skip59
+\f@nch@O@olh=\skip60
+\f@nch@O@orh=\skip61
+\f@nch@O@elf=\skip62
+\f@nch@O@erf=\skip63
+\f@nch@O@olf=\skip64
+\f@nch@O@orf=\skip65
 )
 (/usr/share/texlive/texmf-dist/tex/latex/colortbl/colortbl.sty
-Package: colortbl 2012/02/13 v1.0a Color table columns (DPC)
+Package: colortbl 2020/01/04 v1.0e Color table columns (DPC)
 
 (/usr/share/texlive/texmf-dist/tex/latex/tools/array.sty
-Package: array 2016/10/06 v2.4d Tabular extension package (FMi)
-\col@sep=\dimen123
-\extrarowheight=\dimen124
+Package: array 2019/08/31 v2.4l Tabular extension package (FMi)
+\col@sep=\dimen155
+\ar@mcellbox=\box50
+\extrarowheight=\dimen156
 \NC@list=\toks34
-\extratabsurround=\skip60
-\backup@length=\skip61
+\extratabsurround=\skip66
+\backup@length=\skip67
+\ar@cellbox=\box51
 )
 \everycr=\toks35
-\minrowclearance=\skip62
+\minrowclearance=\skip68
 ) (./algorithm.sty
 Package: algorithm 
 
 Document Style `algorithm' - floating environment
 (/usr/share/texlive/texmf-dist/tex/latex/float/float.sty
 Package: float 2001/11/08 v1.3d Float enhancements (AL)
-\c@float@type=\count122
+\c@float@type=\count276
 \float@exts=\toks36
-\float@box=\box31
+\float@box=\box52
 \@float@everytoks=\toks37
-\@floatcapt=\box32
+\@floatcapt=\box53
 )
 \@float@every@algorithm=\toks38
-\c@algorithm=\count123
+\c@algorithm=\count277
 ) (./algorithmic.sty
 Package: algorithmic 
 
 Document Style `algorithmic' - environment
 (/usr/share/texlive/texmf-dist/tex/latex/tools/calc.sty
-Package: calc 2014/10/28 v4.3 Infix arithmetic (KKT,FJ)
-\calc@Acount=\count124
-\calc@Bcount=\count125
-\calc@Adimen=\dimen125
-\calc@Bdimen=\dimen126
-\calc@Askip=\skip63
-\calc@Bskip=\skip64
+Package: calc 2017/05/25 v4.3 Infix arithmetic (KKT,FJ)
+\calc@Acount=\count278
+\calc@Bcount=\count279
+\calc@Adimen=\dimen157
+\calc@Bdimen=\dimen158
+\calc@Askip=\skip69
+\calc@Bskip=\skip70
 LaTeX Info: Redefining \setlength on input line 80.
 LaTeX Info: Redefining \addtolength on input line 81.
-\calc@Ccount=\count126
-\calc@Cskip=\skip65
+\calc@Ccount=\count280
+\calc@Cskip=\skip71
 )
-\c@ALC@line=\count127
-\c@ALC@rem=\count128
-\ALC@tlm=\skip66
+\c@ALC@line=\count281
+\c@ALC@rem=\count282
+\ALC@tlm=\skip72
 )
 (/usr/share/texlive/texmf-dist/tex/latex/koma-script/scrextend.sty
-Package: scrextend 2017/09/07 v3.24 KOMA-Script package (extend other classes w
+Package: scrextend 2020/01/24 v3.29 KOMA-Script package (extend other classes w
 ith features of KOMA-Script classes)
 
 (/usr/share/texlive/texmf-dist/tex/latex/koma-script/scrkbase.sty
-Package: scrkbase 2017/09/07 v3.24 KOMA-Script package (KOMA-Script-dependent b
+Package: scrkbase 2020/01/24 v3.29 KOMA-Script package (KOMA-Script-dependent b
 asics and keyval usage)
 
 (/usr/share/texlive/texmf-dist/tex/latex/koma-script/scrbase.sty
-Package: scrbase 2017/09/07 v3.24 KOMA-Script package (KOMA-Script-independent 
+Package: scrbase 2020/01/24 v3.29 KOMA-Script package (KOMA-Script-independent 
 basics and keyval usage)
 
 (/usr/share/texlive/texmf-dist/tex/latex/koma-script/scrlfile.sty
-Package: scrlfile 2017/09/07 v3.24 KOMA-Script package (loading files)
-)))
-LaTeX Info: Redefining \textsubscript on input line 1318.
-)
+Package: scrlfile 2020/01/24 v3.29 KOMA-Script package (loading files)
+))))
 (/usr/share/texlive/texmf-dist/tex/latex/subfigure/subfigure.sty
 Package: subfigure 2002/03/15 v2.1.5 subfigure package
-\subfigtopskip=\skip67
-\subfigcapskip=\skip68
-\subfigcaptopadj=\dimen127
-\subfigbottomskip=\skip69
-\subfigcapmargin=\dimen128
-\subfiglabelskip=\skip70
-\c@subfigure=\count129
-\c@lofdepth=\count130
-\c@subtable=\count131
-\c@lotdepth=\count132
+\subfigtopskip=\skip73
+\subfigcapskip=\skip74
+\subfigcaptopadj=\dimen159
+\subfigbottomskip=\skip75
+\subfigcapmargin=\dimen160
+\subfiglabelskip=\skip76
+\c@subfigure=\count283
+\c@lofdepth=\count284
+\c@subtable=\count285
+\c@lotdepth=\count286
 
 ****************************************
 * Local config file subfigure.cfg used *
 ****************************************
 (/usr/share/texlive/texmf-dist/tex/latex/subfigure/subfigure.cfg)
-\subfig@top=\skip71
-\subfig@bottom=\skip72
+\subfig@top=\skip77
+\subfig@bottom=\skip78
 )
 (/usr/share/texlive/texmf-dist/tex/latex/multirow/multirow.sty
-Package: multirow 2016/11/25 v2.2 Span multiple rows of a table
-\multirow@colwidth=\skip73
-\multirow@cntb=\count133
-\multirow@dima=\skip74
-\bigstrutjot=\dimen129
+Package: multirow 2019/05/31 v2.5 Span multiple rows of a table
+\multirow@colwidth=\skip79
+\multirow@cntb=\count287
+\multirow@dima=\skip80
+\bigstrutjot=\dimen161
 )
-\c@definition=\count134
+\c@definition=\count288
 
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/hyperref.sty
-Package: hyperref 2018/02/06 v6.86b Hypertext links for LaTeX
+Package: hyperref 2020/01/14 v7.00d Hypertext links for LaTeX
 
-(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/hobsub-hyperref.sty
-Package: hobsub-hyperref 2016/05/16 v1.14 Bundle oberdiek, subset hyperref (HO)
-
-
-(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/hobsub-generic.sty
-Package: hobsub-generic 2016/05/16 v1.14 Bundle oberdiek, subset generic (HO)
-Package: hobsub 2016/05/16 v1.14 Construct package bundles (HO)
-Package: infwarerr 2016/05/16 v1.4 Providing info/warning/error messages (HO)
-Package: ltxcmds 2016/05/16 v1.23 LaTeX kernel commands for general use (HO)
-Package: ifluatex 2016/05/16 v1.4 Provides the ifluatex switch (HO)
-Package ifluatex Info: LuaTeX not detected.
-Package hobsub Info: Skipping package `ifvtex' (already loaded).
-Package: intcalc 2016/05/16 v1.2 Expandable calculations with integers (HO)
-Package hobsub Info: Skipping package `ifpdf' (already loaded).
-Package: etexcmds 2016/05/16 v1.6 Avoid name clashes with e-TeX commands (HO)
-Package etexcmds Info: Could not find \expanded.
-(etexcmds)             That can mean that you are not using pdfTeX 1.50 or
-(etexcmds)             that some package has redefined \expanded.
-(etexcmds)             In the latter case, load this package earlier.
-Package: kvsetkeys 2016/05/16 v1.17 Key value parser (HO)
-Package: kvdefinekeys 2016/05/16 v1.4 Define keys (HO)
-Package: pdftexcmds 2018/01/21 v0.26 Utility functions of pdfTeX for LuaTeX (HO
+(/usr/share/texlive/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty
+Package: ltxcmds 2019/12/15 v1.24 LaTeX kernel commands for general use (HO)
 )
-Package pdftexcmds Info: LuaTeX not detected.
+(/usr/share/texlive/texmf-dist/tex/latex/pdftexcmds/pdftexcmds.sty
+Package: pdftexcmds 2019/11/24 v0.31 Utility functions of pdfTeX for LuaTeX (HO
+)
+
+(/usr/share/texlive/texmf-dist/tex/generic/infwarerr/infwarerr.sty
+Package: infwarerr 2019/12/03 v1.5 Providing info/warning/error messages (HO)
+)
 Package pdftexcmds Info: \pdf@primitive is available.
 Package pdftexcmds Info: \pdf@ifprimitive is available.
 Package pdftexcmds Info: \pdfdraftmode found.
-Package: pdfescape 2016/05/16 v1.14 Implements pdfTeX's escape features (HO)
-Package: bigintcalc 2016/05/16 v1.4 Expandable calculations on big integers (HO
 )
-Package: bitset 2016/05/16 v1.2 Handle bit-vector datatype (HO)
-Package: uniquecounter 2016/05/16 v1.3 Provide unlimited unique counter (HO)
+(/usr/share/texlive/texmf-dist/tex/generic/kvsetkeys/kvsetkeys.sty
+Package: kvsetkeys 2019/12/15 v1.18 Key value parser (HO)
 )
-Package hobsub Info: Skipping package `hobsub' (already loaded).
-Package: letltxmacro 2016/05/16 v1.5 Let assignment for LaTeX macros (HO)
-Package: hopatch 2016/05/16 v1.3 Wrapper for package hooks (HO)
-Package: xcolor-patch 2016/05/16 xcolor patch
-Package: atveryend 2016/05/16 v1.9 Hooks at the very end of document (HO)
-Package atveryend Info: \enddocument detected (standard20110627).
-Package: atbegshi 2016/06/09 v1.18 At begin shipout hook (HO)
-Package: refcount 2016/05/16 v3.5 Data extraction from label references (HO)
-Package: hycolor 2016/05/16 v1.8 Color options for hyperref/bookmark (HO)
+(/usr/share/texlive/texmf-dist/tex/generic/kvdefinekeys/kvdefinekeys.sty
+Package: kvdefinekeys 2019-12-19 v1.6 Define keys (HO)
 )
-(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/auxhook.sty
-Package: auxhook 2016/05/16 v1.4 Hooks for auxiliary files (HO)
+(/usr/share/texlive/texmf-dist/tex/generic/pdfescape/pdfescape.sty
+Package: pdfescape 2019/12/09 v1.15 Implements pdfTeX's escape features (HO)
 )
-(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/kvoptions.sty
-Package: kvoptions 2016/05/16 v3.12 Key value format for package options (HO)
+(/usr/share/texlive/texmf-dist/tex/latex/hycolor/hycolor.sty
+Package: hycolor 2020-01-27 v1.10 Color options for hyperref/bookmark (HO)
 )
-\@linkdim=\dimen130
-\Hy@linkcounter=\count135
-\Hy@pagecounter=\count136
+(/usr/share/texlive/texmf-dist/tex/latex/letltxmacro/letltxmacro.sty
+Package: letltxmacro 2019/12/03 v1.6 Let assignment for LaTeX macros (HO)
+)
+(/usr/share/texlive/texmf-dist/tex/latex/auxhook/auxhook.sty
+Package: auxhook 2019-12-17 v1.6 Hooks for auxiliary files (HO)
+)
+(/usr/share/texlive/texmf-dist/tex/latex/kvoptions/kvoptions.sty
+Package: kvoptions 2019/11/29 v3.13 Key value format for package options (HO)
+)
+\@linkdim=\dimen162
+\Hy@linkcounter=\count289
+\Hy@pagecounter=\count290
 
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/pd1enc.def
-File: pd1enc.def 2018/02/06 v6.86b Hyperref: PDFDocEncoding definition (HO)
+File: pd1enc.def 2020/01/14 v7.00d Hyperref: PDFDocEncoding definition (HO)
 Now handling font encoding PD1 ...
 ... no UTF-8 mapping file for font encoding PD1
 )
-\Hy@SavedSpaceFactor=\count137
-
-(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/hyperref.cfg
-File: hyperref.cfg 2002/06/06 v1.2 hyperref configuration of TeXLive
+(/usr/share/texlive/texmf-dist/tex/generic/intcalc/intcalc.sty
+Package: intcalc 2019/12/15 v1.3 Expandable calculations with integers (HO)
 )
-Package hyperref Info: Option `hyperindex' set `true' on input line 4383.
-Package hyperref Info: Hyper figures OFF on input line 4509.
-Package hyperref Info: Link nesting OFF on input line 4514.
-Package hyperref Info: Hyper index ON on input line 4517.
-Package hyperref Info: Plain pages OFF on input line 4524.
-Package hyperref Info: Backreferencing ON on input line 4527.
+(/usr/share/texlive/texmf-dist/tex/generic/etexcmds/etexcmds.sty
+Package: etexcmds 2019/12/15 v1.7 Avoid name clashes with e-TeX commands (HO)
+)
+\Hy@SavedSpaceFactor=\count291
+\pdfmajorversion=\count292
+Package hyperref Info: Option `hyperindex' set `true' on input line 4421.
+Package hyperref Info: Hyper figures OFF on input line 4547.
+Package hyperref Info: Link nesting OFF on input line 4552.
+Package hyperref Info: Hyper index ON on input line 4555.
+Package hyperref Info: Plain pages OFF on input line 4562.
+Package hyperref Info: Backreferencing ON on input line 4565.
 Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
-Package hyperref Info: Bookmarks ON on input line 4762.
+Package hyperref Info: Bookmarks ON on input line 4800.
 
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/backref.sty
-Package: backref 2016/05/21 v1.39 Bibliographical back referencing
+Package: backref 2020/01/14 v1.40 Bibliographical back referencing
 
-(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/rerunfilecheck.sty
-Package: rerunfilecheck 2016/05/16 v1.8 Rerun checks for auxiliary files (HO)
-Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
-82.
+(/usr/share/texlive/texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck.sty
+Package: rerunfilecheck 2019/12/05 v1.9 Rerun checks for auxiliary files (HO)
+
+(/usr/share/texlive/texmf-dist/tex/latex/atveryend/atveryend.sty
+Package: atveryend 2019-12-11 v1.11 Hooks at the very end of document (HO)
+Package atveryend Info: \enddocument detected (standard20110627).
+)
+(/usr/share/texlive/texmf-dist/tex/generic/uniquecounter/uniquecounter.sty
+Package: uniquecounter 2019/12/15 v1.4 Provide unlimited unique counter (HO)
+
+(/usr/share/texlive/texmf-dist/tex/generic/bigintcalc/bigintcalc.sty
+Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO
+)
 ))
-\c@Hy@tempcnt=\count138
-LaTeX Info: Redefining \url on input line 5115.
-\XeTeXLinkMargin=\dimen131
-\Fld@menulength=\count139
-\Field@Width=\dimen132
-\Fld@charsize=\dimen133
-Package hyperref Info: Hyper figures OFF on input line 6369.
-Package hyperref Info: Link nesting OFF on input line 6374.
-Package hyperref Info: Hyper index ON on input line 6377.
-Package hyperref Info: backreferencing ON on input line 6382.
-Package hyperref Info: Link coloring OFF on input line 6389.
-Package hyperref Info: Link coloring with OCG OFF on input line 6394.
-Package hyperref Info: PDF/A mode OFF on input line 6399.
-LaTeX Info: Redefining \ref on input line 6439.
-LaTeX Info: Redefining \pageref on input line 6443.
-\Hy@abspage=\count140
-\c@Item=\count141
-\c@Hfootnote=\count142
+Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
+86.
+))
+\c@Hy@tempcnt=\count293
+LaTeX Info: Redefining \url on input line 5159.
+\XeTeXLinkMargin=\dimen163
+
+(/usr/share/texlive/texmf-dist/tex/generic/bitset/bitset.sty
+Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
+)
+\Fld@menulength=\count294
+\Field@Width=\dimen164
+\Fld@charsize=\dimen165
+Package hyperref Info: Hyper figures OFF on input line 6430.
+Package hyperref Info: Link nesting OFF on input line 6435.
+Package hyperref Info: Hyper index ON on input line 6438.
+Package hyperref Info: backreferencing ON on input line 6443.
+Package hyperref Info: Link coloring OFF on input line 6450.
+Package hyperref Info: Link coloring with OCG OFF on input line 6455.
+Package hyperref Info: PDF/A mode OFF on input line 6460.
+LaTeX Info: Redefining \ref on input line 6500.
+LaTeX Info: Redefining \pageref on input line 6504.
+
+(/usr/share/texlive/texmf-dist/tex/generic/atbegshi/atbegshi.sty
+Package: atbegshi 2019/12/05 v1.19 At begin shipout hook (HO)
+)
+\Hy@abspage=\count295
+\c@Item=\count296
+\c@Hfootnote=\count297
 )
 Package hyperref Info: Driver (autodetected): hpdftex.
 
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/hpdftex.def
-File: hpdftex.def 2018/02/06 v6.86b Hyperref driver for pdfTeX
-\Fld@listcount=\count143
-\c@bookmark@seq@number=\count144
-\Hy@SectionHShift=\skip75
+File: hpdftex.def 2020/01/14 v7.00d Hyperref driver for pdfTeX
+\Fld@listcount=\count298
+\c@bookmark@seq@number=\count299
+\Hy@SectionHShift=\skip81
 )
 Package hyperref Info: Option `bookmarksopen' set `true' on input line 213.
 Package hyperref Info: Option `pdfmenubar' set `true' on input line 213.
 Package hyperref Info: Option `colorlinks' set `true' on input line 213.
 Package hyperref Info: Option `pdffitwindow' set `true' on input line 213.
+)
+(/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-pdfmode.def
+File: l3backend-pdfmode.def 2020-02-03 L3 backend support: PDF mode
+\l__kernel_color_stack_int=\count300
+\l__pdf_internal_box=\box54
 )
 (./Manuscript.aux (./TitlePage.aux) (./Acronyms.aux) (./Chapter1.aux)
 (./Chapter2.aux
@@ -906,11 +603,13 @@ LaTeX Warning: Label `chap:intro' multiply defined.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 6.
 LaTeX Font Info:    ... okay on input line 6.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 6.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 6.
 LaTeX Font Info:    ... okay on input line 6.
 LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 6.
 LaTeX Font Info:    ... okay on input line 6.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 6.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 6.
+LaTeX Font Info:    ... okay on input line 6.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 6.
 LaTeX Font Info:    ... okay on input line 6.
 LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 6.
 LaTeX Font Info:    ... okay on input line 6.
@@ -955,40 +654,32 @@ LaTeX Font Info:    ... okay on input line 6.
 
 (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count145
-\scratchdimen=\dimen134
-\scratchbox=\box33
-\nofMPsegments=\count146
-\nofMParguments=\count147
+\scratchcounter=\count301
+\scratchdimen=\dimen166
+\scratchbox=\box55
+\nofMPsegments=\count302
+\nofMParguments=\count303
 \everyMPshowfont=\toks39
-\MPscratchCnt=\count148
-\MPscratchDim=\dimen135
-\MPnumerator=\count149
-\makeMPintoPDFobject=\count150
+\MPscratchCnt=\count304
+\MPscratchDim=\dimen167
+\MPnumerator=\count305
+\makeMPintoPDFobject=\count306
 \everyMPtoPDFconversion=\toks40
-) (/usr/share/texlive/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
-Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
-
-(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/grfext.sty
-Package: grfext 2016/05/16 v1.2 Manage graphics extensions (HO)
-)
+) (/usr/share/texlive/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
+Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
-38.
-Package grfext Info: Graphics extension search list:
-(grfext)             [.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPE
-G,.JBIG2,.JB2,.eps]
-(grfext)             \AppendGraphicsExtensions on input line 456.
+85.
 
 (/usr/share/texlive/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-\c@minilofdepth=\count151
-\c@minilotdepth=\count152
-\c@partlofdepth=\count153
-\c@partlotdepth=\count154
-\c@sectlofdepth=\count155
-\c@sectlotdepth=\count156
+\c@minilofdepth=\count307
+\c@minilotdepth=\count308
+\c@partlofdepth=\count309
+\c@partlotdepth=\count310
+\c@sectlofdepth=\count311
+\c@sectlotdepth=\count312
 Package minitoc(hints) Info: I0049
 (minitoc(hints))             ==> You requested the hints option. 
 (minitoc(hints))             Some hints are eventually given below.
@@ -996,24 +687,27 @@ Package minitoc(hints) Info: I0046
 (minitoc(hints))             --- The tocbibind package is loaded. 
 (minitoc(hints))             See the minitoc package documentation 
 (minitoc(hints))             for specific precautions.
-\AtBeginShipoutBox=\box34
+\AtBeginShipoutBox=\box56
 Package hyperref Info: Link coloring ON on input line 6.
 
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
-Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
+Package: nameref 2019/09/16 v2.46 Cross-referencing by name of section
 
-(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
-Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
+(/usr/share/texlive/texmf-dist/tex/latex/refcount/refcount.sty
+Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
 )
-\c@section@level=\count157
+(/usr/share/texlive/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty
+Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
+)
+\c@section@level=\count313
 )
 LaTeX Info: Redefining \ref on input line 6.
 LaTeX Info: Redefining \pageref on input line 6.
 LaTeX Info: Redefining \nameref on input line 6.
 
 (./Manuscript.out) (./Manuscript.out)
-\@outlinefile=\write5
-\openout5 = `Manuscript.out'.
+\@outlinefile=\write4
+\openout4 = `Manuscript.out'.
 
 \openout2 = `TitlePage.aux'.
 
@@ -1037,53 +731,53 @@ Package minitoc Info: I0024
 (minitoc)             PREPARING MINITOCS FROM Manuscript.toc on input line 28.
 Package minitoc Info: I0033
 (minitoc)             Writing Manuscript.mtc1.
-\openout4 = `Manuscript.mtc1'.
+\openout3 = `Manuscript.mtc1'.
 
 Package minitoc Info: I0033
 (minitoc)             Writing Manuscript.mtc2.
-\openout4 = `Manuscript.mtc2'.
+\openout3 = `Manuscript.mtc2'.
 
 Package minitoc Info: I0033
 (minitoc)             Writing Manuscript.mtc3.
-\openout4 = `Manuscript.mtc3'.
+\openout3 = `Manuscript.mtc3'.
 
 Package minitoc Info: I0033
 (minitoc)             Writing Manuscript.mtc4.
-\openout4 = `Manuscript.mtc4'.
+\openout3 = `Manuscript.mtc4'.
 
 Package minitoc Info: I0033
 (minitoc)             Writing Manuscript.mtc5.
-\openout4 = `Manuscript.mtc5'.
+\openout3 = `Manuscript.mtc5'.
 
 Package minitoc Info: I0033
 (minitoc)             Writing Manuscript.mtc6.
-\openout4 = `Manuscript.mtc6'.
+\openout3 = `Manuscript.mtc6'.
 
-\openout4 = `Manuscript.mtc'.
+\openout3 = `Manuscript.mtc'.
 
 Package minitoc Info: I0033
 (minitoc)             Writing Manuscript.mtc7.
-\openout4 = `Manuscript.mtc7'.
+\openout3 = `Manuscript.mtc7'.
 
 Package minitoc Info: I0033
 (minitoc)             Writing Manuscript.mtc8.
-\openout4 = `Manuscript.mtc8'.
+\openout3 = `Manuscript.mtc8'.
 
  [1] [2
 
 ]
 (./Manuscript.toc
-LaTeX Font Info:    Try loading font information for U+msa on input line 4.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 4.
  (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 4.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 4.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) [3])
-\tf@toc=\write6
-\openout6 = `Manuscript.toc'.
+\tf@toc=\write5
+\openout5 = `Manuscript.toc'.
 
  [4]
 \openout2 = `Acronyms.aux'.
@@ -1103,49 +797,98 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 
 ]
 Chapter 1.
-\openout4 = `Manuscript.mtc'.
+\openout3 = `Manuscript.mtc'.
 
-\openout4 = `Manuscript.mtc'.
+\openout3 = `Manuscript.mtc'.
 
 (./Manuscript.mtc2)
-Underfull \hbox (badness 2617) in paragraph at lines 16--21
+Underfull \hbox (badness 2617) in paragraph at lines 17--22
 []\T1/cmr/m/n/10.95 Historical aerial im-ages have reg-u-larly been ac-quired s
 ince the 1920's
  []
 
 
-Underfull \hbox (badness 1728) in paragraph at lines 16--21
+Underfull \hbox (badness 1728) in paragraph at lines 17--22
 \T1/cmr/m/n/10.95 by map-ping, mil-i-tary or cadas-tral agen-cies all over the 
 world. A mass
  []
 
 
-Underfull \hbox (badness 2837) in paragraph at lines 22--25
+Underfull \hbox (badness 2837) in paragraph at lines 23--26
 []\T1/cmr/m/n/10.95 , []][], (ii) re-cent or-thopho-tos and DEM
  []
 
 [3]
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 26.
- (/usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd
-File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
-)
-LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10.95> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 26.
-) [4]
+Underfull \hbox (badness 10000) in paragraph at lines 42--45
+
+ []
+
+<images/Chapitre3/AppearanceChangeRGBL.png, id=289, 926.46124pt x 693.59125pt>
+File: images/Chapitre3/AppearanceChangeRGBL.png Graphic file (type png)
+<use images/Chapitre3/AppearanceChangeRGBL.png>
+Package pdftex.def Info: images/Chapitre3/AppearanceChangeRGBL.png  used on inp
+ut line 53.
+(pdftex.def)             Requested size: 176.407pt x 132.05887pt.
+<images/Chapitre3/AppearanceChangeRGBR.png, id=291, 922.44624pt x 694.595pt>
+File: images/Chapitre3/AppearanceChangeRGBR.png Graphic file (type png)
+<use images/Chapitre3/AppearanceChangeRGBR.png>
+Package pdftex.def Info: images/Chapitre3/AppearanceChangeRGBR.png  used on inp
+ut line 59.
+(pdftex.def)             Requested size: 176.407pt x 132.8329pt.
+<images/Chapitre3/AppearanceChangeDSML.png, id=292, 924.45375pt x 695.59875pt>
+File: images/Chapitre3/AppearanceChangeDSML.png Graphic file (type png)
+<use images/Chapitre3/AppearanceChangeDSML.png>
+Package pdftex.def Info: images/Chapitre3/AppearanceChangeDSML.png  used on inp
+ut line 65.
+(pdftex.def)             Requested size: 176.407pt x 132.72768pt.
+<images/Chapitre3/AppearanceChangeDSMR.png, id=293, 922.44624pt x 694.595pt>
+File: images/Chapitre3/AppearanceChangeDSMR.png Graphic file (type png)
+<use images/Chapitre3/AppearanceChangeDSMR.png>
+Package pdftex.def Info: images/Chapitre3/AppearanceChangeDSMR.png  used on inp
+ut line 71.
+(pdftex.def)             Requested size: 176.407pt x 132.8329pt.
+<images/Chapitre3/PoorlyTexturedRGBL.png, id=294, 633.36626pt x 476.78125pt>
+File: images/Chapitre3/PoorlyTexturedRGBL.png Graphic file (type png)
+<use images/Chapitre3/PoorlyTexturedRGBL.png>
+Package pdftex.def Info: images/Chapitre3/PoorlyTexturedRGBL.png  used on input
+ line 85.
+(pdftex.def)             Requested size: 176.407pt x 132.79214pt.
+<images/Chapitre3/PoorlyTexturedRGBR.png, id=295, 633.36626pt x 476.78125pt>
+File: images/Chapitre3/PoorlyTexturedRGBR.png Graphic file (type png)
+<use images/Chapitre3/PoorlyTexturedRGBR.png>
+Package pdftex.def Info: images/Chapitre3/PoorlyTexturedRGBR.png  used on input
+ line 91.
+(pdftex.def)             Requested size: 176.407pt x 132.79214pt.
+<images/Chapitre3/PoorlyTexturedDSML.png, id=296, 638.385pt x 477.785pt>
+File: images/Chapitre3/PoorlyTexturedDSML.png Graphic file (type png)
+<use images/Chapitre3/PoorlyTexturedDSML.png>
+Package pdftex.def Info: images/Chapitre3/PoorlyTexturedDSML.png  used on input
+ line 97.
+(pdftex.def)             Requested size: 176.407pt x 132.02919pt.
+<images/Chapitre3/PoorlyTexturedDSMR.png, id=297, 635.37375pt x 473.77pt>
+File: images/Chapitre3/PoorlyTexturedDSMR.png Graphic file (type png)
+<use images/Chapitre3/PoorlyTexturedDSMR.png>
+Package pdftex.def Info: images/Chapitre3/PoorlyTexturedDSMR.png  used on input
+ line 103.
+(pdftex.def)             Requested size: 176.407pt x 131.5414pt.
+) [4] [5 <./images/Chapitre3/AppearanceChangeRGBL.png> <./images/Chapitre3/Appe
+aranceChangeRGBR.png> <./images/Chapitre3/AppearanceChangeDSML.png> <./images/C
+hapitre3/AppearanceChangeDSMR.png>] [6 <./images/Chapitre3/PoorlyTexturedRGBL.p
+ng> <./images/Chapitre3/PoorlyTexturedRGBR.png> <./images/Chapitre3/PoorlyTextu
+redDSML.png> <./images/Chapitre3/PoorlyTexturedDSMR.png>]
 \openout2 = `Chapter2.aux'.
 
-
-(./Chapter2.tex
+ (./Chapter2.tex
 Chapter 2.
-\openout4 = `Manuscript.mtc'.
+\openout3 = `Manuscript.mtc'.
 
-\openout4 = `Manuscript.mtc'.
+\openout3 = `Manuscript.mtc'.
 
-(./Manuscript.mtc3) [5
+(./Manuscript.mtc3) [7
 
 
 
-] [6]
+] [8]
 Underfull \hbox (badness 1303) in paragraph at lines 36--39
 []\T1/cmr/m/n/10.95 Early learned meth-ods (LIFT  [[]][], L2-Net [[]][],
  []
@@ -1156,7 +899,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 36--39
  []
 
 
-LaTeX Warning: Reference `comparison' on page 7 undefined on input line 45.
+LaTeX Warning: Reference `comparison' on page 9 undefined on input line 45.
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 44--53
@@ -1187,7 +930,7 @@ Overfull \hbox (95.66226pt too wide) in paragraph at lines 44--53
 \T1/cmr/m/n/10.95 [[]][], [[]][], [[]][], [[]][], [[]][].
  []
 
-[7]
+[9]
 Underfull \hbox (badness 1158) in paragraph at lines 64--67
 []\T1/cmr/m/n/10.95 Various deep learn-ing meth-ods have also been de-vel-oped 
 to han-dle the
@@ -1199,76 +942,76 @@ Underfull \hbox (badness 4036) in paragraph at lines 64--67
 t of RANSAC)
  []
 
-[8]) [9]
+[10]) [11]
 \openout2 = `Chapter3.aux'.
 
- (./Chapter3.tex [10
+ (./Chapter3.tex [12
 
 
 
 ]
 Chapter 3.
-\openout4 = `Manuscript.mtc'.
+\openout3 = `Manuscript.mtc'.
 
-\openout4 = `Manuscript.mtc'.
+\openout3 = `Manuscript.mtc'.
 
 (./Manuscript.mtc4)
-Underfull \hbox (badness 10000) in paragraph at lines 14--20
+Underfull \hbox (badness 10000) in paragraph at lines 15--21
 
  []
 
-<images/Chapitre3/R3D.png, id=458, 915.9018pt x 274.626pt>
+<images/Chapitre3/R3D.png, id=511, 915.9018pt x 274.626pt>
 File: images/Chapitre3/R3D.png Graphic file (type png)
 <use images/Chapitre3/R3D.png>
-Package pdftex.def Info: images/Chapitre3/R3D.png  used on input line 26.
+Package pdftex.def Info: images/Chapitre3/R3D.png  used on input line 27.
 (pdftex.def)             Requested size: 395.15166pt x 118.48495pt.
-<images/Chapitre3/dsm.png, id=460, 1026.7158pt x 320.397pt>
+<images/Chapitre3/dsm.png, id=512, 1026.7158pt x 320.397pt>
 File: images/Chapitre3/dsm.png Graphic file (type png)
 <use images/Chapitre3/dsm.png>
-Package pdftex.def Info: images/Chapitre3/dsm.png  used on input line 38.
+Package pdftex.def Info: images/Chapitre3/dsm.png  used on input line 39.
 (pdftex.def)             Requested size: 395.15166pt x 123.31166pt.
-[11]
-<images/Chapitre3/ortho.png, id=466, 1635.10875pt x 510.90875pt>
+[13]
+<images/Chapitre3/ortho.png, id=517, 1635.10875pt x 510.90875pt>
 File: images/Chapitre3/ortho.png Graphic file (type png)
 <use images/Chapitre3/ortho.png>
-Package pdftex.def Info: images/Chapitre3/ortho.png  used on input line 46.
+Package pdftex.def Info: images/Chapitre3/ortho.png  used on input line 47.
 (pdftex.def)             Requested size: 395.15166pt x 123.47035pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 57--59
+Underfull \hbox (badness 10000) in paragraph at lines 58--60
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 63--67
+Underfull \hbox (badness 10000) in paragraph at lines 64--68
 
  []
 
-[12 <./images/Chapitre3/R3D.png> <./images/Chapitre3/dsm.png>]
+[14 <./images/Chapitre3/R3D.png> <./images/Chapitre3/dsm.png>]
 <images/Chapitre3/Pseudo-Ortho-MEC-Malt_Tapas_1954_Ortho-MEC-Malt_2014.png, id=
-480, 1413.28pt x 501.875pt>
+530, 1413.28pt x 501.875pt>
 File: images/Chapitre3/Pseudo-Ortho-MEC-Malt_Tapas_1954_Ortho-MEC-Malt_2014.png
  Graphic file (type png)
 <use images/Chapitre3/Pseudo-Ortho-MEC-Malt_Tapas_1954_Ortho-MEC-Malt_2014.png>
 
 Package pdftex.def Info: images/Chapitre3/Pseudo-Ortho-MEC-Malt_Tapas_1954_Orth
-o-MEC-Malt_2014.png  used on input line 82.
+o-MEC-Malt_2014.png  used on input line 83.
 (pdftex.def)             Requested size: 250.38434pt x 88.90921pt.
 <images/Chapitre3/PlotCurves_Pseudo-Ortho-MEC-Malt_Tapas_1954_Ortho-MEC-Malt_20
-14.png, id=481, 462.528pt x 346.896pt>
+14.png, id=531, 462.528pt x 346.896pt>
 File: images/Chapitre3/PlotCurves_Pseudo-Ortho-MEC-Malt_Tapas_1954_Ortho-MEC-Ma
 lt_2014.png Graphic file (type png)
 <use images/Chapitre3/PlotCurves_Pseudo-Ortho-MEC-Malt_Tapas_1954_Ortho-MEC-Mal
 t_2014.png>
 Package pdftex.def Info: images/Chapitre3/PlotCurves_Pseudo-Ortho-MEC-Malt_Tapa
-s_1954_Ortho-MEC-Malt_2014.png  used on input line 88.
+s_1954_Ortho-MEC-Malt_2014.png  used on input line 89.
 (pdftex.def)             Requested size: 136.5733pt x 102.4287pt.
 
-Overfull \hbox (18.02661pt too wide) in paragraph at lines 88--88
+Overfull \hbox (18.02661pt too wide) in paragraph at lines 89--89
  [][] 
  []
 
 <images/Chapitre3/Pseudo-Homol-SIFT2Step_1954-2014-Rough-2DRANSAC-GlobalR3D-Pil
-eImg_Ortho-MEC-Malt_Tapas_1954_Ortho-MEC-Malt_2014.png, id=482, 1413.28pt x 501
+eImg_Ortho-MEC-Malt_Tapas_1954_Ortho-MEC-Malt_2014.png, id=532, 1413.28pt x 501
 .875pt>
 File: images/Chapitre3/Pseudo-Homol-SIFT2Step_1954-2014-Rough-2DRANSAC-GlobalR3
 D-PileImg_Ortho-MEC-Malt_Tapas_1954_Ortho-MEC-Malt_2014.png Graphic file (type 
@@ -1277,152 +1020,152 @@ png)
 -PileImg_Ortho-MEC-Malt_Tapas_1954_Ortho-MEC-Malt_2014.png>
 Package pdftex.def Info: images/Chapitre3/Pseudo-Homol-SIFT2Step_1954-2014-Roug
 h-2DRANSAC-GlobalR3D-PileImg_Ortho-MEC-Malt_Tapas_1954_Ortho-MEC-Malt_2014.png 
- used on input line 94.
+ used on input line 95.
 (pdftex.def)             Requested size: 193.47882pt x 68.70744pt.
 
-Overfull \hbox (3.80772pt too wide) in paragraph at lines 94--94
+Overfull \hbox (3.80772pt too wide) in paragraph at lines 95--95
  [][] 
  []
 
 <images/Chapitre3/Pseudo-Homol-SuperGlue_1954-2014-GlobalR3D-PileImg_Ortho-MEC-
-Malt_Tapas_1954_Ortho-MEC-Malt_2014.png, id=483, 1413.28pt x 501.875pt>
+Malt_Tapas_1954_Ortho-MEC-Malt_2014.png, id=533, 1413.28pt x 501.875pt>
 File: images/Chapitre3/Pseudo-Homol-SuperGlue_1954-2014-GlobalR3D-PileImg_Ortho
 -MEC-Malt_Tapas_1954_Ortho-MEC-Malt_2014.png Graphic file (type png)
 <use images/Chapitre3/Pseudo-Homol-SuperGlue_1954-2014-GlobalR3D-PileImg_Ortho-
 MEC-Malt_Tapas_1954_Ortho-MEC-Malt_2014.png>
 Package pdftex.def Info: images/Chapitre3/Pseudo-Homol-SuperGlue_1954-2014-Glob
 alR3D-PileImg_Ortho-MEC-Malt_Tapas_1954_Ortho-MEC-Malt_2014.png  used on input 
-line 100.
+line 101.
 (pdftex.def)             Requested size: 193.47882pt x 68.70744pt.
 
-Overfull \hbox (3.80772pt too wide) in paragraph at lines 100--100
+Overfull \hbox (3.80772pt too wide) in paragraph at lines 101--101
  [][] 
  []
 
-<images/Chapitre3/Ortho-MEC-Malt_Tapas_1954_Ortho-MEC-Malt_2014.png, id=484, 14
+<images/Chapitre3/Ortho-MEC-Malt_Tapas_1954_Ortho-MEC-Malt_2014.png, id=534, 14
 13.28pt x 501.875pt>
 File: images/Chapitre3/Ortho-MEC-Malt_Tapas_1954_Ortho-MEC-Malt_2014.png Graphi
 c file (type png)
 <use images/Chapitre3/Ortho-MEC-Malt_Tapas_1954_Ortho-MEC-Malt_2014.png>
 Package pdftex.def Info: images/Chapitre3/Ortho-MEC-Malt_Tapas_1954_Ortho-MEC-M
-alt_2014.png  used on input line 115.
+alt_2014.png  used on input line 116.
 (pdftex.def)             Requested size: 250.38434pt x 88.90921pt.
 <images/Chapitre3/PlotCurves_Ortho-MEC-Malt_Tapas_1954_Ortho-MEC-Malt_2014.png,
- id=485, 462.528pt x 346.896pt>
+ id=535, 462.528pt x 346.896pt>
 File: images/Chapitre3/PlotCurves_Ortho-MEC-Malt_Tapas_1954_Ortho-MEC-Malt_2014
 .png Graphic file (type png)
 <use images/Chapitre3/PlotCurves_Ortho-MEC-Malt_Tapas_1954_Ortho-MEC-Malt_2014.
 png>
 Package pdftex.def Info: images/Chapitre3/PlotCurves_Ortho-MEC-Malt_Tapas_1954_
-Ortho-MEC-Malt_2014.png  used on input line 121.
+Ortho-MEC-Malt_2014.png  used on input line 122.
 (pdftex.def)             Requested size: 136.5733pt x 102.4287pt.
 
-Overfull \hbox (18.02661pt too wide) in paragraph at lines 121--121
+Overfull \hbox (18.02661pt too wide) in paragraph at lines 122--122
  [][] 
  []
 
 <images/Chapitre3/Homol-SIFT-2DRANSAC_Ortho-MEC-Malt_Tapas_1954_Ortho-MEC-Malt_
-2014.png, id=486, 1413.28pt x 501.875pt>
+2014.png, id=536, 1413.28pt x 501.875pt>
 File: images/Chapitre3/Homol-SIFT-2DRANSAC_Ortho-MEC-Malt_Tapas_1954_Ortho-MEC-
 Malt_2014.png Graphic file (type png)
 <use images/Chapitre3/Homol-SIFT-2DRANSAC_Ortho-MEC-Malt_Tapas_1954_Ortho-MEC-M
 alt_2014.png>
 Package pdftex.def Info: images/Chapitre3/Homol-SIFT-2DRANSAC_Ortho-MEC-Malt_Ta
-pas_1954_Ortho-MEC-Malt_2014.png  used on input line 127.
+pas_1954_Ortho-MEC-Malt_2014.png  used on input line 128.
 (pdftex.def)             Requested size: 193.47882pt x 68.70744pt.
 
-Overfull \hbox (3.80772pt too wide) in paragraph at lines 127--127
+Overfull \hbox (3.80772pt too wide) in paragraph at lines 128--128
  [][] 
  []
 
 <images/Chapitre3/Homol-SubPatch_R270-2DRANSAC_Ortho-MEC-Malt_Tapas_1954_Ortho-
-MEC-Malt_2014.png, id=487, 1413.28pt x 501.875pt>
+MEC-Malt_2014.png, id=537, 1413.28pt x 501.875pt>
 File: images/Chapitre3/Homol-SubPatch_R270-2DRANSAC_Ortho-MEC-Malt_Tapas_1954_O
 rtho-MEC-Malt_2014.png Graphic file (type png)
 <use images/Chapitre3/Homol-SubPatch_R270-2DRANSAC_Ortho-MEC-Malt_Tapas_1954_Or
 tho-MEC-Malt_2014.png>
 Package pdftex.def Info: images/Chapitre3/Homol-SubPatch_R270-2DRANSAC_Ortho-ME
-C-Malt_Tapas_1954_Ortho-MEC-Malt_2014.png  used on input line 133.
+C-Malt_Tapas_1954_Ortho-MEC-Malt_2014.png  used on input line 134.
 (pdftex.def)             Requested size: 193.47882pt x 68.70744pt.
 
-Overfull \hbox (3.80772pt too wide) in paragraph at lines 133--133
+Overfull \hbox (3.80772pt too wide) in paragraph at lines 134--134
  [][] 
  []
 
-<images/Chapitre3/MEC-Malt_Tapas_1954_MEC-Malt_2014.png, id=488, 1413.28pt x 50
+<images/Chapitre3/MEC-Malt_Tapas_1954_MEC-Malt_2014.png, id=538, 1413.28pt x 50
 1.875pt>
 File: images/Chapitre3/MEC-Malt_Tapas_1954_MEC-Malt_2014.png Graphic file (type
  png)
 <use images/Chapitre3/MEC-Malt_Tapas_1954_MEC-Malt_2014.png>
 Package pdftex.def Info: images/Chapitre3/MEC-Malt_Tapas_1954_MEC-Malt_2014.png
-  used on input line 146.
+  used on input line 147.
 (pdftex.def)             Requested size: 250.38434pt x 88.90921pt.
-<images/Chapitre3/PlotCurves_MEC-Malt_Tapas_1954_MEC-Malt_2014.png, id=489, 462
+<images/Chapitre3/PlotCurves_MEC-Malt_Tapas_1954_MEC-Malt_2014.png, id=539, 462
 .528pt x 346.896pt>
 File: images/Chapitre3/PlotCurves_MEC-Malt_Tapas_1954_MEC-Malt_2014.png Graphic
  file (type png)
 <use images/Chapitre3/PlotCurves_MEC-Malt_Tapas_1954_MEC-Malt_2014.png>
 Package pdftex.def Info: images/Chapitre3/PlotCurves_MEC-Malt_Tapas_1954_MEC-Ma
-lt_2014.png  used on input line 152.
+lt_2014.png  used on input line 153.
 (pdftex.def)             Requested size: 136.5733pt x 102.4287pt.
 
-Overfull \hbox (18.02661pt too wide) in paragraph at lines 152--152
+Overfull \hbox (18.02661pt too wide) in paragraph at lines 153--153
  [][] 
  []
 
 <images/Chapitre3/Homol-SIFT-2DRANSAC_MEC-Malt_Tapas_1954_MEC-Malt_2014.png, id
-=490, 1413.28pt x 501.875pt>
+=540, 1413.28pt x 501.875pt>
 File: images/Chapitre3/Homol-SIFT-2DRANSAC_MEC-Malt_Tapas_1954_MEC-Malt_2014.pn
 g Graphic file (type png)
 <use images/Chapitre3/Homol-SIFT-2DRANSAC_MEC-Malt_Tapas_1954_MEC-Malt_2014.png
 >
 Package pdftex.def Info: images/Chapitre3/Homol-SIFT-2DRANSAC_MEC-Malt_Tapas_19
-54_MEC-Malt_2014.png  used on input line 158.
+54_MEC-Malt_2014.png  used on input line 159.
 (pdftex.def)             Requested size: 193.47882pt x 68.70744pt.
 
-Overfull \hbox (3.80772pt too wide) in paragraph at lines 158--158
+Overfull \hbox (3.80772pt too wide) in paragraph at lines 159--159
  [][] 
  []
 
 <images/Chapitre3/Homol-SubPatch_R270-2DRANSAC_MEC-Malt_Tapas_1954_MEC-Malt_201
-4.png, id=491, 1413.28pt x 501.875pt>
+4.png, id=541, 1413.28pt x 501.875pt>
 File: images/Chapitre3/Homol-SubPatch_R270-2DRANSAC_MEC-Malt_Tapas_1954_MEC-Mal
 t_2014.png Graphic file (type png)
 <use images/Chapitre3/Homol-SubPatch_R270-2DRANSAC_MEC-Malt_Tapas_1954_MEC-Malt
 _2014.png>
 Package pdftex.def Info: images/Chapitre3/Homol-SubPatch_R270-2DRANSAC_MEC-Malt
-_Tapas_1954_MEC-Malt_2014.png  used on input line 164.
+_Tapas_1954_MEC-Malt_2014.png  used on input line 165.
 (pdftex.def)             Requested size: 193.47882pt x 68.70744pt.
 
-Overfull \hbox (3.80772pt too wide) in paragraph at lines 164--164
+Overfull \hbox (3.80772pt too wide) in paragraph at lines 165--165
  [][] 
  []
 
 <images/Chapitre3/Pseudo-Ortho-MEC-Malt_Tapas_1966_Ortho-MEC-Malt_2014.png, id=
-492, 1198.4775pt x 501.875pt>
+542, 1198.4775pt x 501.875pt>
 File: images/Chapitre3/Pseudo-Ortho-MEC-Malt_Tapas_1966_Ortho-MEC-Malt_2014.png
  Graphic file (type png)
 <use images/Chapitre3/Pseudo-Ortho-MEC-Malt_Tapas_1966_Ortho-MEC-Malt_2014.png>
 
 Package pdftex.def Info: images/Chapitre3/Pseudo-Ortho-MEC-Malt_Tapas_1966_Orth
-o-MEC-Malt_2014.png  used on input line 179.
+o-MEC-Malt_2014.png  used on input line 180.
 (pdftex.def)             Requested size: 230.46748pt x 96.50594pt.
 <images/Chapitre3/PlotCurves_Pseudo-Ortho-MEC-Malt_Tapas_1966_Ortho-MEC-Malt_20
-14.png, id=493, 462.528pt x 346.896pt>
+14.png, id=543, 462.528pt x 346.896pt>
 File: images/Chapitre3/PlotCurves_Pseudo-Ortho-MEC-Malt_Tapas_1966_Ortho-MEC-Ma
 lt_2014.png Graphic file (type png)
 <use images/Chapitre3/PlotCurves_Pseudo-Ortho-MEC-Malt_Tapas_1966_Ortho-MEC-Mal
 t_2014.png>
 Package pdftex.def Info: images/Chapitre3/PlotCurves_Pseudo-Ortho-MEC-Malt_Tapa
-s_1966_Ortho-MEC-Malt_2014.png  used on input line 185.
+s_1966_Ortho-MEC-Malt_2014.png  used on input line 186.
 (pdftex.def)             Requested size: 136.5733pt x 102.4287pt.
 
-Overfull \hbox (18.02661pt too wide) in paragraph at lines 185--185
+Overfull \hbox (18.02661pt too wide) in paragraph at lines 186--186
  [][] 
  []
 
 <images/Chapitre3/Pseudo-Homol-SIFT2Step_1966-2014-Rough-2DRANSAC-GlobalR3D-Pil
-eImg_Ortho-MEC-Malt_Tapas_1966_Ortho-MEC-Malt_2014.png, id=494, 1198.4775pt x 5
+eImg_Ortho-MEC-Malt_Tapas_1966_Ortho-MEC-Malt_2014.png, id=544, 1198.4775pt x 5
 01.875pt>
 File: images/Chapitre3/Pseudo-Homol-SIFT2Step_1966-2014-Rough-2DRANSAC-GlobalR3
 D-PileImg_Ortho-MEC-Malt_Tapas_1966_Ortho-MEC-Malt_2014.png Graphic file (type 
@@ -1431,117 +1174,117 @@ png)
 -PileImg_Ortho-MEC-Malt_Tapas_1966_Ortho-MEC-Malt_2014.png>
 Package pdftex.def Info: images/Chapitre3/Pseudo-Homol-SIFT2Step_1966-2014-Roug
 h-2DRANSAC-GlobalR3D-PileImg_Ortho-MEC-Malt_Tapas_1966_Ortho-MEC-Malt_2014.png 
- used on input line 191.
+ used on input line 192.
 (pdftex.def)             Requested size: 170.71652pt x 71.48729pt.
 <images/Chapitre3/Pseudo-Homol-SuperGlue_1966-2014-GlobalR3D-PileImg_Ortho-MEC-
-Malt_Tapas_1966_Ortho-MEC-Malt_2014.png, id=495, 1198.4775pt x 501.875pt>
+Malt_Tapas_1966_Ortho-MEC-Malt_2014.png, id=545, 1198.4775pt x 501.875pt>
 File: images/Chapitre3/Pseudo-Homol-SuperGlue_1966-2014-GlobalR3D-PileImg_Ortho
 -MEC-Malt_Tapas_1966_Ortho-MEC-Malt_2014.png Graphic file (type png)
 <use images/Chapitre3/Pseudo-Homol-SuperGlue_1966-2014-GlobalR3D-PileImg_Ortho-
 MEC-Malt_Tapas_1966_Ortho-MEC-Malt_2014.png>
 Package pdftex.def Info: images/Chapitre3/Pseudo-Homol-SuperGlue_1966-2014-Glob
 alR3D-PileImg_Ortho-MEC-Malt_Tapas_1966_Ortho-MEC-Malt_2014.png  used on input 
-line 197.
+line 198.
 (pdftex.def)             Requested size: 170.71652pt x 71.48729pt.
-<images/Chapitre3/Ortho-MEC-Malt_Tapas_1966_Ortho-MEC-Malt_2014.png, id=496, 11
+<images/Chapitre3/Ortho-MEC-Malt_Tapas_1966_Ortho-MEC-Malt_2014.png, id=546, 11
 98.4775pt x 501.875pt>
 File: images/Chapitre3/Ortho-MEC-Malt_Tapas_1966_Ortho-MEC-Malt_2014.png Graphi
 c file (type png)
 <use images/Chapitre3/Ortho-MEC-Malt_Tapas_1966_Ortho-MEC-Malt_2014.png>
 Package pdftex.def Info: images/Chapitre3/Ortho-MEC-Malt_Tapas_1966_Ortho-MEC-M
-alt_2014.png  used on input line 211.
+alt_2014.png  used on input line 212.
 (pdftex.def)             Requested size: 230.46748pt x 96.50594pt.
 <images/Chapitre3/PlotCurves_Ortho-MEC-Malt_Tapas_1966_Ortho-MEC-Malt_2014.png,
- id=497, 462.528pt x 346.896pt>
+ id=547, 462.528pt x 346.896pt>
 File: images/Chapitre3/PlotCurves_Ortho-MEC-Malt_Tapas_1966_Ortho-MEC-Malt_2014
 .png Graphic file (type png)
 <use images/Chapitre3/PlotCurves_Ortho-MEC-Malt_Tapas_1966_Ortho-MEC-Malt_2014.
 png>
 Package pdftex.def Info: images/Chapitre3/PlotCurves_Ortho-MEC-Malt_Tapas_1966_
-Ortho-MEC-Malt_2014.png  used on input line 217.
+Ortho-MEC-Malt_2014.png  used on input line 218.
 (pdftex.def)             Requested size: 136.5733pt x 102.4287pt.
 
-Overfull \hbox (18.02661pt too wide) in paragraph at lines 217--217
+Overfull \hbox (18.02661pt too wide) in paragraph at lines 218--218
  [][] 
  []
 
 <images/Chapitre3/Homol-SIFT-2DRANSAC_Ortho-MEC-Malt_Tapas_1966_Ortho-MEC-Malt_
-2014.png, id=498, 1198.4775pt x 501.875pt>
+2014.png, id=548, 1198.4775pt x 501.875pt>
 File: images/Chapitre3/Homol-SIFT-2DRANSAC_Ortho-MEC-Malt_Tapas_1966_Ortho-MEC-
 Malt_2014.png Graphic file (type png)
 <use images/Chapitre3/Homol-SIFT-2DRANSAC_Ortho-MEC-Malt_Tapas_1966_Ortho-MEC-M
 alt_2014.png>
 Package pdftex.def Info: images/Chapitre3/Homol-SIFT-2DRANSAC_Ortho-MEC-Malt_Ta
-pas_1966_Ortho-MEC-Malt_2014.png  used on input line 223.
+pas_1966_Ortho-MEC-Malt_2014.png  used on input line 224.
 (pdftex.def)             Requested size: 170.71652pt x 71.48729pt.
 <images/Chapitre3/Homol-SubPatch_R270-2DRANSAC_Ortho-MEC-Malt_Tapas_1966_Ortho-
-MEC-Malt_2014.png, id=499, 1198.4775pt x 501.875pt>
+MEC-Malt_2014.png, id=549, 1198.4775pt x 501.875pt>
 File: images/Chapitre3/Homol-SubPatch_R270-2DRANSAC_Ortho-MEC-Malt_Tapas_1966_O
 rtho-MEC-Malt_2014.png Graphic file (type png)
 <use images/Chapitre3/Homol-SubPatch_R270-2DRANSAC_Ortho-MEC-Malt_Tapas_1966_Or
 tho-MEC-Malt_2014.png>
 Package pdftex.def Info: images/Chapitre3/Homol-SubPatch_R270-2DRANSAC_Ortho-ME
-C-Malt_Tapas_1966_Ortho-MEC-Malt_2014.png  used on input line 229.
+C-Malt_Tapas_1966_Ortho-MEC-Malt_2014.png  used on input line 230.
 (pdftex.def)             Requested size: 170.71652pt x 71.48729pt.
-<images/Chapitre3/MEC-Malt_Tapas_1966_MEC-Malt_2014.png, id=500, 1198.4775pt x 
+<images/Chapitre3/MEC-Malt_Tapas_1966_MEC-Malt_2014.png, id=550, 1198.4775pt x 
 501.875pt>
 File: images/Chapitre3/MEC-Malt_Tapas_1966_MEC-Malt_2014.png Graphic file (type
  png)
 <use images/Chapitre3/MEC-Malt_Tapas_1966_MEC-Malt_2014.png>
 Package pdftex.def Info: images/Chapitre3/MEC-Malt_Tapas_1966_MEC-Malt_2014.png
-  used on input line 242.
+  used on input line 243.
 (pdftex.def)             Requested size: 230.46748pt x 96.50594pt.
-<images/Chapitre3/PlotCurves_MEC-Malt_Tapas_1966_MEC-Malt_2014.png, id=501, 462
+<images/Chapitre3/PlotCurves_MEC-Malt_Tapas_1966_MEC-Malt_2014.png, id=551, 462
 .528pt x 346.896pt>
 File: images/Chapitre3/PlotCurves_MEC-Malt_Tapas_1966_MEC-Malt_2014.png Graphic
  file (type png)
 <use images/Chapitre3/PlotCurves_MEC-Malt_Tapas_1966_MEC-Malt_2014.png>
 Package pdftex.def Info: images/Chapitre3/PlotCurves_MEC-Malt_Tapas_1966_MEC-Ma
-lt_2014.png  used on input line 248.
+lt_2014.png  used on input line 249.
 (pdftex.def)             Requested size: 136.5733pt x 102.4287pt.
 
-Overfull \hbox (18.02661pt too wide) in paragraph at lines 248--248
+Overfull \hbox (18.02661pt too wide) in paragraph at lines 249--249
  [][] 
  []
 
 <images/Chapitre3/Homol-SIFT-2DRANSAC_MEC-Malt_Tapas_1966_MEC-Malt_2014.png, id
-=502, 1198.4775pt x 501.875pt>
+=552, 1198.4775pt x 501.875pt>
 File: images/Chapitre3/Homol-SIFT-2DRANSAC_MEC-Malt_Tapas_1966_MEC-Malt_2014.pn
 g Graphic file (type png)
 <use images/Chapitre3/Homol-SIFT-2DRANSAC_MEC-Malt_Tapas_1966_MEC-Malt_2014.png
 >
 Package pdftex.def Info: images/Chapitre3/Homol-SIFT-2DRANSAC_MEC-Malt_Tapas_19
-66_MEC-Malt_2014.png  used on input line 254.
+66_MEC-Malt_2014.png  used on input line 255.
 (pdftex.def)             Requested size: 170.71652pt x 71.48729pt.
 <images/Chapitre3/Homol-SubPatch_R270-2DRANSAC_MEC-Malt_Tapas_1966_MEC-Malt_201
-4.png, id=503, 1198.4775pt x 501.875pt>
+4.png, id=553, 1198.4775pt x 501.875pt>
 File: images/Chapitre3/Homol-SubPatch_R270-2DRANSAC_MEC-Malt_Tapas_1966_MEC-Mal
 t_2014.png Graphic file (type png)
 <use images/Chapitre3/Homol-SubPatch_R270-2DRANSAC_MEC-Malt_Tapas_1966_MEC-Malt
 _2014.png>
 Package pdftex.def Info: images/Chapitre3/Homol-SubPatch_R270-2DRANSAC_MEC-Malt
-_Tapas_1966_MEC-Malt_2014.png  used on input line 260.
+_Tapas_1966_MEC-Malt_2014.png  used on input line 261.
 (pdftex.def)             Requested size: 170.71652pt x 71.48729pt.
 <images/Chapitre3/Pseudo-Ortho-MEC-Malt_Tapas_1970_Ortho-MEC-Malt_2014.png, id=
-504, 1060.96375pt x 501.875pt>
+554, 1060.96375pt x 501.875pt>
 File: images/Chapitre3/Pseudo-Ortho-MEC-Malt_Tapas_1970_Ortho-MEC-Malt_2014.png
  Graphic file (type png)
 <use images/Chapitre3/Pseudo-Ortho-MEC-Malt_Tapas_1970_Ortho-MEC-Malt_2014.png>
 
 Package pdftex.def Info: images/Chapitre3/Pseudo-Ortho-MEC-Malt_Tapas_1970_Orth
-o-MEC-Malt_2014.png  used on input line 278.
+o-MEC-Malt_2014.png  used on input line 279.
 (pdftex.def)             Requested size: 221.93158pt x 104.97566pt.
 <images/Chapitre3/PlotCurves_Pseudo-Ortho-MEC-Malt_Tapas_1970_Ortho-MEC-Malt_20
-14.png, id=505, 462.528pt x 346.896pt>
+14.png, id=555, 462.528pt x 346.896pt>
 File: images/Chapitre3/PlotCurves_Pseudo-Ortho-MEC-Malt_Tapas_1970_Ortho-MEC-Ma
 lt_2014.png Graphic file (type png)
 <use images/Chapitre3/PlotCurves_Pseudo-Ortho-MEC-Malt_Tapas_1970_Ortho-MEC-Mal
 t_2014.png>
 Package pdftex.def Info: images/Chapitre3/PlotCurves_Pseudo-Ortho-MEC-Malt_Tapa
-s_1970_Ortho-MEC-Malt_2014.png  used on input line 284.
+s_1970_Ortho-MEC-Malt_2014.png  used on input line 285.
 (pdftex.def)             Requested size: 136.5733pt x 102.4287pt.
 <images/Chapitre3/Pseudo-Homol-SIFT2Step_1970-2014-Rough-2DRANSAC-GlobalR3D-Pil
-eImg_Ortho-MEC-Malt_Tapas_1970_Ortho-MEC-Malt_2014.png, id=506, 1060.96375pt x 
+eImg_Ortho-MEC-Malt_Tapas_1970_Ortho-MEC-Malt_2014.png, id=556, 1060.96375pt x 
 501.875pt>
 File: images/Chapitre3/Pseudo-Homol-SIFT2Step_1970-2014-Rough-2DRANSAC-GlobalR3
 D-PileImg_Ortho-MEC-Malt_Tapas_1970_Ortho-MEC-Malt_2014.png Graphic file (type 
@@ -1550,99 +1293,99 @@ png)
 -PileImg_Ortho-MEC-Malt_Tapas_1970_Ortho-MEC-Malt_2014.png>
 Package pdftex.def Info: images/Chapitre3/Pseudo-Homol-SIFT2Step_1970-2014-Roug
 h-2DRANSAC-GlobalR3D-PileImg_Ortho-MEC-Malt_Tapas_1970_Ortho-MEC-Malt_2014.png 
- used on input line 290.
+ used on input line 291.
 (pdftex.def)             Requested size: 170.71652pt x 80.75345pt.
 <images/Chapitre3/Pseudo-Homol-SuperGlue_1970-2014-GlobalR3D-PileImg_Ortho-MEC-
-Malt_Tapas_1970_Ortho-MEC-Malt_2014.png, id=507, 1060.96375pt x 501.875pt>
+Malt_Tapas_1970_Ortho-MEC-Malt_2014.png, id=557, 1060.96375pt x 501.875pt>
 File: images/Chapitre3/Pseudo-Homol-SuperGlue_1970-2014-GlobalR3D-PileImg_Ortho
 -MEC-Malt_Tapas_1970_Ortho-MEC-Malt_2014.png Graphic file (type png)
 <use images/Chapitre3/Pseudo-Homol-SuperGlue_1970-2014-GlobalR3D-PileImg_Ortho-
 MEC-Malt_Tapas_1970_Ortho-MEC-Malt_2014.png>
 Package pdftex.def Info: images/Chapitre3/Pseudo-Homol-SuperGlue_1970-2014-Glob
 alR3D-PileImg_Ortho-MEC-Malt_Tapas_1970_Ortho-MEC-Malt_2014.png  used on input 
-line 296.
+line 297.
 (pdftex.def)             Requested size: 170.71652pt x 80.75345pt.
-<images/Chapitre3/Ortho-MEC-Malt_Tapas_1970_Ortho-MEC-Malt_2014.png, id=508, 10
+<images/Chapitre3/Ortho-MEC-Malt_Tapas_1970_Ortho-MEC-Malt_2014.png, id=558, 10
 60.96375pt x 501.875pt>
 File: images/Chapitre3/Ortho-MEC-Malt_Tapas_1970_Ortho-MEC-Malt_2014.png Graphi
 c file (type png)
 <use images/Chapitre3/Ortho-MEC-Malt_Tapas_1970_Ortho-MEC-Malt_2014.png>
 Package pdftex.def Info: images/Chapitre3/Ortho-MEC-Malt_Tapas_1970_Ortho-MEC-M
-alt_2014.png  used on input line 309.
+alt_2014.png  used on input line 310.
 (pdftex.def)             Requested size: 221.93158pt x 104.97566pt.
 <images/Chapitre3/PlotCurves_Ortho-MEC-Malt_Tapas_1970_Ortho-MEC-Malt_2014.png,
- id=509, 462.528pt x 346.896pt>
+ id=559, 462.528pt x 346.896pt>
 File: images/Chapitre3/PlotCurves_Ortho-MEC-Malt_Tapas_1970_Ortho-MEC-Malt_2014
 .png Graphic file (type png)
 <use images/Chapitre3/PlotCurves_Ortho-MEC-Malt_Tapas_1970_Ortho-MEC-Malt_2014.
 png>
 Package pdftex.def Info: images/Chapitre3/PlotCurves_Ortho-MEC-Malt_Tapas_1970_
-Ortho-MEC-Malt_2014.png  used on input line 315.
+Ortho-MEC-Malt_2014.png  used on input line 316.
 (pdftex.def)             Requested size: 136.5733pt x 102.4287pt.
 <images/Chapitre3/Homol-SIFT-2DRANSAC_Ortho-MEC-Malt_Tapas_1970_Ortho-MEC-Malt_
-2014.png, id=510, 1060.96375pt x 501.875pt>
+2014.png, id=560, 1060.96375pt x 501.875pt>
 File: images/Chapitre3/Homol-SIFT-2DRANSAC_Ortho-MEC-Malt_Tapas_1970_Ortho-MEC-
 Malt_2014.png Graphic file (type png)
 <use images/Chapitre3/Homol-SIFT-2DRANSAC_Ortho-MEC-Malt_Tapas_1970_Ortho-MEC-M
 alt_2014.png>
 Package pdftex.def Info: images/Chapitre3/Homol-SIFT-2DRANSAC_Ortho-MEC-Malt_Ta
-pas_1970_Ortho-MEC-Malt_2014.png  used on input line 321.
+pas_1970_Ortho-MEC-Malt_2014.png  used on input line 322.
 (pdftex.def)             Requested size: 170.71652pt x 80.75345pt.
 <images/Chapitre3/Homol-SubPatch_R270-2DRANSAC_Ortho-MEC-Malt_Tapas_1970_Ortho-
-MEC-Malt_2014.png, id=511, 1060.96375pt x 501.875pt>
+MEC-Malt_2014.png, id=561, 1060.96375pt x 501.875pt>
 File: images/Chapitre3/Homol-SubPatch_R270-2DRANSAC_Ortho-MEC-Malt_Tapas_1970_O
 rtho-MEC-Malt_2014.png Graphic file (type png)
 <use images/Chapitre3/Homol-SubPatch_R270-2DRANSAC_Ortho-MEC-Malt_Tapas_1970_Or
 tho-MEC-Malt_2014.png>
 Package pdftex.def Info: images/Chapitre3/Homol-SubPatch_R270-2DRANSAC_Ortho-ME
-C-Malt_Tapas_1970_Ortho-MEC-Malt_2014.png  used on input line 327.
+C-Malt_Tapas_1970_Ortho-MEC-Malt_2014.png  used on input line 328.
 (pdftex.def)             Requested size: 170.71652pt x 80.75345pt.
-<images/Chapitre3/MEC-Malt_Tapas_1970_MEC-Malt_2014.png, id=512, 1060.96375pt x
+<images/Chapitre3/MEC-Malt_Tapas_1970_MEC-Malt_2014.png, id=562, 1060.96375pt x
  501.875pt>
 File: images/Chapitre3/MEC-Malt_Tapas_1970_MEC-Malt_2014.png Graphic file (type
  png)
 <use images/Chapitre3/MEC-Malt_Tapas_1970_MEC-Malt_2014.png>
 Package pdftex.def Info: images/Chapitre3/MEC-Malt_Tapas_1970_MEC-Malt_2014.png
-  used on input line 340.
+  used on input line 341.
 (pdftex.def)             Requested size: 221.93158pt x 104.97566pt.
-<images/Chapitre3/PlotCurves_MEC-Malt_Tapas_1970_MEC-Malt_2014.png, id=513, 462
+<images/Chapitre3/PlotCurves_MEC-Malt_Tapas_1970_MEC-Malt_2014.png, id=563, 462
 .528pt x 346.896pt>
 File: images/Chapitre3/PlotCurves_MEC-Malt_Tapas_1970_MEC-Malt_2014.png Graphic
  file (type png)
 <use images/Chapitre3/PlotCurves_MEC-Malt_Tapas_1970_MEC-Malt_2014.png>
 Package pdftex.def Info: images/Chapitre3/PlotCurves_MEC-Malt_Tapas_1970_MEC-Ma
-lt_2014.png  used on input line 346.
+lt_2014.png  used on input line 347.
 (pdftex.def)             Requested size: 136.5733pt x 102.4287pt.
 <images/Chapitre3/Homol-SIFT-2DRANSAC_MEC-Malt_Tapas_1970_MEC-Malt_2014.png, id
-=514, 1060.96375pt x 501.875pt>
+=564, 1060.96375pt x 501.875pt>
 File: images/Chapitre3/Homol-SIFT-2DRANSAC_MEC-Malt_Tapas_1970_MEC-Malt_2014.pn
 g Graphic file (type png)
 <use images/Chapitre3/Homol-SIFT-2DRANSAC_MEC-Malt_Tapas_1970_MEC-Malt_2014.png
 >
 Package pdftex.def Info: images/Chapitre3/Homol-SIFT-2DRANSAC_MEC-Malt_Tapas_19
-70_MEC-Malt_2014.png  used on input line 352.
+70_MEC-Malt_2014.png  used on input line 353.
 (pdftex.def)             Requested size: 170.71652pt x 80.75345pt.
 <images/Chapitre3/Homol-SubPatch_R270-2DRANSAC_MEC-Malt_Tapas_1970_MEC-Malt_201
-4.png, id=515, 1060.96375pt x 501.875pt>
+4.png, id=565, 1060.96375pt x 501.875pt>
 File: images/Chapitre3/Homol-SubPatch_R270-2DRANSAC_MEC-Malt_Tapas_1970_MEC-Mal
 t_2014.png Graphic file (type png)
 <use images/Chapitre3/Homol-SubPatch_R270-2DRANSAC_MEC-Malt_Tapas_1970_MEC-Malt
 _2014.png>
 Package pdftex.def Info: images/Chapitre3/Homol-SubPatch_R270-2DRANSAC_MEC-Malt
-_Tapas_1970_MEC-Malt_2014.png  used on input line 358.
+_Tapas_1970_MEC-Malt_2014.png  used on input line 359.
 (pdftex.def)             Requested size: 170.71652pt x 80.75345pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 365--366
+Underfull \hbox (badness 10000) in paragraph at lines 366--367
 
  []
 
-[13 <./images/Chapitre3/ortho.png> <./images/Chapitre3/Pseudo-Ortho-MEC-Malt_Ta
+[15 <./images/Chapitre3/ortho.png> <./images/Chapitre3/Pseudo-Ortho-MEC-Malt_Ta
 pas_1954_Ortho-MEC-Malt_2014.png (PNG copy)> <./images/Chapitre3/PlotCurves_Pse
 udo-Ortho-MEC-Malt_Tapas_1954_Ortho-MEC-Malt_2014.png> <./images/Chapitre3/Pseu
 do-Homol-SIFT2Step_1954-2014-Rough-2DRANSAC-GlobalR3D-PileImg_Ortho-MEC-Malt_Ta
 pas_1954_Ortho-MEC-Malt_2014.png (PNG copy)> <./images/Chapitre3/Pseudo-Homol-S
 uperGlue_1954-2014-GlobalR3D-PileImg_Ortho-MEC-Malt_Tapas_1954_Ortho-MEC-Malt_2
-014.png (PNG copy)>] [14 <./images/Chapitre3/Ortho-MEC-Malt_Tapas_1954_Ortho-ME
+014.png (PNG copy)>] [16 <./images/Chapitre3/Ortho-MEC-Malt_Tapas_1954_Ortho-ME
 C-Malt_2014.png (PNG copy)> <./images/Chapitre3/PlotCurves_Ortho-MEC-Malt_Tapas
 _1954_Ortho-MEC-Malt_2014.png> <./images/Chapitre3/Homol-SIFT-2DRANSAC_Ortho-ME
 C-Malt_Tapas_1954_Ortho-MEC-Malt_2014.png (PNG copy)> <./images/Chapitre3/Homol
@@ -1651,7 +1394,7 @@ copy)> <./images/Chapitre3/MEC-Malt_Tapas_1954_MEC-Malt_2014.png (PNG copy)> <.
 /images/Chapitre3/PlotCurves_MEC-Malt_Tapas_1954_MEC-Malt_2014.png> <./images/C
 hapitre3/Homol-SIFT-2DRANSAC_MEC-Malt_Tapas_1954_MEC-Malt_2014.png (PNG copy)> 
 <./images/Chapitre3/Homol-SubPatch_R270-2DRANSAC_MEC-Malt_Tapas_1954_MEC-Malt_2
-014.png (PNG copy)>] [15 <./images/Chapitre3/Pseudo-Ortho-MEC-Malt_Tapas_1966_O
+014.png (PNG copy)>] [17 <./images/Chapitre3/Pseudo-Ortho-MEC-Malt_Tapas_1966_O
 rtho-MEC-Malt_2014.png (PNG copy)> <./images/Chapitre3/PlotCurves_Pseudo-Ortho-
 MEC-Malt_Tapas_1966_Ortho-MEC-Malt_2014.png> <./images/Chapitre3/Pseudo-Homol-S
 IFT2Step_1966-2014-Rough-2DRANSAC-GlobalR3D-PileImg_Ortho-MEC-Malt_Tapas_1966_O
@@ -1662,7 +1405,7 @@ NG copy)> <./images/Chapitre3/Ortho-MEC-Malt_Tapas_1966_Ortho-MEC-Malt_2014.png
 -Malt_2014.png> <./images/Chapitre3/Homol-SIFT-2DRANSAC_Ortho-MEC-Malt_Tapas_19
 66_Ortho-MEC-Malt_2014.png (PNG copy)> <./images/Chapitre3/Homol-SubPatch_R270-
 2DRANSAC_Ortho-MEC-Malt_Tapas_1966_Ortho-MEC-Malt_2014.png (PNG copy)>]
-[16 <./images/Chapitre3/MEC-Malt_Tapas_1966_MEC-Malt_2014.png (PNG copy)> <./im
+[18 <./images/Chapitre3/MEC-Malt_Tapas_1966_MEC-Malt_2014.png (PNG copy)> <./im
 ages/Chapitre3/PlotCurves_MEC-Malt_Tapas_1966_MEC-Malt_2014.png> <./images/Chap
 itre3/Homol-SIFT-2DRANSAC_MEC-Malt_Tapas_1966_MEC-Malt_2014.png (PNG copy)> <./
 images/Chapitre3/Homol-SubPatch_R270-2DRANSAC_MEC-Malt_Tapas_1966_MEC-Malt_2014
@@ -1672,7 +1415,7 @@ _Tapas_1970_Ortho-MEC-Malt_2014.png> <./images/Chapitre3/Pseudo-Homol-SIFT2Step
 _1970-2014-Rough-2DRANSAC-GlobalR3D-PileImg_Ortho-MEC-Malt_Tapas_1970_Ortho-MEC
 -Malt_2014.png (PNG copy)> <./images/Chapitre3/Pseudo-Homol-SuperGlue_1970-2014
 -GlobalR3D-PileImg_Ortho-MEC-Malt_Tapas_1970_Ortho-MEC-Malt_2014.png (PNG copy)
->] [17 <./images/Chapitre3/Ortho-MEC-Malt_Tapas_1970_Ortho-MEC-Malt_2014.png (P
+>] [19 <./images/Chapitre3/Ortho-MEC-Malt_Tapas_1970_Ortho-MEC-Malt_2014.png (P
 NG copy)> <./images/Chapitre3/PlotCurves_Ortho-MEC-Malt_Tapas_1970_Ortho-MEC-Ma
 lt_2014.png> <./images/Chapitre3/Homol-SIFT-2DRANSAC_Ortho-MEC-Malt_Tapas_1970_
 Ortho-MEC-Malt_2014.png (PNG copy)> <./images/Chapitre3/Homol-SubPatch_R270-2DR
@@ -1682,91 +1425,91 @@ PlotCurves_MEC-Malt_Tapas_1970_MEC-Malt_2014.png> <./images/Chapitre3/Homol-SIF
 T-2DRANSAC_MEC-Malt_Tapas_1970_MEC-Malt_2014.png (PNG copy)> <./images/Chapitre
 3/Homol-SubPatch_R270-2DRANSAC_MEC-Malt_Tapas_1970_MEC-Malt_2014.png (PNG copy)
 >]
-<images/Chapitre3/DoD1954R3D.png, id=596, 1927.2pt x 1204.5pt>
+<images/Chapitre3/DoD1954R3D.png, id=646, 1927.2pt x 1204.5pt>
 File: images/Chapitre3/DoD1954R3D.png Graphic file (type png)
 <use images/Chapitre3/DoD1954R3D.png>
 Package pdftex.def Info: images/Chapitre3/DoD1954R3D.png  used on input line 40
-2.
+3.
 (pdftex.def)             Requested size: 119.50148pt x 98.5331pt.
-<images/Chapitre3/DoD1954Ortho.png, id=598, 1927.2pt x 1204.5pt>
+<images/Chapitre3/DoD1954Ortho.png, id=648, 1927.2pt x 1204.5pt>
 File: images/Chapitre3/DoD1954Ortho.png Graphic file (type png)
 <use images/Chapitre3/DoD1954Ortho.png>
 Package pdftex.def Info: images/Chapitre3/DoD1954Ortho.png  used on input line 
-408.
+409.
 (pdftex.def)             Requested size: 119.50148pt x 98.5331pt.
-<images/Chapitre3/DoD1954DSM.png, id=600, 1927.2pt x 1204.5pt>
+<images/Chapitre3/DoD1954DSM.png, id=650, 1927.2pt x 1204.5pt>
 File: images/Chapitre3/DoD1954DSM.png Graphic file (type png)
 <use images/Chapitre3/DoD1954DSM.png>
 Package pdftex.def Info: images/Chapitre3/DoD1954DSM.png  used on input line 41
-4.
+5.
 (pdftex.def)             Requested size: 119.50148pt x 98.5331pt.
-<images/Chapitre3/DoD1966R3D.png, id=602, 1927.2pt x 1204.5pt>
+<images/Chapitre3/DoD1966R3D.png, id=652, 1927.2pt x 1204.5pt>
 File: images/Chapitre3/DoD1966R3D.png Graphic file (type png)
 <use images/Chapitre3/DoD1966R3D.png>
 Package pdftex.def Info: images/Chapitre3/DoD1966R3D.png  used on input line 42
-2.
+3.
 (pdftex.def)             Requested size: 119.50148pt x 80.81038pt.
-<images/Chapitre3/DoD1966Ortho.png, id=604, 1927.2pt x 1204.5pt>
+<images/Chapitre3/DoD1966Ortho.png, id=654, 1927.2pt x 1204.5pt>
 File: images/Chapitre3/DoD1966Ortho.png Graphic file (type png)
 <use images/Chapitre3/DoD1966Ortho.png>
 Package pdftex.def Info: images/Chapitre3/DoD1966Ortho.png  used on input line 
-428.
+429.
 (pdftex.def)             Requested size: 119.50148pt x 80.81038pt.
-<images/Chapitre3/DoD1966DSM.png, id=606, 1927.2pt x 1204.5pt>
+<images/Chapitre3/DoD1966DSM.png, id=656, 1927.2pt x 1204.5pt>
 File: images/Chapitre3/DoD1966DSM.png Graphic file (type png)
 <use images/Chapitre3/DoD1966DSM.png>
 Package pdftex.def Info: images/Chapitre3/DoD1966DSM.png  used on input line 43
-4.
+5.
 (pdftex.def)             Requested size: 119.50148pt x 80.81038pt.
-<images/Chapitre3/DoD1970R3D.png, id=608, 1927.2pt x 1204.5pt>
+<images/Chapitre3/DoD1970R3D.png, id=658, 1927.2pt x 1204.5pt>
 File: images/Chapitre3/DoD1970R3D.png Graphic file (type png)
 <use images/Chapitre3/DoD1970R3D.png>
 Package pdftex.def Info: images/Chapitre3/DoD1970R3D.png  used on input line 44
-2.
+3.
 (pdftex.def)             Requested size: 119.50148pt x 76.51193pt.
-<images/Chapitre3/DoD1970Ortho.png, id=610, 1927.2pt x 1204.5pt>
+<images/Chapitre3/DoD1970Ortho.png, id=660, 1927.2pt x 1204.5pt>
 File: images/Chapitre3/DoD1970Ortho.png Graphic file (type png)
 <use images/Chapitre3/DoD1970Ortho.png>
 Package pdftex.def Info: images/Chapitre3/DoD1970Ortho.png  used on input line 
-448.
+449.
 (pdftex.def)             Requested size: 119.50148pt x 76.51193pt.
-<images/Chapitre3/DoD1970DSM.png, id=612, 1927.2pt x 1204.5pt>
+<images/Chapitre3/DoD1970DSM.png, id=662, 1927.2pt x 1204.5pt>
 File: images/Chapitre3/DoD1970DSM.png Graphic file (type png)
 <use images/Chapitre3/DoD1970DSM.png>
 Package pdftex.def Info: images/Chapitre3/DoD1970DSM.png  used on input line 45
-4.
+5.
 (pdftex.def)             Requested size: 119.50148pt x 76.51193pt.
-<images/Chapitre3/LegendDoD.png, id=614, 955.57pt x 43.16125pt>
+<images/Chapitre3/LegendDoD.png, id=664, 955.57pt x 43.16125pt>
 File: images/Chapitre3/LegendDoD.png Graphic file (type png)
 <use images/Chapitre3/LegendDoD.png>
-Package pdftex.def Info: images/Chapitre3/LegendDoD.png  used on input line 461
+Package pdftex.def Info: images/Chapitre3/LegendDoD.png  used on input line 462
 .
 (pdftex.def)             Requested size: 312.9803pt x 14.13655pt.
 
-Overfull \hbox (3.63054pt too wide) in paragraph at lines 461--462
+Overfull \hbox (3.63054pt too wide) in paragraph at lines 462--463
  [][] 
  []
 
 <images/Chapitre3/Pseudo-Ortho-MEC-Malt_Tapas_1991_Ortho-MEC-Malt_Tapas_1994.pn
-g, id=617, 646.415pt x 1003.75pt>
+g, id=667, 646.415pt x 1003.75pt>
 File: images/Chapitre3/Pseudo-Ortho-MEC-Malt_Tapas_1991_Ortho-MEC-Malt_Tapas_19
 94.png Graphic file (type png)
 <use images/Chapitre3/Pseudo-Ortho-MEC-Malt_Tapas_1991_Ortho-MEC-Malt_Tapas_199
 4.png>
 Package pdftex.def Info: images/Chapitre3/Pseudo-Ortho-MEC-Malt_Tapas_1991_Orth
-o-MEC-Malt_Tapas_1994.png  used on input line 497.
+o-MEC-Malt_Tapas_1994.png  used on input line 501.
 (pdftex.def)             Requested size: 156.49014pt x 242.9879pt.
 <images/Chapitre3/PlotCurves_Pseudo-Ortho-MEC-Malt_Tapas_1991_Ortho-MEC-Malt_Ta
-pas_1994.png, id=618, 462.528pt x 346.896pt>
+pas_1994.png, id=668, 462.528pt x 346.896pt>
 File: images/Chapitre3/PlotCurves_Pseudo-Ortho-MEC-Malt_Tapas_1991_Ortho-MEC-Ma
 lt_Tapas_1994.png Graphic file (type png)
 <use images/Chapitre3/PlotCurves_Pseudo-Ortho-MEC-Malt_Tapas_1991_Ortho-MEC-Mal
 t_Tapas_1994.png>
 Package pdftex.def Info: images/Chapitre3/PlotCurves_Pseudo-Ortho-MEC-Malt_Tapa
-s_1991_Ortho-MEC-Malt_Tapas_1994.png  used on input line 503.
+s_1991_Ortho-MEC-Malt_Tapas_1994.png  used on input line 507.
 (pdftex.def)             Requested size: 136.5733pt x 102.4287pt.
 <images/Chapitre3/Pseudo-Homol-SIFT2Step_1991-1994-Rough-2DRANSAC-GlobalR3D-Pil
-eImg_Ortho-MEC-Malt_Tapas_1991_Ortho-MEC-Malt_Tapas_1994.png, id=619, 646.415pt
+eImg_Ortho-MEC-Malt_Tapas_1991_Ortho-MEC-Malt_Tapas_1994.png, id=669, 646.415pt
  x 1003.75pt>
 File: images/Chapitre3/Pseudo-Homol-SIFT2Step_1991-1994-Rough-2DRANSAC-GlobalR3
 D-PileImg_Ortho-MEC-Malt_Tapas_1991_Ortho-MEC-Malt_Tapas_1994.png Graphic file 
@@ -1775,124 +1518,124 @@ D-PileImg_Ortho-MEC-Malt_Tapas_1991_Ortho-MEC-Malt_Tapas_1994.png Graphic file
 -PileImg_Ortho-MEC-Malt_Tapas_1991_Ortho-MEC-Malt_Tapas_1994.png>
 Package pdftex.def Info: images/Chapitre3/Pseudo-Homol-SIFT2Step_1991-1994-Roug
 h-2DRANSAC-GlobalR3D-PileImg_Ortho-MEC-Malt_Tapas_1991_Ortho-MEC-Malt_Tapas_199
-4.png  used on input line 509.
+4.png  used on input line 513.
 (pdftex.def)             Requested size: 156.49014pt x 242.9879pt.
 <images/Chapitre3/Pseudo-Homol-SuperGlue_1991-1994-GlobalR3D-PileImg_Ortho-MEC-
-Malt_Tapas_1991_Ortho-MEC-Malt_Tapas_1994.png, id=620, 646.415pt x 1003.75pt>
+Malt_Tapas_1991_Ortho-MEC-Malt_Tapas_1994.png, id=670, 646.415pt x 1003.75pt>
 File: images/Chapitre3/Pseudo-Homol-SuperGlue_1991-1994-GlobalR3D-PileImg_Ortho
 -MEC-Malt_Tapas_1991_Ortho-MEC-Malt_Tapas_1994.png Graphic file (type png)
 <use images/Chapitre3/Pseudo-Homol-SuperGlue_1991-1994-GlobalR3D-PileImg_Ortho-
 MEC-Malt_Tapas_1991_Ortho-MEC-Malt_Tapas_1994.png>
 Package pdftex.def Info: images/Chapitre3/Pseudo-Homol-SuperGlue_1991-1994-Glob
 alR3D-PileImg_Ortho-MEC-Malt_Tapas_1991_Ortho-MEC-Malt_Tapas_1994.png  used on 
-input line 515.
+input line 519.
 (pdftex.def)             Requested size: 156.49014pt x 242.9879pt.
 <images/Chapitre3/Ortho-MEC-Malt_Tapas_1991_Ortho-MEC-Malt_Tapas_1994.png, id=6
-21, 646.415pt x 1003.75pt>
+71, 646.415pt x 1003.75pt>
 File: images/Chapitre3/Ortho-MEC-Malt_Tapas_1991_Ortho-MEC-Malt_Tapas_1994.png 
 Graphic file (type png)
 <use images/Chapitre3/Ortho-MEC-Malt_Tapas_1991_Ortho-MEC-Malt_Tapas_1994.png>
 Package pdftex.def Info: images/Chapitre3/Ortho-MEC-Malt_Tapas_1991_Ortho-MEC-M
-alt_Tapas_1994.png  used on input line 528.
+alt_Tapas_1994.png  used on input line 532.
 (pdftex.def)             Requested size: 156.49014pt x 242.9879pt.
 <images/Chapitre3/PlotCurves_Ortho-MEC-Malt_Tapas_1991_Ortho-MEC-Malt_Tapas_199
-4.png, id=622, 462.528pt x 346.896pt>
+4.png, id=672, 462.528pt x 346.896pt>
 File: images/Chapitre3/PlotCurves_Ortho-MEC-Malt_Tapas_1991_Ortho-MEC-Malt_Tapa
 s_1994.png Graphic file (type png)
 <use images/Chapitre3/PlotCurves_Ortho-MEC-Malt_Tapas_1991_Ortho-MEC-Malt_Tapas
 _1994.png>
 Package pdftex.def Info: images/Chapitre3/PlotCurves_Ortho-MEC-Malt_Tapas_1991_
-Ortho-MEC-Malt_Tapas_1994.png  used on input line 534.
+Ortho-MEC-Malt_Tapas_1994.png  used on input line 538.
 (pdftex.def)             Requested size: 136.5733pt x 102.4287pt.
 <images/Chapitre3/Homol-SIFT-2DRANSAC_Ortho-MEC-Malt_Tapas_1991_Ortho-MEC-Malt_
-Tapas_1994.png, id=623, 646.415pt x 1003.75pt>
+Tapas_1994.png, id=673, 646.415pt x 1003.75pt>
 File: images/Chapitre3/Homol-SIFT-2DRANSAC_Ortho-MEC-Malt_Tapas_1991_Ortho-MEC-
 Malt_Tapas_1994.png Graphic file (type png)
 <use images/Chapitre3/Homol-SIFT-2DRANSAC_Ortho-MEC-Malt_Tapas_1991_Ortho-MEC-M
 alt_Tapas_1994.png>
 Package pdftex.def Info: images/Chapitre3/Homol-SIFT-2DRANSAC_Ortho-MEC-Malt_Ta
-pas_1991_Ortho-MEC-Malt_Tapas_1994.png  used on input line 540.
+pas_1991_Ortho-MEC-Malt_Tapas_1994.png  used on input line 544.
 (pdftex.def)             Requested size: 156.49014pt x 242.9879pt.
 <images/Chapitre3/Homol-SubPatch-2DRANSAC_Ortho-MEC-Malt_Tapas_1991_Ortho-MEC-M
-alt_Tapas_1994.png, id=624, 646.415pt x 1003.75pt>
+alt_Tapas_1994.png, id=674, 646.415pt x 1003.75pt>
 File: images/Chapitre3/Homol-SubPatch-2DRANSAC_Ortho-MEC-Malt_Tapas_1991_Ortho-
 MEC-Malt_Tapas_1994.png Graphic file (type png)
 <use images/Chapitre3/Homol-SubPatch-2DRANSAC_Ortho-MEC-Malt_Tapas_1991_Ortho-M
 EC-Malt_Tapas_1994.png>
 Package pdftex.def Info: images/Chapitre3/Homol-SubPatch-2DRANSAC_Ortho-MEC-Mal
-t_Tapas_1991_Ortho-MEC-Malt_Tapas_1994.png  used on input line 546.
+t_Tapas_1991_Ortho-MEC-Malt_Tapas_1994.png  used on input line 550.
 (pdftex.def)             Requested size: 156.49014pt x 242.9879pt.
-<images/Chapitre3/MEC-Malt_Tapas_1991_MEC-Malt_Tapas_1994.png, id=625, 647.4187
+<images/Chapitre3/MEC-Malt_Tapas_1991_MEC-Malt_Tapas_1994.png, id=675, 647.4187
 5pt x 1003.75pt>
 File: images/Chapitre3/MEC-Malt_Tapas_1991_MEC-Malt_Tapas_1994.png Graphic file
  (type png)
 <use images/Chapitre3/MEC-Malt_Tapas_1991_MEC-Malt_Tapas_1994.png>
 Package pdftex.def Info: images/Chapitre3/MEC-Malt_Tapas_1991_MEC-Malt_Tapas_19
-94.png  used on input line 559.
+94.png  used on input line 563.
 (pdftex.def)             Requested size: 156.49014pt x 242.62032pt.
-<images/Chapitre3/PlotCurves_MEC-Malt_Tapas_1991_MEC-Malt_Tapas_1994.png, id=62
+<images/Chapitre3/PlotCurves_MEC-Malt_Tapas_1991_MEC-Malt_Tapas_1994.png, id=67
 6, 462.528pt x 346.896pt>
 File: images/Chapitre3/PlotCurves_MEC-Malt_Tapas_1991_MEC-Malt_Tapas_1994.png G
 raphic file (type png)
 <use images/Chapitre3/PlotCurves_MEC-Malt_Tapas_1991_MEC-Malt_Tapas_1994.png>
 Package pdftex.def Info: images/Chapitre3/PlotCurves_MEC-Malt_Tapas_1991_MEC-Ma
-lt_Tapas_1994.png  used on input line 565.
+lt_Tapas_1994.png  used on input line 569.
 (pdftex.def)             Requested size: 136.5733pt x 102.4287pt.
 <images/Chapitre3/Homol-SIFT-2DRANSAC_MEC-Malt_Tapas_1991_MEC-Malt_Tapas_1994.p
-ng, id=627, 647.41875pt x 1003.75pt>
+ng, id=677, 647.41875pt x 1003.75pt>
 File: images/Chapitre3/Homol-SIFT-2DRANSAC_MEC-Malt_Tapas_1991_MEC-Malt_Tapas_1
 994.png Graphic file (type png)
 <use images/Chapitre3/Homol-SIFT-2DRANSAC_MEC-Malt_Tapas_1991_MEC-Malt_Tapas_19
 94.png>
 Package pdftex.def Info: images/Chapitre3/Homol-SIFT-2DRANSAC_MEC-Malt_Tapas_19
-91_MEC-Malt_Tapas_1994.png  used on input line 571.
+91_MEC-Malt_Tapas_1994.png  used on input line 575.
 (pdftex.def)             Requested size: 156.49014pt x 242.62032pt.
 <images/Chapitre3/Homol-SubPatch-2DRANSAC_MEC-Malt_Tapas_1991_MEC-Malt_Tapas_19
-94.png, id=628, 647.41875pt x 1003.75pt>
+94.png, id=678, 647.41875pt x 1003.75pt>
 File: images/Chapitre3/Homol-SubPatch-2DRANSAC_MEC-Malt_Tapas_1991_MEC-Malt_Tap
 as_1994.png Graphic file (type png)
 <use images/Chapitre3/Homol-SubPatch-2DRANSAC_MEC-Malt_Tapas_1991_MEC-Malt_Tapa
 s_1994.png>
 Package pdftex.def Info: images/Chapitre3/Homol-SubPatch-2DRANSAC_MEC-Malt_Tapa
-s_1991_MEC-Malt_Tapas_1994.png  used on input line 577.
+s_1991_MEC-Malt_Tapas_1994.png  used on input line 581.
 (pdftex.def)             Requested size: 156.49014pt x 242.62032pt.
-) [18] [19 <./images/Chapitre3/DoD1954R3D.png> <./images/Chapitre3/DoD1954Ortho
+) [20] [21 <./images/Chapitre3/DoD1954R3D.png> <./images/Chapitre3/DoD1954Ortho
 .png> <./images/Chapitre3/DoD1954DSM.png> <./images/Chapitre3/DoD1966R3D.png> <
 ./images/Chapitre3/DoD1966Ortho.png> <./images/Chapitre3/DoD1966DSM.png> <./ima
 ges/Chapitre3/DoD1970R3D.png> <./images/Chapitre3/DoD1970Ortho.png> <./images/C
-hapitre3/DoD1970DSM.png> <./images/Chapitre3/LegendDoD.png>] [20 <./images/Chap
+hapitre3/DoD1970DSM.png> <./images/Chapitre3/LegendDoD.png>] [22 <./images/Chap
 itre3/Pseudo-Ortho-MEC-Malt_Tapas_1991_Ortho-MEC-Malt_Tapas_1994.png (PNG copy)
 > <./images/Chapitre3/PlotCurves_Pseudo-Ortho-MEC-Malt_Tapas_1991_Ortho-MEC-Mal
 t_Tapas_1994.png> <./images/Chapitre3/Pseudo-Homol-SIFT2Step_1991-1994-Rough-2D
 RANSAC-GlobalR3D-PileImg_Ortho-MEC-Malt_Tapas_1991_Ortho-MEC-Malt_Tapas_1994.pn
 g (PNG copy)> <./images/Chapitre3/Pseudo-Homol-SuperGlue_1991-1994-GlobalR3D-Pi
 leImg_Ortho-MEC-Malt_Tapas_1991_Ortho-MEC-Malt_Tapas_1994.png (PNG copy)>]
-[21 <./images/Chapitre3/Ortho-MEC-Malt_Tapas_1991_Ortho-MEC-Malt_Tapas_1994.png
+[23 <./images/Chapitre3/Ortho-MEC-Malt_Tapas_1991_Ortho-MEC-Malt_Tapas_1994.png
  (PNG copy)> <./images/Chapitre3/PlotCurves_Ortho-MEC-Malt_Tapas_1991_Ortho-MEC
 -Malt_Tapas_1994.png> <./images/Chapitre3/Homol-SIFT-2DRANSAC_Ortho-MEC-Malt_Ta
 pas_1991_Ortho-MEC-Malt_Tapas_1994.png (PNG copy)> <./images/Chapitre3/Homol-Su
 bPatch-2DRANSAC_Ortho-MEC-Malt_Tapas_1991_Ortho-MEC-Malt_Tapas_1994.png (PNG co
-py)>] [22 <./images/Chapitre3/MEC-Malt_Tapas_1991_MEC-Malt_Tapas_1994.png (PNG 
+py)>] [24 <./images/Chapitre3/MEC-Malt_Tapas_1991_MEC-Malt_Tapas_1994.png (PNG 
 copy)> <./images/Chapitre3/PlotCurves_MEC-Malt_Tapas_1991_MEC-Malt_Tapas_1994.p
 ng> <./images/Chapitre3/Homol-SIFT-2DRANSAC_MEC-Malt_Tapas_1991_MEC-Malt_Tapas_
 1994.png (PNG copy)> <./images/Chapitre3/Homol-SubPatch-2DRANSAC_MEC-Malt_Tapas
-_1991_MEC-Malt_Tapas_1994.png (PNG copy)>]
+_1991_MEC-Malt_Tapas_1994.png (PNG copy)>] [25]
 \openout2 = `Chapter4.aux'.
 
- (./Chapter4.tex
-Chapter 4.
-\openout4 = `Manuscript.mtc'.
-
-\openout4 = `Manuscript.mtc'.
-
-(./Manuscript.mtc5)) [23
+ (./Chapter4.tex [26
 
 
 
 ]
+Chapter 4.
+\openout3 = `Manuscript.mtc'.
+
+\openout3 = `Manuscript.mtc'.
+
+(./Manuscript.mtc5)) [27]
 \openout2 = `Chapter5.aux'.
 
- (./Chapter5.tex [24
+ (./Chapter5.tex [28
 
 
 
@@ -1900,36 +1643,36 @@ Chapter 4.
 Chapter 5.
 Package minitoc Info: I0006
 (minitoc)             Manuscript.mtc6 is empty on input line 5.
-) [25] [26
+) [29] [30
 
 
-] [27
+] [31
 
-] [28]
+] [32]
 \openout2 = `Appendix1.aux'.
 
  (./Appendix1.tex
 Appendix A.
 
-LaTeX Warning: Citation `Commowick_MICCAI_2007' on page 29 undefined on input l
+LaTeX Warning: Citation `Commowick_MICCAI_2007' on page 33 undefined on input l
 ine 8.
 
 
-LaTeX Warning: Citation `Oakes_RStat_1999' on page 29 undefined on input line 1
+LaTeX Warning: Citation `Oakes_RStat_1999' on page 33 undefined on input line 1
 0.
 
 
-LaTeX Warning: Citation `Guimond_CVIU_2000' on page 29 undefined on input line 
+LaTeX Warning: Citation `Guimond_CVIU_2000' on page 33 undefined on input line 
 10.
 
-) [29
+) [33
 
 
 ] (./Manuscript.bbl (./Manuscript.brf)
-\tf@brf=\write7
-\openout7 = `Manuscript.brf'.
+\tf@brf=\write6
+\openout6 = `Manuscript.brf'.
 
- [30
+ [34
 
 
 ]
@@ -1938,29 +1681,29 @@ Underfull \hbox (badness 1147) in paragraph at lines 31--31
 0.95 Magsac:
  []
 
-[31]
+[35]
 Underfull \hbox (badness 1270) in paragraph at lines 76--76
 []\T1/cmr/m/n/10.95 Javier Car-de-nal, Jorge Del-gado, Emilio Mata, Al-berto
  []
 
-[32] [33] [34]
+[36] [37] [38]
 Underfull \hbox (badness 1867) in paragraph at lines 303--303
 []\T1/cmr/m/n/10.95 Manuela Per-sia, Emanuele Barca, Roberto Greco, Maria
  []
 
-[35]
+[39]
 Underfull \hbox (badness 6808) in paragraph at lines 382--382
 \T1/cmr/m/n/10.95 Jiri Matas and Pas-cal Fua.  \T1/cmr/m/it/10.95 Im-age Match-
 ing Chal-lenge 2020\T1/cmr/m/n/10.95 .
  []
 
-[36]) [37] [38
+[40]) [41] [42
 
 ]
 Package minitoc Info: I0009
 (minitoc)             Listing minitoc auxiliary files. 
 (minitoc)             Creating the Manuscript.maf file.
-\openout4 = `Manuscript.maf'.
+\openout3 = `Manuscript.maf'.
 
 Package minitoc(hints) Info: I0053
 (minitoc(hints))             You have loaded the float package; 
@@ -1968,7 +1711,7 @@ Package minitoc(hints) Info: I0053
 (minitoc(hints))             facilities can not be used for new types 
 (minitoc(hints))             of floats defined by the float package.
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 96.
- [39]
+ [43]
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 96.
  (./Manuscript.aux (./TitlePage.aux) (./Acronyms.aux)
 (./Chapter1.aux) (./Chapter2.aux) (./Chapter3.aux) (./Chapter4.aux)
@@ -1976,10 +1719,15 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 96.
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 96.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 96.
 Package rerunfilecheck Info: File `Manuscript.out' has not changed.
-(rerunfilecheck)             Checksum: C5A90E5143AF944DA3CE229BCB4CF2DF;2316.
-Package rerunfilecheck Info: File `Manuscript.brf' has not changed.
-(rerunfilecheck)             Checksum: E44FDA3FA80624600F0D7E27023C0AE7;4647.
+(rerunfilecheck)             Checksum: 2B55A27060819B733298C51A2FEFAAAD;2485.
 
+
+Package rerunfilecheck Warning: File `Manuscript.brf' has changed.
+(rerunfilecheck)                Rerun to get bibliographical references right.
+
+Package rerunfilecheck Info: Checksums for `Manuscript.brf':
+(rerunfilecheck)             Before: 597DEE221D0FE4AC6949AE81EB694F0A;4709
+(rerunfilecheck)             After:  DA711BDEE8FEFA03EDF133FAA519E5B7;4709.
 
 LaTeX Warning: There were undefined references.
 
@@ -1989,39 +1737,36 @@ LaTeX Warning: There were multiply-defined labels.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 96.
  ) 
 Here is how much of TeX's memory you used:
- 12578 strings out of 494923
- 199111 string characters out of 6180742
- 322359 words of memory out of 5000000
- 15076 multiletter control sequences out of 15000+600000
- 25152 words of font info for 64 fonts, out of 8000000 for 9000
- 14 hyphenation exceptions out of 8191
- 42i,11n,46p,1787b,513s stack positions out of 5000i,500n,10000p,200000b,80000s
- </home/lulin/.texlive2017/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx0900.600
-pk> </home/lulin/.texlive2017/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm0900.60
-0pk> </home/lulin/.texlive2017/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1000.6
-00pk> </home/lulin/.texlive2017/texmf-var/fonts/pk/ljfour/jknappen/ec/ecti1095.
-600pk> </home/lulin/.texlive2017/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1000
-.600pk> </home/lulin/.texlive2017/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm109
-5.600pk> </home/lulin/.texlive2017/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx14
-40.600pk> </home/lulin/.texlive2017/texmf-var/fonts/pk/ljfour/jknappen/ec/eccc1
-440.600pk> </home/lulin/.texlive2017/texmf-var/fonts/pk/ljfour/jknappen/ec/eccc
-2074.600pk> </home/lulin/.texlive2017/texmf-var/fonts/pk/ljfour/jknappen/ec/ecr
-m2074.600pk> </home/lulin/.texlive2017/texmf-var/fonts/pk/ljfour/jknappen/ec/ec
-rm1440.600pk> </home/lulin/.texlive2017/texmf-var/fonts/pk/ljfour/jknappen/ec/e
-crm1200.600pk> </home/lulin/.texlive2017/texmf-var/fonts/pk/ljfour/jknappen/ec/
-ecbx2488.600pk> </home/lulin/.texlive2017/texmf-var/fonts/pk/ljfour/jknappen/ec
-/ecbx1095.600pk> </home/lulin/.texlive2017/texmf-var/fonts/pk/ljfour/jknappen/e
-c/ecbx1728.600pk> </home/lulin/.texlive2017/texmf-var/fonts/pk/ljfour/jknappen/
-ec/ecbx1200.600pk></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm
-/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6
-.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></
-usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/shar
-e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texl
-ive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb>
-Output written on Manuscript.pdf (47 pages, 49670319 bytes).
+ 13237 strings out of 481239
+ 215672 string characters out of 5920377
+ 521258 words of memory out of 5000000
+ 27621 multiletter control sequences out of 15000+600000
+ 554191 words of font info for 75 fonts, out of 8000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 58i,11n,70p,1787b,547s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-t1.enc}{/usr/share/texmf/
+fonts/enc/dvips/cm-super/cm-super-ts1.enc}</usr/share/texlive/texmf-dist/fonts/
+type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/
+public/amsfonts/cm/cmmi6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/
+amsfonts/cm/cmmi9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfont
+s/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cms
+y10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb
+></usr/share/texmf/fonts/type1/public/cm-super/sfbx0900.pfb></usr/share/texmf/f
+onts/type1/public/cm-super/sfbx1000.pfb></usr/share/texmf/fonts/type1/public/cm
+-super/sfbx1095.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx1200.pfb>
+</usr/share/texmf/fonts/type1/public/cm-super/sfbx1440.pfb></usr/share/texmf/fo
+nts/type1/public/cm-super/sfbx1728.pfb></usr/share/texmf/fonts/type1/public/cm-
+super/sfbx2488.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfcc1440.pfb><
+/usr/share/texmf/fonts/type1/public/cm-super/sfcc2074.pfb></usr/share/texmf/fon
+ts/type1/public/cm-super/sfrm0900.pfb></usr/share/texmf/fonts/type1/public/cm-s
+uper/sfrm1000.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1095.pfb></
+usr/share/texmf/fonts/type1/public/cm-super/sfrm1200.pfb></usr/share/texmf/font
+s/type1/public/cm-super/sfrm1440.pfb></usr/share/texmf/fonts/type1/public/cm-su
+per/sfrm2074.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfti1095.pfb>
+Output written on Manuscript.pdf (51 pages, 52514681 bytes).
 PDF statistics:
- 1567 PDF objects out of 1728 (max. 8388607)
- 836 compressed objects within 9 object streams
- 242 named destinations out of 1000 (max. 500000)
- 664 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1058 PDF objects out of 1200 (max. 8388607)
+ 864 compressed objects within 9 object streams
+ 258 named destinations out of 1000 (max. 500000)
+ 720 words of extra memory for PDF output out of 10000 (max. 10000000)
 

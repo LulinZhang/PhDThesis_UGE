@@ -8,6 +8,7 @@
 \subsection{Motivation}
 %\textit{state-of-the-art} feature matching methods (SIFT and SuperGlue) fail on inter-epoch image pairs.
 
+
 \subsection{Contribution}
 
 \section{Methodology}
@@ -382,7 +383,7 @@ We manually measured 3 GCPs as check points to evaluate the roughly co-registere
 		$Frejus_{2014}^{1954}$ & 645.57 & 29.29 & / & 34.84 & / & \textbf{10.72}\\\hline
 		$Frejus_{2014}^{1966}$ & 1346.35 & 18.15 & / & 11.98 & / & \textbf{10.43}\\\hline
 		$Frejus_{2014}^{1970}$ & 2194.77 & 11.09 & / & 16.87 & / & \textbf{10.23}\\\hline\hline
-		$Kobe_{1994}^{1991}$ & / & \textbf{0.761} & 0 & 1.2775 & 1.0465 & 1.5155\\\hline
+		$Kobe_{1994}^{1991}$ & / & \textbf{2.02} & / & 3.40 & 2.78 & 4.03 \\\hline
 \end{tabular}
 	\caption{Accuracy of 6 sets of co-registered orientations resulting from 6 methods, evaluated on 3 check points uniformly distributed in the block. Absolute average value $|\mu|$ is displayed for each method.}
 	\label{CheckptAcuracy}
@@ -478,6 +479,9 @@ We manually measured 3 GCPs as check points to evaluate the roughly co-registere
 		DoD$_{Frejus1970}^{ImgPairs}$ & -5.04 & 5.09 & 5.70\\
 		DoD$_{Frejus1970}^{Orthophoto}$ & -2.63 & 5.18 & \textbf{4.39}\\
 		DoD$_{Frejus1970}^{DSM}$ & -1.71 & 5.75 & 4.61\\\hline
+		DoD$_{Kobe1991}^{ImgPairs}$ &-1.35 & 13.82 & \textbf{7.23}\\
+		DoD$_{Kobe1991}^{Orthophoto}$ &-0.54 & 14.82 & 7.77\\
+		DoD$_{Kobe1991}^{DSM}$ &-2.12 & 14.20 & 7.45\\\hline
 	\end{tabular}
 	\caption{Average value $\mu$, standard deviation $\sigma$, and absolute average value $|\mu|$ of all the DoDs in Figure~\ref{Frejus DoD of SuperGlue}.}
 	\label{CheckptAcuracy}

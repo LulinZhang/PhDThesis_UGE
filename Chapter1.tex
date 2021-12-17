@@ -5,6 +5,7 @@
 \minitoc
 
 \section{Motivation}
+\subsection{Why historical images are interesting}
 Historical (i.e. analogue or archival) aerial images play an important role in providing unique information about evolution of land-covers. 
 They are objective witness over time and sometimes the only remaining visual source of historical land-form. Therefore, they are valuable assets for a wide range of applications such as: (1) change detection, (2) spatial and urban planning, (3) long-term environmental monitoring including but not limited to forests, ice glaciers and coastlines, (4) analysis of natural disaster (e.g. earthquake, volcano eruption, landslide ect.) and the estimation of its future trends, etc.
 %用途：地震，冰川，土地规划？
@@ -37,6 +38,73 @@ There is an urgent need to automatically identify corresponding points (i.e. cor
 %Corresponding points 
 %Besides, inappropriate film/glass plate preservation and the scanning process enforce reestimating of the camera calibrations (i.e., the self-calibrating).\\
 
+\subsection{Why 3D geometry is helpful}
+The key idea of our method is to use 3D geometry to guide matching. This idea comes from the observation that RGB images have the following shortcomings:\\
+(1) Their appearances change over time (see Figure~\ref{AppearanceChange}), and with varying view angles on non-Lambertian surfaces (see Figure~\ref{PoorlyTextured}).\\
+(2) Self similarities (e.g. repetitive patterns) favor false matches (see Figure~\ref{PoorlyTextured}).\\
+
+\begin{figure*}[htbp]
+	\begin{center}
+		\subfigure[Image 1971]{
+			\begin{minipage}[t]{0.45\linewidth}
+				\centering
+				\includegraphics[width=6.2cm]{images/Chapitre3/AppearanceChangeRGBL.png}
+			\end{minipage}%
+		}
+		\subfigure[Image 2015]{
+			\begin{minipage}[t]{0.45\linewidth}
+				\centering
+				\includegraphics[width=6.2cm]{images/Chapitre3/AppearanceChangeRGBR.png}
+			\end{minipage}%
+		}
+		\subfigure[DSM 1971]{
+			\begin{minipage}[t]{0.45\linewidth}
+				\centering
+				\includegraphics[width=6.2cm]{images/Chapitre3/AppearanceChangeDSML.png}
+			\end{minipage}%
+		}
+		\subfigure[DSM 2015]{
+			\begin{minipage}[t]{0.45\linewidth}
+				\centering
+				\includegraphics[width=6.2cm]{images/Chapitre3/AppearanceChangeDSMR.png}
+			\end{minipage}%
+		}
+		\caption{The same zone observed in different times. The images changed a lot while the DSMs stayed stable over time.}
+		\label{AppearanceChange}
+	\end{center}
+\end{figure*} 
+
+
+\begin{figure*}[htbp]
+	\begin{center}
+		\subfigure[Image 1971]{
+			\begin{minipage}[t]{0.45\linewidth}
+				\centering
+				\includegraphics[width=6.2cm]{images/Chapitre3/PoorlyTexturedRGBL.png}
+			\end{minipage}%
+		}
+		\subfigure[Image 2015]{
+			\begin{minipage}[t]{0.45\linewidth}
+				\centering
+				\includegraphics[width=6.2cm]{images/Chapitre3/PoorlyTexturedRGBR.png}
+			\end{minipage}%
+		}
+		\subfigure[DSM 1971]{
+			\begin{minipage}[t]{0.45\linewidth}
+				\centering
+				\includegraphics[width=6.2cm]{images/Chapitre3/PoorlyTexturedDSML.png}
+			\end{minipage}%
+		}
+		\subfigure[DSM 2015]{
+			\begin{minipage}[t]{0.45\linewidth}
+				\centering
+				\includegraphics[width=6.2cm]{images/Chapitre3/PoorlyTexturedDSMR.png}
+			\end{minipage}%
+		}
+		\caption{The same vegetation observed in different times. They present non-Lambertian reflection and self similarities, while the DSMs are distinctive.}
+		\label{PoorlyTextured}
+	\end{center}
+\end{figure*} 
 
 \section{Objective}
 
