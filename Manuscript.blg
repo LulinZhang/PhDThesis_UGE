@@ -1,5 +1,5 @@
-This is BibTeX, Version 0.99d (TeX Live 2017/Debian)
-Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
+This is BibTeX, Version 0.99d (TeX Live 2019/Debian)
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
 The top-level auxiliary file: Manuscript.aux
 A level-1 auxiliary file: TitlePage.aux
 A level-1 auxiliary file: Acronyms.aux
@@ -14,45 +14,45 @@ Database file #1: Thesis.bib
 Warning--I didn't find a database entry for "Commowick_MICCAI_2007"
 Warning--I didn't find a database entry for "Oakes_RStat_1999"
 Warning--I didn't find a database entry for "Guimond_CVIU_2000"
-You've used 65 entries,
+You've used 71 entries,
             2460 wiz_defined-function locations,
-            914 strings with 17215 characters,
-and the built_in function-call counts, 32812 in all, are:
-= -- 3374
-> -- 1434
-< -- 75
-+ -- 475
-- -- 472
-* -- 2372
-:= -- 4804
-add.period$ -- 199
-call.type$ -- 65
-change.case$ -- 432
-chr.to.int$ -- 65
-cite$ -- 65
-duplicate$ -- 1530
-empty$ -- 2298
-format.name$ -- 569
-if$ -- 7133
+            948 strings with 18352 characters,
+and the built_in function-call counts, 35477 in all, are:
+= -- 3654
+> -- 1537
+< -- 83
++ -- 509
+- -- 504
+* -- 2559
+:= -- 5196
+add.period$ -- 217
+call.type$ -- 71
+change.case$ -- 466
+chr.to.int$ -- 71
+cite$ -- 71
+duplicate$ -- 1651
+empty$ -- 2490
+format.name$ -- 613
+if$ -- 7712
 int.to.chr$ -- 1
 int.to.str$ -- 0
-missing$ -- 62
-newline$ -- 328
-num.names$ -- 195
-pop$ -- 550
+missing$ -- 66
+newline$ -- 358
+num.names$ -- 213
+pop$ -- 592
 preamble$ -- 1
-purify$ -- 561
+purify$ -- 607
 quote$ -- 0
-skip$ -- 1350
+skip$ -- 1461
 stack$ -- 0
-substring$ -- 2041
-swap$ -- 576
-text.length$ -- 53
+substring$ -- 2205
+swap$ -- 619
+text.length$ -- 57
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 516
+type$ -- 564
 warning$ -- 0
-while$ -- 266
-width$ -- 69
-write$ -- 881
+while$ -- 290
+width$ -- 77
+write$ -- 962
 (There were 3 warnings)

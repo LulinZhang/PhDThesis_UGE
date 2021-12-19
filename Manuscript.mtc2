@@ -1,6 +1,8 @@
 {\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {1.1}Motivation}{\reset@font\mtcSfont 3}{section.1.1}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {1.1.1}Why historical images are interesting}{\reset@font\mtcSSfont 3}{subsection.1.1.1}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {1.1.2}Why 3D geometry is helpful}{\reset@font\mtcSSfont 4}{subsection.1.1.2}}
-{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {1.2}Objective}{\reset@font\mtcSfont 4}{section.1.2}}
-{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {1.3}Contribution}{\reset@font\mtcSfont 4}{section.1.3}}
-{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {1.4}Organization of the thesis}{\reset@font\mtcSfont 4}{section.1.4}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {1.1.1}Why are historical images interesting}{\reset@font\mtcSSfont 3}{subsection.1.1.1}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {1.1.2}How to match multi-epoch historical images}{\reset@font\mtcSSfont 4}{subsection.1.1.2}}
+{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \numberline {1.1.2.1}Divide and conquer}{\reset@font\mtcSSSfont 4}{subsubsection.1.1.2.1}}
+{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \numberline {1.1.2.2}Take advantage of 3D geometry}{\reset@font\mtcSSSfont 4}{subsubsection.1.1.2.2}}
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {1.2}Objective}{\reset@font\mtcSfont 7}{section.1.2}}
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {1.3}Contribution}{\reset@font\mtcSfont 7}{section.1.3}}
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {1.4}Organization of the thesis}{\reset@font\mtcSfont 7}{section.1.4}}

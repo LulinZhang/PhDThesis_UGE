@@ -267,6 +267,11 @@ Hans Moravec.
 \newblock Technical report CMU-RI-TR-80-03, Carnegie Mellon University,
   Pittsburgh, PA, 1980.
 
+\bibitem[Moulon \textit{et~al.}~2016]{openMVG}
+Pierre Moulon, Pascal Monasse, Renaud Marlet and Others.
+\newblock {\em OpenMVG}.
+\newblock \url{https://github.com/openMVG/openMVG}, 2016.
+
 \bibitem[Noh \textit{et~al.}~2017]{noh2017DELF}
 Hyeonwoo Noh, Andre Araujo, Jack Sim, Tobias Weyand and Bohyung Han.
 \newblock {\em Large-scale image retrieval with attentive deep local features}.
@@ -301,6 +306,21 @@ Manuela Persia, Emanuele Barca, Roberto Greco, Maria Marzulli and Patrizia
   Control Points}.
 \newblock Remote Sensing, vol.~12, no.~14, page 2232, 2020.
 
+\bibitem[Pierrot-Deseilligny \& Cl{\'e}ry~2012]{deseilligny2011apero}
+Marc Pierrot-Deseilligny and Isabelle Cl{\'e}ry.
+\newblock {\em Apero, an open source bundle adjusment software for automatic
+  calibration and orientation of set of images}.
+\newblock ISPRS International Archives of the Photogrammetry, Remote Sensing
+  and Spatial Information Sciences, vol.~{XXXVIII}-5/W16, pages 269--276, 2012.
+
+\bibitem[Pierrot-Deseilligny \& Paparoditis~2006]{mpd:06:sgm}
+Marc Pierrot-Deseilligny and Nicolas Paparoditis.
+\newblock {\em A multiresolution and optimization-based image matching
+  approach: An application to surface reconstruction from SPOT5-HRS stereo
+  imagery}.
+\newblock Archives of Photogrammetry, Remote Sensing and Spatial Information
+  Sciences, vol.~36, no.~1/W41, pages 1--5, 2006.
+
 \bibitem[Pinto \textit{et~al.}~2019]{pinto2019archived}
 Ana~Teresa Pinto, Jos{\'e}~A Gon{\c{c}}alves, Pedro Beja and Jo{\~a}o
   Pradinho~Honrado.
@@ -333,6 +353,12 @@ Paul-Edouard Sarlin, Daniel DeTone, Tomasz Malisiewicz and Andrew Rabinovich.
 \newblock In Proceedings of the IEEE/CVF Conference on Computer Vision and
   Pattern Recognition, pages 4938--4947, 2020.
 
+\bibitem[Schonberger \& Frahm~2016]{schonberger2016structure}
+Johannes~L Schonberger and Jan-Michael Frahm.
+\newblock {\em Structure-from-motion revisited}.
+\newblock In Proceedings of the IEEE Conference on Computer Vision and Pattern
+  Recognition, pages 4104--4113, 2016.
+
 \bibitem[Schonberger \textit{et~al.}~2017]{schonberger2017comparative}
 Johannes~L Schonberger, Hans Hardmeier, Torsten Sattler and Marc Pollefeys.
 \newblock {\em Comparative evaluation of hand-crafted and learned local
@@ -352,6 +378,17 @@ Edgar Simo-Serra, Eduard Trulls, Luis Ferraz, Iasonas Kokkinos, Pascal Fua and
 Milan Sonka, Vaclav Hlavac and Roger Boyle.
 \newblock Image processing, analysis, and machine vision.
 \newblock Cengage Learning, 2014.
+
+\bibitem[Souchon \textit{et~al.}~2010]{souchon2010ign}
+Jean-Philippe Souchon, Christian Thom, Christophe Meynard, Olivier Martin and
+  Marc Pierrot-Deseilligny.
+\newblock {\em The IGN CAMv2 System}.
+\newblock The Photogrammetric Record, vol.~25, no.~132, pages 402--421, 2010.
+
+\bibitem[Sweeney~2015]{theia}
+Chris Sweeney.
+\newblock {\em Theia Multiview Geometry Library: Tutorial \& Reference}.
+\newblock \url{http://theia-sfm.org}, 2015.
 
 \bibitem[Tian \textit{et~al.}~2017]{tian2017l2}
 Yurun Tian, Bin Fan and Fuchao Wu.
