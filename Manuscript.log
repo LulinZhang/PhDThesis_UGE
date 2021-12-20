@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.5.15)  20 DEC 2021 09:13
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.5.15)  20 DEC 2021 20:30
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2069,14 +2069,14 @@ ages/Chapitre3/Pezenas1971.png> <./images/Chapitre3/Pezenas1981.png> <./images/
 Chapitre3/Pezenas2015.png>] [26 <./images/Chapitre3/Kobe1991.png> <./images/Cha
 pitre3/Kobe1995.png>]
 <images/Chapitre3/Pseudo-Ortho-MEC-Malt_Tapas_1954_Ortho-MEC-Malt_2014.png, id=
-697, 1481.535pt x 533.995pt>
+697, 1508.63625pt x 501.875pt>
 File: images/Chapitre3/Pseudo-Ortho-MEC-Malt_Tapas_1954_Ortho-MEC-Malt_2014.png
  Graphic file (type png)
 <use images/Chapitre3/Pseudo-Ortho-MEC-Malt_Tapas_1954_Ortho-MEC-Malt_2014.png>
 
 Package pdftex.def Info: images/Chapitre3/Pseudo-Ortho-MEC-Malt_Tapas_1954_Orth
 o-MEC-Malt_2014.png  used on input line 457.
-(pdftex.def)             Requested size: 250.38434pt x 90.24017pt.
+(pdftex.def)             Requested size: 250.38434pt x 83.28825pt.
 <images/Chapitre3/PlotCurves_Pseudo-Ortho-MEC-Malt_Tapas_1954_Ortho-MEC-Malt_20
 14.png, id=698, 462.528pt x 346.896pt>
 File: images/Chapitre3/PlotCurves_Pseudo-Ortho-MEC-Malt_Tapas_1954_Ortho-MEC-Ma
@@ -2092,8 +2092,8 @@ Overfull \hbox (18.02661pt too wide) in paragraph at lines 463--463
  []
 
 <images/Chapitre3/Pseudo-Homol-SIFT2Step_1954-2014-Rough-2DRANSAC-GlobalR3D-Pil
-eImg_Ortho-MEC-Malt_Tapas_1954_Ortho-MEC-Malt_2014.png, id=699, 1413.28pt x 501
-.875pt>
+eImg_Ortho-MEC-Malt_Tapas_1954_Ortho-MEC-Malt_2014.png, id=699, 1508.63625pt x 
+501.875pt>
 File: images/Chapitre3/Pseudo-Homol-SIFT2Step_1954-2014-Rough-2DRANSAC-GlobalR3
 D-PileImg_Ortho-MEC-Malt_Tapas_1954_Ortho-MEC-Malt_2014.png Graphic file (type 
 png)
@@ -2102,14 +2102,14 @@ png)
 Package pdftex.def Info: images/Chapitre3/Pseudo-Homol-SIFT2Step_1954-2014-Roug
 h-2DRANSAC-GlobalR3D-PileImg_Ortho-MEC-Malt_Tapas_1954_Ortho-MEC-Malt_2014.png 
  used on input line 469.
-(pdftex.def)             Requested size: 193.47882pt x 68.70744pt.
+(pdftex.def)             Requested size: 193.47882pt x 64.35771pt.
 
 Overfull \hbox (3.80772pt too wide) in paragraph at lines 469--469
  [][] 
  []
 
 <images/Chapitre3/Pseudo-Homol-SuperGlue_1954-2014-GlobalR3D-PileImg_Ortho-MEC-
-Malt_Tapas_1954_Ortho-MEC-Malt_2014.png, id=700, 1413.28pt x 501.875pt>
+Malt_Tapas_1954_Ortho-MEC-Malt_2014.png, id=700, 1508.63625pt x 501.875pt>
 File: images/Chapitre3/Pseudo-Homol-SuperGlue_1954-2014-GlobalR3D-PileImg_Ortho
 -MEC-Malt_Tapas_1954_Ortho-MEC-Malt_2014.png Graphic file (type png)
 <use images/Chapitre3/Pseudo-Homol-SuperGlue_1954-2014-GlobalR3D-PileImg_Ortho-
@@ -2117,7 +2117,7 @@ MEC-Malt_Tapas_1954_Ortho-MEC-Malt_2014.png>
 Package pdftex.def Info: images/Chapitre3/Pseudo-Homol-SuperGlue_1954-2014-Glob
 alR3D-PileImg_Ortho-MEC-Malt_Tapas_1954_Ortho-MEC-Malt_2014.png  used on input 
 line 475.
-(pdftex.def)             Requested size: 193.47882pt x 68.70744pt.
+(pdftex.def)             Requested size: 193.47882pt x 64.35771pt.
 
 Overfull \hbox (3.80772pt too wide) in paragraph at lines 475--475
  [][] 
@@ -2223,14 +2223,14 @@ Overfull \hbox (3.80772pt too wide) in paragraph at lines 539--539
  []
 
 <images/Chapitre3/Pseudo-Ortho-MEC-Malt_Tapas_1966_Ortho-MEC-Malt_2014.png, id=
-709, 1254.6875pt x 532.99126pt>
+709, 1246.6575pt x 501.875pt>
 File: images/Chapitre3/Pseudo-Ortho-MEC-Malt_Tapas_1966_Ortho-MEC-Malt_2014.png
  Graphic file (type png)
 <use images/Chapitre3/Pseudo-Ortho-MEC-Malt_Tapas_1966_Ortho-MEC-Malt_2014.png>
 
 Package pdftex.def Info: images/Chapitre3/Pseudo-Ortho-MEC-Malt_Tapas_1966_Orth
 o-MEC-Malt_2014.png  used on input line 554.
-(pdftex.def)             Requested size: 230.46748pt x 97.90242pt.
+(pdftex.def)             Requested size: 230.46748pt x 92.77649pt.
 <images/Chapitre3/PlotCurves_Pseudo-Ortho-MEC-Malt_Tapas_1966_Ortho-MEC-Malt_20
 14.png, id=710, 462.528pt x 346.896pt>
 File: images/Chapitre3/PlotCurves_Pseudo-Ortho-MEC-Malt_Tapas_1966_Ortho-MEC-Ma
@@ -2246,7 +2246,7 @@ Overfull \hbox (18.02661pt too wide) in paragraph at lines 560--560
  []
 
 <images/Chapitre3/Pseudo-Homol-SIFT2Step_1966-2014-Rough-2DRANSAC-GlobalR3D-Pil
-eImg_Ortho-MEC-Malt_Tapas_1966_Ortho-MEC-Malt_2014.png, id=711, 1198.4775pt x 5
+eImg_Ortho-MEC-Malt_Tapas_1966_Ortho-MEC-Malt_2014.png, id=711, 1246.6575pt x 5
 01.875pt>
 File: images/Chapitre3/Pseudo-Homol-SIFT2Step_1966-2014-Rough-2DRANSAC-GlobalR3
 D-PileImg_Ortho-MEC-Malt_Tapas_1966_Ortho-MEC-Malt_2014.png Graphic file (type 
@@ -2256,9 +2256,9 @@ png)
 Package pdftex.def Info: images/Chapitre3/Pseudo-Homol-SIFT2Step_1966-2014-Roug
 h-2DRANSAC-GlobalR3D-PileImg_Ortho-MEC-Malt_Tapas_1966_Ortho-MEC-Malt_2014.png 
  used on input line 566.
-(pdftex.def)             Requested size: 170.71652pt x 71.48729pt.
+(pdftex.def)             Requested size: 170.71652pt x 68.72276pt.
 <images/Chapitre3/Pseudo-Homol-SuperGlue_1966-2014-GlobalR3D-PileImg_Ortho-MEC-
-Malt_Tapas_1966_Ortho-MEC-Malt_2014.png, id=712, 1198.4775pt x 501.875pt>
+Malt_Tapas_1966_Ortho-MEC-Malt_2014.png, id=712, 1246.6575pt x 501.875pt>
 File: images/Chapitre3/Pseudo-Homol-SuperGlue_1966-2014-GlobalR3D-PileImg_Ortho
 -MEC-Malt_Tapas_1966_Ortho-MEC-Malt_2014.png Graphic file (type png)
 <use images/Chapitre3/Pseudo-Homol-SuperGlue_1966-2014-GlobalR3D-PileImg_Ortho-
@@ -2266,7 +2266,7 @@ MEC-Malt_Tapas_1966_Ortho-MEC-Malt_2014.png>
 Package pdftex.def Info: images/Chapitre3/Pseudo-Homol-SuperGlue_1966-2014-Glob
 alR3D-PileImg_Ortho-MEC-Malt_Tapas_1966_Ortho-MEC-Malt_2014.png  used on input 
 line 572.
-(pdftex.def)             Requested size: 170.71652pt x 71.48729pt.
+(pdftex.def)             Requested size: 170.71652pt x 68.72276pt.
 <images/Chapitre3/Ortho-MEC-Malt_Tapas_1966_Ortho-MEC-Malt_2014.png, id=713, 12
 34.6125pt x 529.98pt>
 File: images/Chapitre3/Ortho-MEC-Malt_Tapas_1966_Ortho-MEC-Malt_2014.png Graphi
@@ -2347,14 +2347,14 @@ Package pdftex.def Info: images/Chapitre3/Homol-SubPatch_R270-2DRANSAC_MEC-Malt
 _Tapas_1966_MEC-Malt_2014.png  used on input line 635.
 (pdftex.def)             Requested size: 170.71652pt x 71.48729pt.
 <images/Chapitre3/Pseudo-Ortho-MEC-Malt_Tapas_1970_Ortho-MEC-Malt_2014.png, id=
-721, 1113.15875pt x 526.96875pt>
+721, 1135.24126pt x 501.875pt>
 File: images/Chapitre3/Pseudo-Ortho-MEC-Malt_Tapas_1970_Ortho-MEC-Malt_2014.png
  Graphic file (type png)
 <use images/Chapitre3/Pseudo-Ortho-MEC-Malt_Tapas_1970_Ortho-MEC-Malt_2014.png>
 
 Package pdftex.def Info: images/Chapitre3/Pseudo-Ortho-MEC-Malt_Tapas_1970_Orth
 o-MEC-Malt_2014.png  used on input line 649.
-(pdftex.def)             Requested size: 221.93158pt x 105.0622pt.
+(pdftex.def)             Requested size: 221.93158pt x 98.10645pt.
 <images/Chapitre3/PlotCurves_Pseudo-Ortho-MEC-Malt_Tapas_1970_Ortho-MEC-Malt_20
 14.png, id=722, 462.528pt x 346.896pt>
 File: images/Chapitre3/PlotCurves_Pseudo-Ortho-MEC-Malt_Tapas_1970_Ortho-MEC-Ma
@@ -2365,7 +2365,7 @@ Package pdftex.def Info: images/Chapitre3/PlotCurves_Pseudo-Ortho-MEC-Malt_Tapa
 s_1970_Ortho-MEC-Malt_2014.png  used on input line 655.
 (pdftex.def)             Requested size: 136.5733pt x 102.4287pt.
 <images/Chapitre3/Pseudo-Homol-SIFT2Step_1970-2014-Rough-2DRANSAC-GlobalR3D-Pil
-eImg_Ortho-MEC-Malt_Tapas_1970_Ortho-MEC-Malt_2014.png, id=723, 1060.96375pt x 
+eImg_Ortho-MEC-Malt_Tapas_1970_Ortho-MEC-Malt_2014.png, id=723, 1135.24126pt x 
 501.875pt>
 File: images/Chapitre3/Pseudo-Homol-SIFT2Step_1970-2014-Rough-2DRANSAC-GlobalR3
 D-PileImg_Ortho-MEC-Malt_Tapas_1970_Ortho-MEC-Malt_2014.png Graphic file (type 
@@ -2375,9 +2375,9 @@ png)
 Package pdftex.def Info: images/Chapitre3/Pseudo-Homol-SIFT2Step_1970-2014-Roug
 h-2DRANSAC-GlobalR3D-PileImg_Ortho-MEC-Malt_Tapas_1970_Ortho-MEC-Malt_2014.png 
  used on input line 661.
-(pdftex.def)             Requested size: 170.71652pt x 80.75345pt.
+(pdftex.def)             Requested size: 170.71652pt x 75.46944pt.
 <images/Chapitre3/Pseudo-Homol-SuperGlue_1970-2014-GlobalR3D-PileImg_Ortho-MEC-
-Malt_Tapas_1970_Ortho-MEC-Malt_2014.png, id=724, 1060.96375pt x 501.875pt>
+Malt_Tapas_1970_Ortho-MEC-Malt_2014.png, id=724, 1135.24126pt x 501.875pt>
 File: images/Chapitre3/Pseudo-Homol-SuperGlue_1970-2014-GlobalR3D-PileImg_Ortho
 -MEC-Malt_Tapas_1970_Ortho-MEC-Malt_2014.png Graphic file (type png)
 <use images/Chapitre3/Pseudo-Homol-SuperGlue_1970-2014-GlobalR3D-PileImg_Ortho-
@@ -2385,7 +2385,7 @@ MEC-Malt_Tapas_1970_Ortho-MEC-Malt_2014.png>
 Package pdftex.def Info: images/Chapitre3/Pseudo-Homol-SuperGlue_1970-2014-Glob
 alR3D-PileImg_Ortho-MEC-Malt_Tapas_1970_Ortho-MEC-Malt_2014.png  used on input 
 line 667.
-(pdftex.def)             Requested size: 170.71652pt x 80.75345pt.
+(pdftex.def)             Requested size: 170.71652pt x 75.46944pt.
 <images/Chapitre3/Ortho-MEC-Malt_Tapas_1970_Ortho-MEC-Malt_2014.png, id=725, 10
 92.08pt x 524.96124pt>
 File: images/Chapitre3/Ortho-MEC-Malt_Tapas_1970_Ortho-MEC-Malt_2014.png Graphi
@@ -2456,14 +2456,14 @@ Package pdftex.def Info: images/Chapitre3/Homol-SubPatch_R270-2DRANSAC_MEC-Malt
 _Tapas_1970_MEC-Malt_2014.png  used on input line 729.
 (pdftex.def)             Requested size: 170.71652pt x 80.75345pt.
 <images/Chapitre3/Pseudo-Ortho-MEC-Malt_Tapas_1971_Ortho-MEC-Malt_2015.png, id=
-733, 1031.855pt x 523.9575pt>
+733, 987.69pt x 501.875pt>
 File: images/Chapitre3/Pseudo-Ortho-MEC-Malt_Tapas_1971_Ortho-MEC-Malt_2015.png
  Graphic file (type png)
 <use images/Chapitre3/Pseudo-Ortho-MEC-Malt_Tapas_1971_Ortho-MEC-Malt_2015.png>
 
 Package pdftex.def Info: images/Chapitre3/Pseudo-Ortho-MEC-Malt_Tapas_1971_Orth
 o-MEC-Malt_2015.png  used on input line 744.
-(pdftex.def)             Requested size: 250.38434pt x 127.13548pt.
+(pdftex.def)             Requested size: 250.38434pt x 127.2221pt.
 <images/Chapitre3/PlotCurves_Pseudo-Ortho-MEC-Malt_Tapas_1971_Ortho-MEC-Malt_20
 15.png, id=734, 462.528pt x 346.896pt>
 File: images/Chapitre3/PlotCurves_Pseudo-Ortho-MEC-Malt_Tapas_1971_Ortho-MEC-Ma
@@ -2479,8 +2479,8 @@ Overfull \hbox (18.02661pt too wide) in paragraph at lines 750--750
  []
 
 <images/Chapitre3/Pseudo-Homol-SIFT2Step_1971-2015-Rough-2DRANSAC-GlobalR3D-Pil
-eImg_Ortho-MEC-Malt_Tapas_1971_Ortho-MEC-Malt_2015.png, id=735, 986.68625pt x 5
-01.875pt>
+eImg_Ortho-MEC-Malt_Tapas_1971_Ortho-MEC-Malt_2015.png, id=735, 987.69pt x 501.
+875pt>
 File: images/Chapitre3/Pseudo-Homol-SIFT2Step_1971-2015-Rough-2DRANSAC-GlobalR3
 D-PileImg_Ortho-MEC-Malt_Tapas_1971_Ortho-MEC-Malt_2015.png Graphic file (type 
 png)
@@ -2489,14 +2489,14 @@ png)
 Package pdftex.def Info: images/Chapitre3/Pseudo-Homol-SIFT2Step_1971-2015-Roug
 h-2DRANSAC-GlobalR3D-PileImg_Ortho-MEC-Malt_Tapas_1971_Ortho-MEC-Malt_2015.png 
  used on input line 756.
-(pdftex.def)             Requested size: 193.47882pt x 98.41277pt.
+(pdftex.def)             Requested size: 193.47882pt x 98.30556pt.
 
 Overfull \hbox (3.80772pt too wide) in paragraph at lines 756--756
  [][] 
  []
 
 <images/Chapitre3/Pseudo-Homol-SuperGlue_1971-2015-GlobalR3D-PileImg_Ortho-MEC-
-Malt_Tapas_1971_Ortho-MEC-Malt_2015.png, id=736, 986.68625pt x 501.875pt>
+Malt_Tapas_1971_Ortho-MEC-Malt_2015.png, id=736, 987.69pt x 501.875pt>
 File: images/Chapitre3/Pseudo-Homol-SuperGlue_1971-2015-GlobalR3D-PileImg_Ortho
 -MEC-Malt_Tapas_1971_Ortho-MEC-Malt_2015.png Graphic file (type png)
 <use images/Chapitre3/Pseudo-Homol-SuperGlue_1971-2015-GlobalR3D-PileImg_Ortho-
@@ -2504,7 +2504,7 @@ MEC-Malt_Tapas_1971_Ortho-MEC-Malt_2015.png>
 Package pdftex.def Info: images/Chapitre3/Pseudo-Homol-SuperGlue_1971-2015-Glob
 alR3D-PileImg_Ortho-MEC-Malt_Tapas_1971_Ortho-MEC-Malt_2015.png  used on input 
 line 762.
-(pdftex.def)             Requested size: 193.47882pt x 98.41277pt.
+(pdftex.def)             Requested size: 193.47882pt x 98.30556pt.
 
 Overfull \hbox (3.80772pt too wide) in paragraph at lines 762--762
  [][] 
@@ -2610,14 +2610,14 @@ Overfull \hbox (3.80772pt too wide) in paragraph at lines 827--827
  []
 
 <images/Chapitre3/Pseudo-Ortho-MEC-Malt_Tapas_1981_Ortho-MEC-Malt_2015.png, id=
-745, 1049.9225pt x 533.995pt>
+745, 1013.7875pt x 501.875pt>
 File: images/Chapitre3/Pseudo-Ortho-MEC-Malt_Tapas_1981_Ortho-MEC-Malt_2015.png
  Graphic file (type png)
 <use images/Chapitre3/Pseudo-Ortho-MEC-Malt_Tapas_1981_Ortho-MEC-Malt_2015.png>
 
 Package pdftex.def Info: images/Chapitre3/Pseudo-Ortho-MEC-Malt_Tapas_1981_Orth
 o-MEC-Malt_2015.png  used on input line 842.
-(pdftex.def)             Requested size: 230.46748pt x 117.21037pt.
+(pdftex.def)             Requested size: 230.46748pt x 114.08867pt.
 <images/Chapitre3/PlotCurves_Pseudo-Ortho-MEC-Malt_Tapas_1981_Ortho-MEC-Malt_20
 15.png, id=746, 462.528pt x 346.896pt>
 File: images/Chapitre3/PlotCurves_Pseudo-Ortho-MEC-Malt_Tapas_1981_Ortho-MEC-Ma
@@ -2633,8 +2633,8 @@ Overfull \hbox (18.02661pt too wide) in paragraph at lines 848--848
  []
 
 <images/Chapitre3/Pseudo-Homol-SIFT2Step_1981-2015-Rough-2DRANSAC-GlobalR3D-Pil
-eImg_Ortho-MEC-Malt_Tapas_1981_Ortho-MEC-Malt_2015.png, id=747, 997.7275pt x 50
-1.875pt>
+eImg_Ortho-MEC-Malt_Tapas_1981_Ortho-MEC-Malt_2015.png, id=747, 1013.7875pt x 5
+01.875pt>
 File: images/Chapitre3/Pseudo-Homol-SIFT2Step_1981-2015-Rough-2DRANSAC-GlobalR3
 D-PileImg_Ortho-MEC-Malt_Tapas_1981_Ortho-MEC-Malt_2015.png Graphic file (type 
 png)
@@ -2643,9 +2643,9 @@ png)
 Package pdftex.def Info: images/Chapitre3/Pseudo-Homol-SIFT2Step_1981-2015-Roug
 h-2DRANSAC-GlobalR3D-PileImg_Ortho-MEC-Malt_Tapas_1981_Ortho-MEC-Malt_2015.png 
  used on input line 854.
-(pdftex.def)             Requested size: 170.71652pt x 85.86899pt.
+(pdftex.def)             Requested size: 170.71652pt x 84.50586pt.
 <images/Chapitre3/Pseudo-Homol-SuperGlue_1981-2015-GlobalR3D-PileImg_Ortho-MEC-
-Malt_Tapas_1981_Ortho-MEC-Malt_2015.png, id=748, 997.7275pt x 501.875pt>
+Malt_Tapas_1981_Ortho-MEC-Malt_2015.png, id=748, 1013.7875pt x 501.875pt>
 File: images/Chapitre3/Pseudo-Homol-SuperGlue_1981-2015-GlobalR3D-PileImg_Ortho
 -MEC-Malt_Tapas_1981_Ortho-MEC-Malt_2015.png Graphic file (type png)
 <use images/Chapitre3/Pseudo-Homol-SuperGlue_1981-2015-GlobalR3D-PileImg_Ortho-
@@ -2653,7 +2653,7 @@ MEC-Malt_Tapas_1981_Ortho-MEC-Malt_2015.png>
 Package pdftex.def Info: images/Chapitre3/Pseudo-Homol-SuperGlue_1981-2015-Glob
 alR3D-PileImg_Ortho-MEC-Malt_Tapas_1981_Ortho-MEC-Malt_2015.png  used on input 
 line 860.
-(pdftex.def)             Requested size: 170.71652pt x 85.86899pt.
+(pdftex.def)             Requested size: 170.71652pt x 84.50586pt.
 <images/Chapitre3/Ortho-MEC-Malt_Tapas_1981_Ortho-MEC-Malt_2015.png, id=749, 10
 42.89626pt x 530.98375pt>
 File: images/Chapitre3/Ortho-MEC-Malt_Tapas_1981_Ortho-MEC-Malt_2015.png Graphi
@@ -2734,14 +2734,14 @@ Package pdftex.def Info: images/Chapitre3/Homol-SubPatch_R90-2DRANSAC_MEC-Malt_
 Tapas_1981_MEC-Malt_2015.png  used on input line 923.
 (pdftex.def)             Requested size: 170.71652pt x 85.95323pt.
 <images/Chapitre3/Pseudo-Ortho-MEC-Malt_Tapas_1991_Ortho-MEC-Malt_Tapas_1994.pn
-g, id=757, 650.43pt x 1020.81375pt>
+g, id=757, 594.22pt x 1003.75pt>
 File: images/Chapitre3/Pseudo-Ortho-MEC-Malt_Tapas_1991_Ortho-MEC-Malt_Tapas_19
 94.png Graphic file (type png)
 <use images/Chapitre3/Pseudo-Ortho-MEC-Malt_Tapas_1991_Ortho-MEC-Malt_Tapas_199
 4.png>
 Package pdftex.def Info: images/Chapitre3/Pseudo-Ortho-MEC-Malt_Tapas_1991_Orth
 o-MEC-Malt_Tapas_1994.png  used on input line 939.
-(pdftex.def)             Requested size: 156.49014pt x 245.59221pt.
+(pdftex.def)             Requested size: 156.49014pt x 264.33836pt.
 <images/Chapitre3/PlotCurves_Pseudo-Ortho-MEC-Malt_Tapas_1991_Ortho-MEC-Malt_Ta
 pas_1994.png, id=758, 462.528pt x 346.896pt>
 File: images/Chapitre3/PlotCurves_Pseudo-Ortho-MEC-Malt_Tapas_1991_Ortho-MEC-Ma
@@ -2752,8 +2752,8 @@ Package pdftex.def Info: images/Chapitre3/PlotCurves_Pseudo-Ortho-MEC-Malt_Tapa
 s_1991_Ortho-MEC-Malt_Tapas_1994.png  used on input line 945.
 (pdftex.def)             Requested size: 136.5733pt x 102.4287pt.
 <images/Chapitre3/Pseudo-Homol-SIFT2Step_1991-1994-Rough-2DRANSAC-GlobalR3D-Pil
-eImg_Ortho-MEC-Malt_Tapas_1991_Ortho-MEC-Malt_Tapas_1994.png, id=759, 646.415pt
- x 1003.75pt>
+eImg_Ortho-MEC-Malt_Tapas_1991_Ortho-MEC-Malt_Tapas_1994.png, id=759, 594.22pt 
+x 1003.75pt>
 File: images/Chapitre3/Pseudo-Homol-SIFT2Step_1991-1994-Rough-2DRANSAC-GlobalR3
 D-PileImg_Ortho-MEC-Malt_Tapas_1991_Ortho-MEC-Malt_Tapas_1994.png Graphic file 
 (type png)
@@ -2762,9 +2762,9 @@ D-PileImg_Ortho-MEC-Malt_Tapas_1991_Ortho-MEC-Malt_Tapas_1994.png Graphic file
 Package pdftex.def Info: images/Chapitre3/Pseudo-Homol-SIFT2Step_1991-1994-Roug
 h-2DRANSAC-GlobalR3D-PileImg_Ortho-MEC-Malt_Tapas_1991_Ortho-MEC-Malt_Tapas_199
 4.png  used on input line 951.
-(pdftex.def)             Requested size: 156.49014pt x 242.9879pt.
+(pdftex.def)             Requested size: 156.49014pt x 264.33836pt.
 <images/Chapitre3/Pseudo-Homol-SuperGlue_1991-1994-GlobalR3D-PileImg_Ortho-MEC-
-Malt_Tapas_1991_Ortho-MEC-Malt_Tapas_1994.png, id=760, 646.415pt x 1003.75pt>
+Malt_Tapas_1991_Ortho-MEC-Malt_Tapas_1994.png, id=760, 594.22pt x 1003.75pt>
 File: images/Chapitre3/Pseudo-Homol-SuperGlue_1991-1994-GlobalR3D-PileImg_Ortho
 -MEC-Malt_Tapas_1991_Ortho-MEC-Malt_Tapas_1994.png Graphic file (type png)
 <use images/Chapitre3/Pseudo-Homol-SuperGlue_1991-1994-GlobalR3D-PileImg_Ortho-
@@ -2772,7 +2772,7 @@ MEC-Malt_Tapas_1991_Ortho-MEC-Malt_Tapas_1994.png>
 Package pdftex.def Info: images/Chapitre3/Pseudo-Homol-SuperGlue_1991-1994-Glob
 alR3D-PileImg_Ortho-MEC-Malt_Tapas_1991_Ortho-MEC-Malt_Tapas_1994.png  used on 
 input line 957.
-(pdftex.def)             Requested size: 156.49014pt x 242.9879pt.
+(pdftex.def)             Requested size: 156.49014pt x 264.33836pt.
 <images/Chapitre3/Ortho-MEC-Malt_Tapas_1991_Ortho-MEC-Malt_Tapas_1994.png, id=7
 61, 657.45625pt x 1018.80624pt>
 File: images/Chapitre3/Ortho-MEC-Malt_Tapas_1991_Ortho-MEC-Malt_Tapas_1994.png 
@@ -2846,160 +2846,157 @@ s_1991_MEC-Malt_Tapas_1994.png  used on input line 1019.
 File: images/Chapitre3/DoD1954R3D.png Graphic file (type png)
 <use images/Chapitre3/DoD1954R3D.png>
 Package pdftex.def Info: images/Chapitre3/DoD1954R3D.png  used on input line 10
-57.
+61.
 (pdftex.def)             Requested size: 119.50148pt x 98.5331pt.
 <images/Chapitre3/DoD1954Ortho.png, id=771, 1927.2pt x 1204.5pt>
 File: images/Chapitre3/DoD1954Ortho.png Graphic file (type png)
 <use images/Chapitre3/DoD1954Ortho.png>
 Package pdftex.def Info: images/Chapitre3/DoD1954Ortho.png  used on input line 
-1063.
+1067.
 (pdftex.def)             Requested size: 119.50148pt x 98.5331pt.
 <images/Chapitre3/DoD1954DSM.png, id=773, 1927.2pt x 1204.5pt>
 File: images/Chapitre3/DoD1954DSM.png Graphic file (type png)
 <use images/Chapitre3/DoD1954DSM.png>
 Package pdftex.def Info: images/Chapitre3/DoD1954DSM.png  used on input line 10
-69.
+73.
 (pdftex.def)             Requested size: 119.50148pt x 98.5331pt.
 <images/Chapitre3/DoD1966R3D.png, id=775, 1927.2pt x 1204.5pt>
 File: images/Chapitre3/DoD1966R3D.png Graphic file (type png)
 <use images/Chapitre3/DoD1966R3D.png>
 Package pdftex.def Info: images/Chapitre3/DoD1966R3D.png  used on input line 10
-77.
+81.
 (pdftex.def)             Requested size: 119.50148pt x 80.81038pt.
 <images/Chapitre3/DoD1966Ortho.png, id=777, 1927.2pt x 1204.5pt>
 File: images/Chapitre3/DoD1966Ortho.png Graphic file (type png)
 <use images/Chapitre3/DoD1966Ortho.png>
 Package pdftex.def Info: images/Chapitre3/DoD1966Ortho.png  used on input line 
-1083.
+1087.
 (pdftex.def)             Requested size: 119.50148pt x 80.81038pt.
 <images/Chapitre3/DoD1966DSM.png, id=779, 1927.2pt x 1204.5pt>
 File: images/Chapitre3/DoD1966DSM.png Graphic file (type png)
 <use images/Chapitre3/DoD1966DSM.png>
 Package pdftex.def Info: images/Chapitre3/DoD1966DSM.png  used on input line 10
-89.
+93.
 (pdftex.def)             Requested size: 119.50148pt x 80.81038pt.
 <images/Chapitre3/DoD1970R3D.png, id=781, 1927.2pt x 1204.5pt>
 File: images/Chapitre3/DoD1970R3D.png Graphic file (type png)
 <use images/Chapitre3/DoD1970R3D.png>
-Package pdftex.def Info: images/Chapitre3/DoD1970R3D.png  used on input line 10
-97.
+Package pdftex.def Info: images/Chapitre3/DoD1970R3D.png  used on input line 11
+01.
 (pdftex.def)             Requested size: 119.50148pt x 76.51193pt.
 <images/Chapitre3/DoD1970Ortho.png, id=783, 1927.2pt x 1204.5pt>
 File: images/Chapitre3/DoD1970Ortho.png Graphic file (type png)
 <use images/Chapitre3/DoD1970Ortho.png>
 Package pdftex.def Info: images/Chapitre3/DoD1970Ortho.png  used on input line 
-1103.
+1107.
 (pdftex.def)             Requested size: 119.50148pt x 76.51193pt.
 <images/Chapitre3/DoD1970DSM.png, id=785, 1927.2pt x 1204.5pt>
 File: images/Chapitre3/DoD1970DSM.png Graphic file (type png)
 <use images/Chapitre3/DoD1970DSM.png>
 Package pdftex.def Info: images/Chapitre3/DoD1970DSM.png  used on input line 11
-09.
+13.
 (pdftex.def)             Requested size: 119.50148pt x 76.51193pt.
 <images/Chapitre3/LegendDoD.png, id=787, 955.57pt x 43.16125pt>
 File: images/Chapitre3/LegendDoD.png Graphic file (type png)
 <use images/Chapitre3/LegendDoD.png>
-Package pdftex.def Info: images/Chapitre3/LegendDoD.png  used on input line 111
-6.
+Package pdftex.def Info: images/Chapitre3/LegendDoD.png  used on input line 112
+0.
 (pdftex.def)             Requested size: 312.9803pt x 14.13655pt.
 
-Overfull \hbox (3.63054pt too wide) in paragraph at lines 1116--1117
+Overfull \hbox (3.63054pt too wide) in paragraph at lines 1120--1121
  [][] 
  []
 
 
-Package xcolor Warning: Incompatible color definition on input line 1140.
+Package xcolor Warning: Incompatible color definition on input line 1144.
 
 
-Package xcolor Warning: Incompatible color definition on input line 1140.
+Package xcolor Warning: Incompatible color definition on input line 1144.
 
-)
-Underfull \vbox (badness 6032) has occurred while \output is active []
-
- [27 <./images/Chapitre3/Pseudo-Ortho-MEC-Malt_Tapas_1954_Ortho-MEC-Malt_2014.p
-ng> <./images/Chapitre3/PlotCurves_Pseudo-Ortho-MEC-Malt_Tapas_1954_Ortho-MEC-M
-alt_2014.png> <./images/Chapitre3/Pseudo-Homol-SIFT2Step_1954-2014-Rough-2DRANS
-AC-GlobalR3D-PileImg_Ortho-MEC-Malt_Tapas_1954_Ortho-MEC-Malt_2014.png (PNG cop
-y)> <./images/Chapitre3/Pseudo-Homol-SuperGlue_1954-2014-GlobalR3D-PileImg_Orth
-o-MEC-Malt_Tapas_1954_Ortho-MEC-Malt_2014.png (PNG copy)>] [28 <./images/Chapit
-re3/Ortho-MEC-Malt_Tapas_1954_Ortho-MEC-Malt_2014.png> <./images/Chapitre3/Plot
-Curves_Ortho-MEC-Malt_Tapas_1954_Ortho-MEC-Malt_2014.png> <./images/Chapitre3/H
-omol-SIFT-2DRANSAC_Ortho-MEC-Malt_Tapas_1954_Ortho-MEC-Malt_2014.png (PNG copy)
-> <./images/Chapitre3/Homol-SubPatch_R270-2DRANSAC_Ortho-MEC-Malt_Tapas_1954_Or
-tho-MEC-Malt_2014.png (PNG copy)> <./images/Chapitre3/MEC-Malt_Tapas_1954_MEC-M
-alt_2014.png> <./images/Chapitre3/PlotCurves_MEC-Malt_Tapas_1954_MEC-Malt_2014.
-png> <./images/Chapitre3/Homol-SIFT-2DRANSAC_MEC-Malt_Tapas_1954_MEC-Malt_2014.
-png (PNG copy)> <./images/Chapitre3/Homol-SubPatch_R270-2DRANSAC_MEC-Malt_Tapas
-_1954_MEC-Malt_2014.png (PNG copy)>] [29 <./images/Chapitre3/Pseudo-Ortho-MEC-M
-alt_Tapas_1966_Ortho-MEC-Malt_2014.png> <./images/Chapitre3/PlotCurves_Pseudo-O
-rtho-MEC-Malt_Tapas_1966_Ortho-MEC-Malt_2014.png> <./images/Chapitre3/Pseudo-Ho
-mol-SIFT2Step_1966-2014-Rough-2DRANSAC-GlobalR3D-PileImg_Ortho-MEC-Malt_Tapas_1
-966_Ortho-MEC-Malt_2014.png (PNG copy)> <./images/Chapitre3/Pseudo-Homol-SuperG
-lue_1966-2014-GlobalR3D-PileImg_Ortho-MEC-Malt_Tapas_1966_Ortho-MEC-Malt_2014.p
-ng (PNG copy)> <./images/Chapitre3/Ortho-MEC-Malt_Tapas_1966_Ortho-MEC-Malt_201
-4.png> <./images/Chapitre3/PlotCurves_Ortho-MEC-Malt_Tapas_1966_Ortho-MEC-Malt_
-2014.png> <./images/Chapitre3/Homol-SIFT-2DRANSAC_Ortho-MEC-Malt_Tapas_1966_Ort
-ho-MEC-Malt_2014.png (PNG copy)> <./images/Chapitre3/Homol-SubPatch_R270-2DRANS
-AC_Ortho-MEC-Malt_Tapas_1966_Ortho-MEC-Malt_2014.png (PNG copy)>] [30 <./images
-/Chapitre3/MEC-Malt_Tapas_1966_MEC-Malt_2014.png> <./images/Chapitre3/PlotCurve
-s_MEC-Malt_Tapas_1966_MEC-Malt_2014.png> <./images/Chapitre3/Homol-SIFT-2DRANSA
-C_MEC-Malt_Tapas_1966_MEC-Malt_2014.png (PNG copy)> <./images/Chapitre3/Homol-S
-ubPatch_R270-2DRANSAC_MEC-Malt_Tapas_1966_MEC-Malt_2014.png (PNG copy)> <./imag
-es/Chapitre3/Pseudo-Ortho-MEC-Malt_Tapas_1970_Ortho-MEC-Malt_2014.png> <./image
-s/Chapitre3/PlotCurves_Pseudo-Ortho-MEC-Malt_Tapas_1970_Ortho-MEC-Malt_2014.png
-> <./images/Chapitre3/Pseudo-Homol-SIFT2Step_1970-2014-Rough-2DRANSAC-GlobalR3D
--PileImg_Ortho-MEC-Malt_Tapas_1970_Ortho-MEC-Malt_2014.png (PNG copy)> <./image
-s/Chapitre3/Pseudo-Homol-SuperGlue_1970-2014-GlobalR3D-PileImg_Ortho-MEC-Malt_T
-apas_1970_Ortho-MEC-Malt_2014.png (PNG copy)>] [31 <./images/Chapitre3/Ortho-ME
-C-Malt_Tapas_1970_Ortho-MEC-Malt_2014.png> <./images/Chapitre3/PlotCurves_Ortho
--MEC-Malt_Tapas_1970_Ortho-MEC-Malt_2014.png> <./images/Chapitre3/Homol-SIFT-2D
-RANSAC_Ortho-MEC-Malt_Tapas_1970_Ortho-MEC-Malt_2014.png (PNG copy)> <./images/
-Chapitre3/Homol-SubPatch_R270-2DRANSAC_Ortho-MEC-Malt_Tapas_1970_Ortho-MEC-Malt
-_2014.png (PNG copy)> <./images/Chapitre3/MEC-Malt_Tapas_1970_MEC-Malt_2014.png
-> <./images/Chapitre3/PlotCurves_MEC-Malt_Tapas_1970_MEC-Malt_2014.png> <./imag
-es/Chapitre3/Homol-SIFT-2DRANSAC_MEC-Malt_Tapas_1970_MEC-Malt_2014.png (PNG cop
-y)> <./images/Chapitre3/Homol-SubPatch_R270-2DRANSAC_MEC-Malt_Tapas_1970_MEC-Ma
-lt_2014.png (PNG copy)>] [32 <./images/Chapitre3/Pseudo-Ortho-MEC-Malt_Tapas_19
-71_Ortho-MEC-Malt_2015.png> <./images/Chapitre3/PlotCurves_Pseudo-Ortho-MEC-Mal
-t_Tapas_1971_Ortho-MEC-Malt_2015.png> <./images/Chapitre3/Pseudo-Homol-SIFT2Ste
-p_1971-2015-Rough-2DRANSAC-GlobalR3D-PileImg_Ortho-MEC-Malt_Tapas_1971_Ortho-ME
-C-Malt_2015.png (PNG copy)> <./images/Chapitre3/Pseudo-Homol-SuperGlue_1971-201
-5-GlobalR3D-PileImg_Ortho-MEC-Malt_Tapas_1971_Ortho-MEC-Malt_2015.png (PNG copy
-)> <./images/Chapitre3/Ortho-MEC-Malt_Tapas_1971_Ortho-MEC-Malt_2015.png> <./im
-ages/Chapitre3/PlotCurves_Ortho-MEC-Malt_Tapas_1971_Ortho-MEC-Malt_2015.png> <.
-/images/Chapitre3/Homol-SIFT-2DRANSAC_Ortho-MEC-Malt_Tapas_1971_Ortho-MEC-Malt_
-2015.png (PNG copy)> <./images/Chapitre3/Homol-SubPatch_R270-2DRANSAC_Ortho-MEC
--Malt_Tapas_1971_Ortho-MEC-Malt_2015.png (PNG copy)>] [33 <./images/Chapitre3/M
-EC-Malt_Tapas_1971_MEC-Malt_2015.png> <./images/Chapitre3/PlotCurves_MEC-Malt_T
-apas_1971_MEC-Malt_2015.png> <./images/Chapitre3/Homol-SIFT-2DRANSAC_MEC-Malt_T
-apas_1971_MEC-Malt_2015.png (PNG copy)> <./images/Chapitre3/Homol-SubPatch_R270
--2DRANSAC_MEC-Malt_Tapas_1971_MEC-Malt_2015.png (PNG copy)> <./images/Chapitre3
-/Pseudo-Ortho-MEC-Malt_Tapas_1981_Ortho-MEC-Malt_2015.png> <./images/Chapitre3/
-PlotCurves_Pseudo-Ortho-MEC-Malt_Tapas_1981_Ortho-MEC-Malt_2015.png> <./images/
-Chapitre3/Pseudo-Homol-SIFT2Step_1981-2015-Rough-2DRANSAC-GlobalR3D-PileImg_Ort
-ho-MEC-Malt_Tapas_1981_Ortho-MEC-Malt_2015.png (PNG copy)> <./images/Chapitre3/
-Pseudo-Homol-SuperGlue_1981-2015-GlobalR3D-PileImg_Ortho-MEC-Malt_Tapas_1981_Or
-tho-MEC-Malt_2015.png (PNG copy)>] [34 <./images/Chapitre3/Ortho-MEC-Malt_Tapas
-_1981_Ortho-MEC-Malt_2015.png> <./images/Chapitre3/PlotCurves_Ortho-MEC-Malt_Ta
-pas_1981_Ortho-MEC-Malt_2015.png> <./images/Chapitre3/Homol-SIFT-2DRANSAC_Ortho
--MEC-Malt_Tapas_1981_Ortho-MEC-Malt_2015.png (PNG copy)> <./images/Chapitre3/Ho
-mol-SubPatch_R90-2DRANSAC_Ortho-MEC-Malt_Tapas_1981_Ortho-MEC-Malt_2015.png (PN
-G copy)> <./images/Chapitre3/MEC-Malt_Tapas_1981_MEC-Malt_2015.png> <./images/C
-hapitre3/PlotCurves_MEC-Malt_Tapas_1981_MEC-Malt_2015.png> <./images/Chapitre3/
-Homol-SIFT-2DRANSAC_MEC-Malt_Tapas_1981_MEC-Malt_2015.png (PNG copy)> <./images
-/Chapitre3/Homol-SubPatch_R90-2DRANSAC_MEC-Malt_Tapas_1981_MEC-Malt_2015.png (P
-NG copy)>]
-[35 <./images/Chapitre3/Pseudo-Ortho-MEC-Malt_Tapas_1991_Ortho-MEC-Malt_Tapas_1
-994.png> <./images/Chapitre3/PlotCurves_Pseudo-Ortho-MEC-Malt_Tapas_1991_Ortho-
-MEC-Malt_Tapas_1994.png> <./images/Chapitre3/Pseudo-Homol-SIFT2Step_1991-1994-R
-ough-2DRANSAC-GlobalR3D-PileImg_Ortho-MEC-Malt_Tapas_1991_Ortho-MEC-Malt_Tapas_
-1994.png (PNG copy)> <./images/Chapitre3/Pseudo-Homol-SuperGlue_1991-1994-Globa
-lR3D-PileImg_Ortho-MEC-Malt_Tapas_1991_Ortho-MEC-Malt_Tapas_1994.png (PNG copy)
->] [36 <./images/Chapitre3/Ortho-MEC-Malt_Tapas_1991_Ortho-MEC-Malt_Tapas_1994.
-png> <./images/Chapitre3/PlotCurves_Ortho-MEC-Malt_Tapas_1991_Ortho-MEC-Malt_Ta
-pas_1994.png> <./images/Chapitre3/Homol-SIFT-2DRANSAC_Ortho-MEC-Malt_Tapas_1991
-_Ortho-MEC-Malt_Tapas_1994.png (PNG copy)> <./images/Chapitre3/Homol-SubPatch-2
-DRANSAC_Ortho-MEC-Malt_Tapas_1991_Ortho-MEC-Malt_Tapas_1994.png (PNG copy)>]
+) [27 <./images/Chapitre3/Pseudo-Ortho-MEC-Malt_Tapas_1954_Ortho-MEC-Malt_2014.
+png (PNG copy)> <./images/Chapitre3/PlotCurves_Pseudo-Ortho-MEC-Malt_Tapas_1954
+_Ortho-MEC-Malt_2014.png> <./images/Chapitre3/Pseudo-Homol-SIFT2Step_1954-2014-
+Rough-2DRANSAC-GlobalR3D-PileImg_Ortho-MEC-Malt_Tapas_1954_Ortho-MEC-Malt_2014.
+png (PNG copy)> <./images/Chapitre3/Pseudo-Homol-SuperGlue_1954-2014-GlobalR3D-
+PileImg_Ortho-MEC-Malt_Tapas_1954_Ortho-MEC-Malt_2014.png (PNG copy)>] [28 <./i
+mages/Chapitre3/Ortho-MEC-Malt_Tapas_1954_Ortho-MEC-Malt_2014.png> <./images/Ch
+apitre3/PlotCurves_Ortho-MEC-Malt_Tapas_1954_Ortho-MEC-Malt_2014.png> <./images
+/Chapitre3/Homol-SIFT-2DRANSAC_Ortho-MEC-Malt_Tapas_1954_Ortho-MEC-Malt_2014.pn
+g (PNG copy)> <./images/Chapitre3/Homol-SubPatch_R270-2DRANSAC_Ortho-MEC-Malt_T
+apas_1954_Ortho-MEC-Malt_2014.png (PNG copy)> <./images/Chapitre3/MEC-Malt_Tapa
+s_1954_MEC-Malt_2014.png> <./images/Chapitre3/PlotCurves_MEC-Malt_Tapas_1954_ME
+C-Malt_2014.png> <./images/Chapitre3/Homol-SIFT-2DRANSAC_MEC-Malt_Tapas_1954_ME
+C-Malt_2014.png (PNG copy)> <./images/Chapitre3/Homol-SubPatch_R270-2DRANSAC_ME
+C-Malt_Tapas_1954_MEC-Malt_2014.png (PNG copy)>] [29 <./images/Chapitre3/Pseudo
+-Ortho-MEC-Malt_Tapas_1966_Ortho-MEC-Malt_2014.png (PNG copy)> <./images/Chapit
+re3/PlotCurves_Pseudo-Ortho-MEC-Malt_Tapas_1966_Ortho-MEC-Malt_2014.png> <./ima
+ges/Chapitre3/Pseudo-Homol-SIFT2Step_1966-2014-Rough-2DRANSAC-GlobalR3D-PileImg
+_Ortho-MEC-Malt_Tapas_1966_Ortho-MEC-Malt_2014.png (PNG copy)> <./images/Chapit
+re3/Pseudo-Homol-SuperGlue_1966-2014-GlobalR3D-PileImg_Ortho-MEC-Malt_Tapas_196
+6_Ortho-MEC-Malt_2014.png (PNG copy)> <./images/Chapitre3/Ortho-MEC-Malt_Tapas_
+1966_Ortho-MEC-Malt_2014.png> <./images/Chapitre3/PlotCurves_Ortho-MEC-Malt_Tap
+as_1966_Ortho-MEC-Malt_2014.png> <./images/Chapitre3/Homol-SIFT-2DRANSAC_Ortho-
+MEC-Malt_Tapas_1966_Ortho-MEC-Malt_2014.png (PNG copy)> <./images/Chapitre3/Hom
+ol-SubPatch_R270-2DRANSAC_Ortho-MEC-Malt_Tapas_1966_Ortho-MEC-Malt_2014.png (PN
+G copy)>] [30 <./images/Chapitre3/MEC-Malt_Tapas_1966_MEC-Malt_2014.png> <./ima
+ges/Chapitre3/PlotCurves_MEC-Malt_Tapas_1966_MEC-Malt_2014.png> <./images/Chapi
+tre3/Homol-SIFT-2DRANSAC_MEC-Malt_Tapas_1966_MEC-Malt_2014.png (PNG copy)> <./i
+mages/Chapitre3/Homol-SubPatch_R270-2DRANSAC_MEC-Malt_Tapas_1966_MEC-Malt_2014.
+png (PNG copy)> <./images/Chapitre3/Pseudo-Ortho-MEC-Malt_Tapas_1970_Ortho-MEC-
+Malt_2014.png (PNG copy)> <./images/Chapitre3/PlotCurves_Pseudo-Ortho-MEC-Malt_
+Tapas_1970_Ortho-MEC-Malt_2014.png> <./images/Chapitre3/Pseudo-Homol-SIFT2Step_
+1970-2014-Rough-2DRANSAC-GlobalR3D-PileImg_Ortho-MEC-Malt_Tapas_1970_Ortho-MEC-
+Malt_2014.png (PNG copy)> <./images/Chapitre3/Pseudo-Homol-SuperGlue_1970-2014-
+GlobalR3D-PileImg_Ortho-MEC-Malt_Tapas_1970_Ortho-MEC-Malt_2014.png (PNG copy)>
+] [31 <./images/Chapitre3/Ortho-MEC-Malt_Tapas_1970_Ortho-MEC-Malt_2014.png> <.
+/images/Chapitre3/PlotCurves_Ortho-MEC-Malt_Tapas_1970_Ortho-MEC-Malt_2014.png>
+ <./images/Chapitre3/Homol-SIFT-2DRANSAC_Ortho-MEC-Malt_Tapas_1970_Ortho-MEC-Ma
+lt_2014.png (PNG copy)> <./images/Chapitre3/Homol-SubPatch_R270-2DRANSAC_Ortho-
+MEC-Malt_Tapas_1970_Ortho-MEC-Malt_2014.png (PNG copy)> <./images/Chapitre3/MEC
+-Malt_Tapas_1970_MEC-Malt_2014.png> <./images/Chapitre3/PlotCurves_MEC-Malt_Tap
+as_1970_MEC-Malt_2014.png> <./images/Chapitre3/Homol-SIFT-2DRANSAC_MEC-Malt_Tap
+as_1970_MEC-Malt_2014.png (PNG copy)> <./images/Chapitre3/Homol-SubPatch_R270-2
+DRANSAC_MEC-Malt_Tapas_1970_MEC-Malt_2014.png (PNG copy)>] [32 <./images/Chapit
+re3/Pseudo-Ortho-MEC-Malt_Tapas_1971_Ortho-MEC-Malt_2015.png (PNG copy)> <./ima
+ges/Chapitre3/PlotCurves_Pseudo-Ortho-MEC-Malt_Tapas_1971_Ortho-MEC-Malt_2015.p
+ng> <./images/Chapitre3/Pseudo-Homol-SIFT2Step_1971-2015-Rough-2DRANSAC-GlobalR
+3D-PileImg_Ortho-MEC-Malt_Tapas_1971_Ortho-MEC-Malt_2015.png (PNG copy)> <./ima
+ges/Chapitre3/Pseudo-Homol-SuperGlue_1971-2015-GlobalR3D-PileImg_Ortho-MEC-Malt
+_Tapas_1971_Ortho-MEC-Malt_2015.png (PNG copy)> <./images/Chapitre3/Ortho-MEC-M
+alt_Tapas_1971_Ortho-MEC-Malt_2015.png> <./images/Chapitre3/PlotCurves_Ortho-ME
+C-Malt_Tapas_1971_Ortho-MEC-Malt_2015.png> <./images/Chapitre3/Homol-SIFT-2DRAN
+SAC_Ortho-MEC-Malt_Tapas_1971_Ortho-MEC-Malt_2015.png (PNG copy)> <./images/Cha
+pitre3/Homol-SubPatch_R270-2DRANSAC_Ortho-MEC-Malt_Tapas_1971_Ortho-MEC-Malt_20
+15.png (PNG copy)>] [33 <./images/Chapitre3/MEC-Malt_Tapas_1971_MEC-Malt_2015.p
+ng> <./images/Chapitre3/PlotCurves_MEC-Malt_Tapas_1971_MEC-Malt_2015.png> <./im
+ages/Chapitre3/Homol-SIFT-2DRANSAC_MEC-Malt_Tapas_1971_MEC-Malt_2015.png (PNG c
+opy)> <./images/Chapitre3/Homol-SubPatch_R270-2DRANSAC_MEC-Malt_Tapas_1971_MEC-
+Malt_2015.png (PNG copy)> <./images/Chapitre3/Pseudo-Ortho-MEC-Malt_Tapas_1981_
+Ortho-MEC-Malt_2015.png (PNG copy)> <./images/Chapitre3/PlotCurves_Pseudo-Ortho
+-MEC-Malt_Tapas_1981_Ortho-MEC-Malt_2015.png> <./images/Chapitre3/Pseudo-Homol-
+SIFT2Step_1981-2015-Rough-2DRANSAC-GlobalR3D-PileImg_Ortho-MEC-Malt_Tapas_1981_
+Ortho-MEC-Malt_2015.png (PNG copy)> <./images/Chapitre3/Pseudo-Homol-SuperGlue_
+1981-2015-GlobalR3D-PileImg_Ortho-MEC-Malt_Tapas_1981_Ortho-MEC-Malt_2015.png (
+PNG copy)>] [34 <./images/Chapitre3/Ortho-MEC-Malt_Tapas_1981_Ortho-MEC-Malt_20
+15.png> <./images/Chapitre3/PlotCurves_Ortho-MEC-Malt_Tapas_1981_Ortho-MEC-Malt
+_2015.png> <./images/Chapitre3/Homol-SIFT-2DRANSAC_Ortho-MEC-Malt_Tapas_1981_Or
+tho-MEC-Malt_2015.png (PNG copy)> <./images/Chapitre3/Homol-SubPatch_R90-2DRANS
+AC_Ortho-MEC-Malt_Tapas_1981_Ortho-MEC-Malt_2015.png (PNG copy)> <./images/Chap
+itre3/MEC-Malt_Tapas_1981_MEC-Malt_2015.png> <./images/Chapitre3/PlotCurves_MEC
+-Malt_Tapas_1981_MEC-Malt_2015.png> <./images/Chapitre3/Homol-SIFT-2DRANSAC_MEC
+-Malt_Tapas_1981_MEC-Malt_2015.png (PNG copy)> <./images/Chapitre3/Homol-SubPat
+ch_R90-2DRANSAC_MEC-Malt_Tapas_1981_MEC-Malt_2015.png (PNG copy)>] [35 <./image
+s/Chapitre3/Pseudo-Ortho-MEC-Malt_Tapas_1991_Ortho-MEC-Malt_Tapas_1994.png (PNG
+ copy)> <./images/Chapitre3/PlotCurves_Pseudo-Ortho-MEC-Malt_Tapas_1991_Ortho-M
+EC-Malt_Tapas_1994.png> <./images/Chapitre3/Pseudo-Homol-SIFT2Step_1991-1994-Ro
+ugh-2DRANSAC-GlobalR3D-PileImg_Ortho-MEC-Malt_Tapas_1991_Ortho-MEC-Malt_Tapas_1
+994.png (PNG copy)> <./images/Chapitre3/Pseudo-Homol-SuperGlue_1991-1994-Global
+R3D-PileImg_Ortho-MEC-Malt_Tapas_1991_Ortho-MEC-Malt_Tapas_1994.png (PNG copy)>
+] [36 <./images/Chapitre3/Ortho-MEC-Malt_Tapas_1991_Ortho-MEC-Malt_Tapas_1994.p
+ng> <./images/Chapitre3/PlotCurves_Ortho-MEC-Malt_Tapas_1991_Ortho-MEC-Malt_Tap
+as_1994.png> <./images/Chapitre3/Homol-SIFT-2DRANSAC_Ortho-MEC-Malt_Tapas_1991_
+Ortho-MEC-Malt_Tapas_1994.png (PNG copy)> <./images/Chapitre3/Homol-SubPatch-2D
+RANSAC_Ortho-MEC-Malt_Tapas_1991_Ortho-MEC-Malt_Tapas_1994.png (PNG copy)>]
 [37 <./images/Chapitre3/MEC-Malt_Tapas_1991_MEC-Malt_Tapas_1994.png> <./images/
 Chapitre3/PlotCurves_MEC-Malt_Tapas_1991_MEC-Malt_Tapas_1994.png> <./images/Cha
 pitre3/Homol-SIFT-2DRANSAC_MEC-Malt_Tapas_1991_MEC-Malt_Tapas_1994.png (PNG cop
@@ -3409,16 +3406,16 @@ LaTeX Warning: There were multiply-defined labels.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 97.
  ) 
 Here is how much of TeX's memory you used:
- 13431 strings out of 494923
- 220626 string characters out of 6180742
- 364744 words of memory out of 5000000
- 15740 multiletter control sequences out of 15000+600000
+ 13429 strings out of 494923
+ 220589 string characters out of 6180742
+ 366253 words of memory out of 5000000
+ 15738 multiletter control sequences out of 15000+600000
  29080 words of font info for 74 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  42i,11n,46p,1787b,513s stack positions out of 5000i,500n,10000p,200000b,80000s
  </home/lulin/.texlive2017/texmf-var/fonts/pk/ljfour/jknappen/ec/ectt1095.600
-pk> </home/lulin/.texlive2017/texmf-var/fonts/pk/ljfour/jknappen/ec/ecti0900.60
-0pk> </home/lulin/.texlive2017/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx0900.6
+pk> </home/lulin/.texlive2017/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx0900.60
+0pk> </home/lulin/.texlive2017/texmf-var/fonts/pk/ljfour/jknappen/ec/ecti0900.6
 00pk> </home/lulin/.texlive2017/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm0800.
 600pk> </home/lulin/.texlive2017/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm0900
 .600pk> </home/lulin/.texlive2017/texmf-var/fonts/pk/ljfour/jknappen/ec/ecti109
@@ -3447,9 +3444,9 @@ nts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type
 1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/publ
 ic/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsf
 onts/cm/cmsy9.pfb>
-Output written on Manuscript.pdf (65 pages, 67000686 bytes).
+Output written on Manuscript.pdf (65 pages, 69666412 bytes).
 PDF statistics:
- 2030 PDF objects out of 2073 (max. 8388607)
+ 2025 PDF objects out of 2073 (max. 8388607)
  1085 compressed objects within 11 object streams
  368 named destinations out of 1000 (max. 500000)
  884 words of extra memory for PDF output out of 10000 (max. 10000000)

@@ -28,10 +28,10 @@
 \contentsline {subsection}{\numberline {3.3.2}Evaluation}{24}{subsection.3.3.2}
 \contentsline {subsection}{\numberline {3.3.3}Comparison}{27}{subsection.3.3.3}
 \contentsline {subsubsection}{\numberline {3.3.3.1}Matches visualization}{27}{subsubsection.3.3.3.1}
-\contentsline {subsubsection}{\numberline {3.3.3.2}Ground check points}{39}{subsubsection.3.3.3.2}
-\contentsline {subsubsection}{\numberline {3.3.3.3}DoD}{39}{subsubsection.3.3.3.3}
-\contentsline {section}{\numberline {3.4}Conclusion}{39}{section.3.4}
-\contentsline {section}{\numberline {3.5}Discussion}{39}{section.3.5}
+\contentsline {subsubsection}{\numberline {3.3.3.2}Ground check points}{27}{subsubsection.3.3.3.2}
+\contentsline {subsubsection}{\numberline {3.3.3.3}DoD}{27}{subsubsection.3.3.3.3}
+\contentsline {section}{\numberline {3.4}Conclusion}{27}{section.3.4}
+\contentsline {section}{\numberline {3.5}Discussion}{27}{section.3.5}
 \contentsline {chapter}{\numberline {4}Precise matching}{41}{chapter.4}
 \contentsline {section}{\numberline {4.1}Introduction}{41}{section.4.1}
 \contentsline {subsection}{\numberline {4.1.1}Motivation}{41}{subsection.4.1.1}
