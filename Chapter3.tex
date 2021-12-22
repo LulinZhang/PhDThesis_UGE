@@ -483,7 +483,11 @@ For each dataset, each free epoch is matched with reference epoch for rough co-r
 		\item $SuperGlue_{ImgPairs}$, $SuperGlue_{Ortho}$ and $SuperGlue_{DSM}$ succeeded in RANSAC to find enough good matches, with the GT inlier ratios ranging from 4.11\% to 40.83\%. In general, the GT inlier ratios raise from $SuperGlue_{ImgPairs}$ to $SuperGlue_{Ortho}$ then to $SuperGlue_{DSM}$.
 	\end{itemize}
 	%$SIFT_{ImgPairs}$, $SuperGlue_{ImgPairs}$, $SIFT_{Ortho}$, $SuperGlue_{Ortho}$, $SIFT_{DSM}$ and $SuperGlue_{DSM}$
-	\item For Pezenas, the matches visualizations between free epochs (i.e. epoch 1971 and 1981) and reference epoch (i.e. epoch 2015) are displayed in Figure~\ref{MatchVizPezenas1971DSM} and ~\ref{MatchVizPezenas1981DSM}.
+	\item For Pezenas, the matches visualizations between free epochs (i.e. epoch 1971 and 1981) and reference epoch (i.e. epoch 2015) are displayed in Figure~\ref{MatchVizPezenas1971DSM} and ~\ref{MatchVizPezenas1981DSM}. As can be seen:\\
+	\begin{itemize}
+		\item $SIFT_{ImgPairs}$, $SIFT_{Ortho}$ and $SIFT_{DSM}$ successfully recovered enough correct matches for all 2 free epochs (with GT inlier ratios above !!!1\%). $SIFT_{Ortho}$ has the lowest inlier ratio (around 2\%) among them, while $SIFT_{ImgPairs}$ has the highest (around 50\%), because higher resolution is possessed by image pairs, which improves the result for dataset with moderate scene changes like Pezenas.
+		\item $SuperGlue_{ImgPairs}$, $SuperGlue_{Ortho}$ and $SuperGlue_{DSM}$ recovered more total matches along with higher GT inlier ratio (larger than 50\%) than SIFT for all 2 free epochs. The inlier ratio of $SuperGlue_{Ortho}$ is around 60\%, significantly larger than $SIFT_{Ortho}$, which we attribute to 2 reasons: (1) SuperGlue is more invariant over time as it is trained on multi-epoch images and (2) our tiling scheme. 
+	\end{itemize}
 	\item For Kobe, the matches visualizations between free epoch (i.e. epoch 1991) and reference epoch (i.e. epoch 1995) are displayed in Figure~\ref{MatchVizKobe1991DSM}.
 \end{enumerate}
 
