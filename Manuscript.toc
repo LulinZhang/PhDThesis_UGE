@@ -17,21 +17,22 @@
 \contentsline {section}{\numberline {2.3}Robust matching}{12}{section.2.3}
 \contentsline {chapter}{\numberline {3}Rough co-registration}{15}{chapter.3}
 \contentsline {section}{\numberline {3.1}Introduction}{15}{section.3.1}
-\contentsline {section}{\numberline {3.2}Methodology}{16}{section.3.2}
-\contentsline {subsection}{\numberline {3.2.1}Strategy 1: Matching image pairs}{17}{subsection.3.2.1}
+\contentsline {section}{\numberline {3.2}Methodology}{17}{section.3.2}
+\contentsline {subsection}{\numberline {3.2.1}Strategy 1: Matching image pairs}{18}{subsection.3.2.1}
 \contentsline {subsection}{\numberline {3.2.2}Strategy 2: Matching Orthophotos/DSMs}{18}{subsection.3.2.2}
-\contentsline {section}{\numberline {3.3}Experiments}{22}{section.3.3}
-\contentsline {subsection}{\numberline {3.3.1}Datasets}{23}{subsection.3.3.1}
-\contentsline {paragraph}{Fr{\'e}jus}{23}{section*.4}
-\contentsline {paragraph}{Pezenas}{23}{section*.5}
-\contentsline {paragraph}{Kobe}{23}{section*.6}
-\contentsline {subsection}{\numberline {3.3.2}Evaluation}{24}{subsection.3.3.2}
-\contentsline {subsection}{\numberline {3.3.3}Comparison}{27}{subsection.3.3.3}
-\contentsline {subsubsection}{\numberline {3.3.3.1}Matches visualization}{27}{subsubsection.3.3.3.1}
-\contentsline {subsubsection}{\numberline {3.3.3.2}Ground check points}{27}{subsubsection.3.3.3.2}
-\contentsline {subsubsection}{\numberline {3.3.3.3}DoD}{27}{subsubsection.3.3.3.3}
-\contentsline {section}{\numberline {3.4}Conclusion}{27}{section.3.4}
-\contentsline {section}{\numberline {3.5}Discussion}{27}{section.3.5}
+\contentsline {section}{\numberline {3.3}Experiments}{23}{section.3.3}
+\contentsline {subsection}{\numberline {3.3.1}Implementation details}{24}{subsection.3.3.1}
+\contentsline {subsection}{\numberline {3.3.2}Datasets}{24}{subsection.3.3.2}
+\contentsline {paragraph}{Fr{\'e}jus}{24}{section*.4}
+\contentsline {paragraph}{Pezenas}{25}{section*.5}
+\contentsline {paragraph}{Kobe}{25}{section*.6}
+\contentsline {subsection}{\numberline {3.3.3}Evaluation}{25}{subsection.3.3.3}
+\contentsline {subsection}{\numberline {3.3.4}Comparison}{28}{subsection.3.3.4}
+\contentsline {subsubsection}{\numberline {3.3.4.1}Matches visualization}{28}{subsubsection.3.3.4.1}
+\contentsline {subsubsection}{\numberline {3.3.4.2}Ground check points}{29}{subsubsection.3.3.4.2}
+\contentsline {subsubsection}{\numberline {3.3.4.3}DoD}{29}{subsubsection.3.3.4.3}
+\contentsline {section}{\numberline {3.4}Conclusion}{29}{section.3.4}
+\contentsline {section}{\numberline {3.5}Discussion}{29}{section.3.5}
 \contentsline {chapter}{\numberline {4}Precise matching}{41}{chapter.4}
 \contentsline {section}{\numberline {4.1}Introduction}{41}{section.4.1}
 \contentsline {subsection}{\numberline {4.1.1}Motivation}{41}{subsection.4.1.1}
@@ -43,6 +44,8 @@
 \contentsline {chapter}{\numberline {5}Conclusion and Perspective}{43}{chapter.5}
 \contentsline {part}{Appendices}{45}{chapter.5}
 \partbegin 
-\contentsline {chapter}{\numberline {A}Appendix Example}{47}{appendix.A}
-\contentsline {section}{\numberline {A.1}Appendix Example section}{47}{section.A.1}
-\contentsline {chapter}{Bibliography}{49}{appendix*.8}
+\contentsline {chapter}{\numberline {A}Comparison between $SIFT_{ours}$ and $SIFT_{orig}$}{47}{appendix.A}
+\contentsline {section}{\numberline {A.1}Comparison on method $SIFT_{ImgPairs}$}{47}{section.A.1}
+\contentsline {section}{\numberline {A.2}Comparison on method $SIFT_{Ortho}$}{47}{section.A.2}
+\contentsline {section}{\numberline {A.3}Comparison on method $SIFT_{DSM}$}{47}{section.A.3}
+\contentsline {chapter}{Bibliography}{51}{appendix*.8}

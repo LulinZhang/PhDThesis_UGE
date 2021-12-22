@@ -21,8 +21,20 @@ Since multi-epoch images often demonstrate different appearances due to scene ch
 Based on these ideas, we attempted 2 strategies to match different epochs:\\
 \begin{enumerate}
     \item Match each inter-epoch image pair, followed by projecting the matches onto ground to build globally consistent transformation model.
-    \item Generate orthophoto or DSM for each epoch, and match orthophoto/DSM pairs instead of matching the inter-epoch image pairs, followed by RANSAC based on 2D similarity transformation model to remove outliers, and build a 3D Helmert transformation model between epochs by projecting inlier mathces to ground.
+    \item Generate orthophoto or DSM for each epoch, and match orthophoto/DSM pairs
+    , followed by RANSAC based on 2D similarity transformation model to remove outliers, and build a 3D Helmert transformation model between epochs by projecting inlier mathces to ground.
 \end{enumerate}
+
+Our main contributions include:\\
+\begin{enumerate}
+	\item Improve the performance of matching inter-epoch images with SIFT by (1) using downsampled images and (2) skipping ratio test.
+	\item Improve matching robustness by building globally consistent transformation model, which can be achieved by either (1) matching every possible combination of inter-epoch image pairs followed by global filtering or (2) integrating images from the same epoch into a single image (DSM or orthophoto) before matching.
+	\item Introduce the idea of matching DSMs to obtain robust matches even under drastic scene changes, as the 3D landscape often stays globally stable over time.
+	\item Introduce 3D RANSAC based on DSMs to filter tentative matches: each three correspondences projected to DSM serve to compute a 3D Helmert transformation between epochs, and most importantly provide a 2D constraint on all images’ correspondences.
+	\item Introduce \textit{4 rotation hypotheses} to make SuperGlue, which is not invariant to rotation larger than 45$^\circ$, practicable on remote sensing images.
+	\item Introduce \textit{one-to-many tiling scheme} to scale-up the deep learning methods for feature matching.
+\end{enumerate}
+
 
 %\subsection{Motivation}
 %\subsection{Contribution}
@@ -60,8 +72,9 @@ Please notice our pipelines are generic, different feature matching methods can 
 \subsection{Strategy 1: Matching image pairs}
 %\subsection{Strategy 1: global filtering}
 %CoReg-R3D
-The workflow of matching image pairs strategy is displayed in Figure~\ref{WorkflowImgPair}.\\
-We introduce \textit{4 rotation hypotheses} when feature matching method that is not invariant to rotations lager than 45$^\circ$ (e.g. SuperGlue) is applied. It works as follows (cf. Figure~\ref{WorkflowImgPair}(b)): 
+The workflow of matching image pairs strategy is displayed in Figure~\ref{WorkflowImgPair}(a).\\
+We introduce \textit{4 rotation hypotheses} when feature matching method that is not invariant to rotations lager than 45$^\circ$ (e.g. SuperGlue) is applied.\\
+The \textit{4 rotation hypotheses} works as follows (cf. Figure~\ref{WorkflowImgPair}(b)): 
 \begin{enumerate}
     \item Rotate the secondary image by 90$^{\circ}$ four times;
     \item Match each rotated image with the master image;
@@ -72,7 +85,7 @@ The \textit{4 rotation hypotheses} would not be applied when rotation invariant 
 Assuming the numbers of images in \textit{epoch$_1$} and \textit{epoch$_2$} are P and Q individually, the matching image pairs strategy works as follows:\\
 \begin{enumerate}
     \item Match P$\times$Q image pairs respectively (with or without \textit{4 rotation hypotheses}, depending on whether the matching method is rotation invariant), giving rise to P$\times$Q sets of matches $M({\mathbf{K}^{e_1},\mathbf{K}^{e_2}})$ ($\mathbf{K}^{e_i}$ represents keypoints in image $I^{e_i}$).
-    \item Project matches $M({\mathbf{K}^{e_1},\mathbf{K}^{e_2}})$ of each image pair onto ground, resulting in one set of matches $M({\mathbf{KG}^{e_1},\mathbf{KG}^{e_2}})$ ($\mathbf{KG}^{e_i}$ represents keypoints on ground $G^{e_i}$).
+    \item Project matches $M({\mathbf{K}^{e_1},\mathbf{K}^{e_2}})$ of each image pair onto ground and combine them, resulting in one set of matches $M({\mathbf{KG}^{e_1},\mathbf{KG}^{e_2}})$ ($\mathbf{KG}^{e_i}$ represents keypoints on ground $G^{e_i}$).
     \item Sample matches $M({\mathbf{KG}^{e_1},\mathbf{KG}^{e_2}})$ iteratively to compute the 3D Helmert transformation RANSAC model:
 \begin{equation}
 \left [ \begin{array}{c}
@@ -135,7 +148,7 @@ We set the number of RANSAC iterations to 1000, and consider matches within $T_r
 %\subsubsection{SuperGlue}
 \subsection{Strategy 2: Matching Orthophotos/DSMs}
 %\subsection{trategy 2: global matching}
-Another strategy is to match orthophotos or DSMs, the workflows are displayed in Figure~\ref{WorkflowOrtho} and Figure~\ref{WorkflowDSM} individually. Different than matching P$\times$Q image pairs, we only need to match a pair of DSMs/orthophotos.
+Another strategy is to match orthophotos or DSMs, the workflows are displayed in Figure~\ref{WorkflowOrtho}(a) and Figure~\ref{WorkflowDSM}(a) individually. Different than matching P$\times$Q image pairs, we only need to match a pair of DSMs/orthophotos.
 Orthophotos are by nature RGB images, therefore feature matching methods can be applied on them directly. Conversely, DSMs are 2.5D rasters recorded in floating-point format, they should be converted beforehand to [0–255] range grayscale images.
 \par
 \begin{figure*}[htbp]
@@ -146,13 +159,13 @@ Orthophotos are by nature RGB images, therefore feature matching methods can be 
                 \includegraphics[width=1\columnwidth]{images/Chapitre3/ortho.png}
             \end{minipage}%
         }
-        \subfigure[Four rotation hypotheses combined with tiling scheme]{
+        \subfigure[Four rotation hypotheses combined with \textit{one-to-many tiling scheme}]{
             \begin{minipage}[t]{1\linewidth}
                 \centering
                 \includegraphics[width=1\columnwidth]{images/Chapitre3/ortho-RotHyp.png}
             \end{minipage}%
         }
-        \caption{Rough co-registration by matching orthophotos. (a) Workflow. Orthophotos are matched (with 4 rotation hypotheses combined with tiling scheme which are explained in (b), if the matching method is not rotation invariant), followed by projecting the inlier matches onto ground to build 3D Helmert transformation model. (b) Four rotation hypotheses combined with tiling scheme. We rotate the secondary orthophoto by 90 $^\circ$ four times to match with master orthophoto and keep the best one with the largest number of RANSAC inliers (red rectangle). Tiling scheme is applied during each hypothesis, with both orthophotos croped into tiles followed by matching all the tile pairs and merging the matches.}
+        \caption{Rough co-registration by matching orthophotos. (a) Workflow. Orthophotos are matched (with 4 rotation hypotheses combined with \textit{one-to-many tiling scheme} scheme which are explained in (b), if the matching method is not rotation invariant), followed by projecting the inlier matches onto ground to build 3D Helmert transformation model. (b) Four rotation hypotheses combined with \textit{one-to-many tiling scheme}. We rotate the secondary orthophoto by 90 $^\circ$ four times to match with master orthophoto and keep the best one with the largest number of RANSAC inliers (red rectangle). \textit{One-to-many tiling scheme} is applied during each hypothesis, with both orthophotos croped into tiles followed by matching all the tile pairs and merging the matches.}
         \label{WorkflowOrtho}
     \end{center}
 \end{figure*}
@@ -229,14 +242,14 @@ Matching DSMs/orthophotos has the following merits:
 DSMs/orthophotos are usually large images as they have larger extent than original images.
 Learned matching methods like SuperGlue often underperform on large images as they are either trained on small images to run real-time or with limited spatial resolution of CNN feature maps. We propose a \textit{one-to-many tiling scheme} to make up for the deficiency. 
 \par
-The \textit{one-to-many tiling scheme} is performed as follows (Figure~\ref{WorkflowImgPair}(a)):\\
+The \textit{one-to-many tiling scheme} is performed as follows (Figure~\ref{WorkflowOrtho}(a) and Figure~\ref{WorkflowDSM}(a)):\\
 \begin{enumerate}
     \item Crop both the master and secondary images into M and N tiles of certain size, respectively;
     \item Apply matching on M$\times$N tile pairs individually;
     \item Merge the matches and perform RANSAC based on 2D similarity transformation to remove outliers.
 \end{enumerate}
 
-The \textit{one-to-many tiling scheme} can be combined with \textit{4 rotation hypotheses} when the matching method is both unsatisfactory on large images and not rotation invariant, as shown in Figure~\ref{WorkflowImgPair}(b).
+The \textit{one-to-many tiling scheme} can be combined with \textit{4 rotation hypotheses} when the matching method is both unsatisfactory on large images and not rotation invariant, as shown in Figure~\ref{WorkflowOrtho}(b) and Figure~\ref{WorkflowDSM}(b).
 Both \textit{one-to-many tiling scheme} and \textit{4 rotation hypotheses} would not be applied when matching method that is both satisfactory on large images and rotation invariant (e.g. SIFT) is adopted.
 \par
 The matching DSMs/orthophotos strategy works as follows:\\
@@ -299,16 +312,31 @@ For each pipeline, we employ either SIFT or SuperGlue as the feature matching me
     \item $SIFT_{DSM}$;
     \item $SuperGlue_{DSM}$;
 \end{enumerate}
-In the following we introduce the datasets and the evaluation criteria, as well as comparison of the 6 methods.\\
-For each dataset, one epoch would be chosen as the reference epoch, the remaining epochs would be treated as free epochs. The rough co-registration is applied on each free epoch and the reference epoch to obtain the co-registered image orientations in the frame of the reference epoch.\\
+In the following we introduce the implementation details, the datasets and the evaluation criteria, as well as comparison of the 6 methods.\\
+
+\subsection{Implementation details}
+To improve efficiency, all input images are downsampled by a factor of 3 beforehand. To calculate the DSMs and orthophotos, we further downsample the images by a factor of 4, which amounts to a total downsampling factor of 12 with respect to the input images. For example, the images in Fr{\'e}jus 1970 are downsampled from [8766, 8763] to [730, 730]. As the goal of rough co-registration is to get robust rather than precise matches, a low resolution DSM/orthophoto is good enough and keeps the computational cost low. \\
+For each dataset, one epoch (generally the most recent epoch) would be chosen as the reference epoch, the remaining epochs would be treated as free epochs. The rough co-registration is applied on each free epoch and the reference epoch to obtain the co-registered image orientations in the frame of the reference epoch.
+\par
+
+As inter-epoch images often look very different, when the original SIFT ~\cite{lowe2004distinctive} (i.e. $SIFT_{orig}$) is applied directly in our methods $SIFT_{ImgPairs}$, $SIFT_{Ortho}$ and $SIFT_{DSM}$, generally very few matches are recovered. So we replace it with a slightly different version of SIFT (i.e.  $SIFT_{ours}$) with the following modifications:\\
+\begin{enumerate}
+	\item Downsample the images by a factor of 3 (i.e. a total downsampling factor of 9 with respect to the input images) to focus on the global outline of the scene for improving robustness;
+	\item Relax the matching restriction by skipping the ratio test to obtain more tentative matches followed by applying RANSAC based on 2D similarity transformation model to remove outliers.
+\end{enumerate}
+Experiments comparing $SIFT_{ours}$ and $SIFT_{orig}$ on ${ImgPairs}$, ${Ortho}$ and ${DSM}$ are displayed in Appendix ~\ref{chap:appendix1}, in which $SIFT_{ours}$ recovered enough good matches while $SIFT_{orig}$ failed.\\
+
+For $SuperGlue_{ImgPairs}$, $SuperGlue_{Ortho}$ and $SuperGlue_{DSM}$, the image/patch pairs entering SuperGlue are downsampled to 640$\times$480 pixels, as it is the default parameter provided by the author and guarantees the best performance.
+
 
 \subsection{Datasets}
 %Frejus, Pezenas, Kobe\\
 We tested our method on three datasets: Pezenas, Fr{\'e}jus and Kobe. Details of the datasets are listed in Table~\ref{Data details} and Figure~\ref{FrejusData},~\ref{PezenasData}, ~\ref{KobeData}.
 \par
-\paragraph{Fr{\'e}jus} It is a 15 $km^2$ rectangular area located in Fr{\'e}jus, a commune in southeastern France. The area is mainly covered with buildings along with scattered farmlands, except a half-moon-shaped bay located in south. We have four sets of images acquired in 1954, 1966, 1970 and 2014. The epoch 2014 was acquired with the IGN's digital metric camera ~\cite{souchon2010ign}, and is treated as the ground truth (GT) during our processing (in other words, the epoch 2015 is chosen as the reference epoch (\textcolor{red}{explain reference epoch beforehand})). The area exhibits drastic scene changes in the 60-year period, as can be seen in Figure~\ref{FrejusData}.\\
+\paragraph{Fr{\'e}jus} It is a 15 $km^2$ rectangular area located in Fr{\'e}jus, a commune in southeastern France. The area is mainly covered with buildings along with scattered farmlands, except a half-moon-shaped bay located in south. We have four sets of images acquired in 1954, 1966, 1970 and 2014. The epoch 2014 was acquired with the IGN's digital metric camera ~\cite{souchon2010ign}, its orientations are both in global reference frame and precise. Therefore it is treated as the ground truth (GT) during our processing (in other words, the epoch 2014 is chosen as the reference epoch). 
+The area exhibits drastic scene changes in the 60-year period, as can be seen in Figure~\ref{FrejusData}.\\
 \paragraph{Pezenas} It is a 420 $km^2$ rectangular area located in Pezenas in the Occitanie region in southern France. The area is mainly covered with vegetation and several sparsely populated urban zones. We have at our disposal three sets of images acquired in 1971, 1981 and 2015. The epoch 2015 is treated as GT. The area exhibits changes in scene appearance in the 44-year period.\\
-\paragraph{Kobe} It is a 90 $km^2$ area of irregular shape located in the north of Awaji Island, Japan. The well-known Kobe earthquake happened here in January 1995. We have two sets of images: pre-event acquired in 1991 and post-event acquired in 1995. It is mainly covered with mountain area and narrow urban zones along the sea. There is no GT, therefore the recent epoch (i.e. epoch 1995) is treated as reference epoch. In this dataset we are interested in localizing the earthquake fault.
+\paragraph{Kobe} It is a 90 $km^2$ area of irregular shape located in the north of Awaji Island, Japan. The well-known Kobe earthquake happened here in January 1995. We have two sets of images: pre-event acquired in 1991 and post-event acquired in 1995. It is mainly covered with mountain area and narrow urban zones along the sea. There is no GT, hence we chose the latter epoch (i.e. epoch 1995) as the reference epoch and measured 2 points on Google map to roughly scale the result to metric units. In this dataset we are interested in localizing the earthquake fault.
 \begin{table}[htbp]
     \scriptsize %\footnotesize
     \centering
@@ -344,31 +372,31 @@ We tested our method on three datasets: Pezenas, Fr{\'e}jus and Kobe. Details of
 
 \begin{figure*}[htbp]
     \begin{center}
-        \subfigure[Fr{\'e}jus 1954]{
-            \begin{minipage}[t]{0.38\linewidth}
+        \subfigure[Fr{\'e}jus 1954 (19 images)]{
+            \begin{minipage}[t]{0.4\linewidth}
                 \centering
-                \includegraphics[width=5.45cm]{images/Chapitre3/Frejus1954.png}
+                \includegraphics[width=5.65cm]{images/Chapitre3/Frejus1954.png}
             \end{minipage}%
         }
-        \subfigure[Fr{\'e}jus 1966]{
-            \begin{minipage}[t]{0.58\linewidth}
+        \subfigure[Fr{\'e}jus 1966 (15 images)]{
+            \begin{minipage}[t]{0.56\linewidth}
                 \centering
-                \includegraphics[width=7.8cm]{images/Chapitre3/Frejus1966.png}
+                \includegraphics[width=7.6cm]{images/Chapitre3/Frejus1966.png}
             \end{minipage}%
         }
-        \subfigure[Fr{\'e}jus 1970]{
-    \begin{minipage}[t]{0.48\linewidth}
+        \subfigure[Fr{\'e}jus 1970 (19 images)]{
+    \begin{minipage}[t]{0.5\linewidth}
         \centering
-        \includegraphics[width=6.8cm]{images/Chapitre3/Frejus1970.png}
+        \includegraphics[width=6.1cm]{images/Chapitre3/Frejus1970.png}
     \end{minipage}%
 }
-\subfigure[Fr{\'e}jus 2014]{
-    \begin{minipage}[t]{0.48\linewidth}
+\subfigure[Fr{\'e}jus 2014 (36 images)]{
+    \begin{minipage}[t]{0.46\linewidth}
         \centering
-        \includegraphics[width=6.6cm]{images/Chapitre3/Frejus2014.png}
+        \includegraphics[width=6.25cm]{images/Chapitre3/Frejus2014.png}
     \end{minipage}%
 }
-        \caption{Images demonstration of different epochs in Fr{\'e}jus. The common zone of all the epochs is indicated by the red rectangles.}
+        \caption{Images demonstration of different epochs in Fr{\'e}jus, image number of each epoch is displayed in the parenthesis of each sub headline. The common zone of all the epochs is indicated by the red rectangles.}
         \label{FrejusData}
     \end{center}
 \end{figure*} 
@@ -376,25 +404,25 @@ We tested our method on three datasets: Pezenas, Fr{\'e}jus and Kobe. Details of
 
 \begin{figure*}[htbp]
     \begin{center}
-        \subfigure[Pezenas 1971]{
+        \subfigure[Pezenas 1971 (57 images)]{
             \begin{minipage}[t]{0.31\linewidth}
                 \centering
-                \includegraphics[width=4.4cm]{images/Chapitre3/Pezenas1971.png}
+                \includegraphics[width=4.45cm]{images/Chapitre3/Pezenas1971.png}
             \end{minipage}%
         }
-        \subfigure[Pezenas 1981]{
+        \subfigure[Pezenas 1981 (27 images)]{
             \begin{minipage}[t]{0.31\linewidth}
                 \centering
-                \includegraphics[width=4.5cm]{images/Chapitre3/Pezenas1981.png}
+                \includegraphics[width=4.62cm]{images/Chapitre3/Pezenas1981.png}
             \end{minipage}%
         }
-        \subfigure[Pezenas 2015]{
+        \subfigure[Pezenas 2015 (382 images)]{
             \begin{minipage}[t]{0.29\linewidth}
                 \centering
-                \includegraphics[width=3.9cm]{images/Chapitre3/Pezenas2015.png}
+                \includegraphics[width=3.78cm]{images/Chapitre3/Pezenas2015.png}
             \end{minipage}%
         }
-        \caption{Images demonstration of different epochs in Pezenas. The common zone of all the epochs is indicated by the red rectangles.}
+        \caption{Images demonstration of different epochs in Pezenas, image number of each epoch is displayed in the parenthesis of each sub headline. The common zone of all the epochs is indicated by the red rectangles.}
         \label{PezenasData}
     \end{center}
 \end{figure*} 
@@ -402,19 +430,19 @@ We tested our method on three datasets: Pezenas, Fr{\'e}jus and Kobe. Details of
 
 \begin{figure*}[htbp]
     \begin{center}
-        \subfigure[Kobe 1991]{
+        \subfigure[Kobe 1991 (15 images)]{
             \begin{minipage}[t]{1\linewidth}
                 \centering
                 \includegraphics[height=13cm,angle=90]{images/Chapitre3/Kobe1991.png}
             \end{minipage}%
         }
-        \subfigure[Kobe 1995]{
+        \subfigure[Kobe 1995 (83 images)]{
             \begin{minipage}[t]{1\linewidth}
                 \centering
                 \includegraphics[height=13cm,angle=90]{images/Chapitre3/Kobe1995.png}
             \end{minipage}%
         }
-        \caption{Images demonstration of different epochs in Kobe. The common zone of all the epochs is indicated by the red rectangles.}
+        \caption{Images demonstration of different epochs in Kobe, image number of each epoch is displayed in the parenthesis of each sub headline. The common zone of all the epochs is indicated by the red rectangles.}
         \label{KobeData}
     \end{center}
 \end{figure*} 
@@ -446,19 +474,31 @@ In order to evaluate the results qualitatively and quantitatively, the following
 %1张表表示6种方法的(1)和(2)，1张大图放6种方法的DoD, inlier tie pt图（R3D, DSM, ortho各3张（无点图，SIFT点图，SpG点图））
 
 \subsubsection{Matches visualization}
+For each dataset, each free epoch is matched with reference epoch for rough co-registration with 6 methods ($SIFT_{ImgPairs}$, $SuperGlue_{ImgPairs}$, $SIFT_{Ortho}$, $SuperGlue_{Ortho}$, $SIFT_{DSM}$ and $SuperGlue_{DSM}$), the matches are visualized and displayed together for comparison.\\
+\begin{enumerate}
+	\item For Fr{\'e}jus, the matches visualizations between free epochs (i.e. epoch 1954, 1966 and 1970) and reference epoch (i.e. epoch 2014) are displayed in Figure~\ref{MatchVizFrejus1954DSM}, ~\ref{MatchVizFrejus1966DSM} and ~\ref{MatchVizFrejus1970DSM} individually. As can be seen:\\
+	\begin{itemize}
+		\item $SIFT_{ImgPairs}$ and $SIFT_{Ortho}$ failed to find enough correct matches for all 3 free epochs (with GT inlier ratios below 1\%), therefore the RANSAC failed to recover any good matches. It is reasonable as extreme scene changes present in Fr{\'e}jus, and SIFT is not sufficiently invariant over time by its very nature.
+		\item $SIFT_{DSM}$ found several good matches after RANSAC, thanks to stable information on DSMs. However, the GT inlier ratio is dangerously low (around 1\%), which makes the RANSAC procedure unstable.
+		\item $SuperGlue_{ImgPairs}$, $SuperGlue_{Ortho}$ and $SuperGlue_{DSM}$ succeeded in RANSAC to find enough good matches, with the GT inlier ratios ranging from 4.11\% to 40.83\%. In general, the GT inlier ratios raise from $SuperGlue_{ImgPairs}$ to $SuperGlue_{Ortho}$ then to $SuperGlue_{DSM}$.
+	\end{itemize}
+	%$SIFT_{ImgPairs}$, $SuperGlue_{ImgPairs}$, $SIFT_{Ortho}$, $SuperGlue_{Ortho}$, $SIFT_{DSM}$ and $SuperGlue_{DSM}$
+	\item For Pezenas, the matches visualizations between free epochs (i.e. epoch 1971 and 1981) and reference epoch (i.e. epoch 2015) are displayed in Figure~\ref{MatchVizPezenas1971DSM} and ~\ref{MatchVizPezenas1981DSM}.
+	\item For Kobe, the matches visualizations between free epoch (i.e. epoch 1991) and reference epoch (i.e. epoch 1995) are displayed in Figure~\ref{MatchVizKobe1991DSM}.
+\end{enumerate}
 
 \begin{figure*}[htbp]
     \begin{center}
-        \subfigure[Image pairs]{
-            \begin{minipage}[t]{0.65\linewidth}
+        \subfigure[Image pairs (19$\times$36 pairs)]{
+            \begin{minipage}[t]{0.48\linewidth}
                 \centering
-                \includegraphics[width=8.8cm]{images/Chapitre3/Pseudo-Ortho-MEC-Malt_Tapas_1954_Ortho-MEC-Malt_2014.png}
+                \includegraphics[width=6.8cm]{images/Chapitre3/Pseudo-Ortho-MEC-Malt_Tapas_1954_Ortho-MEC-Malt_2014.png}
             \end{minipage}%
         }
         \subfigure[Match number (\textit{ImgPairs})]{
-    \begin{minipage}[t]{0.3\linewidth}
+    \begin{minipage}[t]{0.48\linewidth}
         \centering
-        \includegraphics[width=4.8cm]{images/Chapitre3/PlotCurves_Pseudo-Ortho-MEC-Malt_Tapas_1954_Ortho-MEC-Malt_2014.png}
+        \includegraphics[width=3.5cm,trim=0 20 0 38,clip]{images/Chapitre3/PlotCurves_Pseudo-Ortho-MEC-Malt_Tapas_1954_Ortho-MEC-Malt_2014.png}
     \end{minipage}%
 }
         \subfigure[$SIFT_{ImgPairs}^{RANSAC Inliers}$]{
@@ -473,31 +513,31 @@ In order to evaluate the results qualitatively and quantitatively, the following
                 \includegraphics[width=6.8cm]{images/Chapitre3/Pseudo-Homol-SuperGlue_1954-2014-GlobalR3D-PileImg_Ortho-MEC-Malt_Tapas_1954_Ortho-MEC-Malt_2014.png}
             \end{minipage}%
         }
-        \caption{Result of matching image pairs of Fr{\'e}jus 1954 and 2014. (a) Demonstration of image pairs to be matches. The images in the same epoch are projected onto ground}
-        \label{Match result}
-    \end{center}
-\end{figure*} 
-
-
-
-\begin{figure*}[htbp]
-    \begin{center}
+%        \caption{Result of matching image pairs (i.e. \textit{ImgPairs}) of Fr{\'e}jus 1954 and 2014. (a) Image pairs to be matched, with red rectangles indicating the common zone. (b) Numbers of total matches, GT inliers and RANSAC inliers of both SIFT and SuperGlue. (c) Visualization of RANSAC inliers based on SIFT. (d) Visualization of RANSAC inliers based on SuperGlue.}
+%        \label{MatchVizFrejus1954ImgPairs}
+%    \end{center}
+%\end{figure*} 
+%
+%
+%
+%\begin{figure*}[htbp]
+%    \begin{center}
         \subfigure[Orthophotos]{
-    \begin{minipage}[t]{0.65\linewidth}
+    \begin{minipage}[t]{0.48\linewidth}
         \centering
-        \includegraphics[width=8.8cm]{images/Chapitre3/Ortho-MEC-Malt_Tapas_1954_Ortho-MEC-Malt_2014.png}
+        \includegraphics[width=6.8cm]{images/Chapitre3/Ortho-MEC-Malt_Tapas_1954_Ortho-MEC-Malt_2014.png}
     \end{minipage}%
 }
 \subfigure[Match number (\textit{Ortho})]{
-    \begin{minipage}[t]{0.3\linewidth}
+    \begin{minipage}[t]{0.48\linewidth}
         \centering
-        \includegraphics[width=4.8cm]{images/Chapitre3/PlotCurves_Ortho-MEC-Malt_Tapas_1954_Ortho-MEC-Malt_2014.png}
+        \includegraphics[width=3.5cm,trim=0 20 0 38,clip]{images/Chapitre3/PlotCurves_Ortho-MEC-Malt_Tapas_1954_Ortho-MEC-Malt_2014.png}
     \end{minipage}%
 }
         \subfigure[$SIFT_{Ortho}^{RANSAC Inliers}$]{
             \begin{minipage}[t]{0.48\linewidth}
                 \centering
-                \includegraphics[width=6.8cm]{images/Chapitre3/Homol-SIFT-2DRANSAC_Ortho-MEC-Malt_Tapas_1954_Ortho-MEC-Malt_2014.png}
+                \includegraphics[width=6.8cm]{images/Chapitre3/Homol-SIFT2Step-Rough-2DRANSAC_Ortho-MEC-Malt_Tapas_1954_Ortho-MEC-Malt_2014.png}
             \end{minipage}%
         }
         \subfigure[$SuperGlue_{Ortho}^{RANSAC Inliers}$]{
@@ -506,29 +546,29 @@ In order to evaluate the results qualitatively and quantitatively, the following
                 \includegraphics[width=6.8cm]{images/Chapitre3/Homol-SubPatch_R270-2DRANSAC_Ortho-MEC-Malt_Tapas_1954_Ortho-MEC-Malt_2014.png}
             \end{minipage}%
         }
-        \caption{Result of matching orthophotos of Fr{\'e}jus 1954 and 2014.}
-        \label{Match result}
-    \end{center}
-\end{figure*} 
-
-\begin{figure*}[htbp]
-    \begin{center}
+%        \caption{Result of matching orthophotos (i.e. \textit{Ortho}) of Fr{\'e}jus 1954 and 2014. (a) Orthophotos to be matched, with red rectangles indicating the common zone. (b) Numbers of total matches, GT inliers and RANSAC inliers of both SIFT and SuperGlue. (c) Visualization of RANSAC inliers based on SIFT. (d) Visualization of RANSAC inliers based on SuperGlue.}
+%        \label{MatchVizFrejus1954Ortho}
+%    \end{center}
+%\end{figure*} 
+%
+%\begin{figure*}[htbp]
+%    \begin{center}
         \subfigure[DSMs]{
-    \begin{minipage}[t]{0.65\linewidth}
+    \begin{minipage}[t]{0.48\linewidth}
         \centering
-        \includegraphics[width=8.8cm]{images/Chapitre3/MEC-Malt_Tapas_1954_MEC-Malt_2014.png}
+        \includegraphics[width=6.8cm]{images/Chapitre3/MEC-Malt_Tapas_1954_MEC-Malt_2014.png}
     \end{minipage}%
 }
 \subfigure[Match number (\textit{DSM})]{
-    \begin{minipage}[t]{0.3\linewidth}
+    \begin{minipage}[t]{0.48\linewidth}
         \centering
-        \includegraphics[width=4.8cm]{images/Chapitre3/PlotCurves_MEC-Malt_Tapas_1954_MEC-Malt_2014.png}
+        \includegraphics[width=3.5cm,trim=0 20 0 38,clip]{images/Chapitre3/PlotCurves_MEC-Malt_Tapas_1954_MEC-Malt_2014.png}
     \end{minipage}%
 }
         \subfigure[$SIFT_{DSM}^{RANSAC Inliers}$]{
             \begin{minipage}[t]{0.48\linewidth}
                 \centering
-                \includegraphics[width=6.8cm]{images/Chapitre3/Homol-SIFT-2DRANSAC_MEC-Malt_Tapas_1954_MEC-Malt_2014.png}
+                \includegraphics[width=6.8cm]{images/Chapitre3/Homol-SIFT2Step-Rough-2DRANSAC_MEC-Malt_Tapas_1954_MEC-Malt_2014.png}
             \end{minipage}%
         }
         \subfigure[$SuperGlue_{DSM}^{RANSAC Inliers}$]{
@@ -537,8 +577,9 @@ In order to evaluate the results qualitatively and quantitatively, the following
                 \includegraphics[width=6.8cm]{images/Chapitre3/Homol-SubPatch_R270-2DRANSAC_MEC-Malt_Tapas_1954_MEC-Malt_2014.png}
             \end{minipage}%
         }
-        \caption{Result of matching DSMs of Fr{\'e}jus 1954 and 2014.}
-        \label{Match result}
+        %\caption{Result of matching DSMs (i.e. \textit{DSM}) of Fr{\'e}jus 1954 and 2014. (a) DSMs to be matched, with red rectangles indicating the common zone. (b) Numbers of total matches, GT inliers and RANSAC inliers of both SIFT and SuperGlue. (c) Visualization of RANSAC inliers based on SIFT. (d) Visualization of RANSAC inliers based on SuperGlue.}
+        \caption{{\scriptsize Result of \textit{ImgPairs} (a-d), \textit{Ortho} (e-h) and \textit{DSM} (i-l) on matching Fr{\'e}jus 1954 and 2014. (a, e, i) image pairs/orthophotos/DSMs to be matched, with red rectangles indicating the common zone. (b, f, j) Numbers of total matches, GT inliers and RANSAC inliers of both SIFT and SuperGlue on methods \textit{ImgPairs}, \textit{Ortho} and \textit{DSM} individually. (c, g, k) Visualization of RANSAC inliers based on $SIFT_{ImgPairs}$, $SIFT_{Ortho}$ and $SIFT_{DSM}$. (d, h, l) Visualization of RANSAC inliers based on $SuperGlue_{ImgPairs}$, $SuperGlue_{Ortho}$ and $SuperGlue_{DSM}$.}}
+        \label{MatchVizFrejus1954DSM}
     \end{center}
 \end{figure*} 
 
@@ -546,16 +587,16 @@ In order to evaluate the results qualitatively and quantitatively, the following
 
 \begin{figure*}[htbp]
     \begin{center}
-        \subfigure[Image pairs]{
-            \begin{minipage}[t]{0.65\linewidth}
+        \subfigure[Image pairs (15$\times$36 pairs)]{
+            \begin{minipage}[t]{0.48\linewidth}
                 \centering
-                \includegraphics[width=8.1cm]{images/Chapitre3/Pseudo-Ortho-MEC-Malt_Tapas_1966_Ortho-MEC-Malt_2014.png}
+                \includegraphics[width=6.1cm]{images/Chapitre3/Pseudo-Ortho-MEC-Malt_Tapas_1966_Ortho-MEC-Malt_2014.png}
             \end{minipage}%
         }
         \subfigure[Match number (\textit{ImgPairs})]{
-            \begin{minipage}[t]{0.3\linewidth}
+            \begin{minipage}[t]{0.48\linewidth}
                 \centering
-                \includegraphics[width=4.8cm]{images/Chapitre3/PlotCurves_Pseudo-Ortho-MEC-Malt_Tapas_1966_Ortho-MEC-Malt_2014.png}
+                \includegraphics[width=3.5cm,trim=0 20 0 38,clip]{images/Chapitre3/PlotCurves_Pseudo-Ortho-MEC-Malt_Tapas_1966_Ortho-MEC-Malt_2014.png}
             \end{minipage}%
         }
         \subfigure[$SIFT_{ImgPairs}^{RANSAC Inliers}$]{
@@ -570,30 +611,30 @@ In order to evaluate the results qualitatively and quantitatively, the following
                 \includegraphics[width=6cm]{images/Chapitre3/Pseudo-Homol-SuperGlue_1966-2014-GlobalR3D-PileImg_Ortho-MEC-Malt_Tapas_1966_Ortho-MEC-Malt_2014.png}
             \end{minipage}%
         }
-        \caption{Result of matching image pairs of Fr{\'e}jus 1966 and 2014.}
-        \label{Match result}
-    \end{center}
-\end{figure*} 
-
-
-\begin{figure*}[htbp]
-    \begin{center}
+%        \caption{Result of matching image pairs (i.e. \textit{ImgPairs}) of Fr{\'e}jus 1966 and 2014. (a) Image pairs to be matched, with red rectangles indicating the common zone. (b) Numbers of total matches, GT inliers and RANSAC inliers of both SIFT and SuperGlue. (c) Visualization of RANSAC inliers based on SIFT. (d) Visualization of RANSAC inliers based on SuperGlue.}
+%        \label{MatchVizFrejus1966ImgPairs}
+%    \end{center}
+%\end{figure*} 
+%
+%
+%\begin{figure*}[htbp]
+%    \begin{center}
         \subfigure[Orthophotos]{
-            \begin{minipage}[t]{0.65\linewidth}
+            \begin{minipage}[t]{0.48\linewidth}
                 \centering
-                \includegraphics[width=8.1cm]{images/Chapitre3/Ortho-MEC-Malt_Tapas_1966_Ortho-MEC-Malt_2014.png}
+                \includegraphics[width=6.1cm]{images/Chapitre3/Ortho-MEC-Malt_Tapas_1966_Ortho-MEC-Malt_2014.png}
             \end{minipage}%
         }
         \subfigure[Match number (\textit{Ortho})]{
-            \begin{minipage}[t]{0.3\linewidth}
+            \begin{minipage}[t]{0.48\linewidth}
                 \centering
-                \includegraphics[width=4.8cm]{images/Chapitre3/PlotCurves_Ortho-MEC-Malt_Tapas_1966_Ortho-MEC-Malt_2014.png}
+                \includegraphics[width=3.5cm,trim=0 20 0 38,clip]{images/Chapitre3/PlotCurves_Ortho-MEC-Malt_Tapas_1966_Ortho-MEC-Malt_2014.png}
             \end{minipage}%
         }
         \subfigure[$SIFT_{Ortho}^{RANSAC Inliers}$]{
             \begin{minipage}[t]{0.48\linewidth}
                 \centering
-                \includegraphics[width=6cm]{images/Chapitre3/Homol-SIFT-2DRANSAC_Ortho-MEC-Malt_Tapas_1966_Ortho-MEC-Malt_2014.png}
+                \includegraphics[width=6cm]{images/Chapitre3/Homol-SIFT2Step-Rough-2DRANSAC_Ortho-MEC-Malt_Tapas_1966_Ortho-MEC-Malt_2014.png}
             \end{minipage}%
         }
         \subfigure[$SuperGlue_{Ortho}^{RANSAC Inliers}$]{
@@ -602,29 +643,29 @@ In order to evaluate the results qualitatively and quantitatively, the following
                 \includegraphics[width=6cm]{images/Chapitre3/Homol-SubPatch_R270-2DRANSAC_Ortho-MEC-Malt_Tapas_1966_Ortho-MEC-Malt_2014.png}
             \end{minipage}%
         }
-        \caption{Result of matching orthophotos of Fr{\'e}jus 1966 and 2014.}
-        \label{Match result}
-    \end{center}
-\end{figure*} 
-
-\begin{figure*}[htbp]
-    \begin{center}
+%        \caption{Result of matching orthophotos (i.e. \textit{Ortho}) of Fr{\'e}jus 1966 and 2014. (a) Orthophotos to be matched, with red rectangles indicating the common zone. (b) Numbers of total matches, GT inliers and RANSAC inliers of both SIFT and SuperGlue. (c) Visualization of RANSAC inliers based on SIFT. (d) Visualization of RANSAC inliers based on SuperGlue.}
+%        \label{MatchVizFrejus1966Ortho}
+%    \end{center}
+%\end{figure*} 
+%
+%\begin{figure*}[htbp]
+%    \begin{center}
         \subfigure[DSMs]{
-            \begin{minipage}[t]{0.65\linewidth}
+            \begin{minipage}[t]{0.48\linewidth}
                 \centering
-                \includegraphics[width=8.1cm]{images/Chapitre3/MEC-Malt_Tapas_1966_MEC-Malt_2014.png}
+                \includegraphics[width=6.1cm]{images/Chapitre3/MEC-Malt_Tapas_1966_MEC-Malt_2014.png}
             \end{minipage}%
         }
         \subfigure[Match number (\textit{DSM})]{
-            \begin{minipage}[t]{0.3\linewidth}
+            \begin{minipage}[t]{0.48\linewidth}
                 \centering
-                \includegraphics[width=4.8cm]{images/Chapitre3/PlotCurves_MEC-Malt_Tapas_1966_MEC-Malt_2014.png}
+                \includegraphics[width=3.5cm,trim=0 20 0 38,clip]{images/Chapitre3/PlotCurves_MEC-Malt_Tapas_1966_MEC-Malt_2014.png}
             \end{minipage}%
         }
         \subfigure[$SIFT_{DSM}^{RANSAC Inliers}$]{
             \begin{minipage}[t]{0.48\linewidth}
                 \centering
-                \includegraphics[width=6cm]{images/Chapitre3/Homol-SIFT-2DRANSAC_MEC-Malt_Tapas_1966_MEC-Malt_2014.png}
+                \includegraphics[width=6cm]{images/Chapitre3/Homol-SIFT2Step-Rough-2DRANSAC_MEC-Malt_Tapas_1966_MEC-Malt_2014.png}
             \end{minipage}%
         }
         \subfigure[$SuperGlue_{DSM}^{RANSAC Inliers}$]{
@@ -633,102 +674,107 @@ In order to evaluate the results qualitatively and quantitatively, the following
                 \includegraphics[width=6cm]{images/Chapitre3/Homol-SubPatch_R270-2DRANSAC_MEC-Malt_Tapas_1966_MEC-Malt_2014.png}
             \end{minipage}%
         }
-        \caption{Result of matching DSMs of Fr{\'e}jus 1966 and 2014.}
-        \label{Match result}
+        %\caption{Result of matching DSMs (i.e. \textit{DSM}) of Fr{\'e}jus 1966 and 2014. (a) DSMs to be matched, with red rectangles indicating the common zone. (b) Numbers of total matches, GT inliers and RANSAC inliers of both SIFT and SuperGlue. (c) Visualization of RANSAC inliers based on SIFT. (d) Visualization of RANSAC inliers based on SuperGlue.}
+        %\caption{{\small Result of \textit{ImgPairs}, \textit{Ortho} and \textit{DSM} on Fr{\'e}jus 1966 and 2014. (a, e, i) image pairs/orthophotos/DSMs to be matched, with red rectangles indicating the common zone. (b, f, j) Numbers of total matches, GT inliers and RANSAC inliers of both SIFT and SuperGlue on methods \textit{ImgPairs}, \textit{Ortho} and \textit{DSM} individually. (c, g, k) Visualization of RANSAC inliers based on $SIFT_{ImgPairs}$, $SIFT_{Ortho}$ and $SIFT_{DSM}$. (d, h, l) Visualization of RANSAC inliers based on $SuperGlue_{ImgPairs}$, $SuperGlue_{Ortho}$ and $SuperGlue_{DSM}$.}}
+        \caption{{\scriptsize Result of \textit{ImgPairs} (a-d), \textit{Ortho} (e-h) and \textit{DSM} (i-l) on matching Fr{\'e}jus 1966 and 2014. (a, e, i) image pairs/orthophotos/DSMs to be matched, with red rectangles indicating the common zone. (b, f, j) Numbers of total matches, GT inliers and RANSAC inliers of both SIFT and SuperGlue on methods \textit{ImgPairs}, \textit{Ortho} and \textit{DSM} individually. (c, g, k) Visualization of RANSAC inliers based on $SIFT_{ImgPairs}$, $SIFT_{Ortho}$ and $SIFT_{DSM}$. (d, h, l) Visualization of RANSAC inliers based on $SuperGlue_{ImgPairs}$, $SuperGlue_{Ortho}$ and $SuperGlue_{DSM}$.}}
+        \label{MatchVizFrejus1966DSM}
     \end{center}
 \end{figure*} 
 
 
+
 \begin{figure*}[htbp]
     \begin{center}
-        \subfigure[Image pairs]{
-            \begin{minipage}[t]{0.6\linewidth}
+        \subfigure[Image pairs (19$\times$36 pairs)]{
+            \begin{minipage}[t]{0.48\linewidth}
                 \centering
-                \includegraphics[width=7.8cm]{images/Chapitre3/Pseudo-Ortho-MEC-Malt_Tapas_1970_Ortho-MEC-Malt_2014.png}
+                \includegraphics[width=5.2cm]{images/Chapitre3/Pseudo-Ortho-MEC-Malt_Tapas_1970_Ortho-MEC-Malt_2014.png}
             \end{minipage}%
         }
         \subfigure[Match number (\textit{ImgPairs})]{
-            \begin{minipage}[t]{0.35\linewidth}
+            \begin{minipage}[t]{0.48\linewidth}
                 \centering
-                \includegraphics[width=4.8cm]{images/Chapitre3/PlotCurves_Pseudo-Ortho-MEC-Malt_Tapas_1970_Ortho-MEC-Malt_2014.png}
+                \includegraphics[width=3.5cm,trim=0 20 0 38,clip]{images/Chapitre3/PlotCurves_Pseudo-Ortho-MEC-Malt_Tapas_1970_Ortho-MEC-Malt_2014.png}
             \end{minipage}%
         }
         \subfigure[$SIFT_{ImgPairs}^{RANSAC Inliers}$]{
             \begin{minipage}[t]{0.48\linewidth}
                 \centering
-                \includegraphics[width=6cm]{images/Chapitre3/Pseudo-Homol-SIFT2Step_1970-2014-Rough-2DRANSAC-GlobalR3D-PileImg_Ortho-MEC-Malt_Tapas_1970_Ortho-MEC-Malt_2014.png}
+                \includegraphics[width=5.7cm]{images/Chapitre3/Pseudo-Homol-SIFT2Step_1970-2014-Rough-2DRANSAC-GlobalR3D-PileImg_Ortho-MEC-Malt_Tapas_1970_Ortho-MEC-Malt_2014.png}
             \end{minipage}%
         }
         \subfigure[$SuperGlue_{ImgPairs}^{RANSAC Inliers}$]{
             \begin{minipage}[t]{0.48\linewidth}
                 \centering
-                \includegraphics[width=6cm]{images/Chapitre3/Pseudo-Homol-SuperGlue_1970-2014-GlobalR3D-PileImg_Ortho-MEC-Malt_Tapas_1970_Ortho-MEC-Malt_2014.png}
+                \includegraphics[width=5.7cm]{images/Chapitre3/Pseudo-Homol-SuperGlue_1970-2014-GlobalR3D-PileImg_Ortho-MEC-Malt_Tapas_1970_Ortho-MEC-Malt_2014.png}
             \end{minipage}%
         }
-        \caption{Result of matching image pairs of Fr{\'e}jus 1970 and 2014.}
-        \label{Match result}
-    \end{center}
-\end{figure*} 
-
-\begin{figure*}[htbp]
-    \begin{center}
+%        \caption{Result of matching image pairs (i.e. \textit{ImgPairs}) of Fr{\'e}jus 1970 and 2014. (a) Image pairs to be matched, with red rectangles indicating the common zone. (b) Numbers of total matches, GT inliers and RANSAC inliers of both SIFT and SuperGlue. (c) Visualization of RANSAC inliers based on SIFT. (d) Visualization of RANSAC inliers based on SuperGlue.}
+%        \label{MatchVizFrejus1970ImgPairs}
+%    \end{center}
+%\end{figure*} 
+%
+%\begin{figure*}[htbp]
+%    \begin{center}
         \subfigure[Orthophotos]{
-            \begin{minipage}[t]{0.6\linewidth}
+            \begin{minipage}[t]{0.48\linewidth}
                 \centering
-                \includegraphics[width=7.8cm]{images/Chapitre3/Ortho-MEC-Malt_Tapas_1970_Ortho-MEC-Malt_2014.png}
+                \includegraphics[width=5.2cm]{images/Chapitre3/Ortho-MEC-Malt_Tapas_1970_Ortho-MEC-Malt_2014.png}
             \end{minipage}%
         }
         \subfigure[Match number (\textit{Ortho})]{
-            \begin{minipage}[t]{0.35\linewidth}
+            \begin{minipage}[t]{0.48\linewidth}
                 \centering
-                \includegraphics[width=4.8cm]{images/Chapitre3/PlotCurves_Ortho-MEC-Malt_Tapas_1970_Ortho-MEC-Malt_2014.png}
+                \includegraphics[width=3.5cm,trim=0 20 0 38,clip]{images/Chapitre3/PlotCurves_Ortho-MEC-Malt_Tapas_1970_Ortho-MEC-Malt_2014.png}
             \end{minipage}%
         }
         \subfigure[$SIFT_{Ortho}^{RANSAC Inliers}$]{
             \begin{minipage}[t]{0.48\linewidth}
                 \centering
-                \includegraphics[width=6cm]{images/Chapitre3/Homol-SIFT-2DRANSAC_Ortho-MEC-Malt_Tapas_1970_Ortho-MEC-Malt_2014.png}
+                \includegraphics[width=5.7cm]{images/Chapitre3/Homol-SIFT2Step-Rough-2DRANSAC_Ortho-MEC-Malt_Tapas_1970_Ortho-MEC-Malt_2014.png}
             \end{minipage}%
         }
         \subfigure[$SuperGlue_{Ortho}^{RANSAC Inliers}$]{
             \begin{minipage}[t]{0.48\linewidth}
                 \centering
-                \includegraphics[width=6cm]{images/Chapitre3/Homol-SubPatch_R270-2DRANSAC_Ortho-MEC-Malt_Tapas_1970_Ortho-MEC-Malt_2014.png}
+                \includegraphics[width=5.7cm]{images/Chapitre3/Homol-SubPatch_R270-2DRANSAC_Ortho-MEC-Malt_Tapas_1970_Ortho-MEC-Malt_2014.png}
             \end{minipage}%
         }
-        \caption{Result of matching orthophotos of Fr{\'e}jus 1970 and 2014.}
-        \label{Match result}
-    \end{center}
-\end{figure*} 
-
-\begin{figure*}[htbp]
-    \begin{center}
+%        \caption{Result of matching orthophotos (i.e. \textit{Ortho}) of Fr{\'e}jus 1970 and 2014. (a) Orthophotos to be matched, with red rectangles indicating the common zone. (b) Numbers of total matches, GT inliers and RANSAC inliers of both SIFT and SuperGlue. (c) Visualization of RANSAC inliers based on SIFT. (d) Visualization of RANSAC inliers based on SuperGlue.}
+%        \label{MatchVizFrejus1970Ortho}
+%    \end{center}
+%\end{figure*} 
+%
+%\begin{figure*}[htbp]
+%    \begin{center}
         \subfigure[DSMs]{
-            \begin{minipage}[t]{0.6\linewidth}
+            \begin{minipage}[t]{0.48\linewidth}
                 \centering
-                \includegraphics[width=7.8cm]{images/Chapitre3/MEC-Malt_Tapas_1970_MEC-Malt_2014.png}
+                \includegraphics[width=5.2cm]{images/Chapitre3/MEC-Malt_Tapas_1970_MEC-Malt_2014.png}
             \end{minipage}%
         }
         \subfigure[Match number (\textit{DSM})]{
-            \begin{minipage}[t]{0.35\linewidth}
+            \begin{minipage}[t]{0.48\linewidth}
                 \centering
-                \includegraphics[width=4.8cm]{images/Chapitre3/PlotCurves_MEC-Malt_Tapas_1970_MEC-Malt_2014.png}
+                \includegraphics[width=3.5cm,trim=0 20 0 38,clip]{images/Chapitre3/PlotCurves_MEC-Malt_Tapas_1970_MEC-Malt_2014.png}
             \end{minipage}%
         }
         \subfigure[$SIFT_{DSM}^{RANSAC Inliers}$]{
             \begin{minipage}[t]{0.48\linewidth}
                 \centering
-                \includegraphics[width=6cm]{images/Chapitre3/Homol-SIFT-2DRANSAC_MEC-Malt_Tapas_1970_MEC-Malt_2014.png}
+                \includegraphics[width=5.7cm]{images/Chapitre3/Homol-SIFT2Step-Rough-2DRANSAC_MEC-Malt_Tapas_1970_MEC-Malt_2014.png}
             \end{minipage}%
         }
         \subfigure[$SuperGlue_{DSM}^{RANSAC Inliers}$]{
             \begin{minipage}[t]{0.48\linewidth}
                 \centering
-                \includegraphics[width=6cm]{images/Chapitre3/Homol-SubPatch_R270-2DRANSAC_MEC-Malt_Tapas_1970_MEC-Malt_2014.png}
+                \includegraphics[width=5.7cm]{images/Chapitre3/Homol-SubPatch_R270-2DRANSAC_MEC-Malt_Tapas_1970_MEC-Malt_2014.png}
             \end{minipage}%
         }
-        \caption{Result of matching DSMs of Fr{\'e}jus 1970 and 2014.}
-        \label{Match result}
+        %\caption{Result of matching DSMs (i.e. \textit{DSM}) of Fr{\'e}jus 1970 and 2014. (a) DSMs to be matched, with red rectangles indicating the common zone. (b) Numbers of total matches, GT inliers and RANSAC inliers of both SIFT and SuperGlue. (c) Visualization of RANSAC inliers based on SIFT. (d) Visualization of RANSAC inliers based on SuperGlue.}
+        %\caption{{\small Result of \textit{ImgPairs}, \textit{Ortho} and \textit{DSM} on Fr{\'e}jus 1970 and 2014. (a, e, i) image pairs/orthophotos/DSMs to be matched, with red rectangles indicating the common zone. (b, f, j) Numbers of total matches, GT inliers and RANSAC inliers of both SIFT and SuperGlue on methods \textit{ImgPairs}, \textit{Ortho} and \textit{DSM} individually. (c, g, k) Visualization of RANSAC inliers based on $SIFT_{ImgPairs}$, $SIFT_{Ortho}$ and $SIFT_{DSM}$. (d, h, l) Visualization of RANSAC inliers based on $SuperGlue_{ImgPairs}$, $SuperGlue_{Ortho}$ and $SuperGlue_{DSM}$.}}
+        \caption{{\scriptsize Result of \textit{ImgPairs} (a-d), \textit{Ortho} (e-h) and \textit{DSM} (i-l) on matching Fr{\'e}jus 1970 and 2014. (a, e, i) image pairs/orthophotos/DSMs to be matched, with red rectangles indicating the common zone. (b, f, j) Numbers of total matches, GT inliers and RANSAC inliers of both SIFT and SuperGlue on methods \textit{ImgPairs}, \textit{Ortho} and \textit{DSM} individually. (c, g, k) Visualization of RANSAC inliers based on $SIFT_{ImgPairs}$, $SIFT_{Ortho}$ and $SIFT_{DSM}$. (d, h, l) Visualization of RANSAC inliers based on $SuperGlue_{ImgPairs}$, $SuperGlue_{Ortho}$ and $SuperGlue_{DSM}$.}}
+        \label{MatchVizFrejus1970DSM}
     \end{center}
 \end{figure*} 
 
@@ -736,97 +782,96 @@ In order to evaluate the results qualitatively and quantitatively, the following
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Pezenas
 \begin{figure*}[htbp]
     \begin{center}
-        \subfigure[Image pairs]{
-            \begin{minipage}[t]{0.65\linewidth}
+        \subfigure[Image pairs (57$\times$382 pairs)]{
+            \begin{minipage}[t]{0.48\linewidth}
                 \centering
-                \includegraphics[width=8.8cm]{images/Chapitre3/Pseudo-Ortho-MEC-Malt_Tapas_1971_Ortho-MEC-Malt_2015.png}
+                \includegraphics[width=5.1cm]{images/Chapitre3/Pseudo-Ortho-MEC-Malt_Tapas_1971_Ortho-MEC-Malt_2015.png}
             \end{minipage}%
         }
         \subfigure[Match number (\textit{ImgPairs})]{
-            \begin{minipage}[t]{0.3\linewidth}
+            \begin{minipage}[t]{0.48\linewidth}
                 \centering
-                \includegraphics[width=4.8cm]{images/Chapitre3/PlotCurves_Pseudo-Ortho-MEC-Malt_Tapas_1971_Ortho-MEC-Malt_2015.png}
+                \includegraphics[width=3.5cm,trim=0 20 0 38,clip]{images/Chapitre3/PlotCurves_Pseudo-Ortho-MEC-Malt_Tapas_1971_Ortho-MEC-Malt_2015.png}
             \end{minipage}%
         }
         \subfigure[$SIFT_{ImgPairs}^{RANSAC Inliers}$]{
             \begin{minipage}[t]{0.48\linewidth}
                 \centering
-                \includegraphics[width=6.8cm]{images/Chapitre3/Pseudo-Homol-SIFT2Step_1971-2015-Rough-2DRANSAC-GlobalR3D-PileImg_Ortho-MEC-Malt_Tapas_1971_Ortho-MEC-Malt_2015.png}
+                \includegraphics[width=5.2cm]{images/Chapitre3/Pseudo-Homol-SIFT2Step_1971-2015-Rough-2DRANSAC-GlobalR3D-PileImg_Ortho-MEC-Malt_Tapas_1971_Ortho-MEC-Malt_2015.png}
             \end{minipage}%
         }
         \subfigure[$SuperGlue_{ImgPairs}^{RANSAC Inliers}$]{
             \begin{minipage}[t]{0.48\linewidth}
                 \centering
-                \includegraphics[width=6.8cm]{images/Chapitre3/Pseudo-Homol-SuperGlue_1971-2015-GlobalR3D-PileImg_Ortho-MEC-Malt_Tapas_1971_Ortho-MEC-Malt_2015.png}
+                \includegraphics[width=5.2cm]{images/Chapitre3/Pseudo-Homol-SuperGlue_1971-2015-GlobalR3D-PileImg_Ortho-MEC-Malt_Tapas_1971_Ortho-MEC-Malt_2015.png}
             \end{minipage}%
         }
-        \caption{Result of matching image pairs of Pezenas 1971 and 2015.}
-        \label{Match result}
-    \end{center}
-\end{figure*} 
-
-
-
-\begin{figure*}[htbp]
-    \begin{center}
+%        \caption{Result of matching image pairs (i.e. \textit{ImgPairs}) of Pezenas 1971 and 2015. (a) Image pairs to be matched, with red rectangles indicating the common zone. (b) Numbers of total matches, GT inliers and RANSAC inliers of both SIFT and SuperGlue. (c) Visualization of RANSAC inliers based on SIFT. (d) Visualization of RANSAC inliers based on SuperGlue.}
+%        \label{MatchVizPezenas1971ImgPairs}
+%    \end{center}
+%\end{figure*} 
+%
+%\begin{figure*}[htbp]
+%    \begin{center}
         \subfigure[Orthophotos]{
-            \begin{minipage}[t]{0.65\linewidth}
+            \begin{minipage}[t]{0.48\linewidth}
                 \centering
-                \includegraphics[width=8.8cm]{images/Chapitre3/Ortho-MEC-Malt_Tapas_1971_Ortho-MEC-Malt_2015.png}
+                \includegraphics[width=5.1cm]{images/Chapitre3/Ortho-MEC-Malt_Tapas_1971_Ortho-MEC-Malt_2015.png}
             \end{minipage}%
         }
         \subfigure[Match number (\textit{Ortho})]{
-            \begin{minipage}[t]{0.3\linewidth}
+            \begin{minipage}[t]{0.48\linewidth}
                 \centering
-                \includegraphics[width=4.8cm]{images/Chapitre3/PlotCurves_Ortho-MEC-Malt_Tapas_1971_Ortho-MEC-Malt_2015.png}
+                \includegraphics[width=3.5cm,trim=0 20 0 38,clip]{images/Chapitre3/PlotCurves_Ortho-MEC-Malt_Tapas_1971_Ortho-MEC-Malt_2015.png}
             \end{minipage}%
         }
         \subfigure[$SIFT_{Ortho}^{RANSAC Inliers}$]{
             \begin{minipage}[t]{0.48\linewidth}
                 \centering
-                \includegraphics[width=6.8cm]{images/Chapitre3/Homol-SIFT-2DRANSAC_Ortho-MEC-Malt_Tapas_1971_Ortho-MEC-Malt_2015.png}
+                \includegraphics[width=5.2cm]{images/Chapitre3/Homol-SIFT2Step-Rough-2DRANSAC_Ortho-MEC-Malt_Tapas_1971_Ortho-MEC-Malt_2015.png}
             \end{minipage}%
         }
         \subfigure[$SuperGlue_{Ortho}^{RANSAC Inliers}$]{
             \begin{minipage}[t]{0.48\linewidth}
                 \centering
-                \includegraphics[width=6.8cm]{images/Chapitre3/Homol-SubPatch_R270-2DRANSAC_Ortho-MEC-Malt_Tapas_1971_Ortho-MEC-Malt_2015.png}
+                \includegraphics[width=5.2cm]{images/Chapitre3/Homol-SubPatch_R270-2DRANSAC_Ortho-MEC-Malt_Tapas_1971_Ortho-MEC-Malt_2015.png}
             \end{minipage}%
         }
-        \caption{Result of matching orthophotos of Pezenas 1971 and 2015.}
-        \label{Match result}
-    \end{center}
-\end{figure*} 
-
-
-\begin{figure*}[htbp]
-    \begin{center}
+%        \caption{Result of matching orthophotos (i.e. \textit{Ortho}) of Pezenas 1971 and 2015. (a) Orthophotos to be matched, with red rectangles indicating the common zone. (b) Numbers of total matches, GT inliers and RANSAC inliers of both SIFT and SuperGlue. (c) Visualization of RANSAC inliers based on SIFT. (d) Visualization of RANSAC inliers based on SuperGlue.}
+%        \label{MatchVizPezenas1971Ortho}
+%    \end{center}
+%\end{figure*} 
+%
+%\begin{figure*}[htbp]
+%    \begin{center}
         \subfigure[DSMs]{
-            \begin{minipage}[t]{0.65\linewidth}
+            \begin{minipage}[t]{0.48\linewidth}
                 \centering
-                \includegraphics[width=8.8cm]{images/Chapitre3/MEC-Malt_Tapas_1971_MEC-Malt_2015.png}
+                \includegraphics[width=5.1cm]{images/Chapitre3/MEC-Malt_Tapas_1971_MEC-Malt_2015.png}
             \end{minipage}%
         }
         \subfigure[Match number (\textit{DSM})]{
-            \begin{minipage}[t]{0.3\linewidth}
+            \begin{minipage}[t]{0.48\linewidth}
                 \centering
-                \includegraphics[width=4.8cm]{images/Chapitre3/PlotCurves_MEC-Malt_Tapas_1971_MEC-Malt_2015.png}
+                \includegraphics[width=3.5cm,trim=0 20 0 38,clip]{images/Chapitre3/PlotCurves_MEC-Malt_Tapas_1971_MEC-Malt_2015.png}
             \end{minipage}%
         }
         \subfigure[$SIFT_{DSM}^{RANSAC Inliers}$]{
             \begin{minipage}[t]{0.48\linewidth}
                 \centering
-                \includegraphics[width=6.8cm]{images/Chapitre3/Homol-SIFT-2DRANSAC_MEC-Malt_Tapas_1971_MEC-Malt_2015.png}
+                \includegraphics[width=5.2cm]{images/Chapitre3/Homol-SIFT2Step-Rough-2DRANSAC_MEC-Malt_Tapas_1971_MEC-Malt_2015.png}
             \end{minipage}%
         }
         \subfigure[$SuperGlue_{DSM}^{RANSAC Inliers}$]{
             \begin{minipage}[t]{0.48\linewidth}
                 \centering
-                \includegraphics[width=6.8cm]{images/Chapitre3/Homol-SubPatch_R270-2DRANSAC_MEC-Malt_Tapas_1971_MEC-Malt_2015.png}
+                \includegraphics[width=5.2cm]{images/Chapitre3/Homol-SubPatch_R270-2DRANSAC_MEC-Malt_Tapas_1971_MEC-Malt_2015.png}
             \end{minipage}%
         }
-        \caption{Result of matching DSMs of Pezenas 1971 and 2015.}
-        \label{Match result}
+        %\caption{Result of matching DSMs (i.e. \textit{DSM}) of Pezenas 1971 and 2015. (a) DSMs to be matched, with red rectangles indicating the common zone. (b) Numbers of total matches, GT inliers and RANSAC inliers of both SIFT and SuperGlue. (c) Visualization of RANSAC inliers based on SIFT. (d) Visualization of RANSAC inliers based on SuperGlue.}
+        %\caption{{\small Result of \textit{ImgPairs}, \textit{Ortho} and \textit{DSM} on Pezenas 1971 and 2015. (a, e, i) image pairs/orthophotos/DSMs to be matched, with red rectangles indicating the common zone. (b, f, j) Numbers of total matches, GT inliers and RANSAC inliers of both SIFT and SuperGlue on methods \textit{ImgPairs}, \textit{Ortho} and \textit{DSM} individually. (c, g, k) Visualization of RANSAC inliers based on $SIFT_{ImgPairs}$, $SIFT_{Ortho}$ and $SIFT_{DSM}$. (d, h, l) Visualization of RANSAC inliers based on $SuperGlue_{ImgPairs}$, $SuperGlue_{Ortho}$ and $SuperGlue_{DSM}$.}}
+        \caption{{\scriptsize Result of \textit{ImgPairs} (a-d), \textit{Ortho} (e-h) and \textit{DSM} (i-l) on matching Pezenas 1971 and 2015. (a, e, i) image pairs/orthophotos/DSMs to be matched, with red rectangles indicating the common zone. (b, f, j) Numbers of total matches, GT inliers and RANSAC inliers of both SIFT and SuperGlue on methods \textit{ImgPairs}, \textit{Ortho} and \textit{DSM} individually. (c, g, k) Visualization of RANSAC inliers based on $SIFT_{ImgPairs}$, $SIFT_{Ortho}$ and $SIFT_{DSM}$. (d, h, l) Visualization of RANSAC inliers based on $SuperGlue_{ImgPairs}$, $SuperGlue_{Ortho}$ and $SuperGlue_{DSM}$.}}        
+        \label{MatchVizPezenas1971DSM}
     \end{center}
 \end{figure*} 
 
@@ -834,193 +879,200 @@ In order to evaluate the results qualitatively and quantitatively, the following
 
 \begin{figure*}[htbp]
     \begin{center}
-        \subfigure[Image pairs]{
-            \begin{minipage}[t]{0.65\linewidth}
+        \subfigure[Image pairs (27$\times$382 pairs)]{
+            \begin{minipage}[t]{0.48\linewidth}
                 \centering
-                \includegraphics[width=8.1cm]{images/Chapitre3/Pseudo-Ortho-MEC-Malt_Tapas_1981_Ortho-MEC-Malt_2015.png}
+                \includegraphics[width=5.1cm]{images/Chapitre3/Pseudo-Ortho-MEC-Malt_Tapas_1981_Ortho-MEC-Malt_2015.png}
             \end{minipage}%
         }
         \subfigure[Match number (\textit{ImgPairs})]{
-            \begin{minipage}[t]{0.3\linewidth}
+            \begin{minipage}[t]{0.48\linewidth}
                 \centering
-                \includegraphics[width=4.8cm]{images/Chapitre3/PlotCurves_Pseudo-Ortho-MEC-Malt_Tapas_1981_Ortho-MEC-Malt_2015.png}
+                \includegraphics[width=3.5cm,trim=0 20 0 38,clip]{images/Chapitre3/PlotCurves_Pseudo-Ortho-MEC-Malt_Tapas_1981_Ortho-MEC-Malt_2015.png}
             \end{minipage}%
         }
         \subfigure[$SIFT_{ImgPairs}^{RANSAC Inliers}$]{
             \begin{minipage}[t]{0.48\linewidth}
                 \centering
-                \includegraphics[width=6cm]{images/Chapitre3/Pseudo-Homol-SIFT2Step_1981-2015-Rough-2DRANSAC-GlobalR3D-PileImg_Ortho-MEC-Malt_Tapas_1981_Ortho-MEC-Malt_2015.png}
+                \includegraphics[width=5.2cm]{images/Chapitre3/Pseudo-Homol-SIFT2Step_1981-2015-Rough-2DRANSAC-GlobalR3D-PileImg_Ortho-MEC-Malt_Tapas_1981_Ortho-MEC-Malt_2015.png}
             \end{minipage}%
         }
         \subfigure[$SuperGlue_{ImgPairs}^{RANSAC Inliers}$]{
             \begin{minipage}[t]{0.48\linewidth}
                 \centering
-                \includegraphics[width=6cm]{images/Chapitre3/Pseudo-Homol-SuperGlue_1981-2015-GlobalR3D-PileImg_Ortho-MEC-Malt_Tapas_1981_Ortho-MEC-Malt_2015.png}
+                \includegraphics[width=5.2cm]{images/Chapitre3/Pseudo-Homol-SuperGlue_1981-2015-GlobalR3D-PileImg_Ortho-MEC-Malt_Tapas_1981_Ortho-MEC-Malt_2015.png}
             \end{minipage}%
         }
-        \caption{Result of matching image pairs of Pezenas 1981 and 2015.}
-        \label{Match result}
-    \end{center}
-\end{figure*} 
-
-
-\begin{figure*}[htbp]
-    \begin{center}
+%        \caption{Result of matching image pairs (i.e. \textit{ImgPairs}) of Pezenas 1981 and 2015. (a) Image pairs to be matched, with red rectangles indicating the common zone. (b) Numbers of total matches, GT inliers and RANSAC inliers of both SIFT and SuperGlue. (c) Visualization of RANSAC inliers based on SIFT. (d) Visualization of RANSAC inliers based on SuperGlue.}
+%        \label{MatchVizPezenas1981ImgPairs}
+%    \end{center}
+%\end{figure*} 
+%
+%\begin{figure*}[htbp]
+%    \begin{center}
         \subfigure[Orthophotos]{
-            \begin{minipage}[t]{0.65\linewidth}
+            \begin{minipage}[t]{0.48\linewidth}
                 \centering
-                \includegraphics[width=8.1cm]{images/Chapitre3/Ortho-MEC-Malt_Tapas_1981_Ortho-MEC-Malt_2015.png}
+                \includegraphics[width=5.1cm]{images/Chapitre3/Ortho-MEC-Malt_Tapas_1981_Ortho-MEC-Malt_2015.png}
             \end{minipage}%
         }
         \subfigure[Match number (\textit{Ortho})]{
-            \begin{minipage}[t]{0.3\linewidth}
+            \begin{minipage}[t]{0.48\linewidth}
                 \centering
-                \includegraphics[width=4.8cm]{images/Chapitre3/PlotCurves_Ortho-MEC-Malt_Tapas_1981_Ortho-MEC-Malt_2015.png}
+                \includegraphics[width=3.5cm,trim=0 20 0 38,clip]{images/Chapitre3/PlotCurves_Ortho-MEC-Malt_Tapas_1981_Ortho-MEC-Malt_2015.png}
             \end{minipage}%
         }
         \subfigure[$SIFT_{Ortho}^{RANSAC Inliers}$]{
             \begin{minipage}[t]{0.48\linewidth}
                 \centering
-                \includegraphics[width=6cm]{images/Chapitre3/Homol-SIFT-2DRANSAC_Ortho-MEC-Malt_Tapas_1981_Ortho-MEC-Malt_2015.png}
+                \includegraphics[width=5.2cm]{images/Chapitre3/Homol-SIFT2Step-Rough-2DRANSAC_Ortho-MEC-Malt_Tapas_1981_Ortho-MEC-Malt_2015.png}
             \end{minipage}%
         }
         \subfigure[$SuperGlue_{Ortho}^{RANSAC Inliers}$]{
             \begin{minipage}[t]{0.48\linewidth}
                 \centering
-                \includegraphics[width=6cm]{images/Chapitre3/Homol-SubPatch_R90-2DRANSAC_Ortho-MEC-Malt_Tapas_1981_Ortho-MEC-Malt_2015.png}
+                \includegraphics[width=5.2cm]{images/Chapitre3/Homol-SubPatch_R90-2DRANSAC_Ortho-MEC-Malt_Tapas_1981_Ortho-MEC-Malt_2015.png}
             \end{minipage}%
         }
-        \caption{Result of matching orthophotos of Pezenas 1981 and 2015.}
-        \label{Match result}
-    \end{center}
-\end{figure*} 
-
-\begin{figure*}[htbp]
-    \begin{center}
+%        \caption{Result of matching orthophotos (i.e. \textit{Ortho}) of Pezenas 1981 and 2015. (a) Orthophotos to be matched, with red rectangles indicating the common zone. (b) Numbers of total matches, GT inliers and RANSAC inliers of both SIFT and SuperGlue. (c) Visualization of RANSAC inliers based on SIFT. (d) Visualization of RANSAC inliers based on SuperGlue.}
+%        \label{MatchVizPezenas1981Ortho}
+%    \end{center}
+%\end{figure*} 
+%
+%\begin{figure*}[htbp]
+%    \begin{center}
         \subfigure[DSMs]{
-            \begin{minipage}[t]{0.65\linewidth}
+            \begin{minipage}[t]{0.48\linewidth}
                 \centering
-                \includegraphics[width=8.1cm]{images/Chapitre3/MEC-Malt_Tapas_1981_MEC-Malt_2015.png}
+                \includegraphics[width=5.1cm]{images/Chapitre3/MEC-Malt_Tapas_1981_MEC-Malt_2015.png}
             \end{minipage}%
         }
         \subfigure[Match number (\textit{DSM})]{
-            \begin{minipage}[t]{0.3\linewidth}
+            \begin{minipage}[t]{0.48\linewidth}
                 \centering
-                \includegraphics[width=4.8cm]{images/Chapitre3/PlotCurves_MEC-Malt_Tapas_1981_MEC-Malt_2015.png}
+                \includegraphics[width=3.5cm,trim=0 20 0 38,clip]{images/Chapitre3/PlotCurves_MEC-Malt_Tapas_1981_MEC-Malt_2015.png}
             \end{minipage}%
         }
         \subfigure[$SIFT_{DSM}^{RANSAC Inliers}$]{
             \begin{minipage}[t]{0.48\linewidth}
                 \centering
-                \includegraphics[width=6cm]{images/Chapitre3/Homol-SIFT-2DRANSAC_MEC-Malt_Tapas_1981_MEC-Malt_2015.png}
+                \includegraphics[width=5.2cm]{images/Chapitre3/Homol-SIFT2Step-Rough-2DRANSAC_MEC-Malt_Tapas_1981_MEC-Malt_2015.png}
             \end{minipage}%
         }
         \subfigure[$SuperGlue_{DSM}^{RANSAC Inliers}$]{
             \begin{minipage}[t]{0.48\linewidth}
                 \centering
-                \includegraphics[width=6cm]{images/Chapitre3/Homol-SubPatch_R90-2DRANSAC_MEC-Malt_Tapas_1981_MEC-Malt_2015.png}
+                \includegraphics[width=5.2cm]{images/Chapitre3/Homol-SubPatch_R90-2DRANSAC_MEC-Malt_Tapas_1981_MEC-Malt_2015.png}
             \end{minipage}%
         }
-        \caption{Result of matching DSMs of Pezenas 1981 and 2015.}
-        \label{Match result}
+        %\caption{Result of matching DSMs (i.e. \textit{DSM}) of Pezenas 1981 and 2015. (a) DSMs to be matched, with red rectangles indicating the common zone. (b) Numbers of total matches, GT inliers and RANSAC inliers of both SIFT and SuperGlue. (c) Visualization of RANSAC inliers based on SIFT. (d) Visualization of RANSAC inliers based on SuperGlue.}
+        %\caption{{\small Result of \textit{ImgPairs}, \textit{Ortho} and \textit{DSM} on Pezenas 1981 and 2015. (a, e, i) image pairs/orthophotos/DSMs to be matched, with red rectangles indicating the common zone. (b, f, j) Numbers of total matches, GT inliers and RANSAC inliers of both SIFT and SuperGlue on methods \textit{ImgPairs}, \textit{Ortho} and \textit{DSM} individually. (c, g, k) Visualization of RANSAC inliers based on $SIFT_{ImgPairs}$, $SIFT_{Ortho}$ and $SIFT_{DSM}$. (d, h, l) Visualization of RANSAC inliers based on $SuperGlue_{ImgPairs}$, $SuperGlue_{Ortho}$ and $SuperGlue_{DSM}$.}}
+        \caption{{\scriptsize Result of \textit{ImgPairs} (a-d), \textit{Ortho} (e-h) and \textit{DSM} (i-l) on matching Pezenas 1981 and 2015. (a, e, i) image pairs/orthophotos/DSMs to be matched, with red rectangles indicating the common zone. (b, f, j) Numbers of total matches, GT inliers and RANSAC inliers of both SIFT and SuperGlue on methods \textit{ImgPairs}, \textit{Ortho} and \textit{DSM} individually. (c, g, k) Visualization of RANSAC inliers based on $SIFT_{ImgPairs}$, $SIFT_{Ortho}$ and $SIFT_{DSM}$. (d, h, l) Visualization of RANSAC inliers based on $SuperGlue_{ImgPairs}$, $SuperGlue_{Ortho}$ and $SuperGlue_{DSM}$.}}        
+        \label{MatchVizPezenas1981DSM}
     \end{center}
 \end{figure*} 
+
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Kobe
 
 \begin{figure*}[htbp]
     \begin{center}
-        \subfigure[Image pairs]{
-            \begin{minipage}[t]{0.45\linewidth}
+        \subfigure[Image pairs (15$\times$83 pairs)]{
+            \begin{minipage}[t]{0.48\linewidth}
                 \centering
-                \includegraphics[width=5.5cm]{images/Chapitre3/Pseudo-Ortho-MEC-Malt_Tapas_1991_Ortho-MEC-Malt_Tapas_1994.png}
+                \includegraphics[width=2.3cm,angle=90]{images/Chapitre3/Pseudo-Ortho-MEC-Malt_Tapas_1991_Ortho-MEC-Malt_Tapas_1994.png}
             \end{minipage}%
         }
         \subfigure[Match number (\textit{ImgPairs})]{
-            \begin{minipage}[t]{0.35\linewidth}
+            \begin{minipage}[t]{0.48\linewidth}
                 \centering
-                \includegraphics[width=4.8cm]{images/Chapitre3/PlotCurves_Pseudo-Ortho-MEC-Malt_Tapas_1991_Ortho-MEC-Malt_Tapas_1994.png}
+                \includegraphics[width=3.5cm,trim=0 20 0 38,clip]{images/Chapitre3/PlotCurves_Pseudo-Ortho-MEC-Malt_Tapas_1991_Ortho-MEC-Malt_Tapas_1994.png}
             \end{minipage}%
         }   
         \subfigure[$SIFT_{ImgPairs}^{RANSAC Inliers}$]{
-            \begin{minipage}[t]{0.45\linewidth}
+            \begin{minipage}[t]{0.48\linewidth}
                 \centering
-                \includegraphics[width=5.5cm]{images/Chapitre3/Pseudo-Homol-SIFT2Step_1991-1994-Rough-2DRANSAC-GlobalR3D-PileImg_Ortho-MEC-Malt_Tapas_1991_Ortho-MEC-Malt_Tapas_1994.png}
+                \includegraphics[width=2.6cm,angle=90]{images/Chapitre3/Pseudo-Homol-SIFT2Step_1991-1994-Rough-2DRANSAC-GlobalR3D-PileImg_Ortho-MEC-Malt_Tapas_1991_Ortho-MEC-Malt_Tapas_1994.png}
             \end{minipage}%
         }
         \subfigure[$SuperGlue_{ImgPairs}^{RANSAC Inliers}$]{
-            \begin{minipage}[t]{0.45\linewidth}
+            \begin{minipage}[t]{0.48\linewidth}
                 \centering
-                \includegraphics[width=5.5cm]{images/Chapitre3/Pseudo-Homol-SuperGlue_1991-1994-GlobalR3D-PileImg_Ortho-MEC-Malt_Tapas_1991_Ortho-MEC-Malt_Tapas_1994.png}
+                \includegraphics[width=2.6cm,angle=90]{images/Chapitre3/Pseudo-Homol-SuperGlue_1991-1994-GlobalR3D-PileImg_Ortho-MEC-Malt_Tapas_1991_Ortho-MEC-Malt_Tapas_1994.png}
             \end{minipage}%
         }
-        \caption{Result of matching image pairs of Kobe 1991 and 1995.}
-        \label{Match result}
-    \end{center}
-\end{figure*} 
-
-\begin{figure*}[htbp]
-    \begin{center}
+%        \caption{Result of matching image pairs (i.e. \textit{ImgPairs}) of Kobe 1991 and 1995. (a) Image pairs to be matched, with red rectangles indicating the common zone. (b) Numbers of total matches, GT inliers and RANSAC inliers of both SIFT and SuperGlue. (c) Visualization of RANSAC inliers based on SIFT. (d) Visualization of RANSAC inliers based on SuperGlue.}
+%        \label{MatchVizKobe1991ImgPairs}
+%    \end{center}
+%\end{figure*} 
+%
+%\begin{figure*}[htbp]
+%    \begin{center}
         \subfigure[Orthophotos]{
-            \begin{minipage}[t]{0.45\linewidth}
+            \begin{minipage}[t]{0.48\linewidth}
                 \centering
-                \includegraphics[width=5.5cm]{images/Chapitre3/Ortho-MEC-Malt_Tapas_1991_Ortho-MEC-Malt_Tapas_1994.png}
+                \includegraphics[width=2.3cm,angle=90]{images/Chapitre3/Ortho-MEC-Malt_Tapas_1991_Ortho-MEC-Malt_Tapas_1994.png}
             \end{minipage}%
         }
         \subfigure[Match number (\textit{Ortho})]{
-            \begin{minipage}[t]{0.35\linewidth}
+            \begin{minipage}[t]{0.48\linewidth}
                 \centering
-                \includegraphics[width=4.8cm]{images/Chapitre3/PlotCurves_Ortho-MEC-Malt_Tapas_1991_Ortho-MEC-Malt_Tapas_1994.png}
+                \includegraphics[width=3.5cm,trim=0 20 0 38,clip]{images/Chapitre3/PlotCurves_Ortho-MEC-Malt_Tapas_1991_Ortho-MEC-Malt_Tapas_1994.png}
             \end{minipage}%
         }   
         \subfigure[$SIFT_{Ortho}^{RANSAC Inliers}$]{
-            \begin{minipage}[t]{0.45\linewidth}
+            \begin{minipage}[t]{0.48\linewidth}
                 \centering
-                \includegraphics[width=5.5cm]{images/Chapitre3/Homol-SIFT-2DRANSAC_Ortho-MEC-Malt_Tapas_1991_Ortho-MEC-Malt_Tapas_1994.png}
+                \includegraphics[width=2.6cm,angle=90]{images/Chapitre3/Homol-SIFT2Step-Rough-2DRANSAC_Ortho-MEC-Malt_Tapas_1991_Ortho-MEC-Malt_Tapas_1994.png}
             \end{minipage}%
         }
         \subfigure[$SuperGlue_{Ortho}^{RANSAC Inliers}$]{
-            \begin{minipage}[t]{0.45\linewidth}
+            \begin{minipage}[t]{0.48\linewidth}
                 \centering
-                \includegraphics[width=5.5cm]{images/Chapitre3/Homol-SubPatch-2DRANSAC_Ortho-MEC-Malt_Tapas_1991_Ortho-MEC-Malt_Tapas_1994.png}
+                \includegraphics[width=2.6cm,angle=90]{images/Chapitre3/Homol-SubPatch-2DRANSAC_Ortho-MEC-Malt_Tapas_1991_Ortho-MEC-Malt_Tapas_1994.png}
             \end{minipage}%
         }
-        \caption{Result of matching orthophotos of Kobe 1991 and 1995.}
-        \label{Match result}
-    \end{center}
-\end{figure*} 
-
-\begin{figure*}[htbp]
-    \begin{center}
+%        \caption{Result of matching orthophotos (i.e. \textit{Ortho}) of Kobe 1991 and 1995. (a) Orthophotos to be matched, with red rectangles indicating the common zone. (b) Numbers of total matches, GT inliers and RANSAC inliers of both SIFT and SuperGlue. (c) Visualization of RANSAC inliers based on SIFT. (d) Visualization of RANSAC inliers based on SuperGlue.}
+%        \label{MatchVizKobe1991Ortho}
+%    \end{center}
+%\end{figure*} 
+%
+%\begin{figure*}[htbp]
+%    \begin{center}
         \subfigure[DSMs]{
-            \begin{minipage}[t]{0.45\linewidth}
+            \begin{minipage}[t]{0.48\linewidth}
                 \centering
-                \includegraphics[width=5.5cm]{images/Chapitre3/MEC-Malt_Tapas_1991_MEC-Malt_Tapas_1994.png}
+                \includegraphics[width=2.3cm,angle=90]{images/Chapitre3/MEC-Malt_Tapas_1991_MEC-Malt_Tapas_1994.png}
             \end{minipage}%
         }
         \subfigure[Match number (\textit{DSM})]{
-            \begin{minipage}[t]{0.35\linewidth}
+            \begin{minipage}[t]{0.48\linewidth}
                 \centering
-                \includegraphics[width=4.8cm]{images/Chapitre3/PlotCurves_MEC-Malt_Tapas_1991_MEC-Malt_Tapas_1994.png}
+                \includegraphics[width=3.5cm,trim=0 20 0 38,clip]{images/Chapitre3/PlotCurves_MEC-Malt_Tapas_1991_MEC-Malt_Tapas_1994.png}
             \end{minipage}%
         }
         \subfigure[$SIFT_{DSM}^{RANSAC Inliers}$]{
-            \begin{minipage}[t]{0.45\linewidth}
+            \begin{minipage}[t]{0.48\linewidth}
                 \centering
-                \includegraphics[width=5.5cm]{images/Chapitre3/Homol-SIFT-2DRANSAC_MEC-Malt_Tapas_1991_MEC-Malt_Tapas_1994.png}
+                \includegraphics[width=2.6cm,angle=90]{images/Chapitre3/Homol-SIFT2Step-Rough-2DRANSAC_MEC-Malt_Tapas_1991_MEC-Malt_Tapas_1994.png}
             \end{minipage}%
         }
         \subfigure[$SuperGlue_{DSM}^{RANSAC Inliers}$]{
-            \begin{minipage}[t]{0.45\linewidth}
+            \begin{minipage}[t]{0.48\linewidth}
                 \centering
-                \includegraphics[width=5.5cm]{images/Chapitre3/Homol-SubPatch-2DRANSAC_MEC-Malt_Tapas_1991_MEC-Malt_Tapas_1994.png}
+                \includegraphics[width=2.6cm,angle=90]{images/Chapitre3/Homol-SubPatch-2DRANSAC_MEC-Malt_Tapas_1991_MEC-Malt_Tapas_1994.png}
             \end{minipage}%
         }
-        \caption{Result of matching DSMs of Kobe 1991 and 1995.}
-        \label{Match result}
+        %\caption{Result of matching DSMs (i.e. \textit{DSM}) of Kobe 1991 and 1995. (a) DSMs to be matched, with red rectangles indicating the common zone. (b) Numbers of total matches, GT inliers and RANSAC inliers of both SIFT and SuperGlue. (c) Visualization of RANSAC inliers based on SIFT. (d) Visualization of RANSAC inliers based on SuperGlue.}
+        %\caption{{\small Result of \textit{ImgPairs}, \textit{Ortho} and \textit{DSM} on Kobe 1991 and 1995. (a, e, i) image pairs/orthophotos/DSMs to be matched, with red rectangles indicating the common zone. (b, f, j) Numbers of total matches, GT inliers and RANSAC inliers of both SIFT and SuperGlue on methods \textit{ImgPairs}, \textit{Ortho} and \textit{DSM} individually. (c, g, k) Visualization of RANSAC inliers based on $SIFT_{ImgPairs}$, $SIFT_{Ortho}$ and $SIFT_{DSM}$. (d, h, l) Visualization of RANSAC inliers based on $SuperGlue_{ImgPairs}$, $SuperGlue_{Ortho}$ and $SuperGlue_{DSM}$.}}
+        \caption{{\scriptsize Result of \textit{ImgPairs} (a-d), \textit{Ortho} (e-h) and \textit{DSM} (i-l) on matching Kobe 1991 and 1995. (a, e, i) image pairs/orthophotos/DSMs to be matched, with red rectangles indicating the common zone. (b, f, j) Numbers of total matches, GT inliers and RANSAC inliers of both SIFT and SuperGlue on methods \textit{ImgPairs}, \textit{Ortho} and \textit{DSM} individually. (c, g, k) Visualization of RANSAC inliers based on $SIFT_{ImgPairs}$, $SIFT_{Ortho}$ and $SIFT_{DSM}$. (d, h, l) Visualization of RANSAC inliers based on $SuperGlue_{ImgPairs}$, $SuperGlue_{Ortho}$ and $SuperGlue_{DSM}$.}}        
+        \label{MatchVizKobe1991DSM}
     \end{center}
 \end{figure*} 
+
+
+
 
 %As can be seen, 
 
@@ -1028,87 +1080,162 @@ In order to evaluate the results qualitatively and quantitatively, the following
 \subsubsection{Ground check points}
 
 \begin{table}%[H]
-    \footnotesize
-    \centering
-    \begin{tabular}{|l|c|c|c|c|c|c|}\hline
-        &\multicolumn{6}{c|}{$|\mu|$ [m]}\\\hline
-        &\multicolumn{2}{c|}{ImgPairs} &\multicolumn{2}{c|}{Orthophoto} &\multicolumn{2}{c|}{DSM}\\\hline
-        & SIFT & SuperGlue & SIFT & SuperGlue & SIFT & SuperGlue \\\hline\hline
-        $Frejus_{2014}^{1954}$ & 1380.16 & 29.29 & / & 34.84 & / & \textbf{10.72}\\\hline
-        $Frejus_{2014}^{1966}$ & 1686.56 & 18.15 & / & 11.98 & / & \textbf{10.43}\\\hline
-        $Frejus_{2014}^{1970}$ & 997.83 & 11.09 & / & 16.87 & / & \textbf{10.23}\\\hline\hline
-
-        $Frejus_{2014}^{1966}$ & 1686.56 & 18.15 & / & 11.98 & / & \textbf{10.43}\\\hline
-$Frejus_{2014}^{1970}$ & 997.83 & 11.09 & / & 16.87 & / & \textbf{10.23}\\\hline\hline
-
-        $Kobe_{1994}^{1991}$ & / & \textbf{2.02} & / & 3.40 & 2.78 & 4.03 \\\hline
-\end{tabular}
-    \caption{Accuracy of 6 sets of co-registered orientations resulting from 6 methods, evaluated on 3 check points uniformly distributed in the block. Absolute average value $|\mu|$ is displayed for each method.}
-    \label{CheckptAcuracy}
+	\footnotesize
+	\centering
+	\begin{tabular}{|l|cccccc|}\hline
+		&\multicolumn{6}{c}{$|\mu|$ [m]}\\\hline
+		&\multicolumn{2}{c}{ImgPairs} &\multicolumn{2}{c}{Ortho} &\multicolumn{2}{c|}{DSM}\\\hline
+		& SIFT & SuperGlue & SIFT & SuperGlue & SIFT & SuperGlue \\\hline\hline
+		$Frejus_{2014}^{1954}$ & 1380.16 & 29.29 & 2509.13 & 34.84 & 36.58 & \textbf{10.72}\\\hline
+		$Frejus_{2014}^{1966}$ & 1686.56 & 18.15 & 4386.53 & 11.98 & 19.54 & \textbf{10.43}\\\hline
+		$Frejus_{2014}^{1970}$ & 997.83 & 11.09 & 4404.15 & 16.87 & \textbf{8.65} & 10.23\\\hline\hline
+		
+		$Pezenas_{2015}^{1971}$ & 7.03 & ? & 31.68 & 10.85 & 9.15 & \textbf{8.52} \\\hline
+		$Pezenas_{2015}^{1981}$ & \textbf{5.48} & 5.76 & 7.63 & 8.73 & 10.23 & 6.76 \\\hline
+		
+		$Kobe_{1995}^{1991}$ & 369.34 & 3.33 & 68.51 & 4.03 & \textbf{2.78} & \textbf{2.78} \\\hline
+	\end{tabular}
+	\caption{Accuracy of 6 sets of co-registered orientations resulting from 6 methods, evaluated on 3 check points uniformly distributed in the block. Absolute average value $|\mu|$ is displayed for each method.}
+	\label{CheckptAcuracy}
 \end{table}
+
+
 
 \subsubsection{DoD}
 
 
 \begin{figure*}[htbp]
     \begin{center}
-        \subfigure[DoD$_{Frejus1954}^{ImgPairs}$]{
+        \subfigure[DoD$_{Frejus1954}^{SuperGlue_{ImgPairs}}$]{
             \begin{minipage}[t]{0.31\linewidth}
                 \centering
                 %left, lower, right, up
-                \includegraphics[width=4.2cm,trim=550 60 230 200,clip]{images/Chapitre3/DoD1954R3D.png}
+                \includegraphics[width=3.3cm,trim=680 80 110 220,clip]{images/Chapitre3/DoD1954R3D-SuperGlue.png}
             \end{minipage}%
         }
-        \subfigure[DoD$_{Frejus1954}^{Orthophoto}$]{
+        \subfigure[DoD$_{Frejus1954}^{SuperGlue_{Ortho}}$]{
             \begin{minipage}[t]{0.31\linewidth}
                 \centering
-                \includegraphics[width=4.2cm,trim=550 60 230 200,clip]{images/Chapitre3/DoD1954Ortho.png}
+                \includegraphics[width=3.3cm,trim=680 80 110 220,clip]{images/Chapitre3/DoD1954Ortho-SuperGlue.png}
             \end{minipage}%
         }
-        \subfigure[DoD$_{Frejus1954}^{DSM}$]{
+        \subfigure[DoD$_{Frejus1954}^{SuperGlue_{DSM}}$]{
             \begin{minipage}[t]{0.31\linewidth}
                 \centering
-                \includegraphics[width=4.2cm,trim=550 60 230 200,clip]{images/Chapitre3/DoD1954DSM.png}
+                \includegraphics[width=3.3cm,trim=680 80 110 220,clip]{images/Chapitre3/DoD1954DSM-SuperGlue.png}
             \end{minipage}%
         }
         
-        \subfigure[DoD$_{Frejus1966}^{ImgPairs}$]{
+        \subfigure[DoD$_{Frejus1954}^{SIFT_{ImgPairs}}$]{
             \begin{minipage}[t]{0.31\linewidth}
                 \centering
                 %left, lower, right, up
-                \includegraphics[width=4.2cm,trim=480 60 50 200,clip]{images/Chapitre3/DoD1966R3D.png}
+                \includegraphics[width=2cm]{images/Chapitre3/NoDoD.png}
             \end{minipage}%
         }
-        \subfigure[DoD$_{Frejus1954}^{Orthophoto}$]{
+        \subfigure[DoD$_{Frejus1954}^{SIFT_{Ortho}}$]{
             \begin{minipage}[t]{0.31\linewidth}
                 \centering
-                \includegraphics[width=4.2cm,trim=480 60 50 200,clip]{images/Chapitre3/DoD1966Ortho.png}
+                \includegraphics[width=2cm]{images/Chapitre3/NoDoD.png}
             \end{minipage}%
         }
-        \subfigure[DoD$_{Frejus1966}^{DSM}$]{
+        \subfigure[DoD$_{Frejus1954}^{SIFT_{DSM}}$]{
             \begin{minipage}[t]{0.31\linewidth}
                 \centering
-                \includegraphics[width=4.2cm,trim=480 60 50 200,clip]{images/Chapitre3/DoD1966DSM.png}
+                \includegraphics[width=3.3cm,trim=680 80 110 220,clip]{images/Chapitre3/DoD1954DSM-SIFT.png}
+            \end{minipage}%
+        }
+%       \caption{DoDs of SuperGlue and SIFT on dataset Fr{\'e}jus (epoch 1954). The prohibition sign means the corresponding method failed.}
+%       \label{Frejus DoD of SuperGlue}
+%   \end{center}
+%\end{figure*} 
+%
+%\begin{figure*}[htbp]
+%   \begin{center}
+        \subfigure[DoD$_{Frejus1966}^{SuperGlue_{ImgPairs}}$]{
+            \begin{minipage}[t]{0.31\linewidth}
+                \centering
+                %left, lower, right, up
+                \includegraphics[width=3.3cm,trim=730 120 50 260,clip]{images/Chapitre3/DoD1966R3D-SuperGlue.png}
+            \end{minipage}%
+        }
+        \subfigure[DoD$_{Frejus1966}^{SuperGlue_{Ortho}}$]{
+            \begin{minipage}[t]{0.31\linewidth}
+                \centering
+                \includegraphics[width=3.3cm,trim=730 120 50 260,clip]{images/Chapitre3/DoD1966Ortho-SuperGlue.png}
+            \end{minipage}%
+        }
+        \subfigure[DoD$_{Frejus1966}^{SuperGlue_{DSM}}$]{
+            \begin{minipage}[t]{0.31\linewidth}
+                \centering
+                \includegraphics[width=3.3cm,trim=730 120 50 260,clip]{images/Chapitre3/DoD1966DSM-SuperGlue.png}
             \end{minipage}%
         }
         
-        \subfigure[DoD$_{Frejus1970}^{ImgPairs}$]{
+        
+        \subfigure[DoD$_{Frejus1966}^{SIFT_{ImgPairs}}$]{
             \begin{minipage}[t]{0.31\linewidth}
                 \centering
                 %left, lower, right, up
-                \includegraphics[width=4.2cm,trim=480 110 50 200,clip]{images/Chapitre3/DoD1970R3D.png}
+                \includegraphics[width=2cm]{images/Chapitre3/NoDoD.png}
             \end{minipage}%
         }
-        \subfigure[DoD$_{Frejus1970}^{Orthophoto}$]{
+        \subfigure[DoD$_{Frejus1966}^{SIFT_{Ortho}}$]{
             \begin{minipage}[t]{0.31\linewidth}
                 \centering
-                \includegraphics[width=4.2cm,trim=480 110 50 200,clip]{images/Chapitre3/DoD1970Ortho.png}
+                \includegraphics[width=2cm]{images/Chapitre3/NoDoD.png}
             \end{minipage}%
         }
-        \subfigure[DoD$_{Frejus1970}^{DSM}$]{
+        \subfigure[DoD$_{Frejus1966}^{SIFT_{DSM}}$]{
             \begin{minipage}[t]{0.31\linewidth}
                 \centering
-                \includegraphics[width=4.2cm,trim=480 110 50 200,clip]{images/Chapitre3/DoD1970DSM.png}
+                \includegraphics[width=3.3cm,trim=730 120 50 260,clip]{images/Chapitre3/DoD1966DSM-SIFT.png}
+            \end{minipage}%
+        }       
+%       \caption{DoDs of SuperGlue and SIFT on dataset Fr{\'e}jus (epoch 1966). The prohibition sign means the corresponding method failed.}
+%\label{Frejus DoD of SuperGlue}
+%\end{center}
+%\end{figure*} 
+%
+%\begin{figure*}[htbp]
+%\begin{center}     
+        \subfigure[DoD$_{Frejus1970}^{SuperGlue_{ImgPairs}}$]{
+            \begin{minipage}[t]{0.31\linewidth}
+                \centering
+                %left, lower, right, up
+                \includegraphics[width=3.3cm,trim=680 180 50 260,clip]{images/Chapitre3/DoD1970R3D-SuperGlue.png}
+            \end{minipage}%
+        }
+        \subfigure[DoD$_{Frejus1970}^{SuperGlue_{Ortho}}$]{
+            \begin{minipage}[t]{0.31\linewidth}
+                \centering
+                \includegraphics[width=3.3cm,trim=680 180 50 260,clip]{images/Chapitre3/DoD1970Ortho-SuperGlue.png}
+            \end{minipage}%
+        }
+        \subfigure[DoD$_{Frejus1970}^{SuperGlue_{DSM}}$]{
+            \begin{minipage}[t]{0.31\linewidth}
+                \centering
+                \includegraphics[width=3.3cm,trim=680 180 50 260,clip]{images/Chapitre3/DoD1970DSM-SuperGlue.png}
+            \end{minipage}%
+        }
+        
+        \subfigure[DoD$_{Frejus1970}^{SIFT_{ImgPairs}}$]{
+            \begin{minipage}[t]{0.31\linewidth}
+                \centering
+                %left, lower, right, up
+                \includegraphics[width=2cm]{images/Chapitre3/NoDoD.png}
+            \end{minipage}%
+        }
+        \subfigure[DoD$_{Frejus1970}^{SIFT_{Ortho}}$]{
+            \begin{minipage}[t]{0.31\linewidth}
+                \centering
+                \includegraphics[width=2cm]{images/Chapitre3/NoDoD.png}
+            \end{minipage}%
+        }
+        \subfigure[DoD$_{Frejus1970}^{SIFT_{DSM}}$]{
+            \begin{minipage}[t]{0.31\linewidth}
+                \centering
+                \includegraphics[width=3.3cm,trim=680 180 50 260,clip]{images/Chapitre3/DoD1970DSM-SIFT.png}
             \end{minipage}%
         }
         
@@ -1118,37 +1245,275 @@ $Frejus_{2014}^{1970}$ & 997.83 & 11.09 & / & 16.87 & / & \textbf{10.23}\\\hline
                 \includegraphics[width=11cm]{images/Chapitre3/LegendDoD.png}
             \end{minipage}%
         }
-        \caption{DoDs of SuperGlue on dataset Fr{\'e}jus.}
-        \label{Frejus DoD of SuperGlue}
+        %\caption{DoDs of SuperGlue and SIFT on dataset Fr{\'e}jus (epoch 1970). The prohibition sign means the corresponding method failed.}
+        \caption{{\scriptsize DoDs of $SuperGlue_{ImgPairs}$ (a, g, m), $SuperGlue_{Ortho}$ (b, h, n), $SuperGlue_{DSM}$ (c, i, o), $SIFT_{ImgPairs}$ (d, j, p), $SIFT_{Ortho}$ (e, k, q) and $SIFT_{DSM}$ (f, l, r) on dataset Fr{\'e}jus. The prohibition sign means the corresponding method failed.}}
+        \label{DoDFrejus}
     \end{center}
 \end{figure*} 
 
+
+
+\begin{figure*}[htbp]
+	\begin{center}
+		\subfigure[DoD$_{Pezenas1971}^{SuperGlue_{ImgPairs}}$]{
+			\begin{minipage}[t]{0.31\linewidth}
+				\centering
+				%left, lower, right, up
+				\includegraphics[width=4.2cm]{images/Chapitre3/NoDoD.png}
+			\end{minipage}%
+		}
+		\subfigure[DoD$_{Pezenas1971}^{SuperGlue_{Ortho}}$]{
+			\begin{minipage}[t]{0.31\linewidth}
+				\centering
+				\includegraphics[width=4.2cm,trim=680 80 50 230,clip]{images/Chapitre3/DoD1971Ortho-SuperGlue.png}
+			\end{minipage}%
+		}
+		\subfigure[DoD$_{Pezenas1971}^{SuperGlue_{DSM}}$]{
+			\begin{minipage}[t]{0.31\linewidth}
+				\centering
+				\includegraphics[width=4.2cm,trim=680 80 50 230,clip]{images/Chapitre3/DoD1971DSM-SuperGlue.png}
+			\end{minipage}%
+		}
+		
+		\subfigure[DoD$_{Pezenas1971}^{SIFT_{ImgPairs}}$]{
+			\begin{minipage}[t]{0.31\linewidth}
+				\centering
+				%left, lower, right, up
+				\includegraphics[width=4.2cm,trim=680 80 50 230,clip]{images/Chapitre3/DoD1971R3D-SIFT.png}
+			\end{minipage}%
+		}
+		\subfigure[DoD$_{Pezenas1971}^{SIFT_{Ortho}}$]{
+			\begin{minipage}[t]{0.31\linewidth}
+				\centering
+				\includegraphics[width=4.2cm,trim=680 80 50 230,clip]{images/Chapitre3/DoD1971Ortho-SIFT.png}
+			\end{minipage}%
+		}
+		\subfigure[DoD$_{Pezenas1971}^{SIFT_{DSM}}$]{
+			\begin{minipage}[t]{0.31\linewidth}
+				\centering
+				\includegraphics[width=4.2cm,trim=680 80 50 230,clip]{images/Chapitre3/DoD1971DSM-SIFT.png}
+			\end{minipage}%
+		}
+		
+		\subfigure[DoD$_{Pezenas1981}^{SuperGlue_{ImgPairs}}$]{
+			\begin{minipage}[t]{0.31\linewidth}
+				\centering
+				%left, lower, right, up
+				\includegraphics[width=4.2cm,trim=720 100 50 200,clip]{images/Chapitre3/DoD1981R3D-SuperGlue.png}
+			\end{minipage}%
+		}
+		\subfigure[DoD$_{Pezenas1981}^{SuperGlue_{Ortho}}$]{
+			\begin{minipage}[t]{0.31\linewidth}
+				\centering
+				\includegraphics[width=4.2cm,trim=720 100 50 200,clip]{images/Chapitre3/DoD1981Ortho-SuperGlue.png}
+			\end{minipage}%
+		}
+		\subfigure[DoD$_{Pezenas1981}^{SuperGlue_{DSM}}$]{
+			\begin{minipage}[t]{0.31\linewidth}
+				\centering
+				\includegraphics[width=4.2cm,trim=720 100 50 200,clip]{images/Chapitre3/DoD1981DSM-SuperGlue.png}
+			\end{minipage}%
+		}
+		
+		\subfigure[DoD$_{Pezenas1981}^{SIFT_{ImgPairs}}$]{
+			\begin{minipage}[t]{0.31\linewidth}
+				\centering
+				%left, lower, right, up
+				\includegraphics[width=4.2cm,trim=720 100 50 200,clip]{images/Chapitre3/DoD1981R3D-SIFT.png}
+			\end{minipage}%
+		}
+		\subfigure[DoD$_{Pezenas1981}^{SIFT_{Ortho}}$]{
+			\begin{minipage}[t]{0.31\linewidth}
+				\centering
+				\includegraphics[width=4.2cm,trim=720 100 50 200,clip]{images/Chapitre3/DoD1981Ortho-SIFT.png}
+			\end{minipage}%
+		}
+		\subfigure[DoD$_{Pezenas1981}^{SIFT_{DSM}}$]{
+			\begin{minipage}[t]{0.31\linewidth}
+				\centering
+				\includegraphics[width=4.2cm,trim=720 100 50 200,clip]{images/Chapitre3/DoD1981DSM-SIFT.png}
+			\end{minipage}%
+		}
+		
+		
+		\subfigure[DoD legend]{
+			\begin{minipage}[t]{1\linewidth}
+				\centering
+				\includegraphics[width=11cm]{images/Chapitre3/LegendDoD.png}
+			\end{minipage}%
+		}
+        \caption{{\scriptsize DoDs of $SuperGlue_{ImgPairs}$ (a, g), $SuperGlue_{Ortho}$ (b, h), $SuperGlue_{DSM}$ (c, i), $SIFT_{ImgPairs}$ (d, j), $SIFT_{Ortho}$ (e, k) and $SIFT_{DSM}$ (f, l) on dataset Pezenas. The prohibition sign means the corresponding method failed.}}
+		\label{DoDPezenas}
+	\end{center}
+\end{figure*} 
+%
+
+\begin{figure*}[htbp]
+	\begin{center}
+        \subfigure[DoD$_{Kobe}^{SuperGlue_{ImgPairs}}$]{
+	\begin{minipage}[t]{1\linewidth}
+		\centering
+		%left, lower, right, up
+		\includegraphics[width=12cm,trim=700 450 180 560,clip]{images/Chapitre3/DoD1991R3D-SuperGlue.png}
+	\end{minipage}%
+}
+\subfigure[DoD$_{Kobe}^{SuperGlue_{Ortho}}$]{
+	\begin{minipage}[t]{1\linewidth}
+		\centering
+		\includegraphics[width=12cm,trim=700 450 180 560,clip]{images/Chapitre3/DoD1991Ortho-SuperGlue.png}
+	\end{minipage}%
+}
+\subfigure[DoD$_{Kobe}^{SuperGlue_{DSM}}$]{
+	\begin{minipage}[t]{1\linewidth}
+		\centering
+		\includegraphics[width=12cm,trim=700 450 180 560,clip]{images/Chapitre3/DoD1991DSM-SuperGlue.png}
+	\end{minipage}%
+}
+
+\subfigure[DoD$_{Kobe}^{SIFT_{ImgPairs}}$]{
+	\begin{minipage}[t]{1\linewidth}
+		\centering
+		%left, lower, right, up
+		\includegraphics[width=2cm]{images/Chapitre3/NoDoD.png}
+	\end{minipage}%
+}
+\subfigure[DoD$_{Kobe}^{SIFT_{Ortho}}$]{
+	\begin{minipage}[t]{1\linewidth}
+		\centering
+		\includegraphics[width=2cm]{images/Chapitre3/NoDoD.png}
+	\end{minipage}%
+}
+\subfigure[DoD$_{Kobe}^{SIFT_{DSM}}$]{
+	\begin{minipage}[t]{1\linewidth}
+		\centering
+		\includegraphics[width=12cm,trim=700 450 180 560,clip]{images/Chapitre3/DoD1991DSM-SIFT.png}
+	\end{minipage}%
+}
+
+		\subfigure[DoD legend]{
+			\begin{minipage}[t]{1\linewidth}
+				\centering
+				\includegraphics[width=11cm]{images/Chapitre3/LegendDoD.png}
+			\end{minipage}%
+		}
+        \caption{{\scriptsize DoDs of $SuperGlue_{ImgPairs}$ (a), $SuperGlue_{Ortho}$ (b), $SuperGlue_{DSM}$ (c), $SIFT_{ImgPairs}$ (d), $SIFT_{Ortho}$ (e) and $SIFT_{DSM}$ (f) on dataset Kobe. The prohibition sign means the corresponding method failed.}}
+		\label{DoDKobe}
+	\end{center}
+\end{figure*} 
+
+
 \begin{table}%[H]
-    \footnotesize
-    \centering
-    \begin{tabular}{||l|c|c|c||}\hline
-        &$\mu$ [m]&$\sigma$ [m]&$|\mu|$ [m]\\\hline\hline
-        DoD$_{Frejus1954}^{ImgPairs}$ & 5.70 & 6.32 & 6.62\\
-        DoD$_{Frejus1954}^{Orthophoto}$ & 2.19 & 6.46 & 4.55\\
-        DoD$_{Frejus1954}^{DSM}$ & 2.07 & 4.87 & \textbf{3.83}\\\hline
-        DoD$_{Frejus1966}^{ImgPairs}$ & -1.36 & 3.82 & 2.90\\
-        DoD$_{Frejus1966}^{Orthophoto}$ & -0.37 & 4.22 & 3.01\\
-        DoD$_{Frejus1966}^{DSM}$ & -0.46 & 3.77 & \textbf{2.68}\\\hline
-        DoD$_{Frejus1970}^{ImgPairs}$ & -5.04 & 5.09 & 5.70\\
-        DoD$_{Frejus1970}^{Orthophoto}$ & -2.63 & 5.18 & \textbf{4.39}\\
-        DoD$_{Frejus1970}^{DSM}$ & -1.71 & 5.75 & 4.61\\\hline
-        DoD$_{Kobe1991}^{ImgPairs}$ &-1.35 & 13.82 & \textbf{7.23}\\
-        DoD$_{Kobe1991}^{Orthophoto}$ &-0.54 & 14.82 & 7.77\\
-        DoD$_{Kobe1991}^{DSM}$ &-2.12 & 14.20 & 7.45\\\hline
-    \end{tabular}
-    \caption{Average value $\mu$, standard deviation $\sigma$, and absolute average value $|\mu|$ of all the DoDs in Figure~\ref{Frejus DoD of SuperGlue}.}
-    \label{CheckptAcuracy}
+	\footnotesize
+	\centering
+	\begin{tabular}{||l|c|c|c||}\hline
+		&$\mu$ [m]&$\sigma$ [m]&$|\mu|$ [m]\\\hline\hline
+		DoD$_{Frejus1954}^{SuperGlue_{ImgPairs}}$ & 5.70 & 6.32 & 6.62\\
+		DoD$_{Frejus1954}^{SIFT_{ImgPairs}}$ & / & / & / \\
+		DoD$_{Frejus1954}^{SuperGlue_{Ortho}}$ & 2.19 & 6.46 & 4.55\\
+		DoD$_{Frejus1954}^{SIFT_{Ortho}}$ & / & / & / \\
+		DoD$_{Frejus1954}^{SuperGlue_{DSM}}$ & 2.07 & 4.87 & \textbf{3.83} \\
+		DoD$_{Frejus1954}^{SIFT_{DSM}}$ & 6.92 & 8.47 & 8.04\\\hline
+		
+		DoD$_{Frejus1966}^{SuperGlue_{ImgPairs}}$ & -1.36 & 3.82 & 2.90\\
+		DoD$_{Frejus1966}^{SIFT_{ImgPairs}}$ & / & / & / \\
+		DoD$_{Frejus1966}^{SuperGlue_{Ortho}}$ & -0.37 & 4.22 & 3.01\\
+		DoD$_{Frejus1966}^{SIFT_{Ortho}}$ & / & / & / \\
+		DoD$_{Frejus1966}^{SuperGlue_{DSM}}$ & -0.46 & 3.77 & \textbf{2.68}\\
+		DoD$_{Frejus1966}^{SIFT_{DSM}}$ & -1.72 & 4.92 & 3.75\\\hline
+		
+		DoD$_{Frejus1970}^{SuperGlue_{ImgPairs}}$ & -5.04 & 5.09 & 5.70\\
+		DoD$_{Frejus1970}^{SIFT_{ImgPairs}}$ & / & / & / \\
+		DoD$_{Frejus1970}^{SuperGlue_{Ortho}}$ & -2.63 & 5.18 & \textbf{4.39}\\
+		DoD$_{Frejus1970}^{SIFT_{Ortho}}$ & / & / & / \\
+		DoD$_{Frejus1970}^{SuperGlue_{DSM}}$ & -1.71 & 5.75 & 4.61\\
+		DoD$_{Frejus1970}^{SIFT_{DSM}}$ & -3.17 & 5.44 & 4.71\\\hline
+		
+		
+		
+		DoD$_{Pezenas1971}^{SuperGlue_{ImgPairs}}$ & / &/ &/ \\
+		DoD$_{Pezenas1971}^{SIFT_{ImgPairs}}$ & 2.77 & 16.58 & 13.98\\
+		DoD$_{Pezenas1971}^{SuperGlue_{Ortho}}$ & -8.46 & 22.36 & 16.68\\
+		DoD$_{Pezenas1971}^{SIFT_{Ortho}}$ & -8.05 & 21.71 & 17.07\\
+		DoD$_{Pezenas1971}^{SuperGlue_{DSM}}$ & 4.71 & 16.85 & 14.20\\
+		DoD$_{Pezenas1971}^{SIFT_{DSM}}$ & -0.75 & 17.75 & \textbf{13.74}\\\hline
+		
+		DoD$_{Pezenas1981}^{SuperGlue_{ImgPairs}}$ & -0.39 & 9.12 & \textbf{7.10}\\
+		DoD$_{Pezenas1981}^{SIFT_{ImgPairs}}$ & -2.01 & 10.07 & 7.80\\
+		DoD$_{Pezenas1981}^{SuperGlue_{Ortho}}$ & -2.60 & 9.93 & 7.76\\
+		DoD$_{Pezenas1981}^{SIFT_{Ortho}}$ & -4.80 & 13.25 & 10.33\\
+		DoD$_{Pezenas1981}^{SuperGlue_{DSM}}$ & 0.64 & 9.15 & 7.24\\
+		DoD$_{Pezenas1981}^{SIFT_{DSM}}$ & -0.73 & 9.67 & 7.42\\\hline
+		
+		
+		DoD$_{Kobe1991}^{SuperGlue_{ImgPairs}}$ & -1.63 & 13.85 & 7.24\\
+		DoD$_{Kobe1991}^{SIFT_{ImgPairs}}$ & / & / & / \\
+		%DoD$_{Kobe1991}^{SIFT_{ImgPairs}}$ & 167.46 & 121.26 & 168.47\\
+		DoD$_{Kobe1991}^{SuperGlue_{Ortho}}$ & -0.54 & 14.83 & 7.78\\
+		DoD$_{Kobe1991}^{SIFT_{Ortho}}$ & / & / & / \\
+		%DoD$_{Kobe1991}^{SIFT_{Ortho}}$ & 4.29 & 41.89 & 26.01\\
+		DoD$_{Kobe1991}^{SuperGlue_{DSM}}$ & -2.12 & 14.21 & 7.45\\
+		DoD$_{Kobe1991}^{SIFT_{DSM}}$ & -1.46 & 14.02 & \textbf{7.23}\\\hline
+
+\end{tabular}
+\caption{Average value $\mu$, standard deviation $\sigma$, and absolute average value $|\mu|$ of all the DoDs in Figure~\ref{DoDFrejus}, ~\ref{DoDPezenas} and ~\ref{DoDKobe}.}
+\label{CheckptAcuracy}
 \end{table}
 
+
+%old
+%\begin{table}%[H]
+%	\footnotesize
+%	\centering
+%	\begin{tabular}{||l|c|c|c||}\hline
+%		&$\mu$ [m]&$\sigma$ [m]&$|\mu|$ [m]\\\hline\hline
+%		DoD$_{Frejus1954}^{SuperGlue_{ImgPairs}}$ & 5.70 & 6.32 & 6.62\\
+%		DoD$_{Frejus1954}^{SIFT_{ImgPairs}}$ & / & / & / \\
+%		DoD$_{Frejus1954}^{SuperGlue_{Ortho}}$ & 2.19 & 6.46 & 4.55\\
+%		DoD$_{Frejus1954}^{SIFT_{Ortho}}$ & / & / & / \\
+%		DoD$_{Frejus1954}^{SuperGlue_{DSM}}$ & 2.07 & 4.87 & \textbf{3.83}\\
+%		DoD$_{Frejus1954}^{SIFT_{DSM}}$ & / & / & / \\\hline
+%		DoD$_{Frejus1966}^{SuperGlue_{ImgPairs}}$ & -1.36 & 3.82 & 2.90\\
+%		DoD$_{Frejus1966}^{SIFT_{ImgPairs}}$ & / & / & / \\
+%		DoD$_{Frejus1966}^{SuperGlue_{Ortho}}$ & -0.37 & 4.22 & 3.01\\
+%		DoD$_{Frejus1966}^{SIFT_{Ortho}}$ & / & / & / \\
+%		DoD$_{Frejus1966}^{SuperGlue_{DSM}}$ & -0.46 & 3.77 & \textbf{2.68}\\
+%		DoD$_{Frejus1966}^{SIFT_{DSM}}$ & / & / & / \\\hline
+%		DoD$_{Frejus1970}^{SuperGlue_{ImgPairs}}$ & -5.04 & 5.09 & 5.70\\
+%		DoD$_{Frejus1970}^{SIFT_{ImgPairs}}$ & / & / & / \\
+%		DoD$_{Frejus1970}^{SuperGlue_{Ortho}}$ & -2.63 & 5.18 & \textbf{4.39}\\
+%		DoD$_{Frejus1970}^{SIFT_{Ortho}}$ & / & / & / \\
+%		DoD$_{Frejus1970}^{SuperGlue_{DSM}}$ & -1.71 & 5.75 & 4.61\\
+%		DoD$_{Frejus1970}^{SIFT_{DSM}}$ & / & / & / \\\hline
+%		
+%		DoD$_{Pezenas1971}^{SuperGlue_{ImgPairs}}$ & / &/ &/ \\
+%		DoD$_{Pezenas1971}^{SIFT_{ImgPairs}}$ & 2.77 & 16.58 & 13.98\\
+%		DoD$_{Pezenas1971}^{SuperGlue_{Ortho}}$ & -8.46 & 22.36 & 16.68\\
+%		DoD$_{Pezenas1971}^{SIFT_{Ortho}}$ & / &/ &/ \\
+%		DoD$_{Pezenas1971}^{SuperGlue_{DSM}}$ & 4.71 & 16.85 & 14.20\\
+%		DoD$_{Pezenas1971}^{SIFT_{DSM}}$ & -9.60 & 22.02 & 16.78\\\hline
+%		
+%		DoD$_{Pezenas1981}^{SuperGlue_{ImgPairs}}$ & -0.39 & 9.12 & 7.10\\
+%		DoD$_{Pezenas1981}^{SIFT_{ImgPairs}}$ & -2.01 & 10.07 & 7.80\\
+%		DoD$_{Pezenas1981}^{SuperGlue_{Ortho}}$ & -2.60 & 9.93 & 7.76\\
+%		DoD$_{Pezenas1981}^{SIFT_{Ortho}}$ & / &/ &/ \\
+%		DoD$_{Pezenas1981}^{SuperGlue_{DSM}}$ & 0.64 & 9.15 & 7.24\\
+%		DoD$_{Pezenas1981}^{SIFT_{DSM}}$ & -3.31 & 10.54 & 8.14\\\hline
+%		
+%		DoD$_{Kobe1991}^{SuperGlue_{ImgPairs}}$ & -1.36 & 13.82 & 7.24\\
+%		DoD$_{Kobe1991}^{SIFT_{ImgPairs}}$ & / & / & / \\
+%		DoD$_{Kobe1991}^{SuperGlue_{Ortho}}$ & -0.54 & 14.83 & 7.78\\
+%		DoD$_{Kobe1991}^{SIFT_{Ortho}}$ & / & / & / \\
+%		DoD$_{Kobe1991}^{SuperGlue_{DSM}}$ & -2.12 & 14.21 & 7.45\\
+%		DoD$_{Kobe1991}^{SIFT_{DSM}}$ & -1.78 & 13.95 & 7.26\\\hline
+%		
+%	\end{tabular}
+%	\caption{Average value $\mu$, standard deviation $\sigma$, and absolute average value $|\mu|$ of all the DoDs in Figure~\ref{Frejus DoD of SuperGlue}.}
+%	\label{CheckptAcuracy}
+%\end{table}
 
 
 
 \section{Conclusion}
-
+ ${ImgPairs}$ is less efficient.
 \section{Discussion}
 

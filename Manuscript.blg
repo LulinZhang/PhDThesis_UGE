@@ -1,5 +1,5 @@
-This is BibTeX, Version 0.99d (TeX Live 2019/Debian)
-Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+This is BibTeX, Version 0.99d (TeX Live 2017/Debian)
+Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
 The top-level auxiliary file: Manuscript.aux
 A level-1 auxiliary file: TitlePage.aux
 A level-1 auxiliary file: Acronyms.aux
@@ -11,12 +11,9 @@ A level-1 auxiliary file: Chapter5.aux
 A level-1 auxiliary file: Appendix1.aux
 The style file: ThesisStyleWithEtAl.bst
 Database file #1: Thesis.bib
-Warning--I didn't find a database entry for "Commowick_MICCAI_2007"
-Warning--I didn't find a database entry for "Oakes_RStat_1999"
-Warning--I didn't find a database entry for "Guimond_CVIU_2000"
 You've used 71 entries,
             2460 wiz_defined-function locations,
-            948 strings with 18352 characters,
+            942 strings with 18244 characters,
 and the built_in function-call counts, 35477 in all, are:
 = -- 3654
 > -- 1537
@@ -55,4 +52,3 @@ warning$ -- 0
 while$ -- 290
 width$ -- 77
 write$ -- 962
-(There were 3 warnings)
