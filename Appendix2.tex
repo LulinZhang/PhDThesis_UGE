@@ -1,0 +1,73 @@
+%!TEX root = Manuscript.tex
+
+\chapter{Comparison between $SuperGlue_{ours}$ and $SuperGlue_{orig}$}
+\label{chap:appendix1}
+
+\section{Comparison on method $SuperGlue_{Ortho}$}
+\begin{figure*}[htbp]
+	\begin{center}
+		\subfigure[Orthophotos]{
+			\begin{minipage}[t]{0.48\linewidth}
+				\centering
+				\includegraphics[width=7.5cm]{images/Chapitre3/Ortho-MEC-Malt_Tapas_1970_Ortho-MEC-Malt_2014.png}
+			\end{minipage}%
+		}
+		\subfigure[Match number (\textit{Ortho})]{
+			\begin{minipage}[t]{0.48\linewidth}
+				\centering
+				\includegraphics[width=4.8cm]{images/appendix2/PlotCurves_TileTest-Ortho-MEC-Malt_Tapas_1970_Ortho-MEC-Malt_2014.png}
+			\end{minipage}%
+		}
+		\subfigure[$SuperGlue_{ours}^{RANSAC Inliers}$]{
+			\begin{minipage}[t]{0.48\linewidth}
+				\centering
+				\includegraphics[width=6cm]{images/Chapitre3/Homol-SubPatch_R270-2DRANSAC_Ortho-MEC-Malt_Tapas_1970_Ortho-MEC-Malt_2014.png}
+			\end{minipage}%
+		}
+		\subfigure[$SuperGlue_{orig}^{TotalMatches}$]{
+			\begin{minipage}[t]{0.48\linewidth}
+				\centering
+				\includegraphics[width=6cm]{images/appendix2/Homol-SuperGlue_Ortho-MEC-Malt_Tapas_1970_Ortho-MEC-Malt_2014.png}
+			\end{minipage}%
+		}
+		\caption{Comparison between $SuperGlue_{ours}$ and $SuperGlue_{orig}$ on orthophotos from Fr{\'e}jus 1970 and 2014 individually. (a) Orthophotos to be matched, with red rectangles indicating the common zone. (b) Numbers of total matches, GT inliers and RANSAC inliers of $SuperGlue_{ours}$ and $SuperGlue_{orig}$. (c) Visualization of RANSAC inliers based on $SuperGlue_{ours}$. (d)Visualization of total matches based on $SuperGlue_{orig}$.}
+		\label{Match result}
+	\end{center}
+\end{figure*} 
+
+\section{Comparison on method $SIFT_{DSM}$}
+
+\begin{figure*}[htbp]
+	\begin{center}
+		\subfigure[DSMs]{
+			\begin{minipage}[t]{0.48\linewidth}
+				\centering
+				\includegraphics[width=7.5cm]{images/Chapitre3/MEC-Malt_Tapas_1970_MEC-Malt_2014.png}
+			\end{minipage}%
+		}
+		\subfigure[Match number (\textit{DSM})]{
+			\begin{minipage}[t]{0.48\linewidth}
+				\centering
+				\includegraphics[width=4.8cm]{images/appendix2/PlotCurves_TileTest-MEC-Malt_Tapas_1970_MEC-Malt_2014.png}
+			\end{minipage}%
+		}
+		\subfigure[$SuperGlue_{ours}^{RANSAC Inliers}$]{
+			\begin{minipage}[t]{0.48\linewidth}
+				\centering
+				\includegraphics[width=6cm]{images/Chapitre3/Homol-SubPatch_R270-2DRANSAC_MEC-Malt_Tapas_1970_MEC-Malt_2014.png}
+			\end{minipage}%
+		}
+		\subfigure[$SuperGlue_{orig}^{TotalMatches}$]{
+			\begin{minipage}[t]{0.48\linewidth}
+				\centering
+				\includegraphics[width=6cm]{images/appendix2/Homol-SuperGlue_MEC-Malt_Tapas_1970_MEC-Malt_2014.png}
+			\end{minipage}%
+		}
+		\caption{Comparison between $SuperGlue_{ours}$ and $SuperGlue_{orig}$ on DSMs from Fr{\'e}jus 1970 and 2014 individually. (a) DSMs to be matched, with red rectangles indicating the common zone. (b) Numbers of total matches, GT inliers and RANSAC inliers of $SuperGlue_{ours}$ and $SuperGlue_{orig}$. (c) Visualization of RANSAC inliers based on $SuperGlue_{ours}$. (d)Visualization of total matches based on $SuperGlue_{orig}$.}
+		\label{Match result}
+	\end{center}
+\end{figure*} 
+
+
+%And I cite myself to show by bibtex style file (two authors)~\cite{Commowick_MICCAI_2007}.
+%This for other bibtex stye file : only one author~\cite{Oakes_RStat_1999} and many authors~\cite{Guimond_CVIU_2000}.

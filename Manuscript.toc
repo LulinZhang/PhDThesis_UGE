@@ -29,23 +29,25 @@
 \contentsline {subsection}{\numberline {3.3.3}Evaluation}{25}{subsection.3.3.3}
 \contentsline {subsection}{\numberline {3.3.4}Comparison}{28}{subsection.3.3.4}
 \contentsline {subsubsection}{\numberline {3.3.4.1}Matches visualization}{28}{subsubsection.3.3.4.1}
-\contentsline {subsubsection}{\numberline {3.3.4.2}Ground check points}{29}{subsubsection.3.3.4.2}
-\contentsline {subsubsection}{\numberline {3.3.4.3}DoD}{29}{subsubsection.3.3.4.3}
+\contentsline {subsubsection}{\numberline {3.3.4.2}DoD}{29}{subsubsection.3.3.4.2}
 \contentsline {section}{\numberline {3.4}Conclusion}{29}{section.3.4}
 \contentsline {section}{\numberline {3.5}Discussion}{29}{section.3.5}
-\contentsline {chapter}{\numberline {4}Precise matching}{41}{chapter.4}
-\contentsline {section}{\numberline {4.1}Introduction}{41}{section.4.1}
-\contentsline {subsection}{\numberline {4.1.1}Motivation}{41}{subsection.4.1.1}
-\contentsline {subsection}{\numberline {4.1.2}Contribution}{41}{subsection.4.1.2}
-\contentsline {section}{\numberline {4.2}Methodology}{41}{section.4.2}
-\contentsline {section}{\numberline {4.3}Experiments}{41}{section.4.3}
-\contentsline {section}{\numberline {4.4}Conclusion}{41}{section.4.4}
-\contentsline {section}{\numberline {4.5}Discussion}{41}{section.4.5}
-\contentsline {chapter}{\numberline {5}Conclusion and Perspective}{43}{chapter.5}
-\contentsline {part}{Appendices}{45}{chapter.5}
+\contentsline {chapter}{\numberline {4}Precise matching}{43}{chapter.4}
+\contentsline {section}{\numberline {4.1}Introduction}{43}{section.4.1}
+\contentsline {subsection}{\numberline {4.1.1}Motivation}{43}{subsection.4.1.1}
+\contentsline {subsection}{\numberline {4.1.2}Contribution}{43}{subsection.4.1.2}
+\contentsline {section}{\numberline {4.2}Methodology}{43}{section.4.2}
+\contentsline {section}{\numberline {4.3}Experiments}{43}{section.4.3}
+\contentsline {section}{\numberline {4.4}Conclusion}{43}{section.4.4}
+\contentsline {section}{\numberline {4.5}Discussion}{43}{section.4.5}
+\contentsline {chapter}{\numberline {5}Conclusion and Perspective}{45}{chapter.5}
+\contentsline {part}{Appendices}{47}{chapter.5}
 \partbegin 
-\contentsline {chapter}{\numberline {A}Comparison between $SIFT_{ours}$ and $SIFT_{orig}$}{47}{appendix.A}
-\contentsline {section}{\numberline {A.1}Comparison on method $SIFT_{ImgPairs}$}{47}{section.A.1}
-\contentsline {section}{\numberline {A.2}Comparison on method $SIFT_{Ortho}$}{47}{section.A.2}
-\contentsline {section}{\numberline {A.3}Comparison on method $SIFT_{DSM}$}{47}{section.A.3}
-\contentsline {chapter}{Bibliography}{51}{appendix*.8}
+\contentsline {chapter}{\numberline {A}Comparison between $SIFT_{ours}$ and $SIFT_{orig}$}{49}{appendix.A}
+\contentsline {section}{\numberline {A.1}Comparison on method $SIFT_{ImgPairs}$}{49}{section.A.1}
+\contentsline {section}{\numberline {A.2}Comparison on method $SIFT_{Ortho}$}{49}{section.A.2}
+\contentsline {section}{\numberline {A.3}Comparison on method $SIFT_{DSM}$}{49}{section.A.3}
+\contentsline {chapter}{\numberline {B}Comparison between $SuperGlue_{ours}$ and $SuperGlue_{orig}$}{53}{appendix.B}
+\contentsline {section}{\numberline {B.1}Comparison on method $SuperGlue_{Ortho}$}{53}{section.B.1}
+\contentsline {section}{\numberline {B.2}Comparison on method $SIFT_{DSM}$}{53}{section.B.2}
+\contentsline {chapter}{Bibliography}{57}{appendix*.8}
