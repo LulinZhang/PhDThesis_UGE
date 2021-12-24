@@ -333,10 +333,10 @@ For $SuperGlue_{ImgPairs}$, $SuperGlue_{Ortho}$ and $SuperGlue_{DSM}$, the image
 %Frejus, Pezenas, Kobe\\
 We tested our method on three datasets: Pezenas, Fr{\'e}jus and Kobe. Details of the datasets are listed in Table~\ref{Data details} and Figure~\ref{FrejusData},~\ref{PezenasData}, ~\ref{KobeData}.
 \par
-\paragraph{Fr{\'e}jus} It is a 15 $km^2$ rectangular area located in Fr{\'e}jus, a commune in southeastern France. The area is mainly covered with buildings along with scattered farmlands, except a half-moon-shaped bay located in south. We have four sets of images acquired in 1954, 1966, 1970 and 2014. The epoch 2014 was acquired with the IGN's digital metric camera ~\cite{souchon2010ign}, its orientations are both in global reference frame and precise. Therefore it is treated as the ground truth (GT) during our processing (in other words, the epoch 2014 is chosen as the reference epoch). 
+\paragraph{Fr{\'e}jus} It is a 15 $km^2$ rectangular area located in Fr{\'e}jus, a commune in southeastern France. The area is mainly covered with buildings along with scattered farmlands, except a half-moon-shaped bay located in south. We have four sets of aerial images acquired in 1954, 1966, 1970 and 2014. The epoch 2014 was acquired with the IGN's digital metric camera ~\cite{souchon2010ign}, its orientations are both in global reference frame and precise. Therefore it is treated as the ground truth (GT) during our processing (in other words, the epoch 2014 is chosen as the reference epoch). 
 The area exhibits drastic scene changes in the 60-year period, as can be seen in Figure~\ref{FrejusData}.\\
-\paragraph{Pezenas} It is a 420 $km^2$ rectangular area located in Pezenas in the Occitanie region in southern France. The area is mainly covered with vegetation and several sparsely populated urban zones. We have at our disposal three sets of images acquired in 1971, 1981 and 2015. The epoch 2015 is treated as GT. The area exhibits changes in scene appearance in the 44-year period.\\
-\paragraph{Kobe} It is a 90 $km^2$ area of irregular shape located in the north of Awaji Island, Japan. The well-known Kobe earthquake happened here in January 1995. We have two sets of images: pre-event acquired in 1991 and post-event acquired in 1995. It is mainly covered with mountain area and narrow urban zones along the sea. There is no GT, hence we chose the latter epoch (i.e. epoch 1995) as the reference epoch and measured 2 points on Google map to roughly scale the result to metric units. In this dataset we are interested in localizing the earthquake fault.
+\paragraph{Pezenas} It is a 420 $km^2$ rectangular area located in Pezenas in the Occitanie region in southern France. The area is mainly covered with vegetation and several sparsely populated urban zones. We have at our disposal three sets of aerial images acquired in 1971, 1981 and 2015, and one set of satellite images acquired in 2014. Both the epoch 2014 and 2015 are treated as GT. In this dataset we are interested in matching historical epochs (1971 and 1981) with aerial GT and satellite GT individually. The area exhibits changes in scene appearance in the 44-year period.\\
+\paragraph{Kobe} It is a 90 $km^2$ area of irregular shape located in the north of Awaji Island, Japan. The well-known Kobe earthquake happened here in January 1995. We have two sets of aerial images: pre-event acquired in 1991 and post-event acquired in 1995. It is mainly covered with mountain area and narrow urban zones along the sea. There is no GT, hence we chose the latter epoch (i.e. epoch 1995) as the reference epoch and measured 2 points on Google map to roughly scale the result to metric units. In this dataset we are interested in localizing the earthquake fault.
 \begin{table}[htbp]
     \scriptsize %\footnotesize
     \centering
@@ -365,7 +365,7 @@ The area exhibits drastic scene changes in the 60-year period, as can be seen in
 %       H  [m]&2400&4500&4600&4600&2500&1700&1700&6500&3800&1400\\
 %       Nb &57&27&308&74&19&15&19&33&15&83\\\hline
     \end{tabular}
-    \caption{Dataset details of Fr{\'e}jus, Pezenas and Kobe. The 2015 acquisition of Pezenas is obtained with two sets of camera. E stands for epoch, F means focal length, Wid and Hei are the width and height of image, GSD is the ground sampling distance, F.o. and S.o. are forward and side overlap, H is the flying height, Nb is the number of images.}
+    \caption{Aerial dataset details of Fr{\'e}jus, Pezenas and Kobe. The 2015 acquisition of Pezenas is obtained with two sets of camera. E stands for epoch, F means focal length, Wid and Hei are the width and height of image, GSD is the ground sampling distance, F.o. and S.o. are forward and side overlap, H is the flying height, Nb is the number of images.}
     \label{Data details}
 \end{table}
 
@@ -396,7 +396,7 @@ The area exhibits drastic scene changes in the 60-year period, as can be seen in
         \includegraphics[width=6.25cm]{images/Chapitre3/Frejus2014.png}
     \end{minipage}%
 }
-        \caption{Images demonstration of different epochs in Fr{\'e}jus, image number of each epoch is displayed in the parenthesis of each sub headline. The common zone of all the epochs is indicated by the red rectangles.}
+        \caption{Images demonstration of different epochs in Fr{\'e}jus, image number of each epoch is displayed in the parenthesis of each sub headline. The common zone between all the epochs is indicated by the red rectangles.}
         \label{FrejusData}
     \end{center}
 \end{figure*} 
@@ -405,24 +405,30 @@ The area exhibits drastic scene changes in the 60-year period, as can be seen in
 \begin{figure*}[htbp]
     \begin{center}
         \subfigure[Pezenas 1971 (57 images)]{
-            \begin{minipage}[t]{0.31\linewidth}
+            \begin{minipage}[t]{0.48\linewidth}
                 \centering
-                \includegraphics[width=4.45cm]{images/Chapitre3/Pezenas1971.png}
+                \includegraphics[width=6.45cm]{images/Chapitre3/Pezenas1971.png}
             \end{minipage}%
         }
         \subfigure[Pezenas 1981 (27 images)]{
-            \begin{minipage}[t]{0.31\linewidth}
+            \begin{minipage}[t]{0.48\linewidth}
                 \centering
-                \includegraphics[width=4.62cm]{images/Chapitre3/Pezenas1981.png}
+                \includegraphics[width=6.68cm]{images/Chapitre3/Pezenas1981.png}
             \end{minipage}%
         }
+            \subfigure[Pezenas 2014 (2 satellite images)]{
+    	\begin{minipage}[t]{0.48\linewidth}
+    		\centering
+    		\includegraphics[width=6.6cm]{images/Chapitre3/Pezenas2014.png}
+    	\end{minipage}%
+    }
         \subfigure[Pezenas 2015 (382 images)]{
-            \begin{minipage}[t]{0.29\linewidth}
+            \begin{minipage}[t]{0.48\linewidth}
                 \centering
-                \includegraphics[width=3.78cm]{images/Chapitre3/Pezenas2015.png}
+                \includegraphics[width=6.78cm]{images/Chapitre3/Pezenas2015.png}
             \end{minipage}%
         }
-        \caption{Images demonstration of different epochs in Pezenas, image number of each epoch is displayed in the parenthesis of each sub headline. The common zone of all the epochs is indicated by the red rectangles.}
+        \caption{Images demonstration of different epochs in Pezenas, image number of each epoch is displayed in the parenthesis of each sub headline. There are 2 historical aerial epochs (1971 and 1981) and 2 GT epochs (2014 the satellite epoch and 2015 the aerial epoch) in this dataset. The common zone between the historical epochs and the 2014 satellite epoch is indicated by the blue rectangles, while that between historical epochs and the 2015 aerial epoch is in red rectangles.}
         \label{PezenasData}
     \end{center}
 \end{figure*} 
@@ -442,7 +448,7 @@ The area exhibits drastic scene changes in the 60-year period, as can be seen in
                 \includegraphics[height=13cm,angle=90]{images/Chapitre3/Kobe1995.png}
             \end{minipage}%
         }
-        \caption{Images demonstration of different epochs in Kobe, image number of each epoch is displayed in the parenthesis of each sub headline. The common zone of all the epochs is indicated by the red rectangles.}
+        \caption{Images demonstration of different epochs in Kobe, image number of each epoch is displayed in the parenthesis of each sub headline. The common zone between all the epochs is indicated by the red rectangles.}
         \label{KobeData}
     \end{center}
 \end{figure*} 
