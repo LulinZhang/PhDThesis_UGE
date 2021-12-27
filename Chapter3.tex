@@ -1434,7 +1434,7 @@ For each dataset, each free epoch $E_f$ is matched with reference epoch $E_r$ fo
 			\begin{minipage}[t]{0.31\linewidth}
 				\centering
 				%left, lower, right, up
-				\includegraphics[width=4.2cm]{images/Chapitre3/NoDoD.png}
+				\includegraphics[width=4.2cm,trim=680 80 50 230,clip]{images/Chapitre3/DoD1971R3D-SuperGlue.png}
 			\end{minipage}%
 		}
 		\subfigure[DoD$_{Pezenas1971}^{SuperGlue_{Ortho}}$]{
@@ -1528,7 +1528,8 @@ For each dataset, each free epoch $E_f$ is matched with reference epoch $E_r$ fo
 		\subfigure[DoD$_{Pezenas1971}^{SuperGlue_{Ortho}}$]{
 			\begin{minipage}[t]{0.31\linewidth}
 				\centering
-				\includegraphics[width=4.5cm,trim=680 80 50 230,clip]{images/Chapitre3/DoD1971Ortho-SuperGlue-Satellite.png}
+				%\includegraphics[width=4.5cm,trim=680 80 50 230,clip]{images/Chapitre3/DoD1971Ortho-SuperGlue-Satellite.png}
+				\includegraphics[width=2cm]{images/Chapitre3/NoDoD.png}
 			\end{minipage}%
 		}
 		\subfigure[DoD$_{Pezenas1971}^{SuperGlue_{DSM}}$]{
@@ -1574,7 +1575,7 @@ For each dataset, each free epoch $E_f$ is matched with reference epoch $E_r$ fo
 		\subfigure[DoD$_{Pezenas1981}^{SIFT_{DSM}}$]{
 			\begin{minipage}[t]{0.31\linewidth}
 				\centering
-				\includegraphics[width=2cm]{images/Chapitre3/NoDoD.png}
+				\includegraphics[width=4.2cm,trim=900 100 250 200,clip]{images/Chapitre3/DoD1981DSM-SIFT-Satellite.png}
 			\end{minipage}%
 		}\\
 		
@@ -1672,7 +1673,8 @@ For each dataset, each free epoch $E_f$ is matched with reference epoch $E_r$ fo
 &${SIFT_{DSM}}$ & -3.17 & 5.44 & 4.71\\\hline
 
 
-\multirow{6}{*}{$DoD^{Pezenas}_{1971-2015}$}&${SuperGlue_{ImgPairs}}$ & / &/ &/ \\
+\multirow{6}{*}{$DoD^{Pezenas}_{1971-2015}$}
+&${SuperGlue_{ImgPairs}}$ & -7.42 & 16.60 & 13.78\\
 &${SIFT_{ImgPairs}}$ & 2.77 & 16.58 & 13.98\\
 &${SuperGlue_{Ortho}}$ & -8.46 & 22.36 & 16.68\\
 &${SIFT_{Ortho}}$ & -8.05 & 21.71 & 17.07\\
@@ -1687,16 +1689,19 @@ For each dataset, each free epoch $E_f$ is matched with reference epoch $E_r$ fo
 &${SIFT_{DSM}}$ & -0.73 & 9.67 & 7.42\\\hline
 
 %%%%%%%%%%%%%%%%%%%%%%%%satellite
-\multirow{4}{*}{$DoD^{Pezenas}_{1971-2014(Satellite)}$}&${SuperGlue_{Ortho}}$ & 0.34 & 11.90 & \textbf{7.12}\\
-&${SIFT_{Ortho}}$ & / &/ &/ \\
-&${SuperGlue_{DSM}}$ & -1.77 & 14.18 & 10.12\\
-&${SIFT_{DSM}}$ & 0.56 & 25.63 & 8.22\\\hline
+\multirow{4}{*}{$DoD^{Pezenas}_{1971-2014(Satellite)}$}
+&${SuperGlue_{Ortho}}$ & / & / & /\\
+&${SIFT_{Ortho}}$ & / & / & /\\
+&${SuperGlue_{DSM}}$ & -1.85 & 13.24 & 9.15\\
+&${SIFT_{DSM}}$ & 0.58 & 7.82 & \textbf{3.18}\\
+\hline
 
-\multirow{4}{*}{$DoD^{Pezenas}_{1981-2014(Satellite)}$}&${SuperGlue_{Ortho}}$ & -2.67 & 10.69 & \textbf{6.78}\\
-&${SIFT_{Ortho}}$ & / &/ &/ \\
-&${SuperGlue_{DSM}}$ & 4.36 & 10.33 & 7.19\\
-%&${SIFT_{DSM}}$ & 11.23 & 21.20 & 19.22\\\hline
-&${SIFT_{DSM}}$ & 0.56 & 25.63 & 8.22\\\hline
+\multirow{4}{*}{$DoD^{Pezenas}_{1981-2014(Satellite)}$}
+&${SuperGlue_{Ortho}}$ & 0.59 & 9.87 & 5.66\\
+&${SIFT_{Ortho}}$ & / & / & /\\
+&${SuperGlue_{DSM}}$ & 0.31 & 9.88 & 5.73\\
+&${SIFT_{DSM}}$ & 0.46 & 5.96 & \textbf{1.92}\\
+\hline
 
 
 \multirow{6}{*}{$DoD^{Kobe}_{1991-1995}$}&${SuperGlue_{ImgPairs}}$ & -1.63 & 13.85 & \textbf{7.24}\\

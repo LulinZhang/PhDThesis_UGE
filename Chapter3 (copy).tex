@@ -12,7 +12,8 @@ The goal of rough co-registration is establish a transformation model between di
     \item 3D Helmert transformation model, which requires at least 3 matches for the whole block to solve 7 parameters.
 \end{enumerate}
 Generally, each inter-epoch image pair would be matched, followed by a RANSAC routine to recover the best transformation model.
-The most critical target is to get reliable matches, instead of obtaining accurately localized ones.
+%The most critical target is to get reliable matches, instead of obtaining accurately localized ones.
+The critical goal is about getting reliable matches rather than obtaining accurately localized ones.
 Since multi-epoch images often demonstrate different appearances due to scene changes and heterogeneous acquisition conditions, we come up with 2 ideas in order to improve the matching robustness:\\
 \begin{enumerate}
     \item Instead of building transformation models (2D similarity or homography) for each inter-epoch image pair that might contradict each other, it is better to build a 3D Helmert transformation model which is globally consistent over the whole block.
@@ -46,7 +47,10 @@ Our main contributions include:\\
 %(2) get a global image for each epoch first (DSM or orthophoto), apply matching and 2D RANSAC.\\
 %零碎匹配，整体inlier
 %整体匹配
-Our methods expect the images accompanied with focal lengths and physical sensor sizes, which are usually available. The images are resampled to the geometry of the fiducial marks prior to processing. For the sake of simplicity, only 2 epochs are present in our processing flows, however, it can be easily extended to more epochs.
+%Our methods aim at roughly co-register 2 epochs to the same frame. One epoch (generally the more recent epoch) would be chosen as the reference epoch $E_r$, the other one would be treated as free epoch $E_f$. A transformation model would be built to move epoch $E_f$ to the frame of epoch $E_r$.\\
+We provide 2 strategies for inter-epoch rough co-registration: matching image pairs or matching orthophotos/DSMs. The pipelines will be elaborated in the following sections. Please notice our pipelines are generic, different feature matching methods can be readily applied in them. At present we use either SIFT or SuperGlue to test our pipeline as they are currently \textit{state-of-the-art}, but they can be replaced when better matching methods appear in the future.\\
+Our methods are able to process aerial images and satellite images at the same time. Aerial images are accompanied with focal lengths and physical sensor sizes, which are usually available. For historical aerial images, they should be resampled to the geometry of the fiducial marks prior to processing. 
+%For the sake of simplicity, only 2 epochs are present in our processing flows, however, it can be easily extended to more epochs.
 \par
 We adopt the following naming conventions:\\
 \begin{enumerate}
@@ -56,22 +60,20 @@ We adopt the following naming conventions:\\
     \item Orthophotos of \textit{epoch$_1$} and \textit{epoch$_2$} are denoted as $Op^{e_1}$ and $Op^{e_2}$; 
     \item DSMs of \textit{epoch$_1$} and \textit{epoch$_2$} are denoted as $D^{e_1}$ and $D^{e_2}$.
 \end{enumerate}
-\par
-Before matching different epochs, we process each epoch individually to recover the relative orientation within the same epoch. It is a standard photogrammetry or SfM pipeline and can be accomplished with lots of solutions (e.g. MicMac~\cite{deseilligny2011apero}, COLMAP~\cite{schonberger2016structure}, {OpenMVG~\cite{openMVG}, Theia~\cite{theia}, etc.}). The solution used in our experiment is MicMac. It is performed within each \textit{epoch$_i$} individually as follows:
+Before inter-epoch rough co-registration, we process each epoch individually to recover the relative orientations and DSM within the same epoch. It is a standard photogrammetry or SfM pipeline and can be accomplished with lots of solutions (e.g. MicMac~\cite{deseilligny2011apero}, COLMAP~\cite{schonberger2016structure}, {OpenMVG~\cite{openMVG}, Theia~\cite{theia}, etc.}). The solution used in our experiment is MicMac. It is performed within each \textit{epoch$_i$} individually as follows:
 \begin{enumerate}
 \item Extract intra-epoch correspondences between images $I^{e_i}$ with SIFT ~\cite{lowe2004distinctive};
-\item Compute interior and relative orientations ({$O_{ini}^{e_i}$}) with the sequential SfM;
+\item Based on the sequential SfM to compute interior and relative orientations ({$O_{ini}^{e_i}$}) for aerial images, or to refine the RPC(Rational Polynomial Coefficient) for satellite images;
 \item Based on image orientations $O_{ini}^{e_i}$, perform semi-global dense matching~\cite{mpd:06:sgm} {between images $I^{e_i}$} to get {DSM ($D_{ini}^{e_i}$) in their arbitrary coordinate frames.}
-\item Orthorectify the images to get orthophotos ($Op_{ini}^{e_i}$).
+\item Orthorectify the images to get orthophotos ($Op_{ini}^{e_i}$) if the matching orthophotos strategic is applied.
 %\item Project the images onto mean elevation plane ($G_{ini}^{e_i}$) get orthophotos ($Op_{ini}^{e_i}$).
 \end{enumerate}
-
-Two different strategies are provided to perform the rough co-registration. The pipelines will be elaborated in the following sections. 
-\par
-Please notice our pipelines are generic, different feature matching methods can be readily applied in them. At present we use either SIFT or SuperGlue to test our pipeline as they are currently \textit{state-of-the-art}, but they can be replaced when better matching methods appear in the future.\\
+%Please notice that the step (1) and (2) would not be necessary if the epoch is satellite, since the orientations would be provided by RPC(Rational Polynomial Coefficient).\\
+%Two different strategies are provided to perform the rough co-registration. The pipelines will be elaborated in the following sections. 
 \subsection{Strategy 1: Matching image pairs}
 %\subsection{Strategy 1: global filtering}
 %CoReg-R3D
+This method is for co-registering aerial epoch to aerial epoch only. It is not appropriate for satellite epoch because satellite images are often with large size and will decrease efficiency remarkably.\\
 The workflow of matching image pairs strategy is displayed in Figure~\ref{WorkflowImgPair}(a).\\
 We introduce \textit{4 rotation hypotheses} when feature matching method that is not invariant to rotations lager than 45$^\circ$ (e.g. SuperGlue) is applied.\\
 The \textit{4 rotation hypotheses} works as follows (cf. Figure~\ref{WorkflowImgPair}(b)): 
@@ -148,7 +150,7 @@ We set the number of RANSAC iterations to 1000, and consider matches within $T_r
 %\subsubsection{SuperGlue}
 \subsection{Strategy 2: Matching Orthophotos/DSMs}
 %\subsection{trategy 2: global matching}
-Another strategy is to match orthophotos or DSMs, the workflows are displayed in Figure~\ref{WorkflowOrtho}(a) and Figure~\ref{WorkflowDSM}(a) individually. Different than matching P$\times$Q image pairs, we only need to match a pair of DSMs/orthophotos.
+Another strategy is to match orthophotos or DSMs, which is suitable for both aerial images and satellite images. The workflows are displayed in Figure~\ref{WorkflowOrtho}(a) and Figure~\ref{WorkflowDSM}(a) individually. Different than matching P$\times$Q image pairs, we only need to match a pair of DSMs/orthophotos.
 Orthophotos are by nature RGB images, therefore feature matching methods can be applied on them directly. Conversely, DSMs are 2.5D rasters recorded in floating-point format, they should be converted beforehand to [0–255] range grayscale images.
 \par
 \begin{figure*}[htbp]
@@ -315,28 +317,37 @@ For each pipeline, we employ either SIFT or SuperGlue as the feature matching me
 In the following we introduce the implementation details, the datasets and the evaluation criteria, as well as comparison of the 6 methods.\\
 
 \subsection{Implementation details}
-To improve efficiency, all input images are downsampled by a factor of 3 beforehand. To calculate the DSMs and orthophotos, we further downsample the images by a factor of 4, which amounts to a total downsampling factor of 12 with respect to the input images. For example, the images in Fr{\'e}jus 1970 are downsampled from [8766, 8763] to [730, 730]. As the goal of rough co-registration is to get robust rather than precise matches, a low resolution DSM/orthophoto is good enough and keeps the computational cost low. \\
-For each dataset, one epoch (generally the most recent epoch) would be chosen as the reference epoch, the remaining epochs would be treated as free epochs. The rough co-registration is applied on each free epoch and the reference epoch to obtain the co-registered image orientations in the frame of the reference epoch.
+%To improve efficiency, all input images are downsampled by a factor of 3 beforehand. To calculate the DSMs and orthophotos, we further downsample the images by a factor of 4, which amounts to a total downsampling factor of 12 with respect to the input images. For example, the images in Fr{\'e}jus 1970 are downsampled from [8766, 8763] to [730, 730]. As the goal of rough co-registration is to get robust rather than precise matches, a low resolution DSM/orthophoto is good enough and keeps the computational cost low. \\
+To improve efficiency, all input images are downsampled by a factor of 3 beforehand. To calculate the DSMs and orthophotos, we further downsample the images by a factor of 8, which amounts to a total downsampling factor of 24 with respect to the input images. For example, the images in Fr{\'e}jus 1970 are downsampled from [8766, 8763] to [365, 365]. As the goal of rough co-registration is to get robust rather than precise matches, a low resolution DSM/orthophoto is good enough and keeps the computational cost low. \\
+However, downsampling factor of Fr{\'e}jus 2014 is set to be 12 instead of 24, as the GSD ...\\
+%For each dataset, one epoch (generally the most recent epoch) would be chosen as the reference epoch, the remaining epochs would be treated as free epochs. The rough co-registration is applied on each free epoch and the reference epoch to obtain the co-registered image orientations in the frame of the reference epoch.
+For each dataset, the rough co-registration is applied on each free epoch $E_f$ and the reference epoch $E_r$.
 \par
 
-As inter-epoch images often look very different, when the original SIFT ~\cite{lowe2004distinctive} (i.e. $SIFT_{orig}$) is applied directly in our methods $SIFT_{ImgPairs}$, $SIFT_{Ortho}$ and $SIFT_{DSM}$, generally very few matches are recovered. So we replace it with a slightly different version of SIFT (i.e.  $SIFT_{ours}$) with the following modifications:\\
+%As inter-epoch images often look very different, when the original SIFT ~\cite{lowe2004distinctive} (i.e. $SIFT_{Default}$) is applied directly in our methods $SIFT_{ImgPairs}$, $SIFT_{Ortho}$ and $SIFT_{DSM}$, generally very few matches are recovered. So we replace it with a slightly different version of SIFT (i.e.  $SIFT_{Adapted}$) with the following modifications:\\
+For the SIFT algorithm applied in methods $SIFT_{ImgPairs}$, $SIFT_{Ortho}$ and $SIFT_{DSM}$, we did a test to compare the performance of SIFT on our multi-epoch dataset with different parameters. Two different sets of SIFT parameters are compared, which are indicated as $SIFT_{Default}$ and $SIFT_{Adapted}$:\\
 \begin{enumerate}
-	\item Downsample the images by a factor of 3 (i.e. a total downsampling factor of 9 with respect to the input images) to focus on the global outline of the scene for improving robustness;
-	\item Relax the matching restriction by skipping the ratio test to obtain more tentative matches followed by applying RANSAC based on 2D similarity transformation model to remove outliers.
+	\item \textbf{$SIFT_{Default}$}: Extract SIFT keypoints on the input images, followed by mutual nearest neighbor matching combined with ratio test and FIGNN (REF).
+	\item \textbf{$SIFT_{Adapted}$}: Downsample the input images with a factor of 3 and extract SIFT keypoints, match them by mutual nearest neighbor without ratio test and FIGNN, followed by applying RANSAC based on 2D similarity transformation model to remove outliers.
 \end{enumerate}
-Experiments comparing $SIFT_{ours}$ and $SIFT_{orig}$ on ${ImgPairs}$, ${Ortho}$ and ${DSM}$ are displayed in Appendix ~\ref{chap:appendix1}, in which $SIFT_{ours}$ recovered enough good matches while $SIFT_{orig}$ failed.\\
 
-For $SuperGlue_{ImgPairs}$, $SuperGlue_{Ortho}$ and $SuperGlue_{DSM}$, the image/patch pairs entering SuperGlue are downsampled to 640$\times$480 pixels, as it is the default parameter provided by the author and guarantees the best performance.
+%\begin{enumerate}
+%	\item Downsample the images by a factor of 3 (i.e. a total downsampling factor of 9 with respect to the input images) to focus on the global outline of the scene for improving robustness;
+%	\item Relax the matching restriction by skipping the ratio test to obtain more tentative matches followed by applying RANSAC based on 2D similarity transformation model to remove outliers.
+%\end{enumerate}
+Experiments comparing $SIFT_{Default}$ and $SIFT_{Adapted}$ on ${ImgPairs}$, ${Ortho}$ and ${DSM}$ are displayed in Appendix ~\ref{chap:appendix1}, in which $SIFT_{Adapted}$ recovered enough good matches while $SIFT_{Default}$ failed. It is reasonable as inter-epoch images often look very different, $SIFT_{Default}$ generally recover very few matches. By downsamping the images, we are able to focus on the global outline of the scene for improving robustness. By relaxing the matching restriction of ratio test and FIGNN, right matches would be reserved while wrong matches would be remover in the subsequent RANSAC.\\
+
+For $SuperGlue_{ImgPairs}$, $SuperGlue_{Ortho}$ and $SuperGlue_{DSM}$, the image/patch pairs entering SuperGlue are downsampled to 640$\times$480 pixels, as it is the default parameter provided by the author and guarantees the best performance. For the tiling scheme in $SuperGlue_{Ortho}$ and $SuperGlue_{DSM}$, orthophotos/DSMs are split to tiles of the size 1280$\times$960 pixels.
 
 
 \subsection{Datasets}
 %Frejus, Pezenas, Kobe\\
-We tested our method on three datasets: Pezenas, Fr{\'e}jus and Kobe. Details of the datasets are listed in Table~\ref{Data details} and Figure~\ref{FrejusData},~\ref{PezenasData}, ~\ref{KobeData}.
+We tested our method on three datasets: Fr{\'e}jus, Pezenas and Kobe. Details of the datasets are listed in Table~\ref{Data details} and Figure~\ref{FrejusData},~\ref{PezenasData}, ~\ref{KobeData}.
 \par
-\paragraph{Fr{\'e}jus} It is a 15 $km^2$ rectangular area located in Fr{\'e}jus, a commune in southeastern France. The area is mainly covered with buildings along with scattered farmlands, except a half-moon-shaped bay located in south. We have four sets of images acquired in 1954, 1966, 1970 and 2014. The epoch 2014 was acquired with the IGN's digital metric camera ~\cite{souchon2010ign}, its orientations are both in global reference frame and precise. Therefore it is treated as the ground truth (GT) during our processing (in other words, the epoch 2014 is chosen as the reference epoch). 
-The area exhibits drastic scene changes in the 60-year period, as can be seen in Figure~\ref{FrejusData}.\\
-\paragraph{Pezenas} It is a 420 $km^2$ rectangular area located in Pezenas in the Occitanie region in southern France. The area is mainly covered with vegetation and several sparsely populated urban zones. We have at our disposal three sets of images acquired in 1971, 1981 and 2015. The epoch 2015 is treated as GT. The area exhibits changes in scene appearance in the 44-year period.\\
-\paragraph{Kobe} It is a 90 $km^2$ area of irregular shape located in the north of Awaji Island, Japan. The well-known Kobe earthquake happened here in January 1995. We have two sets of images: pre-event acquired in 1991 and post-event acquired in 1995. It is mainly covered with mountain area and narrow urban zones along the sea. There is no GT, hence we chose the latter epoch (i.e. epoch 1995) as the reference epoch and measured 2 points on Google map to roughly scale the result to metric units. In this dataset we are interested in localizing the earthquake fault.
+\paragraph{Fr{\'e}jus} It is a 15 $km^2$ rectangular area located in Fr{\'e}jus, a commune in southeastern France. The area is mainly covered with buildings along with scattered farmlands, except a half-moon-shaped bay located in south. We have four sets of aerial images acquired in 1954, 1966, 1970 and 2014. The epoch 2014 was acquired with the IGN's digital metric camera ~\cite{souchon2010ign}, its orientations are both in global reference frame and precise. Therefore it is treated as the ground truth (GT) during our processing (in other words, the epoch 2014 is chosen as the reference epoch). 
+The area exhibits drastic scene changes in the 60-year period, as can be seen in Figure~\ref{FrejusEvolution}, where the evolution of a subregion is displayed.\\
+\paragraph{Pezenas} It is a 420 $km^2$ rectangular area located in Pezenas in the Occitanie region in southern France. The area is mainly covered with vegetation and several sparsely populated urban zones. We have at our disposal three sets of aerial images acquired in 1971, 1981 and 2015, and one set of satellite images acquired in 2014. Both the epoch 2014 and 2015 are treated as GT. In this dataset we are interested in matching historical epochs (1971 and 1981) with aerial GT and satellite GT individually. The area exhibits changes in scene appearance in the 44-year period.\\
+\paragraph{Kobe} It is a 90 $km^2$ area of irregular shape located in the north of Awaji Island, Japan. The well-known Kobe earthquake happened here in January 1995. We have two sets of aerial images: pre-event acquired in 1991 and post-event acquired in 1995. It is mainly covered with mountain area and narrow urban zones along the sea. There is no GT, hence we chose the latter epoch (i.e. epoch 1995) as the reference epoch and measured 2 points on Google map to roughly scale the result to metric units. In this dataset we are interested in localizing the earthquake fault.
 \begin{table}[htbp]
     \scriptsize %\footnotesize
     \centering
@@ -365,7 +376,7 @@ The area exhibits drastic scene changes in the 60-year period, as can be seen in
 %       H  [m]&2400&4500&4600&4600&2500&1700&1700&6500&3800&1400\\
 %       Nb &57&27&308&74&19&15&19&33&15&83\\\hline
     \end{tabular}
-    \caption{Dataset details of Fr{\'e}jus, Pezenas and Kobe. The 2015 acquisition of Pezenas is obtained with two sets of camera. E stands for epoch, F means focal length, Wid and Hei are the width and height of image, GSD is the ground sampling distance, F.o. and S.o. are forward and side overlap, H is the flying height, Nb is the number of images.}
+    \caption{Aerial dataset details of Fr{\'e}jus, Pezenas and Kobe. The 2015 acquisition of Pezenas is obtained with two sets of camera. E stands for epoch, F means focal length, Wid and Hei are the width and height of image, GSD is the ground sampling distance, F.o. and S.o. are forward and side overlap, H is the flying height, Nb is the number of images.}
     \label{Data details}
 \end{table}
 
@@ -396,7 +407,7 @@ The area exhibits drastic scene changes in the 60-year period, as can be seen in
         \includegraphics[width=6.25cm]{images/Chapitre3/Frejus2014.png}
     \end{minipage}%
 }
-        \caption{Images demonstration of different epochs in Fr{\'e}jus, image number of each epoch is displayed in the parenthesis of each sub headline. The common zone of all the epochs is indicated by the red rectangles.}
+        \caption{Images demonstration of different aerial epochs in Fr{\'e}jus, image number of each epoch is displayed in the parenthesis of each sub headline. The common zone between all the epochs is indicated by the red rectangles.}
         \label{FrejusData}
     \end{center}
 \end{figure*} 
@@ -405,24 +416,30 @@ The area exhibits drastic scene changes in the 60-year period, as can be seen in
 \begin{figure*}[htbp]
     \begin{center}
         \subfigure[Pezenas 1971 (57 images)]{
-            \begin{minipage}[t]{0.31\linewidth}
+            \begin{minipage}[t]{0.48\linewidth}
                 \centering
-                \includegraphics[width=4.45cm]{images/Chapitre3/Pezenas1971.png}
+                \includegraphics[width=6.45cm]{images/Chapitre3/Pezenas1971.png}
             \end{minipage}%
         }
         \subfigure[Pezenas 1981 (27 images)]{
-            \begin{minipage}[t]{0.31\linewidth}
+            \begin{minipage}[t]{0.48\linewidth}
                 \centering
-                \includegraphics[width=4.62cm]{images/Chapitre3/Pezenas1981.png}
+                \includegraphics[width=6.68cm]{images/Chapitre3/Pezenas1981.png}
             \end{minipage}%
         }
+            \subfigure[Pezenas 2014 (2 satellite images)]{
+    	\begin{minipage}[t]{0.48\linewidth}
+    		\centering
+    		\includegraphics[width=6.6cm]{images/Chapitre3/Pezenas2014.png}
+    	\end{minipage}%
+    }
         \subfigure[Pezenas 2015 (382 images)]{
-            \begin{minipage}[t]{0.29\linewidth}
+            \begin{minipage}[t]{0.48\linewidth}
                 \centering
-                \includegraphics[width=3.78cm]{images/Chapitre3/Pezenas2015.png}
+                \includegraphics[width=6.78cm]{images/Chapitre3/Pezenas2015.png}
             \end{minipage}%
         }
-        \caption{Images demonstration of different epochs in Pezenas, image number of each epoch is displayed in the parenthesis of each sub headline. The common zone of all the epochs is indicated by the red rectangles.}
+        \caption{Images demonstration of different aerial epochs as well as satellite epoch in Pezenas, image number of each epoch is displayed in the parenthesis of each sub headline. There are 2 historical aerial epochs (1971 and 1981) and 2 GT epochs (2014 the satellite epoch and 2015 the aerial epoch) in this dataset. The common zone between the historical epochs and the 2014 satellite epoch is indicated by the blue rectangles, while that between historical epochs and the 2015 aerial epoch is in red rectangles.}
         \label{PezenasData}
     \end{center}
 \end{figure*} 
@@ -442,29 +459,49 @@ The area exhibits drastic scene changes in the 60-year period, as can be seen in
                 \includegraphics[height=13cm,angle=90]{images/Chapitre3/Kobe1995.png}
             \end{minipage}%
         }
-        \caption{Images demonstration of different epochs in Kobe, image number of each epoch is displayed in the parenthesis of each sub headline. The common zone of all the epochs is indicated by the red rectangles.}
+        \caption{Images demonstration of different aerial epochs in Kobe, image number of each epoch is displayed in the parenthesis of each sub headline. The common zone between all the epochs is indicated by the red rectangles.}
         \label{KobeData}
     \end{center}
 \end{figure*} 
 
+
+\begin{figure*}[htbp]
+	\begin{center}
+		\subfigure[Subregion of Fr{\'e}jus 1954]{
+			\begin{minipage}[t]{1\linewidth}
+				\centering
+				\includegraphics[width=13cm]{images/Chapitre3/Frejus1954Sub.png}
+			\end{minipage}%
+		}
+		\subfigure[Subregion of Fr{\'e}jus 2014]{
+			\begin{minipage}[t]{1\linewidth}
+				\centering
+				\includegraphics[width=13cm]{images/Chapitre3/Frejus2014Sub.png}
+			\end{minipage}%
+		}
+		\caption{Evolution of a subregion in Fr{\'e}jus.}
+		\label{FrejusEvolution}
+	\end{center}
+\end{figure*} 
+
 %Show piled image of each epoch?
 \subsection{Evaluation}
-%\subsubsection{Qualitative evaluation}
-%\subsubsection{Quantitative evaluation}
-%(1)Matches visualization\\
-%%inlier ratio (RANSAC and GT)\\
-%(2)Ground check points\\
-%(3)DoD\\
-For each dataset, we manually measured 3 GCPs well distributed in the block. The application of 3 GCPs is twofold:\\
-\begin{itemize}
-    \item Based on the GCPs, a 3D Helmert transformation model between each free epoch and the reference epoch is built to obtain the GT co-registered orientations.
-    \item GCPs are also treated as ground check points to evaluate the co-registered orientations calculated by our methods.
-\end{itemize}
-%as check points to evaluate the roughly co-registered orientations resulted by 6 methods:\\
+%%\subsubsection{Qualitative evaluation}
+%%\subsubsection{Quantitative evaluation}
+%%(1)Matches visualization\\
+%%%inlier ratio (RANSAC and GT)\\
+%%(2)Ground check points\\
+%%(3)DoD\\
+%For each dataset, we manually measured 3 GCPs well distributed in the block. The application of 3 GCPs is twofold:\\
+%\begin{itemize}
+%    \item Based on the GCPs, a 3D Helmert transformation model between each free epoch and the reference epoch is built to obtain the GT co-registered orientations.
+%    \item GCPs are also treated as ground check points to evaluate the co-registered orientations calculated by our methods.
+%\end{itemize}
+%%as check points to evaluate the roughly co-registered orientations resulted by 6 methods:\\
 In order to evaluate the results qualitatively and quantitatively, the following criterias would be applied:\\
 \begin{itemize}
-    \item Matches visualization: the match number of (1) total matches (i.e. matches before RANSAC), (2) GT inliers (matches located within $T_r$ of the position predicted by the GT co-registered orientations) and (3) RANSAC inliers (matches that survived RANSAC in our methods) would be calculated and displayed; in the meantime, the RANSAC inliers would be visualized and demonstrated.
-    \item Ground check points: the co-registered orientations calculated by our methods would be used to triangulate the ground check points and the coordinate differences \textcolor{red}{(explain the diff means the mean diff of x, y and z)} will be displayed. The better the epochs co-register, the smaller the difference is.
+    \item Matches visualization: the number of (1) total matches (i.e. matches before RANSAC) as well as (2) RANSAC inliers (matches that survived RANSAC) would be displayed together in bar charts; in the meantime, the RANSAC inliers would be visualized and demonstrated.
+%    \item Ground check points: the co-registered orientations calculated by our methods would be used to triangulate the ground check points and the coordinate differences \textcolor{red}{(explain the diff means the mean diff of x, y and z)} will be displayed. The better the epochs co-register, the smaller the difference is.
     \item DoD: the co-registered orientations calculated by our methods would be used to calculate DSMs in order to generate DoD. Ideally the DoD should only display the scene changes. If the dome effect appears, it indicates the systematic errors caused by poorly estimated camera parameters.   
 \end{itemize}
 
@@ -474,16 +511,16 @@ In order to evaluate the results qualitatively and quantitatively, the following
 %1张表表示6种方法的(1)和(2)，1张大图放6种方法的DoD, inlier tie pt图（R3D, DSM, ortho各3张（无点图，SIFT点图，SpG点图））
 
 \subsubsection{Matches visualization}
-For each dataset, each free epoch is matched with reference epoch for rough co-registration with 6 methods ($SIFT_{ImgPairs}$, $SuperGlue_{ImgPairs}$, $SIFT_{Ortho}$, $SuperGlue_{Ortho}$, $SIFT_{DSM}$ and $SuperGlue_{DSM}$), the matches are visualized and displayed together for comparison.\\
+For each dataset, each free epoch $E_f$ is matched with reference epoch $E_r$ for rough co-registration with 6 methods ($SIFT_{ImgPairs}$, $SuperGlue_{ImgPairs}$, $SIFT_{Ortho}$, $SuperGlue_{Ortho}$, $SIFT_{DSM}$ and $SuperGlue_{DSM}$), the matches are visualized and displayed together for comparison.\\
 \begin{enumerate}
 	\item For Fr{\'e}jus, the matches visualizations between free epochs (i.e. epoch 1954, 1966 and 1970) and reference epoch (i.e. epoch 2014) are displayed in Figure~\ref{MatchVizFrejus1954DSM}, ~\ref{MatchVizFrejus1966DSM} and ~\ref{MatchVizFrejus1970DSM} individually. As can be seen:\\
 	\begin{itemize}
-		\item $SIFT_{ImgPairs}$ and $SIFT_{Ortho}$ failed to find enough correct matches for all 3 free epochs (with GT inlier ratios below 1\%), therefore the RANSAC failed to recover any good matches. It is reasonable as extreme scene changes present in Fr{\'e}jus, and SIFT is not sufficiently invariant over time by its very nature.
-		\item $SIFT_{DSM}$ found several good matches after RANSAC, thanks to stable information on DSMs. However, the GT inlier ratio is dangerously low (around 1\%), which makes the RANSAC procedure unstable.
-		\item $SuperGlue_{ImgPairs}$, $SuperGlue_{Ortho}$ and $SuperGlue_{DSM}$ succeeded in RANSAC to find enough good matches, with the GT inlier ratios ranging from 4.11\% to 40.83\%. In general, the GT inlier ratios raise from $SuperGlue_{ImgPairs}$ to $SuperGlue_{Ortho}$ then to $SuperGlue_{DSM}$.
+		\item $SIFT_{ImgPairs}$ and $SIFT_{Ortho}$ failed to recover correct matches for all 3 free epochs. It is reasonable as extreme scene changes are present in Fr{\'e}jus, and SIFT is not sufficiently invariant over time by its very nature.
+		\item $SIFT_{DSM}$ found several good matches after RANSAC, thanks to stable information on DSMs. However, the inlier ratio is dangerously low (around 1\%), which makes the RANSAC procedure unstable.
+		\item $SuperGlue_{ImgPairs}$, $SuperGlue_{Ortho}$ and $SuperGlue_{DSM}$ succeeded to find enough good matches, with the inlier ratios ranging from 3.3\% to 46.5\%. In general, the GT inlier ratios raise from $SuperGlue_{ImgPairs}$ to $SuperGlue_{Ortho}$ then to $SuperGlue_{DSM}$.
 	\end{itemize}
 	%$SIFT_{ImgPairs}$, $SuperGlue_{ImgPairs}$, $SIFT_{Ortho}$, $SuperGlue_{Ortho}$, $SIFT_{DSM}$ and $SuperGlue_{DSM}$
-	\item For Pezenas, the matches visualizations between free epochs (i.e. epoch 1971 and 1981) and reference epoch (i.e. epoch 2015) are displayed in Figure~\ref{MatchVizPezenas1971DSM} and ~\ref{MatchVizPezenas1981DSM}. As can be seen:\\
+	\item For Pezenas, the matches visualizations between free epochs (i.e. epoch 1971 and 1981) and reference aerial epoch (i.e. epoch 2015) are displayed in Figure~\ref{MatchVizPezenas1971DSM} and ~\ref{MatchVizPezenas1981DSM}, and that between free epochs and reference satellite epoch (i.e. epoch 2014) are shown in Figure~\ref{MatchVizPezenas-Satellite1971DSM} and ~\ref{MatchVizPezenas-Satellite1981DSM}. As can be seen:\\
 	\begin{itemize}
 		\item $SIFT_{ImgPairs}$, $SIFT_{Ortho}$ and $SIFT_{DSM}$ successfully recovered enough correct matches for all 2 free epochs (with GT inlier ratios above 40\%, 1\% and 10\% individually). $SIFT_{Ortho}$ has obviously lower inlier ratio than $SIFT_{ImgPairs}$, because higher resolution is possessed by image pairs, which improves the result for dataset with moderate scene changes like Pezenas.
 		\item $SuperGlue_{ImgPairs}$, $SuperGlue_{Ortho}$ and $SuperGlue_{DSM}$ recovered more total matches along with higher GT inlier ratio than SIFT for all 2 free epochs. The inlier ratio of $SuperGlue_{Ortho}$ is around 30\%, significantly larger than $SIFT_{Ortho}$, which we attribute to 2 reasons: (1) SuperGlue is more invariant over time as it is trained on multi-epoch images and (2) our tiling scheme. 
@@ -986,29 +1023,29 @@ For each dataset, each free epoch is matched with reference epoch for rough co-r
 		\subfigure[Orthophotos]{
 			\begin{minipage}[t]{0.48\linewidth}
 				\centering
-				\includegraphics[width=5.1cm]{images/Chapitre3/Ortho-MEC-Malt_Tapas_1971_Ortho-MEC-Malt_Satellite.png}
+				\includegraphics[width=6.8cm]{images/Chapitre3/Ortho-MEC-Malt_Tapas_1971_Ortho-MEC-Malt_Satellite.png}
 			\end{minipage}%
 		}
 		\subfigure[Match number (\textit{Ortho})]{
 			\begin{minipage}[t]{0.48\linewidth}
 				\centering
-				\includegraphics[width=3.5cm,trim=0 20 0 38,clip]{images/Chapitre3/PlotCurves_Ortho-MEC-Malt_Tapas_1971_Ortho-MEC-Malt_Satellite.png}
+				\includegraphics[width=4.9cm,trim=0 20 0 38,clip]{images/Chapitre3/PlotCurves_Ortho-MEC-Malt_Tapas_1971_Ortho-MEC-Malt_Satellite.png}
 			\end{minipage}%
 		}
 		\subfigure[$SIFT_{Ortho}^{RANSAC Inliers}$]{
 			\begin{minipage}[t]{0.48\linewidth}
 				\centering
-				\includegraphics[width=5.2cm]{images/Chapitre3/Homol-SIFT2Step-Rough-2DRANSAC_Ortho-MEC-Malt_Tapas_1971_Ortho-MEC-Malt_Satellite.png}
+				\includegraphics[width=6.8cm]{images/Chapitre3/Homol-SIFT2Step-Rough-2DRANSAC_Ortho-MEC-Malt_Tapas_1971_Ortho-MEC-Malt_Satellite.png}
 			\end{minipage}%
 		}
 		\subfigure[$SuperGlue_{Ortho}^{RANSAC Inliers}$]{
 			\begin{minipage}[t]{0.48\linewidth}
 				\centering
-				\includegraphics[width=5.2cm]{images/Chapitre3/Homol-SubPatch_R270-2DRANSAC_Ortho-MEC-Malt_Tapas_1971_Ortho-MEC-Malt_Satellite.png}
+				\includegraphics[width=6.8cm]{images/Chapitre3/Homol-SubPatch_R270-2DRANSAC_Ortho-MEC-Malt_Tapas_1971_Ortho-MEC-Malt_Satellite.png}
 			\end{minipage}%
 		}
 		%        \caption{Result of matching orthophotos (i.e. \textit{Ortho}) of Pezenas 1971 and Satellite. (a) Orthophotos to be matched, with red rectangles indicating the common zone. (b) Numbers of total matches, GT inliers and RANSAC inliers of both SIFT and SuperGlue. (c) Visualization of RANSAC inliers based on SIFT. (d) Visualization of RANSAC inliers based on SuperGlue.}
-		%        \label{MatchVizPezenas1971Ortho}
+		%        \label{MatchVizPezenas-Satellite1971Ortho}
 		%    \end{center}
 		%\end{figure*} 
 		%
@@ -1017,31 +1054,31 @@ For each dataset, each free epoch is matched with reference epoch for rough co-r
 		\subfigure[DSMs]{
 			\begin{minipage}[t]{0.48\linewidth}
 				\centering
-				\includegraphics[width=5.1cm]{images/Chapitre3/MEC-Malt_Tapas_1971_MEC-Malt_Satellite.png}
+				\includegraphics[width=6.8cm]{images/Chapitre3/MEC-Malt_Tapas_1971_MEC-Malt_Satellite.png}
 			\end{minipage}%
 		}
 		\subfigure[Match number (\textit{DSM})]{
 			\begin{minipage}[t]{0.48\linewidth}
 				\centering
-				\includegraphics[width=3.5cm,trim=0 20 0 38,clip]{images/Chapitre3/PlotCurves_MEC-Malt_Tapas_1971_MEC-Malt_Satellite.png}
+				\includegraphics[width=4.9cm,trim=0 20 0 38,clip]{images/Chapitre3/PlotCurves_MEC-Malt_Tapas_1971_MEC-Malt_Satellite.png}
 			\end{minipage}%
 		}
 		\subfigure[$SIFT_{DSM}^{RANSAC Inliers}$]{
 			\begin{minipage}[t]{0.48\linewidth}
 				\centering
-				\includegraphics[width=5.2cm]{images/Chapitre3/Homol-SIFT2Step-Rough-2DRANSAC_MEC-Malt_Tapas_1971_MEC-Malt_Satellite.png}
+				\includegraphics[width=6.8cm]{images/Chapitre3/Homol-SIFT2Step-Rough-2DRANSAC_MEC-Malt_Tapas_1971_MEC-Malt_Satellite.png}
 			\end{minipage}%
 		}
 		\subfigure[$SuperGlue_{DSM}^{RANSAC Inliers}$]{
 			\begin{minipage}[t]{0.48\linewidth}
 				\centering
-				\includegraphics[width=5.2cm]{images/Chapitre3/Homol-SubPatch_R270-2DRANSAC_MEC-Malt_Tapas_1971_MEC-Malt_Satellite.png}
+				\includegraphics[width=6.8cm]{images/Chapitre3/Homol-SubPatch_R270-2DRANSAC_MEC-Malt_Tapas_1971_MEC-Malt_Satellite.png}
 			\end{minipage}%
 		}
 		%\caption{Result of matching DSMs (i.e. \textit{DSM}) of Pezenas 1971 and Satellite. (a) DSMs to be matched, with red rectangles indicating the common zone. (b) Numbers of total matches, GT inliers and RANSAC inliers of both SIFT and SuperGlue. (c) Visualization of RANSAC inliers based on SIFT. (d) Visualization of RANSAC inliers based on SuperGlue.}
 		%\caption{{\small Result of \textit{ImgPairs}, \textit{Ortho} and \textit{DSM} on Pezenas 1971 and Satellite. (a, e, i) image pairs/orthophotos/DSMs to be matched, with red rectangles indicating the common zone. (b, f, j) Numbers of total matches, GT inliers and RANSAC inliers of both SIFT and SuperGlue on methods \textit{ImgPairs}, \textit{Ortho} and \textit{DSM} individually. (c, g, k) Visualization of RANSAC inliers based on $SIFT_{ImgPairs}$, $SIFT_{Ortho}$ and $SIFT_{DSM}$. (d, h, l) Visualization of RANSAC inliers based on $SuperGlue_{ImgPairs}$, $SuperGlue_{Ortho}$ and $SuperGlue_{DSM}$.}}
 		\caption{{\scriptsize Result of \textit{ImgPairs} (a-d), \textit{Ortho} (e-h) and \textit{DSM} (i-l) on matching \textbf{Pezenas 1971 and Satellite}. (a, e, i) image pairs/orthophotos/DSMs to be matched, with red rectangles indicating the common zone. (b, f, j) Numbers of total matches, GT inliers and RANSAC inliers of both SIFT and SuperGlue on methods \textit{ImgPairs}, \textit{Ortho} and \textit{DSM} individually. (c, g, k) Visualization of RANSAC inliers based on $SIFT_{ImgPairs}$, $SIFT_{Ortho}$ and $SIFT_{DSM}$. (d, h, l) Visualization of RANSAC inliers based on $SuperGlue_{ImgPairs}$, $SuperGlue_{Ortho}$ and $SuperGlue_{DSM}$.}}        
-		\label{MatchVizPezenas1971DSM}
+		\label{MatchVizPezenas-Satellite1971DSM}
 	\end{center}
 \end{figure*} 
 
@@ -1052,29 +1089,29 @@ For each dataset, each free epoch is matched with reference epoch for rough co-r
 		\subfigure[Orthophotos]{
 			\begin{minipage}[t]{0.48\linewidth}
 				\centering
-				\includegraphics[width=5.1cm]{images/Chapitre3/Ortho-MEC-Malt_Tapas_1981_Ortho-MEC-Malt_Satellite.png}
+				\includegraphics[width=6.8cm]{images/Chapitre3/Ortho-MEC-Malt_Tapas_1981_Ortho-MEC-Malt_Satellite.png}
 			\end{minipage}%
 		}
 		\subfigure[Match number (\textit{Ortho})]{
 			\begin{minipage}[t]{0.48\linewidth}
 				\centering
-				\includegraphics[width=3.5cm,trim=0 20 0 38,clip]{images/Chapitre3/PlotCurves_Ortho-MEC-Malt_Tapas_1981_Ortho-MEC-Malt_Satellite.png}
+				\includegraphics[width=4.9cm,trim=0 20 0 38,clip]{images/Chapitre3/PlotCurves_Ortho-MEC-Malt_Tapas_1981_Ortho-MEC-Malt_Satellite.png}
 			\end{minipage}%
 		}
 		\subfigure[$SIFT_{Ortho}^{RANSAC Inliers}$]{
 			\begin{minipage}[t]{0.48\linewidth}
 				\centering
-				\includegraphics[width=5.2cm]{images/Chapitre3/Homol-SIFT2Step-Rough-2DRANSAC_Ortho-MEC-Malt_Tapas_1981_Ortho-MEC-Malt_Satellite.png}
+				\includegraphics[width=6.8cm]{images/Chapitre3/Homol-SIFT2Step-Rough-2DRANSAC_Ortho-MEC-Malt_Tapas_1981_Ortho-MEC-Malt_Satellite.png}
 			\end{minipage}%
 		}
 		\subfigure[$SuperGlue_{Ortho}^{RANSAC Inliers}$]{
 			\begin{minipage}[t]{0.48\linewidth}
 				\centering
-				\includegraphics[width=5.2cm]{images/Chapitre3/Homol-SubPatch_R90-2DRANSAC_Ortho-MEC-Malt_Tapas_1981_Ortho-MEC-Malt_Satellite.png}
+				\includegraphics[width=6.8cm]{images/Chapitre3/Homol-SubPatch_R90-2DRANSAC_Ortho-MEC-Malt_Tapas_1981_Ortho-MEC-Malt_Satellite.png}
 			\end{minipage}%
 		}
 		%        \caption{Result of matching orthophotos (i.e. \textit{Ortho}) of Pezenas 1981 and Satellite. (a) Orthophotos to be matched, with red rectangles indicating the common zone. (b) Numbers of total matches, GT inliers and RANSAC inliers of both SIFT and SuperGlue. (c) Visualization of RANSAC inliers based on SIFT. (d) Visualization of RANSAC inliers based on SuperGlue.}
-		%        \label{MatchVizPezenas1981Ortho}
+		%        \label{MatchVizPezenas-Satellite1981Ortho}
 		%    \end{center}
 		%\end{figure*} 
 		%
@@ -1083,31 +1120,31 @@ For each dataset, each free epoch is matched with reference epoch for rough co-r
 		\subfigure[DSMs]{
 			\begin{minipage}[t]{0.48\linewidth}
 				\centering
-				\includegraphics[width=5.1cm]{images/Chapitre3/MEC-Malt_Tapas_1981_MEC-Malt_Satellite.png}
+				\includegraphics[width=6.8cm]{images/Chapitre3/MEC-Malt_Tapas_1981_MEC-Malt_Satellite.png}
 			\end{minipage}%
 		}
 		\subfigure[Match number (\textit{DSM})]{
 			\begin{minipage}[t]{0.48\linewidth}
 				\centering
-				\includegraphics[width=3.5cm,trim=0 20 0 38,clip]{images/Chapitre3/PlotCurves_MEC-Malt_Tapas_1981_MEC-Malt_Satellite.png}
+				\includegraphics[width=4.9cm,trim=0 20 0 38,clip]{images/Chapitre3/PlotCurves_MEC-Malt_Tapas_1981_MEC-Malt_Satellite.png}
 			\end{minipage}%
 		}
 		\subfigure[$SIFT_{DSM}^{RANSAC Inliers}$]{
 			\begin{minipage}[t]{0.48\linewidth}
 				\centering
-				\includegraphics[width=5.2cm]{images/Chapitre3/Homol-SIFT2Step-Rough-2DRANSAC_MEC-Malt_Tapas_1981_MEC-Malt_Satellite.png}
+				\includegraphics[width=6.8cm]{images/Chapitre3/Homol-SIFT2Step-Rough-2DRANSAC_MEC-Malt_Tapas_1981_MEC-Malt_Satellite.png}
 			\end{minipage}%
 		}
 		\subfigure[$SuperGlue_{DSM}^{RANSAC Inliers}$]{
 			\begin{minipage}[t]{0.48\linewidth}
 				\centering
-				\includegraphics[width=5.2cm]{images/Chapitre3/Homol-SubPatch_R90-2DRANSAC_MEC-Malt_Tapas_1981_MEC-Malt_Satellite.png}
+				\includegraphics[width=6.8cm]{images/Chapitre3/Homol-SubPatch_R90-2DRANSAC_MEC-Malt_Tapas_1981_MEC-Malt_Satellite.png}
 			\end{minipage}%
 		}
 		%\caption{Result of matching DSMs (i.e. \textit{DSM}) of Pezenas 1981 and Satellite. (a) DSMs to be matched, with red rectangles indicating the common zone. (b) Numbers of total matches, GT inliers and RANSAC inliers of both SIFT and SuperGlue. (c) Visualization of RANSAC inliers based on SIFT. (d) Visualization of RANSAC inliers based on SuperGlue.}
 		%\caption{{\small Result of \textit{ImgPairs}, \textit{Ortho} and \textit{DSM} on Pezenas 1981 and Satellite. (a, e, i) image pairs/orthophotos/DSMs to be matched, with red rectangles indicating the common zone. (b, f, j) Numbers of total matches, GT inliers and RANSAC inliers of both SIFT and SuperGlue on methods \textit{ImgPairs}, \textit{Ortho} and \textit{DSM} individually. (c, g, k) Visualization of RANSAC inliers based on $SIFT_{ImgPairs}$, $SIFT_{Ortho}$ and $SIFT_{DSM}$. (d, h, l) Visualization of RANSAC inliers based on $SuperGlue_{ImgPairs}$, $SuperGlue_{Ortho}$ and $SuperGlue_{DSM}$.}}
 		\caption{{\scriptsize Result of \textit{ImgPairs} (a-d), \textit{Ortho} (e-h) and \textit{DSM} (i-l) on matching \textbf{Pezenas 1981 and Satellite}. (a, e, i) image pairs/orthophotos/DSMs to be matched, with red rectangles indicating the common zone. (b, f, j) Numbers of total matches, GT inliers and RANSAC inliers of both SIFT and SuperGlue on methods \textit{ImgPairs}, \textit{Ortho} and \textit{DSM} individually. (c, g, k) Visualization of RANSAC inliers based on $SIFT_{ImgPairs}$, $SIFT_{Ortho}$ and $SIFT_{DSM}$. (d, h, l) Visualization of RANSAC inliers based on $SuperGlue_{ImgPairs}$, $SuperGlue_{Ortho}$ and $SuperGlue_{DSM}$.}}        
-		\label{MatchVizPezenas1981DSM}
+		\label{MatchVizPezenas-Satellite1981DSM}
 	\end{center}
 \end{figure*} 
 
@@ -1491,13 +1528,13 @@ For each dataset, each free epoch is matched with reference epoch for rough co-r
 		\subfigure[DoD$_{Pezenas1971}^{SuperGlue_{Ortho}}$]{
 			\begin{minipage}[t]{0.31\linewidth}
 				\centering
-				\includegraphics[width=4.2cm,trim=680 80 50 230,clip]{images/Chapitre3/DoD1971Ortho-SuperGlue-Satellite.png}
+				\includegraphics[width=4.5cm,trim=680 80 50 230,clip]{images/Chapitre3/DoD1971Ortho-SuperGlue-Satellite.png}
 			\end{minipage}%
 		}
 		\subfigure[DoD$_{Pezenas1971}^{SuperGlue_{DSM}}$]{
 			\begin{minipage}[t]{0.31\linewidth}
 				\centering
-				\includegraphics[width=4.2cm,trim=680 80 50 230,clip]{images/Chapitre3/DoD1971DSM-SuperGlue-Satellite.png}
+				\includegraphics[width=4.5cm,trim=680 80 50 230,clip]{images/Chapitre3/DoD1971DSM-SuperGlue-Satellite.png}
 			\end{minipage}%
 		}\\
 		
@@ -1517,13 +1554,13 @@ For each dataset, each free epoch is matched with reference epoch for rough co-r
 		\subfigure[DoD$_{Pezenas1981}^{SuperGlue_{Ortho}}$]{
 			\begin{minipage}[t]{0.31\linewidth}
 				\centering
-				\includegraphics[width=4.2cm,trim=720 100 50 200,clip]{images/Chapitre3/DoD1981Ortho-SuperGlue-Satellite.png}
+				\includegraphics[width=4.2cm,trim=900 100 250 200,clip]{images/Chapitre3/DoD1981Ortho-SuperGlue-Satellite.png}
 			\end{minipage}%
 		}
 		\subfigure[DoD$_{Pezenas1981}^{SuperGlue_{DSM}}$]{
 			\begin{minipage}[t]{0.31\linewidth}
 				\centering
-				\includegraphics[width=4.2cm,trim=720 100 50 200,clip]{images/Chapitre3/DoD1981DSM-SuperGlue-Satellite.png}
+				\includegraphics[width=4.2cm,trim=900 100 250 200,clip]{images/Chapitre3/DoD1981DSM-SuperGlue-Satellite.png}
 			\end{minipage}%
 		}\\
 		
@@ -1650,15 +1687,16 @@ For each dataset, each free epoch is matched with reference epoch for rough co-r
 &${SIFT_{DSM}}$ & -0.73 & 9.67 & 7.42\\\hline
 
 %%%%%%%%%%%%%%%%%%%%%%%%satellite
-\multirow{4}{*}{$DoD^{Pezenas}_{1971-2014(Satellite)}$}&${SuperGlue_{Ortho}}$71 & 0.34 & 11.90 & \textbf{7.12}\\
+\multirow{4}{*}{$DoD^{Pezenas}_{1971-2014(Satellite)}$}&${SuperGlue_{Ortho}}$ & 0.34 & 11.90 & \textbf{7.12}\\
 &${SIFT_{Ortho}}$ & / &/ &/ \\
-&${SuperGlue_{DSM}}$71 & -1.77 & 14.18 & 10.12\\
-&${SIFT_{DSM}}$71 & 0.56 & 25.63 & 8.22\\\hline
+&${SuperGlue_{DSM}}$ & -1.77 & 14.18 & 10.12\\
+&${SIFT_{DSM}}$ & 0.56 & 25.63 & 8.22\\\hline
 
-\multirow{4}{*}{$DoD^{Pezenas}_{1981-2014(Satellite)}$}&${SuperGlue_{Ortho}}$81 & -2.67 & 10.69 & \textbf{6.78}\\
+\multirow{4}{*}{$DoD^{Pezenas}_{1981-2014(Satellite)}$}&${SuperGlue_{Ortho}}$ & -2.67 & 10.69 & \textbf{6.78}\\
 &${SIFT_{Ortho}}$ & / &/ &/ \\
-&${SuperGlue_{DSM}}$81 & 4.36 & 10.33 & 7.19\\
-&${SIFT_{DSM}}$81 & 11.23 & 21.20 & 19.22\\\hline
+&${SuperGlue_{DSM}}$ & 4.36 & 10.33 & 7.19\\
+%&${SIFT_{DSM}}$ & 11.23 & 21.20 & 19.22\\\hline
+&${SIFT_{DSM}}$ & 0.56 & 25.63 & 8.22\\\hline
 
 
 \multirow{6}{*}{$DoD^{Kobe}_{1991-1995}$}&${SuperGlue_{ImgPairs}}$ & -1.63 & 13.85 & \textbf{7.24}\\
@@ -1671,66 +1709,67 @@ For each dataset, each free epoch is matched with reference epoch for rough co-r
 &${SIFT_{DSM}}$ & 0.27 & 14.40 & 7.57\\\hline
 	
 \end{tabular}
-\caption{Average value $\mu$, standard deviation $\sigma$, and absolute average value $|\mu|$ of all the DoDs in Figure~\ref{DoDFrejus}, ~\ref{DoDPezenas} and ~\ref{DoDKobe}.}
+\caption{Average value $\mu$, standard deviation $\sigma$, and absolute average value $|\mu|$ of all the DoDs in Figure~\ref{DoDFrejus}, ~\ref{DoDPezenas}, ~\ref{DoDPezenas-Satellite} and ~\ref{DoDKobe}.}
 \label{CheckptAcuracy}
 \end{table}
 
-\begin{table}%[H]
-	\footnotesize
-	\centering
-	\begin{tabular}{||l|c|c|c||}\hline
-		&$\mu$ [m]&$\sigma$ [m]&$|\mu|$ [m]\\\hline\hline
-		DoD$_{Frejus1954}^{SuperGlue_{ImgPairs}}$ & 5.70 & 6.32 & 6.62\\
-		DoD$_{Frejus1954}^{SIFT_{ImgPairs}}$ & / & / & / \\
-		DoD$_{Frejus1954}^{SuperGlue_{Ortho}}$ & 2.19 & 6.46 & 4.55\\
-		DoD$_{Frejus1954}^{SIFT_{Ortho}}$ & / & / & / \\
-		DoD$_{Frejus1954}^{SuperGlue_{DSM}}$ & 2.07 & 4.87 & \textbf{3.83} \\
-		DoD$_{Frejus1954}^{SIFT_{DSM}}$ & 6.92 & 8.47 & 8.04\\\hline
-		
-		DoD$_{Frejus1966}^{SuperGlue_{ImgPairs}}$ & -1.36 & 3.82 & 2.90\\
-		DoD$_{Frejus1966}^{SIFT_{ImgPairs}}$ & / & / & / \\
-		DoD$_{Frejus1966}^{SuperGlue_{Ortho}}$ & -0.37 & 4.22 & 3.01\\
-		DoD$_{Frejus1966}^{SIFT_{Ortho}}$ & / & / & / \\
-		DoD$_{Frejus1966}^{SuperGlue_{DSM}}$ & -0.46 & 3.77 & \textbf{2.68}\\
-		DoD$_{Frejus1966}^{SIFT_{DSM}}$ & -1.72 & 4.92 & 3.75\\\hline
-		
-		DoD$_{Frejus1970}^{SuperGlue_{ImgPairs}}$ & -5.04 & 5.09 & 5.70\\
-		DoD$_{Frejus1970}^{SIFT_{ImgPairs}}$ & / & / & / \\
-		DoD$_{Frejus1970}^{SuperGlue_{Ortho}}$ & -2.63 & 5.18 & \textbf{4.39}\\
-		DoD$_{Frejus1970}^{SIFT_{Ortho}}$ & / & / & / \\
-		DoD$_{Frejus1970}^{SuperGlue_{DSM}}$ & -1.71 & 5.75 & 4.61\\
-		DoD$_{Frejus1970}^{SIFT_{DSM}}$ & -3.17 & 5.44 & 4.71\\\hline
-		
-		
-		
-		DoD$_{Pezenas1971}^{SuperGlue_{ImgPairs}}$ & / &/ &/ \\
-		DoD$_{Pezenas1971}^{SIFT_{ImgPairs}}$ & 2.77 & 16.58 & 13.98\\
-		DoD$_{Pezenas1971}^{SuperGlue_{Ortho}}$ & -8.46 & 22.36 & 16.68\\
-		DoD$_{Pezenas1971}^{SIFT_{Ortho}}$ & -8.05 & 21.71 & 17.07\\
-		DoD$_{Pezenas1971}^{SuperGlue_{DSM}}$ & 4.71 & 16.85 & 14.20\\
-		DoD$_{Pezenas1971}^{SIFT_{DSM}}$ & -0.75 & 17.75 & \textbf{13.74}\\\hline
-		
-		DoD$_{Pezenas1981}^{SuperGlue_{ImgPairs}}$ & -0.39 & 9.12 & \textbf{7.10}\\
-		DoD$_{Pezenas1981}^{SIFT_{ImgPairs}}$ & -2.01 & 10.07 & 7.80\\
-		DoD$_{Pezenas1981}^{SuperGlue_{Ortho}}$ & -2.60 & 9.93 & 7.76\\
-		DoD$_{Pezenas1981}^{SIFT_{Ortho}}$ & -4.80 & 13.25 & 10.33\\
-		DoD$_{Pezenas1981}^{SuperGlue_{DSM}}$ & 0.64 & 9.15 & 7.24\\
-		DoD$_{Pezenas1981}^{SIFT_{DSM}}$ & -0.73 & 9.67 & 7.42\\\hline
-		
-		
-		DoD$_{Kobe1991}^{SuperGlue_{ImgPairs}}$ & -1.63 & 13.85 & \textbf{7.24}\\
-		DoD$_{Kobe1991}^{SIFT_{ImgPairs}}$ & / & / & / \\
-		%DoD$_{Kobe1991}^{SIFT_{ImgPairs}}$ & 167.46 & 121.26 & 168.47\\
-		DoD$_{Kobe1991}^{SuperGlue_{Ortho}}$ & -0.54 & 14.83 & 7.78\\
-		DoD$_{Kobe1991}^{SIFT_{Ortho}}$ & / & / & / \\
-		%DoD$_{Kobe1991}^{SIFT_{Ortho}}$ & 4.29 & 41.89 & 26.01\\
-		DoD$_{Kobe1991}^{SuperGlue_{DSM}}$ & -0.75 & 14.62 & 7.95\\
-		DoD$_{Kobe1991}^{SIFT_{DSM}}$ & 0.27 & 14.40 & 7.57\\\hline
 
-\end{tabular}
-\caption{Average value $\mu$, standard deviation $\sigma$, and absolute average value $|\mu|$ of all the DoDs in Figure~\ref{DoDFrejus}, ~\ref{DoDPezenas} and ~\ref{DoDKobe}.}
-\label{CheckptAcuracy}
-\end{table}
+%\begin{table}%[H]
+%	\footnotesize
+%	\centering
+%	\begin{tabular}{||l|c|c|c||}\hline
+%		&$\mu$ [m]&$\sigma$ [m]&$|\mu|$ [m]\\\hline\hline
+%		DoD$_{Frejus1954}^{SuperGlue_{ImgPairs}}$ & 5.70 & 6.32 & 6.62\\
+%		DoD$_{Frejus1954}^{SIFT_{ImgPairs}}$ & / & / & / \\
+%		DoD$_{Frejus1954}^{SuperGlue_{Ortho}}$ & 2.19 & 6.46 & 4.55\\
+%		DoD$_{Frejus1954}^{SIFT_{Ortho}}$ & / & / & / \\
+%		DoD$_{Frejus1954}^{SuperGlue_{DSM}}$ & 2.07 & 4.87 & \textbf{3.83} \\
+%		DoD$_{Frejus1954}^{SIFT_{DSM}}$ & 6.92 & 8.47 & 8.04\\\hline
+%		
+%		DoD$_{Frejus1966}^{SuperGlue_{ImgPairs}}$ & -1.36 & 3.82 & 2.90\\
+%		DoD$_{Frejus1966}^{SIFT_{ImgPairs}}$ & / & / & / \\
+%		DoD$_{Frejus1966}^{SuperGlue_{Ortho}}$ & -0.37 & 4.22 & 3.01\\
+%		DoD$_{Frejus1966}^{SIFT_{Ortho}}$ & / & / & / \\
+%		DoD$_{Frejus1966}^{SuperGlue_{DSM}}$ & -0.46 & 3.77 & \textbf{2.68}\\
+%		DoD$_{Frejus1966}^{SIFT_{DSM}}$ & -1.72 & 4.92 & 3.75\\\hline
+%		
+%		DoD$_{Frejus1970}^{SuperGlue_{ImgPairs}}$ & -5.04 & 5.09 & 5.70\\
+%		DoD$_{Frejus1970}^{SIFT_{ImgPairs}}$ & / & / & / \\
+%		DoD$_{Frejus1970}^{SuperGlue_{Ortho}}$ & -2.63 & 5.18 & \textbf{4.39}\\
+%		DoD$_{Frejus1970}^{SIFT_{Ortho}}$ & / & / & / \\
+%		DoD$_{Frejus1970}^{SuperGlue_{DSM}}$ & -1.71 & 5.75 & 4.61\\
+%		DoD$_{Frejus1970}^{SIFT_{DSM}}$ & -3.17 & 5.44 & 4.71\\\hline
+%		
+%		
+%		
+%		DoD$_{Pezenas1971}^{SuperGlue_{ImgPairs}}$ & / &/ &/ \\
+%		DoD$_{Pezenas1971}^{SIFT_{ImgPairs}}$ & 2.77 & 16.58 & 13.98\\
+%		DoD$_{Pezenas1971}^{SuperGlue_{Ortho}}$ & -8.46 & 22.36 & 16.68\\
+%		DoD$_{Pezenas1971}^{SIFT_{Ortho}}$ & -8.05 & 21.71 & 17.07\\
+%		DoD$_{Pezenas1971}^{SuperGlue_{DSM}}$ & 4.71 & 16.85 & 14.20\\
+%		DoD$_{Pezenas1971}^{SIFT_{DSM}}$ & -0.75 & 17.75 & \textbf{13.74}\\\hline
+%		
+%		DoD$_{Pezenas1981}^{SuperGlue_{ImgPairs}}$ & -0.39 & 9.12 & \textbf{7.10}\\
+%		DoD$_{Pezenas1981}^{SIFT_{ImgPairs}}$ & -2.01 & 10.07 & 7.80\\
+%		DoD$_{Pezenas1981}^{SuperGlue_{Ortho}}$ & -2.60 & 9.93 & 7.76\\
+%		DoD$_{Pezenas1981}^{SIFT_{Ortho}}$ & -4.80 & 13.25 & 10.33\\
+%		DoD$_{Pezenas1981}^{SuperGlue_{DSM}}$ & 0.64 & 9.15 & 7.24\\
+%		DoD$_{Pezenas1981}^{SIFT_{DSM}}$ & -0.73 & 9.67 & 7.42\\\hline
+%		
+%		
+%		DoD$_{Kobe1991}^{SuperGlue_{ImgPairs}}$ & -1.63 & 13.85 & \textbf{7.24}\\
+%		DoD$_{Kobe1991}^{SIFT_{ImgPairs}}$ & / & / & / \\
+%		%DoD$_{Kobe1991}^{SIFT_{ImgPairs}}$ & 167.46 & 121.26 & 168.47\\
+%		DoD$_{Kobe1991}^{SuperGlue_{Ortho}}$ & -0.54 & 14.83 & 7.78\\
+%		DoD$_{Kobe1991}^{SIFT_{Ortho}}$ & / & / & / \\
+%		%DoD$_{Kobe1991}^{SIFT_{Ortho}}$ & 4.29 & 41.89 & 26.01\\
+%		DoD$_{Kobe1991}^{SuperGlue_{DSM}}$ & -0.75 & 14.62 & 7.95\\
+%		DoD$_{Kobe1991}^{SIFT_{DSM}}$ & 0.27 & 14.40 & 7.57\\\hline
+%
+%\end{tabular}
+%\caption{Average value $\mu$, standard deviation $\sigma$, and absolute average value $|\mu|$ of all the DoDs in Figure~\ref{DoDFrejus}, ~\ref{DoDPezenas} and ~\ref{DoDKobe}.}
+%\label{CheckptAcuracy}
+%\end{table}
 
 
 %old
