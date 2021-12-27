@@ -1,53 +1,53 @@
 \babel@toc {english}{}
-\contentsline {chapter}{List of Acronyms}{v}{chapter*.3}
-\contentsline {chapter}{\numberline {1}Introduction}{3}{chapter.1}
-\contentsline {section}{\numberline {1.1}Motivation}{3}{section.1.1}
-\contentsline {subsection}{\numberline {1.1.1}Why are historical images interesting}{3}{subsection.1.1.1}
-\contentsline {subsection}{\numberline {1.1.2}How to match multi-epoch historical images}{4}{subsection.1.1.2}
-\contentsline {subsubsection}{\numberline {1.1.2.1}Divide and conquer}{4}{subsubsection.1.1.2.1}
-\contentsline {subsubsection}{\numberline {1.1.2.2}Take advantage of 3D geometry}{4}{subsubsection.1.1.2.2}
-\contentsline {section}{\numberline {1.2}Objective}{7}{section.1.2}
-\contentsline {section}{\numberline {1.3}Contribution}{7}{section.1.3}
-\contentsline {section}{\numberline {1.4}Organization of the thesis}{7}{section.1.4}
-\contentsline {chapter}{\numberline {2}Literature review}{9}{chapter.2}
-\contentsline {section}{\numberline {2.1}Local feature matching}{9}{section.2.1}
-\contentsline {subsection}{\numberline {2.1.1}Hand-crafted methods}{9}{subsection.2.1.1}
-\contentsline {subsection}{\numberline {2.1.2}Learned methods}{10}{subsection.2.1.2}
-\contentsline {section}{\numberline {2.2}Historical image processing}{11}{section.2.2}
-\contentsline {section}{\numberline {2.3}Robust matching}{12}{section.2.3}
-\contentsline {chapter}{\numberline {3}Rough co-registration}{15}{chapter.3}
-\contentsline {section}{\numberline {3.1}Introduction}{15}{section.3.1}
-\contentsline {section}{\numberline {3.2}Methodology}{17}{section.3.2}
-\contentsline {subsection}{\numberline {3.2.1}Strategy 1: Matching image pairs}{18}{subsection.3.2.1}
-\contentsline {subsection}{\numberline {3.2.2}Strategy 2: Matching Orthophotos/DSMs}{18}{subsection.3.2.2}
-\contentsline {section}{\numberline {3.3}Experiments}{23}{section.3.3}
-\contentsline {subsection}{\numberline {3.3.1}Implementation details}{24}{subsection.3.3.1}
-\contentsline {subsection}{\numberline {3.3.2}Datasets}{25}{subsection.3.3.2}
-\contentsline {paragraph}{Fr{\'e}jus}{25}{section*.4}
-\contentsline {paragraph}{Pezenas}{25}{section*.5}
-\contentsline {paragraph}{Kobe}{25}{section*.6}
-\contentsline {subsection}{\numberline {3.3.3}Evaluation}{25}{subsection.3.3.3}
-\contentsline {subsection}{\numberline {3.3.4}Comparison}{30}{subsection.3.3.4}
-\contentsline {subsubsection}{\numberline {3.3.4.1}Matches visualization}{30}{subsubsection.3.3.4.1}
-\contentsline {subsubsection}{\numberline {3.3.4.2}DoD}{31}{subsubsection.3.3.4.2}
-\contentsline {section}{\numberline {3.4}Conclusion}{31}{section.3.4}
-\contentsline {section}{\numberline {3.5}Discussion}{31}{section.3.5}
-\contentsline {chapter}{\numberline {4}Precise matching}{45}{chapter.4}
-\contentsline {section}{\numberline {4.1}Introduction}{45}{section.4.1}
-\contentsline {subsection}{\numberline {4.1.1}Motivation}{45}{subsection.4.1.1}
-\contentsline {subsection}{\numberline {4.1.2}Contribution}{45}{subsection.4.1.2}
-\contentsline {section}{\numberline {4.2}Methodology}{45}{section.4.2}
-\contentsline {section}{\numberline {4.3}Experiments}{45}{section.4.3}
-\contentsline {section}{\numberline {4.4}Conclusion}{45}{section.4.4}
-\contentsline {section}{\numberline {4.5}Discussion}{45}{section.4.5}
-\contentsline {chapter}{\numberline {5}Conclusion and Perspective}{47}{chapter.5}
-\contentsline {part}{Appendices}{49}{chapter.5}
+\contentsline {chapter}{List of Acronyms}{v}{chapter*.3}%
+\contentsline {chapter}{\numberline {1}Introduction}{3}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Motivation}{3}{section.1.1}%
+\contentsline {subsection}{\numberline {1.1.1}Why are historical images interesting}{3}{subsection.1.1.1}%
+\contentsline {subsection}{\numberline {1.1.2}How to match multi-epoch historical images}{4}{subsection.1.1.2}%
+\contentsline {subsubsection}{\numberline {1.1.2.1}Divide and conquer}{4}{subsubsection.1.1.2.1}%
+\contentsline {subsubsection}{\numberline {1.1.2.2}Take advantage of 3D geometry}{4}{subsubsection.1.1.2.2}%
+\contentsline {section}{\numberline {1.2}Objective}{7}{section.1.2}%
+\contentsline {section}{\numberline {1.3}Contribution}{7}{section.1.3}%
+\contentsline {section}{\numberline {1.4}Organization of the thesis}{7}{section.1.4}%
+\contentsline {chapter}{\numberline {2}Literature review}{9}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Local feature matching}{9}{section.2.1}%
+\contentsline {subsection}{\numberline {2.1.1}Hand-crafted methods}{9}{subsection.2.1.1}%
+\contentsline {subsection}{\numberline {2.1.2}Learned methods}{10}{subsection.2.1.2}%
+\contentsline {section}{\numberline {2.2}Historical image processing}{11}{section.2.2}%
+\contentsline {section}{\numberline {2.3}Robust matching}{12}{section.2.3}%
+\contentsline {chapter}{\numberline {3}Rough co-registration}{15}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Introduction}{15}{section.3.1}%
+\contentsline {section}{\numberline {3.2}Methodology}{17}{section.3.2}%
+\contentsline {subsection}{\numberline {3.2.1}Strategy 1: Matching image pairs}{18}{subsection.3.2.1}%
+\contentsline {subsection}{\numberline {3.2.2}Strategy 2: Matching Orthophotos/DSMs}{18}{subsection.3.2.2}%
+\contentsline {section}{\numberline {3.3}Experiments}{23}{section.3.3}%
+\contentsline {subsection}{\numberline {3.3.1}Implementation details}{24}{subsection.3.3.1}%
+\contentsline {subsection}{\numberline {3.3.2}Datasets}{25}{subsection.3.3.2}%
+\contentsline {paragraph}{Fr{\'e}jus}{25}{section*.4}%
+\contentsline {paragraph}{Pezenas}{25}{section*.5}%
+\contentsline {paragraph}{Kobe}{25}{section*.6}%
+\contentsline {subsection}{\numberline {3.3.3}Evaluation}{30}{subsection.3.3.3}%
+\contentsline {subsection}{\numberline {3.3.4}Comparison}{30}{subsection.3.3.4}%
+\contentsline {subsubsection}{\numberline {3.3.4.1}Matches visualization}{30}{subsubsection.3.3.4.1}%
+\contentsline {subsubsection}{\numberline {3.3.4.2}DoD}{31}{subsubsection.3.3.4.2}%
+\contentsline {section}{\numberline {3.4}Conclusion}{31}{section.3.4}%
+\contentsline {section}{\numberline {3.5}Discussion}{45}{section.3.5}%
+\contentsline {chapter}{\numberline {4}Precise matching}{47}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Introduction}{47}{section.4.1}%
+\contentsline {subsection}{\numberline {4.1.1}Motivation}{47}{subsection.4.1.1}%
+\contentsline {subsection}{\numberline {4.1.2}Contribution}{47}{subsection.4.1.2}%
+\contentsline {section}{\numberline {4.2}Methodology}{47}{section.4.2}%
+\contentsline {section}{\numberline {4.3}Experiments}{47}{section.4.3}%
+\contentsline {section}{\numberline {4.4}Conclusion}{47}{section.4.4}%
+\contentsline {section}{\numberline {4.5}Discussion}{47}{section.4.5}%
+\contentsline {chapter}{\numberline {5}Conclusion and Perspective}{49}{chapter.5}%
+\contentsline {part}{Appendices}{51}{chapter.5}%
 \partbegin 
-\contentsline {chapter}{\numberline {A}Comparison between $SIFT_{Adapted}$ and $SIFT_{Default}$}{51}{appendix.A}
-\contentsline {section}{\numberline {A.1}Comparison on method $SIFT_{ImgPairs}$}{51}{section.A.1}
-\contentsline {section}{\numberline {A.2}Comparison on method $SIFT_{Ortho}$}{51}{section.A.2}
-\contentsline {section}{\numberline {A.3}Comparison on method $SIFT_{DSM}$}{51}{section.A.3}
-\contentsline {chapter}{\numberline {B}Comparison between $SuperGlue_{ours}$ and $SuperGlue_{orig}$}{55}{appendix.B}
-\contentsline {section}{\numberline {B.1}Comparison on method $SuperGlue_{Ortho}$}{55}{section.B.1}
-\contentsline {section}{\numberline {B.2}Comparison on method $SIFT_{DSM}$}{55}{section.B.2}
-\contentsline {chapter}{Bibliography}{59}{appendix*.8}
+\contentsline {chapter}{\numberline {A}Comparison between $SIFT_{Adapted}$ and $SIFT_{Default}$}{53}{appendix.A}%
+\contentsline {section}{\numberline {A.1}Comparison on method $SIFT_{ImgPairs}$}{53}{section.A.1}%
+\contentsline {section}{\numberline {A.2}Comparison on method $SIFT_{Ortho}$}{53}{section.A.2}%
+\contentsline {section}{\numberline {A.3}Comparison on method $SIFT_{DSM}$}{53}{section.A.3}%
+\contentsline {chapter}{\numberline {B}Comparison between $SuperGlue_{ours}$ and $SuperGlue_{orig}$}{57}{appendix.B}%
+\contentsline {section}{\numberline {B.1}Comparison on method $SuperGlue_{Ortho}$}{57}{section.B.1}%
+\contentsline {section}{\numberline {B.2}Comparison on method $SIFT_{DSM}$}{57}{section.B.2}%
+\contentsline {chapter}{Bibliography}{61}{appendix*.8}%

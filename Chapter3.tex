@@ -5,7 +5,7 @@
 \minitoc
 
 \section{Introduction}
-The goal of rough co-registration is establish a transformation model between different epochs to guide the subsequent precise matching step. Minimum matches between different epochs are required, depending on the model type:\\
+The goal of rough co-registration is establishing a transformation model between different epochs to guide the subsequent precise matching step. Minimum matches between different epochs are required, depending on the model type:\\
 \begin{enumerate}
     \item 2D similarity transformation model, which requires at least 2 matches for each inter-epoch image pair to solve 4 parameters;
     \item Homography transformation model, which requires at least 4 matches for each inter-epoch image pair to solve 8 parameters;
@@ -13,27 +13,26 @@ The goal of rough co-registration is establish a transformation model between di
 \end{enumerate}
 Generally, each inter-epoch image pair would be matched, followed by a RANSAC routine to recover the best transformation model.
 %The most critical target is to get reliable matches, instead of obtaining accurately localized ones.
-The critical goal is about getting reliable matches rather than obtaining accurately localized ones.
+It is about getting reliable matches rather than obtaining accurately localized ones.
 Since multi-epoch images often demonstrate different appearances due to scene changes and heterogeneous acquisition conditions, we come up with 2 ideas in order to improve the matching robustness:\\
 \begin{enumerate}
     \item Instead of building transformation models (2D similarity or homography) for each inter-epoch image pair that might contradict each other, it is better to build a 3D Helmert transformation model which is globally consistent over the whole block.
     \item Take 3D geometry into consideration to boost the matching performance.
 \end{enumerate}
-Based on these ideas, we attempted 2 strategies to match different epochs:\\
+Based on these ideas, we attempted 2 strategies for multi-epoch rough co-registration:\\
 \begin{enumerate}
-    \item Match each inter-epoch image pair, followed by projecting the matches onto ground to build globally consistent transformation model.
-    \item Generate orthophoto or DSM for each epoch, and match orthophoto/DSM pairs
-    , followed by RANSAC based on 2D similarity transformation model to remove outliers, and build a 3D Helmert transformation model between epochs by projecting inlier mathces to ground.
+    \item Match every possible combination of inter-epoch image pairs, followed by projecting the matches onto ground to build globally consistent transformation model.
+    \item Generate orthophoto or DSM for each epoch, and match orthophoto/DSM pairs, followed by RANSAC based on 2D similarity transformation model to remove outliers, and build a 3D Helmert transformation model between epochs by projecting inlier mathces to ground.
 \end{enumerate}
 
 Our main contributions include:\\
 \begin{enumerate}
-	\item Improve the performance of matching inter-epoch images with SIFT by (1) using downsampled images and (2) skipping ratio test.
-	\item Improve matching robustness by building globally consistent transformation model, which can be achieved by either (1) matching every possible combination of inter-epoch image pairs followed by global filtering or (2) integrating images from the same epoch into a single image (DSM or orthophoto) before matching.
+	\item Improve matching robustness by building globally consistent transformation model, which can be achieved by either (1) matching each inter-epoch image pair followed by global filtering or (2) integrating images from the same epoch into a single image (DSM or orthophoto) before matching.
 	\item Introduce the idea of matching DSMs to obtain robust matches even under drastic scene changes, as the 3D landscape often stays globally stable over time.
-	\item Introduce 3D RANSAC based on DSMs to filter tentative matches: each three correspondences projected to DSM serve to compute a 3D Helmert transformation between epochs, and most importantly provide a 2D constraint on all images’ correspondences.
+	\item Introduce 3D RANSAC based on DSMs to filter tentative matches: each three matches projected to DSM serve to compute a 3D Helmert transformation between epochs, and most importantly provide a 2D constraint on all images’ matches.
 	\item Introduce \textit{4 rotation hypotheses} to make SuperGlue, which is not invariant to rotation larger than 45$^\circ$, practicable on remote sensing images.
 	\item Introduce \textit{one-to-many tiling scheme} to scale-up the deep learning methods for feature matching.
+	\item Improve the performance of matching inter-epoch images with SIFT by (1) using downsampled images and (2) skipping ratio test and FIGNN.
 \end{enumerate}
 
 
@@ -49,20 +48,20 @@ Our main contributions include:\\
 %整体匹配
 %Our methods aim at roughly co-register 2 epochs to the same frame. One epoch (generally the more recent epoch) would be chosen as the reference epoch $E_r$, the other one would be treated as free epoch $E_f$. A transformation model would be built to move epoch $E_f$ to the frame of epoch $E_r$.\\
 We provide 2 strategies for inter-epoch rough co-registration: matching image pairs or matching orthophotos/DSMs. The pipelines will be elaborated in the following sections. Please notice our pipelines are generic, different feature matching methods can be readily applied in them. At present we use either SIFT or SuperGlue to test our pipeline as they are currently \textit{state-of-the-art}, but they can be replaced when better matching methods appear in the future.\\
-Our methods are able to process aerial images and satellite images at the same time. Aerial images are accompanied with focal lengths and physical sensor sizes, which are usually available. For historical aerial images, they should be resampled to the geometry of the fiducial marks prior to processing. 
+Our methods are not only able to match aerial or satellite images, but also able to match mixed images. Aerial images are supposed to be accompanied with focal lengths and physical sensor sizes, which are usually available. For historical aerial images, they should be resampled to the geometry of the fiducial marks prior to processing. 
 %For the sake of simplicity, only 2 epochs are present in our processing flows, however, it can be easily extended to more epochs.
 \par
 We adopt the following naming conventions:\\
 \begin{enumerate}
     \item Images acquired in \textit{epoch$_1$} and \textit{epoch$_2$} are denoted as $I^{e_1}$ and $I^{e_2}$;
     \item Orientations of \textit{epoch$_1$} and \textit{epoch$_2$} are denoted as $O^{e_1}$ and $O^{e_2}$; 
-    \item Mean elevation plane of the Ground in \textit{epoch$_1$} and \textit{epoch$_2$} are denoted as $G^{e_1}$ and $G^{e_2}$;
+    %\item Ground extent of \textit{epoch$_1$} and \textit{epoch$_2$} are denoted as $G^{e_1}$ and $G^{e_2}$;
     \item Orthophotos of \textit{epoch$_1$} and \textit{epoch$_2$} are denoted as $Op^{e_1}$ and $Op^{e_2}$; 
     \item DSMs of \textit{epoch$_1$} and \textit{epoch$_2$} are denoted as $D^{e_1}$ and $D^{e_2}$.
 \end{enumerate}
 Before inter-epoch rough co-registration, we process each epoch individually to recover the relative orientations and DSM within the same epoch. It is a standard photogrammetry or SfM pipeline and can be accomplished with lots of solutions (e.g. MicMac~\cite{deseilligny2011apero}, COLMAP~\cite{schonberger2016structure}, {OpenMVG~\cite{openMVG}, Theia~\cite{theia}, etc.}). The solution used in our experiment is MicMac. It is performed within each \textit{epoch$_i$} individually as follows:
 \begin{enumerate}
-\item Extract intra-epoch correspondences between images $I^{e_i}$ with SIFT ~\cite{lowe2004distinctive};
+\item Extract intra-epoch matches between images $I^{e_i}$ with SIFT ~\cite{lowe2004distinctive};
 \item Based on the sequential SfM to compute interior and relative orientations ({$O_{ini}^{e_i}$}) for aerial images, or to refine the RPC(Rational Polynomial Coefficient) for satellite images;
 \item Based on image orientations $O_{ini}^{e_i}$, perform semi-global dense matching~\cite{mpd:06:sgm} {between images $I^{e_i}$} to get {DSM ($D_{ini}^{e_i}$) in their arbitrary coordinate frames.}
 \item Orthorectify the images to get orthophotos ($Op_{ini}^{e_i}$) if the matching orthophotos strategic is applied.
@@ -73,21 +72,21 @@ Before inter-epoch rough co-registration, we process each epoch individually to 
 \subsection{Strategy 1: Matching image pairs}
 %\subsection{Strategy 1: global filtering}
 %CoReg-R3D
-This method is for co-registering aerial epoch to aerial epoch only. It is not appropriate for satellite epoch because satellite images are often with large size and will decrease efficiency remarkably.\\
+This method is for co-registering aerial epoch to aerial epoch only. It is not practical for satellite epoch because satellite images are often with large size and will decrease efficiency remarkably.\\
 The workflow of matching image pairs strategy is displayed in Figure~\ref{WorkflowImgPair}(a).\\
 We introduce \textit{4 rotation hypotheses} when feature matching method that is not invariant to rotations lager than 45$^\circ$ (e.g. SuperGlue) is applied.\\
 The \textit{4 rotation hypotheses} works as follows (cf. Figure~\ref{WorkflowImgPair}(b)): 
 \begin{enumerate}
     \item Rotate the secondary image by 90$^{\circ}$ four times;
     \item Match each rotated image with the master image;
-    \item Keep the hypothesis with the largest number of matches.
+    \item Keep the hypothesis with most numerous matches.
 \end{enumerate}
 The \textit{4 rotation hypotheses} would not be applied when rotation invariant matching method (e.g. SIFT) is adopted.
 \par
 Assuming the numbers of images in \textit{epoch$_1$} and \textit{epoch$_2$} are P and Q individually, the matching image pairs strategy works as follows:\\
 \begin{enumerate}
     \item Match P$\times$Q image pairs respectively (with or without \textit{4 rotation hypotheses}, depending on whether the matching method is rotation invariant), giving rise to P$\times$Q sets of matches $M({\mathbf{K}^{e_1},\mathbf{K}^{e_2}})$ ($\mathbf{K}^{e_i}$ represents keypoints in image $I^{e_i}$).
-    \item Project matches $M({\mathbf{K}^{e_1},\mathbf{K}^{e_2}})$ of each image pair onto ground and combine them, resulting in one set of matches $M({\mathbf{KG}^{e_1},\mathbf{KG}^{e_2}})$ ($\mathbf{KG}^{e_i}$ represents keypoints on ground $G^{e_i}$).
+    \item Project matches $M({\mathbf{K}^{e_1},\mathbf{K}^{e_2}})$ of each image pair onto ground and combine them, resulting in one set of matches $M({\mathbf{KG}^{e_1},\mathbf{KG}^{e_2}})$ ($\mathbf{KG}^{e_i}$ represents points on ground).
     \item Sample matches $M({\mathbf{KG}^{e_1},\mathbf{KG}^{e_2}})$ iteratively to compute the 3D Helmert transformation RANSAC model:
 \begin{equation}
 \left [ \begin{array}{c}
@@ -133,7 +132,7 @@ We set the number of RANSAC iterations to 1000, and consider matches within $T_r
         \includegraphics[width=0.8\columnwidth]{images/Chapitre3/R3D-RotHyp.png}
     \end{minipage}%
 }
-        \caption{Rough co-registration by matching image pairs. (a) Workflow. Each inter-epoch image pair is matched (with 4 rotation hypotheses which are explained in (b), if the matching method is not rotation invariant), followed by projecting the matches onto ground to find the globally consistent inliers. (b) Four rotation hypotheses. We rotate the secondary image by 90 $^\circ$ four times to match with master image and keep the best one with the largest number of matches (red rectangle).}
+        \caption{Rough co-registration by matching image pairs. (a) Workflow. Each inter-epoch image pair is matched (with 4 rotation hypotheses which are explained in (b), if the matching method is not rotation invariant), followed by projecting the matches onto ground to find the globally consistent inliers. (b) Four rotation hypotheses. We rotate the secondary image by 90 $^\circ$ four times to match with master image and keep the best one with most numerous matches (red rectangle).}
         \label{WorkflowImgPair}
     \end{center}
 \end{figure*}
@@ -167,7 +166,7 @@ Orthophotos are by nature RGB images, therefore feature matching methods can be 
                 \includegraphics[width=1\columnwidth]{images/Chapitre3/ortho-RotHyp.png}
             \end{minipage}%
         }
-        \caption{Rough co-registration by matching orthophotos. (a) Workflow. Orthophotos are matched (with 4 rotation hypotheses combined with \textit{one-to-many tiling scheme} scheme which are explained in (b), if the matching method is not rotation invariant), followed by projecting the inlier matches onto ground to build 3D Helmert transformation model. (b) Four rotation hypotheses combined with \textit{one-to-many tiling scheme}. We rotate the secondary orthophoto by 90 $^\circ$ four times to match with master orthophoto and keep the best one with the largest number of RANSAC inliers (red rectangle). \textit{One-to-many tiling scheme} is applied during each hypothesis, with both orthophotos croped into tiles followed by matching all the tile pairs and merging the matches.}
+        \caption{Rough co-registration by matching orthophotos. (a) Workflow. Orthophotos are matched (with 4 rotation hypotheses combined with \textit{one-to-many tiling scheme} scheme which are explained in (b), if the matching method is not rotation invariant), followed by projecting the inlier matches onto ground to build 3D Helmert transformation model. (b) Four rotation hypotheses combined with \textit{one-to-many tiling scheme}. We rotate the secondary orthophoto by 90 $^\circ$ four times to match with master orthophoto and keep the best one with most numerous RANSAC inliers (red rectangle). \textit{One-to-many tiling scheme} is applied during each hypothesis, with both orthophotos croped into tiles followed by matching all the tile pairs and merging the matches.}
         \label{WorkflowOrtho}
     \end{center}
 \end{figure*}
@@ -204,7 +203,7 @@ Orthophotos are by nature RGB images, therefore feature matching methods can be 
                 \includegraphics[width=1\columnwidth]{images/Chapitre3/dsm-RotHyp.png}
             \end{minipage}%
         }
-        \caption{Rough co-registration by matching DSMs. (a) Workflow. DSMs are matched (with 4 rotation hypotheses combined with tiling scheme which are explained in (b), if the matching method is not rotation invariant), followed by projecting the inlier matches onto ground to build 3D Helmert transformation model. (b) Four rotation hypotheses combined with tiling scheme. We rotate the secondary DSM by 90 $^\circ$ four times to match with master DSM and keep the best one with the largest number of RANSAC inliers (red rectangle). Tiling scheme is applied during each hypothesis, with both DSMs croped into tiles followed by matching all the tile pairs and merging the matches.}
+        \caption{Rough co-registration by matching DSMs. (a) Workflow. DSMs are matched (with 4 rotation hypotheses combined with tiling scheme which are explained in (b), if the matching method is not rotation invariant), followed by projecting the inlier matches onto ground to build 3D Helmert transformation model. (b) Four rotation hypotheses combined with tiling scheme. We rotate the secondary DSM by 90 $^\circ$ four times to match with master DSM and keep the best one with most numerous RANSAC inliers (red rectangle). Tiling scheme is applied during each hypothesis, with both DSMs croped into tiles followed by matching all the tile pairs and merging the matches.}
         \label{WorkflowDSM}
     \end{center}
 \end{figure*}
@@ -236,12 +235,12 @@ The DSM is converted to grayscale image as follows:\\
 Matching DSMs/orthophotos has the following merits:
 \begin{enumerate}
     \item Redundancy caused by the forward and side overlapping areas is removed;
-    \item It implicitly enables a follow-up search for globally consistent inliers;
+    \item It enables a follow-up search for globally consistent inliers directly without the need to project matches onto ground;
     \item It decreases the combinatorial complexity caused by rotation ambiguity of P$\times$Q images;
     \item When matching DSMs, robust matches can be expected even under extreme scene changes, as 3D landscape generally provide stable information over time.
 \end{enumerate}
 
-DSMs/orthophotos are usually large images as they have larger extent than original images.
+DSMs/orthophotos are usually large images as they have larger extent than input images.
 Learned matching methods like SuperGlue often underperform on large images as they are either trained on small images to run real-time or with limited spatial resolution of CNN feature maps. We propose a \textit{one-to-many tiling scheme} to make up for the deficiency. 
 \par
 The \textit{one-to-many tiling scheme} is performed as follows (Figure~\ref{WorkflowOrtho}(a) and Figure~\ref{WorkflowDSM}(a)):\\
@@ -318,8 +317,8 @@ In the following we introduce the implementation details, the datasets and the e
 
 \subsection{Implementation details}
 %To improve efficiency, all input images are downsampled by a factor of 3 beforehand. To calculate the DSMs and orthophotos, we further downsample the images by a factor of 4, which amounts to a total downsampling factor of 12 with respect to the input images. For example, the images in Fr{\'e}jus 1970 are downsampled from [8766, 8763] to [730, 730]. As the goal of rough co-registration is to get robust rather than precise matches, a low resolution DSM/orthophoto is good enough and keeps the computational cost low. \\
-To improve efficiency, all input images are downsampled by a factor of 3 beforehand. To calculate the DSMs and orthophotos, we further downsample the images by a factor of 8, which amounts to a total downsampling factor of 24 with respect to the input images. For example, the images in Fr{\'e}jus 1970 are downsampled from [8766, 8763] to [365, 365]. As the goal of rough co-registration is to get robust rather than precise matches, a low resolution DSM/orthophoto is good enough and keeps the computational cost low. \\
-However, downsampling factor of Fr{\'e}jus 2014 is set to be 12 instead of 24, as the GSD ...\\
+To improve efficiency, all input images are downsampled by a factor of 3 beforehand. To calculate the DSMs and orthophotos, we further downsample the images by a factor of 8, which amounts to a total downsampling factor of 24 with respect to the input images. For example, the images in Fr{\'e}jus 1970 are downsampled from [8766, 8763] to [365, 365] for calculating DSMs and orthophotos. As the goal of rough co-registration is to get robust rather than precise matches, a low resolution DSM/orthophoto is good enough and keeps the computational cost low. \\
+However, downsampling factor of Fr{\'e}jus 2014 is set to be 12 instead of 24, as Fr{\'e}jus is mainly covered with buildings and the GSD of Fr{\'e}jus 2014 is too limited to tell details from DSM generated on images downsampled with factor 24.\\
 %For each dataset, one epoch (generally the most recent epoch) would be chosen as the reference epoch, the remaining epochs would be treated as free epochs. The rough co-registration is applied on each free epoch and the reference epoch to obtain the co-registered image orientations in the frame of the reference epoch.
 For each dataset, the rough co-registration is applied on each free epoch $E_f$ and the reference epoch $E_r$.
 \par
@@ -327,7 +326,7 @@ For each dataset, the rough co-registration is applied on each free epoch $E_f$ 
 %As inter-epoch images often look very different, when the original SIFT ~\cite{lowe2004distinctive} (i.e. $SIFT_{Default}$) is applied directly in our methods $SIFT_{ImgPairs}$, $SIFT_{Ortho}$ and $SIFT_{DSM}$, generally very few matches are recovered. So we replace it with a slightly different version of SIFT (i.e.  $SIFT_{Adapted}$) with the following modifications:\\
 For the SIFT algorithm applied in methods $SIFT_{ImgPairs}$, $SIFT_{Ortho}$ and $SIFT_{DSM}$, we did a test to compare the performance of SIFT on our multi-epoch dataset with different parameters. Two different sets of SIFT parameters are compared, which are indicated as $SIFT_{Default}$ and $SIFT_{Adapted}$:\\
 \begin{enumerate}
-	\item \textbf{$SIFT_{Default}$}: Extract SIFT keypoints on the input images, followed by mutual nearest neighbor matching combined with ratio test and FIGNN (REF).
+	\item \textbf{$SIFT_{Default}$}: Extract SIFT keypoints on the original images, followed by mutual nearest neighbor matching combined with ratio test and FIGNN (REF).
 	\item \textbf{$SIFT_{Adapted}$}: Downsample the input images with a factor of 3 and extract SIFT keypoints, match them by mutual nearest neighbor without ratio test and FIGNN, followed by applying RANSAC based on 2D similarity transformation model to remove outliers.
 \end{enumerate}
 
@@ -335,19 +334,20 @@ For the SIFT algorithm applied in methods $SIFT_{ImgPairs}$, $SIFT_{Ortho}$ and 
 %	\item Downsample the images by a factor of 3 (i.e. a total downsampling factor of 9 with respect to the input images) to focus on the global outline of the scene for improving robustness;
 %	\item Relax the matching restriction by skipping the ratio test to obtain more tentative matches followed by applying RANSAC based on 2D similarity transformation model to remove outliers.
 %\end{enumerate}
-Experiments comparing $SIFT_{Default}$ and $SIFT_{Adapted}$ on ${ImgPairs}$, ${Ortho}$ and ${DSM}$ are displayed in Appendix ~\ref{chap:appendix1}, in which $SIFT_{Adapted}$ recovered enough good matches while $SIFT_{Default}$ failed. It is reasonable as inter-epoch images often look very different, $SIFT_{Default}$ generally recover very few matches. By downsamping the images, we are able to focus on the global outline of the scene for improving robustness. By relaxing the matching restriction of ratio test and FIGNN, right matches would be reserved while wrong matches would be remover in the subsequent RANSAC.\\
+Experiments comparing $SIFT_{Default}$ and $SIFT_{Adapted}$ on methods ${ImgPairs}$, ${Ortho}$ and ${DSM}$ are displayed in Appendix ~\ref{chap:appendix1}, in which $SIFT_{Adapted}$ recovered enough good matches while $SIFT_{Default}$ failed. It is reasonable as inter-epoch images often look very different, $SIFT_{Default}$ generally recover very few matches. By downsamping the images, we are able to focus on the global outline of the scene for improving robustness. By relaxing the matching restriction of ratio test and FIGNN, right matches would be reserved while wrong matches would be removed in the subsequent RANSAC.\\
 
 For $SuperGlue_{ImgPairs}$, $SuperGlue_{Ortho}$ and $SuperGlue_{DSM}$, the image/patch pairs entering SuperGlue are downsampled to 640$\times$480 pixels, as it is the default parameter provided by the author and guarantees the best performance. For the tiling scheme in $SuperGlue_{Ortho}$ and $SuperGlue_{DSM}$, orthophotos/DSMs are split to tiles of the size 1280$\times$960 pixels.
 
 
 \subsection{Datasets}
 %Frejus, Pezenas, Kobe\\
-We tested our method on three datasets: Fr{\'e}jus, Pezenas and Kobe. Details of the datasets are listed in Table~\ref{Data details} and Figure~\ref{FrejusData},~\ref{PezenasData}, ~\ref{KobeData}.
+We tested our method on three sets of datasets: Fr{\'e}jus, Pezenas and Kobe. Details of the datasets are listed in Table~\ref{AerialData}, ~\ref{SatelliteData} and Figure~\ref{FrejusData},~\ref{PezenasData}, ~\ref{KobeData}.
 \par
 \paragraph{Fr{\'e}jus} It is a 15 $km^2$ rectangular area located in Fr{\'e}jus, a commune in southeastern France. The area is mainly covered with buildings along with scattered farmlands, except a half-moon-shaped bay located in south. We have four sets of aerial images acquired in 1954, 1966, 1970 and 2014. The epoch 2014 was acquired with the IGN's digital metric camera ~\cite{souchon2010ign}, its orientations are both in global reference frame and precise. Therefore it is treated as the ground truth (GT) during our processing (in other words, the epoch 2014 is chosen as the reference epoch). 
 The area exhibits drastic scene changes in the 60-year period, as can be seen in Figure~\ref{FrejusEvolution}, where the evolution of a subregion is displayed.\\
 \paragraph{Pezenas} It is a 420 $km^2$ rectangular area located in Pezenas in the Occitanie region in southern France. The area is mainly covered with vegetation and several sparsely populated urban zones. We have at our disposal three sets of aerial images acquired in 1971, 1981 and 2015, and one set of satellite images acquired in 2014. Both the epoch 2014 and 2015 are treated as GT. In this dataset we are interested in matching historical epochs (1971 and 1981) with aerial GT and satellite GT individually. The area exhibits changes in scene appearance in the 44-year period.\\
-\paragraph{Kobe} It is a 90 $km^2$ area of irregular shape located in the north of Awaji Island, Japan. The well-known Kobe earthquake happened here in January 1995. We have two sets of aerial images: pre-event acquired in 1991 and post-event acquired in 1995. It is mainly covered with mountain area and narrow urban zones along the sea. There is no GT, hence we chose the latter epoch (i.e. epoch 1995) as the reference epoch and measured 2 points on Google map to roughly scale the result to metric units. In this dataset we are interested in localizing the earthquake fault.
+\paragraph{Kobe} It is a 90 $km^2$ area of irregular shape located in the north of Awaji Island, Japan. The well-known Kobe earthquake happened here in January 1995. We have two sets of aerial images: pre-event acquired in 1991 and post-event acquired in 1995. It is mainly covered with mountain area and narrow urban zones along the sea. There is no GT, hence we chose the latter epoch (i.e. epoch 1995) as the reference epoch and measured 2 points on Google map to scale the result to metric units. In this dataset we are interested in localizing the earthquake fault.
+
 \begin{table}[htbp]
     \scriptsize %\footnotesize
     \centering
@@ -363,23 +363,28 @@ The area exhibits drastic scene changes in the 60-year period, as can be seen in
         S. o.&20\%&30\%&30\%&30\%&   20\%&20\%&50\%&50\%&   35\%&65\%\\
         H  [m]&2500&1700&1700&6500&2400&4500&4600&4600&3800&1400\\
         Nb &19&15&19&33&57&27&308&74&15&83\\\hline
-        
-        
-%       &E1971&E1981&\multicolumn{2}{c||}{E2015}&E1954&E1966&E1970&E2014&E1991&E1995\\\hline\hline
-%       F [pix]&7589&7607&9967.5&9204.5&23350&10230&10230&\color{black}18281&7662&7662\\
-%       %Size [mm]&230230&230230&47,35&50,36&\color{black}300,300&\color{black}180,180&\color{black}180,180&99.28,72.42&212212&212,212\\
-%       Wid [mm]&230&230&47&50&300&180&180&99.28&212&212\\
-%       Hei [mm]&230&230&35&36&300&180&180&72.42&212&212\\
-%       GSD [m]&0.32&0.59&0.46&0.5&\color{black}0.11&\color{black}0.17&0.17&0.35&0.5&0.18\\
-%       F. o.&   60\%&60\%&60\%&60\%&60\%&60\%&60\%&60\%&   65\%&65\%\\
-%       S. o.&   20\%&20\%&50\%&50\%&20\%&30\%&30\%&30\%&   35\%&65\%\\
-%       H  [m]&2400&4500&4600&4600&2500&1700&1700&6500&3800&1400\\
-%       Nb &57&27&308&74&19&15&19&33&15&83\\\hline
     \end{tabular}
     \caption{Aerial dataset details of Fr{\'e}jus, Pezenas and Kobe. The 2015 acquisition of Pezenas is obtained with two sets of camera. E stands for epoch, F means focal length, Wid and Hei are the width and height of image, GSD is the ground sampling distance, F.o. and S.o. are forward and side overlap, H is the flying height, Nb is the number of images.}
-    \label{Data details}
+    \label{AerialData}
 \end{table}
 
+\begin{table}[htbp]
+	\scriptsize %\footnotesize
+	\centering
+	\begin{tabular}{||l|c|c||}\hline
+		& Master image & Secondary image\\\hline
+		Constellation & Pleiades & Pleiades \\
+		Number of lines & 38468 & 37710 \\
+		Number of pixels per line & 34108 & 33392 \\
+		GSD [m] & 0.5 & 0.5\\
+		Cloud cover & 2.46\% & 2.53\% \\
+		Snow cover & 0\% & 0\% \\
+		Acquired date & 12/06/2014 & 12/06/2014 \\\hline
+		%B/H?
+	\end{tabular}
+	\caption{Satellite dataset details of Pezenas. GSD means the ground sampling distance.}
+	\label{SatelliteData}
+\end{table}
 
 \begin{figure*}[htbp]
     \begin{center}
@@ -538,7 +543,7 @@ For each dataset, each free epoch $E_f$ is matched with reference epoch $E_r$ fo
                 \includegraphics[width=6.8cm]{images/Chapitre3/Pseudo-Ortho-MEC-Malt_Tapas_1954_Ortho-MEC-Malt_2014.png}
             \end{minipage}%
         }
-        \subfigure[Match number (\textit{ImgPairs})]{
+        \subfigure[Number of recovered matches(\textit{ImgPairs})]{
     \begin{minipage}[t]{0.48\linewidth}
         \centering
         \includegraphics[width=3.5cm,trim=0 20 0 38,clip]{images/Chapitre3/PlotCurves_Pseudo-Ortho-MEC-Malt_Tapas_1954_Ortho-MEC-Malt_2014.png}
@@ -571,7 +576,7 @@ For each dataset, each free epoch $E_f$ is matched with reference epoch $E_r$ fo
         \includegraphics[width=6.8cm]{images/Chapitre3/Ortho-MEC-Malt_Tapas_1954_Ortho-MEC-Malt_2014.png}
     \end{minipage}%
 }
-\subfigure[Match number (\textit{Ortho})]{
+\subfigure[Number of recovered matches(\textit{Ortho})]{
     \begin{minipage}[t]{0.48\linewidth}
         \centering
         \includegraphics[width=3.5cm,trim=0 20 0 38,clip]{images/Chapitre3/PlotCurves_Ortho-MEC-Malt_Tapas_1954_Ortho-MEC-Malt_2014.png}
@@ -602,7 +607,7 @@ For each dataset, each free epoch $E_f$ is matched with reference epoch $E_r$ fo
         \includegraphics[width=6.8cm]{images/Chapitre3/MEC-Malt_Tapas_1954_MEC-Malt_2014.png}
     \end{minipage}%
 }
-\subfigure[Match number (\textit{DSM})]{
+\subfigure[Number of recovered matches(\textit{DSM})]{
     \begin{minipage}[t]{0.48\linewidth}
         \centering
         \includegraphics[width=3.5cm,trim=0 20 0 38,clip]{images/Chapitre3/PlotCurves_MEC-Malt_Tapas_1954_MEC-Malt_2014.png}
@@ -636,7 +641,7 @@ For each dataset, each free epoch $E_f$ is matched with reference epoch $E_r$ fo
                 \includegraphics[width=6.1cm]{images/Chapitre3/Pseudo-Ortho-MEC-Malt_Tapas_1966_Ortho-MEC-Malt_2014.png}
             \end{minipage}%
         }
-        \subfigure[Match number (\textit{ImgPairs})]{
+        \subfigure[Number of recovered matches(\textit{ImgPairs})]{
             \begin{minipage}[t]{0.48\linewidth}
                 \centering
                 \includegraphics[width=3.5cm,trim=0 20 0 38,clip]{images/Chapitre3/PlotCurves_Pseudo-Ortho-MEC-Malt_Tapas_1966_Ortho-MEC-Malt_2014.png}
@@ -668,7 +673,7 @@ For each dataset, each free epoch $E_f$ is matched with reference epoch $E_r$ fo
                 \includegraphics[width=6.1cm]{images/Chapitre3/Ortho-MEC-Malt_Tapas_1966_Ortho-MEC-Malt_2014.png}
             \end{minipage}%
         }
-        \subfigure[Match number (\textit{Ortho})]{
+        \subfigure[Number of recovered matches(\textit{Ortho})]{
             \begin{minipage}[t]{0.48\linewidth}
                 \centering
                 \includegraphics[width=3.5cm,trim=0 20 0 38,clip]{images/Chapitre3/PlotCurves_Ortho-MEC-Malt_Tapas_1966_Ortho-MEC-Malt_2014.png}
@@ -699,7 +704,7 @@ For each dataset, each free epoch $E_f$ is matched with reference epoch $E_r$ fo
                 \includegraphics[width=6.1cm]{images/Chapitre3/MEC-Malt_Tapas_1966_MEC-Malt_2014.png}
             \end{minipage}%
         }
-        \subfigure[Match number (\textit{DSM})]{
+        \subfigure[Number of recovered matches(\textit{DSM})]{
             \begin{minipage}[t]{0.48\linewidth}
                 \centering
                 \includegraphics[width=3.5cm,trim=0 20 0 38,clip]{images/Chapitre3/PlotCurves_MEC-Malt_Tapas_1966_MEC-Malt_2014.png}
@@ -734,7 +739,7 @@ For each dataset, each free epoch $E_f$ is matched with reference epoch $E_r$ fo
                 \includegraphics[width=5.2cm]{images/Chapitre3/Pseudo-Ortho-MEC-Malt_Tapas_1970_Ortho-MEC-Malt_2014.png}
             \end{minipage}%
         }
-        \subfigure[Match number (\textit{ImgPairs})]{
+        \subfigure[Number of recovered matches(\textit{ImgPairs})]{
             \begin{minipage}[t]{0.48\linewidth}
                 \centering
                 \includegraphics[width=3.5cm,trim=0 20 0 38,clip]{images/Chapitre3/PlotCurves_Pseudo-Ortho-MEC-Malt_Tapas_1970_Ortho-MEC-Malt_2014.png}
@@ -765,7 +770,7 @@ For each dataset, each free epoch $E_f$ is matched with reference epoch $E_r$ fo
                 \includegraphics[width=5.2cm]{images/Chapitre3/Ortho-MEC-Malt_Tapas_1970_Ortho-MEC-Malt_2014.png}
             \end{minipage}%
         }
-        \subfigure[Match number (\textit{Ortho})]{
+        \subfigure[Number of recovered matches(\textit{Ortho})]{
             \begin{minipage}[t]{0.48\linewidth}
                 \centering
                 \includegraphics[width=3.5cm,trim=0 20 0 38,clip]{images/Chapitre3/PlotCurves_Ortho-MEC-Malt_Tapas_1970_Ortho-MEC-Malt_2014.png}
@@ -796,7 +801,7 @@ For each dataset, each free epoch $E_f$ is matched with reference epoch $E_r$ fo
                 \includegraphics[width=5.2cm]{images/Chapitre3/MEC-Malt_Tapas_1970_MEC-Malt_2014.png}
             \end{minipage}%
         }
-        \subfigure[Match number (\textit{DSM})]{
+        \subfigure[Number of recovered matches(\textit{DSM})]{
             \begin{minipage}[t]{0.48\linewidth}
                 \centering
                 \includegraphics[width=3.5cm,trim=0 20 0 38,clip]{images/Chapitre3/PlotCurves_MEC-Malt_Tapas_1970_MEC-Malt_2014.png}
@@ -831,7 +836,7 @@ For each dataset, each free epoch $E_f$ is matched with reference epoch $E_r$ fo
                 \includegraphics[width=5.1cm]{images/Chapitre3/Pseudo-Ortho-MEC-Malt_Tapas_1971_Ortho-MEC-Malt_2015.png}
             \end{minipage}%
         }
-        \subfigure[Match number (\textit{ImgPairs})]{
+        \subfigure[Number of recovered matches(\textit{ImgPairs})]{
             \begin{minipage}[t]{0.48\linewidth}
                 \centering
                 \includegraphics[width=3.5cm,trim=0 20 0 38,clip]{images/Chapitre3/PlotCurves_Pseudo-Ortho-MEC-Malt_Tapas_1971_Ortho-MEC-Malt_2015.png}
@@ -862,7 +867,7 @@ For each dataset, each free epoch $E_f$ is matched with reference epoch $E_r$ fo
                 \includegraphics[width=5.1cm]{images/Chapitre3/Ortho-MEC-Malt_Tapas_1971_Ortho-MEC-Malt_2015.png}
             \end{minipage}%
         }
-        \subfigure[Match number (\textit{Ortho})]{
+        \subfigure[Number of recovered matches(\textit{Ortho})]{
             \begin{minipage}[t]{0.48\linewidth}
                 \centering
                 \includegraphics[width=3.5cm,trim=0 20 0 38,clip]{images/Chapitre3/PlotCurves_Ortho-MEC-Malt_Tapas_1971_Ortho-MEC-Malt_2015.png}
@@ -893,7 +898,7 @@ For each dataset, each free epoch $E_f$ is matched with reference epoch $E_r$ fo
                 \includegraphics[width=5.1cm]{images/Chapitre3/MEC-Malt_Tapas_1971_MEC-Malt_2015.png}
             \end{minipage}%
         }
-        \subfigure[Match number (\textit{DSM})]{
+        \subfigure[Number of recovered matches(\textit{DSM})]{
             \begin{minipage}[t]{0.48\linewidth}
                 \centering
                 \includegraphics[width=3.5cm,trim=0 20 0 38,clip]{images/Chapitre3/PlotCurves_MEC-Malt_Tapas_1971_MEC-Malt_2015.png}
@@ -928,7 +933,7 @@ For each dataset, each free epoch $E_f$ is matched with reference epoch $E_r$ fo
                 \includegraphics[width=5.1cm]{images/Chapitre3/Pseudo-Ortho-MEC-Malt_Tapas_1981_Ortho-MEC-Malt_2015.png}
             \end{minipage}%
         }
-        \subfigure[Match number (\textit{ImgPairs})]{
+        \subfigure[Number of recovered matches(\textit{ImgPairs})]{
             \begin{minipage}[t]{0.48\linewidth}
                 \centering
                 \includegraphics[width=3.5cm,trim=0 20 0 38,clip]{images/Chapitre3/PlotCurves_Pseudo-Ortho-MEC-Malt_Tapas_1981_Ortho-MEC-Malt_2015.png}
@@ -959,7 +964,7 @@ For each dataset, each free epoch $E_f$ is matched with reference epoch $E_r$ fo
                 \includegraphics[width=5.1cm]{images/Chapitre3/Ortho-MEC-Malt_Tapas_1981_Ortho-MEC-Malt_2015.png}
             \end{minipage}%
         }
-        \subfigure[Match number (\textit{Ortho})]{
+        \subfigure[Number of recovered matches(\textit{Ortho})]{
             \begin{minipage}[t]{0.48\linewidth}
                 \centering
                 \includegraphics[width=3.5cm,trim=0 20 0 38,clip]{images/Chapitre3/PlotCurves_Ortho-MEC-Malt_Tapas_1981_Ortho-MEC-Malt_2015.png}
@@ -990,7 +995,7 @@ For each dataset, each free epoch $E_f$ is matched with reference epoch $E_r$ fo
                 \includegraphics[width=5.1cm]{images/Chapitre3/MEC-Malt_Tapas_1981_MEC-Malt_2015.png}
             \end{minipage}%
         }
-        \subfigure[Match number (\textit{DSM})]{
+        \subfigure[Number of recovered matches(\textit{DSM})]{
             \begin{minipage}[t]{0.48\linewidth}
                 \centering
                 \includegraphics[width=3.5cm,trim=0 20 0 38,clip]{images/Chapitre3/PlotCurves_MEC-Malt_Tapas_1981_MEC-Malt_2015.png}
@@ -1026,7 +1031,7 @@ For each dataset, each free epoch $E_f$ is matched with reference epoch $E_r$ fo
 				\includegraphics[width=6.8cm]{images/Chapitre3/Ortho-MEC-Malt_Tapas_1971_Ortho-MEC-Malt_Satellite.png}
 			\end{minipage}%
 		}
-		\subfigure[Match number (\textit{Ortho})]{
+		\subfigure[Number of recovered matches(\textit{Ortho})]{
 			\begin{minipage}[t]{0.48\linewidth}
 				\centering
 				\includegraphics[width=4.9cm,trim=0 20 0 38,clip]{images/Chapitre3/PlotCurves_Ortho-MEC-Malt_Tapas_1971_Ortho-MEC-Malt_Satellite.png}
@@ -1057,7 +1062,7 @@ For each dataset, each free epoch $E_f$ is matched with reference epoch $E_r$ fo
 				\includegraphics[width=6.8cm]{images/Chapitre3/MEC-Malt_Tapas_1971_MEC-Malt_Satellite.png}
 			\end{minipage}%
 		}
-		\subfigure[Match number (\textit{DSM})]{
+		\subfigure[Number of recovered matches(\textit{DSM})]{
 			\begin{minipage}[t]{0.48\linewidth}
 				\centering
 				\includegraphics[width=4.9cm,trim=0 20 0 38,clip]{images/Chapitre3/PlotCurves_MEC-Malt_Tapas_1971_MEC-Malt_Satellite.png}
@@ -1092,7 +1097,7 @@ For each dataset, each free epoch $E_f$ is matched with reference epoch $E_r$ fo
 				\includegraphics[width=6.8cm]{images/Chapitre3/Ortho-MEC-Malt_Tapas_1981_Ortho-MEC-Malt_Satellite.png}
 			\end{minipage}%
 		}
-		\subfigure[Match number (\textit{Ortho})]{
+		\subfigure[Number of recovered matches(\textit{Ortho})]{
 			\begin{minipage}[t]{0.48\linewidth}
 				\centering
 				\includegraphics[width=4.9cm,trim=0 20 0 38,clip]{images/Chapitre3/PlotCurves_Ortho-MEC-Malt_Tapas_1981_Ortho-MEC-Malt_Satellite.png}
@@ -1123,7 +1128,7 @@ For each dataset, each free epoch $E_f$ is matched with reference epoch $E_r$ fo
 				\includegraphics[width=6.8cm]{images/Chapitre3/MEC-Malt_Tapas_1981_MEC-Malt_Satellite.png}
 			\end{minipage}%
 		}
-		\subfigure[Match number (\textit{DSM})]{
+		\subfigure[Number of recovered matches(\textit{DSM})]{
 			\begin{minipage}[t]{0.48\linewidth}
 				\centering
 				\includegraphics[width=4.9cm,trim=0 20 0 38,clip]{images/Chapitre3/PlotCurves_MEC-Malt_Tapas_1981_MEC-Malt_Satellite.png}
@@ -1159,7 +1164,7 @@ For each dataset, each free epoch $E_f$ is matched with reference epoch $E_r$ fo
                 \includegraphics[width=2.3cm,angle=90]{images/Chapitre3/Pseudo-Ortho-MEC-Malt_Tapas_1991_Ortho-MEC-Malt_Tapas_1994.png}
             \end{minipage}%
         }
-        \subfigure[Match number (\textit{ImgPairs})]{
+        \subfigure[Number of recovered matches(\textit{ImgPairs})]{
             \begin{minipage}[t]{0.48\linewidth}
                 \centering
                 \includegraphics[width=3.5cm,trim=0 20 0 38,clip]{images/Chapitre3/PlotCurves_Pseudo-Ortho-MEC-Malt_Tapas_1991_Ortho-MEC-Malt_Tapas_1994.png}
@@ -1190,7 +1195,7 @@ For each dataset, each free epoch $E_f$ is matched with reference epoch $E_r$ fo
                 \includegraphics[width=2.3cm,angle=90]{images/Chapitre3/Ortho-MEC-Malt_Tapas_1991_Ortho-MEC-Malt_Tapas_1994.png}
             \end{minipage}%
         }
-        \subfigure[Match number (\textit{Ortho})]{
+        \subfigure[Number of recovered matches(\textit{Ortho})]{
             \begin{minipage}[t]{0.48\linewidth}
                 \centering
                 \includegraphics[width=3.5cm,trim=0 20 0 38,clip]{images/Chapitre3/PlotCurves_Ortho-MEC-Malt_Tapas_1991_Ortho-MEC-Malt_Tapas_1994.png}
@@ -1221,7 +1226,7 @@ For each dataset, each free epoch $E_f$ is matched with reference epoch $E_r$ fo
                 \includegraphics[width=2.3cm,angle=90]{images/Chapitre3/MEC-Malt_Tapas_1991_MEC-Malt_Tapas_1994.png}
             \end{minipage}%
         }
-        \subfigure[Match number (\textit{DSM})]{
+        \subfigure[Number of recovered matches(\textit{DSM})]{
             \begin{minipage}[t]{0.48\linewidth}
                 \centering
                 \includegraphics[width=3.5cm,trim=0 20 0 38,clip]{images/Chapitre3/PlotCurves_MEC-Malt_Tapas_1991_MEC-Malt_Tapas_1994.png}
@@ -1651,66 +1656,69 @@ For each dataset, each free epoch $E_f$ is matched with reference epoch $E_r$ fo
 	\centering
 	\begin{tabular}{||l|l|c|c|c||}\hline
 		& &$\mu$ [m]&$\sigma$ [m]&$|\mu|$ [m]\\\hline\hline
-        \multirow{6}{*}{$DoD^{Frejus}_{1954-2014}$}&${SuperGlue_{ImgPairs}}$ & 5.70 & 6.32 & 6.62\\
-&${SIFT_{ImgPairs}}$ & / & / & / \\
+        \multirow{6}{*}{$DoD^{Frejus}_{1954-2014}$}
+&${SuperGlue_{ImgPairs}}$ & 5.70 & 6.32 & 6.62\\
 &${SuperGlue_{Ortho}}$ & 2.19 & 6.46 & 4.55\\
-&${SIFT_{Ortho}}$ & / & / & / \\
 &${SuperGlue_{DSM}}$ & 2.07 & 4.87 & \textbf{3.83} \\
+&${SIFT_{ImgPairs}}$ & / & / & / \\
+&${SIFT_{Ortho}}$ & / & / & / \\
 &${SIFT_{DSM}}$ & 6.92 & 8.47 & 8.04\\\hline
 
-\multirow{6}{*}{$DoD^{Frejus}_{1966-2014}$}&${SuperGlue_{ImgPairs}}$ & -1.36 & 3.82 & 2.90\\
-&${SIFT_{ImgPairs}}$ & / & / & / \\
+\multirow{6}{*}{$DoD^{Frejus}_{1966-2014}$}
+&${SuperGlue_{ImgPairs}}$ & -1.36 & 3.82 & 2.90\\
 &${SuperGlue_{Ortho}}$ & -0.37 & 4.22 & 3.01\\
-&${SIFT_{Ortho}}$ & / & / & / \\
 &${SuperGlue_{DSM}}$ & -0.46 & 3.77 & \textbf{2.68}\\
+&${SIFT_{ImgPairs}}$ & / & / & / \\
+&${SIFT_{Ortho}}$ & / & / & / \\
 &${SIFT_{DSM}}$ & -1.72 & 4.92 & 3.75\\\hline
 
-\multirow{6}{*}{$DoD^{Frejus}_{1970-2014}$}&${SuperGlue_{ImgPairs}}$ & -5.04 & 5.09 & 5.70\\
-&${SIFT_{ImgPairs}}$ & / & / & / \\
+\multirow{6}{*}{$DoD^{Frejus}_{1970-2014}$}
+&${SuperGlue_{ImgPairs}}$ & -5.04 & 5.09 & 5.70\\
 &${SuperGlue_{Ortho}}$ & -2.63 & 5.18 & \textbf{4.39}\\
-&${SIFT_{Ortho}}$ & / & / & / \\
 &${SuperGlue_{DSM}}$ & -1.71 & 5.75 & 4.61\\
+&${SIFT_{ImgPairs}}$ & / & / & / \\
+&${SIFT_{Ortho}}$ & / & / & / \\
 &${SIFT_{DSM}}$ & -3.17 & 5.44 & 4.71\\\hline
 
 
 \multirow{6}{*}{$DoD^{Pezenas}_{1971-2015}$}
 &${SuperGlue_{ImgPairs}}$ & -7.42 & 16.60 & 13.78\\
-&${SIFT_{ImgPairs}}$ & 2.77 & 16.58 & 13.98\\
 &${SuperGlue_{Ortho}}$ & -8.46 & 22.36 & 16.68\\
-&${SIFT_{Ortho}}$ & -8.05 & 21.71 & 17.07\\
 &${SuperGlue_{DSM}}$ & 4.71 & 16.85 & 14.20\\
+&${SIFT_{ImgPairs}}$ & 2.77 & 16.58 & 13.98\\
+&${SIFT_{Ortho}}$ & -8.05 & 21.71 & 17.07\\
 &${SIFT_{DSM}}$ & -0.75 & 17.75 & \textbf{13.74}\\\hline
 
-\multirow{6}{*}{$DoD^{Pezenas}_{1981-2015}$}&${SuperGlue_{ImgPairs}}$ & -0.39 & 9.12 & \textbf{7.10}\\
-&${SIFT_{ImgPairs}}$ & -2.01 & 10.07 & 7.80\\
+\multirow{6}{*}{$DoD^{Pezenas}_{1981-2015}$}
+&${SuperGlue_{ImgPairs}}$ & -0.39 & 9.12 & \textbf{7.10}\\
 &${SuperGlue_{Ortho}}$ & -2.60 & 9.93 & 7.76\\
-&${SIFT_{Ortho}}$ & -4.80 & 13.25 & 10.33\\
 &${SuperGlue_{DSM}}$ & 0.64 & 9.15 & 7.24\\
+&${SIFT_{ImgPairs}}$ & -2.01 & 10.07 & 7.80\\
+&${SIFT_{Ortho}}$ & -4.80 & 13.25 & 10.33\\
 &${SIFT_{DSM}}$ & -0.73 & 9.67 & 7.42\\\hline
 
 %%%%%%%%%%%%%%%%%%%%%%%%satellite
 \multirow{4}{*}{$DoD^{Pezenas}_{1971-2014(Satellite)}$}
 &${SuperGlue_{Ortho}}$ & / & / & /\\
-&${SIFT_{Ortho}}$ & / & / & /\\
 &${SuperGlue_{DSM}}$ & -1.85 & 13.24 & 9.15\\
-&${SIFT_{DSM}}$ & 0.58 & 7.82 & \textbf{3.18}\\
-\hline
+&${SIFT_{Ortho}}$ & / & / & /\\
+&${SIFT_{DSM}}$ & 0.58 & 7.82 & \textbf{3.18}\\\hline
 
 \multirow{4}{*}{$DoD^{Pezenas}_{1981-2014(Satellite)}$}
 &${SuperGlue_{Ortho}}$ & 0.59 & 9.87 & 5.66\\
-&${SIFT_{Ortho}}$ & / & / & /\\
 &${SuperGlue_{DSM}}$ & 0.31 & 9.88 & 5.73\\
-&${SIFT_{DSM}}$ & 0.46 & 5.96 & \textbf{1.92}\\
-\hline
+&${SIFT_{Ortho}}$ & / & / & /\\
+&${SIFT_{DSM}}$ & 0.46 & 5.96 & \textbf{1.92}\\\hline
 
 
-\multirow{6}{*}{$DoD^{Kobe}_{1991-1995}$}&${SuperGlue_{ImgPairs}}$ & -1.63 & 13.85 & \textbf{7.24}\\
-&${SIFT_{ImgPairs}}$ & / & / & / \\
+\multirow{6}{*}{$DoD^{Kobe}_{1991-1995}$}
+&${SuperGlue_{ImgPairs}}$ & -1.63 & 13.85 & \textbf{7.24}\\
 %&${SIFT_{ImgPairs}}$ & 167.46 & 121.26 & 168.47\\
 &${SuperGlue_{Ortho}}$ & -0.54 & 14.83 & 7.78\\
-&${SIFT_{Ortho}}$ & / & / & / \\
 %&${SIFT_{Ortho}}$ & 4.29 & 41.89 & 26.01\\
 &${SuperGlue_{DSM}}$ & -0.75 & 14.62 & 7.95\\
+&${SIFT_{ImgPairs}}$ & / & / & / \\
+&${SIFT_{Ortho}}$ & / & / & / \\
 &${SIFT_{DSM}}$ & 0.27 & 14.40 & 7.57\\\hline
 	
 \end{tabular}
