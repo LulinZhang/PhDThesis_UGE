@@ -377,7 +377,7 @@ The area exhibits drastic scene changes in the 60-year period, as can be seen in
 		Number of lines & 38468 & 37710 \\
 		Number of pixels per line & 34108 & 33392 \\
 		GSD [m] & 0.5 & 0.5\\
-		Cloud cover & 2.46\% & 2.53\% \\
+		Cloud cover & 3.9\% & 4.0\% \\
 		Snow cover & 0\% & 0\% \\
 		Acquired date & 12/06/2014 & 12/06/2014 \\\hline
 		%B/H?
@@ -504,11 +504,12 @@ The area exhibits drastic scene changes in the 60-year period, as can be seen in
 %\end{itemize}
 %%as check points to evaluate the roughly co-registered orientations resulted by 6 methods:\\
 In order to evaluate the results qualitatively and quantitatively, the following criterias would be applied:\\
-\begin{itemize}
-    \item Matches visualization: the number of (1) total matches (i.e. matches before RANSAC) as well as (2) RANSAC inliers (matches that survived RANSAC) would be displayed together in bar charts; in the meantime, the RANSAC inliers would be visualized and demonstrated.
+\begin{enumerate}
+    \item \textbf{Matches visualization}. The number of (1) total matches (i.e. matches before RANSAC) as well as (2) RANSAC inliers (matches that survived RANSAC) would be displayed together in bar charts; in the meantime, the RANSAC inliers would be visualized and demonstrated, from which we can tell whether the methods succeeded or failed on each dataset.
 %    \item Ground check points: the co-registered orientations calculated by our methods would be used to triangulate the ground check points and the coordinate differences \textcolor{red}{(explain the diff means the mean diff of x, y and z)} will be displayed. The better the epochs co-register, the smaller the difference is.
-    \item DoD: the co-registered orientations calculated by our methods would be used to calculate DSMs in order to generate DoD. Ideally the DoD should only display the scene changes. If the dome effect appears, it indicates the systematic errors caused by poorly estimated camera parameters.   
-\end{itemize}
+    \item \textbf{DoD}. For the methods that succeeded, we use the resulted orientations in the same frame to calculate DSMs in order to generate DoD. The visualization of DoD as well as the statistical information would be displayed.
+    %Ideally the DoD should only display the scene changes. If the dome effect appears, it indicates the systematic errors caused by poorly estimated camera parameters.   
+\end{enumerate}
 
 \subsection{Comparison}
 %分三部分分别展示3组数据的结果
@@ -516,22 +517,72 @@ In order to evaluate the results qualitatively and quantitatively, the following
 %1张表表示6种方法的(1)和(2)，1张大图放6种方法的DoD, inlier tie pt图（R3D, DSM, ortho各3张（无点图，SIFT点图，SpG点图））
 
 \subsubsection{Matches visualization}
-For each dataset, each free epoch $E_f$ is matched with reference epoch $E_r$ for rough co-registration with 6 methods ($SIFT_{ImgPairs}$, $SuperGlue_{ImgPairs}$, $SIFT_{Ortho}$, $SuperGlue_{Ortho}$, $SIFT_{DSM}$ and $SuperGlue_{DSM}$), the matches are visualized and displayed together for comparison.\\
+For each dataset, each free epoch $E_f$ is matched with reference epoch $E_r$ for rough co-registration with 6 methods ($SIFT_{ImgPairs}$, $SuperGlue_{ImgPairs}$, $SIFT_{Ortho}$, $SuperGlue_{Ortho}$, $SIFT_{DSM}$ and $SuperGlue_{DSM}$), the matches are visualized and displayed together for comparison. In Table~\ref{succeedorfail} we displayed whether the 6 methods succeeded or failed on each dataset.\\
 \begin{enumerate}
-	\item For Fr{\'e}jus, the matches visualizations between free epochs (i.e. epoch 1954, 1966 and 1970) and reference epoch (i.e. epoch 2014) are displayed in Figure~\ref{MatchVizFrejus1954DSM}, ~\ref{MatchVizFrejus1966DSM} and ~\ref{MatchVizFrejus1970DSM} individually. As can be seen:\\
+	\item For Fr{\'e}jus, the reference epoch is 2014, the matches visualizations between free epochs (i.e. epoch 1954, 1966 and 1970) and it are displayed in Figure~\ref{MatchVizFrejus1954DSM}, ~\ref{MatchVizFrejus1966DSM} and ~\ref{MatchVizFrejus1970DSM} individually. As can be seen, for all 3 free epochs:\\
 	\begin{itemize}
-		\item $SIFT_{ImgPairs}$ and $SIFT_{Ortho}$ failed to recover correct matches for all 3 free epochs. It is reasonable as extreme scene changes are present in Fr{\'e}jus, and SIFT is not sufficiently invariant over time by its very nature.
-		\item $SIFT_{DSM}$ found several good matches after RANSAC, thanks to stable information on DSMs. However, the inlier ratio is dangerously low (around 1\%), which makes the RANSAC procedure unstable.
-		\item $SuperGlue_{ImgPairs}$, $SuperGlue_{Ortho}$ and $SuperGlue_{DSM}$ succeeded to find enough good matches, with the inlier ratios ranging from 3.3\% to 46.5\%. In general, the GT inlier ratios raise from $SuperGlue_{ImgPairs}$ to $SuperGlue_{Ortho}$ then to $SuperGlue_{DSM}$.
+		\item[-] $SIFT_{ImgPairs}$ and $SIFT_{Ortho}$ failed to recover correct matches. It is reasonable as extreme scene changes are present in Fr{\'e}jus, and SIFT is not sufficiently invariant over time by its very nature.
+		\item[-] $SIFT_{DSM}$ found several good matches after RANSAC, thanks to stable information on DSMs. However, the inlier ratio is dangerously low (around 1\%), which makes the RANSAC procedure unstable.
+		\item[-] $SuperGlue_{ImgPairs}$, $SuperGlue_{Ortho}$ and $SuperGlue_{DSM}$ succeeded to find enough good matches, with the inlier ratios ranging from 3.3\% to 46.5\%. In general, the inlier ratios raise from $SuperGlue_{ImgPairs}$ to $SuperGlue_{Ortho}$ then to $SuperGlue_{DSM}$.
 	\end{itemize}
 	%$SIFT_{ImgPairs}$, $SuperGlue_{ImgPairs}$, $SIFT_{Ortho}$, $SuperGlue_{Ortho}$, $SIFT_{DSM}$ and $SuperGlue_{DSM}$
-	\item For Pezenas, the matches visualizations between free epochs (i.e. epoch 1971 and 1981) and reference aerial epoch (i.e. epoch 2015) are displayed in Figure~\ref{MatchVizPezenas1971DSM} and ~\ref{MatchVizPezenas1981DSM}, and that between free epochs and reference satellite epoch (i.e. epoch 2014) are shown in Figure~\ref{MatchVizPezenas-Satellite1971DSM} and ~\ref{MatchVizPezenas-Satellite1981DSM}. As can be seen:\\
+	\item For Pezenas, there are 2 reference epochs:\\
 	\begin{itemize}
-		\item $SIFT_{ImgPairs}$, $SIFT_{Ortho}$ and $SIFT_{DSM}$ successfully recovered enough correct matches for all 2 free epochs (with GT inlier ratios above 40\%, 1\% and 10\% individually). $SIFT_{Ortho}$ has obviously lower inlier ratio than $SIFT_{ImgPairs}$, because higher resolution is possessed by image pairs, which improves the result for dataset with moderate scene changes like Pezenas.
-		\item $SuperGlue_{ImgPairs}$, $SuperGlue_{Ortho}$ and $SuperGlue_{DSM}$ recovered more total matches along with higher GT inlier ratio than SIFT for all 2 free epochs. The inlier ratio of $SuperGlue_{Ortho}$ is around 30\%, significantly larger than $SIFT_{Ortho}$, which we attribute to 2 reasons: (1) SuperGlue is more invariant over time as it is trained on multi-epoch images and (2) our tiling scheme. 
+	\item For aerial reference epoch 2015, the matches visualizations between free epochs (i.e. epoch 1971 and 1981) and it are displayed in Figure~\ref{MatchVizPezenas1971DSM} and ~\ref{MatchVizPezenas1981DSM}. As can be seen, for all 2 free epochs:\\
+		\begin{itemize}
+			\item[-] $SIFT_{ImgPairs}$, $SIFT_{Ortho}$ and $SIFT_{DSM}$ successfully recovered enough correct matches (with inlier ratios above 43\%, 1\% and 14\% individually). $SIFT_{Ortho}$ has obviously lower inlier ratio than $SIFT_{ImgPairs}$, because higher resolution is possessed by image pairs, which improves the result for dataset with moderate scene changes like Pezenas.
+			\item[-] $SuperGlue_{ImgPairs}$, $SuperGlue_{Ortho}$ and $SuperGlue_{DSM}$ recovered more total matches along with generally higher inlier ratio than SIFT. The inlier ratio of $SuperGlue_{Ortho}$ is above 76\%, significantly larger than $SIFT_{Ortho}$, which we attribute to 2 reasons: (1) SuperGlue is more invariant over time as it is trained on multi-epoch images and (2) our tiling scheme. 
+		\end{itemize}
+	\item For satellite reference epoch 2014, the matches visualizations between free epochs (i.e. epoch 1971 and 1981) and it are shown in Figure~\ref{MatchVizPezenas-Satellite1971DSM} and ~\ref{MatchVizPezenas-Satellite1981DSM}. As can be seen:\\
+		\begin{itemize}
+			\item[-] The results are inferior than the ones on aerial reference epoch 2015, since satellite epoch has not only more limited common zone with the free epochs, especially for epoch 1971, but also covered with clouds.
+			\item[-] $SIFT_{Ortho}$ failed on both free epochs, while $SIFT_{DSM}$ found enough good matches with inlier ratio around 4\%, as landscapes are more informative.
+			\item[-] $SuperGlue_{Ortho}$ failed on epoch 1971 yet succeeded on epoch 1981, as larger common zone provides more clues in context to ensure the matching performance. $SuperGlue_{DSM}$ recovered more good matches with larger inlier ratio than $SIFT_{DSM}$ on both epochs.
+		\end{itemize}
 	\end{itemize}
-	\item For Kobe, the matches visualizations between free epoch (i.e. epoch 1991) and reference epoch (i.e. epoch 1995) are displayed in Figure~\ref{MatchVizKobe1991DSM}.
+	\item For Kobe, the reference epoch is 1995, the matches visualizations between free epoch (i.e. epoch 1991) and it are displayed in Figure~\ref{MatchVizKobe1991DSM}.
+		\begin{itemize}
+		\item[-] $SIFT_{ImgPairs}$ and $SIFT_{Ortho}$ failed while $SIFT_{DSM}$ performs well.
+		\item[-] $SuperGlue_{ImgPairs}$, $SuperGlue_{Ortho}$ and $SuperGlue_{DSM}$ successfully found good matches with inlier ratio over 32\% .
+	\end{itemize}
 \end{enumerate}
+
+\begin{table}[htbp]
+	\scriptsize %\footnotesize
+	\centering
+	\begin{tabular}{||l|c|c|c|c|c|c||}\hline
+		&\multicolumn{2}{c|}{ImgPairs} &\multicolumn{2}{c|}{Ortho} &\multicolumn{2}{c|}{DSM}\\\hline
+		& SIFT & SuperGlue & SIFT & SuperGlue & SIFT & SuperGlue \\\hline\hline
+		%& $SIFT_{ImgPairs}$ & $SIFT_{Ortho}$ & $SIFT_{DSM}$ & $SuperGlue_{ImgPairs}$ & $SuperGlue_{Ortho}$ & $SuperGlue_{DSM}$\\\hline
+%		$Frejus_{2014}^{1954}$ & Fail & Fail & \textbf{Succeed} & \textbf{Succeed} & \textbf{Succeed} & \textbf{Succeed} \\
+%		$Frejus_{2014}^{1966}$ & Fail & Fail & \textbf{Succeed} & \textbf{Succeed} & \textbf{Succeed} & \textbf{Succeed} \\
+%		$Frejus_{2014}^{1970}$ & Fail & Fail & \textbf{Succeed} & \textbf{Succeed} & \textbf{Succeed} & \textbf{Succeed} \\\hline
+%		$Pezenas_{2015}^{1971}$ & \textbf{Succeed} & \textbf{Succeed} & \textbf{Succeed} & \textbf{Succeed} & \textbf{Succeed} & \textbf{Succeed} \\
+%		$Pezenas_{2015}^{1981}$ & \textbf{Succeed} & \textbf{Succeed} & \textbf{Succeed} & \textbf{Succeed} & \textbf{Succeed} & \textbf{Succeed} \\\hline
+%		$Pezenas_{2014(Satellite)}^{1971}$ & / & Fail & \textbf{Succeed} & / & Fail & \textbf{Succeed} \\
+%		$Pezenas_{2014(Satellite)}^{1981}$ & / & Fail & \textbf{Succeed} & / & \textbf{Succeed} & \textbf{Succeed} \\\hline
+%		$Frejus_{1995}^{1991}$ & Fail & Fail & \textbf{Succeed} & \textbf{Succeed} & \textbf{Succeed} & \textbf{Succeed} \\\hline
+$Frejus_{2014}^{1954}$ &  Fail  &  \textbf{Succeed}  &  Fail  &  \textbf{Succeed}  &  \textbf{Succeed}  &  \textbf{Succeed} \\
+$Frejus_{2014}^{1966}$ &  Fail  &  \textbf{Succeed}  &  Fail  &  \textbf{Succeed}  &  \textbf{Succeed}  &  \textbf{Succeed} \\
+$Frejus_{2014}^{1970}$ &  Fail  &  \textbf{Succeed}  &  Fail  &  \textbf{Succeed}  &  \textbf{Succeed}  &  \textbf{Succeed} \\\hline
+$Pezenas_{2015}^{1971}$ &  \textbf{Succeed}  &  \textbf{Succeed}  &  \textbf{Succeed}  &  \textbf{Succeed}  &  \textbf{Succeed}  &  \textbf{Succeed} \\
+$Pezenas_{2015}^{1981}$ &  \textbf{Succeed}  &  \textbf{Succeed}  &  \textbf{Succeed}  &  \textbf{Succeed}  &  \textbf{Succeed}  &  \textbf{Succeed} \\\hline
+$Pezenas_{2014(Satellite)}^{1971}$ & / & / &  Fail  &  Fail  &  \textbf{Succeed}  &  \textbf{Succeed} \\
+$Pezenas_{2014(Satellite)}^{1981}$ & / & / &  Fail  &  \textbf{Succeed}  &  \textbf{Succeed}  &  \textbf{Succeed} \\\hline
+$Frejus_{1995}^{1991}$ &  Fail  &  \textbf{Succeed}  &  Fail  &  \textbf{Succeed}  &  \textbf{Succeed}  &  \textbf{Succeed} \\\hline
+	\end{tabular}
+	\caption{Demonstration of 6 methods succeed or fail on each dataset.}
+	\label{succeedorfail}
+\end{table}
+
+In conclusion:\\
+\begin{itemize}
+	\item SuperGlue works better than SIFT for all the 3 pipelines (\textit{ImgPairs}, \textit{Ortho}, \textit{DSM}). 
+	\item \textit{DSM} gets better performance than \textit{ImgPairs} and \textit{Ortho}.
+	\item \textit{ImgPairs} often gets more numerous matches as they have higher resolution than \textit{Ortho} and \textit{DSM}, which leads to lower efficiency. However the performance is not necessarily better.
+\end{itemize}
+
+%Generally speaking, \textit{DSM} gets better performance than \textit{ImgPairs} and \textit{Ortho}. The result of \textit{ImgPairs} is not bad on 
 %总结：变化不大时，ImgPairs效果最好
 %ImgPairs效率最低
 
@@ -561,7 +612,7 @@ For each dataset, each free epoch $E_f$ is matched with reference epoch $E_r$ fo
                 \includegraphics[width=6.8cm]{images/Chapitre3/Pseudo-Homol-SuperGlue_1954-2014-GlobalR3D-PileImg_Ortho-MEC-Malt_Tapas_1954_Ortho-MEC-Malt_2014.png}
             \end{minipage}%
         }
-%        \caption{Result of matching image pairs (i.e. \textit{ImgPairs}) of Fr{\'e}jus 1954 and 2014. (a) Image pairs to be matched, with red rectangles indicating the common zone. (b) Numbers of total matches, GT inliers and RANSAC inliers of both SIFT and SuperGlue. (c) Visualization of RANSAC inliers based on SIFT. (d) Visualization of RANSAC inliers based on SuperGlue.}
+%        \caption{Result of matching image pairs (i.e. \textit{ImgPairs}) of Fr{\'e}jus 1954 and 2014. (a) Image pairs to be matched, with red rectangles indicating the common zone. (b) Numbers of total matches and RANSAC inliers of both SIFT and SuperGlue. (c) Visualization of RANSAC inliers based on SIFT. (d) Visualization of RANSAC inliers based on SuperGlue.}
 %        \label{MatchVizFrejus1954ImgPairs}
 %    \end{center}
 %\end{figure*} 
@@ -594,7 +645,7 @@ For each dataset, each free epoch $E_f$ is matched with reference epoch $E_r$ fo
                 \includegraphics[width=6.8cm]{images/Chapitre3/Homol-SubPatch_R270-2DRANSAC_Ortho-MEC-Malt_Tapas_1954_Ortho-MEC-Malt_2014.png}
             \end{minipage}%
         }
-%        \caption{Result of matching orthophotos (i.e. \textit{Ortho}) of Fr{\'e}jus 1954 and 2014. (a) Orthophotos to be matched, with red rectangles indicating the common zone. (b) Numbers of total matches, GT inliers and RANSAC inliers of both SIFT and SuperGlue. (c) Visualization of RANSAC inliers based on SIFT. (d) Visualization of RANSAC inliers based on SuperGlue.}
+%        \caption{Result of matching orthophotos (i.e. \textit{Ortho}) of Fr{\'e}jus 1954 and 2014. (a) Orthophotos to be matched, with red rectangles indicating the common zone. (b) Numbers of total matches and RANSAC inliers of both SIFT and SuperGlue. (c) Visualization of RANSAC inliers based on SIFT. (d) Visualization of RANSAC inliers based on SuperGlue.}
 %        \label{MatchVizFrejus1954Ortho}
 %    \end{center}
 %\end{figure*} 
@@ -625,8 +676,8 @@ For each dataset, each free epoch $E_f$ is matched with reference epoch $E_r$ fo
                 \includegraphics[width=6.8cm]{images/Chapitre3/Homol-SubPatch_R270-2DRANSAC_MEC-Malt_Tapas_1954_MEC-Malt_2014.png}
             \end{minipage}%
         }
-        %\caption{Result of matching DSMs (i.e. \textit{DSM}) of Fr{\'e}jus 1954 and 2014. (a) DSMs to be matched, with red rectangles indicating the common zone. (b) Numbers of total matches, GT inliers and RANSAC inliers of both SIFT and SuperGlue. (c) Visualization of RANSAC inliers based on SIFT. (d) Visualization of RANSAC inliers based on SuperGlue.}
-        \caption{{\scriptsize Result of \textit{ImgPairs} (a-d), \textit{Ortho} (e-h) and \textit{DSM} (i-l) on matching \textbf{Fr{\'e}jus 1954 and 2014}. (a, e, i) image pairs/orthophotos/DSMs to be matched, with red rectangles indicating the common zone. (b, f, j) Numbers of total matches, GT inliers and RANSAC inliers of both SIFT and SuperGlue on methods \textit{ImgPairs}, \textit{Ortho} and \textit{DSM} individually. (c, g, k) Visualization of RANSAC inliers based on $SIFT_{ImgPairs}$, $SIFT_{Ortho}$ and $SIFT_{DSM}$. (d, h, l) Visualization of RANSAC inliers based on $SuperGlue_{ImgPairs}$, $SuperGlue_{Ortho}$ and $SuperGlue_{DSM}$.}}
+        %\caption{Result of matching DSMs (i.e. \textit{DSM}) of Fr{\'e}jus 1954 and 2014. (a) DSMs to be matched, with red rectangles indicating the common zone. (b) Numbers of total matches and RANSAC inliers of both SIFT and SuperGlue. (c) Visualization of RANSAC inliers based on SIFT. (d) Visualization of RANSAC inliers based on SuperGlue.}
+        \caption{{\scriptsize Result of \textit{ImgPairs} (a-d), \textit{Ortho} (e-h) and \textit{DSM} (i-l) on matching \textbf{Fr{\'e}jus 1954 and 2014}. (a, e, i) image pairs/orthophotos/DSMs to be matched, with red rectangles indicating the common zone. (b, f, j) Numbers of total matches and RANSAC inliers of both SIFT and SuperGlue on methods \textit{ImgPairs}, \textit{Ortho} and \textit{DSM} individually. (c, g, k) Visualization of RANSAC inliers based on $SIFT_{ImgPairs}$, $SIFT_{Ortho}$ and $SIFT_{DSM}$. (d, h, l) Visualization of RANSAC inliers based on $SuperGlue_{ImgPairs}$, $SuperGlue_{Ortho}$ and $SuperGlue_{DSM}$.}}
         \label{MatchVizFrejus1954DSM}
     \end{center}
 \end{figure*} 
@@ -659,7 +710,7 @@ For each dataset, each free epoch $E_f$ is matched with reference epoch $E_r$ fo
                 \includegraphics[width=6cm]{images/Chapitre3/Pseudo-Homol-SuperGlue_1966-2014-GlobalR3D-PileImg_Ortho-MEC-Malt_Tapas_1966_Ortho-MEC-Malt_2014.png}
             \end{minipage}%
         }
-%        \caption{Result of matching image pairs (i.e. \textit{ImgPairs}) of Fr{\'e}jus 1966 and 2014. (a) Image pairs to be matched, with red rectangles indicating the common zone. (b) Numbers of total matches, GT inliers and RANSAC inliers of both SIFT and SuperGlue. (c) Visualization of RANSAC inliers based on SIFT. (d) Visualization of RANSAC inliers based on SuperGlue.}
+%        \caption{Result of matching image pairs (i.e. \textit{ImgPairs}) of Fr{\'e}jus 1966 and 2014. (a) Image pairs to be matched, with red rectangles indicating the common zone. (b) Numbers of total matches and RANSAC inliers of both SIFT and SuperGlue. (c) Visualization of RANSAC inliers based on SIFT. (d) Visualization of RANSAC inliers based on SuperGlue.}
 %        \label{MatchVizFrejus1966ImgPairs}
 %    \end{center}
 %\end{figure*} 
@@ -691,7 +742,7 @@ For each dataset, each free epoch $E_f$ is matched with reference epoch $E_r$ fo
                 \includegraphics[width=6cm]{images/Chapitre3/Homol-SubPatch_R270-2DRANSAC_Ortho-MEC-Malt_Tapas_1966_Ortho-MEC-Malt_2014.png}
             \end{minipage}%
         }
-%        \caption{Result of matching orthophotos (i.e. \textit{Ortho}) of Fr{\'e}jus 1966 and 2014. (a) Orthophotos to be matched, with red rectangles indicating the common zone. (b) Numbers of total matches, GT inliers and RANSAC inliers of both SIFT and SuperGlue. (c) Visualization of RANSAC inliers based on SIFT. (d) Visualization of RANSAC inliers based on SuperGlue.}
+%        \caption{Result of matching orthophotos (i.e. \textit{Ortho}) of Fr{\'e}jus 1966 and 2014. (a) Orthophotos to be matched, with red rectangles indicating the common zone. (b) Numbers of total matches and RANSAC inliers of both SIFT and SuperGlue. (c) Visualization of RANSAC inliers based on SIFT. (d) Visualization of RANSAC inliers based on SuperGlue.}
 %        \label{MatchVizFrejus1966Ortho}
 %    \end{center}
 %\end{figure*} 
@@ -722,9 +773,9 @@ For each dataset, each free epoch $E_f$ is matched with reference epoch $E_r$ fo
                 \includegraphics[width=6cm]{images/Chapitre3/Homol-SubPatch_R270-2DRANSAC_MEC-Malt_Tapas_1966_MEC-Malt_2014.png}
             \end{minipage}%
         }
-        %\caption{Result of matching DSMs (i.e. \textit{DSM}) of Fr{\'e}jus 1966 and 2014. (a) DSMs to be matched, with red rectangles indicating the common zone. (b) Numbers of total matches, GT inliers and RANSAC inliers of both SIFT and SuperGlue. (c) Visualization of RANSAC inliers based on SIFT. (d) Visualization of RANSAC inliers based on SuperGlue.}
-        %\caption{{\small Result of \textit{ImgPairs}, \textit{Ortho} and \textit{DSM} on Fr{\'e}jus 1966 and 2014. (a, e, i) image pairs/orthophotos/DSMs to be matched, with red rectangles indicating the common zone. (b, f, j) Numbers of total matches, GT inliers and RANSAC inliers of both SIFT and SuperGlue on methods \textit{ImgPairs}, \textit{Ortho} and \textit{DSM} individually. (c, g, k) Visualization of RANSAC inliers based on $SIFT_{ImgPairs}$, $SIFT_{Ortho}$ and $SIFT_{DSM}$. (d, h, l) Visualization of RANSAC inliers based on $SuperGlue_{ImgPairs}$, $SuperGlue_{Ortho}$ and $SuperGlue_{DSM}$.}}
-        \caption{{\scriptsize Result of \textit{ImgPairs} (a-d), \textit{Ortho} (e-h) and \textit{DSM} (i-l) on matching \textbf{Fr{\'e}jus 1966 and 2014}. (a, e, i) image pairs/orthophotos/DSMs to be matched, with red rectangles indicating the common zone. (b, f, j) Numbers of total matches, GT inliers and RANSAC inliers of both SIFT and SuperGlue on methods \textit{ImgPairs}, \textit{Ortho} and \textit{DSM} individually. (c, g, k) Visualization of RANSAC inliers based on $SIFT_{ImgPairs}$, $SIFT_{Ortho}$ and $SIFT_{DSM}$. (d, h, l) Visualization of RANSAC inliers based on $SuperGlue_{ImgPairs}$, $SuperGlue_{Ortho}$ and $SuperGlue_{DSM}$.}}
+        %\caption{Result of matching DSMs (i.e. \textit{DSM}) of Fr{\'e}jus 1966 and 2014. (a) DSMs to be matched, with red rectangles indicating the common zone. (b) Numbers of total matches and RANSAC inliers of both SIFT and SuperGlue. (c) Visualization of RANSAC inliers based on SIFT. (d) Visualization of RANSAC inliers based on SuperGlue.}
+        %\caption{{\small Result of \textit{ImgPairs}, \textit{Ortho} and \textit{DSM} on Fr{\'e}jus 1966 and 2014. (a, e, i) image pairs/orthophotos/DSMs to be matched, with red rectangles indicating the common zone. (b, f, j) Numbers of total matches and RANSAC inliers of both SIFT and SuperGlue on methods \textit{ImgPairs}, \textit{Ortho} and \textit{DSM} individually. (c, g, k) Visualization of RANSAC inliers based on $SIFT_{ImgPairs}$, $SIFT_{Ortho}$ and $SIFT_{DSM}$. (d, h, l) Visualization of RANSAC inliers based on $SuperGlue_{ImgPairs}$, $SuperGlue_{Ortho}$ and $SuperGlue_{DSM}$.}}
+        \caption{{\scriptsize Result of \textit{ImgPairs} (a-d), \textit{Ortho} (e-h) and \textit{DSM} (i-l) on matching \textbf{Fr{\'e}jus 1966 and 2014}. (a, e, i) image pairs/orthophotos/DSMs to be matched, with red rectangles indicating the common zone. (b, f, j) Numbers of total matches and RANSAC inliers of both SIFT and SuperGlue on methods \textit{ImgPairs}, \textit{Ortho} and \textit{DSM} individually. (c, g, k) Visualization of RANSAC inliers based on $SIFT_{ImgPairs}$, $SIFT_{Ortho}$ and $SIFT_{DSM}$. (d, h, l) Visualization of RANSAC inliers based on $SuperGlue_{ImgPairs}$, $SuperGlue_{Ortho}$ and $SuperGlue_{DSM}$.}}
         \label{MatchVizFrejus1966DSM}
     \end{center}
 \end{figure*} 
@@ -757,7 +808,7 @@ For each dataset, each free epoch $E_f$ is matched with reference epoch $E_r$ fo
                 \includegraphics[width=5.7cm]{images/Chapitre3/Pseudo-Homol-SuperGlue_1970-2014-GlobalR3D-PileImg_Ortho-MEC-Malt_Tapas_1970_Ortho-MEC-Malt_2014.png}
             \end{minipage}%
         }
-%        \caption{Result of matching image pairs (i.e. \textit{ImgPairs}) of Fr{\'e}jus 1970 and 2014. (a) Image pairs to be matched, with red rectangles indicating the common zone. (b) Numbers of total matches, GT inliers and RANSAC inliers of both SIFT and SuperGlue. (c) Visualization of RANSAC inliers based on SIFT. (d) Visualization of RANSAC inliers based on SuperGlue.}
+%        \caption{Result of matching image pairs (i.e. \textit{ImgPairs}) of Fr{\'e}jus 1970 and 2014. (a) Image pairs to be matched, with red rectangles indicating the common zone. (b) Numbers of total matches and RANSAC inliers of both SIFT and SuperGlue. (c) Visualization of RANSAC inliers based on SIFT. (d) Visualization of RANSAC inliers based on SuperGlue.}
 %        \label{MatchVizFrejus1970ImgPairs}
 %    \end{center}
 %\end{figure*} 
@@ -788,7 +839,7 @@ For each dataset, each free epoch $E_f$ is matched with reference epoch $E_r$ fo
                 \includegraphics[width=5.7cm]{images/Chapitre3/Homol-SubPatch_R270-2DRANSAC_Ortho-MEC-Malt_Tapas_1970_Ortho-MEC-Malt_2014.png}
             \end{minipage}%
         }
-%        \caption{Result of matching orthophotos (i.e. \textit{Ortho}) of Fr{\'e}jus 1970 and 2014. (a) Orthophotos to be matched, with red rectangles indicating the common zone. (b) Numbers of total matches, GT inliers and RANSAC inliers of both SIFT and SuperGlue. (c) Visualization of RANSAC inliers based on SIFT. (d) Visualization of RANSAC inliers based on SuperGlue.}
+%        \caption{Result of matching orthophotos (i.e. \textit{Ortho}) of Fr{\'e}jus 1970 and 2014. (a) Orthophotos to be matched, with red rectangles indicating the common zone. (b) Numbers of total matches and RANSAC inliers of both SIFT and SuperGlue. (c) Visualization of RANSAC inliers based on SIFT. (d) Visualization of RANSAC inliers based on SuperGlue.}
 %        \label{MatchVizFrejus1970Ortho}
 %    \end{center}
 %\end{figure*} 
@@ -819,9 +870,9 @@ For each dataset, each free epoch $E_f$ is matched with reference epoch $E_r$ fo
                 \includegraphics[width=5.7cm]{images/Chapitre3/Homol-SubPatch_R270-2DRANSAC_MEC-Malt_Tapas_1970_MEC-Malt_2014.png}
             \end{minipage}%
         }
-        %\caption{Result of matching DSMs (i.e. \textit{DSM}) of Fr{\'e}jus 1970 and 2014. (a) DSMs to be matched, with red rectangles indicating the common zone. (b) Numbers of total matches, GT inliers and RANSAC inliers of both SIFT and SuperGlue. (c) Visualization of RANSAC inliers based on SIFT. (d) Visualization of RANSAC inliers based on SuperGlue.}
-        %\caption{{\small Result of \textit{ImgPairs}, \textit{Ortho} and \textit{DSM} on Fr{\'e}jus 1970 and 2014. (a, e, i) image pairs/orthophotos/DSMs to be matched, with red rectangles indicating the common zone. (b, f, j) Numbers of total matches, GT inliers and RANSAC inliers of both SIFT and SuperGlue on methods \textit{ImgPairs}, \textit{Ortho} and \textit{DSM} individually. (c, g, k) Visualization of RANSAC inliers based on $SIFT_{ImgPairs}$, $SIFT_{Ortho}$ and $SIFT_{DSM}$. (d, h, l) Visualization of RANSAC inliers based on $SuperGlue_{ImgPairs}$, $SuperGlue_{Ortho}$ and $SuperGlue_{DSM}$.}}
-        \caption{{\scriptsize Result of \textit{ImgPairs} (a-d), \textit{Ortho} (e-h) and \textit{DSM} (i-l) on matching \textbf{Fr{\'e}jus 1970 and 2014}. (a, e, i) image pairs/orthophotos/DSMs to be matched, with red rectangles indicating the common zone. (b, f, j) Numbers of total matches, GT inliers and RANSAC inliers of both SIFT and SuperGlue on methods \textit{ImgPairs}, \textit{Ortho} and \textit{DSM} individually. (c, g, k) Visualization of RANSAC inliers based on $SIFT_{ImgPairs}$, $SIFT_{Ortho}$ and $SIFT_{DSM}$. (d, h, l) Visualization of RANSAC inliers based on $SuperGlue_{ImgPairs}$, $SuperGlue_{Ortho}$ and $SuperGlue_{DSM}$.}}
+        %\caption{Result of matching DSMs (i.e. \textit{DSM}) of Fr{\'e}jus 1970 and 2014. (a) DSMs to be matched, with red rectangles indicating the common zone. (b) Numbers of total matches and RANSAC inliers of both SIFT and SuperGlue. (c) Visualization of RANSAC inliers based on SIFT. (d) Visualization of RANSAC inliers based on SuperGlue.}
+        %\caption{{\small Result of \textit{ImgPairs}, \textit{Ortho} and \textit{DSM} on Fr{\'e}jus 1970 and 2014. (a, e, i) image pairs/orthophotos/DSMs to be matched, with red rectangles indicating the common zone. (b, f, j) Numbers of total matches and RANSAC inliers of both SIFT and SuperGlue on methods \textit{ImgPairs}, \textit{Ortho} and \textit{DSM} individually. (c, g, k) Visualization of RANSAC inliers based on $SIFT_{ImgPairs}$, $SIFT_{Ortho}$ and $SIFT_{DSM}$. (d, h, l) Visualization of RANSAC inliers based on $SuperGlue_{ImgPairs}$, $SuperGlue_{Ortho}$ and $SuperGlue_{DSM}$.}}
+        \caption{{\scriptsize Result of \textit{ImgPairs} (a-d), \textit{Ortho} (e-h) and \textit{DSM} (i-l) on matching \textbf{Fr{\'e}jus 1970 and 2014}. (a, e, i) image pairs/orthophotos/DSMs to be matched, with red rectangles indicating the common zone. (b, f, j) Numbers of total matches and RANSAC inliers of both SIFT and SuperGlue on methods \textit{ImgPairs}, \textit{Ortho} and \textit{DSM} individually. (c, g, k) Visualization of RANSAC inliers based on $SIFT_{ImgPairs}$, $SIFT_{Ortho}$ and $SIFT_{DSM}$. (d, h, l) Visualization of RANSAC inliers based on $SuperGlue_{ImgPairs}$, $SuperGlue_{Ortho}$ and $SuperGlue_{DSM}$.}}
         \label{MatchVizFrejus1970DSM}
     \end{center}
 \end{figure*} 
@@ -854,7 +905,7 @@ For each dataset, each free epoch $E_f$ is matched with reference epoch $E_r$ fo
                 \includegraphics[width=5.2cm]{images/Chapitre3/Pseudo-Homol-SuperGlue_1971-2015-GlobalR3D-PileImg_Ortho-MEC-Malt_Tapas_1971_Ortho-MEC-Malt_2015.png}
             \end{minipage}%
         }
-%        \caption{Result of matching image pairs (i.e. \textit{ImgPairs}) of Pezenas 1971 and 2015. (a) Image pairs to be matched, with red rectangles indicating the common zone. (b) Numbers of total matches, GT inliers and RANSAC inliers of both SIFT and SuperGlue. (c) Visualization of RANSAC inliers based on SIFT. (d) Visualization of RANSAC inliers based on SuperGlue.}
+%        \caption{Result of matching image pairs (i.e. \textit{ImgPairs}) of Pezenas 1971 and 2015. (a) Image pairs to be matched, with red rectangles indicating the common zone. (b) Numbers of total matches and RANSAC inliers of both SIFT and SuperGlue. (c) Visualization of RANSAC inliers based on SIFT. (d) Visualization of RANSAC inliers based on SuperGlue.}
 %        \label{MatchVizPezenas1971ImgPairs}
 %    \end{center}
 %\end{figure*} 
@@ -885,7 +936,7 @@ For each dataset, each free epoch $E_f$ is matched with reference epoch $E_r$ fo
                 \includegraphics[width=5.2cm]{images/Chapitre3/Homol-SubPatch_R270-2DRANSAC_Ortho-MEC-Malt_Tapas_1971_Ortho-MEC-Malt_2015.png}
             \end{minipage}%
         }
-%        \caption{Result of matching orthophotos (i.e. \textit{Ortho}) of Pezenas 1971 and 2015. (a) Orthophotos to be matched, with red rectangles indicating the common zone. (b) Numbers of total matches, GT inliers and RANSAC inliers of both SIFT and SuperGlue. (c) Visualization of RANSAC inliers based on SIFT. (d) Visualization of RANSAC inliers based on SuperGlue.}
+%        \caption{Result of matching orthophotos (i.e. \textit{Ortho}) of Pezenas 1971 and 2015. (a) Orthophotos to be matched, with red rectangles indicating the common zone. (b) Numbers of total matches and RANSAC inliers of both SIFT and SuperGlue. (c) Visualization of RANSAC inliers based on SIFT. (d) Visualization of RANSAC inliers based on SuperGlue.}
 %        \label{MatchVizPezenas1971Ortho}
 %    \end{center}
 %\end{figure*} 
@@ -916,9 +967,9 @@ For each dataset, each free epoch $E_f$ is matched with reference epoch $E_r$ fo
                 \includegraphics[width=5.2cm]{images/Chapitre3/Homol-SubPatch_R270-2DRANSAC_MEC-Malt_Tapas_1971_MEC-Malt_2015.png}
             \end{minipage}%
         }
-        %\caption{Result of matching DSMs (i.e. \textit{DSM}) of Pezenas 1971 and 2015. (a) DSMs to be matched, with red rectangles indicating the common zone. (b) Numbers of total matches, GT inliers and RANSAC inliers of both SIFT and SuperGlue. (c) Visualization of RANSAC inliers based on SIFT. (d) Visualization of RANSAC inliers based on SuperGlue.}
-        %\caption{{\small Result of \textit{ImgPairs}, \textit{Ortho} and \textit{DSM} on Pezenas 1971 and 2015. (a, e, i) image pairs/orthophotos/DSMs to be matched, with red rectangles indicating the common zone. (b, f, j) Numbers of total matches, GT inliers and RANSAC inliers of both SIFT and SuperGlue on methods \textit{ImgPairs}, \textit{Ortho} and \textit{DSM} individually. (c, g, k) Visualization of RANSAC inliers based on $SIFT_{ImgPairs}$, $SIFT_{Ortho}$ and $SIFT_{DSM}$. (d, h, l) Visualization of RANSAC inliers based on $SuperGlue_{ImgPairs}$, $SuperGlue_{Ortho}$ and $SuperGlue_{DSM}$.}}
-        \caption{{\scriptsize Result of \textit{ImgPairs} (a-d), \textit{Ortho} (e-h) and \textit{DSM} (i-l) on matching \textbf{Pezenas 1971 and 2015}. (a, e, i) image pairs/orthophotos/DSMs to be matched, with red rectangles indicating the common zone. (b, f, j) Numbers of total matches, GT inliers and RANSAC inliers of both SIFT and SuperGlue on methods \textit{ImgPairs}, \textit{Ortho} and \textit{DSM} individually. (c, g, k) Visualization of RANSAC inliers based on $SIFT_{ImgPairs}$, $SIFT_{Ortho}$ and $SIFT_{DSM}$. (d, h, l) Visualization of RANSAC inliers based on $SuperGlue_{ImgPairs}$, $SuperGlue_{Ortho}$ and $SuperGlue_{DSM}$.}}        
+        %\caption{Result of matching DSMs (i.e. \textit{DSM}) of Pezenas 1971 and 2015. (a) DSMs to be matched, with red rectangles indicating the common zone. (b) Numbers of total matches and RANSAC inliers of both SIFT and SuperGlue. (c) Visualization of RANSAC inliers based on SIFT. (d) Visualization of RANSAC inliers based on SuperGlue.}
+        %\caption{{\small Result of \textit{ImgPairs}, \textit{Ortho} and \textit{DSM} on Pezenas 1971 and 2015. (a, e, i) image pairs/orthophotos/DSMs to be matched, with red rectangles indicating the common zone. (b, f, j) Numbers of total matches and RANSAC inliers of both SIFT and SuperGlue on methods \textit{ImgPairs}, \textit{Ortho} and \textit{DSM} individually. (c, g, k) Visualization of RANSAC inliers based on $SIFT_{ImgPairs}$, $SIFT_{Ortho}$ and $SIFT_{DSM}$. (d, h, l) Visualization of RANSAC inliers based on $SuperGlue_{ImgPairs}$, $SuperGlue_{Ortho}$ and $SuperGlue_{DSM}$.}}
+        \caption{{\scriptsize Result of \textit{ImgPairs} (a-d), \textit{Ortho} (e-h) and \textit{DSM} (i-l) on matching \textbf{Pezenas 1971 and 2015}. (a, e, i) image pairs/orthophotos/DSMs to be matched, with red rectangles indicating the common zone. (b, f, j) Numbers of total matches and RANSAC inliers of both SIFT and SuperGlue on methods \textit{ImgPairs}, \textit{Ortho} and \textit{DSM} individually. (c, g, k) Visualization of RANSAC inliers based on $SIFT_{ImgPairs}$, $SIFT_{Ortho}$ and $SIFT_{DSM}$. (d, h, l) Visualization of RANSAC inliers based on $SuperGlue_{ImgPairs}$, $SuperGlue_{Ortho}$ and $SuperGlue_{DSM}$.}}        
         \label{MatchVizPezenas1971DSM}
     \end{center}
 \end{figure*} 
@@ -951,7 +1002,7 @@ For each dataset, each free epoch $E_f$ is matched with reference epoch $E_r$ fo
                 \includegraphics[width=5.2cm]{images/Chapitre3/Pseudo-Homol-SuperGlue_1981-2015-GlobalR3D-PileImg_Ortho-MEC-Malt_Tapas_1981_Ortho-MEC-Malt_2015.png}
             \end{minipage}%
         }
-%        \caption{Result of matching image pairs (i.e. \textit{ImgPairs}) of Pezenas 1981 and 2015. (a) Image pairs to be matched, with red rectangles indicating the common zone. (b) Numbers of total matches, GT inliers and RANSAC inliers of both SIFT and SuperGlue. (c) Visualization of RANSAC inliers based on SIFT. (d) Visualization of RANSAC inliers based on SuperGlue.}
+%        \caption{Result of matching image pairs (i.e. \textit{ImgPairs}) of Pezenas 1981 and 2015. (a) Image pairs to be matched, with red rectangles indicating the common zone. (b) Numbers of total matches and RANSAC inliers of both SIFT and SuperGlue. (c) Visualization of RANSAC inliers based on SIFT. (d) Visualization of RANSAC inliers based on SuperGlue.}
 %        \label{MatchVizPezenas1981ImgPairs}
 %    \end{center}
 %\end{figure*} 
@@ -982,7 +1033,7 @@ For each dataset, each free epoch $E_f$ is matched with reference epoch $E_r$ fo
                 \includegraphics[width=5.2cm]{images/Chapitre3/Homol-SubPatch_R90-2DRANSAC_Ortho-MEC-Malt_Tapas_1981_Ortho-MEC-Malt_2015.png}
             \end{minipage}%
         }
-%        \caption{Result of matching orthophotos (i.e. \textit{Ortho}) of Pezenas 1981 and 2015. (a) Orthophotos to be matched, with red rectangles indicating the common zone. (b) Numbers of total matches, GT inliers and RANSAC inliers of both SIFT and SuperGlue. (c) Visualization of RANSAC inliers based on SIFT. (d) Visualization of RANSAC inliers based on SuperGlue.}
+%        \caption{Result of matching orthophotos (i.e. \textit{Ortho}) of Pezenas 1981 and 2015. (a) Orthophotos to be matched, with red rectangles indicating the common zone. (b) Numbers of total matches and RANSAC inliers of both SIFT and SuperGlue. (c) Visualization of RANSAC inliers based on SIFT. (d) Visualization of RANSAC inliers based on SuperGlue.}
 %        \label{MatchVizPezenas1981Ortho}
 %    \end{center}
 %\end{figure*} 
@@ -1013,9 +1064,9 @@ For each dataset, each free epoch $E_f$ is matched with reference epoch $E_r$ fo
                 \includegraphics[width=5.2cm]{images/Chapitre3/Homol-SubPatch_R90-2DRANSAC_MEC-Malt_Tapas_1981_MEC-Malt_2015.png}
             \end{minipage}%
         }
-        %\caption{Result of matching DSMs (i.e. \textit{DSM}) of Pezenas 1981 and 2015. (a) DSMs to be matched, with red rectangles indicating the common zone. (b) Numbers of total matches, GT inliers and RANSAC inliers of both SIFT and SuperGlue. (c) Visualization of RANSAC inliers based on SIFT. (d) Visualization of RANSAC inliers based on SuperGlue.}
-        %\caption{{\small Result of \textit{ImgPairs}, \textit{Ortho} and \textit{DSM} on Pezenas 1981 and 2015. (a, e, i) image pairs/orthophotos/DSMs to be matched, with red rectangles indicating the common zone. (b, f, j) Numbers of total matches, GT inliers and RANSAC inliers of both SIFT and SuperGlue on methods \textit{ImgPairs}, \textit{Ortho} and \textit{DSM} individually. (c, g, k) Visualization of RANSAC inliers based on $SIFT_{ImgPairs}$, $SIFT_{Ortho}$ and $SIFT_{DSM}$. (d, h, l) Visualization of RANSAC inliers based on $SuperGlue_{ImgPairs}$, $SuperGlue_{Ortho}$ and $SuperGlue_{DSM}$.}}
-        \caption{{\scriptsize Result of \textit{ImgPairs} (a-d), \textit{Ortho} (e-h) and \textit{DSM} (i-l) on matching \textbf{Pezenas 1981 and 2015}. (a, e, i) image pairs/orthophotos/DSMs to be matched, with red rectangles indicating the common zone. (b, f, j) Numbers of total matches, GT inliers and RANSAC inliers of both SIFT and SuperGlue on methods \textit{ImgPairs}, \textit{Ortho} and \textit{DSM} individually. (c, g, k) Visualization of RANSAC inliers based on $SIFT_{ImgPairs}$, $SIFT_{Ortho}$ and $SIFT_{DSM}$. (d, h, l) Visualization of RANSAC inliers based on $SuperGlue_{ImgPairs}$, $SuperGlue_{Ortho}$ and $SuperGlue_{DSM}$.}}        
+        %\caption{Result of matching DSMs (i.e. \textit{DSM}) of Pezenas 1981 and 2015. (a) DSMs to be matched, with red rectangles indicating the common zone. (b) Numbers of total matches and RANSAC inliers of both SIFT and SuperGlue. (c) Visualization of RANSAC inliers based on SIFT. (d) Visualization of RANSAC inliers based on SuperGlue.}
+        %\caption{{\small Result of \textit{ImgPairs}, \textit{Ortho} and \textit{DSM} on Pezenas 1981 and 2015. (a, e, i) image pairs/orthophotos/DSMs to be matched, with red rectangles indicating the common zone. (b, f, j) Numbers of total matches and RANSAC inliers of both SIFT and SuperGlue on methods \textit{ImgPairs}, \textit{Ortho} and \textit{DSM} individually. (c, g, k) Visualization of RANSAC inliers based on $SIFT_{ImgPairs}$, $SIFT_{Ortho}$ and $SIFT_{DSM}$. (d, h, l) Visualization of RANSAC inliers based on $SuperGlue_{ImgPairs}$, $SuperGlue_{Ortho}$ and $SuperGlue_{DSM}$.}}
+        \caption{{\scriptsize Result of \textit{ImgPairs} (a-d), \textit{Ortho} (e-h) and \textit{DSM} (i-l) on matching \textbf{Pezenas 1981 and 2015}. (a, e, i) image pairs/orthophotos/DSMs to be matched, with red rectangles indicating the common zone. (b, f, j) Numbers of total matches and RANSAC inliers of both SIFT and SuperGlue on methods \textit{ImgPairs}, \textit{Ortho} and \textit{DSM} individually. (c, g, k) Visualization of RANSAC inliers based on $SIFT_{ImgPairs}$, $SIFT_{Ortho}$ and $SIFT_{DSM}$. (d, h, l) Visualization of RANSAC inliers based on $SuperGlue_{ImgPairs}$, $SuperGlue_{Ortho}$ and $SuperGlue_{DSM}$.}}        
         \label{MatchVizPezenas1981DSM}
     \end{center}
 \end{figure*} 
@@ -1049,7 +1100,7 @@ For each dataset, each free epoch $E_f$ is matched with reference epoch $E_r$ fo
 				\includegraphics[width=6.8cm]{images/Chapitre3/Homol-SubPatch_R270-2DRANSAC_Ortho-MEC-Malt_Tapas_1971_Ortho-MEC-Malt_Satellite.png}
 			\end{minipage}%
 		}
-		%        \caption{Result of matching orthophotos (i.e. \textit{Ortho}) of Pezenas 1971 and Satellite. (a) Orthophotos to be matched, with red rectangles indicating the common zone. (b) Numbers of total matches, GT inliers and RANSAC inliers of both SIFT and SuperGlue. (c) Visualization of RANSAC inliers based on SIFT. (d) Visualization of RANSAC inliers based on SuperGlue.}
+		%        \caption{Result of matching orthophotos (i.e. \textit{Ortho}) of Pezenas 1971 and Satellite. (a) Orthophotos to be matched, with red rectangles indicating the common zone. (b) Numbers of total matches and RANSAC inliers of both SIFT and SuperGlue. (c) Visualization of RANSAC inliers based on SIFT. (d) Visualization of RANSAC inliers based on SuperGlue.}
 		%        \label{MatchVizPezenas-Satellite1971Ortho}
 		%    \end{center}
 		%\end{figure*} 
@@ -1080,9 +1131,9 @@ For each dataset, each free epoch $E_f$ is matched with reference epoch $E_r$ fo
 				\includegraphics[width=6.8cm]{images/Chapitre3/Homol-SubPatch_R270-2DRANSAC_MEC-Malt_Tapas_1971_MEC-Malt_Satellite.png}
 			\end{minipage}%
 		}
-		%\caption{Result of matching DSMs (i.e. \textit{DSM}) of Pezenas 1971 and Satellite. (a) DSMs to be matched, with red rectangles indicating the common zone. (b) Numbers of total matches, GT inliers and RANSAC inliers of both SIFT and SuperGlue. (c) Visualization of RANSAC inliers based on SIFT. (d) Visualization of RANSAC inliers based on SuperGlue.}
-		%\caption{{\small Result of \textit{ImgPairs}, \textit{Ortho} and \textit{DSM} on Pezenas 1971 and Satellite. (a, e, i) image pairs/orthophotos/DSMs to be matched, with red rectangles indicating the common zone. (b, f, j) Numbers of total matches, GT inliers and RANSAC inliers of both SIFT and SuperGlue on methods \textit{ImgPairs}, \textit{Ortho} and \textit{DSM} individually. (c, g, k) Visualization of RANSAC inliers based on $SIFT_{ImgPairs}$, $SIFT_{Ortho}$ and $SIFT_{DSM}$. (d, h, l) Visualization of RANSAC inliers based on $SuperGlue_{ImgPairs}$, $SuperGlue_{Ortho}$ and $SuperGlue_{DSM}$.}}
-		\caption{{\scriptsize Result of \textit{ImgPairs} (a-d), \textit{Ortho} (e-h) and \textit{DSM} (i-l) on matching \textbf{Pezenas 1971 and Satellite}. (a, e, i) image pairs/orthophotos/DSMs to be matched, with red rectangles indicating the common zone. (b, f, j) Numbers of total matches, GT inliers and RANSAC inliers of both SIFT and SuperGlue on methods \textit{ImgPairs}, \textit{Ortho} and \textit{DSM} individually. (c, g, k) Visualization of RANSAC inliers based on $SIFT_{ImgPairs}$, $SIFT_{Ortho}$ and $SIFT_{DSM}$. (d, h, l) Visualization of RANSAC inliers based on $SuperGlue_{ImgPairs}$, $SuperGlue_{Ortho}$ and $SuperGlue_{DSM}$.}}        
+		%\caption{Result of matching DSMs (i.e. \textit{DSM}) of Pezenas 1971 and Satellite. (a) DSMs to be matched, with red rectangles indicating the common zone. (b) Numbers of total matches and RANSAC inliers of both SIFT and SuperGlue. (c) Visualization of RANSAC inliers based on SIFT. (d) Visualization of RANSAC inliers based on SuperGlue.}
+		%\caption{{\small Result of \textit{ImgPairs}, \textit{Ortho} and \textit{DSM} on Pezenas 1971 and Satellite. (a, e, i) image pairs/orthophotos/DSMs to be matched, with red rectangles indicating the common zone. (b, f, j) Numbers of total matches and RANSAC inliers of both SIFT and SuperGlue on methods \textit{ImgPairs}, \textit{Ortho} and \textit{DSM} individually. (c, g, k) Visualization of RANSAC inliers based on $SIFT_{ImgPairs}$, $SIFT_{Ortho}$ and $SIFT_{DSM}$. (d, h, l) Visualization of RANSAC inliers based on $SuperGlue_{ImgPairs}$, $SuperGlue_{Ortho}$ and $SuperGlue_{DSM}$.}}
+		\caption{{\scriptsize Result of \textit{ImgPairs} (a-d), \textit{Ortho} (e-h) and \textit{DSM} (i-l) on matching \textbf{Pezenas 1971 and Satellite}. (a, e, i) image pairs/orthophotos/DSMs to be matched, with red rectangles indicating the common zone. (b, f, j) Numbers of total matches and RANSAC inliers of both SIFT and SuperGlue on methods \textit{ImgPairs}, \textit{Ortho} and \textit{DSM} individually. (c, g, k) Visualization of RANSAC inliers based on $SIFT_{ImgPairs}$, $SIFT_{Ortho}$ and $SIFT_{DSM}$. (d, h, l) Visualization of RANSAC inliers based on $SuperGlue_{ImgPairs}$, $SuperGlue_{Ortho}$ and $SuperGlue_{DSM}$.}}        
 		\label{MatchVizPezenas-Satellite1971DSM}
 	\end{center}
 \end{figure*} 
@@ -1115,7 +1166,7 @@ For each dataset, each free epoch $E_f$ is matched with reference epoch $E_r$ fo
 				\includegraphics[width=6.8cm]{images/Chapitre3/Homol-SubPatch_R90-2DRANSAC_Ortho-MEC-Malt_Tapas_1981_Ortho-MEC-Malt_Satellite.png}
 			\end{minipage}%
 		}
-		%        \caption{Result of matching orthophotos (i.e. \textit{Ortho}) of Pezenas 1981 and Satellite. (a) Orthophotos to be matched, with red rectangles indicating the common zone. (b) Numbers of total matches, GT inliers and RANSAC inliers of both SIFT and SuperGlue. (c) Visualization of RANSAC inliers based on SIFT. (d) Visualization of RANSAC inliers based on SuperGlue.}
+		%        \caption{Result of matching orthophotos (i.e. \textit{Ortho}) of Pezenas 1981 and Satellite. (a) Orthophotos to be matched, with red rectangles indicating the common zone. (b) Numbers of total matches and RANSAC inliers of both SIFT and SuperGlue. (c) Visualization of RANSAC inliers based on SIFT. (d) Visualization of RANSAC inliers based on SuperGlue.}
 		%        \label{MatchVizPezenas-Satellite1981Ortho}
 		%    \end{center}
 		%\end{figure*} 
@@ -1146,9 +1197,9 @@ For each dataset, each free epoch $E_f$ is matched with reference epoch $E_r$ fo
 				\includegraphics[width=6.8cm]{images/Chapitre3/Homol-SubPatch_R90-2DRANSAC_MEC-Malt_Tapas_1981_MEC-Malt_Satellite.png}
 			\end{minipage}%
 		}
-		%\caption{Result of matching DSMs (i.e. \textit{DSM}) of Pezenas 1981 and Satellite. (a) DSMs to be matched, with red rectangles indicating the common zone. (b) Numbers of total matches, GT inliers and RANSAC inliers of both SIFT and SuperGlue. (c) Visualization of RANSAC inliers based on SIFT. (d) Visualization of RANSAC inliers based on SuperGlue.}
-		%\caption{{\small Result of \textit{ImgPairs}, \textit{Ortho} and \textit{DSM} on Pezenas 1981 and Satellite. (a, e, i) image pairs/orthophotos/DSMs to be matched, with red rectangles indicating the common zone. (b, f, j) Numbers of total matches, GT inliers and RANSAC inliers of both SIFT and SuperGlue on methods \textit{ImgPairs}, \textit{Ortho} and \textit{DSM} individually. (c, g, k) Visualization of RANSAC inliers based on $SIFT_{ImgPairs}$, $SIFT_{Ortho}$ and $SIFT_{DSM}$. (d, h, l) Visualization of RANSAC inliers based on $SuperGlue_{ImgPairs}$, $SuperGlue_{Ortho}$ and $SuperGlue_{DSM}$.}}
-		\caption{{\scriptsize Result of \textit{ImgPairs} (a-d), \textit{Ortho} (e-h) and \textit{DSM} (i-l) on matching \textbf{Pezenas 1981 and Satellite}. (a, e, i) image pairs/orthophotos/DSMs to be matched, with red rectangles indicating the common zone. (b, f, j) Numbers of total matches, GT inliers and RANSAC inliers of both SIFT and SuperGlue on methods \textit{ImgPairs}, \textit{Ortho} and \textit{DSM} individually. (c, g, k) Visualization of RANSAC inliers based on $SIFT_{ImgPairs}$, $SIFT_{Ortho}$ and $SIFT_{DSM}$. (d, h, l) Visualization of RANSAC inliers based on $SuperGlue_{ImgPairs}$, $SuperGlue_{Ortho}$ and $SuperGlue_{DSM}$.}}        
+		%\caption{Result of matching DSMs (i.e. \textit{DSM}) of Pezenas 1981 and Satellite. (a) DSMs to be matched, with red rectangles indicating the common zone. (b) Numbers of total matches and RANSAC inliers of both SIFT and SuperGlue. (c) Visualization of RANSAC inliers based on SIFT. (d) Visualization of RANSAC inliers based on SuperGlue.}
+		%\caption{{\small Result of \textit{ImgPairs}, \textit{Ortho} and \textit{DSM} on Pezenas 1981 and Satellite. (a, e, i) image pairs/orthophotos/DSMs to be matched, with red rectangles indicating the common zone. (b, f, j) Numbers of total matches and RANSAC inliers of both SIFT and SuperGlue on methods \textit{ImgPairs}, \textit{Ortho} and \textit{DSM} individually. (c, g, k) Visualization of RANSAC inliers based on $SIFT_{ImgPairs}$, $SIFT_{Ortho}$ and $SIFT_{DSM}$. (d, h, l) Visualization of RANSAC inliers based on $SuperGlue_{ImgPairs}$, $SuperGlue_{Ortho}$ and $SuperGlue_{DSM}$.}}
+		\caption{{\scriptsize Result of \textit{ImgPairs} (a-d), \textit{Ortho} (e-h) and \textit{DSM} (i-l) on matching \textbf{Pezenas 1981 and Satellite}. (a, e, i) image pairs/orthophotos/DSMs to be matched, with red rectangles indicating the common zone. (b, f, j) Numbers of total matches and RANSAC inliers of both SIFT and SuperGlue on methods \textit{ImgPairs}, \textit{Ortho} and \textit{DSM} individually. (c, g, k) Visualization of RANSAC inliers based on $SIFT_{ImgPairs}$, $SIFT_{Ortho}$ and $SIFT_{DSM}$. (d, h, l) Visualization of RANSAC inliers based on $SuperGlue_{ImgPairs}$, $SuperGlue_{Ortho}$ and $SuperGlue_{DSM}$.}}        
 		\label{MatchVizPezenas-Satellite1981DSM}
 	\end{center}
 \end{figure*} 
@@ -1182,7 +1233,7 @@ For each dataset, each free epoch $E_f$ is matched with reference epoch $E_r$ fo
                 \includegraphics[width=2.6cm,angle=90]{images/Chapitre3/Pseudo-Homol-SuperGlue_1991-1994-GlobalR3D-PileImg_Ortho-MEC-Malt_Tapas_1991_Ortho-MEC-Malt_Tapas_1994.png}
             \end{minipage}%
         }
-%        \caption{Result of matching image pairs (i.e. \textit{ImgPairs}) of Kobe 1991 and 1995. (a) Image pairs to be matched, with red rectangles indicating the common zone. (b) Numbers of total matches, GT inliers and RANSAC inliers of both SIFT and SuperGlue. (c) Visualization of RANSAC inliers based on SIFT. (d) Visualization of RANSAC inliers based on SuperGlue.}
+%        \caption{Result of matching image pairs (i.e. \textit{ImgPairs}) of Kobe 1991 and 1995. (a) Image pairs to be matched, with red rectangles indicating the common zone. (b) Numbers of total matches and RANSAC inliers of both SIFT and SuperGlue. (c) Visualization of RANSAC inliers based on SIFT. (d) Visualization of RANSAC inliers based on SuperGlue.}
 %        \label{MatchVizKobe1991ImgPairs}
 %    \end{center}
 %\end{figure*} 
@@ -1213,7 +1264,7 @@ For each dataset, each free epoch $E_f$ is matched with reference epoch $E_r$ fo
                 \includegraphics[width=2.6cm,angle=90]{images/Chapitre3/Homol-SubPatch-2DRANSAC_Ortho-MEC-Malt_Tapas_1991_Ortho-MEC-Malt_Tapas_1994.png}
             \end{minipage}%
         }
-%        \caption{Result of matching orthophotos (i.e. \textit{Ortho}) of Kobe 1991 and 1995. (a) Orthophotos to be matched, with red rectangles indicating the common zone. (b) Numbers of total matches, GT inliers and RANSAC inliers of both SIFT and SuperGlue. (c) Visualization of RANSAC inliers based on SIFT. (d) Visualization of RANSAC inliers based on SuperGlue.}
+%        \caption{Result of matching orthophotos (i.e. \textit{Ortho}) of Kobe 1991 and 1995. (a) Orthophotos to be matched, with red rectangles indicating the common zone. (b) Numbers of total matches and RANSAC inliers of both SIFT and SuperGlue. (c) Visualization of RANSAC inliers based on SIFT. (d) Visualization of RANSAC inliers based on SuperGlue.}
 %        \label{MatchVizKobe1991Ortho}
 %    \end{center}
 %\end{figure*} 
@@ -1244,9 +1295,9 @@ For each dataset, each free epoch $E_f$ is matched with reference epoch $E_r$ fo
                 \includegraphics[width=2.6cm,angle=90]{images/Chapitre3/Homol-SubPatch-2DRANSAC_MEC-Malt_Tapas_1991_MEC-Malt_Tapas_1994.png}
             \end{minipage}%
         }
-        %\caption{Result of matching DSMs (i.e. \textit{DSM}) of Kobe 1991 and 1995. (a) DSMs to be matched, with red rectangles indicating the common zone. (b) Numbers of total matches, GT inliers and RANSAC inliers of both SIFT and SuperGlue. (c) Visualization of RANSAC inliers based on SIFT. (d) Visualization of RANSAC inliers based on SuperGlue.}
-        %\caption{{\small Result of \textit{ImgPairs}, \textit{Ortho} and \textit{DSM} on Kobe 1991 and 1995. (a, e, i) image pairs/orthophotos/DSMs to be matched, with red rectangles indicating the common zone. (b, f, j) Numbers of total matches, GT inliers and RANSAC inliers of both SIFT and SuperGlue on methods \textit{ImgPairs}, \textit{Ortho} and \textit{DSM} individually. (c, g, k) Visualization of RANSAC inliers based on $SIFT_{ImgPairs}$, $SIFT_{Ortho}$ and $SIFT_{DSM}$. (d, h, l) Visualization of RANSAC inliers based on $SuperGlue_{ImgPairs}$, $SuperGlue_{Ortho}$ and $SuperGlue_{DSM}$.}}
-        \caption{{\scriptsize Result of \textit{ImgPairs} (a-d), \textit{Ortho} (e-h) and \textit{DSM} (i-l) on matching Kobe 1991 and 1995. (a, e, i) image pairs/orthophotos/DSMs to be matched, with red rectangles indicating the common zone. (b, f, j) Numbers of total matches, GT inliers and RANSAC inliers of both SIFT and SuperGlue on methods \textit{ImgPairs}, \textit{Ortho} and \textit{DSM} individually. (c, g, k) Visualization of RANSAC inliers based on $SIFT_{ImgPairs}$, $SIFT_{Ortho}$ and $SIFT_{DSM}$. (d, h, l) Visualization of RANSAC inliers based on $SuperGlue_{ImgPairs}$, $SuperGlue_{Ortho}$ and $SuperGlue_{DSM}$.}}        
+        %\caption{Result of matching DSMs (i.e. \textit{DSM}) of Kobe 1991 and 1995. (a) DSMs to be matched, with red rectangles indicating the common zone. (b) Numbers of total matches and RANSAC inliers of both SIFT and SuperGlue. (c) Visualization of RANSAC inliers based on SIFT. (d) Visualization of RANSAC inliers based on SuperGlue.}
+        %\caption{{\small Result of \textit{ImgPairs}, \textit{Ortho} and \textit{DSM} on Kobe 1991 and 1995. (a, e, i) image pairs/orthophotos/DSMs to be matched, with red rectangles indicating the common zone. (b, f, j) Numbers of total matches and RANSAC inliers of both SIFT and SuperGlue on methods \textit{ImgPairs}, \textit{Ortho} and \textit{DSM} individually. (c, g, k) Visualization of RANSAC inliers based on $SIFT_{ImgPairs}$, $SIFT_{Ortho}$ and $SIFT_{DSM}$. (d, h, l) Visualization of RANSAC inliers based on $SuperGlue_{ImgPairs}$, $SuperGlue_{Ortho}$ and $SuperGlue_{DSM}$.}}
+        \caption{{\scriptsize Result of \textit{ImgPairs} (a-d), \textit{Ortho} (e-h) and \textit{DSM} (i-l) on matching Kobe 1991 and 1995. (a, e, i) image pairs/orthophotos/DSMs to be matched, with red rectangles indicating the common zone. (b, f, j) Numbers of total matches and RANSAC inliers of both SIFT and SuperGlue on methods \textit{ImgPairs}, \textit{Ortho} and \textit{DSM} individually. (c, g, k) Visualization of RANSAC inliers based on $SIFT_{ImgPairs}$, $SIFT_{Ortho}$ and $SIFT_{DSM}$. (d, h, l) Visualization of RANSAC inliers based on $SuperGlue_{ImgPairs}$, $SuperGlue_{Ortho}$ and $SuperGlue_{DSM}$.}}        
         \label{MatchVizKobe1991DSM}
     \end{center}
 \end{figure*} 
@@ -1282,7 +1333,10 @@ For each dataset, each free epoch $E_f$ is matched with reference epoch $E_r$ fo
 
 
 \subsubsection{DoD}
-
+According to Table~\ref{succeedorfail}, by applying 6 methods (or 4 methods for satellite images) on each free epoch and the reference epoch, we got 44 testing cases. Among all the cases, there are 33 of them succeeded, which leads to 33 sets of co-registered orientations. For each set of resulted orientations, we use them to calculate DSMs in free epoch and reference epoch individually in order to generate DoD. 
+The visualization of DoDs are demonstrated in Figure~\ref{DoDFrejus}, ~\ref{DoDPezenas}, ~\ref{DoDPezenas-Satellite} and ~\ref{DoDKobe}.
+The statistical information of the 33 DoDs are displayed in Table~\ref{DoDStatistic}.\\
+As can be seen, dome effect is present in all the DoDs. This is because the camera parameters are estimated within the same epoch, therefore the deformation of historical images inevitably leads to unsatisfactory results. This is acceptable for rough co-registration as our goal is only to provide guidance for precise matching.
 
 \begin{figure*}[htbp]
     \begin{center}
@@ -1723,7 +1777,7 @@ For each dataset, each free epoch $E_f$ is matched with reference epoch $E_r$ fo
 	
 \end{tabular}
 \caption{Average value $\mu$, standard deviation $\sigma$, and absolute average value $|\mu|$ of all the DoDs in Figure~\ref{DoDFrejus}, ~\ref{DoDPezenas}, ~\ref{DoDPezenas-Satellite} and ~\ref{DoDKobe}.}
-\label{CheckptAcuracy}
+\label{DoDStatistic}
 \end{table}
 
 
@@ -1839,6 +1893,14 @@ For each dataset, each free epoch $E_f$ is matched with reference epoch $E_r$ fo
 
 
 \section{Conclusion}
- ${ImgPairs}$ is less efficient.
-\section{Discussion}
+We provide 2 strategies for multi-epoch rough co-registration: (1) match image pairs (i.e. pipeline \textit{ImgPairs}) and (2) match orthophotos/DSMs (i.e. pipelines \textit{Ortho} and \textit{DSM}).
+For each pipelines, we tested 2 feature matching methods (SIFT and SuperGlue), which leads to 6 methods ($SIFT_{ImgPairs}$, $SIFT_{Ortho}$, $SIFT_{DSM}$, $SuperGlue_{ImgPairs}$, $SuperGlue_{Ortho}$ and $SuperGlue_{DSM}$).
+We applied all the 6 methods on 3 datasets (Fr{\'e}jus, Pezenas and Kobe), including the cases of (1) matching aerial epochs only and (2) matching aerial and satellite epochs mixed.
+Experiments showed that:\\
+\begin{enumerate}
+	\item The 2 methods that recovered enough good matches for all the datasets are $SIFT_{DSM}$ and $SuperGlue_{DSM}$, since landcover is more reliable information as scene evolves.
+	\item SuperGlue succeeded on all the 3 pipelines for almost all the datasets, except the one of co-registering Pezenas aerial epoch 1971 with satellite epoch 2014, as the limited common zone and cloud cover make the context less informative.
+	\item Over half of testing cases in $SIFT_{ImgPairs}$ and $SIFT_{Ortho}$ failed, as SIFT is not sufficiently invariant over time. 
+\end{enumerate}
+%\section{Discussion}
 
