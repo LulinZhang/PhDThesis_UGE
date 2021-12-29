@@ -1480,7 +1480,7 @@ As can be seen, dome effect is present in all the DoDs. This is because the came
             \end{minipage}%
         }
         %\caption{DoDs of SuperGlue and SIFT on dataset Fr{\'e}jus (epoch 1970). The prohibition sign means the corresponding method failed.}
-        \caption{{\scriptsize DoDs of $SuperGlue_{ImgPairs}$ (a, g, m), $SuperGlue_{Ortho}$ (b, h, n), $SuperGlue_{DSM}$ (c, i, o), $SIFT_{ImgPairs}$ (d, j, p), $SIFT_{Ortho}$ (e, k, q) and $SIFT_{DSM}$ (f, l, r) on dataset Fr{\'e}jus. The prohibition sign means the corresponding method failed.}}
+        \caption{{\scriptsize DoDs between free epoch \textbf{Fr{\'e}jus 1954, 1966, 1970} and reference epoch 2014 with methods $SuperGlue_{ImgPairs}$ (a, g, m), $SuperGlue_{Ortho}$ (b, h, n), $SuperGlue_{DSM}$ (c, i, o), $SIFT_{ImgPairs}$ (d, j, p), $SIFT_{Ortho}$ (e, k, q) and $SIFT_{DSM}$ (f, l, r). The prohibition sign means the corresponding method failed.}}
         \label{DoDFrejus}
     \end{center}
 \end{figure*} 
@@ -1576,7 +1576,7 @@ As can be seen, dome effect is present in all the DoDs. This is because the came
 				\includegraphics[width=11cm]{images/Chapitre3/LegendDoD.png}
 			\end{minipage}%
 		}
-        \caption{{\scriptsize DoDs of $SuperGlue_{ImgPairs}$ (a, g), $SuperGlue_{Ortho}$ (b, h), $SuperGlue_{DSM}$ (c, i), $SIFT_{ImgPairs}$ (d, j), $SIFT_{Ortho}$ (e, k) and $SIFT_{DSM}$ (f, l) on dataset Pezenas. The prohibition sign means the corresponding method failed.}}
+        \caption{{\scriptsize DoDs between free epoch \textbf{Pezenas 1971, 1981} and reference aerial epoch \textbf{2015} with methods $SuperGlue_{ImgPairs}$ (a, g), $SuperGlue_{Ortho}$ (b, h), $SuperGlue_{DSM}$ (c, i), $SIFT_{ImgPairs}$ (d, j), $SIFT_{Ortho}$ (e, k) and $SIFT_{DSM}$ (f, l). The prohibition sign means the corresponding method failed.}}
 		\label{DoDPezenas}
 	\end{center}
 \end{figure*} 
@@ -1645,7 +1645,7 @@ As can be seen, dome effect is present in all the DoDs. This is because the came
 				\includegraphics[width=11cm]{images/Chapitre3/LegendDoD.png}
 			\end{minipage}%
 		}
-		\caption{{\scriptsize DoDs of $SuperGlue_{ImgPairs}$ (a, g), $SuperGlue_{Ortho}$ (b, h), $SuperGlue_{DSM}$ (c, i), $SIFT_{ImgPairs}$ (d, j), $SIFT_{Ortho}$ (e, k) and $SIFT_{DSM}$ (f, l) on dataset Pezenas. The prohibition sign means the corresponding method failed.}}
+		\caption{{\scriptsize DoDs between free epoch \textbf{Pezenas 1971, 1981} and reference satellite epoch \textbf{2014} with methods $SuperGlue_{Ortho}$ (a, e), $SuperGlue_{DSM}$ (b, f), $SIFT_{Ortho}$ (c, g) and $SIFT_{DSM}$ (d, h). The holes among them are areas covered with clouds which are masked out. The prohibition sign means the corresponding method failed.}}
 		\label{DoDPezenas-Satellite}
 	\end{center}
 \end{figure*} 
@@ -1699,7 +1699,7 @@ As can be seen, dome effect is present in all the DoDs. This is because the came
 				\includegraphics[width=11cm]{images/Chapitre3/LegendDoD.png}
 			\end{minipage}%
 		}
-        \caption{{\scriptsize DoDs of $SuperGlue_{ImgPairs}$ (a), $SuperGlue_{Ortho}$ (b), $SuperGlue_{DSM}$ (c), $SIFT_{ImgPairs}$ (d), $SIFT_{Ortho}$ (e) and $SIFT_{DSM}$ (f) on dataset Kobe. The prohibition sign means the corresponding method failed.}}
+        \caption{{\scriptsize DoDs between free epoch \textbf{Kobe 1991} and reference epoch 1995 with methods $SuperGlue_{ImgPairs}$ (a), $SuperGlue_{Ortho}$ (b), $SuperGlue_{DSM}$ (c), $SIFT_{ImgPairs}$ (d), $SIFT_{Ortho}$ (e) and $SIFT_{DSM}$ (f). The prohibition sign means the corresponding method failed.}}
 		\label{DoDKobe}
 	\end{center}
 \end{figure*} 
@@ -1754,15 +1754,20 @@ As can be seen, dome effect is present in all the DoDs. This is because the came
 %%%%%%%%%%%%%%%%%%%%%%%%satellite
 \multirow{4}{*}{$DoD^{Pezenas}_{1971-2014(Satellite)}$}
 &${SuperGlue_{Ortho}}$ & / & / & /\\
-&${SuperGlue_{DSM}}$ & -1.85 & 13.24 & 9.15\\
+&${SuperGlue_{DSM}}$ & -3.70 & 10.65 & 8.29\\
+%&${SuperGlue_{DSM}}$ & -1.85 & 13.24 & 9.15\\
 &${SIFT_{Ortho}}$ & / & / & /\\
-&${SIFT_{DSM}}$ & 0.58 & 7.82 & \textbf{3.18}\\\hline
+&${SIFT_{DSM}}$ & -0.25 & 4.95 & \textbf{2.15}\\\hline
+%&${SIFT_{DSM}}$ & 0.58 & 7.82 & \textbf{3.18}\\\hline
 
 \multirow{4}{*}{$DoD^{Pezenas}_{1981-2014(Satellite)}$}
-&${SuperGlue_{Ortho}}$ & 0.59 & 9.87 & 5.66\\
-&${SuperGlue_{DSM}}$ & 0.31 & 9.88 & 5.73\\
+&${SuperGlue_{Ortho}}$ & -0.64 & 6.18 & 4.48\\
+%&${SuperGlue_{Ortho}}$ & 0.59 & 9.87 & 5.66\\
+&${SuperGlue_{DSM}}$ & -1.15 & 6.07 & 4.55\\
+%&${SuperGlue_{DSM}}$ & 0.31 & 9.88 & 5.73\\
 &${SIFT_{Ortho}}$ & / & / & /\\
-&${SIFT_{DSM}}$ & 0.46 & 5.96 & \textbf{1.92}\\\hline
+&${SIFT_{DSM}}$ & -0.52 & 3.78 & \textbf{1.63} \\\hline
+%&${SIFT_{DSM}}$ & 0.46 & 5.96 & \textbf{1.92}\\\hline
 
 
 \multirow{6}{*}{$DoD^{Kobe}_{1991-1995}$}
