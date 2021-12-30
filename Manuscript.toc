@@ -39,14 +39,14 @@
 \contentsline {section}{\numberline {4.3}Experiments}{47}{section.4.3}
 \contentsline {section}{\numberline {4.4}Conclusion}{47}{section.4.4}
 \contentsline {section}{\numberline {4.5}Discussion}{47}{section.4.5}
-\contentsline {chapter}{\numberline {5}Conclusion and Perspective}{49}{chapter.5}
-\contentsline {part}{Appendices}{51}{chapter.5}
+\contentsline {chapter}{\numberline {5}Conclusion and Perspective}{51}{chapter.5}
+\contentsline {part}{Appendices}{53}{chapter.5}
 \partbegin 
-\contentsline {chapter}{\numberline {A}Comparison between $SIFT_{Adapted}$ and $SIFT_{Default}$}{53}{appendix.A}
-\contentsline {section}{\numberline {A.1}Comparison on method $SIFT_{ImgPairs}$}{53}{section.A.1}
-\contentsline {section}{\numberline {A.2}Comparison on method $SIFT_{Ortho}$}{53}{section.A.2}
-\contentsline {section}{\numberline {A.3}Comparison on method $SIFT_{DSM}$}{53}{section.A.3}
-\contentsline {chapter}{\numberline {B}Comparison between $SuperGlue_{ours}$ and $SuperGlue_{orig}$}{57}{appendix.B}
-\contentsline {section}{\numberline {B.1}Comparison on method $SuperGlue_{Ortho}$}{57}{section.B.1}
-\contentsline {section}{\numberline {B.2}Comparison on method $SIFT_{DSM}$}{57}{section.B.2}
-\contentsline {chapter}{Bibliography}{61}{appendix*.8}
+\contentsline {chapter}{\numberline {A}Comparison between $SIFT_{Adapted}$ and $SIFT_{Default}$}{55}{appendix.A}
+\contentsline {section}{\numberline {A.1}Comparison on method $SIFT_{ImgPairs}$}{55}{section.A.1}
+\contentsline {section}{\numberline {A.2}Comparison on method $SIFT_{Ortho}$}{55}{section.A.2}
+\contentsline {section}{\numberline {A.3}Comparison on method $SIFT_{DSM}$}{55}{section.A.3}
+\contentsline {chapter}{\numberline {B}Comparison between $SuperGlue_{ours}$ and $SuperGlue_{orig}$}{59}{appendix.B}
+\contentsline {section}{\numberline {B.1}Comparison on method $SuperGlue_{Ortho}$}{59}{section.B.1}
+\contentsline {section}{\numberline {B.2}Comparison on method $SIFT_{DSM}$}{59}{section.B.2}
+\contentsline {chapter}{Bibliography}{63}{appendix*.8}
