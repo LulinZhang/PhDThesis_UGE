@@ -86,7 +86,8 @@ The \textit{4 rotation hypotheses} would not be applied when rotation invariant 
 Assuming the numbers of images in \textit{epoch$_1$} and \textit{epoch$_2$} are P and Q individually, the matching image pairs strategy works as follows:\\
 \begin{enumerate}
     \item Match P$\times$Q image pairs respectively (with or without \textit{4 rotation hypotheses}, depending on whether the matching method is rotation invariant), giving rise to P$\times$Q sets of matches $M({\mathbf{K}^{e_1},\mathbf{K}^{e_2}})$ ($\mathbf{K}^{e_i}$ represents keypoints in image $I^{e_i}$).
-    \item Project matches $M({\mathbf{K}^{e_1},\mathbf{K}^{e_2}})$ of each image pair onto ground and combine them, resulting in one set of matches $M({\mathbf{KG}^{e_1},\mathbf{KG}^{e_2}})$ ($\mathbf{KG}^{e_i}$ represents points on ground).
+    \item Run RANSAC based on 2D similarity transformation model for each image pair, giving rise to P$\times$Q sets of matches $M({\mathbf{\widetilde{K}}^{e_1},\mathbf{\widetilde{K}}^{e_2}})$ ($\mathbf{\widetilde{K}}^{e_i}$ represents keypoints in image $I^{e_i}$.) This step aims to filter matches into a reasonable number, otherwise the subsequent global filtering would become prohibitive. (This step would be skipped if matching methods that simultaneously performed filtering during the matching procedure (e.g. SuperGlue) are applied in the previous step.)
+    \item Project $\mathbf{\widetilde{K}}^{e_i}$ in the matches $M({\mathbf{\widetilde{K}}^{e_1},\mathbf{\widetilde{K}}^{e_2}})$ onto ground with the help of orientations $O_{ini}^{e_i}$ and DSM $D_{ini}^{e_i}$ individually, resulting in points on ground $\mathbf{KG}^{e_i}$.
     \item Sample matches $M({\mathbf{KG}^{e_1},\mathbf{KG}^{e_2}})$ iteratively to compute the 3D Helmert transformation RANSAC model:
 \begin{equation}
 \left [ \begin{array}{c}
@@ -136,6 +137,9 @@ We set the number of RANSAC iterations to 1000, and consider matches within $T_r
         \label{WorkflowImgPair}
     \end{center}
 \end{figure*}
+
+This strategy is adapted from our early attempt to match different epochs by matching P$\times$Q inter-epoch image pairs individually without building a globally consistent transformation model. It is accomplished by estimating a 2D similarity model for each image pair in the first round of matching and using it to guide a second round of matching. Obviously it is less robust as the P$\times$Q 2D similarity models that should be consistent, might contradict each other. \\
+However, we found the idea of using 2D similarity model to guide matching is helpful in some specific cases, for example when the orientations $O_{ini}^{e_i}$ and DSMs $D_{ini}^{e_i}$ are not available because it is difficult to match intra-epoch image pairs. In Appendix ~\ref{chap:appendix3} we displayed a small dataset over glacier area. It consists of only one epoch. However, there are images among them that are extremely challenging to match, both SIFT and SuperGlue failed on it. We provide the option to input a rough 2D similarity transformation model for prediction to reduce the search space and successfully recovered several good matches.
 
 %\begin{figure*}[htbp]
 %    \begin{center}
