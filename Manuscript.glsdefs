@@ -1,0 +1,30 @@
+\ifglsentryexists{DSM}{}%
+{%
+\gls@defglossaryentry{DSM}%
+{%
+name={DSM},%
+sort={DSM},%
+type={acronym},%
+first={Digital Surface Model\glsspace (DSM)},%
+firstplural={Digital Surface Models\glsspace (DSMs)},%
+text={DSM},%
+plural={DSMs},%
+description={Digital Surface Model},%
+descriptionplural={Digital Surface Model\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Digital Surface Model},%
+longplural={Digital Surface Models},%
+short={DSM},%
+shortplural={DSMs},%
+counter={page},%
+parent={},%
+%
+}%
+}%

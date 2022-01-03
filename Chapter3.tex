@@ -35,7 +35,7 @@ Our main contributions include:\\
 	\item Introduce RANSAC based on 3D Helmert transformation model for \textit{ImgPairs}: each three matches projected to DSM serve to compute a 3D Helmert transformation between epochs, and most importantly provide a 2D constraint on all images’ matches.
 	\item Introduce \textit{4 rotation hypotheses} to make SuperGlue, which is not invariant to rotation larger than 45$^\circ$, practicable on remote sensing images.
 	\item Introduce \textit{one-to-many tiling scheme} to scale-up the deep learning methods for feature matching.
-	\item Improve the performance of matching inter-epoch images with SIFT by (1) using downsampled images and (2) skipping ratio test and FIGNN.
+	\item Improve the performance of matching inter-epoch images with SIFT by (1) using downsampled images and (2) skipping ratio test.% and FIGNN.
 \end{enumerate}
 
 
@@ -156,7 +156,7 @@ However, the idea of using 2D similarity model to guide matching is more generic
 
 %\subsubsection{SIFT}
 %\subsubsection{SuperGlue}
-\subsection{Strategy 2: Matching Orthophotos/DSMs (\textit{Ortho} and \textit{DSM})}
+\subsection{Strategy 2: Matching Orthophotos/DSMs (\textit{Ortho} or \textit{DSM})}
 %\subsection{trategy 2: global matching}
 Another strategy is to match orthophotos or DSMs, which is suitable for both aerial images and satellite images. The workflows are displayed in Figure~\ref{WorkflowOrtho}(a) and Figure~\ref{WorkflowDSM}(a) individually. Different than matching P$\times$Q image pairs, we only need to match a pair of DSMs/orthophotos.
 Orthophotos are by nature RGB images, therefore feature matching methods can be applied on them directly. Conversely, DSMs are 2.5D rasters recorded in floating-point format, they should be converted beforehand to [0–255] range grayscale images.
@@ -341,28 +341,32 @@ For each dataset, the rough co-registration is applied on each free epoch $E_f$ 
 %As inter-epoch images often look very different, when the original SIFT ~\cite{lowe2004distinctive} (i.e. $SIFT_{Default}$) is applied directly in our methods $SIFT_{ImgPairs}$, $SIFT_{Ortho}$ and $SIFT_{DSM}$, generally very few matches are recovered. So we replace it with a slightly different version of SIFT (i.e.  $SIFT_{Adapted}$) with the following modifications:\\
 For the SIFT algorithm applied in methods $SIFT_{ImgPairs}$, $SIFT_{Ortho}$ and $SIFT_{DSM}$, we did a test to compare the performance of SIFT on multi-epoch dataset with different parameters. Two different sets of SIFT parameters are compared, which are referred to as $SIFT_{Default}$ and $SIFT_{Adapted}$:\\
 \begin{enumerate}
-	\item \textbf{$SIFT_{Default}$}: Extract SIFT keypoints on the original images, followed by mutual nearest neighbor matching combined with ratio test and FIGNN (REF).
-	\item \textbf{$SIFT_{Adapted}$}: Downsample the input images with a factor of 3 and extract SIFT keypoints, match them by mutual nearest neighbor without ratio test and FIGNN, followed by applying RANSAC based on 2D similarity transformation model to remove outliers.
+	\item \textbf{$SIFT_{Default}$}: Extract SIFT keypoints on the original images, followed by mutual nearest neighbor matching combined with ratio test.% and FIGNN (REF).
+	%\item \textbf{$SIFT_{Adapted}$}: Downsample the input images with a factor of 3 and extract SIFT keypoints, match them by mutual nearest neighbor without ratio test and FIGNN, followed by applying RANSAC based on 2D similarity transformation model to remove outliers.
+	\item \textbf{$SIFT_{Adapted}$}: Downsample the input images with a factor of 3 and extract SIFT keypoints, match them by mutual nearest neighbor without ratio test, followed by applying RANSAC based on 2D similarity transformation model to remove outliers.
 \end{enumerate}
 
 %\begin{enumerate}
 %	\item Downsample the images by a factor of 3 (i.e. a total downsampling factor of 9 with respect to the input images) to focus on the global outline of the scene for improving robustness;
 %	\item Relax the matching restriction by skipping the ratio test to obtain more tentative matches followed by applying RANSAC based on 2D similarity transformation model to remove outliers.
 %\end{enumerate}
-Experiments comparing $SIFT_{Default}$ and $SIFT_{Adapted}$ on methods ${ImgPairs}$, ${Ortho}$ and ${DSM}$ are displayed in Appendix ~\ref{chap:appendix1}, in which $SIFT_{Adapted}$ recovered enough good matches while $SIFT_{Default}$ failed. It is reasonable as inter-epoch images often look very different, $SIFT_{Default}$ generally recover very few matches. By downsamping the images, we are able to focus on the global outline of the scene for improving robustness. By relaxing the matching restriction of ratio test and FIGNN, right matches would be reserved while wrong matches would be removed in the subsequent RANSAC.\\
+Experiments comparing $SIFT_{Default}$ and $SIFT_{Adapted}$ on methods ${ImgPairs}$, ${Ortho}$ and ${DSM}$ are displayed in Appendix ~\ref{chap:appendix1}, in which $SIFT_{Adapted}$ recovered enough good matches while $SIFT_{Default}$ failed. It is reasonable as inter-epoch images often look very different, $SIFT_{Default}$ generally recover very few matches. By downsamping the images, we are able to focus on the global outline of the scene for improving robustness. 
+%By relaxing the matching restriction of ratio test and FIGNN, right matches would be reserved while wrong matches would be removed in the subsequent RANSAC.\\
+By relaxing the matching restriction of ratio test, right matches would be reserved while wrong matches would be removed in the subsequent RANSAC.\\
 
 For $SuperGlue_{ImgPairs}$, $SuperGlue_{Ortho}$ and $SuperGlue_{DSM}$, the image/patch pairs entering SuperGlue are downsampled to 640$\times$480 pixels, as it is the default parameter provided by the author and guarantees the best performance. 
 %For the tiling scheme in $SuperGlue_{Ortho}$ and $SuperGlue_{DSM}$, orthophotos/DSMs are split to tiles of the size 1280$\times$960 pixels.
 
 
 \subsection{Datasets}
+\label{Datasets}
 %Frejus, Pezenas, Kobe\\
-We tested our method on three sets of datasets: Fr{\'e}jus, Pezenas and Kobe. Details of the datasets are listed in Table~\ref{AerialData}, ~\ref{SatelliteData} and Figure~\ref{FrejusData},~\ref{PezenasData}, ~\ref{KobeData}.
+We tested our rough co-registration methods on three sets of datasets: Fr{\'e}jus, Pezenas and Kobe. Details of the datasets are listed in Table~\ref{AerialData}, ~\ref{SatelliteData} and Figure~\ref{FrejusData},~\ref{PezenasData}, ~\ref{KobeData}.
 \par
-\paragraph{Fr{\'e}jus} It is a 15 $km^2$ rectangular area located in Fr{\'e}jus, a commune in southeastern France. The area is mainly covered with buildings along with scattered farmlands, except a half-moon-shaped bay located in south. We have four sets of aerial images acquired in 1954, 1966, 1970 and 2014. The epoch 2014 was acquired with the IGN's digital metric camera ~\cite{souchon2010ign}, its orientations are both in global reference frame and precise. Therefore it is treated as the ground truth (GT) during our processing (in other words, the epoch 2014 is chosen as the reference epoch). 
+\paragraph{Fr{\'e}jus} It is a 15 $km^2$ rectangular area located in Fr{\'e}jus, a commune in southeastern France. The area is mainly covered with buildings along with scattered farmlands, except a half-moon-shaped bay located in south. We have four sets of aerial images acquired in 1954, 1966, 1970 and 2014. The epoch 2014 was acquired with the IGN's digital metric camera ~\cite{souchon2010ign}, its orientations are both in global reference frame and precise. Therefore it is treated as \ac{GT} during our processing (in other words, the epoch 2014 is chosen as the reference epoch). 
 The area exhibits drastic scene changes in the 60-year period, as can be seen in Figure~\ref{FrejusEvolution}, where evolution of a subregion is displayed.\\
-\paragraph{Pezenas} It is a 420 $km^2$ rectangular area located in Pezenas in the Occitanie region in southern France. The area is mainly covered with vegetation and several sparsely populated urban zones. We have at our disposal three sets of aerial images acquired in 1971, 1981 and 2015, and one set of satellite images acquired in 2014. Both the epoch 2014 and 2015 are treated as GT. In this dataset we are interested in matching historical epochs (1971 and 1981) with aerial GT and satellite GT individually. The area exhibits changes in scene appearance in the 44-year period.\\
-\paragraph{Kobe} It is a 90 $km^2$ area of irregular shape located in the north of Awaji Island, Japan. The well-known Kobe earthquake happened here in January 1995. We have two sets of aerial images: pre-event acquired in 1991 and post-event acquired in 1995. It is mainly covered with mountain area and narrow urban zones along the sea. There is no GT, hence we chose the latter epoch (i.e. epoch 1995) as the reference epoch and measured 2 points on Google map to scale the result to metric units. In this dataset we are interested in localizing the earthquake fault.
+\paragraph{Pezenas} It is a 420 $km^2$ rectangular area located in Pezenas in the Occitanie region in southern France. The area is mainly covered with vegetation and several sparsely populated urban zones. We have at our disposal three sets of aerial images acquired in 1971, 1981 and 2015, and one set of satellite images acquired in 2014. Both the epoch 2014 and 2015 are treated as \ac{GT}. In this dataset we are interested in matching historical epochs (1971 and 1981) with aerial \ac{GT} and satellite \ac{GT} individually. The area exhibits changes in scene appearance in the 44-year period.\\
+\paragraph{Kobe} It is a 90 $km^2$ area of irregular shape located in the north of Awaji Island, Japan. The well-known Kobe earthquake happened here in January 1995. We have two sets of aerial images: pre-event acquired in 1991 and post-event acquired in 1995. It is mainly covered with mountain area and narrow urban zones along the sea. There is no \ac{GT}, hence we chose the latter epoch (i.e. epoch 1995) as the reference epoch and measured 2 points on Google map to scale the result to metric units. In this dataset we are interested in localizing the earthquake fault.
 
 \begin{table}[htbp]
     \scriptsize %\footnotesize
@@ -460,7 +464,7 @@ The area exhibits drastic scene changes in the 60-year period, as can be seen in
                 \includegraphics[width=6.78cm]{images/Chapitre3/Pezenas2015.png}
             \end{minipage}%
         }
-        \caption{Images demonstration of different aerial epochs as well as satellite epoch in Pezenas, image number of each epoch is displayed in the parenthesis of each sub headline. There are 2 historical aerial epochs (1971 and 1981) and 2 GT epochs (2014 the satellite epoch and 2015 the aerial epoch) in this dataset. The common zone between the historical epochs and the 2014 satellite epoch is indicated by the blue rectangles, while that between historical epochs and the 2015 aerial epoch is in red rectangles. Epoch 2014 and 2015 are chosen as the reference epoch $E_r$ and the other epochs (i.e. epoch 1971 and 1981) are free epochs $E_f$ that should be co-registered to the frame of $E_r$. Graphic scales are demonstrated on $E_r$ in (c) and (d).}
+        \caption{Images demonstration of different aerial epochs as well as satellite epoch in Pezenas, image number of each epoch is displayed in the parenthesis of each sub headline. There are 2 historical aerial epochs (1971 and 1981) and 2 \ac{GT} epochs (2014 the satellite epoch and 2015 the aerial epoch) in this dataset. The common zone between the historical epochs and the 2014 satellite epoch is indicated by the blue rectangles, while that between historical epochs and the 2015 aerial epoch is in red rectangles. Epoch 2014 and 2015 are chosen as the reference epoch $E_r$ and the other epochs (i.e. epoch 1971 and 1981) are free epochs $E_f$ that should be co-registered to the frame of $E_r$. Graphic scales are demonstrated on $E_r$ in (c) and (d).}
         \label{PezenasData}
     \end{center}
 \end{figure*} 
@@ -510,12 +514,12 @@ The area exhibits drastic scene changes in the 60-year period, as can be seen in
 %%\subsubsection{Qualitative evaluation}
 %%\subsubsection{Quantitative evaluation}
 %%(1)Matches visualization\\
-%%%inlier ratio (RANSAC and GT)\\
+%%%inlier ratio (RANSAC and \ac{GT})\\
 %%(2)Ground check points\\
 %%(3)DoD\\
 %For each dataset, we manually measured 3 GCPs well distributed in the block. The application of 3 GCPs is twofold:\\
 %\begin{itemize}
-%    \item Based on the GCPs, a 3D Helmert transformation model between each free epoch and the reference epoch is built to obtain the GT co-registered orientations.
+%    \item Based on the GCPs, a 3D Helmert transformation model between each free epoch and the reference epoch is built to obtain the \ac{GT} co-registered orientations.
 %    \item GCPs are also treated as ground check points to evaluate the co-registered orientations calculated by our methods.
 %\end{itemize}
 %%as check points to evaluate the roughly co-registered orientations resulted by 6 methods:\\
@@ -523,7 +527,7 @@ In order to evaluate the results qualitatively and quantitatively, the following
 \begin{enumerate}
     \item \textbf{Matches visualization}. The number of (1) total matches (i.e. matches before RANSAC) as well as (2) RANSAC inliers (matches that survived RANSAC) would be displayed together in bar charts; in the meantime, the RANSAC inliers would be visualized and demonstrated, from which we can tell whether the methods succeeded or failed on each dataset.
 %    \item Ground check points: the co-registered orientations calculated by our methods would be used to triangulate the ground check points and the coordinate differences \textcolor{red}{(explain the diff means the mean diff of x, y and z)} will be displayed. The better the epochs co-register, the smaller the difference is.
-    \item \textbf{DoD}. For the methods that succeeded, we use the resulted orientations in the same frame to calculate DSMs in order to generate DoD. The visualization of DoD as well as the statistical information would be displayed.
+    \item \textbf{\ac{DoD}}. For the methods that succeeded, we use the resulted orientations in the same frame to calculate DSMs in order to generate \ac{DoD}. The visualization of \ac{DoD} as well as the statistical information would be displayed.
     %Ideally the DoD should only display the scene changes. If the dome effect appears, it indicates the systematic errors caused by poorly estimated camera parameters.   
 \end{enumerate}
 
@@ -1348,48 +1352,48 @@ In conclusion:\\
 
 
 
-\subsubsection{DoD}
-According to Table~\ref{succeedorfail}, by applying 6 methods (or 4 methods for satellite images) on each free epoch and the reference epoch, we got 44 testing cases. Among all the cases, there are 33 of them succeeded, which leads to 33 sets of co-registered orientations. For each set of resulted orientations, we use them to calculate DSMs in free epoch and reference epoch individually in order to generate DoD. 
-The visualization of DoDs are demonstrated in Figure~\ref{DoDFrejus}, ~\ref{DoDPezenas}, ~\ref{DoDPezenas-Satellite} and ~\ref{DoDKobe}.
-The statistical information of the 33 DoDs are displayed in Table~\ref{DoDStatistic}.\\
-As can be seen, dome effect is present in all the DoDs. This is because the camera parameters are estimated within the same epoch, therefore the deformation of historical images inevitably leads to unsatisfactory results. This is acceptable for rough co-registration as our goal is only to provide guidance for precise matching.
+\subsubsection{\ac{DoD}}
+According to Table~\ref{succeedorfail}, by applying 6 methods (or 4 methods for satellite images) on each free epoch and the reference epoch, we got 44 testing cases. Among all the cases, there are 33 of them succeeded, which leads to 33 sets of co-registered orientations. For each set of resulted orientations, we use them to calculate DSMs in free epoch and reference epoch individually in order to generate \ac{DoD}. 
+The visualization of \ac{DoD}s are demonstrated in Figure~\ref{DoDFrejus}, ~\ref{DoDPezenas}, ~\ref{DoDPezenas-Satellite} and ~\ref{DoDKobe}.
+The statistical information of the 33 \ac{DoD}s are displayed in Table~\ref{DoDStatistic}.\\
+As can be seen, dome effect is present in all the \ac{DoD}s. This is because the camera parameters are estimated within the same epoch, therefore the deformation of historical images inevitably leads to unsatisfactory results. This is acceptable for rough co-registration as our goal is only to provide guidance for precise matching.
 
 \begin{figure*}[htbp]
     \begin{center}
-        \subfigure[DoD$_{Frejus1954}^{SuperGlue_{ImgPairs}}$]{
+        \subfigure[\ac{DoD}$_{Frejus1954}^{SuperGlue_{ImgPairs}}$]{
             \begin{minipage}[t]{0.31\linewidth}
                 \centering
                 %left, lower, right, up
                 \includegraphics[width=3.3cm,trim=680 80 110 220,clip]{images/Chapitre3/DoD1954R3D-SuperGlue.png}
             \end{minipage}%
         }
-        \subfigure[DoD$_{Frejus1954}^{SuperGlue_{Ortho}}$]{
+        \subfigure[\ac{DoD}$_{Frejus1954}^{SuperGlue_{Ortho}}$]{
             \begin{minipage}[t]{0.31\linewidth}
                 \centering
                 \includegraphics[width=3.3cm,trim=680 80 110 220,clip]{images/Chapitre3/DoD1954Ortho-SuperGlue.png}
             \end{minipage}%
         }
-        \subfigure[DoD$_{Frejus1954}^{SuperGlue_{DSM}}$]{
+        \subfigure[\ac{DoD}$_{Frejus1954}^{SuperGlue_{DSM}}$]{
             \begin{minipage}[t]{0.31\linewidth}
                 \centering
                 \includegraphics[width=3.3cm,trim=680 80 110 220,clip]{images/Chapitre3/DoD1954DSM-SuperGlue.png}
             \end{minipage}%
         }
         
-        \subfigure[DoD$_{Frejus1954}^{SIFT_{ImgPairs}}$]{
+        \subfigure[\ac{DoD}$_{Frejus1954}^{SIFT_{ImgPairs}}$]{
             \begin{minipage}[t]{0.31\linewidth}
                 \centering
                 %left, lower, right, up
                 \includegraphics[width=2cm]{images/Chapitre3/NoDoD.png}
             \end{minipage}%
         }
-        \subfigure[DoD$_{Frejus1954}^{SIFT_{Ortho}}$]{
+        \subfigure[\ac{DoD}$_{Frejus1954}^{SIFT_{Ortho}}$]{
             \begin{minipage}[t]{0.31\linewidth}
                 \centering
                 \includegraphics[width=2cm]{images/Chapitre3/NoDoD.png}
             \end{minipage}%
         }
-        \subfigure[DoD$_{Frejus1954}^{SIFT_{DSM}}$]{
+        \subfigure[\ac{DoD}$_{Frejus1954}^{SIFT_{DSM}}$]{
             \begin{minipage}[t]{0.31\linewidth}
                 \centering
                 \includegraphics[width=3.3cm,trim=680 80 110 220,clip]{images/Chapitre3/DoD1954DSM-SIFT.png}
@@ -1402,20 +1406,20 @@ As can be seen, dome effect is present in all the DoDs. This is because the came
 %
 %\begin{figure*}[htbp]
 %   \begin{center}
-        \subfigure[DoD$_{Frejus1966}^{SuperGlue_{ImgPairs}}$]{
+        \subfigure[\ac{DoD}$_{Frejus1966}^{SuperGlue_{ImgPairs}}$]{
             \begin{minipage}[t]{0.31\linewidth}
                 \centering
                 %left, lower, right, up
                 \includegraphics[width=3.3cm,trim=730 120 50 260,clip]{images/Chapitre3/DoD1966R3D-SuperGlue.png}
             \end{minipage}%
         }
-        \subfigure[DoD$_{Frejus1966}^{SuperGlue_{Ortho}}$]{
+        \subfigure[\ac{DoD}$_{Frejus1966}^{SuperGlue_{Ortho}}$]{
             \begin{minipage}[t]{0.31\linewidth}
                 \centering
                 \includegraphics[width=3.3cm,trim=730 120 50 260,clip]{images/Chapitre3/DoD1966Ortho-SuperGlue.png}
             \end{minipage}%
         }
-        \subfigure[DoD$_{Frejus1966}^{SuperGlue_{DSM}}$]{
+        \subfigure[\ac{DoD}$_{Frejus1966}^{SuperGlue_{DSM}}$]{
             \begin{minipage}[t]{0.31\linewidth}
                 \centering
                 \includegraphics[width=3.3cm,trim=730 120 50 260,clip]{images/Chapitre3/DoD1966DSM-SuperGlue.png}
@@ -1423,20 +1427,20 @@ As can be seen, dome effect is present in all the DoDs. This is because the came
         }
         
         
-        \subfigure[DoD$_{Frejus1966}^{SIFT_{ImgPairs}}$]{
+        \subfigure[\ac{DoD}$_{Frejus1966}^{SIFT_{ImgPairs}}$]{
             \begin{minipage}[t]{0.31\linewidth}
                 \centering
                 %left, lower, right, up
                 \includegraphics[width=2cm]{images/Chapitre3/NoDoD.png}
             \end{minipage}%
         }
-        \subfigure[DoD$_{Frejus1966}^{SIFT_{Ortho}}$]{
+        \subfigure[\ac{DoD}$_{Frejus1966}^{SIFT_{Ortho}}$]{
             \begin{minipage}[t]{0.31\linewidth}
                 \centering
                 \includegraphics[width=2cm]{images/Chapitre3/NoDoD.png}
             \end{minipage}%
         }
-        \subfigure[DoD$_{Frejus1966}^{SIFT_{DSM}}$]{
+        \subfigure[\ac{DoD}$_{Frejus1966}^{SIFT_{DSM}}$]{
             \begin{minipage}[t]{0.31\linewidth}
                 \centering
                 \includegraphics[width=3.3cm,trim=730 120 50 260,clip]{images/Chapitre3/DoD1966DSM-SIFT.png}
@@ -1449,54 +1453,54 @@ As can be seen, dome effect is present in all the DoDs. This is because the came
 %
 %\begin{figure*}[htbp]
 %\begin{center}     
-        \subfigure[DoD$_{Frejus1970}^{SuperGlue_{ImgPairs}}$]{
+        \subfigure[\ac{DoD}$_{Frejus1970}^{SuperGlue_{ImgPairs}}$]{
             \begin{minipage}[t]{0.31\linewidth}
                 \centering
                 %left, lower, right, up
                 \includegraphics[width=3.3cm,trim=680 180 50 260,clip]{images/Chapitre3/DoD1970R3D-SuperGlue.png}
             \end{minipage}%
         }
-        \subfigure[DoD$_{Frejus1970}^{SuperGlue_{Ortho}}$]{
+        \subfigure[\ac{DoD}$_{Frejus1970}^{SuperGlue_{Ortho}}$]{
             \begin{minipage}[t]{0.31\linewidth}
                 \centering
                 \includegraphics[width=3.3cm,trim=680 180 50 260,clip]{images/Chapitre3/DoD1970Ortho-SuperGlue.png}
             \end{minipage}%
         }
-        \subfigure[DoD$_{Frejus1970}^{SuperGlue_{DSM}}$]{
+        \subfigure[\ac{DoD}$_{Frejus1970}^{SuperGlue_{DSM}}$]{
             \begin{minipage}[t]{0.31\linewidth}
                 \centering
                 \includegraphics[width=3.3cm,trim=680 180 50 260,clip]{images/Chapitre3/DoD1970DSM-SuperGlue.png}
             \end{minipage}%
         }
         
-        \subfigure[DoD$_{Frejus1970}^{SIFT_{ImgPairs}}$]{
+        \subfigure[\ac{DoD}$_{Frejus1970}^{SIFT_{ImgPairs}}$]{
             \begin{minipage}[t]{0.31\linewidth}
                 \centering
                 %left, lower, right, up
                 \includegraphics[width=2cm]{images/Chapitre3/NoDoD.png}
             \end{minipage}%
         }
-        \subfigure[DoD$_{Frejus1970}^{SIFT_{Ortho}}$]{
+        \subfigure[\ac{DoD}$_{Frejus1970}^{SIFT_{Ortho}}$]{
             \begin{minipage}[t]{0.31\linewidth}
                 \centering
                 \includegraphics[width=2cm]{images/Chapitre3/NoDoD.png}
             \end{minipage}%
         }
-        \subfigure[DoD$_{Frejus1970}^{SIFT_{DSM}}$]{
+        \subfigure[\ac{DoD}$_{Frejus1970}^{SIFT_{DSM}}$]{
             \begin{minipage}[t]{0.31\linewidth}
                 \centering
                 \includegraphics[width=3.3cm,trim=680 180 50 260,clip]{images/Chapitre3/DoD1970DSM-SIFT.png}
             \end{minipage}%
         }
         
-        \subfigure[DoD legend]{
+        \subfigure[\ac{DoD} legend]{
             \begin{minipage}[t]{1\linewidth}
                 \centering
                 \includegraphics[width=11cm]{images/Chapitre3/LegendDoD.png}
             \end{minipage}%
         }
         %\caption{DoDs of SuperGlue and SIFT on dataset Fr{\'e}jus (epoch 1970). The prohibition sign means the corresponding method failed.}
-        \caption{{\scriptsize DoDs between free epoch \textbf{Fr{\'e}jus 1954, 1966, 1970} and reference epoch \textbf{2014} with methods $SuperGlue_{ImgPairs}$ (a, g, m), $SuperGlue_{Ortho}$ (b, h, n), $SuperGlue_{DSM}$ (c, i, o), $SIFT_{ImgPairs}$ (d, j, p), $SIFT_{Ortho}$ (e, k, q) and $SIFT_{DSM}$ (f, l, r). The prohibition sign means the corresponding method failed.}}
+        \caption{{\scriptsize \ac{DoD}s between free epoch \textbf{Fr{\'e}jus 1954, 1966, 1970} and reference epoch \textbf{2014} with methods $SuperGlue_{ImgPairs}$ (a, g, m), $SuperGlue_{Ortho}$ (b, h, n), $SuperGlue_{DSM}$ (c, i, o), $SIFT_{ImgPairs}$ (d, j, p), $SIFT_{Ortho}$ (e, k, q) and $SIFT_{DSM}$ (f, l, r). The prohibition sign means the corresponding method failed.}}
         \label{DoDFrejus}
     \end{center}
 \end{figure*} 
@@ -1505,94 +1509,92 @@ As can be seen, dome effect is present in all the DoDs. This is because the came
 
 \begin{figure*}[htbp]
 	\begin{center}
-		\subfigure[DoD$_{Pezenas1971}^{SuperGlue_{ImgPairs}}$]{
+		\subfigure[\ac{DoD}$_{Pezenas1971}^{SuperGlue_{ImgPairs}}$]{
 			\begin{minipage}[t]{0.31\linewidth}
 				\centering
 				%left, lower, right, up
 				\includegraphics[width=4.2cm,trim=680 80 50 230,clip]{images/Chapitre3/DoD1971R3D-SuperGlue.png}
 			\end{minipage}%
 		}
-		\subfigure[DoD$_{Pezenas1971}^{SuperGlue_{Ortho}}$]{
+		\subfigure[\ac{DoD}$_{Pezenas1971}^{SuperGlue_{Ortho}}$]{
 			\begin{minipage}[t]{0.31\linewidth}
 				\centering
 				\includegraphics[width=4.2cm,trim=680 80 50 230,clip]{images/Chapitre3/DoD1971Ortho-SuperGlue.png}
 			\end{minipage}%
 		}
-		\subfigure[DoD$_{Pezenas1971}^{SuperGlue_{DSM}}$]{
+		\subfigure[\ac{DoD}$_{Pezenas1971}^{SuperGlue_{DSM}}$]{
 			\begin{minipage}[t]{0.31\linewidth}
 				\centering
 				\includegraphics[width=4.2cm,trim=680 80 50 230,clip]{images/Chapitre3/DoD1971DSM-SuperGlue.png}
 			\end{minipage}%
 		}
 		
-		\subfigure[DoD$_{Pezenas1971}^{SIFT_{ImgPairs}}$]{
+		\subfigure[\ac{DoD}$_{Pezenas1971}^{SIFT_{ImgPairs}}$]{
 			\begin{minipage}[t]{0.31\linewidth}
 				\centering
 				%left, lower, right, up
 				\includegraphics[width=4.2cm,trim=680 80 50 230,clip]{images/Chapitre3/DoD1971R3D-SIFT.png}
 			\end{minipage}%
 		}
-		\subfigure[DoD$_{Pezenas1971}^{SIFT_{Ortho}}$]{
+		\subfigure[\ac{DoD}$_{Pezenas1971}^{SIFT_{Ortho}}$]{
 			\begin{minipage}[t]{0.31\linewidth}
 				\centering
 				\includegraphics[width=4.2cm,trim=680 80 50 230,clip]{images/Chapitre3/DoD1971Ortho-SIFT.png}
 			\end{minipage}%
 		}
-		\subfigure[DoD$_{Pezenas1971}^{SIFT_{DSM}}$]{
+		\subfigure[\ac{DoD}$_{Pezenas1971}^{SIFT_{DSM}}$]{
 			\begin{minipage}[t]{0.31\linewidth}
 				\centering
 				\includegraphics[width=4.2cm,trim=680 80 50 230,clip]{images/Chapitre3/DoD1971DSM-SIFT.png}
 			\end{minipage}%
 		}
 		
-		\subfigure[DoD$_{Pezenas1981}^{SuperGlue_{ImgPairs}}$]{
+		\subfigure[\ac{DoD}$_{Pezenas1981}^{SuperGlue_{ImgPairs}}$]{
 			\begin{minipage}[t]{0.31\linewidth}
 				\centering
 				%left, lower, right, up
 				\includegraphics[width=4.2cm,trim=720 100 50 200,clip]{images/Chapitre3/DoD1981R3D-SuperGlue.png}
 			\end{minipage}%
 		}
-		\subfigure[DoD$_{Pezenas1981}^{SuperGlue_{Ortho}}$]{
+		\subfigure[\ac{DoD}$_{Pezenas1981}^{SuperGlue_{Ortho}}$]{
 			\begin{minipage}[t]{0.31\linewidth}
 				\centering
 				\includegraphics[width=4.2cm,trim=720 100 50 200,clip]{images/Chapitre3/DoD1981Ortho-SuperGlue.png}
 			\end{minipage}%
 		}
-		\subfigure[DoD$_{Pezenas1981}^{SuperGlue_{DSM}}$]{
+		\subfigure[\ac{DoD}$_{Pezenas1981}^{SuperGlue_{DSM}}$]{
 			\begin{minipage}[t]{0.31\linewidth}
 				\centering
 				\includegraphics[width=4.2cm,trim=720 100 50 200,clip]{images/Chapitre3/DoD1981DSM-SuperGlue.png}
 			\end{minipage}%
 		}
 		
-		\subfigure[DoD$_{Pezenas1981}^{SIFT_{ImgPairs}}$]{
+		\subfigure[\ac{DoD}$_{Pezenas1981}^{SIFT_{ImgPairs}}$]{
 			\begin{minipage}[t]{0.31\linewidth}
 				\centering
 				%left, lower, right, up
 				\includegraphics[width=4.2cm,trim=720 100 50 200,clip]{images/Chapitre3/DoD1981R3D-SIFT.png}
 			\end{minipage}%
 		}
-		\subfigure[DoD$_{Pezenas1981}^{SIFT_{Ortho}}$]{
+		\subfigure[\ac{DoD}$_{Pezenas1981}^{SIFT_{Ortho}}$]{
 			\begin{minipage}[t]{0.31\linewidth}
 				\centering
 				\includegraphics[width=4.2cm,trim=720 100 50 200,clip]{images/Chapitre3/DoD1981Ortho-SIFT.png}
 			\end{minipage}%
 		}
-		\subfigure[DoD$_{Pezenas1981}^{SIFT_{DSM}}$]{
+		\subfigure[\ac{DoD}$_{Pezenas1981}^{SIFT_{DSM}}$]{
 			\begin{minipage}[t]{0.31\linewidth}
 				\centering
 				\includegraphics[width=4.2cm,trim=720 100 50 200,clip]{images/Chapitre3/DoD1981DSM-SIFT.png}
 			\end{minipage}%
 		}
-		
-		
-		\subfigure[DoD legend]{
+		\subfigure[\ac{DoD} legend]{
 			\begin{minipage}[t]{1\linewidth}
 				\centering
 				\includegraphics[width=11cm]{images/Chapitre3/LegendDoD.png}
 			\end{minipage}%
 		}
-        \caption{{\scriptsize DoDs between free epoch \textbf{Pezenas 1971, 1981} and reference aerial epoch \textbf{2015} with methods $SuperGlue_{ImgPairs}$ (a, g), $SuperGlue_{Ortho}$ (b, h), $SuperGlue_{DSM}$ (c, i), $SIFT_{ImgPairs}$ (d, j), $SIFT_{Ortho}$ (e, k) and $SIFT_{DSM}$ (f, l). The prohibition sign means the corresponding method failed.}}
+        \caption{{\scriptsize \ac{DoD}s between free epoch \textbf{Pezenas 1971, 1981} and reference aerial epoch \textbf{2015} with methods $SuperGlue_{ImgPairs}$ (a, g), $SuperGlue_{Ortho}$ (b, h), $SuperGlue_{DSM}$ (c, i), $SIFT_{ImgPairs}$ (d, j), $SIFT_{Ortho}$ (e, k) and $SIFT_{DSM}$ (f, l). The prohibition sign means the corresponding method failed.}}
 		\label{DoDPezenas}
 	\end{center}
 \end{figure*} 
@@ -1600,40 +1602,40 @@ As can be seen, dome effect is present in all the DoDs. This is because the came
 
 \begin{figure*}[htbp]
 	\begin{center}
-		\subfigure[DoD$_{Pezenas1971}^{SuperGlue_{Ortho}}$]{
+		\subfigure[\ac{DoD}$_{Pezenas1971}^{SuperGlue_{Ortho}}$]{
 			\begin{minipage}[t]{0.31\linewidth}
 				\centering
 				%\includegraphics[width=4.5cm,trim=680 80 50 230,clip]{images/Chapitre3/DoD1971Ortho-SuperGlue-Satellite.png}
 				\includegraphics[width=2cm]{images/Chapitre3/NoDoD.png}
 			\end{minipage}%
 		}
-		\subfigure[DoD$_{Pezenas1971}^{SuperGlue_{DSM}}$]{
+		\subfigure[\ac{DoD}$_{Pezenas1971}^{SuperGlue_{DSM}}$]{
 			\begin{minipage}[t]{0.31\linewidth}
 				\centering
 				\includegraphics[width=4.5cm,trim=680 80 50 230,clip]{images/Chapitre3/DoD1971DSM-SuperGlue-Satellite.png}
 			\end{minipage}%
 		}\\
 		
-		\subfigure[DoD$_{Pezenas1971}^{SIFT_{Ortho}}$]{
+		\subfigure[\ac{DoD}$_{Pezenas1971}^{SIFT_{Ortho}}$]{
 			\begin{minipage}[t]{0.31\linewidth}
 				\centering
 				\includegraphics[width=2cm]{images/Chapitre3/NoDoD.png}
 			\end{minipage}%
 		}
-		\subfigure[DoD$_{Pezenas1971}^{SIFT_{DSM}}$]{
+		\subfigure[\ac{DoD}$_{Pezenas1971}^{SIFT_{DSM}}$]{
 			\begin{minipage}[t]{0.31\linewidth}
 				\centering
 				\includegraphics[width=4.2cm,trim=720 100 50 200,clip]{images/Chapitre3/DoD1971DSM-SIFT-Satellite.png}
 			\end{minipage}%
 		}\\
 		
-		\subfigure[DoD$_{Pezenas1981}^{SuperGlue_{Ortho}}$]{
+		\subfigure[\ac{DoD}$_{Pezenas1981}^{SuperGlue_{Ortho}}$]{
 			\begin{minipage}[t]{0.31\linewidth}
 				\centering
 				\includegraphics[width=4.2cm,trim=900 100 250 200,clip]{images/Chapitre3/DoD1981Ortho-SuperGlue-Satellite.png}
 			\end{minipage}%
 		}
-		\subfigure[DoD$_{Pezenas1981}^{SuperGlue_{DSM}}$]{
+		\subfigure[\ac{DoD}$_{Pezenas1981}^{SuperGlue_{DSM}}$]{
 			\begin{minipage}[t]{0.31\linewidth}
 				\centering
 				\includegraphics[width=4.2cm,trim=900 100 250 200,clip]{images/Chapitre3/DoD1981DSM-SuperGlue-Satellite.png}
@@ -1641,13 +1643,13 @@ As can be seen, dome effect is present in all the DoDs. This is because the came
 		}\\
 		
 		
-		\subfigure[DoD$_{Pezenas1981}^{SIFT_{Ortho}}$]{
+		\subfigure[\ac{DoD}$_{Pezenas1981}^{SIFT_{Ortho}}$]{
 			\begin{minipage}[t]{0.31\linewidth}
 				\centering
 				\includegraphics[width=2cm]{images/Chapitre3/NoDoD.png}
 			\end{minipage}%
 		}
-		\subfigure[DoD$_{Pezenas1981}^{SIFT_{DSM}}$]{
+		\subfigure[\ac{DoD}$_{Pezenas1981}^{SIFT_{DSM}}$]{
 			\begin{minipage}[t]{0.31\linewidth}
 				\centering
 				\includegraphics[width=4.2cm,trim=900 100 250 200,clip]{images/Chapitre3/DoD1981DSM-SIFT-Satellite.png}
@@ -1655,13 +1657,13 @@ As can be seen, dome effect is present in all the DoDs. This is because the came
 		}\\
 		
 		
-		\subfigure[DoD legend]{
+		\subfigure[\ac{DoD} legend]{
 			\begin{minipage}[t]{1\linewidth}
 				\centering
 				\includegraphics[width=11cm]{images/Chapitre3/LegendDoD.png}
 			\end{minipage}%
 		}
-		\caption{{\scriptsize DoDs between free epoch \textbf{Pezenas 1971, 1981} and reference satellite epoch \textbf{2014} with methods $SuperGlue_{Ortho}$ (a, e), $SuperGlue_{DSM}$ (b, f), $SIFT_{Ortho}$ (c, g) and $SIFT_{DSM}$ (d, h). The holes among them are areas covered with clouds which are masked out. The prohibition sign means the corresponding method failed.}}
+		\caption{{\scriptsize \ac{DoD}s between free epoch \textbf{Pezenas 1971, 1981} and reference satellite epoch \textbf{2014} with methods $SuperGlue_{Ortho}$ (a, e), $SuperGlue_{DSM}$ (b, f), $SIFT_{Ortho}$ (c, g) and $SIFT_{DSM}$ (d, h). The holes among them are areas covered with clouds which are masked out. The prohibition sign means the corresponding method failed.}}
 		\label{DoDPezenas-Satellite}
 	\end{center}
 \end{figure*} 
@@ -1669,53 +1671,53 @@ As can be seen, dome effect is present in all the DoDs. This is because the came
 
 \begin{figure*}[htbp]
 	\begin{center}
-        \subfigure[DoD$_{Kobe}^{SuperGlue_{ImgPairs}}$]{
+        \subfigure[\ac{DoD}$_{Kobe}^{SuperGlue_{ImgPairs}}$]{
 	\begin{minipage}[t]{1\linewidth}
 		\centering
 		%left, lower, right, up
 		\includegraphics[width=12cm,trim=700 450 180 560,clip]{images/Chapitre3/DoD1991R3D-SuperGlue.png}
 	\end{minipage}%
 }
-\subfigure[DoD$_{Kobe}^{SuperGlue_{Ortho}}$]{
+\subfigure[\ac{DoD}$_{Kobe}^{SuperGlue_{Ortho}}$]{
 	\begin{minipage}[t]{1\linewidth}
 		\centering
 		\includegraphics[width=12cm,trim=700 450 180 560,clip]{images/Chapitre3/DoD1991Ortho-SuperGlue.png}
 	\end{minipage}%
 }
-\subfigure[DoD$_{Kobe}^{SuperGlue_{DSM}}$]{
+\subfigure[\ac{DoD}$_{Kobe}^{SuperGlue_{DSM}}$]{
 	\begin{minipage}[t]{1\linewidth}
 		\centering
 		\includegraphics[width=12cm,trim=700 450 180 560,clip]{images/Chapitre3/DoD1991DSM-SuperGlue.png}
 	\end{minipage}%
 }
 
-\subfigure[DoD$_{Kobe}^{SIFT_{ImgPairs}}$]{
+\subfigure[\ac{DoD}$_{Kobe}^{SIFT_{ImgPairs}}$]{
 	\begin{minipage}[t]{1\linewidth}
 		\centering
 		%left, lower, right, up
 		\includegraphics[width=2cm]{images/Chapitre3/NoDoD.png}
 	\end{minipage}%
 }
-\subfigure[DoD$_{Kobe}^{SIFT_{Ortho}}$]{
+\subfigure[\ac{DoD}$_{Kobe}^{SIFT_{Ortho}}$]{
 	\begin{minipage}[t]{1\linewidth}
 		\centering
 		\includegraphics[width=2cm]{images/Chapitre3/NoDoD.png}
 	\end{minipage}%
 }
-\subfigure[DoD$_{Kobe}^{SIFT_{DSM}}$]{
+\subfigure[\ac{DoD}$_{Kobe}^{SIFT_{DSM}}$]{
 	\begin{minipage}[t]{1\linewidth}
 		\centering
 		\includegraphics[width=12cm,trim=700 450 180 560,clip]{images/Chapitre3/DoD1991DSM-SIFT.png}
 	\end{minipage}%
 }
 
-		\subfigure[DoD legend]{
+		\subfigure[\ac{DoD} legend]{
 			\begin{minipage}[t]{1\linewidth}
 				\centering
 				\includegraphics[width=11cm]{images/Chapitre3/LegendDoD.png}
 			\end{minipage}%
 		}
-        \caption{{\scriptsize DoDs between free epoch \textbf{Kobe 1991} and reference epoch \textbf{1995} with methods $SuperGlue_{ImgPairs}$ (a), $SuperGlue_{Ortho}$ (b), $SuperGlue_{DSM}$ (c), $SIFT_{ImgPairs}$ (d), $SIFT_{Ortho}$ (e) and $SIFT_{DSM}$ (f). The prohibition sign means the corresponding method failed.}}
+        \caption{{\scriptsize \ac{DoD}s between free epoch \textbf{Kobe 1991} and reference epoch \textbf{1995} with methods $SuperGlue_{ImgPairs}$ (a), $SuperGlue_{Ortho}$ (b), $SuperGlue_{DSM}$ (c), $SIFT_{ImgPairs}$ (d), $SIFT_{Ortho}$ (e) and $SIFT_{DSM}$ (f). The prohibition sign means the corresponding method failed.}}
 		\label{DoDKobe}
 	\end{center}
 \end{figure*} 
@@ -1797,7 +1799,7 @@ As can be seen, dome effect is present in all the DoDs. This is because the came
 &${SIFT_{DSM}}$ & 0.27 & 14.40 & 7.57\\\hline
 	
 \end{tabular}
-\caption{Average value $\mu$, standard deviation $\sigma$, and absolute average value $|\mu|$ of all the DoDs in Figure~\ref{DoDFrejus}, ~\ref{DoDPezenas}, ~\ref{DoDPezenas-Satellite} and ~\ref{DoDKobe}.}
+\caption{Average value $\mu$, standard deviation $\sigma$, and absolute average value $|\mu|$ of all the \ac{DoD}s in Figure~\ref{DoDFrejus}, ~\ref{DoDPezenas}, ~\ref{DoDPezenas-Satellite} and ~\ref{DoDKobe}.}
 \label{DoDStatistic}
 \end{table}
 

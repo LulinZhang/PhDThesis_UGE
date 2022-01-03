@@ -72,7 +72,7 @@ Our patch matching experiments are performed based on SuperGlue, however, other 
 				\includegraphics[width=1\columnwidth]{images/Chapitre4/example.png}
 			\end{minipage}%
 		}
-		\subfigure[Example of patch pairs]{
+		\subfigure[Demonstration of tile pairs]{
 			\begin{minipage}[t]{1\linewidth}
 				\centering
 				\includegraphics[width=1\columnwidth,trim=10 0 0 0,clip]{images/Chapitre4/patchexample.png}
@@ -84,25 +84,25 @@ Our patch matching experiments are performed based on SuperGlue, however, other 
 		%			\includegraphics[width=1\columnwidth]{images/Chapitre4/guidedexample.png}
 		%		\end{minipage}%
 		%	}
-		\caption{(a) Example demonstration of an image pair, the master image ($I^{e_1}$) and secondary image ($I^{e_2}$) are taken at Fr{\'e}jus in 1954 and 2014 individually. (b) Patch pairs resulted from (a), the original tile zone before buffering is marked as red rectangles.}
+		\caption{(a) Example demonstration of an image pair. The master image ($I^{e_1}$) and secondary image ($I^{e_2}$) are taken at Fr{\'e}jus in 1954 and 2014 individually. (b) Tile pairs resulted from \textit{one-to-one tiling scheme}, the tile zones before and after buffering are marked as green and blue rectangles.}
 		\label{patchexample}
 	\end{center}
 \end{figure*}
 
 \begin{figure*}[htbp]
 	\begin{center}
-		\subfigure[Example of keypoint prediction]{
-			\begin{minipage}[t]{1\linewidth}
+		%\subfigure[Example of keypoint prediction]{
+		%	\begin{minipage}[t]{1\linewidth}
 				\centering
 				\includegraphics[width=1\columnwidth]{images/Chapitre4/guidedexample.png}
-			\end{minipage}%
-		}
+		%	\end{minipage}%
+		%}
 		\caption{Example demonstration of keypoint prediction (cross symbols) accompanied with search space (circles) on an image pair, the master image ($I^{e_1}$) and secondary image ($I^{e_2}$) are taken at Fr{\'e}jus in 1954 and 2014 individually.}
 		\label{guidedexample}
 	\end{center}
 \end{figure*}
 
-\subsubsection{Guided matching for hand-crafted features.} 
+\subsubsection{Guided matching for hand-crafted features} 
 The patch matching substitute orientated towards hand-crafted features is the guided matching, as shown in Figure~\ref{WorkflowPatch}(d). It leverages the positions of predicted keypoints, {the known scale ratio and rotation differences to narrow down the list of the matching candidates}. In our experiments, we use the SIFT points, but the pipeline is suitable to any hand-crafted extractor.
 The strategy {is as follows}:\\
 \begin{enumerate}
@@ -152,15 +152,31 @@ In the preceding step we got rid of a substantial number of outliers, however, w
 	\end{center}
 \end{figure*}
 
-\subsection{Combined Processing}
-Based on the intra-epoch and inter-epoch feature correspondences, a free network BBA is performed to refine all the image orientations and camera calibrations. If the results need to be analyzed in a metric scale, a spatial similarity transformation will be performed to move the refined acquisitions in an arbitrary reference frame to a metric one. If the precise orientations for one of the epochs were known (i.e., deemed as ground truth), their parameters will be fixed during the BBA and the subsequent spatial similarity transformation will be skipped.
-We adopted the Fraser model ~\cite{fraser1997digital} to calibrate the cameras and allowed image-dependent affine parameters, the remaining parameters were
-shared among all images.
-
-
-
 
 \section{Experiments}
+As described in the previous section, our precise matching pipeline consists of 3 main steps to get the tentative, enhanced and final matches. There are 2 alternatives for obtaining tentative matches (i.e. patch or guided matching), leading to 2 precise matching methods:\\
+\begin{enumerate}
+	\item \textit{Patch}: recover tentative matches with patch matching, followed by 3D RANSAC and cross correlation to remove outliers;
+	\item \textit{Guided}: same as \textit{Patch}, except replacing patch matching with guided matching.
+\end{enumerate}
+For each dataset, we choose the rough co-registration results calculated with $SIFT_{DSM}$ and $SuperGlue_{DSM}$ individually (as they are the most robust methods for rough co-registration) to guide the precise matching \textit{Patch} or \textit{Guided}, leading to 4 sets of result, which are referred to as:\\
+\begin{enumerate}
+	\item $Patch_{SIFT-DSM}$
+	\item $Guided_{SIFT-DSM}$
+	\item $Patch_{SpG-DSM}$
+	\item $Guided_{SpG-DSM}$
+\end{enumerate}
+
+\subsection{Implementation details}
+\subsection{Datasets}
+We tested our precise matching methods on three sets of datasets: Fr{\'e}jus, Pezenas and Kobe. Details of the datasets are demonstrated in Section~\ref{Datasets}.\\
+For Fr{\'e}jus and Kobe, we keep all the epochs for experiments, as the former displayed drastic scene changes and the latter witnessed an earthquake. For Pezenas, we choose aerial epoch 1971 and satellite epoch 2014 to test our precise matching and ignore other epochs to simplify the processing, since Pezenas is less challenging case.\\
+\subsection{Evaluation}
+%Bar chart of recovered match numbers, Match visulization after CC (4 methods, 3 bars each. Kobe and Pezenas: one kit; Frejus: 6 kits)? DoD and statistic info, ground displacment, check pts? 
+Based on the intra-epoch and inter-epoch matches, a free network \ac{BBA} is performed to refine all the image orientations and camera calibrations. If the results need to be analyzed in a metric scale, a spatial similarity transformation will be performed to move the refined acquisitions in an arbitrary reference frame to a metric one. If the precise orientations for one of the epochs were known, their parameters will be fixed during the \ac{BBA} and the subsequent spatial similarity transformation will be skipped.
+We adopted the Fraser model ~\cite{fraser1997digital} to calibrate the cameras and allowed image-dependent affine parameters, the remaining parameters were shared among all images.
+
+\subsection{Comparison}
 
 \section{Conclusion}
 

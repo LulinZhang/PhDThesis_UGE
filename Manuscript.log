@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2021.10.8)  2 JAN 2022 21:16
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2021.10.8)  3 JAN 2022 21:31
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -566,10 +566,195 @@ LaTeX Font Info:    Trying to load font information for U+psy on input line 64.
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/upsy.fd
 File: upsy.fd 2001/06/04 font definitions for U/psy.
 ))
+(/usr/share/texlive/texmf-dist/tex/latex/glossaries/base/glossaries.sty
+Package: glossaries 2020/02/13 v4.45 (NLCT)
+
+(/usr/share/texlive/texmf-dist/tex/latex/xkeyval/xkeyval.sty
+Package: xkeyval 2014/12/03 v2.7a package option processing (HA)
+
+(/usr/share/texlive/texmf-dist/tex/generic/xkeyval/xkeyval.tex
+(/usr/share/texlive/texmf-dist/tex/generic/xkeyval/xkvutils.tex
+\XKV@toks=\toks39
+\XKV@tempa@toks=\toks40
+)
+\XKV@depth=\count300
+File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
+))
+(/usr/share/texlive/texmf-dist/tex/latex/mfirstuc/mfirstuc.sty
+Package: mfirstuc 2017/11/14 v2.06 (NLCT)
+
+(/usr/share/texlive/texmf-dist/tex/latex/etoolbox/etoolbox.sty
+Package: etoolbox 2019/09/21 v2.5h e-TeX tools for LaTeX (JAW)
+\etb@tempcnta=\count301
+)
+\@glsmfirst=\toks41
+\@glsmrest=\toks42
+)
+(/usr/share/texlive/texmf-dist/tex/latex/textcase/textcase.sty
+Package: textcase 2019/09/14 v1.00 Text only upper/lower case changing (DPC)
+)
+(/usr/share/texlive/texmf-dist/tex/latex/xfor/xfor.sty
+Package: xfor 2009/02/05 v1.05 (NLCT)
+)
+(/usr/share/texlive/texmf-dist/tex/latex/datatool/datatool-base.sty
+Package: datatool-base 2019/09/27 v2.32 (NLCT)
+
+(/usr/share/texlive/texmf-dist/tex/latex/substr/substr.sty
+Package: substr 2009/10/20 v1.2 Handle substrings
+\c@su@anzahl=\count302
+)
+(/usr/share/texlive/texmf-dist/tex/latex/datatool/datatool-fp.sty
+Package: datatool-fp 2019/09/27 v2.32 (NLCT)
+
+(/usr/share/texlive/texmf-dist/tex/latex/fp/fp.sty
+Package: fp 1995/04/02
+
+`Fixed Point Package', Version 0.8, April 2, 1995 (C) Michael Mehlich
+(/usr/share/texlive/texmf-dist/tex/latex/fp/defpattern.sty
+Package: defpattern 1994/10/12
+\actioncount=\count303
+)
+(/usr/share/texlive/texmf-dist/tex/latex/fp/fp-basic.sty
+Package: fp-basic 1996/05/13
+\FP@xs=\count304
+\FP@xia=\count305
+\FP@xib=\count306
+\FP@xfa=\count307
+\FP@xfb=\count308
+\FP@rega=\count309
+\FP@regb=\count310
+\FP@regs=\count311
+\FP@times=\count312
+)
+(/usr/share/texlive/texmf-dist/tex/latex/fp/fp-addons.sty
+Package: fp-addons 1995/03/15
+)
+(/usr/share/texlive/texmf-dist/tex/latex/fp/fp-snap.sty
+Package: fp-snap 1995/04/05
+)
+(/usr/share/texlive/texmf-dist/tex/latex/fp/fp-exp.sty
+Package: fp-exp 1995/04/03
+)
+(/usr/share/texlive/texmf-dist/tex/latex/fp/fp-trigo.sty
+Package: fp-trigo 1995/04/14
+)
+(/usr/share/texlive/texmf-dist/tex/latex/fp/fp-pas.sty
+Package: fp-pas 1994/08/29
+)
+(/usr/share/texlive/texmf-dist/tex/latex/fp/fp-random.sty
+Package: fp-random 1995/02/23
+\FPseed=\count313
+)
+(/usr/share/texlive/texmf-dist/tex/latex/fp/fp-eqn.sty
+Package: fp-eqn 1995/04/03
+)
+(/usr/share/texlive/texmf-dist/tex/latex/fp/fp-upn.sty
+Package: fp-upn 1996/10/21
+)
+(/usr/share/texlive/texmf-dist/tex/latex/fp/fp-eval.sty
+Package: fp-eval 1995/04/03
+)))
+\@dtl@toks=\toks43
+\@dtl@tmpcount=\count314
+\dtl@tmplength=\skip82
+\dtl@sortresult=\count315
+\@dtl@numgrpsepcount=\count316
+\@dtl@datatype=\count317
+\dtl@codeA=\count318
+\dtl@codeB=\count319
+\@dtl@foreach@level=\count320
+)
+(/usr/share/texlive/texmf-dist/tex/latex/glossaries/base/glossaries-compatible-
+307.sty
+Package: glossaries-compatible-307 2020/02/13 v4.45 (NLCT)
+) (/usr/share/texlive/texmf-dist/tex/latex/tracklang/tracklang.sty
+Package: tracklang 2019/11/30 v1.4 (NLCT) Track Languages
+
+(/usr/share/texlive/texmf-dist/tex/generic/tracklang/tracklang.tex))
+(/usr/share/texlive/texmf-dist/tex/latex/translator/translator.sty
+Package: translator 2019-05-31 v1.12a Easy translation of strings in LaTeX
+)
+(/usr/share/texlive/texmf-dist/tex/latex/glossaries-english/glossaries-english.
+ldf
+File: glossaries-english.ldf 2014/11/23 v1.0
+)
+\gls@level=\count321
+\@gls@tmpb=\toks44
+\gls@tmplen=\skip83
+\glskeylisttok=\toks45
+\glslabeltok=\toks46
+\glsshorttok=\toks47
+\glslongtok=\toks48
+
+(/usr/share/texlive/texmf-dist/tex/latex/glossaries/styles/glossary-hypernav.st
+y
+Package: glossary-hypernav 2020/02/13 v4.45 (NLCT)
+) (/usr/share/texlive/texmf-dist/tex/latex/glossaries/styles/glossary-list.sty
+Package: glossary-list 2020/02/13 v4.45 (NLCT)
+\glslistdottedwidth=\skip84
+) (/usr/share/texlive/texmf-dist/tex/latex/glossaries/styles/glossary-long.sty
+Package: glossary-long 2020/02/13 v4.45 (NLCT)
+
+(/usr/share/texlive/texmf-dist/tex/latex/tools/longtable.sty
+Package: longtable 2020/01/07 v4.13 Multi-page Table package (DPC)
+\LTleft=\skip85
+\LTright=\skip86
+\LTpre=\skip87
+\LTpost=\skip88
+\LTchunksize=\count322
+\LTcapwidth=\dimen166
+\LT@head=\box54
+\LT@firsthead=\box55
+\LT@foot=\box56
+\LT@lastfoot=\box57
+\LT@cols=\count323
+\LT@rows=\count324
+\c@LT@tables=\count325
+\c@LT@chunks=\count326
+\LT@p@ftn=\toks49
+)
+\glsdescwidth=\skip89
+\glspagelistwidth=\skip90
+)
+(/usr/share/texlive/texmf-dist/tex/latex/glossaries/styles/glossary-super.sty
+Package: glossary-super 2020/02/13 v4.45 (NLCT)
+
+(/usr/share/texlive/texmf-dist/tex/latex/supertabular/supertabular.sty
+Package: supertabular 2020/02/02 v4.1g the supertabular environment
+\c@tracingst=\count327
+\ST@wd=\dimen167
+\ST@rightskip=\skip91
+\ST@leftskip=\skip92
+\ST@parfillskip=\skip93
+\ST@pageleft=\dimen168
+\ST@headht=\dimen169
+\ST@tailht=\dimen170
+\ST@pagesofar=\dimen171
+\ST@pboxht=\dimen172
+\ST@lineht=\dimen173
+\ST@prevht=\dimen174
+\ST@toadd=\dimen175
+\ST@dimen=\dimen176
+\ST@pbox=\box58
+))
+(/usr/share/texlive/texmf-dist/tex/latex/glossaries/styles/glossary-tree.sty
+Package: glossary-tree 2020/02/13 v4.45 (NLCT)
+\glstreeindent=\skip94
+))
+\glswrite=\write4
+\glo@main@file=\write5
+\openout5 = `Manuscript.glo'.
+
+Package glossaries Info: Writing glossary file Manuscript.glo on input line 8.
+\glo@acronym@file=\write6
+\openout6 = `Manuscript.acn'.
+
+Package glossaries Info: Writing glossary file Manuscript.acn on input line 8.
+
 (/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-pdfmode.def
 File: l3backend-pdfmode.def 2020-02-03 L3 backend support: PDF mode
-\l__kernel_color_stack_int=\count300
-\l__pdf_internal_box=\box54
+\l__kernel_color_stack_int=\count328
+\l__pdf_internal_box=\box59
 )
 (./Manuscript.aux (./TitlePage.aux) (./Acronyms.aux) (./Chapter1.aux)
 (./Chapter2.aux
@@ -588,6 +773,9 @@ LaTeX Warning: Label `eq:2DSim' multiply defined.
 LaTeX Warning: Label `chap:intro' multiply defined.
 
 
+LaTeX Warning: Label `patchexample' multiply defined.
+
+
 LaTeX Warning: Label `eq:2DSim' multiply defined.
 
 ) (./Chapter5.aux
@@ -604,22 +792,22 @@ LaTeX Warning: Label `Match result' multiply defined.
 ) (./Appendix2.aux) (./Appendix4.aux))
 \openout1 = `Manuscript.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 7.
-LaTeX Font Info:    ... okay on input line 7.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 7.
-LaTeX Font Info:    ... okay on input line 7.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 7.
-LaTeX Font Info:    ... okay on input line 7.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 7.
-LaTeX Font Info:    ... okay on input line 7.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 7.
-LaTeX Font Info:    ... okay on input line 7.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 7.
-LaTeX Font Info:    ... okay on input line 7.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 7.
-LaTeX Font Info:    ... okay on input line 7.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 7.
-LaTeX Font Info:    ... okay on input line 7.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 10.
+LaTeX Font Info:    ... okay on input line 10.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 10.
+LaTeX Font Info:    ... okay on input line 10.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 10.
+LaTeX Font Info:    ... okay on input line 10.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 10.
+LaTeX Font Info:    ... okay on input line 10.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 10.
+LaTeX Font Info:    ... okay on input line 10.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 10.
+LaTeX Font Info:    ... okay on input line 10.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 10.
+LaTeX Font Info:    ... okay on input line 10.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 10.
+LaTeX Font Info:    ... okay on input line 10.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -657,17 +845,17 @@ LaTeX Font Info:    ... okay on input line 7.
 
 (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count301
-\scratchdimen=\dimen166
-\scratchbox=\box55
-\nofMPsegments=\count302
-\nofMParguments=\count303
-\everyMPshowfont=\toks39
-\MPscratchCnt=\count304
-\MPscratchDim=\dimen167
-\MPnumerator=\count305
-\makeMPintoPDFobject=\count306
-\everyMPtoPDFconversion=\toks40
+\scratchcounter=\count329
+\scratchdimen=\dimen177
+\scratchbox=\box60
+\nofMPsegments=\count330
+\nofMParguments=\count331
+\everyMPshowfont=\toks50
+\MPscratchCnt=\count332
+\MPscratchDim=\dimen178
+\MPnumerator=\count333
+\makeMPintoPDFobject=\count334
+\everyMPtoPDFconversion=\toks51
 ) (/usr/share/texlive/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
@@ -677,12 +865,12 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-\c@minilofdepth=\count307
-\c@minilotdepth=\count308
-\c@partlofdepth=\count309
-\c@partlotdepth=\count310
-\c@sectlofdepth=\count311
-\c@sectlotdepth=\count312
+\c@minilofdepth=\count335
+\c@minilotdepth=\count336
+\c@partlofdepth=\count337
+\c@partlotdepth=\count338
+\c@sectlofdepth=\count339
+\c@sectlotdepth=\count340
 Package minitoc(hints) Info: I0049
 (minitoc(hints))             ==> You requested the hints option. 
 (minitoc(hints))             Some hints are eventually given below.
@@ -690,8 +878,8 @@ Package minitoc(hints) Info: I0046
 (minitoc(hints))             --- The tocbibind package is loaded. 
 (minitoc(hints))             See the minitoc package documentation 
 (minitoc(hints))             for specific precautions.
-\AtBeginShipoutBox=\box56
-Package hyperref Info: Link coloring ON on input line 7.
+\AtBeginShipoutBox=\box61
+Package hyperref Info: Link coloring ON on input line 10.
 
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2019/09/16 v2.46 Cross-referencing by name of section
@@ -702,16 +890,17 @@ Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
 (/usr/share/texlive/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
-\c@section@level=\count313
+\c@section@level=\count341
 )
-LaTeX Info: Redefining \ref on input line 7.
-LaTeX Info: Redefining \pageref on input line 7.
-LaTeX Info: Redefining \nameref on input line 7.
+LaTeX Info: Redefining \ref on input line 10.
+LaTeX Info: Redefining \pageref on input line 10.
+LaTeX Info: Redefining \nameref on input line 10.
 
 (./Manuscript.out) (./Manuscript.out)
-\@outlinefile=\write4
-\openout4 = `Manuscript.out'.
+\@outlinefile=\write7
+\openout7 = `Manuscript.out'.
 
+ (./Manuscript.glsdefs)
 \openout2 = `TitlePage.aux'.
 
  (./TitlePage.tex
@@ -723,6 +912,8 @@ Underfull \hbox (badness 10000) in paragraph at lines 35--36
 
 
 
+\openout4 = `Manuscript.ist'.
+
 
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]) [0
@@ -731,7 +922,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 35--36
 
 ]
 Package minitoc Info: I0024
-(minitoc)             PREPARING MINITOCS FROM Manuscript.toc on input line 29.
+(minitoc)             PREPARING MINITOCS FROM Manuscript.toc on input line 32.
 Package minitoc Info: I0033
 (minitoc)             Writing Manuscript.mtc1.
 \openout3 = `Manuscript.mtc1'.
@@ -910,13 +1101,13 @@ Package xcolor Warning: Incompatible color definition on input line 48.
 Package xcolor Warning: Incompatible color definition on input line 49.
 
 
+Package xcolor Warning: Incompatible color definition on input line 50.
+
+
 Package xcolor Warning: Incompatible color definition on input line 51.
 
 
 Package xcolor Warning: Incompatible color definition on input line 52.
-
-
-Package xcolor Warning: Incompatible color definition on input line 53.
 
 
 Package xcolor Warning: Incompatible color definition on input line 54.
@@ -945,26 +1136,48 @@ Package xcolor Warning: Incompatible color definition on input line 61.
 
 Package xcolor Warning: Incompatible color definition on input line 62.
 
+
+Package xcolor Warning: Incompatible color definition on input line 63.
+
+
+Package xcolor Warning: Incompatible color definition on input line 64.
+
+
+Package xcolor Warning: Incompatible color definition on input line 65.
+
 )
-\tf@toc=\write5
-\openout5 = `Manuscript.toc'.
+\tf@toc=\write8
+\openout8 = `Manuscript.toc'.
 
  [4]
 \openout2 = `Acronyms.aux'.
 
- (./Acronyms.tex) [5
+ (./Acronyms.tex
+
+Package xcolor Warning: Incompatible color definition on input line 16.
+
+
+Package xcolor Warning: Incompatible color definition on input line 17.
+
+
+Package xcolor Warning: Incompatible color definition on input line 18.
+
+
+Package xcolor Warning: Incompatible color definition on input line 19.
+
+
+Package xcolor Warning: Incompatible color definition on input line 20.
+
+) [5
 
 
 ] [6
 
 
-] [1]
+]
 \openout2 = `Chapter1.aux'.
 
- (./Chapter1.tex [2
-
-
-]
+ (./Chapter1.tex
 Chapter 1.
 \openout3 = `Manuscript.mtc'.
 
@@ -1014,6 +1227,26 @@ Underfull \hbox (badness 1728) in paragraph at lines 18--23
 world. A mass
  []
 
+Package acronym Info: Label `acro:GCP' newly defined as it shall be overridden
+although it is yet undefined on input line 24.
+
+Package xcolor Warning: Incompatible color definition on input line 24.
+
+
+Package xcolor Warning: Incompatible color definition on input line 25.
+
+
+Package xcolor Warning: Incompatible color definition on input line 25.
+
+
+Package xcolor Warning: Incompatible color definition on input line 25.
+
+
+Package xcolor Warning: Incompatible color definition on input line 25.
+
+
+Package xcolor Warning: Incompatible color definition on input line 25.
+
 
 Package xcolor Warning: Incompatible color definition on input line 25.
 
@@ -1033,92 +1266,155 @@ Package xcolor Warning: Incompatible color definition on input line 25.
 Package xcolor Warning: Incompatible color definition on input line 25.
 
 
-Package xcolor Warning: Incompatible color definition on input line 25.
+Package xcolor Warning: Incompatible color definition on input line 27.
 
 
-Package xcolor Warning: Incompatible color definition on input line 25.
-
-
-Underfull \hbox (badness 2837) in paragraph at lines 24--33
-[]\T1/cmr/m/n/10.95 , []][], (ii) re-cent or-thopho-tos and DEM
+Underfull \hbox (badness 1502) in paragraph at lines 24--33
+[]\T1/cmr/m/n/10.95 When the cam-era cal-i-bra-tion pa-ram-e-ters are un-known,
+ they should be
  []
 
-[3]
 
-Package xcolor Warning: Incompatible color definition on input line 49.
-
-
-Package xcolor Warning: Incompatible color definition on input line 49.
-
-
-Package xcolor Warning: Incompatible color definition on input line 50.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 48--51
-
+Underfull \hbox (badness 7667) in paragraph at lines 24--33
+\T1/cmr/m/n/10.95 (ii) re-cent or-thopho-tos and DEM [[], [],
  []
 
-<images/Chapitre1/AppearanceChangeRGBL.png, id=349, 926.46124pt x 693.59125pt>
-File: images/Chapitre1/AppearanceChangeRGBL.png Graphic file (type png)
-<use images/Chapitre1/AppearanceChangeRGBL.png>
-Package pdftex.def Info: images/Chapitre1/AppearanceChangeRGBL.png  used on inp
-ut line 59.
-(pdftex.def)             Requested size: 176.407pt x 132.05887pt.
-<images/Chapitre1/AppearanceChangeRGBR.png, id=351, 922.44624pt x 694.595pt>
-File: images/Chapitre1/AppearanceChangeRGBR.png Graphic file (type png)
-<use images/Chapitre1/AppearanceChangeRGBR.png>
-Package pdftex.def Info: images/Chapitre1/AppearanceChangeRGBR.png  used on inp
-ut line 65.
-(pdftex.def)             Requested size: 176.407pt x 132.8329pt.
-<images/Chapitre1/AppearanceChangeDSML.png, id=352, 924.45375pt x 695.59875pt>
-File: images/Chapitre1/AppearanceChangeDSML.png Graphic file (type png)
-<use images/Chapitre1/AppearanceChangeDSML.png>
-Package pdftex.def Info: images/Chapitre1/AppearanceChangeDSML.png  used on inp
-ut line 71.
-(pdftex.def)             Requested size: 176.407pt x 132.72768pt.
-<images/Chapitre1/AppearanceChangeDSMR.png, id=353, 922.44624pt x 694.595pt>
-File: images/Chapitre1/AppearanceChangeDSMR.png Graphic file (type png)
-<use images/Chapitre1/AppearanceChangeDSMR.png>
-Package pdftex.def Info: images/Chapitre1/AppearanceChangeDSMR.png  used on inp
-ut line 77.
-(pdftex.def)             Requested size: 176.407pt x 132.8329pt.
-<images/Chapitre1/PoorlyTexturedRGBL.png, id=354, 633.36626pt x 476.78125pt>
-File: images/Chapitre1/PoorlyTexturedRGBL.png Graphic file (type png)
-<use images/Chapitre1/PoorlyTexturedRGBL.png>
-Package pdftex.def Info: images/Chapitre1/PoorlyTexturedRGBL.png  used on input
- line 91.
-(pdftex.def)             Requested size: 176.407pt x 132.79214pt.
-<images/Chapitre1/PoorlyTexturedRGBR.png, id=355, 633.36626pt x 476.78125pt>
-File: images/Chapitre1/PoorlyTexturedRGBR.png Graphic file (type png)
-<use images/Chapitre1/PoorlyTexturedRGBR.png>
-Package pdftex.def Info: images/Chapitre1/PoorlyTexturedRGBR.png  used on input
- line 97.
-(pdftex.def)             Requested size: 176.407pt x 132.79214pt.
-<images/Chapitre1/PoorlyTexturedDSML.png, id=356, 638.385pt x 477.785pt>
-File: images/Chapitre1/PoorlyTexturedDSML.png Graphic file (type png)
-<use images/Chapitre1/PoorlyTexturedDSML.png>
-Package pdftex.def Info: images/Chapitre1/PoorlyTexturedDSML.png  used on input
- line 103.
-(pdftex.def)             Requested size: 176.407pt x 132.02919pt.
-<images/Chapitre1/PoorlyTexturedDSMR.png, id=357, 635.37375pt x 473.77pt>
-File: images/Chapitre1/PoorlyTexturedDSMR.png Graphic file (type png)
-<use images/Chapitre1/PoorlyTexturedDSMR.png>
-Package pdftex.def Info: images/Chapitre1/PoorlyTexturedDSMR.png  used on input
- line 109.
-(pdftex.def)             Requested size: 176.407pt x 131.5414pt.
-) [4] [5 <./images/Chapitre1/AppearanceChangeRGBL.png> <./images/Chapitre1/Appe
-aranceChangeRGBR.png> <./images/Chapitre1/AppearanceChangeDSML.png> <./images/C
-hapitre1/AppearanceChangeDSMR.png>] [6 <./images/Chapitre1/PoorlyTexturedRGBL.p
-ng> <./images/Chapitre1/PoorlyTexturedRGBR.png> <./images/Chapitre1/PoorlyTextu
-redDSML.png> <./images/Chapitre1/PoorlyTexturedDSMR.png>] [7]
-\openout2 = `Chapter2.aux'.
-
- (./Chapter2.tex
-[8
-
+[1
 
 
 ]
+
+Package xcolor Warning: Incompatible color definition on input line 48.
+
+
+Package xcolor Warning: Incompatible color definition on input line 48.
+
+
+Package xcolor Warning: Incompatible color definition on input line 49.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 47--50
+
+ []
+
+<images/Chapitre1/AppearanceChangeRGBL.png, id=376, 926.46124pt x 693.59125pt>
+File: images/Chapitre1/AppearanceChangeRGBL.png Graphic file (type png)
+<use images/Chapitre1/AppearanceChangeRGBL.png>
+Package pdftex.def Info: images/Chapitre1/AppearanceChangeRGBL.png  used on inp
+ut line 58.
+(pdftex.def)             Requested size: 176.407pt x 132.05887pt.
+<images/Chapitre1/AppearanceChangeRGBR.png, id=378, 922.44624pt x 694.595pt>
+File: images/Chapitre1/AppearanceChangeRGBR.png Graphic file (type png)
+<use images/Chapitre1/AppearanceChangeRGBR.png>
+Package pdftex.def Info: images/Chapitre1/AppearanceChangeRGBR.png  used on inp
+ut line 64.
+(pdftex.def)             Requested size: 176.407pt x 132.8329pt.
+<images/Chapitre1/AppearanceChangeDSML.png, id=379, 924.45375pt x 695.59875pt>
+File: images/Chapitre1/AppearanceChangeDSML.png Graphic file (type png)
+<use images/Chapitre1/AppearanceChangeDSML.png>
+Package pdftex.def Info: images/Chapitre1/AppearanceChangeDSML.png  used on inp
+ut line 70.
+(pdftex.def)             Requested size: 176.407pt x 132.72768pt.
+Package acronym Info: Label `acro:DSM' newly defined as it shall be overridden
+although it is yet undefined on input line 70.
+
+Package xcolor Warning: Incompatible color definition on input line 70.
+
+<images/Chapitre1/AppearanceChangeDSMR.png, id=381, 922.44624pt x 694.595pt>
+File: images/Chapitre1/AppearanceChangeDSMR.png Graphic file (type png)
+<use images/Chapitre1/AppearanceChangeDSMR.png>
+Package pdftex.def Info: images/Chapitre1/AppearanceChangeDSMR.png  used on inp
+ut line 76.
+(pdftex.def)             Requested size: 176.407pt x 132.8329pt.
+
+Package xcolor Warning: Incompatible color definition on input line 76.
+
+
+Package xcolor Warning: Incompatible color definition on input line 77.
+
+
+Package xcolor Warning: Incompatible color definition on input line 77.
+
+<images/Chapitre1/PoorlyTexturedRGBL.png, id=385, 633.36626pt x 476.78125pt>
+File: images/Chapitre1/PoorlyTexturedRGBL.png Graphic file (type png)
+<use images/Chapitre1/PoorlyTexturedRGBL.png>
+Package pdftex.def Info: images/Chapitre1/PoorlyTexturedRGBL.png  used on input
+ line 90.
+(pdftex.def)             Requested size: 176.407pt x 132.79214pt.
+<images/Chapitre1/PoorlyTexturedRGBR.png, id=386, 633.36626pt x 476.78125pt>
+File: images/Chapitre1/PoorlyTexturedRGBR.png Graphic file (type png)
+<use images/Chapitre1/PoorlyTexturedRGBR.png>
+Package pdftex.def Info: images/Chapitre1/PoorlyTexturedRGBR.png  used on input
+ line 96.
+(pdftex.def)             Requested size: 176.407pt x 132.79214pt.
+<images/Chapitre1/PoorlyTexturedDSML.png, id=387, 638.385pt x 477.785pt>
+File: images/Chapitre1/PoorlyTexturedDSML.png Graphic file (type png)
+<use images/Chapitre1/PoorlyTexturedDSML.png>
+Package pdftex.def Info: images/Chapitre1/PoorlyTexturedDSML.png  used on input
+ line 102.
+(pdftex.def)             Requested size: 176.407pt x 132.02919pt.
+
+Package xcolor Warning: Incompatible color definition on input line 102.
+
+<images/Chapitre1/PoorlyTexturedDSMR.png, id=389, 635.37375pt x 473.77pt>
+File: images/Chapitre1/PoorlyTexturedDSMR.png Graphic file (type png)
+<use images/Chapitre1/PoorlyTexturedDSMR.png>
+Package pdftex.def Info: images/Chapitre1/PoorlyTexturedDSMR.png  used on input
+ line 108.
+(pdftex.def)             Requested size: 176.407pt x 131.5414pt.
+
+Package xcolor Warning: Incompatible color definition on input line 108.
+
+
+Package xcolor Warning: Incompatible color definition on input line 109.
+
+
+Package xcolor Warning: Incompatible color definition on input line 109.
+
+<images/Chapitre1/imagepair.png, id=393, 634.0488pt x 343.5234pt>
+File: images/Chapitre1/imagepair.png Graphic file (type png)
+<use images/Chapitre1/imagepair.png>
+Package pdftex.def Info: images/Chapitre1/imagepair.png  used on input line 123
+.
+(pdftex.def)             Requested size: 395.15166pt x 214.09355pt.
+<images/Chapitre1/CoReg.jpg, id=394, 636.4578pt x 465.4188pt>
+File: images/Chapitre1/CoReg.jpg Graphic file (type jpg)
+<use images/Chapitre1/CoReg.jpg>
+Package pdftex.def Info: images/Chapitre1/CoReg.jpg  used on input line 129.
+(pdftex.def)             Requested size: 268.70023pt x 196.4901pt.
+<images/Chapitre1/Precise.png, id=395, 252.4632pt x 118.041pt>
+File: images/Chapitre1/Precise.png Graphic file (type png)
+<use images/Chapitre1/Precise.png>
+Package pdftex.def Info: images/Chapitre1/Precise.png  used on input line 135.
+(pdftex.def)             Requested size: 217.33461pt x 101.61952pt.
+
+Overfull \hbox (3.63054pt too wide) in paragraph at lines 123--136
+ [] 
+ []
+
+
+Overfull \hbox (3.63054pt too wide) in paragraph at lines 123--136
+ [][] 
+ []
+
+
+Overfull \hbox (3.63054pt too wide) in paragraph at lines 123--136
+ [][] 
+ []
+
+
+LaTeX Warning: Float too large for page by 84.30418pt on input line 139.
+
+[2] [3 <./images/Chapitre1/AppearanceChangeRGBL.png> <./images/Chapitre1/Appear
+anceChangeRGBR.png> <./images/Chapitre1/AppearanceChangeDSML.png> <./images/Cha
+pitre1/AppearanceChangeDSMR.png>] [4 <./images/Chapitre1/PoorlyTexturedRGBL.png
+> <./images/Chapitre1/PoorlyTexturedRGBR.png> <./images/Chapitre1/PoorlyTexture
+dDSML.png> <./images/Chapitre1/PoorlyTexturedDSMR.png>]) [5] [6 <./images/Chapi
+tre1/imagepair.png> <./images/Chapitre1/CoReg.jpg> <./images/Chapitre1/Precise.
+png>]
+\openout2 = `Chapter2.aux'.
+
+ (./Chapter2.tex
 Chapter 2.
 \openout3 = `Manuscript.mtc'.
 
@@ -1168,7 +1464,11 @@ Package xcolor Warning: Incompatible color definition on input line 16.
 
 Package xcolor Warning: Incompatible color definition on input line 16.
 
-[9]
+[7
+
+
+
+]
 
 Package xcolor Warning: Incompatible color definition on input line 19.
 
@@ -1220,7 +1520,7 @@ Package xcolor Warning: Incompatible color definition on input line 30.
 
 Package xcolor Warning: Incompatible color definition on input line 31.
 
-[10]
+[8]
 
 Package xcolor Warning: Incompatible color definition on input line 36.
 
@@ -1265,7 +1565,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 36--39
  []
 
 
-LaTeX Warning: Reference `comparison' on page 11 undefined on input line 45.
+LaTeX Warning: Reference `comparison' on page 9 undefined on input line 45.
 
 
 Package xcolor Warning: Incompatible color definition on input line 47.
@@ -1327,36 +1627,7 @@ Package xcolor Warning: Incompatible color definition on input line 52.
 
 Package xcolor Warning: Incompatible color definition on input line 52.
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 44--53
-\T1/cmr/m/n/10.95 Therefore, many pre-vi-ous re-searches by-passed the task of 
-ex-tract-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 44--53
-\T1/cmr/m/n/10.95 ing inter-epoch cor-re-spon-dences by pro-cess-ing dif-fer-en
-t epochs sep-a-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 44--53
-\T1/cmr/m/n/10.95 rately fol-lowed by an inter-epoch co-registration re-ly-ing 
-on Ground
- []
-
-
-Underfull \hbox (badness 6575) in paragraph at lines 44--53
-\T1/cmr/m/n/10.95 Con-trol Points(GCPs). Be-tween 10 and 169 GCPs are re-quired
- in
- []
-
-
-Overfull \hbox (95.66226pt too wide) in paragraph at lines 44--53
-\T1/cmr/m/n/10.95 [[]][], [[]][], [[]][], [[]][], [[]][].
- []
-
-[11]
+[9]
 
 Package xcolor Warning: Incompatible color definition on input line 56.
 
@@ -1417,10 +1688,10 @@ Underfull \hbox (badness 4036) in paragraph at lines 64--67
 t of RANSAC)
  []
 
-[12]) [13]
+[10]) [11]
 \openout2 = `Chapter3.aux'.
 
- (./Chapter3.tex [14
+ (./Chapter3.tex [12
 
 
 
@@ -1471,7 +1742,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 20--21
 
  []
 
-[15]
+[13]
 Underfull \hbox (badness 10000) in paragraph at lines 25--26
 
  []
@@ -1481,7 +1752,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 31--32
 
  []
 
-[16]
+[14]
 Underfull \hbox (badness 10000) in paragraph at lines 57--58
 
  []
@@ -1538,17 +1809,17 @@ Package xcolor Warning: Incompatible color definition on input line 79.
 
 Package xcolor Warning: Incompatible color definition on input line 81.
 
-[17]
+[15]
 Underfull \hbox (badness 10000) in paragraph at lines 89--90
 
  []
 
-<images/Chapitre3/R3D.png, id=629, 895.1844pt x 277.035pt>
+<images/Chapitre3/R3D.png, id=673, 895.1844pt x 277.035pt>
 File: images/Chapitre3/R3D.png Graphic file (type png)
 <use images/Chapitre3/R3D.png>
 Package pdftex.def Info: images/Chapitre3/R3D.png  used on input line 132.
 (pdftex.def)             Requested size: 395.15166pt x 122.2889pt.
-<images/Chapitre3/R3D-RotHyp.png, id=630, 648.021pt x 569.0058pt>
+<images/Chapitre3/R3D-RotHyp.png, id=674, 648.021pt x 569.0058pt>
 File: images/Chapitre3/R3D-RotHyp.png Graphic file (type png)
 <use images/Chapitre3/R3D-RotHyp.png>
 Package pdftex.def Info: images/Chapitre3/R3D-RotHyp.png  used on input line 13
@@ -1559,7 +1830,7 @@ Overfull \hbox (3.63054pt too wide) in paragraph at lines 132--139
  [] 
  []
 
-[18] [19 <./images/Chapitre3/R3D.png> <./images/Chapitre3/R3D-RotHyp.png>]
+[16] [17 <./images/Chapitre3/R3D.png> <./images/Chapitre3/R3D-RotHyp.png>]
 
 Package xcolor Warning: Incompatible color definition on input line 146.
 
@@ -1569,12 +1840,12 @@ Package xcolor Warning: Incompatible color definition on input line 161.
 
 Package xcolor Warning: Incompatible color definition on input line 161.
 
-<images/Chapitre3/ortho.png, id=662, 1026.7158pt x 285.2256pt>
+<images/Chapitre3/ortho.png, id=706, 1026.7158pt x 285.2256pt>
 File: images/Chapitre3/ortho.png Graphic file (type png)
 <use images/Chapitre3/ortho.png>
 Package pdftex.def Info: images/Chapitre3/ortho.png  used on input line 171.
 (pdftex.def)             Requested size: 395.15166pt x 109.77519pt.
-<images/Chapitre3/ortho-RotHyp.png, id=663, 1098.504pt x 653.8026pt>
+<images/Chapitre3/ortho-RotHyp.png, id=707, 1098.504pt x 653.8026pt>
 File: images/Chapitre3/ortho-RotHyp.png Graphic file (type png)
 <use images/Chapitre3/ortho-RotHyp.png>
 Package pdftex.def Info: images/Chapitre3/ortho-RotHyp.png  used on input line 
@@ -1590,12 +1861,12 @@ Overfull \hbox (3.63054pt too wide) in paragraph at lines 171--178
  [][] 
  []
 
-<images/Chapitre3/dsm.png, id=664, 1026.7158pt x 287.1528pt>
+<images/Chapitre3/dsm.png, id=708, 1026.7158pt x 287.1528pt>
 File: images/Chapitre3/dsm.png Graphic file (type png)
 <use images/Chapitre3/dsm.png>
 Package pdftex.def Info: images/Chapitre3/dsm.png  used on input line 208.
 (pdftex.def)             Requested size: 395.15166pt x 110.51692pt.
-<images/Chapitre3/dsm-RotHyp.png, id=665, 1102.3584pt x 628.749pt>
+<images/Chapitre3/dsm-RotHyp.png, id=709, 1102.3584pt x 628.749pt>
 File: images/Chapitre3/dsm-RotHyp.png Graphic file (type png)
 <use images/Chapitre3/dsm-RotHyp.png>
 Package pdftex.def Info: images/Chapitre3/dsm-RotHyp.png  used on input line 21
@@ -1616,12 +1887,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 236--237
 
  []
 
-[20] [21 <./images/Chapitre3/ortho.png> <./images/Chapitre3/ortho-RotHyp.png
+[18] [19 <./images/Chapitre3/ortho.png> <./images/Chapitre3/ortho-RotHyp.png
 
 pdfTeX warning: /usr/bin/pdflatex (file ./images/Chapitre3/ortho-RotHyp.png): l
 arge interlaced PNG might cause out of memory (use non-interlaced PNG to fix th
 is)
->] [22 <./images/Chapitre3/dsm.png> <./images/Chapitre3/dsm-RotHyp.png
+>] [20 <./images/Chapitre3/dsm.png> <./images/Chapitre3/dsm-RotHyp.png
 
 pdfTeX warning: /usr/bin/pdflatex (file ./images/Chapitre3/dsm-RotHyp.png): lar
 ge interlaced PNG might cause out of memory (use non-interlaced PNG to fix this
@@ -1652,7 +1923,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 266--267
 
  []
 
-[23]
+[21]
 Underfull \hbox (badness 10000) in paragraph at lines 311--312
 
  []
@@ -1667,253 +1938,289 @@ Underfull \hbox (badness 10000) in paragraph at lines 331--332
 
  []
 
-[24]
+[22]
 Underfull \hbox (badness 10000) in paragraph at lines 342--343
 
  []
 
 
-Package xcolor Warning: Incompatible color definition on input line 352.
+Package xcolor Warning: Incompatible color definition on input line 353.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 352--353
-
- []
-
-
-Package xcolor Warning: Incompatible color definition on input line 360.
-
-
-Package xcolor Warning: Incompatible color definition on input line 360.
-
-
-Package xcolor Warning: Incompatible color definition on input line 360.
-
-
-Package xcolor Warning: Incompatible color definition on input line 360.
-
-
-Package xcolor Warning: Incompatible color definition on input line 360.
-
-
-Package xcolor Warning: Incompatible color definition on input line 362.
-
-
-Package xcolor Warning: Incompatible color definition on input line 363.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 362--364
-
- []
-
-[25]
-Underfull \hbox (badness 10000) in paragraph at lines 364--365
+Underfull \hbox (badness 10000) in paragraph at lines 353--356
 
  []
 
 
-Overfull \hbox (18.18306pt too wide) in paragraph at lines 370--383
+Package xcolor Warning: Incompatible color definition on input line 364.
+
+
+Package xcolor Warning: Incompatible color definition on input line 364.
+
+
+Package xcolor Warning: Incompatible color definition on input line 364.
+
+
+Package xcolor Warning: Incompatible color definition on input line 364.
+
+
+Package xcolor Warning: Incompatible color definition on input line 364.
+
+
+Package xcolor Warning: Incompatible color definition on input line 366.
+
+Package acronym Info: Label `acro:GT' newly defined as it shall be overridden
+although it is yet undefined on input line 366.
+
+Package xcolor Warning: Incompatible color definition on input line 366.
+
+
+Package xcolor Warning: Incompatible color definition on input line 367.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 366--368
+
+ []
+
+[23]
+
+Package xcolor Warning: Incompatible color definition on input line 368.
+
+
+Package xcolor Warning: Incompatible color definition on input line 368.
+
+
+Package xcolor Warning: Incompatible color definition on input line 368.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 368--369
+
+ []
+
+
+Package xcolor Warning: Incompatible color definition on input line 369.
+
+
+Overfull \hbox (18.18306pt too wide) in paragraph at lines 374--387
  [][] 
  []
 
-<images/Chapitre3/Frejus1954.png, id=748, 585.387pt x 376.2858pt>
+<images/Chapitre3/Frejus1954.png, id=798, 585.387pt x 376.2858pt>
 File: images/Chapitre3/Frejus1954.png Graphic file (type png)
 <use images/Chapitre3/Frejus1954.png>
 Package pdftex.def Info: images/Chapitre3/Frejus1954.png  used on input line 41
-2.
+6.
 (pdftex.def)             Requested size: 160.75789pt x 103.33249pt.
 
-Overfull \hbox (2.69965pt too wide) in paragraph at lines 412--412
+Overfull \hbox (2.69965pt too wide) in paragraph at lines 416--416
  [][] 
  []
 
-<images/Chapitre3/Frejus1966.png, id=749, 577.6782pt x 277.5168pt>
+<images/Chapitre3/Frejus1966.png, id=799, 577.6782pt x 277.5168pt>
 File: images/Chapitre3/Frejus1966.png Graphic file (type png)
 <use images/Chapitre3/Frejus1966.png>
-Package pdftex.def Info: images/Chapitre3/Frejus1966.png  used on input line 41
-8.
+Package pdftex.def Info: images/Chapitre3/Frejus1966.png  used on input line 42
+2.
 (pdftex.def)             Requested size: 216.2411pt x 103.88222pt.
-<images/Chapitre3/Frejus1970.png, id=750, 582.4962pt x 352.6776pt>
+<images/Chapitre3/Frejus1970.png, id=800, 582.4962pt x 352.6776pt>
 File: images/Chapitre3/Frejus1970.png Graphic file (type png)
 <use images/Chapitre3/Frejus1970.png>
 Package pdftex.def Info: images/Chapitre3/Frejus1970.png  used on input line 42
-4.
+8.
 (pdftex.def)             Requested size: 173.56198pt x 105.08298pt.
-<images/Chapitre3/Frejus2014.png, id=751, 545.3976pt x 376.2858pt>
+<images/Chapitre3/Frejus2014.png, id=801, 545.3976pt x 376.2858pt>
 File: images/Chapitre3/Frejus2014.png Graphic file (type png)
 <use images/Chapitre3/Frejus2014.png>
 Package pdftex.def Info: images/Chapitre3/Frejus2014.png  used on input line 43
-0.
+4.
 (pdftex.def)             Requested size: 177.82971pt x 122.6876pt.
-<images/Chapitre3/Pezenas1971.png, id=752, 390.258pt x 361.8318pt>
+<images/Chapitre3/Pezenas1971.png, id=802, 390.258pt x 361.8318pt>
 File: images/Chapitre3/Pezenas1971.png Graphic file (type png)
 <use images/Chapitre3/Pezenas1971.png>
 Package pdftex.def Info: images/Chapitre3/Pezenas1971.png  used on input line 4
-44.
+48.
 (pdftex.def)             Requested size: 183.52019pt x 170.15483pt.
-<images/Chapitre3/Pezenas1981.png, id=753, 404.712pt x 361.35pt>
+<images/Chapitre3/Pezenas1981.png, id=803, 404.712pt x 361.35pt>
 File: images/Chapitre3/Pezenas1981.png Graphic file (type png)
 <use images/Chapitre3/Pezenas1981.png>
 Package pdftex.def Info: images/Chapitre3/Pezenas1981.png  used on input line 4
-50.
+54.
 (pdftex.def)             Requested size: 190.0642pt x 169.7022pt.
-<images/Chapitre3/Pezenas2014.png, id=754, 344.487pt x 388.3308pt>
+<images/Chapitre3/Pezenas2014.png, id=804, 344.487pt x 388.3308pt>
 File: images/Chapitre3/Pezenas2014.png Graphic file (type png)
 <use images/Chapitre3/Pezenas2014.png>
 Package pdftex.def Info: images/Chapitre3/Pezenas2014.png  used on input line 4
-56.
+60.
 (pdftex.def)             Requested size: 187.78836pt x 211.68645pt.
-<images/Chapitre3/Pezenas2015.png, id=755, 342.5598pt x 376.2858pt>
+<images/Chapitre3/Pezenas2015.png, id=805, 342.5598pt x 376.2858pt>
 File: images/Chapitre3/Pezenas2015.png Graphic file (type png)
 <use images/Chapitre3/Pezenas2015.png>
 Package pdftex.def Info: images/Chapitre3/Pezenas2015.png  used on input line 4
-62.
+66.
 (pdftex.def)             Requested size: 192.90964pt x 211.90712pt.
 
-Overfull \hbox (3.23854pt too wide) in paragraph at lines 462--462
+Overfull \hbox (3.23854pt too wide) in paragraph at lines 466--466
  [][] 
  []
 
-<images/Chapitre3/Kobe1991.png, id=756, 293.4162pt x 754.017pt>
+
+Package xcolor Warning: Incompatible color definition on input line 467.
+
+
+Package xcolor Warning: Incompatible color definition on input line 467.
+
+<images/Chapitre3/Kobe1991.png, id=808, 293.4162pt x 754.017pt>
 File: images/Chapitre3/Kobe1991.png Graphic file (type png)
 <use images/Chapitre3/Kobe1991.png>
-Package pdftex.def Info: images/Chapitre3/Kobe1991.png  used on input line 476.
+Package pdftex.def Info: images/Chapitre3/Kobe1991.png  used on input line 480.
 
 (pdftex.def)             Requested size: 143.93637pt x 369.88582pt.
-<images/Chapitre3/Kobe1995.png, id=757, 163.3302pt x 754.017pt>
+<images/Chapitre3/Kobe1995.png, id=809, 163.3302pt x 754.017pt>
 File: images/Chapitre3/Kobe1995.png Graphic file (type png)
 <use images/Chapitre3/Kobe1995.png>
-Package pdftex.def Info: images/Chapitre3/Kobe1995.png  used on input line 482.
+Package pdftex.def Info: images/Chapitre3/Kobe1995.png  used on input line 486.
 
 (pdftex.def)             Requested size: 80.12221pt x 369.88582pt.
 
-Overfull \hbox (3.63054pt too wide) in paragraph at lines 476--483
+Overfull \hbox (3.63054pt too wide) in paragraph at lines 480--487
  [] 
  []
 
 
-Overfull \hbox (3.63054pt too wide) in paragraph at lines 476--483
+Overfull \hbox (3.63054pt too wide) in paragraph at lines 480--487
  [][] 
  []
 
-<images/Chapitre3/Frejus1954Sub.png, id=758, 911.405pt x 582.175pt>
+<images/Chapitre3/Frejus1954Sub.png, id=810, 911.405pt x 582.175pt>
 File: images/Chapitre3/Frejus1954Sub.png Graphic file (type png)
 <use images/Chapitre3/Frejus1954Sub.png>
 Package pdftex.def Info: images/Chapitre3/Frejus1954Sub.png  used on input line
- 496.
+ 500.
 (pdftex.def)             Requested size: 369.88582pt x 236.27704pt.
-<images/Chapitre3/Frejus2014Sub.png, id=759, 1047.915pt x 696.6025pt>
+<images/Chapitre3/Frejus2014Sub.png, id=811, 1047.915pt x 696.6025pt>
 File: images/Chapitre3/Frejus2014Sub.png Graphic file (type png)
 <use images/Chapitre3/Frejus2014Sub.png>
 Package pdftex.def Info: images/Chapitre3/Frejus2014Sub.png  used on input line
- 502.
+ 506.
 (pdftex.def)             Requested size: 369.88582pt x 245.8766pt.
 
-Overfull \hbox (3.63054pt too wide) in paragraph at lines 496--503
+Overfull \hbox (3.63054pt too wide) in paragraph at lines 500--507
  [] 
  []
 
 
-Overfull \hbox (3.63054pt too wide) in paragraph at lines 496--503
+Overfull \hbox (3.63054pt too wide) in paragraph at lines 500--507
  [][] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 522--523
+Underfull \hbox (badness 10000) in paragraph at lines 526--527
 
  []
 
-[26] [27 <./images/Chapitre3/Frejus1954.png> <./images/Chapitre3/Frejus1966.png
+[24] [25 <./images/Chapitre3/Frejus1954.png> <./images/Chapitre3/Frejus1966.png
 > <./images/Chapitre3/Frejus1970.png> <./images/Chapitre3/Frejus2014.png>]
-[28 <./images/Chapitre3/Pezenas1971.png> <./images/Chapitre3/Pezenas1981.png> <
+[26 <./images/Chapitre3/Pezenas1971.png> <./images/Chapitre3/Pezenas1981.png> <
 ./images/Chapitre3/Pezenas2014.png> <./images/Chapitre3/Pezenas2015.png>]
-[29 <./images/Chapitre3/Kobe1991.png> <./images/Chapitre3/Kobe1995.png>]
-[30 <./images/Chapitre3/Frejus1954Sub.png> <./images/Chapitre3/Frejus2014Sub.pn
+[27 <./images/Chapitre3/Kobe1991.png> <./images/Chapitre3/Kobe1995.png>]
+[28 <./images/Chapitre3/Frejus1954Sub.png> <./images/Chapitre3/Frejus2014Sub.pn
 g>]
-
-Package xcolor Warning: Incompatible color definition on input line 536.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 536--537
-
- []
+Package acronym Info: Label `acro:DoD' newly defined as it shall be overridden
+although it is yet undefined on input line 530.
 
 
-Package xcolor Warning: Incompatible color definition on input line 538.
+Package xcolor Warning: Incompatible color definition on input line 530.
 
 
-Package xcolor Warning: Incompatible color definition on input line 538.
+Package xcolor Warning: Incompatible color definition on input line 530.
 
 
-Package xcolor Warning: Incompatible color definition on input line 538.
+Package xcolor Warning: Incompatible color definition on input line 530.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 538--539
+Package xcolor Warning: Incompatible color definition on input line 540.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 540--541
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 545--546
+Package xcolor Warning: Incompatible color definition on input line 542.
+
+
+Package xcolor Warning: Incompatible color definition on input line 542.
+
+
+Package xcolor Warning: Incompatible color definition on input line 542.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 542--543
 
  []
 
 
-Package xcolor Warning: Incompatible color definition on input line 547.
-
-
-Package xcolor Warning: Incompatible color definition on input line 547.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 547--548
-
- []
-
-[31]
-
-Package xcolor Warning: Incompatible color definition on input line 552.
-
-
-Package xcolor Warning: Incompatible color definition on input line 552.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 552--553
+Underfull \hbox (badness 10000) in paragraph at lines 549--550
 
  []
 
 
-Package xcolor Warning: Incompatible color definition on input line 559.
+Package xcolor Warning: Incompatible color definition on input line 551.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 594--595
+Package xcolor Warning: Incompatible color definition on input line 551.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 551--552
 
  []
 
-[32]
+[29]
+
+Package xcolor Warning: Incompatible color definition on input line 556.
+
+
+Package xcolor Warning: Incompatible color definition on input line 556.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 556--557
+
+ []
+
+
+Package xcolor Warning: Incompatible color definition on input line 563.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 598--599
+
+ []
+
+[30]
 <images/Chapitre3/Pseudo-Ortho-MEC-Malt_Tapas_1954_Ortho-MEC-Malt_2014.png, id=
-843, 1131.2664pt x 376.2858pt>
+897, 1131.2664pt x 376.2858pt>
 File: images/Chapitre3/Pseudo-Ortho-MEC-Malt_Tapas_1954_Ortho-MEC-Malt_2014.png
  Graphic file (type png)
 <use images/Chapitre3/Pseudo-Ortho-MEC-Malt_Tapas_1954_Ortho-MEC-Malt_2014.png>
 
 Package pdftex.def Info: images/Chapitre3/Pseudo-Ortho-MEC-Malt_Tapas_1954_Orth
-o-MEC-Malt_2014.png  used on input line 612.
+o-MEC-Malt_2014.png  used on input line 616.
 (pdftex.def)             Requested size: 193.47882pt x 64.35242pt.
 
-Overfull \hbox (3.80772pt too wide) in paragraph at lines 612--612
+Overfull \hbox (3.80772pt too wide) in paragraph at lines 616--616
  [][] 
  []
 
 <images/Chapitre3/PlotCurves_Pseudo-Ortho-MEC-Malt_Tapas_1954_Ortho-MEC-Malt_20
-14.png, id=844, 462.528pt x 346.896pt>
+14.png, id=898, 462.528pt x 346.896pt>
 File: images/Chapitre3/PlotCurves_Pseudo-Ortho-MEC-Malt_Tapas_1954_Ortho-MEC-Ma
 lt_2014.png Graphic file (type png)
 <use images/Chapitre3/PlotCurves_Pseudo-Ortho-MEC-Malt_Tapas_1954_Ortho-MEC-Mal
 t_2014.png>
 Package pdftex.def Info: images/Chapitre3/PlotCurves_Pseudo-Ortho-MEC-Malt_Tapa
-s_1954_Ortho-MEC-Malt_2014.png  used on input line 618.
+s_1954_Ortho-MEC-Malt_2014.png  used on input line 622.
 (pdftex.def)             Requested size: 99.58464pt x 62.15273pt.
 <images/Chapitre3/Pseudo-Homol-SIFT2Step_1954-2014-Rough-2DRANSAC-GlobalR3D-Pil
-eImg_Ortho-MEC-Malt_Tapas_1954_Ortho-MEC-Malt_2014.png, id=846, 1508.63625pt x 
+eImg_Ortho-MEC-Malt_Tapas_1954_Ortho-MEC-Malt_2014.png, id=900, 1508.63625pt x 
 501.875pt>
 File: images/Chapitre3/Pseudo-Homol-SIFT2Step_1954-2014-Rough-2DRANSAC-GlobalR3
 D-PileImg_Ortho-MEC-Malt_Tapas_1954_Ortho-MEC-Malt_2014.png Graphic file (type 
@@ -1922,150 +2229,150 @@ png)
 -PileImg_Ortho-MEC-Malt_Tapas_1954_Ortho-MEC-Malt_2014.png>
 Package pdftex.def Info: images/Chapitre3/Pseudo-Homol-SIFT2Step_1954-2014-Roug
 h-2DRANSAC-GlobalR3D-PileImg_Ortho-MEC-Malt_Tapas_1954_Ortho-MEC-Malt_2014.png 
- used on input line 624.
+ used on input line 628.
 (pdftex.def)             Requested size: 193.47882pt x 64.35771pt.
 
-Overfull \hbox (3.80772pt too wide) in paragraph at lines 624--624
+Overfull \hbox (3.80772pt too wide) in paragraph at lines 628--628
  [][] 
  []
 
 <images/Chapitre3/Pseudo-Homol-SuperGlue_1954-2014-GlobalR3D-PileImg_Ortho-MEC-
-Malt_Tapas_1954_Ortho-MEC-Malt_2014.png, id=847, 1508.63625pt x 501.875pt>
+Malt_Tapas_1954_Ortho-MEC-Malt_2014.png, id=901, 1508.63625pt x 501.875pt>
 File: images/Chapitre3/Pseudo-Homol-SuperGlue_1954-2014-GlobalR3D-PileImg_Ortho
 -MEC-Malt_Tapas_1954_Ortho-MEC-Malt_2014.png Graphic file (type png)
 <use images/Chapitre3/Pseudo-Homol-SuperGlue_1954-2014-GlobalR3D-PileImg_Ortho-
 MEC-Malt_Tapas_1954_Ortho-MEC-Malt_2014.png>
 Package pdftex.def Info: images/Chapitre3/Pseudo-Homol-SuperGlue_1954-2014-Glob
 alR3D-PileImg_Ortho-MEC-Malt_Tapas_1954_Ortho-MEC-Malt_2014.png  used on input 
-line 630.
+line 634.
 (pdftex.def)             Requested size: 193.47882pt x 64.35771pt.
 
-Overfull \hbox (3.80772pt too wide) in paragraph at lines 630--630
+Overfull \hbox (3.80772pt too wide) in paragraph at lines 634--634
  [][] 
  []
 
-<images/Chapitre3/Ortho-MEC-Malt_Tapas_1954_Ortho-MEC-Malt_2014.png, id=848, 14
+<images/Chapitre3/Ortho-MEC-Malt_Tapas_1954_Ortho-MEC-Malt_2014.png, id=902, 14
 61.46pt x 534.99875pt>
 File: images/Chapitre3/Ortho-MEC-Malt_Tapas_1954_Ortho-MEC-Malt_2014.png Graphi
 c file (type png)
 <use images/Chapitre3/Ortho-MEC-Malt_Tapas_1954_Ortho-MEC-Malt_2014.png>
 Package pdftex.def Info: images/Chapitre3/Ortho-MEC-Malt_Tapas_1954_Ortho-MEC-M
-alt_2014.png  used on input line 645.
+alt_2014.png  used on input line 649.
 (pdftex.def)             Requested size: 193.47882pt x 70.82576pt.
 
-Overfull \hbox (3.80772pt too wide) in paragraph at lines 645--645
+Overfull \hbox (3.80772pt too wide) in paragraph at lines 649--649
  [][] 
  []
 
 <images/Chapitre3/PlotCurves_Ortho-MEC-Malt_Tapas_1954_Ortho-MEC-Malt_2014.png,
- id=849, 462.528pt x 346.896pt>
+ id=903, 462.528pt x 346.896pt>
 File: images/Chapitre3/PlotCurves_Ortho-MEC-Malt_Tapas_1954_Ortho-MEC-Malt_2014
 .png Graphic file (type png)
 <use images/Chapitre3/PlotCurves_Ortho-MEC-Malt_Tapas_1954_Ortho-MEC-Malt_2014.
 png>
 Package pdftex.def Info: images/Chapitre3/PlotCurves_Ortho-MEC-Malt_Tapas_1954_
-Ortho-MEC-Malt_2014.png  used on input line 651.
+Ortho-MEC-Malt_2014.png  used on input line 655.
 (pdftex.def)             Requested size: 99.58464pt x 62.15273pt.
 <images/Chapitre3/Homol-SIFT2Step-Rough-2DRANSAC_Ortho-MEC-Malt_Tapas_1954_Orth
-o-MEC-Malt_2014.png, id=851, 1413.28pt x 501.875pt>
+o-MEC-Malt_2014.png, id=905, 1413.28pt x 501.875pt>
 File: images/Chapitre3/Homol-SIFT2Step-Rough-2DRANSAC_Ortho-MEC-Malt_Tapas_1954
 _Ortho-MEC-Malt_2014.png Graphic file (type png)
 <use images/Chapitre3/Homol-SIFT2Step-Rough-2DRANSAC_Ortho-MEC-Malt_Tapas_1954_
 Ortho-MEC-Malt_2014.png>
 Package pdftex.def Info: images/Chapitre3/Homol-SIFT2Step-Rough-2DRANSAC_Ortho-
-MEC-Malt_Tapas_1954_Ortho-MEC-Malt_2014.png  used on input line 657.
+MEC-Malt_Tapas_1954_Ortho-MEC-Malt_2014.png  used on input line 661.
 (pdftex.def)             Requested size: 193.47882pt x 68.70744pt.
 
-Overfull \hbox (3.80772pt too wide) in paragraph at lines 657--657
+Overfull \hbox (3.80772pt too wide) in paragraph at lines 661--661
  [][] 
  []
 
 <images/Chapitre3/Homol-SubPatch_R270-2DRANSAC_Ortho-MEC-Malt_Tapas_1954_Ortho-
-MEC-Malt_2014.png, id=852, 1413.28pt x 501.875pt>
+MEC-Malt_2014.png, id=906, 1413.28pt x 501.875pt>
 File: images/Chapitre3/Homol-SubPatch_R270-2DRANSAC_Ortho-MEC-Malt_Tapas_1954_O
 rtho-MEC-Malt_2014.png Graphic file (type png)
 <use images/Chapitre3/Homol-SubPatch_R270-2DRANSAC_Ortho-MEC-Malt_Tapas_1954_Or
 tho-MEC-Malt_2014.png>
 Package pdftex.def Info: images/Chapitre3/Homol-SubPatch_R270-2DRANSAC_Ortho-ME
-C-Malt_Tapas_1954_Ortho-MEC-Malt_2014.png  used on input line 663.
+C-Malt_Tapas_1954_Ortho-MEC-Malt_2014.png  used on input line 667.
 (pdftex.def)             Requested size: 193.47882pt x 68.70744pt.
 
-Overfull \hbox (3.80772pt too wide) in paragraph at lines 663--663
+Overfull \hbox (3.80772pt too wide) in paragraph at lines 667--667
  [][] 
  []
 
-<images/Chapitre3/MEC-Malt_Tapas_1954_MEC-Malt_2014.png, id=853, 1478.52374pt x
+<images/Chapitre3/MEC-Malt_Tapas_1954_MEC-Malt_2014.png, id=907, 1478.52374pt x
  529.98pt>
 File: images/Chapitre3/MEC-Malt_Tapas_1954_MEC-Malt_2014.png Graphic file (type
  png)
 <use images/Chapitre3/MEC-Malt_Tapas_1954_MEC-Malt_2014.png>
 Package pdftex.def Info: images/Chapitre3/MEC-Malt_Tapas_1954_MEC-Malt_2014.png
-  used on input line 676.
+  used on input line 680.
 (pdftex.def)             Requested size: 193.47882pt x 69.35268pt.
 
-Overfull \hbox (3.80772pt too wide) in paragraph at lines 676--676
+Overfull \hbox (3.80772pt too wide) in paragraph at lines 680--680
  [][] 
  []
 
-<images/Chapitre3/PlotCurves_MEC-Malt_Tapas_1954_MEC-Malt_2014.png, id=854, 462
+<images/Chapitre3/PlotCurves_MEC-Malt_Tapas_1954_MEC-Malt_2014.png, id=908, 462
 .528pt x 346.896pt>
 File: images/Chapitre3/PlotCurves_MEC-Malt_Tapas_1954_MEC-Malt_2014.png Graphic
  file (type png)
 <use images/Chapitre3/PlotCurves_MEC-Malt_Tapas_1954_MEC-Malt_2014.png>
 Package pdftex.def Info: images/Chapitre3/PlotCurves_MEC-Malt_Tapas_1954_MEC-Ma
-lt_2014.png  used on input line 682.
+lt_2014.png  used on input line 686.
 (pdftex.def)             Requested size: 99.58464pt x 62.15273pt.
 <images/Chapitre3/Homol-SIFT2Step-Rough-2DRANSAC_MEC-Malt_Tapas_1954_MEC-Malt_2
-014.png, id=856, 1413.28pt x 501.875pt>
+014.png, id=910, 1413.28pt x 501.875pt>
 File: images/Chapitre3/Homol-SIFT2Step-Rough-2DRANSAC_MEC-Malt_Tapas_1954_MEC-M
 alt_2014.png Graphic file (type png)
 <use images/Chapitre3/Homol-SIFT2Step-Rough-2DRANSAC_MEC-Malt_Tapas_1954_MEC-Ma
 lt_2014.png>
 Package pdftex.def Info: images/Chapitre3/Homol-SIFT2Step-Rough-2DRANSAC_MEC-Ma
-lt_Tapas_1954_MEC-Malt_2014.png  used on input line 688.
+lt_Tapas_1954_MEC-Malt_2014.png  used on input line 692.
 (pdftex.def)             Requested size: 193.47882pt x 68.70744pt.
 
-Overfull \hbox (3.80772pt too wide) in paragraph at lines 688--688
+Overfull \hbox (3.80772pt too wide) in paragraph at lines 692--692
  [][] 
  []
 
 <images/Chapitre3/Homol-SubPatch_R270-2DRANSAC_MEC-Malt_Tapas_1954_MEC-Malt_201
-4.png, id=857, 1413.28pt x 501.875pt>
+4.png, id=911, 1413.28pt x 501.875pt>
 File: images/Chapitre3/Homol-SubPatch_R270-2DRANSAC_MEC-Malt_Tapas_1954_MEC-Mal
 t_2014.png Graphic file (type png)
 <use images/Chapitre3/Homol-SubPatch_R270-2DRANSAC_MEC-Malt_Tapas_1954_MEC-Malt
 _2014.png>
 Package pdftex.def Info: images/Chapitre3/Homol-SubPatch_R270-2DRANSAC_MEC-Malt
-_Tapas_1954_MEC-Malt_2014.png  used on input line 694.
+_Tapas_1954_MEC-Malt_2014.png  used on input line 698.
 (pdftex.def)             Requested size: 193.47882pt x 68.70744pt.
 
-Overfull \hbox (3.80772pt too wide) in paragraph at lines 694--694
+Overfull \hbox (3.80772pt too wide) in paragraph at lines 698--698
  [][] 
  []
 
 
-LaTeX Warning: Float too large for page by 47.37674pt on input line 699.
+LaTeX Warning: Float too large for page by 47.37674pt on input line 703.
 
 <images/Chapitre3/Pseudo-Ortho-MEC-Malt_Tapas_1966_Ortho-MEC-Malt_2014.png, id=
-858, 934.692pt x 377.2494pt>
+912, 934.692pt x 377.2494pt>
 File: images/Chapitre3/Pseudo-Ortho-MEC-Malt_Tapas_1966_Ortho-MEC-Malt_2014.png
  Graphic file (type png)
 <use images/Chapitre3/Pseudo-Ortho-MEC-Malt_Tapas_1966_Ortho-MEC-Malt_2014.png>
 
 Package pdftex.def Info: images/Chapitre3/Pseudo-Ortho-MEC-Malt_Tapas_1966_Orth
-o-MEC-Malt_2014.png  used on input line 710.
+o-MEC-Malt_2014.png  used on input line 714.
 (pdftex.def)             Requested size: 173.56198pt x 70.04907pt.
 <images/Chapitre3/PlotCurves_Pseudo-Ortho-MEC-Malt_Tapas_1966_Ortho-MEC-Malt_20
-14.png, id=859, 462.528pt x 346.896pt>
+14.png, id=913, 462.528pt x 346.896pt>
 File: images/Chapitre3/PlotCurves_Pseudo-Ortho-MEC-Malt_Tapas_1966_Ortho-MEC-Ma
 lt_2014.png Graphic file (type png)
 <use images/Chapitre3/PlotCurves_Pseudo-Ortho-MEC-Malt_Tapas_1966_Ortho-MEC-Mal
 t_2014.png>
 Package pdftex.def Info: images/Chapitre3/PlotCurves_Pseudo-Ortho-MEC-Malt_Tapa
-s_1966_Ortho-MEC-Malt_2014.png  used on input line 716.
+s_1966_Ortho-MEC-Malt_2014.png  used on input line 720.
 (pdftex.def)             Requested size: 99.58464pt x 62.15273pt.
 <images/Chapitre3/Pseudo-Homol-SIFT2Step_1966-2014-Rough-2DRANSAC-GlobalR3D-Pil
-eImg_Ortho-MEC-Malt_Tapas_1966_Ortho-MEC-Malt_2014.png, id=861, 1246.6575pt x 5
+eImg_Ortho-MEC-Malt_Tapas_1966_Ortho-MEC-Malt_2014.png, id=915, 1246.6575pt x 5
 01.875pt>
 File: images/Chapitre3/Pseudo-Homol-SIFT2Step_1966-2014-Rough-2DRANSAC-GlobalR3
 D-PileImg_Ortho-MEC-Malt_Tapas_1966_Ortho-MEC-Malt_2014.png Graphic file (type 
@@ -2074,110 +2381,110 @@ png)
 -PileImg_Ortho-MEC-Malt_Tapas_1966_Ortho-MEC-Malt_2014.png>
 Package pdftex.def Info: images/Chapitre3/Pseudo-Homol-SIFT2Step_1966-2014-Roug
 h-2DRANSAC-GlobalR3D-PileImg_Ortho-MEC-Malt_Tapas_1966_Ortho-MEC-Malt_2014.png 
- used on input line 722.
+ used on input line 726.
 (pdftex.def)             Requested size: 170.71652pt x 68.72276pt.
 <images/Chapitre3/Pseudo-Homol-SuperGlue_1966-2014-GlobalR3D-PileImg_Ortho-MEC-
-Malt_Tapas_1966_Ortho-MEC-Malt_2014.png, id=862, 1246.6575pt x 501.875pt>
+Malt_Tapas_1966_Ortho-MEC-Malt_2014.png, id=916, 1246.6575pt x 501.875pt>
 File: images/Chapitre3/Pseudo-Homol-SuperGlue_1966-2014-GlobalR3D-PileImg_Ortho
 -MEC-Malt_Tapas_1966_Ortho-MEC-Malt_2014.png Graphic file (type png)
 <use images/Chapitre3/Pseudo-Homol-SuperGlue_1966-2014-GlobalR3D-PileImg_Ortho-
 MEC-Malt_Tapas_1966_Ortho-MEC-Malt_2014.png>
 Package pdftex.def Info: images/Chapitre3/Pseudo-Homol-SuperGlue_1966-2014-Glob
 alR3D-PileImg_Ortho-MEC-Malt_Tapas_1966_Ortho-MEC-Malt_2014.png  used on input 
-line 728.
+line 732.
 (pdftex.def)             Requested size: 170.71652pt x 68.72276pt.
-<images/Chapitre3/Ortho-MEC-Malt_Tapas_1966_Ortho-MEC-Malt_2014.png, id=863, 12
+<images/Chapitre3/Ortho-MEC-Malt_Tapas_1966_Ortho-MEC-Malt_2014.png, id=917, 12
 34.6125pt x 529.98pt>
 File: images/Chapitre3/Ortho-MEC-Malt_Tapas_1966_Ortho-MEC-Malt_2014.png Graphi
 c file (type png)
 <use images/Chapitre3/Ortho-MEC-Malt_Tapas_1966_Ortho-MEC-Malt_2014.png>
 Package pdftex.def Info: images/Chapitre3/Ortho-MEC-Malt_Tapas_1966_Ortho-MEC-M
-alt_2014.png  used on input line 742.
+alt_2014.png  used on input line 746.
 (pdftex.def)             Requested size: 173.56198pt x 74.50398pt.
 <images/Chapitre3/PlotCurves_Ortho-MEC-Malt_Tapas_1966_Ortho-MEC-Malt_2014.png,
- id=864, 462.528pt x 346.896pt>
+ id=918, 462.528pt x 346.896pt>
 File: images/Chapitre3/PlotCurves_Ortho-MEC-Malt_Tapas_1966_Ortho-MEC-Malt_2014
 .png Graphic file (type png)
 <use images/Chapitre3/PlotCurves_Ortho-MEC-Malt_Tapas_1966_Ortho-MEC-Malt_2014.
 png>
 Package pdftex.def Info: images/Chapitre3/PlotCurves_Ortho-MEC-Malt_Tapas_1966_
-Ortho-MEC-Malt_2014.png  used on input line 748.
+Ortho-MEC-Malt_2014.png  used on input line 752.
 (pdftex.def)             Requested size: 99.58464pt x 62.15273pt.
 <images/Chapitre3/Homol-SIFT2Step-Rough-2DRANSAC_Ortho-MEC-Malt_Tapas_1966_Orth
-o-MEC-Malt_2014.png, id=866, 1198.4775pt x 501.875pt>
+o-MEC-Malt_2014.png, id=920, 1198.4775pt x 501.875pt>
 File: images/Chapitre3/Homol-SIFT2Step-Rough-2DRANSAC_Ortho-MEC-Malt_Tapas_1966
 _Ortho-MEC-Malt_2014.png Graphic file (type png)
 <use images/Chapitre3/Homol-SIFT2Step-Rough-2DRANSAC_Ortho-MEC-Malt_Tapas_1966_
 Ortho-MEC-Malt_2014.png>
 Package pdftex.def Info: images/Chapitre3/Homol-SIFT2Step-Rough-2DRANSAC_Ortho-
-MEC-Malt_Tapas_1966_Ortho-MEC-Malt_2014.png  used on input line 754.
+MEC-Malt_Tapas_1966_Ortho-MEC-Malt_2014.png  used on input line 758.
 (pdftex.def)             Requested size: 170.71652pt x 71.48729pt.
 <images/Chapitre3/Homol-SubPatch_R270-2DRANSAC_Ortho-MEC-Malt_Tapas_1966_Ortho-
-MEC-Malt_2014.png, id=867, 1198.4775pt x 501.875pt>
+MEC-Malt_2014.png, id=921, 1198.4775pt x 501.875pt>
 File: images/Chapitre3/Homol-SubPatch_R270-2DRANSAC_Ortho-MEC-Malt_Tapas_1966_O
 rtho-MEC-Malt_2014.png Graphic file (type png)
 <use images/Chapitre3/Homol-SubPatch_R270-2DRANSAC_Ortho-MEC-Malt_Tapas_1966_Or
 tho-MEC-Malt_2014.png>
 Package pdftex.def Info: images/Chapitre3/Homol-SubPatch_R270-2DRANSAC_Ortho-ME
-C-Malt_Tapas_1966_Ortho-MEC-Malt_2014.png  used on input line 760.
+C-Malt_Tapas_1966_Ortho-MEC-Malt_2014.png  used on input line 764.
 (pdftex.def)             Requested size: 170.71652pt x 71.48729pt.
-<images/Chapitre3/MEC-Malt_Tapas_1966_MEC-Malt_2014.png, id=868, 1250.6725pt x 
+<images/Chapitre3/MEC-Malt_Tapas_1966_MEC-Malt_2014.png, id=922, 1250.6725pt x 
 529.98pt>
 File: images/Chapitre3/MEC-Malt_Tapas_1966_MEC-Malt_2014.png Graphic file (type
  png)
 <use images/Chapitre3/MEC-Malt_Tapas_1966_MEC-Malt_2014.png>
 Package pdftex.def Info: images/Chapitre3/MEC-Malt_Tapas_1966_MEC-Malt_2014.png
-  used on input line 773.
+  used on input line 777.
 (pdftex.def)             Requested size: 173.56198pt x 73.54166pt.
-<images/Chapitre3/PlotCurves_MEC-Malt_Tapas_1966_MEC-Malt_2014.png, id=869, 462
+<images/Chapitre3/PlotCurves_MEC-Malt_Tapas_1966_MEC-Malt_2014.png, id=923, 462
 .528pt x 346.896pt>
 File: images/Chapitre3/PlotCurves_MEC-Malt_Tapas_1966_MEC-Malt_2014.png Graphic
  file (type png)
 <use images/Chapitre3/PlotCurves_MEC-Malt_Tapas_1966_MEC-Malt_2014.png>
 Package pdftex.def Info: images/Chapitre3/PlotCurves_MEC-Malt_Tapas_1966_MEC-Ma
-lt_2014.png  used on input line 779.
+lt_2014.png  used on input line 783.
 (pdftex.def)             Requested size: 99.58464pt x 62.15273pt.
 <images/Chapitre3/Homol-SIFT2Step-Rough-2DRANSAC_MEC-Malt_Tapas_1966_MEC-Malt_2
-014.png, id=871, 1198.4775pt x 501.875pt>
+014.png, id=925, 1198.4775pt x 501.875pt>
 File: images/Chapitre3/Homol-SIFT2Step-Rough-2DRANSAC_MEC-Malt_Tapas_1966_MEC-M
 alt_2014.png Graphic file (type png)
 <use images/Chapitre3/Homol-SIFT2Step-Rough-2DRANSAC_MEC-Malt_Tapas_1966_MEC-Ma
 lt_2014.png>
 Package pdftex.def Info: images/Chapitre3/Homol-SIFT2Step-Rough-2DRANSAC_MEC-Ma
-lt_Tapas_1966_MEC-Malt_2014.png  used on input line 785.
+lt_Tapas_1966_MEC-Malt_2014.png  used on input line 789.
 (pdftex.def)             Requested size: 170.71652pt x 71.48729pt.
 <images/Chapitre3/Homol-SubPatch_R270-2DRANSAC_MEC-Malt_Tapas_1966_MEC-Malt_201
-4.png, id=872, 1198.4775pt x 501.875pt>
+4.png, id=926, 1198.4775pt x 501.875pt>
 File: images/Chapitre3/Homol-SubPatch_R270-2DRANSAC_MEC-Malt_Tapas_1966_MEC-Mal
 t_2014.png Graphic file (type png)
 <use images/Chapitre3/Homol-SubPatch_R270-2DRANSAC_MEC-Malt_Tapas_1966_MEC-Malt
 _2014.png>
 Package pdftex.def Info: images/Chapitre3/Homol-SubPatch_R270-2DRANSAC_MEC-Malt
-_Tapas_1966_MEC-Malt_2014.png  used on input line 791.
+_Tapas_1966_MEC-Malt_2014.png  used on input line 795.
 (pdftex.def)             Requested size: 170.71652pt x 71.48729pt.
 
-LaTeX Warning: Float too large for page by 68.06503pt on input line 797.
+LaTeX Warning: Float too large for page by 68.06503pt on input line 801.
 
 <images/Chapitre3/Pseudo-Ortho-MEC-Malt_Tapas_1970_Ortho-MEC-Malt_2014.png, id=
-873, 851.3406pt x 377.2494pt>
+927, 851.3406pt x 377.2494pt>
 File: images/Chapitre3/Pseudo-Ortho-MEC-Malt_Tapas_1970_Ortho-MEC-Malt_2014.png
  Graphic file (type png)
 <use images/Chapitre3/Pseudo-Ortho-MEC-Malt_Tapas_1970_Ortho-MEC-Malt_2014.png>
 
 Package pdftex.def Info: images/Chapitre3/Pseudo-Ortho-MEC-Malt_Tapas_1970_Orth
-o-MEC-Malt_2014.png  used on input line 808.
+o-MEC-Malt_2014.png  used on input line 812.
 (pdftex.def)             Requested size: 147.95424pt x 65.55911pt.
 <images/Chapitre3/PlotCurves_Pseudo-Ortho-MEC-Malt_Tapas_1970_Ortho-MEC-Malt_20
-14.png, id=874, 462.528pt x 346.896pt>
+14.png, id=928, 462.528pt x 346.896pt>
 File: images/Chapitre3/PlotCurves_Pseudo-Ortho-MEC-Malt_Tapas_1970_Ortho-MEC-Ma
 lt_2014.png Graphic file (type png)
 <use images/Chapitre3/PlotCurves_Pseudo-Ortho-MEC-Malt_Tapas_1970_Ortho-MEC-Mal
 t_2014.png>
 Package pdftex.def Info: images/Chapitre3/PlotCurves_Pseudo-Ortho-MEC-Malt_Tapa
-s_1970_Ortho-MEC-Malt_2014.png  used on input line 814.
+s_1970_Ortho-MEC-Malt_2014.png  used on input line 818.
 (pdftex.def)             Requested size: 99.58464pt x 62.15273pt.
 <images/Chapitre3/Pseudo-Homol-SIFT2Step_1970-2014-Rough-2DRANSAC-GlobalR3D-Pil
-eImg_Ortho-MEC-Malt_Tapas_1970_Ortho-MEC-Malt_2014.png, id=876, 1135.24126pt x 
+eImg_Ortho-MEC-Malt_Tapas_1970_Ortho-MEC-Malt_2014.png, id=930, 1135.24126pt x 
 501.875pt>
 File: images/Chapitre3/Pseudo-Homol-SIFT2Step_1970-2014-Rough-2DRANSAC-GlobalR3
 D-PileImg_Ortho-MEC-Malt_Tapas_1970_Ortho-MEC-Malt_2014.png Graphic file (type 
@@ -2186,110 +2493,110 @@ png)
 -PileImg_Ortho-MEC-Malt_Tapas_1970_Ortho-MEC-Malt_2014.png>
 Package pdftex.def Info: images/Chapitre3/Pseudo-Homol-SIFT2Step_1970-2014-Roug
 h-2DRANSAC-GlobalR3D-PileImg_Ortho-MEC-Malt_Tapas_1970_Ortho-MEC-Malt_2014.png 
- used on input line 820.
+ used on input line 824.
 (pdftex.def)             Requested size: 162.18062pt x 71.69406pt.
 <images/Chapitre3/Pseudo-Homol-SuperGlue_1970-2014-GlobalR3D-PileImg_Ortho-MEC-
-Malt_Tapas_1970_Ortho-MEC-Malt_2014.png, id=877, 1135.24126pt x 501.875pt>
+Malt_Tapas_1970_Ortho-MEC-Malt_2014.png, id=931, 1135.24126pt x 501.875pt>
 File: images/Chapitre3/Pseudo-Homol-SuperGlue_1970-2014-GlobalR3D-PileImg_Ortho
 -MEC-Malt_Tapas_1970_Ortho-MEC-Malt_2014.png Graphic file (type png)
 <use images/Chapitre3/Pseudo-Homol-SuperGlue_1970-2014-GlobalR3D-PileImg_Ortho-
 MEC-Malt_Tapas_1970_Ortho-MEC-Malt_2014.png>
 Package pdftex.def Info: images/Chapitre3/Pseudo-Homol-SuperGlue_1970-2014-Glob
 alR3D-PileImg_Ortho-MEC-Malt_Tapas_1970_Ortho-MEC-Malt_2014.png  used on input 
-line 826.
+line 830.
 (pdftex.def)             Requested size: 162.18062pt x 71.69406pt.
-<images/Chapitre3/Ortho-MEC-Malt_Tapas_1970_Ortho-MEC-Malt_2014.png, id=878, 10
+<images/Chapitre3/Ortho-MEC-Malt_Tapas_1970_Ortho-MEC-Malt_2014.png, id=932, 10
 92.08pt x 524.96124pt>
 File: images/Chapitre3/Ortho-MEC-Malt_Tapas_1970_Ortho-MEC-Malt_2014.png Graphi
 c file (type png)
 <use images/Chapitre3/Ortho-MEC-Malt_Tapas_1970_Ortho-MEC-Malt_2014.png>
 Package pdftex.def Info: images/Chapitre3/Ortho-MEC-Malt_Tapas_1970_Ortho-MEC-M
-alt_2014.png  used on input line 839.
+alt_2014.png  used on input line 843.
 (pdftex.def)             Requested size: 147.95424pt x 71.11502pt.
 <images/Chapitre3/PlotCurves_Ortho-MEC-Malt_Tapas_1970_Ortho-MEC-Malt_2014.png,
- id=879, 462.528pt x 346.896pt>
+ id=933, 462.528pt x 346.896pt>
 File: images/Chapitre3/PlotCurves_Ortho-MEC-Malt_Tapas_1970_Ortho-MEC-Malt_2014
 .png Graphic file (type png)
 <use images/Chapitre3/PlotCurves_Ortho-MEC-Malt_Tapas_1970_Ortho-MEC-Malt_2014.
 png>
 Package pdftex.def Info: images/Chapitre3/PlotCurves_Ortho-MEC-Malt_Tapas_1970_
-Ortho-MEC-Malt_2014.png  used on input line 845.
+Ortho-MEC-Malt_2014.png  used on input line 849.
 (pdftex.def)             Requested size: 99.58464pt x 62.15273pt.
 <images/Chapitre3/Homol-SIFT2Step-Rough-2DRANSAC_Ortho-MEC-Malt_Tapas_1970_Orth
-o-MEC-Malt_2014.png, id=881, 1060.96375pt x 501.875pt>
+o-MEC-Malt_2014.png, id=935, 1060.96375pt x 501.875pt>
 File: images/Chapitre3/Homol-SIFT2Step-Rough-2DRANSAC_Ortho-MEC-Malt_Tapas_1970
 _Ortho-MEC-Malt_2014.png Graphic file (type png)
 <use images/Chapitre3/Homol-SIFT2Step-Rough-2DRANSAC_Ortho-MEC-Malt_Tapas_1970_
 Ortho-MEC-Malt_2014.png>
 Package pdftex.def Info: images/Chapitre3/Homol-SIFT2Step-Rough-2DRANSAC_Ortho-
-MEC-Malt_Tapas_1970_Ortho-MEC-Malt_2014.png  used on input line 851.
+MEC-Malt_Tapas_1970_Ortho-MEC-Malt_2014.png  used on input line 855.
 (pdftex.def)             Requested size: 162.18062pt x 76.7177pt.
 <images/Chapitre3/Homol-SubPatch_R270-2DRANSAC_Ortho-MEC-Malt_Tapas_1970_Ortho-
-MEC-Malt_2014.png, id=882, 1060.96375pt x 501.875pt>
+MEC-Malt_2014.png, id=936, 1060.96375pt x 501.875pt>
 File: images/Chapitre3/Homol-SubPatch_R270-2DRANSAC_Ortho-MEC-Malt_Tapas_1970_O
 rtho-MEC-Malt_2014.png Graphic file (type png)
 <use images/Chapitre3/Homol-SubPatch_R270-2DRANSAC_Ortho-MEC-Malt_Tapas_1970_Or
 tho-MEC-Malt_2014.png>
 Package pdftex.def Info: images/Chapitre3/Homol-SubPatch_R270-2DRANSAC_Ortho-ME
-C-Malt_Tapas_1970_Ortho-MEC-Malt_2014.png  used on input line 857.
+C-Malt_Tapas_1970_Ortho-MEC-Malt_2014.png  used on input line 861.
 (pdftex.def)             Requested size: 162.18062pt x 76.7177pt.
-<images/Chapitre3/MEC-Malt_Tapas_1970_MEC-Malt_2014.png, id=883, 1109.14375pt x
+<images/Chapitre3/MEC-Malt_Tapas_1970_MEC-Malt_2014.png, id=937, 1109.14375pt x
  523.9575pt>
 File: images/Chapitre3/MEC-Malt_Tapas_1970_MEC-Malt_2014.png Graphic file (type
  png)
 <use images/Chapitre3/MEC-Malt_Tapas_1970_MEC-Malt_2014.png>
 Package pdftex.def Info: images/Chapitre3/MEC-Malt_Tapas_1970_MEC-Malt_2014.png
-  used on input line 870.
+  used on input line 874.
 (pdftex.def)             Requested size: 147.95424pt x 69.89174pt.
-<images/Chapitre3/PlotCurves_MEC-Malt_Tapas_1970_MEC-Malt_2014.png, id=884, 462
+<images/Chapitre3/PlotCurves_MEC-Malt_Tapas_1970_MEC-Malt_2014.png, id=938, 462
 .528pt x 346.896pt>
 File: images/Chapitre3/PlotCurves_MEC-Malt_Tapas_1970_MEC-Malt_2014.png Graphic
  file (type png)
 <use images/Chapitre3/PlotCurves_MEC-Malt_Tapas_1970_MEC-Malt_2014.png>
 Package pdftex.def Info: images/Chapitre3/PlotCurves_MEC-Malt_Tapas_1970_MEC-Ma
-lt_2014.png  used on input line 876.
+lt_2014.png  used on input line 880.
 (pdftex.def)             Requested size: 99.58464pt x 62.15273pt.
 <images/Chapitre3/Homol-SIFT2Step-Rough-2DRANSAC_MEC-Malt_Tapas_1970_MEC-Malt_2
-014.png, id=886, 1060.96375pt x 501.875pt>
+014.png, id=940, 1060.96375pt x 501.875pt>
 File: images/Chapitre3/Homol-SIFT2Step-Rough-2DRANSAC_MEC-Malt_Tapas_1970_MEC-M
 alt_2014.png Graphic file (type png)
 <use images/Chapitre3/Homol-SIFT2Step-Rough-2DRANSAC_MEC-Malt_Tapas_1970_MEC-Ma
 lt_2014.png>
 Package pdftex.def Info: images/Chapitre3/Homol-SIFT2Step-Rough-2DRANSAC_MEC-Ma
-lt_Tapas_1970_MEC-Malt_2014.png  used on input line 882.
+lt_Tapas_1970_MEC-Malt_2014.png  used on input line 886.
 (pdftex.def)             Requested size: 162.18062pt x 76.7177pt.
 <images/Chapitre3/Homol-SubPatch_R270-2DRANSAC_MEC-Malt_Tapas_1970_MEC-Malt_201
-4.png, id=887, 1060.96375pt x 501.875pt>
+4.png, id=941, 1060.96375pt x 501.875pt>
 File: images/Chapitre3/Homol-SubPatch_R270-2DRANSAC_MEC-Malt_Tapas_1970_MEC-Mal
 t_2014.png Graphic file (type png)
 <use images/Chapitre3/Homol-SubPatch_R270-2DRANSAC_MEC-Malt_Tapas_1970_MEC-Malt
 _2014.png>
 Package pdftex.def Info: images/Chapitre3/Homol-SubPatch_R270-2DRANSAC_MEC-Malt
-_Tapas_1970_MEC-Malt_2014.png  used on input line 888.
+_Tapas_1970_MEC-Malt_2014.png  used on input line 892.
 (pdftex.def)             Requested size: 162.18062pt x 76.7177pt.
 
-LaTeX Warning: Float too large for page by 71.56192pt on input line 894.
+LaTeX Warning: Float too large for page by 71.56192pt on input line 898.
 
 <images/Chapitre3/Pseudo-Ortho-MEC-Malt_Tapas_1971_Ortho-MEC-Malt_2015.png, id=
-888, 740.5266pt x 376.2858pt>
+942, 740.5266pt x 376.2858pt>
 File: images/Chapitre3/Pseudo-Ortho-MEC-Malt_Tapas_1971_Ortho-MEC-Malt_2015.png
  Graphic file (type png)
 <use images/Chapitre3/Pseudo-Ortho-MEC-Malt_Tapas_1971_Ortho-MEC-Malt_2015.png>
 
 Package pdftex.def Info: images/Chapitre3/Pseudo-Ortho-MEC-Malt_Tapas_1971_Orth
-o-MEC-Malt_2015.png  used on input line 905.
+o-MEC-Malt_2015.png  used on input line 909.
 (pdftex.def)             Requested size: 145.10922pt x 73.73428pt.
 <images/Chapitre3/PlotCurves_Pseudo-Ortho-MEC-Malt_Tapas_1971_Ortho-MEC-Malt_20
-15.png, id=889, 462.528pt x 346.896pt>
+15.png, id=943, 462.528pt x 346.896pt>
 File: images/Chapitre3/PlotCurves_Pseudo-Ortho-MEC-Malt_Tapas_1971_Ortho-MEC-Ma
 lt_2015.png Graphic file (type png)
 <use images/Chapitre3/PlotCurves_Pseudo-Ortho-MEC-Malt_Tapas_1971_Ortho-MEC-Mal
 t_2015.png>
 Package pdftex.def Info: images/Chapitre3/PlotCurves_Pseudo-Ortho-MEC-Malt_Tapa
-s_1971_Ortho-MEC-Malt_2015.png  used on input line 911.
+s_1971_Ortho-MEC-Malt_2015.png  used on input line 915.
 (pdftex.def)             Requested size: 99.58464pt x 62.15273pt.
 <images/Chapitre3/Pseudo-Homol-SIFT2Step_1971-2015-Rough-2DRANSAC-GlobalR3D-Pil
-eImg_Ortho-MEC-Malt_Tapas_1971_Ortho-MEC-Malt_2015.png, id=891, 987.69pt x 501.
+eImg_Ortho-MEC-Malt_Tapas_1971_Ortho-MEC-Malt_2015.png, id=945, 987.69pt x 501.
 875pt>
 File: images/Chapitre3/Pseudo-Homol-SIFT2Step_1971-2015-Rough-2DRANSAC-GlobalR3
 D-PileImg_Ortho-MEC-Malt_Tapas_1971_Ortho-MEC-Malt_2015.png Graphic file (type 
@@ -2298,110 +2605,110 @@ png)
 -PileImg_Ortho-MEC-Malt_Tapas_1971_Ortho-MEC-Malt_2015.png>
 Package pdftex.def Info: images/Chapitre3/Pseudo-Homol-SIFT2Step_1971-2015-Roug
 h-2DRANSAC-GlobalR3D-PileImg_Ortho-MEC-Malt_Tapas_1971_Ortho-MEC-Malt_2015.png 
- used on input line 917.
+ used on input line 921.
 (pdftex.def)             Requested size: 147.95424pt x 75.17844pt.
 <images/Chapitre3/Pseudo-Homol-SuperGlue_1971-2015-GlobalR3D-PileImg_Ortho-MEC-
-Malt_Tapas_1971_Ortho-MEC-Malt_2015.png, id=892, 987.69pt x 501.875pt>
+Malt_Tapas_1971_Ortho-MEC-Malt_2015.png, id=946, 987.69pt x 501.875pt>
 File: images/Chapitre3/Pseudo-Homol-SuperGlue_1971-2015-GlobalR3D-PileImg_Ortho
 -MEC-Malt_Tapas_1971_Ortho-MEC-Malt_2015.png Graphic file (type png)
 <use images/Chapitre3/Pseudo-Homol-SuperGlue_1971-2015-GlobalR3D-PileImg_Ortho-
 MEC-Malt_Tapas_1971_Ortho-MEC-Malt_2015.png>
 Package pdftex.def Info: images/Chapitre3/Pseudo-Homol-SuperGlue_1971-2015-Glob
 alR3D-PileImg_Ortho-MEC-Malt_Tapas_1971_Ortho-MEC-Malt_2015.png  used on input 
-line 923.
+line 927.
 (pdftex.def)             Requested size: 147.95424pt x 75.17844pt.
-<images/Chapitre3/Ortho-MEC-Malt_Tapas_1971_Ortho-MEC-Malt_2015.png, id=893, 10
+<images/Chapitre3/Ortho-MEC-Malt_Tapas_1971_Ortho-MEC-Malt_2015.png, id=947, 10
 28.84375pt x 519.9425pt>
 File: images/Chapitre3/Ortho-MEC-Malt_Tapas_1971_Ortho-MEC-Malt_2015.png Graphi
 c file (type png)
 <use images/Chapitre3/Ortho-MEC-Malt_Tapas_1971_Ortho-MEC-Malt_2015.png>
 Package pdftex.def Info: images/Chapitre3/Ortho-MEC-Malt_Tapas_1971_Ortho-MEC-M
-alt_2015.png  used on input line 936.
+alt_2015.png  used on input line 940.
 (pdftex.def)             Requested size: 145.10922pt x 73.33093pt.
 <images/Chapitre3/PlotCurves_Ortho-MEC-Malt_Tapas_1971_Ortho-MEC-Malt_2015.png,
- id=894, 462.528pt x 346.896pt>
+ id=948, 462.528pt x 346.896pt>
 File: images/Chapitre3/PlotCurves_Ortho-MEC-Malt_Tapas_1971_Ortho-MEC-Malt_2015
 .png Graphic file (type png)
 <use images/Chapitre3/PlotCurves_Ortho-MEC-Malt_Tapas_1971_Ortho-MEC-Malt_2015.
 png>
 Package pdftex.def Info: images/Chapitre3/PlotCurves_Ortho-MEC-Malt_Tapas_1971_
-Ortho-MEC-Malt_2015.png  used on input line 942.
+Ortho-MEC-Malt_2015.png  used on input line 946.
 (pdftex.def)             Requested size: 99.58464pt x 62.15273pt.
 <images/Chapitre3/Homol-SIFT2Step-Rough-2DRANSAC_Ortho-MEC-Malt_Tapas_1971_Orth
-o-MEC-Malt_2015.png, id=896, 986.68625pt x 501.875pt>
+o-MEC-Malt_2015.png, id=950, 986.68625pt x 501.875pt>
 File: images/Chapitre3/Homol-SIFT2Step-Rough-2DRANSAC_Ortho-MEC-Malt_Tapas_1971
 _Ortho-MEC-Malt_2015.png Graphic file (type png)
 <use images/Chapitre3/Homol-SIFT2Step-Rough-2DRANSAC_Ortho-MEC-Malt_Tapas_1971_
 Ortho-MEC-Malt_2015.png>
 Package pdftex.def Info: images/Chapitre3/Homol-SIFT2Step-Rough-2DRANSAC_Ortho-
-MEC-Malt_Tapas_1971_Ortho-MEC-Malt_2015.png  used on input line 948.
+MEC-Malt_Tapas_1971_Ortho-MEC-Malt_2015.png  used on input line 952.
 (pdftex.def)             Requested size: 147.95424pt x 75.25502pt.
 <images/Chapitre3/Homol-SubPatch_R270-2DRANSAC_Ortho-MEC-Malt_Tapas_1971_Ortho-
-MEC-Malt_2015.png, id=897, 986.68625pt x 501.875pt>
+MEC-Malt_2015.png, id=951, 986.68625pt x 501.875pt>
 File: images/Chapitre3/Homol-SubPatch_R270-2DRANSAC_Ortho-MEC-Malt_Tapas_1971_O
 rtho-MEC-Malt_2015.png Graphic file (type png)
 <use images/Chapitre3/Homol-SubPatch_R270-2DRANSAC_Ortho-MEC-Malt_Tapas_1971_Or
 tho-MEC-Malt_2015.png>
 Package pdftex.def Info: images/Chapitre3/Homol-SubPatch_R270-2DRANSAC_Ortho-ME
-C-Malt_Tapas_1971_Ortho-MEC-Malt_2015.png  used on input line 954.
+C-Malt_Tapas_1971_Ortho-MEC-Malt_2015.png  used on input line 958.
 (pdftex.def)             Requested size: 147.95424pt x 75.25502pt.
-<images/Chapitre3/MEC-Malt_Tapas_1971_MEC-Malt_2015.png, id=898, 1031.855pt x 5
+<images/Chapitre3/MEC-Malt_Tapas_1971_MEC-Malt_2015.png, id=952, 1031.855pt x 5
 31.9875pt>
 File: images/Chapitre3/MEC-Malt_Tapas_1971_MEC-Malt_2015.png Graphic file (type
  png)
 <use images/Chapitre3/MEC-Malt_Tapas_1971_MEC-Malt_2015.png>
 Package pdftex.def Info: images/Chapitre3/MEC-Malt_Tapas_1971_MEC-Malt_2015.png
-  used on input line 967.
+  used on input line 971.
 (pdftex.def)             Requested size: 145.10922pt x 74.81055pt.
-<images/Chapitre3/PlotCurves_MEC-Malt_Tapas_1971_MEC-Malt_2015.png, id=899, 462
+<images/Chapitre3/PlotCurves_MEC-Malt_Tapas_1971_MEC-Malt_2015.png, id=953, 462
 .528pt x 346.896pt>
 File: images/Chapitre3/PlotCurves_MEC-Malt_Tapas_1971_MEC-Malt_2015.png Graphic
  file (type png)
 <use images/Chapitre3/PlotCurves_MEC-Malt_Tapas_1971_MEC-Malt_2015.png>
 Package pdftex.def Info: images/Chapitre3/PlotCurves_MEC-Malt_Tapas_1971_MEC-Ma
-lt_2015.png  used on input line 973.
+lt_2015.png  used on input line 977.
 (pdftex.def)             Requested size: 99.58464pt x 62.15273pt.
 <images/Chapitre3/Homol-SIFT2Step-Rough-2DRANSAC_MEC-Malt_Tapas_1971_MEC-Malt_2
-015.png, id=901, 986.68625pt x 501.875pt>
+015.png, id=955, 986.68625pt x 501.875pt>
 File: images/Chapitre3/Homol-SIFT2Step-Rough-2DRANSAC_MEC-Malt_Tapas_1971_MEC-M
 alt_2015.png Graphic file (type png)
 <use images/Chapitre3/Homol-SIFT2Step-Rough-2DRANSAC_MEC-Malt_Tapas_1971_MEC-Ma
 lt_2015.png>
 Package pdftex.def Info: images/Chapitre3/Homol-SIFT2Step-Rough-2DRANSAC_MEC-Ma
-lt_Tapas_1971_MEC-Malt_2015.png  used on input line 979.
+lt_Tapas_1971_MEC-Malt_2015.png  used on input line 983.
 (pdftex.def)             Requested size: 147.95424pt x 75.25502pt.
 <images/Chapitre3/Homol-SubPatch_R270-2DRANSAC_MEC-Malt_Tapas_1971_MEC-Malt_201
-5.png, id=902, 986.68625pt x 501.875pt>
+5.png, id=956, 986.68625pt x 501.875pt>
 File: images/Chapitre3/Homol-SubPatch_R270-2DRANSAC_MEC-Malt_Tapas_1971_MEC-Mal
 t_2015.png Graphic file (type png)
 <use images/Chapitre3/Homol-SubPatch_R270-2DRANSAC_MEC-Malt_Tapas_1971_MEC-Malt
 _2015.png>
 Package pdftex.def Info: images/Chapitre3/Homol-SubPatch_R270-2DRANSAC_MEC-Malt
-_Tapas_1971_MEC-Malt_2015.png  used on input line 985.
+_Tapas_1971_MEC-Malt_2015.png  used on input line 989.
 (pdftex.def)             Requested size: 147.95424pt x 75.25502pt.
 
-LaTeX Warning: Float too large for page by 85.83722pt on input line 991.
+LaTeX Warning: Float too large for page by 85.83722pt on input line 995.
 
 <images/Chapitre3/Pseudo-Ortho-MEC-Malt_Tapas_1981_Ortho-MEC-Malt_2015.png, id=
-903, 760.2804pt x 376.2858pt>
+957, 760.2804pt x 376.2858pt>
 File: images/Chapitre3/Pseudo-Ortho-MEC-Malt_Tapas_1981_Ortho-MEC-Malt_2015.png
  Graphic file (type png)
 <use images/Chapitre3/Pseudo-Ortho-MEC-Malt_Tapas_1981_Ortho-MEC-Malt_2015.png>
 
 Package pdftex.def Info: images/Chapitre3/Pseudo-Ortho-MEC-Malt_Tapas_1981_Orth
-o-MEC-Malt_2015.png  used on input line 1002.
+o-MEC-Malt_2015.png  used on input line 1006.
 (pdftex.def)             Requested size: 145.10922pt x 71.81657pt.
 <images/Chapitre3/PlotCurves_Pseudo-Ortho-MEC-Malt_Tapas_1981_Ortho-MEC-Malt_20
-15.png, id=904, 462.528pt x 346.896pt>
+15.png, id=958, 462.528pt x 346.896pt>
 File: images/Chapitre3/PlotCurves_Pseudo-Ortho-MEC-Malt_Tapas_1981_Ortho-MEC-Ma
 lt_2015.png Graphic file (type png)
 <use images/Chapitre3/PlotCurves_Pseudo-Ortho-MEC-Malt_Tapas_1981_Ortho-MEC-Mal
 t_2015.png>
 Package pdftex.def Info: images/Chapitre3/PlotCurves_Pseudo-Ortho-MEC-Malt_Tapa
-s_1981_Ortho-MEC-Malt_2015.png  used on input line 1008.
+s_1981_Ortho-MEC-Malt_2015.png  used on input line 1012.
 (pdftex.def)             Requested size: 99.58464pt x 62.15273pt.
 <images/Chapitre3/Pseudo-Homol-SIFT2Step_1981-2015-Rough-2DRANSAC-GlobalR3D-Pil
-eImg_Ortho-MEC-Malt_Tapas_1981_Ortho-MEC-Malt_2015.png, id=906, 1013.7875pt x 5
+eImg_Ortho-MEC-Malt_Tapas_1981_Ortho-MEC-Malt_2015.png, id=960, 1013.7875pt x 5
 01.875pt>
 File: images/Chapitre3/Pseudo-Homol-SIFT2Step_1981-2015-Rough-2DRANSAC-GlobalR3
 D-PileImg_Ortho-MEC-Malt_Tapas_1981_Ortho-MEC-Malt_2015.png Graphic file (type 
@@ -2410,308 +2717,308 @@ png)
 -PileImg_Ortho-MEC-Malt_Tapas_1981_Ortho-MEC-Malt_2015.png>
 Package pdftex.def Info: images/Chapitre3/Pseudo-Homol-SIFT2Step_1981-2015-Roug
 h-2DRANSAC-GlobalR3D-PileImg_Ortho-MEC-Malt_Tapas_1981_Ortho-MEC-Malt_2015.png 
- used on input line 1014.
+ used on input line 1018.
 (pdftex.def)             Requested size: 147.95424pt x 73.24097pt.
 <images/Chapitre3/Pseudo-Homol-SuperGlue_1981-2015-GlobalR3D-PileImg_Ortho-MEC-
-Malt_Tapas_1981_Ortho-MEC-Malt_2015.png, id=907, 1013.7875pt x 501.875pt>
+Malt_Tapas_1981_Ortho-MEC-Malt_2015.png, id=961, 1013.7875pt x 501.875pt>
 File: images/Chapitre3/Pseudo-Homol-SuperGlue_1981-2015-GlobalR3D-PileImg_Ortho
 -MEC-Malt_Tapas_1981_Ortho-MEC-Malt_2015.png Graphic file (type png)
 <use images/Chapitre3/Pseudo-Homol-SuperGlue_1981-2015-GlobalR3D-PileImg_Ortho-
 MEC-Malt_Tapas_1981_Ortho-MEC-Malt_2015.png>
 Package pdftex.def Info: images/Chapitre3/Pseudo-Homol-SuperGlue_1981-2015-Glob
 alR3D-PileImg_Ortho-MEC-Malt_Tapas_1981_Ortho-MEC-Malt_2015.png  used on input 
-line 1020.
+line 1024.
 (pdftex.def)             Requested size: 147.95424pt x 73.24097pt.
-<images/Chapitre3/Ortho-MEC-Malt_Tapas_1981_Ortho-MEC-Malt_2015.png, id=908, 10
+<images/Chapitre3/Ortho-MEC-Malt_Tapas_1981_Ortho-MEC-Malt_2015.png, id=962, 10
 42.89626pt x 530.98375pt>
 File: images/Chapitre3/Ortho-MEC-Malt_Tapas_1981_Ortho-MEC-Malt_2015.png Graphi
 c file (type png)
 <use images/Chapitre3/Ortho-MEC-Malt_Tapas_1981_Ortho-MEC-Malt_2015.png>
 Package pdftex.def Info: images/Chapitre3/Ortho-MEC-Malt_Tapas_1981_Ortho-MEC-M
-alt_2015.png  used on input line 1033.
+alt_2015.png  used on input line 1037.
 (pdftex.def)             Requested size: 145.10922pt x 73.87538pt.
 <images/Chapitre3/PlotCurves_Ortho-MEC-Malt_Tapas_1981_Ortho-MEC-Malt_2015.png,
- id=909, 462.528pt x 346.896pt>
+ id=963, 462.528pt x 346.896pt>
 File: images/Chapitre3/PlotCurves_Ortho-MEC-Malt_Tapas_1981_Ortho-MEC-Malt_2015
 .png Graphic file (type png)
 <use images/Chapitre3/PlotCurves_Ortho-MEC-Malt_Tapas_1981_Ortho-MEC-Malt_2015.
 png>
 Package pdftex.def Info: images/Chapitre3/PlotCurves_Ortho-MEC-Malt_Tapas_1981_
-Ortho-MEC-Malt_2015.png  used on input line 1039.
+Ortho-MEC-Malt_2015.png  used on input line 1043.
 (pdftex.def)             Requested size: 99.58464pt x 62.15273pt.
 <images/Chapitre3/Homol-SIFT2Step-Rough-2DRANSAC_Ortho-MEC-Malt_Tapas_1981_Orth
-o-MEC-Malt_2015.png, id=911, 997.7275pt x 501.875pt>
+o-MEC-Malt_2015.png, id=965, 997.7275pt x 501.875pt>
 File: images/Chapitre3/Homol-SIFT2Step-Rough-2DRANSAC_Ortho-MEC-Malt_Tapas_1981
 _Ortho-MEC-Malt_2015.png Graphic file (type png)
 <use images/Chapitre3/Homol-SIFT2Step-Rough-2DRANSAC_Ortho-MEC-Malt_Tapas_1981_
 Ortho-MEC-Malt_2015.png>
 Package pdftex.def Info: images/Chapitre3/Homol-SIFT2Step-Rough-2DRANSAC_Ortho-
-MEC-Malt_Tapas_1981_Ortho-MEC-Malt_2015.png  used on input line 1045.
+MEC-Malt_Tapas_1981_Ortho-MEC-Malt_2015.png  used on input line 1049.
 (pdftex.def)             Requested size: 147.95424pt x 74.4203pt.
 <images/Chapitre3/Homol-SubPatch_R90-2DRANSAC_Ortho-MEC-Malt_Tapas_1981_Ortho-M
-EC-Malt_2015.png, id=912, 997.7275pt x 501.875pt>
+EC-Malt_2015.png, id=966, 997.7275pt x 501.875pt>
 File: images/Chapitre3/Homol-SubPatch_R90-2DRANSAC_Ortho-MEC-Malt_Tapas_1981_Or
 tho-MEC-Malt_2015.png Graphic file (type png)
 <use images/Chapitre3/Homol-SubPatch_R90-2DRANSAC_Ortho-MEC-Malt_Tapas_1981_Ort
 ho-MEC-Malt_2015.png>
 Package pdftex.def Info: images/Chapitre3/Homol-SubPatch_R90-2DRANSAC_Ortho-MEC
--Malt_Tapas_1981_Ortho-MEC-Malt_2015.png  used on input line 1051.
+-Malt_Tapas_1981_Ortho-MEC-Malt_2015.png  used on input line 1055.
 (pdftex.def)             Requested size: 147.95424pt x 74.4203pt.
-<images/Chapitre3/MEC-Malt_Tapas_1981_MEC-Malt_2015.png, id=913, 1044.90375pt x
+<images/Chapitre3/MEC-Malt_Tapas_1981_MEC-Malt_2015.png, id=967, 1044.90375pt x
  530.98375pt>
 File: images/Chapitre3/MEC-Malt_Tapas_1981_MEC-Malt_2015.png Graphic file (type
  png)
 <use images/Chapitre3/MEC-Malt_Tapas_1981_MEC-Malt_2015.png>
 Package pdftex.def Info: images/Chapitre3/MEC-Malt_Tapas_1981_MEC-Malt_2015.png
-  used on input line 1064.
+  used on input line 1068.
 (pdftex.def)             Requested size: 145.10922pt x 73.73766pt.
-<images/Chapitre3/PlotCurves_MEC-Malt_Tapas_1981_MEC-Malt_2015.png, id=914, 462
+<images/Chapitre3/PlotCurves_MEC-Malt_Tapas_1981_MEC-Malt_2015.png, id=968, 462
 .528pt x 346.896pt>
 File: images/Chapitre3/PlotCurves_MEC-Malt_Tapas_1981_MEC-Malt_2015.png Graphic
  file (type png)
 <use images/Chapitre3/PlotCurves_MEC-Malt_Tapas_1981_MEC-Malt_2015.png>
 Package pdftex.def Info: images/Chapitre3/PlotCurves_MEC-Malt_Tapas_1981_MEC-Ma
-lt_2015.png  used on input line 1070.
+lt_2015.png  used on input line 1074.
 (pdftex.def)             Requested size: 99.58464pt x 62.15273pt.
 <images/Chapitre3/Homol-SIFT2Step-Rough-2DRANSAC_MEC-Malt_Tapas_1981_MEC-Malt_2
-015.png, id=916, 996.72375pt x 501.875pt>
+015.png, id=970, 996.72375pt x 501.875pt>
 File: images/Chapitre3/Homol-SIFT2Step-Rough-2DRANSAC_MEC-Malt_Tapas_1981_MEC-M
 alt_2015.png Graphic file (type png)
 <use images/Chapitre3/Homol-SIFT2Step-Rough-2DRANSAC_MEC-Malt_Tapas_1981_MEC-Ma
 lt_2015.png>
 Package pdftex.def Info: images/Chapitre3/Homol-SIFT2Step-Rough-2DRANSAC_MEC-Ma
-lt_Tapas_1981_MEC-Malt_2015.png  used on input line 1076.
+lt_Tapas_1981_MEC-Malt_2015.png  used on input line 1080.
 (pdftex.def)             Requested size: 147.95424pt x 74.49687pt.
 <images/Chapitre3/Homol-SubPatch_R90-2DRANSAC_MEC-Malt_Tapas_1981_MEC-Malt_2015
-.png, id=917, 996.72375pt x 501.875pt>
+.png, id=971, 996.72375pt x 501.875pt>
 File: images/Chapitre3/Homol-SubPatch_R90-2DRANSAC_MEC-Malt_Tapas_1981_MEC-Malt
 _2015.png Graphic file (type png)
 <use images/Chapitre3/Homol-SubPatch_R90-2DRANSAC_MEC-Malt_Tapas_1981_MEC-Malt_
 2015.png>
 Package pdftex.def Info: images/Chapitre3/Homol-SubPatch_R90-2DRANSAC_MEC-Malt_
-Tapas_1981_MEC-Malt_2015.png  used on input line 1082.
+Tapas_1981_MEC-Malt_2015.png  used on input line 1086.
 (pdftex.def)             Requested size: 147.95424pt x 74.49687pt.
 
-LaTeX Warning: Float too large for page by 79.86073pt on input line 1088.
+LaTeX Warning: Float too large for page by 79.86073pt on input line 1092.
 
-<images/Chapitre3/Ortho-MEC-Malt_Tapas_1971_Ortho-MEC-Malt_Satellite.png, id=91
-8, 727.0362pt x 376.2858pt>
+<images/Chapitre3/Ortho-MEC-Malt_Tapas_1971_Ortho-MEC-Malt_Satellite.png, id=97
+2, 727.0362pt x 376.2858pt>
 File: images/Chapitre3/Ortho-MEC-Malt_Tapas_1971_Ortho-MEC-Malt_Satellite.png G
 raphic file (type png)
 <use images/Chapitre3/Ortho-MEC-Malt_Tapas_1971_Ortho-MEC-Malt_Satellite.png>
 Package pdftex.def Info: images/Chapitre3/Ortho-MEC-Malt_Tapas_1971_Ortho-MEC-M
-alt_Satellite.png  used on input line 1100.
+alt_Satellite.png  used on input line 1104.
 (pdftex.def)             Requested size: 193.47882pt x 100.1344pt.
 
-Overfull \hbox (3.80772pt too wide) in paragraph at lines 1100--1100
+Overfull \hbox (3.80772pt too wide) in paragraph at lines 1104--1104
  [][] 
  []
 
 <images/Chapitre3/PlotCurves_Ortho-MEC-Malt_Tapas_1971_Ortho-MEC-Malt_Satellite
-.png, id=919, 462.528pt x 346.896pt>
+.png, id=973, 462.528pt x 346.896pt>
 File: images/Chapitre3/PlotCurves_Ortho-MEC-Malt_Tapas_1971_Ortho-MEC-Malt_Sate
 llite.png Graphic file (type png)
 <use images/Chapitre3/PlotCurves_Ortho-MEC-Malt_Tapas_1971_Ortho-MEC-Malt_Satel
 lite.png>
 Package pdftex.def Info: images/Chapitre3/PlotCurves_Ortho-MEC-Malt_Tapas_1971_
-Ortho-MEC-Malt_Satellite.png  used on input line 1106.
+Ortho-MEC-Malt_Satellite.png  used on input line 1110.
 (pdftex.def)             Requested size: 139.41832pt x 87.01382pt.
 <images/Chapitre3/Homol-SIFT2Step-Rough-2DRANSAC_Ortho-MEC-Malt_Tapas_1971_Orth
-o-MEC-Malt_Satellite.png, id=921, 969.6225pt x 501.875pt>
+o-MEC-Malt_Satellite.png, id=975, 969.6225pt x 501.875pt>
 File: images/Chapitre3/Homol-SIFT2Step-Rough-2DRANSAC_Ortho-MEC-Malt_Tapas_1971
 _Ortho-MEC-Malt_Satellite.png Graphic file (type png)
 <use images/Chapitre3/Homol-SIFT2Step-Rough-2DRANSAC_Ortho-MEC-Malt_Tapas_1971_
 Ortho-MEC-Malt_Satellite.png>
 Package pdftex.def Info: images/Chapitre3/Homol-SIFT2Step-Rough-2DRANSAC_Ortho-
-MEC-Malt_Tapas_1971_Ortho-MEC-Malt_Satellite.png  used on input line 1112.
+MEC-Malt_Tapas_1971_Ortho-MEC-Malt_Satellite.png  used on input line 1116.
 (pdftex.def)             Requested size: 193.47882pt x 100.14348pt.
 
-Overfull \hbox (3.80772pt too wide) in paragraph at lines 1112--1112
+Overfull \hbox (3.80772pt too wide) in paragraph at lines 1116--1116
  [][] 
  []
 
 <images/Chapitre3/Homol-SubPatch_R270-2DRANSAC_Ortho-MEC-Malt_Tapas_1971_Ortho-
-MEC-Malt_Satellite.png, id=922, 969.6225pt x 501.875pt>
+MEC-Malt_Satellite.png, id=976, 969.6225pt x 501.875pt>
 File: images/Chapitre3/Homol-SubPatch_R270-2DRANSAC_Ortho-MEC-Malt_Tapas_1971_O
 rtho-MEC-Malt_Satellite.png Graphic file (type png)
 <use images/Chapitre3/Homol-SubPatch_R270-2DRANSAC_Ortho-MEC-Malt_Tapas_1971_Or
 tho-MEC-Malt_Satellite.png>
 Package pdftex.def Info: images/Chapitre3/Homol-SubPatch_R270-2DRANSAC_Ortho-ME
-C-Malt_Tapas_1971_Ortho-MEC-Malt_Satellite.png  used on input line 1118.
+C-Malt_Tapas_1971_Ortho-MEC-Malt_Satellite.png  used on input line 1122.
 (pdftex.def)             Requested size: 193.47882pt x 100.14348pt.
 
-Overfull \hbox (3.80772pt too wide) in paragraph at lines 1118--1118
+Overfull \hbox (3.80772pt too wide) in paragraph at lines 1122--1122
  [][] 
  []
 
-<images/Chapitre3/MEC-Malt_Tapas_1971_MEC-Malt_Satellite.png, id=923, 727.0362p
+<images/Chapitre3/MEC-Malt_Tapas_1971_MEC-Malt_Satellite.png, id=977, 727.0362p
 t x 376.2858pt>
 File: images/Chapitre3/MEC-Malt_Tapas_1971_MEC-Malt_Satellite.png Graphic file 
 (type png)
 <use images/Chapitre3/MEC-Malt_Tapas_1971_MEC-Malt_Satellite.png>
 Package pdftex.def Info: images/Chapitre3/MEC-Malt_Tapas_1971_MEC-Malt_Satellit
-e.png  used on input line 1131.
+e.png  used on input line 1135.
 (pdftex.def)             Requested size: 193.47882pt x 100.1344pt.
 
-Overfull \hbox (3.80772pt too wide) in paragraph at lines 1131--1131
+Overfull \hbox (3.80772pt too wide) in paragraph at lines 1135--1135
  [][] 
  []
 
-<images/Chapitre3/PlotCurves_MEC-Malt_Tapas_1971_MEC-Malt_Satellite.png, id=924
+<images/Chapitre3/PlotCurves_MEC-Malt_Tapas_1971_MEC-Malt_Satellite.png, id=978
 , 462.528pt x 346.896pt>
 File: images/Chapitre3/PlotCurves_MEC-Malt_Tapas_1971_MEC-Malt_Satellite.png Gr
 aphic file (type png)
 <use images/Chapitre3/PlotCurves_MEC-Malt_Tapas_1971_MEC-Malt_Satellite.png>
 Package pdftex.def Info: images/Chapitre3/PlotCurves_MEC-Malt_Tapas_1971_MEC-Ma
-lt_Satellite.png  used on input line 1137.
+lt_Satellite.png  used on input line 1141.
 (pdftex.def)             Requested size: 139.41832pt x 87.01382pt.
 <images/Chapitre3/Homol-SIFT2Step-Rough-2DRANSAC_MEC-Malt_Tapas_1971_MEC-Malt_S
-atellite.png, id=926, 969.6225pt x 501.875pt>
+atellite.png, id=980, 969.6225pt x 501.875pt>
 File: images/Chapitre3/Homol-SIFT2Step-Rough-2DRANSAC_MEC-Malt_Tapas_1971_MEC-M
 alt_Satellite.png Graphic file (type png)
 <use images/Chapitre3/Homol-SIFT2Step-Rough-2DRANSAC_MEC-Malt_Tapas_1971_MEC-Ma
 lt_Satellite.png>
 Package pdftex.def Info: images/Chapitre3/Homol-SIFT2Step-Rough-2DRANSAC_MEC-Ma
-lt_Tapas_1971_MEC-Malt_Satellite.png  used on input line 1143.
+lt_Tapas_1971_MEC-Malt_Satellite.png  used on input line 1147.
 (pdftex.def)             Requested size: 193.47882pt x 100.14348pt.
 
-Overfull \hbox (3.80772pt too wide) in paragraph at lines 1143--1143
+Overfull \hbox (3.80772pt too wide) in paragraph at lines 1147--1147
  [][] 
  []
 
 <images/Chapitre3/Homol-SubPatch_R270-2DRANSAC_MEC-Malt_Tapas_1971_MEC-Malt_Sat
-ellite.png, id=927, 969.6225pt x 501.875pt>
+ellite.png, id=981, 969.6225pt x 501.875pt>
 File: images/Chapitre3/Homol-SubPatch_R270-2DRANSAC_MEC-Malt_Tapas_1971_MEC-Mal
 t_Satellite.png Graphic file (type png)
 <use images/Chapitre3/Homol-SubPatch_R270-2DRANSAC_MEC-Malt_Tapas_1971_MEC-Malt
 _Satellite.png>
 Package pdftex.def Info: images/Chapitre3/Homol-SubPatch_R270-2DRANSAC_MEC-Malt
-_Tapas_1971_MEC-Malt_Satellite.png  used on input line 1149.
+_Tapas_1971_MEC-Malt_Satellite.png  used on input line 1153.
 (pdftex.def)             Requested size: 193.47882pt x 100.14348pt.
 
-Overfull \hbox (3.80772pt too wide) in paragraph at lines 1149--1149
+Overfull \hbox (3.80772pt too wide) in paragraph at lines 1153--1153
  [][] 
  []
 
-<images/Chapitre3/Ortho-MEC-Malt_Tapas_1981_Ortho-MEC-Malt_Satellite.png, id=92
-8, 735.7086pt x 376.7676pt>
+<images/Chapitre3/Ortho-MEC-Malt_Tapas_1981_Ortho-MEC-Malt_Satellite.png, id=98
+2, 735.7086pt x 376.7676pt>
 File: images/Chapitre3/Ortho-MEC-Malt_Tapas_1981_Ortho-MEC-Malt_Satellite.png G
 raphic file (type png)
 <use images/Chapitre3/Ortho-MEC-Malt_Tapas_1981_Ortho-MEC-Malt_Satellite.png>
 Package pdftex.def Info: images/Chapitre3/Ortho-MEC-Malt_Tapas_1981_Ortho-MEC-M
-alt_Satellite.png  used on input line 1166.
+alt_Satellite.png  used on input line 1170.
 (pdftex.def)             Requested size: 193.47882pt x 99.07831pt.
 
-Overfull \hbox (3.80772pt too wide) in paragraph at lines 1166--1166
+Overfull \hbox (3.80772pt too wide) in paragraph at lines 1170--1170
  [][] 
  []
 
 <images/Chapitre3/PlotCurves_Ortho-MEC-Malt_Tapas_1981_Ortho-MEC-Malt_Satellite
-.png, id=929, 462.528pt x 346.896pt>
+.png, id=983, 462.528pt x 346.896pt>
 File: images/Chapitre3/PlotCurves_Ortho-MEC-Malt_Tapas_1981_Ortho-MEC-Malt_Sate
 llite.png Graphic file (type png)
 <use images/Chapitre3/PlotCurves_Ortho-MEC-Malt_Tapas_1981_Ortho-MEC-Malt_Satel
 lite.png>
 Package pdftex.def Info: images/Chapitre3/PlotCurves_Ortho-MEC-Malt_Tapas_1981_
-Ortho-MEC-Malt_Satellite.png  used on input line 1172.
+Ortho-MEC-Malt_Satellite.png  used on input line 1176.
 (pdftex.def)             Requested size: 139.41832pt x 87.01382pt.
 <images/Chapitre3/Homol-SIFT2Step-Rough-2DRANSAC_Ortho-MEC-Malt_Tapas_1981_Orth
-o-MEC-Malt_Satellite.png, id=931, 980.66376pt x 501.875pt>
+o-MEC-Malt_Satellite.png, id=985, 980.66376pt x 501.875pt>
 File: images/Chapitre3/Homol-SIFT2Step-Rough-2DRANSAC_Ortho-MEC-Malt_Tapas_1981
 _Ortho-MEC-Malt_Satellite.png Graphic file (type png)
 <use images/Chapitre3/Homol-SIFT2Step-Rough-2DRANSAC_Ortho-MEC-Malt_Tapas_1981_
 Ortho-MEC-Malt_Satellite.png>
 Package pdftex.def Info: images/Chapitre3/Homol-SIFT2Step-Rough-2DRANSAC_Ortho-
-MEC-Malt_Tapas_1981_Ortho-MEC-Malt_Satellite.png  used on input line 1178.
+MEC-Malt_Tapas_1981_Ortho-MEC-Malt_Satellite.png  used on input line 1182.
 (pdftex.def)             Requested size: 193.47882pt x 99.01009pt.
 
-Overfull \hbox (3.80772pt too wide) in paragraph at lines 1178--1178
+Overfull \hbox (3.80772pt too wide) in paragraph at lines 1182--1182
  [][] 
  []
 
 <images/Chapitre3/Homol-SubPatch_R90-2DRANSAC_Ortho-MEC-Malt_Tapas_1981_Ortho-M
-EC-Malt_Satellite.png, id=932, 980.66376pt x 501.875pt>
+EC-Malt_Satellite.png, id=986, 980.66376pt x 501.875pt>
 File: images/Chapitre3/Homol-SubPatch_R90-2DRANSAC_Ortho-MEC-Malt_Tapas_1981_Or
 tho-MEC-Malt_Satellite.png Graphic file (type png)
 <use images/Chapitre3/Homol-SubPatch_R90-2DRANSAC_Ortho-MEC-Malt_Tapas_1981_Ort
 ho-MEC-Malt_Satellite.png>
 Package pdftex.def Info: images/Chapitre3/Homol-SubPatch_R90-2DRANSAC_Ortho-MEC
--Malt_Tapas_1981_Ortho-MEC-Malt_Satellite.png  used on input line 1184.
+-Malt_Tapas_1981_Ortho-MEC-Malt_Satellite.png  used on input line 1188.
 (pdftex.def)             Requested size: 193.47882pt x 99.01009pt.
 
-Overfull \hbox (3.80772pt too wide) in paragraph at lines 1184--1184
+Overfull \hbox (3.80772pt too wide) in paragraph at lines 1188--1188
  [][] 
  []
 
-<images/Chapitre3/MEC-Malt_Tapas_1981_MEC-Malt_Satellite.png, id=933, 734.745pt
+<images/Chapitre3/MEC-Malt_Tapas_1981_MEC-Malt_Satellite.png, id=987, 734.745pt
  x 376.7676pt>
 File: images/Chapitre3/MEC-Malt_Tapas_1981_MEC-Malt_Satellite.png Graphic file 
 (type png)
 <use images/Chapitre3/MEC-Malt_Tapas_1981_MEC-Malt_Satellite.png>
 Package pdftex.def Info: images/Chapitre3/MEC-Malt_Tapas_1981_MEC-Malt_Satellit
-e.png  used on input line 1197.
+e.png  used on input line 1201.
 (pdftex.def)             Requested size: 193.47882pt x 99.21054pt.
 
-Overfull \hbox (3.80772pt too wide) in paragraph at lines 1197--1197
+Overfull \hbox (3.80772pt too wide) in paragraph at lines 1201--1201
  [][] 
  []
 
-<images/Chapitre3/PlotCurves_MEC-Malt_Tapas_1981_MEC-Malt_Satellite.png, id=934
+<images/Chapitre3/PlotCurves_MEC-Malt_Tapas_1981_MEC-Malt_Satellite.png, id=988
 , 462.528pt x 346.896pt>
 File: images/Chapitre3/PlotCurves_MEC-Malt_Tapas_1981_MEC-Malt_Satellite.png Gr
 aphic file (type png)
 <use images/Chapitre3/PlotCurves_MEC-Malt_Tapas_1981_MEC-Malt_Satellite.png>
 Package pdftex.def Info: images/Chapitre3/PlotCurves_MEC-Malt_Tapas_1981_MEC-Ma
-lt_Satellite.png  used on input line 1203.
+lt_Satellite.png  used on input line 1207.
 (pdftex.def)             Requested size: 139.41832pt x 87.01382pt.
 <images/Chapitre3/Homol-SIFT2Step-Rough-2DRANSAC_MEC-Malt_Tapas_1981_MEC-Malt_S
-atellite.png, id=936, 979.66pt x 501.875pt>
+atellite.png, id=990, 979.66pt x 501.875pt>
 File: images/Chapitre3/Homol-SIFT2Step-Rough-2DRANSAC_MEC-Malt_Tapas_1981_MEC-M
 alt_Satellite.png Graphic file (type png)
 <use images/Chapitre3/Homol-SIFT2Step-Rough-2DRANSAC_MEC-Malt_Tapas_1981_MEC-Ma
 lt_Satellite.png>
 Package pdftex.def Info: images/Chapitre3/Homol-SIFT2Step-Rough-2DRANSAC_MEC-Ma
-lt_Tapas_1981_MEC-Malt_Satellite.png  used on input line 1209.
+lt_Tapas_1981_MEC-Malt_Satellite.png  used on input line 1213.
 (pdftex.def)             Requested size: 193.47882pt x 99.11731pt.
 
-Overfull \hbox (3.80772pt too wide) in paragraph at lines 1209--1209
+Overfull \hbox (3.80772pt too wide) in paragraph at lines 1213--1213
  [][] 
  []
 
 <images/Chapitre3/Homol-SubPatch_R90-2DRANSAC_MEC-Malt_Tapas_1981_MEC-Malt_Sate
-llite.png, id=937, 979.66pt x 501.875pt>
+llite.png, id=991, 979.66pt x 501.875pt>
 File: images/Chapitre3/Homol-SubPatch_R90-2DRANSAC_MEC-Malt_Tapas_1981_MEC-Malt
 _Satellite.png Graphic file (type png)
 <use images/Chapitre3/Homol-SubPatch_R90-2DRANSAC_MEC-Malt_Tapas_1981_MEC-Malt_
 Satellite.png>
 Package pdftex.def Info: images/Chapitre3/Homol-SubPatch_R90-2DRANSAC_MEC-Malt_
-Tapas_1981_MEC-Malt_Satellite.png  used on input line 1215.
+Tapas_1981_MEC-Malt_Satellite.png  used on input line 1219.
 (pdftex.def)             Requested size: 193.47882pt x 99.11731pt.
 
-Overfull \hbox (3.80772pt too wide) in paragraph at lines 1215--1215
+Overfull \hbox (3.80772pt too wide) in paragraph at lines 1219--1219
  [][] 
  []
 
 <images/Chapitre3/Pseudo-Ortho-MEC-Malt_Tapas_1991_Ortho-MEC-Malt_Tapas_1994.pn
-g, id=938, 446.6286pt x 761.244pt>
+g, id=992, 446.6286pt x 761.244pt>
 File: images/Chapitre3/Pseudo-Ortho-MEC-Malt_Tapas_1991_Ortho-MEC-Malt_Tapas_19
 94.png Graphic file (type png)
 <use images/Chapitre3/Pseudo-Ortho-MEC-Malt_Tapas_1991_Ortho-MEC-Malt_Tapas_199
 4.png>
 Package pdftex.def Info: images/Chapitre3/Pseudo-Ortho-MEC-Malt_Tapas_1991_Orth
-o-MEC-Malt_Tapas_1994.png  used on input line 1233.
+o-MEC-Malt_Tapas_1994.png  used on input line 1237.
 (pdftex.def)             Requested size: 65.44142pt x 111.53331pt.
 <images/Chapitre3/PlotCurves_Pseudo-Ortho-MEC-Malt_Tapas_1991_Ortho-MEC-Malt_Ta
-pas_1994.png, id=939, 462.528pt x 346.896pt>
+pas_1994.png, id=993, 462.528pt x 346.896pt>
 File: images/Chapitre3/PlotCurves_Pseudo-Ortho-MEC-Malt_Tapas_1991_Ortho-MEC-Ma
 lt_Tapas_1994.png Graphic file (type png)
 <use images/Chapitre3/PlotCurves_Pseudo-Ortho-MEC-Malt_Tapas_1991_Ortho-MEC-Mal
 t_Tapas_1994.png>
 Package pdftex.def Info: images/Chapitre3/PlotCurves_Pseudo-Ortho-MEC-Malt_Tapa
-s_1991_Ortho-MEC-Malt_Tapas_1994.png  used on input line 1239.
+s_1991_Ortho-MEC-Malt_Tapas_1994.png  used on input line 1243.
 (pdftex.def)             Requested size: 99.58464pt x 62.15273pt.
 <images/Chapitre3/Pseudo-Homol-SIFT2Step_1991-1994-Rough-2DRANSAC-GlobalR3D-Pil
-eImg_Ortho-MEC-Malt_Tapas_1991_Ortho-MEC-Malt_Tapas_1994.png, id=941, 594.22pt 
+eImg_Ortho-MEC-Malt_Tapas_1991_Ortho-MEC-Malt_Tapas_1994.png, id=995, 594.22pt 
 x 1003.75pt>
 File: images/Chapitre3/Pseudo-Homol-SIFT2Step_1991-1994-Rough-2DRANSAC-GlobalR3
 D-PileImg_Ortho-MEC-Malt_Tapas_1991_Ortho-MEC-Malt_Tapas_1994.png Graphic file 
@@ -2720,472 +3027,661 @@ D-PileImg_Ortho-MEC-Malt_Tapas_1991_Ortho-MEC-Malt_Tapas_1994.png Graphic file
 -PileImg_Ortho-MEC-Malt_Tapas_1991_Ortho-MEC-Malt_Tapas_1994.png>
 Package pdftex.def Info: images/Chapitre3/Pseudo-Homol-SIFT2Step_1991-1994-Roug
 h-2DRANSAC-GlobalR3D-PileImg_Ortho-MEC-Malt_Tapas_1991_Ortho-MEC-Malt_Tapas_199
-4.png  used on input line 1245.
+4.png  used on input line 1249.
 (pdftex.def)             Requested size: 73.97733pt x 124.96301pt.
 <images/Chapitre3/Pseudo-Homol-SuperGlue_1991-1994-GlobalR3D-PileImg_Ortho-MEC-
-Malt_Tapas_1991_Ortho-MEC-Malt_Tapas_1994.png, id=942, 594.22pt x 1003.75pt>
+Malt_Tapas_1991_Ortho-MEC-Malt_Tapas_1994.png, id=996, 594.22pt x 1003.75pt>
 File: images/Chapitre3/Pseudo-Homol-SuperGlue_1991-1994-GlobalR3D-PileImg_Ortho
 -MEC-Malt_Tapas_1991_Ortho-MEC-Malt_Tapas_1994.png Graphic file (type png)
 <use images/Chapitre3/Pseudo-Homol-SuperGlue_1991-1994-GlobalR3D-PileImg_Ortho-
 MEC-Malt_Tapas_1991_Ortho-MEC-Malt_Tapas_1994.png>
 Package pdftex.def Info: images/Chapitre3/Pseudo-Homol-SuperGlue_1991-1994-Glob
 alR3D-PileImg_Ortho-MEC-Malt_Tapas_1991_Ortho-MEC-Malt_Tapas_1994.png  used on 
-input line 1251.
+input line 1255.
 (pdftex.def)             Requested size: 73.97733pt x 124.96301pt.
 <images/Chapitre3/Ortho-MEC-Malt_Tapas_1991_Ortho-MEC-Malt_Tapas_1994.png, id=9
-43, 657.45625pt x 1018.80624pt>
+97, 657.45625pt x 1018.80624pt>
 File: images/Chapitre3/Ortho-MEC-Malt_Tapas_1991_Ortho-MEC-Malt_Tapas_1994.png 
 Graphic file (type png)
 <use images/Chapitre3/Ortho-MEC-Malt_Tapas_1991_Ortho-MEC-Malt_Tapas_1994.png>
 Package pdftex.def Info: images/Chapitre3/Ortho-MEC-Malt_Tapas_1991_Ortho-MEC-M
-alt_Tapas_1994.png  used on input line 1264.
+alt_Tapas_1994.png  used on input line 1268.
 (pdftex.def)             Requested size: 65.44142pt x 101.40466pt.
 <images/Chapitre3/PlotCurves_Ortho-MEC-Malt_Tapas_1991_Ortho-MEC-Malt_Tapas_199
-4.png, id=944, 462.528pt x 346.896pt>
+4.png, id=998, 462.528pt x 346.896pt>
 File: images/Chapitre3/PlotCurves_Ortho-MEC-Malt_Tapas_1991_Ortho-MEC-Malt_Tapa
 s_1994.png Graphic file (type png)
 <use images/Chapitre3/PlotCurves_Ortho-MEC-Malt_Tapas_1991_Ortho-MEC-Malt_Tapas
 _1994.png>
 Package pdftex.def Info: images/Chapitre3/PlotCurves_Ortho-MEC-Malt_Tapas_1991_
-Ortho-MEC-Malt_Tapas_1994.png  used on input line 1270.
+Ortho-MEC-Malt_Tapas_1994.png  used on input line 1274.
 (pdftex.def)             Requested size: 99.58464pt x 62.15273pt.
 <images/Chapitre3/Homol-SIFT2Step-Rough-2DRANSAC_Ortho-MEC-Malt_Tapas_1991_Orth
-o-MEC-Malt_Tapas_1994.png, id=946, 646.415pt x 1003.75pt>
+o-MEC-Malt_Tapas_1994.png, id=1000, 646.415pt x 1003.75pt>
 File: images/Chapitre3/Homol-SIFT2Step-Rough-2DRANSAC_Ortho-MEC-Malt_Tapas_1991
 _Ortho-MEC-Malt_Tapas_1994.png Graphic file (type png)
 <use images/Chapitre3/Homol-SIFT2Step-Rough-2DRANSAC_Ortho-MEC-Malt_Tapas_1991_
 Ortho-MEC-Malt_Tapas_1994.png>
 Package pdftex.def Info: images/Chapitre3/Homol-SIFT2Step-Rough-2DRANSAC_Ortho-
-MEC-Malt_Tapas_1991_Ortho-MEC-Malt_Tapas_1994.png  used on input line 1276.
+MEC-Malt_Tapas_1991_Ortho-MEC-Malt_Tapas_1994.png  used on input line 1280.
 (pdftex.def)             Requested size: 73.97733pt x 114.86978pt.
 <images/Chapitre3/Homol-SubPatch-2DRANSAC_Ortho-MEC-Malt_Tapas_1991_Ortho-MEC-M
-alt_Tapas_1994.png, id=947, 646.415pt x 1003.75pt>
+alt_Tapas_1994.png, id=1001, 646.415pt x 1003.75pt>
 File: images/Chapitre3/Homol-SubPatch-2DRANSAC_Ortho-MEC-Malt_Tapas_1991_Ortho-
 MEC-Malt_Tapas_1994.png Graphic file (type png)
 <use images/Chapitre3/Homol-SubPatch-2DRANSAC_Ortho-MEC-Malt_Tapas_1991_Ortho-M
 EC-Malt_Tapas_1994.png>
 Package pdftex.def Info: images/Chapitre3/Homol-SubPatch-2DRANSAC_Ortho-MEC-Mal
-t_Tapas_1991_Ortho-MEC-Malt_Tapas_1994.png  used on input line 1282.
+t_Tapas_1991_Ortho-MEC-Malt_Tapas_1994.png  used on input line 1286.
 (pdftex.def)             Requested size: 73.97733pt x 114.86978pt.
-<images/Chapitre3/MEC-Malt_Tapas_1991_MEC-Malt_Tapas_1994.png, id=948, 486.618p
-t x 757.3896pt>
+<images/Chapitre3/MEC-Malt_Tapas_1991_MEC-Malt_Tapas_1994.png, id=1002, 486.618
+pt x 757.3896pt>
 File: images/Chapitre3/MEC-Malt_Tapas_1991_MEC-Malt_Tapas_1994.png Graphic file
  (type png)
 <use images/Chapitre3/MEC-Malt_Tapas_1991_MEC-Malt_Tapas_1994.png>
 Package pdftex.def Info: images/Chapitre3/MEC-Malt_Tapas_1991_MEC-Malt_Tapas_19
-94.png  used on input line 1295.
+94.png  used on input line 1299.
 (pdftex.def)             Requested size: 65.44142pt x 101.85025pt.
-<images/Chapitre3/PlotCurves_MEC-Malt_Tapas_1991_MEC-Malt_Tapas_1994.png, id=94
-9, 462.528pt x 346.896pt>
+<images/Chapitre3/PlotCurves_MEC-Malt_Tapas_1991_MEC-Malt_Tapas_1994.png, id=10
+03, 462.528pt x 346.896pt>
 File: images/Chapitre3/PlotCurves_MEC-Malt_Tapas_1991_MEC-Malt_Tapas_1994.png G
 raphic file (type png)
 <use images/Chapitre3/PlotCurves_MEC-Malt_Tapas_1991_MEC-Malt_Tapas_1994.png>
 Package pdftex.def Info: images/Chapitre3/PlotCurves_MEC-Malt_Tapas_1991_MEC-Ma
-lt_Tapas_1994.png  used on input line 1301.
+lt_Tapas_1994.png  used on input line 1305.
 (pdftex.def)             Requested size: 99.58464pt x 62.15273pt.
 <images/Chapitre3/Homol-SIFT2Step-Rough-2DRANSAC_MEC-Malt_Tapas_1991_MEC-Malt_T
-apas_1994.png, id=951, 647.41875pt x 1003.75pt>
+apas_1994.png, id=1005, 647.41875pt x 1003.75pt>
 File: images/Chapitre3/Homol-SIFT2Step-Rough-2DRANSAC_MEC-Malt_Tapas_1991_MEC-M
 alt_Tapas_1994.png Graphic file (type png)
 <use images/Chapitre3/Homol-SIFT2Step-Rough-2DRANSAC_MEC-Malt_Tapas_1991_MEC-Ma
 lt_Tapas_1994.png>
 Package pdftex.def Info: images/Chapitre3/Homol-SIFT2Step-Rough-2DRANSAC_MEC-Ma
-lt_Tapas_1991_MEC-Malt_Tapas_1994.png  used on input line 1307.
+lt_Tapas_1991_MEC-Malt_Tapas_1994.png  used on input line 1311.
 (pdftex.def)             Requested size: 73.97733pt x 114.68599pt.
 <images/Chapitre3/Homol-SubPatch-2DRANSAC_MEC-Malt_Tapas_1991_MEC-Malt_Tapas_19
-94.png, id=952, 647.41875pt x 1003.75pt>
+94.png, id=1006, 647.41875pt x 1003.75pt>
 File: images/Chapitre3/Homol-SubPatch-2DRANSAC_MEC-Malt_Tapas_1991_MEC-Malt_Tap
 as_1994.png Graphic file (type png)
 <use images/Chapitre3/Homol-SubPatch-2DRANSAC_MEC-Malt_Tapas_1991_MEC-Malt_Tapa
 s_1994.png>
 Package pdftex.def Info: images/Chapitre3/Homol-SubPatch-2DRANSAC_MEC-Malt_Tapa
-s_1991_MEC-Malt_Tapas_1994.png  used on input line 1313.
+s_1991_MEC-Malt_Tapas_1994.png  used on input line 1317.
 (pdftex.def)             Requested size: 73.97733pt x 114.68599pt.
 
-LaTeX Warning: Float too large for page by 58.24052pt on input line 1319.
+LaTeX Warning: Float too large for page by 58.24052pt on input line 1323.
 
 
-Package xcolor Warning: Incompatible color definition on input line 1352.
+Package xcolor Warning: Incompatible color definition on input line 1355.
 
 
-Package xcolor Warning: Incompatible color definition on input line 1353.
+Package xcolor Warning: Incompatible color definition on input line 1356.
 
 
-Package xcolor Warning: Incompatible color definition on input line 1353.
+Package xcolor Warning: Incompatible color definition on input line 1356.
 
 
-Package xcolor Warning: Incompatible color definition on input line 1353.
+Package xcolor Warning: Incompatible color definition on input line 1357.
 
 
-Package xcolor Warning: Incompatible color definition on input line 1353.
+Package xcolor Warning: Incompatible color definition on input line 1357.
 
 
-Package xcolor Warning: Incompatible color definition on input line 1354.
+Package xcolor Warning: Incompatible color definition on input line 1357.
 
-<images/Chapitre3/DoD1954R3D-SuperGlue.png, id=959, 1927.2pt x 1204.5pt>
+
+Package xcolor Warning: Incompatible color definition on input line 1357.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1357.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1358.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1358.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1359.
+
+<images/Chapitre3/DoD1954R3D-SuperGlue.png, id=1018, 1927.2pt x 1204.5pt>
 File: images/Chapitre3/DoD1954R3D-SuperGlue.png Graphic file (type png)
 <use images/Chapitre3/DoD1954R3D-SuperGlue.png>
 Package pdftex.def Info: images/Chapitre3/DoD1954R3D-SuperGlue.png  used on inp
-ut line 1365.
+ut line 1369.
 (pdftex.def)             Requested size: 93.89418pt x 74.78017pt.
-<images/Chapitre3/DoD1954Ortho-SuperGlue.png, id=961, 1927.2pt x 1204.5pt>
+
+Package xcolor Warning: Incompatible color definition on input line 1369.
+
+<images/Chapitre3/DoD1954Ortho-SuperGlue.png, id=1021, 1927.2pt x 1204.5pt>
 File: images/Chapitre3/DoD1954Ortho-SuperGlue.png Graphic file (type png)
 <use images/Chapitre3/DoD1954Ortho-SuperGlue.png>
 Package pdftex.def Info: images/Chapitre3/DoD1954Ortho-SuperGlue.png  used on i
-nput line 1371.
+nput line 1375.
 (pdftex.def)             Requested size: 93.89418pt x 74.78017pt.
-<images/Chapitre3/DoD1954DSM-SuperGlue.png, id=963, 1927.2pt x 1204.5pt>
+
+Package xcolor Warning: Incompatible color definition on input line 1375.
+
+<images/Chapitre3/DoD1954DSM-SuperGlue.png, id=1024, 1927.2pt x 1204.5pt>
 File: images/Chapitre3/DoD1954DSM-SuperGlue.png Graphic file (type png)
 <use images/Chapitre3/DoD1954DSM-SuperGlue.png>
 Package pdftex.def Info: images/Chapitre3/DoD1954DSM-SuperGlue.png  used on inp
-ut line 1377.
+ut line 1381.
 (pdftex.def)             Requested size: 93.89418pt x 74.78017pt.
-<images/Chapitre3/NoDoD.png, id=965, 547.04375pt x 548.0475pt>
+
+Package xcolor Warning: Incompatible color definition on input line 1381.
+
+<images/Chapitre3/NoDoD.png, id=1027, 547.04375pt x 548.0475pt>
 File: images/Chapitre3/NoDoD.png Graphic file (type png)
 <use images/Chapitre3/NoDoD.png>
-Package pdftex.def Info: images/Chapitre3/NoDoD.png  used on input line 1385.
+Package pdftex.def Info: images/Chapitre3/NoDoD.png  used on input line 1389.
 (pdftex.def)             Requested size: 56.9055pt x 57.0073pt.
+
+Package xcolor Warning: Incompatible color definition on input line 1389.
+
 File: images/Chapitre3/NoDoD.png Graphic file (type png)
 <use images/Chapitre3/NoDoD.png>
-Package pdftex.def Info: images/Chapitre3/NoDoD.png  used on input line 1391.
+Package pdftex.def Info: images/Chapitre3/NoDoD.png  used on input line 1395.
 (pdftex.def)             Requested size: 56.9055pt x 57.0073pt.
-<images/Chapitre3/DoD1954DSM-SIFT.png, id=966, 1927.2pt x 1204.5pt>
+
+Package xcolor Warning: Incompatible color definition on input line 1395.
+
+<images/Chapitre3/DoD1954DSM-SIFT.png, id=1030, 1927.2pt x 1204.5pt>
 File: images/Chapitre3/DoD1954DSM-SIFT.png Graphic file (type png)
 <use images/Chapitre3/DoD1954DSM-SIFT.png>
 Package pdftex.def Info: images/Chapitre3/DoD1954DSM-SIFT.png  used on input li
-ne 1397.
+ne 1401.
 (pdftex.def)             Requested size: 93.89418pt x 74.78017pt.
-<images/Chapitre3/DoD1966R3D-SuperGlue.png, id=968, 1927.2pt x 1204.5pt>
+
+Package xcolor Warning: Incompatible color definition on input line 1401.
+
+<images/Chapitre3/DoD1966R3D-SuperGlue.png, id=1033, 1927.2pt x 1204.5pt>
 File: images/Chapitre3/DoD1966R3D-SuperGlue.png Graphic file (type png)
 <use images/Chapitre3/DoD1966R3D-SuperGlue.png>
 Package pdftex.def Info: images/Chapitre3/DoD1966R3D-SuperGlue.png  used on inp
-ut line 1411.
+ut line 1415.
 (pdftex.def)             Requested size: 93.89418pt x 67.53018pt.
-<images/Chapitre3/DoD1966Ortho-SuperGlue.png, id=970, 1927.2pt x 1204.5pt>
+
+Package xcolor Warning: Incompatible color definition on input line 1415.
+
+<images/Chapitre3/DoD1966Ortho-SuperGlue.png, id=1036, 1927.2pt x 1204.5pt>
 File: images/Chapitre3/DoD1966Ortho-SuperGlue.png Graphic file (type png)
 <use images/Chapitre3/DoD1966Ortho-SuperGlue.png>
 Package pdftex.def Info: images/Chapitre3/DoD1966Ortho-SuperGlue.png  used on i
-nput line 1417.
+nput line 1421.
 (pdftex.def)             Requested size: 93.89418pt x 67.53018pt.
-<images/Chapitre3/DoD1966DSM-SuperGlue.png, id=972, 1927.2pt x 1204.5pt>
+
+Package xcolor Warning: Incompatible color definition on input line 1421.
+
+<images/Chapitre3/DoD1966DSM-SuperGlue.png, id=1039, 1927.2pt x 1204.5pt>
 File: images/Chapitre3/DoD1966DSM-SuperGlue.png Graphic file (type png)
 <use images/Chapitre3/DoD1966DSM-SuperGlue.png>
 Package pdftex.def Info: images/Chapitre3/DoD1966DSM-SuperGlue.png  used on inp
-ut line 1423.
+ut line 1427.
 (pdftex.def)             Requested size: 93.89418pt x 67.53018pt.
+
+Package xcolor Warning: Incompatible color definition on input line 1427.
+
 File: images/Chapitre3/NoDoD.png Graphic file (type png)
 <use images/Chapitre3/NoDoD.png>
-Package pdftex.def Info: images/Chapitre3/NoDoD.png  used on input line 1432.
+Package pdftex.def Info: images/Chapitre3/NoDoD.png  used on input line 1436.
 (pdftex.def)             Requested size: 56.9055pt x 57.0073pt.
+
+Package xcolor Warning: Incompatible color definition on input line 1436.
+
 File: images/Chapitre3/NoDoD.png Graphic file (type png)
 <use images/Chapitre3/NoDoD.png>
-Package pdftex.def Info: images/Chapitre3/NoDoD.png  used on input line 1438.
+Package pdftex.def Info: images/Chapitre3/NoDoD.png  used on input line 1442.
 (pdftex.def)             Requested size: 56.9055pt x 57.0073pt.
-<images/Chapitre3/DoD1966DSM-SIFT.png, id=974, 1927.2pt x 1204.5pt>
+
+Package xcolor Warning: Incompatible color definition on input line 1442.
+
+<images/Chapitre3/DoD1966DSM-SIFT.png, id=1044, 1927.2pt x 1204.5pt>
 File: images/Chapitre3/DoD1966DSM-SIFT.png Graphic file (type png)
 <use images/Chapitre3/DoD1966DSM-SIFT.png>
 Package pdftex.def Info: images/Chapitre3/DoD1966DSM-SIFT.png  used on input li
-ne 1444.
+ne 1448.
 (pdftex.def)             Requested size: 93.89418pt x 67.53018pt.
-<images/Chapitre3/DoD1970R3D-SuperGlue.png, id=976, 1927.2pt x 1204.5pt>
+
+Package xcolor Warning: Incompatible color definition on input line 1448.
+
+<images/Chapitre3/DoD1970R3D-SuperGlue.png, id=1047, 1927.2pt x 1204.5pt>
 File: images/Chapitre3/DoD1970R3D-SuperGlue.png Graphic file (type png)
 <use images/Chapitre3/DoD1970R3D-SuperGlue.png>
 Package pdftex.def Info: images/Chapitre3/DoD1970R3D-SuperGlue.png  used on inp
-ut line 1458.
+ut line 1462.
 (pdftex.def)             Requested size: 93.89418pt x 59.95827pt.
-<images/Chapitre3/DoD1970Ortho-SuperGlue.png, id=978, 1927.2pt x 1204.5pt>
+
+Package xcolor Warning: Incompatible color definition on input line 1462.
+
+<images/Chapitre3/DoD1970Ortho-SuperGlue.png, id=1050, 1927.2pt x 1204.5pt>
 File: images/Chapitre3/DoD1970Ortho-SuperGlue.png Graphic file (type png)
 <use images/Chapitre3/DoD1970Ortho-SuperGlue.png>
 Package pdftex.def Info: images/Chapitre3/DoD1970Ortho-SuperGlue.png  used on i
-nput line 1464.
+nput line 1468.
 (pdftex.def)             Requested size: 93.89418pt x 59.95827pt.
-<images/Chapitre3/DoD1970DSM-SuperGlue.png, id=980, 1927.2pt x 1204.5pt>
+
+Package xcolor Warning: Incompatible color definition on input line 1468.
+
+<images/Chapitre3/DoD1970DSM-SuperGlue.png, id=1053, 1927.2pt x 1204.5pt>
 File: images/Chapitre3/DoD1970DSM-SuperGlue.png Graphic file (type png)
 <use images/Chapitre3/DoD1970DSM-SuperGlue.png>
 Package pdftex.def Info: images/Chapitre3/DoD1970DSM-SuperGlue.png  used on inp
-ut line 1470.
+ut line 1474.
 (pdftex.def)             Requested size: 93.89418pt x 59.95827pt.
+
+Package xcolor Warning: Incompatible color definition on input line 1474.
+
 File: images/Chapitre3/NoDoD.png Graphic file (type png)
 <use images/Chapitre3/NoDoD.png>
-Package pdftex.def Info: images/Chapitre3/NoDoD.png  used on input line 1478.
+Package pdftex.def Info: images/Chapitre3/NoDoD.png  used on input line 1482.
 (pdftex.def)             Requested size: 56.9055pt x 57.0073pt.
+
+Package xcolor Warning: Incompatible color definition on input line 1482.
+
 File: images/Chapitre3/NoDoD.png Graphic file (type png)
 <use images/Chapitre3/NoDoD.png>
-Package pdftex.def Info: images/Chapitre3/NoDoD.png  used on input line 1484.
+Package pdftex.def Info: images/Chapitre3/NoDoD.png  used on input line 1488.
 (pdftex.def)             Requested size: 56.9055pt x 57.0073pt.
-<images/Chapitre3/DoD1970DSM-SIFT.png, id=982, 1927.2pt x 1204.5pt>
+
+Package xcolor Warning: Incompatible color definition on input line 1488.
+
+<images/Chapitre3/DoD1970DSM-SIFT.png, id=1058, 1927.2pt x 1204.5pt>
 File: images/Chapitre3/DoD1970DSM-SIFT.png Graphic file (type png)
 <use images/Chapitre3/DoD1970DSM-SIFT.png>
 Package pdftex.def Info: images/Chapitre3/DoD1970DSM-SIFT.png  used on input li
-ne 1490.
+ne 1494.
 (pdftex.def)             Requested size: 93.89418pt x 59.95827pt.
-<images/Chapitre3/LegendDoD.png, id=984, 1041.1698pt x 60.225pt>
+
+Package xcolor Warning: Incompatible color definition on input line 1494.
+
+<images/Chapitre3/LegendDoD.png, id=1061, 1041.1698pt x 60.225pt>
 File: images/Chapitre3/LegendDoD.png Graphic file (type png)
 <use images/Chapitre3/LegendDoD.png>
-Package pdftex.def Info: images/Chapitre3/LegendDoD.png  used on input line 149
-7.
+Package pdftex.def Info: images/Chapitre3/LegendDoD.png  used on input line 150
+1.
 (pdftex.def)             Requested size: 312.9803pt x 18.10347pt.
 
-Overfull \hbox (3.63054pt too wide) in paragraph at lines 1497--1499
+Package xcolor Warning: Incompatible color definition on input line 1501.
+
+
+Overfull \hbox (3.63054pt too wide) in paragraph at lines 1501--1503
  [][] 
  []
 
 
-LaTeX Warning: Float too large for page by 71.2372pt on input line 1502.
+Package xcolor Warning: Incompatible color definition on input line 1503.
 
-<images/Chapitre3/DoD1971R3D-SuperGlue.png, id=985, 1927.2pt x 1204.5pt>
+
+Package xcolor Warning: Incompatible color definition on input line 1503.
+
+
+LaTeX Warning: Float too large for page by 71.2372pt on input line 1506.
+
+<images/Chapitre3/DoD1971R3D-SuperGlue.png, id=1065, 1927.2pt x 1204.5pt>
 File: images/Chapitre3/DoD1971R3D-SuperGlue.png Graphic file (type png)
 <use images/Chapitre3/DoD1971R3D-SuperGlue.png>
 Package pdftex.def Info: images/Chapitre3/DoD1971R3D-SuperGlue.png  used on inp
-ut line 1514.
+ut line 1518.
 (pdftex.def)             Requested size: 119.50148pt x 89.36617pt.
-<images/Chapitre3/DoD1971Ortho-SuperGlue.png, id=987, 1927.2pt x 1204.5pt>
+
+Package xcolor Warning: Incompatible color definition on input line 1518.
+
+<images/Chapitre3/DoD1971Ortho-SuperGlue.png, id=1068, 1927.2pt x 1204.5pt>
 File: images/Chapitre3/DoD1971Ortho-SuperGlue.png Graphic file (type png)
 <use images/Chapitre3/DoD1971Ortho-SuperGlue.png>
 Package pdftex.def Info: images/Chapitre3/DoD1971Ortho-SuperGlue.png  used on i
-nput line 1520.
+nput line 1524.
 (pdftex.def)             Requested size: 119.50148pt x 89.36617pt.
-<images/Chapitre3/DoD1971DSM-SuperGlue.png, id=989, 1927.2pt x 1204.5pt>
+
+Package xcolor Warning: Incompatible color definition on input line 1524.
+
+<images/Chapitre3/DoD1971DSM-SuperGlue.png, id=1071, 1927.2pt x 1204.5pt>
 File: images/Chapitre3/DoD1971DSM-SuperGlue.png Graphic file (type png)
 <use images/Chapitre3/DoD1971DSM-SuperGlue.png>
 Package pdftex.def Info: images/Chapitre3/DoD1971DSM-SuperGlue.png  used on inp
-ut line 1526.
+ut line 1530.
 (pdftex.def)             Requested size: 119.50148pt x 89.36617pt.
-<images/Chapitre3/DoD1971R3D-SIFT.png, id=991, 1927.2pt x 1204.5pt>
+
+Package xcolor Warning: Incompatible color definition on input line 1530.
+
+<images/Chapitre3/DoD1971R3D-SIFT.png, id=1074, 1927.2pt x 1204.5pt>
 File: images/Chapitre3/DoD1971R3D-SIFT.png Graphic file (type png)
 <use images/Chapitre3/DoD1971R3D-SIFT.png>
 Package pdftex.def Info: images/Chapitre3/DoD1971R3D-SIFT.png  used on input li
-ne 1534.
+ne 1538.
 (pdftex.def)             Requested size: 119.50148pt x 89.36617pt.
-<images/Chapitre3/DoD1971Ortho-SIFT.png, id=993, 1927.2pt x 1204.5pt>
+
+Package xcolor Warning: Incompatible color definition on input line 1538.
+
+<images/Chapitre3/DoD1971Ortho-SIFT.png, id=1077, 1927.2pt x 1204.5pt>
 File: images/Chapitre3/DoD1971Ortho-SIFT.png Graphic file (type png)
 <use images/Chapitre3/DoD1971Ortho-SIFT.png>
 Package pdftex.def Info: images/Chapitre3/DoD1971Ortho-SIFT.png  used on input 
-line 1540.
+line 1544.
 (pdftex.def)             Requested size: 119.50148pt x 89.36617pt.
-<images/Chapitre3/DoD1971DSM-SIFT.png, id=995, 1927.2pt x 1204.5pt>
+
+Package xcolor Warning: Incompatible color definition on input line 1544.
+
+<images/Chapitre3/DoD1971DSM-SIFT.png, id=1080, 1927.2pt x 1204.5pt>
 File: images/Chapitre3/DoD1971DSM-SIFT.png Graphic file (type png)
 <use images/Chapitre3/DoD1971DSM-SIFT.png>
 Package pdftex.def Info: images/Chapitre3/DoD1971DSM-SIFT.png  used on input li
-ne 1546.
+ne 1550.
 (pdftex.def)             Requested size: 119.50148pt x 89.36617pt.
-<images/Chapitre3/DoD1981R3D-SuperGlue.png, id=997, 1927.2pt x 1204.5pt>
+
+Package xcolor Warning: Incompatible color definition on input line 1550.
+
+<images/Chapitre3/DoD1981R3D-SuperGlue.png, id=1083, 1927.2pt x 1204.5pt>
 File: images/Chapitre3/DoD1981R3D-SuperGlue.png Graphic file (type png)
 <use images/Chapitre3/DoD1981R3D-SuperGlue.png>
 Package pdftex.def Info: images/Chapitre3/DoD1981R3D-SuperGlue.png  used on inp
-ut line 1554.
+ut line 1558.
 (pdftex.def)             Requested size: 119.50148pt x 93.51312pt.
-<images/Chapitre3/DoD1981Ortho-SuperGlue.png, id=999, 1927.2pt x 1204.5pt>
+
+Package xcolor Warning: Incompatible color definition on input line 1558.
+
+<images/Chapitre3/DoD1981Ortho-SuperGlue.png, id=1086, 1927.2pt x 1204.5pt>
 File: images/Chapitre3/DoD1981Ortho-SuperGlue.png Graphic file (type png)
 <use images/Chapitre3/DoD1981Ortho-SuperGlue.png>
 Package pdftex.def Info: images/Chapitre3/DoD1981Ortho-SuperGlue.png  used on i
-nput line 1560.
+nput line 1564.
 (pdftex.def)             Requested size: 119.50148pt x 93.51312pt.
-<images/Chapitre3/DoD1981DSM-SuperGlue.png, id=1001, 1927.2pt x 1204.5pt>
+
+Package xcolor Warning: Incompatible color definition on input line 1564.
+
+<images/Chapitre3/DoD1981DSM-SuperGlue.png, id=1089, 1927.2pt x 1204.5pt>
 File: images/Chapitre3/DoD1981DSM-SuperGlue.png Graphic file (type png)
 <use images/Chapitre3/DoD1981DSM-SuperGlue.png>
 Package pdftex.def Info: images/Chapitre3/DoD1981DSM-SuperGlue.png  used on inp
-ut line 1566.
+ut line 1570.
 (pdftex.def)             Requested size: 119.50148pt x 93.51312pt.
-<images/Chapitre3/DoD1981R3D-SIFT.png, id=1003, 1927.2pt x 1204.5pt>
+
+Package xcolor Warning: Incompatible color definition on input line 1570.
+
+<images/Chapitre3/DoD1981R3D-SIFT.png, id=1092, 1927.2pt x 1204.5pt>
 File: images/Chapitre3/DoD1981R3D-SIFT.png Graphic file (type png)
 <use images/Chapitre3/DoD1981R3D-SIFT.png>
 Package pdftex.def Info: images/Chapitre3/DoD1981R3D-SIFT.png  used on input li
-ne 1574.
+ne 1578.
 (pdftex.def)             Requested size: 119.50148pt x 93.51312pt.
-<images/Chapitre3/DoD1981Ortho-SIFT.png, id=1005, 1927.2pt x 1204.5pt>
+
+Package xcolor Warning: Incompatible color definition on input line 1578.
+
+<images/Chapitre3/DoD1981Ortho-SIFT.png, id=1095, 1927.2pt x 1204.5pt>
 File: images/Chapitre3/DoD1981Ortho-SIFT.png Graphic file (type png)
 <use images/Chapitre3/DoD1981Ortho-SIFT.png>
 Package pdftex.def Info: images/Chapitre3/DoD1981Ortho-SIFT.png  used on input 
-line 1580.
+line 1584.
 (pdftex.def)             Requested size: 119.50148pt x 93.51312pt.
-<images/Chapitre3/DoD1981DSM-SIFT.png, id=1007, 1927.2pt x 1204.5pt>
+
+Package xcolor Warning: Incompatible color definition on input line 1584.
+
+<images/Chapitre3/DoD1981DSM-SIFT.png, id=1098, 1927.2pt x 1204.5pt>
 File: images/Chapitre3/DoD1981DSM-SIFT.png Graphic file (type png)
 <use images/Chapitre3/DoD1981DSM-SIFT.png>
 Package pdftex.def Info: images/Chapitre3/DoD1981DSM-SIFT.png  used on input li
-ne 1586.
+ne 1590.
 (pdftex.def)             Requested size: 119.50148pt x 93.51312pt.
+
+Package xcolor Warning: Incompatible color definition on input line 1590.
+
 File: images/Chapitre3/LegendDoD.png Graphic file (type png)
 <use images/Chapitre3/LegendDoD.png>
 Package pdftex.def Info: images/Chapitre3/LegendDoD.png  used on input line 159
-4.
+6.
 (pdftex.def)             Requested size: 312.9803pt x 18.10347pt.
 
-Overfull \hbox (3.63054pt too wide) in paragraph at lines 1594--1595
+Package xcolor Warning: Incompatible color definition on input line 1596.
+
+
+Overfull \hbox (3.63054pt too wide) in paragraph at lines 1578--1597
  [][] 
  []
 
+
+Package xcolor Warning: Incompatible color definition on input line 1597.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1597.
+
 File: images/Chapitre3/NoDoD.png Graphic file (type png)
 <use images/Chapitre3/NoDoD.png>
-Package pdftex.def Info: images/Chapitre3/NoDoD.png  used on input line 1609.
+Package pdftex.def Info: images/Chapitre3/NoDoD.png  used on input line 1611.
 (pdftex.def)             Requested size: 56.9055pt x 57.0073pt.
-<images/Chapitre3/DoD1971DSM-SuperGlue-Satellite.png, id=1009, 1927.2pt x 1204.
+
+Package xcolor Warning: Incompatible color definition on input line 1611.
+
+<images/Chapitre3/DoD1971DSM-SuperGlue-Satellite.png, id=1105, 1927.2pt x 1204.
 5pt>
 File: images/Chapitre3/DoD1971DSM-SuperGlue-Satellite.png Graphic file (type pn
 g)
 <use images/Chapitre3/DoD1971DSM-SuperGlue-Satellite.png>
 Package pdftex.def Info: images/Chapitre3/DoD1971DSM-SuperGlue-Satellite.png  u
-sed on input line 1615.
+sed on input line 1617.
 (pdftex.def)             Requested size: 128.0374pt x 95.7592pt.
 
-Overfull \hbox (5.54135pt too wide) in paragraph at lines 1615--1615
+Overfull \hbox (5.54135pt too wide) in paragraph at lines 1617--1617
  [][] 
  []
 
+
+Package xcolor Warning: Incompatible color definition on input line 1617.
+
 File: images/Chapitre3/NoDoD.png Graphic file (type png)
 <use images/Chapitre3/NoDoD.png>
-Package pdftex.def Info: images/Chapitre3/NoDoD.png  used on input line 1622.
+Package pdftex.def Info: images/Chapitre3/NoDoD.png  used on input line 1624.
 (pdftex.def)             Requested size: 56.9055pt x 57.0073pt.
-<images/Chapitre3/DoD1971DSM-SIFT-Satellite.png, id=1011, 1927.2pt x 1204.5pt>
+
+Package xcolor Warning: Incompatible color definition on input line 1624.
+
+<images/Chapitre3/DoD1971DSM-SIFT-Satellite.png, id=1109, 1927.2pt x 1204.5pt>
 File: images/Chapitre3/DoD1971DSM-SIFT-Satellite.png Graphic file (type png)
 <use images/Chapitre3/DoD1971DSM-SIFT-Satellite.png>
 Package pdftex.def Info: images/Chapitre3/DoD1971DSM-SIFT-Satellite.png  used o
-n input line 1628.
+n input line 1630.
 (pdftex.def)             Requested size: 119.50148pt x 93.51312pt.
-<images/Chapitre3/DoD1981Ortho-SuperGlue-Satellite.png, id=1013, 1927.2pt x 120
+
+Package xcolor Warning: Incompatible color definition on input line 1630.
+
+<images/Chapitre3/DoD1981Ortho-SuperGlue-Satellite.png, id=1112, 1927.2pt x 120
 4.5pt>
 File: images/Chapitre3/DoD1981Ortho-SuperGlue-Satellite.png Graphic file (type 
 png)
 <use images/Chapitre3/DoD1981Ortho-SuperGlue-Satellite.png>
 Package pdftex.def Info: images/Chapitre3/DoD1981Ortho-SuperGlue-Satellite.png 
- used on input line 1635.
+ used on input line 1637.
 (pdftex.def)             Requested size: 119.50148pt x 139.67696pt.
-<images/Chapitre3/DoD1981DSM-SuperGlue-Satellite.png, id=1015, 1927.2pt x 1204.
+
+Package xcolor Warning: Incompatible color definition on input line 1637.
+
+<images/Chapitre3/DoD1981DSM-SuperGlue-Satellite.png, id=1115, 1927.2pt x 1204.
 5pt>
 File: images/Chapitre3/DoD1981DSM-SuperGlue-Satellite.png Graphic file (type pn
 g)
 <use images/Chapitre3/DoD1981DSM-SuperGlue-Satellite.png>
 Package pdftex.def Info: images/Chapitre3/DoD1981DSM-SuperGlue-Satellite.png  u
-sed on input line 1641.
+sed on input line 1643.
 (pdftex.def)             Requested size: 119.50148pt x 139.67696pt.
+
+Package xcolor Warning: Incompatible color definition on input line 1643.
+
 File: images/Chapitre3/NoDoD.png Graphic file (type png)
 <use images/Chapitre3/NoDoD.png>
-Package pdftex.def Info: images/Chapitre3/NoDoD.png  used on input line 1649.
+Package pdftex.def Info: images/Chapitre3/NoDoD.png  used on input line 1651.
 (pdftex.def)             Requested size: 56.9055pt x 57.0073pt.
-<images/Chapitre3/DoD1981DSM-SIFT-Satellite.png, id=1017, 1927.2pt x 1204.5pt>
+
+Package xcolor Warning: Incompatible color definition on input line 1651.
+
+<images/Chapitre3/DoD1981DSM-SIFT-Satellite.png, id=1119, 1927.2pt x 1204.5pt>
 File: images/Chapitre3/DoD1981DSM-SIFT-Satellite.png Graphic file (type png)
 <use images/Chapitre3/DoD1981DSM-SIFT-Satellite.png>
 Package pdftex.def Info: images/Chapitre3/DoD1981DSM-SIFT-Satellite.png  used o
-n input line 1655.
+n input line 1657.
 (pdftex.def)             Requested size: 119.50148pt x 139.67696pt.
+
+Package xcolor Warning: Incompatible color definition on input line 1657.
+
 File: images/Chapitre3/LegendDoD.png Graphic file (type png)
 <use images/Chapitre3/LegendDoD.png>
 Package pdftex.def Info: images/Chapitre3/LegendDoD.png  used on input line 166
-3.
+5.
 (pdftex.def)             Requested size: 312.9803pt x 18.10347pt.
 
-Overfull \hbox (3.63054pt too wide) in paragraph at lines 1663--1664
+Package xcolor Warning: Incompatible color definition on input line 1665.
+
+
+Overfull \hbox (3.63054pt too wide) in paragraph at lines 1665--1666
  [][] 
  []
 
 
-LaTeX Warning: Float too large for page by 74.28116pt on input line 1667.
+Package xcolor Warning: Incompatible color definition on input line 1666.
 
-<images/Chapitre3/DoD1991R3D-SuperGlue.png, id=1019, 1927.2pt x 1204.5pt>
+
+Package xcolor Warning: Incompatible color definition on input line 1666.
+
+
+LaTeX Warning: Float too large for page by 74.28116pt on input line 1669.
+
+<images/Chapitre3/DoD1991R3D-SuperGlue.png, id=1125, 1927.2pt x 1204.5pt>
 File: images/Chapitre3/DoD1991R3D-SuperGlue.png Graphic file (type png)
 <use images/Chapitre3/DoD1991R3D-SuperGlue.png>
 Package pdftex.def Info: images/Chapitre3/DoD1991R3D-SuperGlue.png  used on inp
-ut line 1678.
+ut line 1680.
 (pdftex.def)             Requested size: 341.43306pt x 62.37578pt.
-<images/Chapitre3/DoD1991Ortho-SuperGlue.png, id=1021, 1927.2pt x 1204.5pt>
+
+Package xcolor Warning: Incompatible color definition on input line 1680.
+
+<images/Chapitre3/DoD1991Ortho-SuperGlue.png, id=1128, 1927.2pt x 1204.5pt>
 File: images/Chapitre3/DoD1991Ortho-SuperGlue.png Graphic file (type png)
 <use images/Chapitre3/DoD1991Ortho-SuperGlue.png>
 Package pdftex.def Info: images/Chapitre3/DoD1991Ortho-SuperGlue.png  used on i
-nput line 1684.
+nput line 1686.
 (pdftex.def)             Requested size: 341.43306pt x 62.37578pt.
-<images/Chapitre3/DoD1991DSM-SuperGlue.png, id=1023, 1927.2pt x 1204.5pt>
+
+Package xcolor Warning: Incompatible color definition on input line 1686.
+
+<images/Chapitre3/DoD1991DSM-SuperGlue.png, id=1131, 1927.2pt x 1204.5pt>
 File: images/Chapitre3/DoD1991DSM-SuperGlue.png Graphic file (type png)
 <use images/Chapitre3/DoD1991DSM-SuperGlue.png>
 Package pdftex.def Info: images/Chapitre3/DoD1991DSM-SuperGlue.png  used on inp
-ut line 1690.
+ut line 1692.
 (pdftex.def)             Requested size: 341.43306pt x 62.37578pt.
 
-Overfull \hbox (3.63054pt too wide) in paragraph at lines 1678--1691
+Package xcolor Warning: Incompatible color definition on input line 1692.
+
+
+Overfull \hbox (3.63054pt too wide) in paragraph at lines 1680--1693
  [] 
  []
 
 
-Overfull \hbox (3.63054pt too wide) in paragraph at lines 1678--1691
+Overfull \hbox (3.63054pt too wide) in paragraph at lines 1680--1693
  [][] 
  []
 
 
-Overfull \hbox (3.63054pt too wide) in paragraph at lines 1678--1691
+Overfull \hbox (3.63054pt too wide) in paragraph at lines 1680--1693
  [][] 
  []
 
 File: images/Chapitre3/NoDoD.png Graphic file (type png)
 <use images/Chapitre3/NoDoD.png>
-Package pdftex.def Info: images/Chapitre3/NoDoD.png  used on input line 1698.
+Package pdftex.def Info: images/Chapitre3/NoDoD.png  used on input line 1700.
 (pdftex.def)             Requested size: 56.9055pt x 57.0073pt.
+
+Package xcolor Warning: Incompatible color definition on input line 1700.
+
 File: images/Chapitre3/NoDoD.png Graphic file (type png)
 <use images/Chapitre3/NoDoD.png>
-Package pdftex.def Info: images/Chapitre3/NoDoD.png  used on input line 1704.
+Package pdftex.def Info: images/Chapitre3/NoDoD.png  used on input line 1706.
 (pdftex.def)             Requested size: 56.9055pt x 57.0073pt.
-<images/Chapitre3/DoD1991DSM-SIFT.png, id=1025, 1927.2pt x 1204.5pt>
+
+Package xcolor Warning: Incompatible color definition on input line 1706.
+
+<images/Chapitre3/DoD1991DSM-SIFT.png, id=1136, 1927.2pt x 1204.5pt>
 File: images/Chapitre3/DoD1991DSM-SIFT.png Graphic file (type png)
 <use images/Chapitre3/DoD1991DSM-SIFT.png>
 Package pdftex.def Info: images/Chapitre3/DoD1991DSM-SIFT.png  used on input li
-ne 1710.
+ne 1712.
 (pdftex.def)             Requested size: 341.43306pt x 62.37578pt.
 
-Overfull \hbox (3.63054pt too wide) in paragraph at lines 1698--1711
+Package xcolor Warning: Incompatible color definition on input line 1712.
+
+
+Overfull \hbox (3.63054pt too wide) in paragraph at lines 1700--1713
  [][] 
  []
 
 
-Overfull \hbox (3.63054pt too wide) in paragraph at lines 1698--1711
+Overfull \hbox (3.63054pt too wide) in paragraph at lines 1700--1713
  [][] 
  []
 
 
-Overfull \hbox (3.63054pt too wide) in paragraph at lines 1698--1711
+Overfull \hbox (3.63054pt too wide) in paragraph at lines 1700--1713
  [][] 
  []
 
 File: images/Chapitre3/LegendDoD.png Graphic file (type png)
 <use images/Chapitre3/LegendDoD.png>
 Package pdftex.def Info: images/Chapitre3/LegendDoD.png  used on input line 171
-7.
+9.
 (pdftex.def)             Requested size: 312.9803pt x 18.10347pt.
 
-Overfull \hbox (3.63054pt too wide) in paragraph at lines 1717--1718
+Package xcolor Warning: Incompatible color definition on input line 1719.
+
+
+Overfull \hbox (3.63054pt too wide) in paragraph at lines 1719--1720
  [][] 
  []
 
 
-LaTeX Warning: Float too large for page by 7.3371pt on input line 1721.
+Package xcolor Warning: Incompatible color definition on input line 1720.
 
 
-Package xcolor Warning: Incompatible color definition on input line 1800.
+Package xcolor Warning: Incompatible color definition on input line 1720.
 
 
-Package xcolor Warning: Incompatible color definition on input line 1800.
+LaTeX Warning: Float too large for page by 7.3371pt on input line 1723.
 
 
-Package xcolor Warning: Incompatible color definition on input line 1800.
+Package xcolor Warning: Incompatible color definition on input line 1802.
 
 
-Package xcolor Warning: Incompatible color definition on input line 1800.
+Package xcolor Warning: Incompatible color definition on input line 1802.
 
 
-Package xcolor Warning: Incompatible color definition on input line 1800.
+Package xcolor Warning: Incompatible color definition on input line 1802.
 
 
-Package xcolor Warning: Incompatible color definition on input line 1800.
+Package xcolor Warning: Incompatible color definition on input line 1802.
 
 
-Package xcolor Warning: Incompatible color definition on input line 1800.
+Package xcolor Warning: Incompatible color definition on input line 1802.
 
 
-Package xcolor Warning: Incompatible color definition on input line 1800.
+Package xcolor Warning: Incompatible color definition on input line 1802.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1917--1921
+Package xcolor Warning: Incompatible color definition on input line 1802.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1802.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1802.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1802.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1919--1923
 
  []
 
-[33] [34 <./images/Chapitre3/PlotCurves_Pseudo-Ortho-MEC-Malt_Tapas_1954_Ortho-
+[31] [32 <./images/Chapitre3/PlotCurves_Pseudo-Ortho-MEC-Malt_Tapas_1954_Ortho-
 MEC-Malt_2014.png> <./images/Chapitre3/PlotCurves_Ortho-MEC-Malt_Tapas_1954_Ort
 ho-MEC-Malt_2014.png> <./images/Chapitre3/PlotCurves_MEC-Malt_Tapas_1954_MEC-Ma
 lt_2014.png> <./images/Chapitre3/Pseudo-Ortho-MEC-Malt_Tapas_1954_Ortho-MEC-Mal
@@ -3199,7 +3695,7 @@ Step-Rough-2DRANSAC_Ortho-MEC-Malt_Tapas_1954_Ortho-MEC-Malt_2014.png (PNG copy
 rtho-MEC-Malt_2014.png (PNG copy)> <./images/Chapitre3/MEC-Malt_Tapas_1954_MEC-
 Malt_2014.png> <./images/Chapitre3/Homol-SIFT2Step-Rough-2DRANSAC_MEC-Malt_Tapa
 s_1954_MEC-Malt_2014.png (PNG copy)> <./images/Chapitre3/Homol-SubPatch_R270-2D
-RANSAC_MEC-Malt_Tapas_1954_MEC-Malt_2014.png (PNG copy)>] [35 <./images/Chapitr
+RANSAC_MEC-Malt_Tapas_1954_MEC-Malt_2014.png (PNG copy)>] [33 <./images/Chapitr
 e3/PlotCurves_Pseudo-Ortho-MEC-Malt_Tapas_1966_Ortho-MEC-Malt_2014.png> <./imag
 es/Chapitre3/PlotCurves_Ortho-MEC-Malt_Tapas_1966_Ortho-MEC-Malt_2014.png> <./i
 mages/Chapitre3/PlotCurves_MEC-Malt_Tapas_1966_MEC-Malt_2014.png> <./images/Cha
@@ -3214,7 +3710,7 @@ ol-SubPatch_R270-2DRANSAC_Ortho-MEC-Malt_Tapas_1966_Ortho-MEC-Malt_2014.png (PN
 G copy)> <./images/Chapitre3/MEC-Malt_Tapas_1966_MEC-Malt_2014.png> <./images/C
 hapitre3/Homol-SIFT2Step-Rough-2DRANSAC_MEC-Malt_Tapas_1966_MEC-Malt_2014.png (
 PNG copy)> <./images/Chapitre3/Homol-SubPatch_R270-2DRANSAC_MEC-Malt_Tapas_1966
-_MEC-Malt_2014.png (PNG copy)>] [36 <./images/Chapitre3/PlotCurves_Pseudo-Ortho
+_MEC-Malt_2014.png (PNG copy)>] [34 <./images/Chapitre3/PlotCurves_Pseudo-Ortho
 -MEC-Malt_Tapas_1970_Ortho-MEC-Malt_2014.png> <./images/Chapitre3/PlotCurves_Or
 tho-MEC-Malt_Tapas_1970_Ortho-MEC-Malt_2014.png> <./images/Chapitre3/PlotCurves
 _MEC-Malt_Tapas_1970_MEC-Malt_2014.png> <./images/Chapitre3/Pseudo-Ortho-MEC-Ma
@@ -3229,7 +3725,7 @@ Ortho-MEC-Malt_Tapas_1970_Ortho-MEC-Malt_2014.png (PNG copy)> <./images/Chapitr
 e3/MEC-Malt_Tapas_1970_MEC-Malt_2014.png> <./images/Chapitre3/Homol-SIFT2Step-R
 ough-2DRANSAC_MEC-Malt_Tapas_1970_MEC-Malt_2014.png (PNG copy)> <./images/Chapi
 tre3/Homol-SubPatch_R270-2DRANSAC_MEC-Malt_Tapas_1970_MEC-Malt_2014.png (PNG co
-py)>] [37 <./images/Chapitre3/PlotCurves_Pseudo-Ortho-MEC-Malt_Tapas_1971_Ortho
+py)>] [35 <./images/Chapitre3/PlotCurves_Pseudo-Ortho-MEC-Malt_Tapas_1971_Ortho
 -MEC-Malt_2015.png> <./images/Chapitre3/PlotCurves_Ortho-MEC-Malt_Tapas_1971_Or
 tho-MEC-Malt_2015.png> <./images/Chapitre3/PlotCurves_MEC-Malt_Tapas_1971_MEC-M
 alt_2015.png> <./images/Chapitre3/Pseudo-Ortho-MEC-Malt_Tapas_1971_Ortho-MEC-Ma
@@ -3243,7 +3739,7 @@ y)> <./images/Chapitre3/Homol-SubPatch_R270-2DRANSAC_Ortho-MEC-Malt_Tapas_1971_
 Ortho-MEC-Malt_2015.png (PNG copy)> <./images/Chapitre3/MEC-Malt_Tapas_1971_MEC
 -Malt_2015.png> <./images/Chapitre3/Homol-SIFT2Step-Rough-2DRANSAC_MEC-Malt_Tap
 as_1971_MEC-Malt_2015.png (PNG copy)> <./images/Chapitre3/Homol-SubPatch_R270-2
-DRANSAC_MEC-Malt_Tapas_1971_MEC-Malt_2015.png (PNG copy)>] [38 <./images/Chapit
+DRANSAC_MEC-Malt_Tapas_1971_MEC-Malt_2015.png (PNG copy)>] [36 <./images/Chapit
 re3/PlotCurves_Pseudo-Ortho-MEC-Malt_Tapas_1981_Ortho-MEC-Malt_2015.png> <./ima
 ges/Chapitre3/PlotCurves_Ortho-MEC-Malt_Tapas_1981_Ortho-MEC-Malt_2015.png> <./
 images/Chapitre3/PlotCurves_MEC-Malt_Tapas_1981_MEC-Malt_2015.png> <./images/Ch
@@ -3258,7 +3754,7 @@ mol-SubPatch_R90-2DRANSAC_Ortho-MEC-Malt_Tapas_1981_Ortho-MEC-Malt_2015.png (PN
 G copy)> <./images/Chapitre3/MEC-Malt_Tapas_1981_MEC-Malt_2015.png> <./images/C
 hapitre3/Homol-SIFT2Step-Rough-2DRANSAC_MEC-Malt_Tapas_1981_MEC-Malt_2015.png (
 PNG copy)> <./images/Chapitre3/Homol-SubPatch_R90-2DRANSAC_MEC-Malt_Tapas_1981_
-MEC-Malt_2015.png (PNG copy)>] [39 <./images/Chapitre3/PlotCurves_Ortho-MEC-Mal
+MEC-Malt_2015.png (PNG copy)>] [37 <./images/Chapitre3/PlotCurves_Ortho-MEC-Mal
 t_Tapas_1971_Ortho-MEC-Malt_Satellite.png> <./images/Chapitre3/PlotCurves_MEC-M
 alt_Tapas_1971_MEC-Malt_Satellite.png> <./images/Chapitre3/Ortho-MEC-Malt_Tapas
 _1971_Ortho-MEC-Malt_Satellite.png> <./images/Chapitre3/Homol-SIFT2Step-Rough-2
@@ -3267,7 +3763,7 @@ mages/Chapitre3/Homol-SubPatch_R270-2DRANSAC_Ortho-MEC-Malt_Tapas_1971_Ortho-ME
 C-Malt_Satellite.png (PNG copy)> <./images/Chapitre3/MEC-Malt_Tapas_1971_MEC-Ma
 lt_Satellite.png> <./images/Chapitre3/Homol-SIFT2Step-Rough-2DRANSAC_MEC-Malt_T
 apas_1971_MEC-Malt_Satellite.png (PNG copy)> <./images/Chapitre3/Homol-SubPatch
-_R270-2DRANSAC_MEC-Malt_Tapas_1971_MEC-Malt_Satellite.png (PNG copy)>] [40 <./i
+_R270-2DRANSAC_MEC-Malt_Tapas_1971_MEC-Malt_Satellite.png (PNG copy)>] [38 <./i
 mages/Chapitre3/PlotCurves_Ortho-MEC-Malt_Tapas_1981_Ortho-MEC-Malt_Satellite.p
 ng> <./images/Chapitre3/PlotCurves_MEC-Malt_Tapas_1981_MEC-Malt_Satellite.png> 
 <./images/Chapitre3/Ortho-MEC-Malt_Tapas_1981_Ortho-MEC-Malt_Satellite.png> <./
@@ -3277,7 +3773,7 @@ NSAC_Ortho-MEC-Malt_Tapas_1981_Ortho-MEC-Malt_Satellite.png (PNG copy)> <./imag
 es/Chapitre3/MEC-Malt_Tapas_1981_MEC-Malt_Satellite.png> <./images/Chapitre3/Ho
 mol-SIFT2Step-Rough-2DRANSAC_MEC-Malt_Tapas_1981_MEC-Malt_Satellite.png (PNG co
 py)> <./images/Chapitre3/Homol-SubPatch_R90-2DRANSAC_MEC-Malt_Tapas_1981_MEC-Ma
-lt_Satellite.png (PNG copy)>] [41 <./images/Chapitre3/PlotCurves_Pseudo-Ortho-M
+lt_Satellite.png (PNG copy)>] [39 <./images/Chapitre3/PlotCurves_Pseudo-Ortho-M
 EC-Malt_Tapas_1991_Ortho-MEC-Malt_Tapas_1994.png> <./images/Chapitre3/PlotCurve
 s_Ortho-MEC-Malt_Tapas_1991_Ortho-MEC-Malt_Tapas_1994.png> <./images/Chapitre3/
 PlotCurves_MEC-Malt_Tapas_1991_MEC-Malt_Tapas_1994.png> <./images/Chapitre3/Pse
@@ -3292,7 +3788,7 @@ images/Chapitre3/Homol-SubPatch-2DRANSAC_Ortho-MEC-Malt_Tapas_1991_Ortho-MEC-Ma
 lt_Tapas_1994.png (PNG copy)> <./images/Chapitre3/MEC-Malt_Tapas_1991_MEC-Malt_
 Tapas_1994.png> <./images/Chapitre3/Homol-SIFT2Step-Rough-2DRANSAC_MEC-Malt_Tap
 as_1991_MEC-Malt_Tapas_1994.png (PNG copy)> <./images/Chapitre3/Homol-SubPatch-
-2DRANSAC_MEC-Malt_Tapas_1991_MEC-Malt_Tapas_1994.png (PNG copy)>] [42 <./images
+2DRANSAC_MEC-Malt_Tapas_1991_MEC-Malt_Tapas_1994.png (PNG copy)>] [40 <./images
 /Chapitre3/DoD1954R3D-SuperGlue.png> <./images/Chapitre3/DoD1954Ortho-SuperGlue
 .png> <./images/Chapitre3/DoD1954DSM-SuperGlue.png> <./images/Chapitre3/DoD1954
 DSM-SIFT.png> <./images/Chapitre3/DoD1966R3D-SuperGlue.png> <./images/Chapitre3
@@ -3300,23 +3796,23 @@ DSM-SIFT.png> <./images/Chapitre3/DoD1966R3D-SuperGlue.png> <./images/Chapitre3
 mages/Chapitre3/DoD1966DSM-SIFT.png> <./images/Chapitre3/DoD1970R3D-SuperGlue.p
 ng> <./images/Chapitre3/DoD1970Ortho-SuperGlue.png> <./images/Chapitre3/DoD1970
 DSM-SuperGlue.png> <./images/Chapitre3/DoD1970DSM-SIFT.png> <./images/Chapitre3
-/NoDoD.png> <./images/Chapitre3/LegendDoD.png>] [43 <./images/Chapitre3/DoD1971
+/NoDoD.png> <./images/Chapitre3/LegendDoD.png>] [41 <./images/Chapitre3/DoD1971
 R3D-SuperGlue.png> <./images/Chapitre3/DoD1971Ortho-SuperGlue.png> <./images/Ch
 apitre3/DoD1971DSM-SuperGlue.png> <./images/Chapitre3/DoD1971R3D-SIFT.png> <./i
 mages/Chapitre3/DoD1971Ortho-SIFT.png> <./images/Chapitre3/DoD1971DSM-SIFT.png>
  <./images/Chapitre3/DoD1981R3D-SuperGlue.png> <./images/Chapitre3/DoD1981Ortho
 -SuperGlue.png> <./images/Chapitre3/DoD1981DSM-SuperGlue.png> <./images/Chapitr
 e3/DoD1981R3D-SIFT.png> <./images/Chapitre3/DoD1981Ortho-SIFT.png> <./images/Ch
-apitre3/DoD1981DSM-SIFT.png>] [44 <./images/Chapitre3/DoD1971DSM-SuperGlue-Sate
+apitre3/DoD1981DSM-SIFT.png>] [42 <./images/Chapitre3/DoD1971DSM-SuperGlue-Sate
 llite.png> <./images/Chapitre3/DoD1971DSM-SIFT-Satellite.png> <./images/Chapitr
 e3/DoD1981Ortho-SuperGlue-Satellite.png> <./images/Chapitre3/DoD1981DSM-SuperGl
-ue-Satellite.png> <./images/Chapitre3/DoD1981DSM-SIFT-Satellite.png>] [45 <./im
+ue-Satellite.png> <./images/Chapitre3/DoD1981DSM-SIFT-Satellite.png>] [43 <./im
 ages/Chapitre3/DoD1991R3D-SuperGlue.png> <./images/Chapitre3/DoD1991Ortho-Super
 Glue.png> <./images/Chapitre3/DoD1991DSM-SuperGlue.png> <./images/Chapitre3/DoD
-1991DSM-SIFT.png>] [46]) [47]
+1991DSM-SIFT.png>] [44]) [45]
 \openout2 = `Chapter4.aux'.
 
- (./Chapter4.tex [48
+ (./Chapter4.tex [46
 
 
 
@@ -3360,6 +3856,15 @@ Package xcolor Warning: Incompatible color definition on input line 12.
 
 Package xcolor Warning: Incompatible color definition on input line 13.
 
+
+Package xcolor Warning: Incompatible color definition on input line 14.
+
+
+Package xcolor Warning: Incompatible color definition on input line 15.
+
+
+Package xcolor Warning: Incompatible color definition on input line 16.
+
 )
 
 Package xcolor Warning: Incompatible color definition on input line 15.
@@ -3372,20 +3877,20 @@ Underfull \hbox (badness 10000) in paragraph at lines 17--18
 
  []
 
-[49]
-<images/Chapitre4/precisematching.png, id=1408, 609.9588pt x 160.4394pt>
+[47]
+<images/Chapitre4/precisematching.png, id=1529, 609.9588pt x 160.4394pt>
 File: images/Chapitre4/precisematching.png Graphic file (type png)
 <use images/Chapitre4/precisematching.png>
 Package pdftex.def Info: images/Chapitre4/precisematching.png  used on input li
 ne 26.
 (pdftex.def)             Requested size: 395.15166pt x 103.9392pt.
-<images/Chapitre4/patchmatching.png, id=1409, 803.0pt x 613.29124pt>
+<images/Chapitre4/patchmatching.png, id=1530, 803.0pt x 613.29124pt>
 File: images/Chapitre4/patchmatching.png Graphic file (type png)
 <use images/Chapitre4/patchmatching.png>
 Package pdftex.def Info: images/Chapitre4/patchmatching.png  used on input line
  32.
 (pdftex.def)             Requested size: 128.0374pt x 97.78235pt.
-<images/Chapitre4/tilingScheme.png, id=1410, 218.7372pt x 174.4116pt>
+<images/Chapitre4/tilingScheme.png, id=1531, 218.7372pt x 174.4116pt>
 File: images/Chapitre4/tilingScheme.png Graphic file (type png)
 <use images/Chapitre4/tilingScheme.png>
 Package pdftex.def Info: images/Chapitre4/tilingScheme.png  used on input line 
@@ -3396,7 +3901,7 @@ Overfull \hbox (9.33264pt too wide) in paragraph at lines 38--38
  [][] 
  []
 
-<images/Chapitre4/guidedmatching.png, id=1411, 711.65875pt x 610.28pt>
+<images/Chapitre4/guidedmatching.png, id=1532, 711.65875pt x 610.28pt>
 File: images/Chapitre4/guidedmatching.png Graphic file (type png)
 <use images/Chapitre4/guidedmatching.png>
 Package pdftex.def Info: images/Chapitre4/guidedmatching.png  used on input lin
@@ -3416,11 +3921,15 @@ Underfull \hbox (badness 10000) in paragraph at lines 51--52
 Package xcolor Warning: Incompatible color definition on input line 53.
 
 
+Underfull \vbox (badness 6944) has occurred while \output is active []
+
+ [48 <./images/Chapitre4/precisematching.png> <./images/Chapitre4/patchmatching
+.png> <./images/Chapitre4/tilingScheme.png> <./images/Chapitre4/guidedmatching.
+png>]
+
 Package xcolor Warning: Incompatible color definition on input line 56.
 
-[50 <./images/Chapitre4/precisematching.png> <./images/Chapitre4/patchmatching.
-png> <./images/Chapitre4/tilingScheme.png> <./images/Chapitre4/guidedmatching.p
-ng>]
+
 Underfull \hbox (badness 10000) in paragraph at lines 60--61
 
  []
@@ -3433,17 +3942,17 @@ Underfull \hbox (badness 10000) in paragraph at lines 63--66
 
  []
 
-<images/Chapitre4/example.png, id=1428, 416.2752pt x 232.2276pt>
+<images/Chapitre4/example.png, id=1548, 568.0422pt x 320.397pt>
 File: images/Chapitre4/example.png Graphic file (type png)
 <use images/Chapitre4/example.png>
 Package pdftex.def Info: images/Chapitre4/example.png  used on input line 74.
-(pdftex.def)             Requested size: 395.15166pt x 220.45549pt.
-<images/Chapitre4/patchexample.png, id=1429, 532.8708pt x 262.581pt>
+(pdftex.def)             Requested size: 395.15166pt x 222.88304pt.
+<images/Chapitre4/patchexample.png, id=1549, 877.8396pt x 299.6796pt>
 File: images/Chapitre4/patchexample.png Graphic file (type png)
 <use images/Chapitre4/patchexample.png>
 Package pdftex.def Info: images/Chapitre4/patchexample.png  used on input line 
 80.
-(pdftex.def)             Requested size: 395.15166pt x 198.46178pt.
+(pdftex.def)             Requested size: 395.15166pt x 136.4596pt.
 
 Overfull \hbox (3.63054pt too wide) in paragraph at lines 74--87
  [] 
@@ -3454,17 +3963,12 @@ Overfull \hbox (3.63054pt too wide) in paragraph at lines 74--87
  [][] 
  []
 
-<images/Chapitre4/guidedexample.png, id=1431, 424.4658pt x 232.2276pt>
+<images/Chapitre4/guidedexample.png, id=1551, 568.0422pt x 320.397pt>
 File: images/Chapitre4/guidedexample.png Graphic file (type png)
 <use images/Chapitre4/guidedexample.png>
 Package pdftex.def Info: images/Chapitre4/guidedexample.png  used on input line
- 99.
-(pdftex.def)             Requested size: 395.15166pt x 216.2033pt.
-
-Overfull \hbox (3.63054pt too wide) in paragraph at lines 99--100
- [] 
- []
-
+ 97.
+(pdftex.def)             Requested size: 395.15166pt x 222.88304pt.
 
 Package xcolor Warning: Incompatible color definition on input line 106.
 
@@ -3473,7 +3977,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 106--108
 
  []
 
-[51] [52 <./images/Chapitre4/patchexample.png> <./images/Chapitre4/example.png>
+[49] [50 <./images/Chapitre4/patchexample.png> <./images/Chapitre4/example.png>
 ]
 
 Package xcolor Warning: Incompatible color definition on input line 115.
@@ -3486,35 +3990,64 @@ Underfull \hbox (badness 10000) in paragraph at lines 117--118
 
  []
 
-[53 <./images/Chapitre4/guidedexample.png>]
+[51 <./images/Chapitre4/guidedexample.png>]
 
 Package xcolor Warning: Incompatible color definition on input line 146.
 
-<images/Chapitre4/tiept.png, id=1472, 867.7218pt x 424.4658pt>
+<images/Chapitre4/tiept.png, id=1590, 867.7218pt x 424.4658pt>
 File: images/Chapitre4/tiept.png Graphic file (type png)
 <use images/Chapitre4/tiept.png>
 Package pdftex.def Info: images/Chapitre4/tiept.png  used on input line 149.
 (pdftex.def)             Requested size: 316.12253pt x 154.63402pt.
 
-Package xcolor Warning: Incompatible color definition on input line 157.
+Underfull \hbox (badness 10000) in paragraph at lines 157--158
 
-[54 <./images/Chapitre4/tiept.png>]) [55]
+ []
+
+
+Underfull \vbox (badness 2042) has occurred while \output is active []
+
+ [52 <./images/Chapitre4/tiept.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 162--163
+
+ []
+
+
+Package xcolor Warning: Incompatible color definition on input line 172.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 172--174
+
+ []
+
+Package acronym Info: Label `acro:BBA' newly defined as it shall be overridden
+although it is yet undefined on input line 176.
+
+Package xcolor Warning: Incompatible color definition on input line 176.
+
+
+Package xcolor Warning: Incompatible color definition on input line 176.
+
+
+Package xcolor Warning: Incompatible color definition on input line 177.
+
+[53]) [54]
 \openout2 = `Chapter5.aux'.
 
- (./Chapter5.tex [56
-
-
-
-]
+ (./Chapter5.tex
 Chapter 5.
 Package minitoc Info: I0006
 (minitoc)             Manuscript.mtc6 is empty on input line 5.
-) [57] [58
+) [55
 
 
-] [59
 
-] [60]
+] [56
+
+
+] [57
+
+] [58]
 \openout2 = `Appendix3.aux'.
 
  (./Appendix3.tex
@@ -3527,40 +4060,40 @@ Underfull \hbox (badness 10000) in paragraph at lines 7--8
 
 Package xcolor Warning: Incompatible color definition on input line 9.
 
-<images/appendix3/3-6366_crp_8Bits_Zoom8.png, id=1509, 693.59125pt x 696.6025pt
+<images/appendix3/3-6366_crp_8Bits_Zoom8.png, id=1637, 693.59125pt x 696.6025pt
 >
 File: images/appendix3/3-6366_crp_8Bits_Zoom8.png Graphic file (type png)
 <use images/appendix3/3-6366_crp_8Bits_Zoom8.png>
 Package pdftex.def Info: images/appendix3/3-6366_crp_8Bits_Zoom8.png  used on i
 nput line 19.
 (pdftex.def)             Requested size: 122.34692pt x 122.87453pt.
-<images/appendix3/3-6367_crp_8Bits_Zoom8.png, id=1510, 695.59875pt x 694.595pt>
+<images/appendix3/3-6367_crp_8Bits_Zoom8.png, id=1638, 695.59875pt x 694.595pt>
 
 File: images/appendix3/3-6367_crp_8Bits_Zoom8.png Graphic file (type png)
 <use images/appendix3/3-6367_crp_8Bits_Zoom8.png>
 Package pdftex.def Info: images/appendix3/3-6367_crp_8Bits_Zoom8.png  used on i
 nput line 25.
 (pdftex.def)             Requested size: 122.34692pt x 122.17067pt.
-<images/appendix3/3-6368_crp_8Bits_Zoom8.png, id=1511, 692.5875pt x 694.595pt>
+<images/appendix3/3-6368_crp_8Bits_Zoom8.png, id=1639, 692.5875pt x 694.595pt>
 File: images/appendix3/3-6368_crp_8Bits_Zoom8.png Graphic file (type png)
 <use images/appendix3/3-6368_crp_8Bits_Zoom8.png>
 Package pdftex.def Info: images/appendix3/3-6368_crp_8Bits_Zoom8.png  used on i
 nput line 31.
 (pdftex.def)             Requested size: 122.34692pt x 122.70059pt.
-<images/appendix3/3-6369_crp_8Bits_Zoom8.png, id=1512, 694.595pt x 694.595pt>
+<images/appendix3/3-6369_crp_8Bits_Zoom8.png, id=1640, 694.595pt x 694.595pt>
 File: images/appendix3/3-6369_crp_8Bits_Zoom8.png Graphic file (type png)
 <use images/appendix3/3-6369_crp_8Bits_Zoom8.png>
 Package pdftex.def Info: images/appendix3/3-6369_crp_8Bits_Zoom8.png  used on i
 nput line 37.
 (pdftex.def)             Requested size: 122.34692pt x 122.34024pt.
-<images/appendix3/3-6370_crp_8Bits_Zoom8.png, id=1513, 521.3076pt x 523.2348pt>
+<images/appendix3/3-6370_crp_8Bits_Zoom8.png, id=1641, 521.3076pt x 523.2348pt>
 
 File: images/appendix3/3-6370_crp_8Bits_Zoom8.png Graphic file (type png)
 <use images/appendix3/3-6370_crp_8Bits_Zoom8.png>
 Package pdftex.def Info: images/appendix3/3-6370_crp_8Bits_Zoom8.png  used on i
 nput line 43.
 (pdftex.def)             Requested size: 122.34692pt x 122.79253pt.
-<images/appendix3/3-6371_crp_8Bits_Zoom8.png, id=1514, 519.8622pt x 523.2348pt>
+<images/appendix3/3-6371_crp_8Bits_Zoom8.png, id=1642, 519.8622pt x 523.2348pt>
 
 File: images/appendix3/3-6371_crp_8Bits_Zoom8.png Graphic file (type png)
 <use images/appendix3/3-6371_crp_8Bits_Zoom8.png>
@@ -3570,7 +4103,7 @@ nput line 49.
 
 Package xcolor Warning: Incompatible color definition on input line 56.
 
-<images/appendix3/Homol-TXT_3-6370_crp_8Bits_3-6371_crp_8Bits.png, id=1516, 100
+<images/appendix3/Homol-TXT_3-6370_crp_8Bits_3-6371_crp_8Bits.png, id=1644, 100
 3.75pt x 501.875pt>
 File: images/appendix3/Homol-TXT_3-6370_crp_8Bits_3-6371_crp_8Bits.png Graphic 
 file (type png)
@@ -3578,8 +4111,8 @@ file (type png)
 Package pdftex.def Info: images/appendix3/Homol-TXT_3-6370_crp_8Bits_3-6371_crp
 _8Bits.png  used on input line 64.
 (pdftex.def)             Requested size: 179.25244pt x 89.6214pt.
-<images/appendix3/Homol-SuperGlue_3-6370_crp_8Bits_3-6371_crp_8Bits.png, id=151
-7, 1003.75pt x 501.875pt>
+<images/appendix3/Homol-SuperGlue_3-6370_crp_8Bits_3-6371_crp_8Bits.png, id=164
+5, 1003.75pt x 501.875pt>
 File: images/appendix3/Homol-SuperGlue_3-6370_crp_8Bits_3-6371_crp_8Bits.png Gr
 aphic file (type png)
 <use images/appendix3/Homol-SuperGlue_3-6370_crp_8Bits_3-6371_crp_8Bits.png>
@@ -3587,7 +4120,7 @@ Package pdftex.def Info: images/appendix3/Homol-SuperGlue_3-6370_crp_8Bits_3-63
 71_crp_8Bits.png  used on input line 70.
 (pdftex.def)             Requested size: 179.25244pt x 89.6214pt.
 <images/appendix3/Homol-SIFT2Step-2DRANSAC_3-6370_crp_8Bits_3-6371_crp_8Bits.pn
-g, id=1518, 757.3896pt x 806.0514pt>
+g, id=1646, 757.3896pt x 806.0514pt>
 File: images/appendix3/Homol-SIFT2Step-2DRANSAC_3-6370_crp_8Bits_3-6371_crp_8Bi
 ts.png Graphic file (type png)
 <use images/appendix3/Homol-SIFT2Step-2DRANSAC_3-6370_crp_8Bits_3-6371_crp_8Bit
@@ -3606,7 +4139,7 @@ Package xcolor Warning: Incompatible color definition on input line 77.
 
 Package xcolor Warning: Incompatible color definition on input line 77.
 
-) [61
+) [59
 
 
 ]
@@ -3616,10 +4149,10 @@ Make it at least 25.23671pt.
 We now make it that large for the rest of the document.
 This may cause the page layout to be inconsistent, however.
 
-[62 <./images/appendix3/3-6366_crp_8Bits_Zoom8.png> <./images/appendix3/3-6367_
+[60 <./images/appendix3/3-6366_crp_8Bits_Zoom8.png> <./images/appendix3/3-6367_
 crp_8Bits_Zoom8.png> <./images/appendix3/3-6368_crp_8Bits_Zoom8.png> <./images/
 appendix3/3-6369_crp_8Bits_Zoom8.png> <./images/appendix3/3-6370_crp_8Bits_Zoom
-8.png> <./images/appendix3/3-6371_crp_8Bits_Zoom8.png>] [63 <./images/appendix3
+8.png> <./images/appendix3/3-6371_crp_8Bits_Zoom8.png>] [61 <./images/appendix3
 /Homol-TXT_3-6370_crp_8Bits_3-6371_crp_8Bits.png (PNG copy)> <./images/appendix
 3/Homol-SuperGlue_3-6370_crp_8Bits_3-6371_crp_8Bits.png (PNG copy)> <./images/a
 ppendix3/Homol-SIFT2Step-2DRANSAC_3-6370_crp_8Bits_3-6371_crp_8Bits.png
@@ -3630,7 +4163,7 @@ ut of memory (use non-interlaced PNG to fix this)
 >]
 \openout2 = `Appendix1.aux'.
 
- (./Appendix1.tex [64
+ (./Appendix1.tex [62
 
 
 
@@ -3661,7 +4194,7 @@ Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `math shift' on input line 3.
 
 <images/appendix/OIS-Reech_IGNF_PVA_1-0__1971-06-21__C2844-0141_1971_FR2117_112
-4_15FD3425x00034_02911.png, id=1555, 880.7304pt x 377.7312pt>
+4_15FD3425x00034_02911.png, id=1684, 880.7304pt x 377.7312pt>
 File: images/appendix/OIS-Reech_IGNF_PVA_1-0__1971-06-21__C2844-0141_1971_FR211
 7_1124_15FD3425x00034_02911.png Graphic file (type png)
 <use images/appendix/OIS-Reech_IGNF_PVA_1-0__1971-06-21__C2844-0141_1971_FR2117
@@ -3675,7 +4208,7 @@ Overfull \hbox (23.72456pt too wide) in paragraph at lines 16--16
  []
 
 <images/appendix/PlotCurves-SIFTComp_OIS-Reech_IGNF_PVA_1-0__1971-06-21__C2844-
-0141_1971_FR2117_1124_15FD3425x00034_02911.png, id=1556, 462.528pt x 346.896pt>
+0141_1971_FR2117_1124_15FD3425x00034_02911.png, id=1685, 462.528pt x 346.896pt>
 
 File: images/appendix/PlotCurves-SIFTComp_OIS-Reech_IGNF_PVA_1-0__1971-06-21__C
 2844-0141_1971_FR2117_1124_15FD3425x00034_02911.png Graphic file (type png)
@@ -3686,7 +4219,7 @@ _1-0__1971-06-21__C2844-0141_1971_FR2117_1124_15FD3425x00034_02911.png  used on
  input line 22.
 (pdftex.def)             Requested size: 136.5733pt x 102.4287pt.
 <images/appendix/Homol-SIFT2Step_Test-Rough-2DRANSAC_OIS-Reech_IGNF_PVA_1-0__19
-71-06-21__C2844-0141_1971_FR2117_1124_15FD3425x00034_02911.png, id=1557, 1174.3
+71-06-21__C2844-0141_1971_FR2117_1124_15FD3425x00034_02911.png, id=1686, 1174.3
 875pt x 501.875pt>
 File: images/appendix/Homol-SIFT2Step_Test-Rough-2DRANSAC_OIS-Reech_IGNF_PVA_1-
 0__1971-06-21__C2844-0141_1971_FR2117_1124_15FD3425x00034_02911.png Graphic fil
@@ -3698,7 +4231,7 @@ S-Reech_IGNF_PVA_1-0__1971-06-21__C2844-0141_1971_FR2117_1124_15FD3425x00034_02
 911.png  used on input line 28.
 (pdftex.def)             Requested size: 170.71652pt x 72.94997pt.
 <images/appendix/Homol-txt_OIS-Reech_IGNF_PVA_1-0__1971-06-21__C2844-0141_1971_
-FR2117_1124_15FD3425x00034_02911.png, id=1558, 1174.3875pt x 501.875pt>
+FR2117_1124_15FD3425x00034_02911.png, id=1687, 1174.3875pt x 501.875pt>
 File: images/appendix/Homol-txt_OIS-Reech_IGNF_PVA_1-0__1971-06-21__C2844-0141_
 1971_FR2117_1124_15FD3425x00034_02911.png Graphic file (type png)
 <use images/appendix/Homol-txt_OIS-Reech_IGNF_PVA_1-0__1971-06-21__C2844-0141_1
@@ -3719,7 +4252,7 @@ Overfull \hbox (23.72456pt too wide) in paragraph at lines 48--48
  []
 
 <images/appendix/PlotCurves-SIFTComp_Ortho-MEC-Malt_Tapas_1981_Ortho-MEC-Malt_2
-015.png, id=1559, 462.528pt x 346.896pt>
+015.png, id=1688, 462.528pt x 346.896pt>
 File: images/appendix/PlotCurves-SIFTComp_Ortho-MEC-Malt_Tapas_1981_Ortho-MEC-M
 alt_2015.png Graphic file (type png)
 <use images/appendix/PlotCurves-SIFTComp_Ortho-MEC-Malt_Tapas_1981_Ortho-MEC-Ma
@@ -3735,7 +4268,7 @@ Package pdftex.def Info: images/Chapitre3/Homol-SIFT2Step-Rough-2DRANSAC_Ortho-
 MEC-Malt_Tapas_1981_Ortho-MEC-Malt_2015.png  used on input line 60.
 (pdftex.def)             Requested size: 170.71652pt x 85.86899pt.
 <images/appendix/Homol-SIFT_Ortho-MEC-Malt_Tapas_1981_Ortho-MEC-Malt_2015.png, 
-id=1560, 997.7275pt x 501.875pt>
+id=1689, 997.7275pt x 501.875pt>
 File: images/appendix/Homol-SIFT_Ortho-MEC-Malt_Tapas_1981_Ortho-MEC-Malt_2015.
 png Graphic file (type png)
 <use images/appendix/Homol-SIFT_Ortho-MEC-Malt_Tapas_1981_Ortho-MEC-Malt_2015.p
@@ -3750,7 +4283,7 @@ Package pdftex.def Info: images/Chapitre3/MEC-Malt_Tapas_1954_MEC-Malt_2014.png
   used on input line 80.
 (pdftex.def)             Requested size: 250.38434pt x 89.74767pt.
 <images/appendix/PlotCurves-SIFTComp_MEC-Malt_Tapas_1954_MEC-Malt_2014.png, id=
-1561, 462.528pt x 346.896pt>
+1690, 462.528pt x 346.896pt>
 File: images/appendix/PlotCurves-SIFTComp_MEC-Malt_Tapas_1954_MEC-Malt_2014.png
  Graphic file (type png)
 <use images/appendix/PlotCurves-SIFTComp_MEC-Malt_Tapas_1954_MEC-Malt_2014.png>
@@ -3780,7 +4313,7 @@ Overfull \hbox (3.80772pt too wide) in paragraph at lines 92--92
  [][] 
  []
 
-<images/appendix/Homol-SIFT_MEC-Malt_Tapas_1954_MEC-Malt_2014.png, id=1562, 141
+<images/appendix/Homol-SIFT_MEC-Malt_Tapas_1954_MEC-Malt_2014.png, id=1691, 141
 3.28pt x 501.875pt>
 File: images/appendix/Homol-SIFT_MEC-Malt_Tapas_1954_MEC-Malt_2014.png Graphic 
 file (type png)
@@ -3793,21 +4326,21 @@ Overfull \hbox (3.80772pt too wide) in paragraph at lines 98--98
  [][] 
  []
 
-) [65 <./images/appendix/OIS-Reech_IGNF_PVA_1-0__1971-06-21__C2844-0141_1971_FR
+) [63 <./images/appendix/OIS-Reech_IGNF_PVA_1-0__1971-06-21__C2844-0141_1971_FR
 2117_1124_15FD3425x00034_02911.png> <./images/appendix/PlotCurves-SIFTComp_OIS-
 Reech_IGNF_PVA_1-0__1971-06-21__C2844-0141_1971_FR2117_1124_15FD3425x00034_0291
 1.png> <./images/appendix/Homol-SIFT2Step_Test-Rough-2DRANSAC_OIS-Reech_IGNF_PV
 A_1-0__1971-06-21__C2844-0141_1971_FR2117_1124_15FD3425x00034_02911.png (PNG co
 py)> <./images/appendix/Homol-txt_OIS-Reech_IGNF_PVA_1-0__1971-06-21__C2844-014
-1_1971_FR2117_1124_15FD3425x00034_02911.png (PNG copy)>] [66 <./images/appendix
+1_1971_FR2117_1124_15FD3425x00034_02911.png (PNG copy)>] [64 <./images/appendix
 /PlotCurves-SIFTComp_Ortho-MEC-Malt_Tapas_1981_Ortho-MEC-Malt_2015.png> <./imag
 es/appendix/Homol-SIFT_Ortho-MEC-Malt_Tapas_1981_Ortho-MEC-Malt_2015.png (PNG c
-opy)>] [67 <./images/appendix/PlotCurves-SIFTComp_MEC-Malt_Tapas_1954_MEC-Malt_
+opy)>] [65 <./images/appendix/PlotCurves-SIFTComp_MEC-Malt_Tapas_1954_MEC-Malt_
 2014.png> <./images/appendix/Homol-SIFT_MEC-Malt_Tapas_1954_MEC-Malt_2014.png (
 PNG copy)>]
 \openout2 = `Appendix2.aux'.
 
- (./Appendix2.tex [68
+ (./Appendix2.tex [66
 
 
 
@@ -3857,7 +4390,7 @@ Overfull \hbox (23.72456pt too wide) in paragraph at lines 15--15
  []
 
 <images/appendix2/PlotCurves_TileTest-Ortho-MEC-Malt_Tapas_1970_Ortho-MEC-Malt_
-2014.png, id=1601, 462.528pt x 346.896pt>
+2014.png, id=1730, 462.528pt x 346.896pt>
 File: images/appendix2/PlotCurves_TileTest-Ortho-MEC-Malt_Tapas_1970_Ortho-MEC-
 Malt_2014.png Graphic file (type png)
 <use images/appendix2/PlotCurves_TileTest-Ortho-MEC-Malt_Tapas_1970_Ortho-MEC-M
@@ -3873,7 +4406,7 @@ Package pdftex.def Info: images/Chapitre3/Homol-SubPatch_R270-2DRANSAC_Ortho-ME
 C-Malt_Tapas_1970_Ortho-MEC-Malt_2014.png  used on input line 27.
 (pdftex.def)             Requested size: 170.71652pt x 80.75345pt.
 <images/appendix2/Homol-SuperGlue_Ortho-MEC-Malt_Tapas_1970_Ortho-MEC-Malt_2014
-.png, id=1602, 1426.32875pt x 501.875pt>
+.png, id=1731, 1426.32875pt x 501.875pt>
 File: images/appendix2/Homol-SuperGlue_Ortho-MEC-Malt_Tapas_1970_Ortho-MEC-Malt
 _2014.png Graphic file (type png)
 <use images/appendix2/Homol-SuperGlue_Ortho-MEC-Malt_Tapas_1970_Ortho-MEC-Malt_
@@ -3896,7 +4429,7 @@ Overfull \hbox (23.72456pt too wide) in paragraph at lines 48--48
  []
 
 <images/appendix2/PlotCurves_TileTest-MEC-Malt_Tapas_1970_MEC-Malt_2014.png, id
-=1604, 462.528pt x 346.896pt>
+=1733, 462.528pt x 346.896pt>
 File: images/appendix2/PlotCurves_TileTest-MEC-Malt_Tapas_1970_MEC-Malt_2014.pn
 g Graphic file (type png)
 <use images/appendix2/PlotCurves_TileTest-MEC-Malt_Tapas_1970_MEC-Malt_2014.png
@@ -3911,23 +4444,23 @@ _2014.png>
 Package pdftex.def Info: images/Chapitre3/Homol-SubPatch_R270-2DRANSAC_MEC-Malt
 _Tapas_1970_MEC-Malt_2014.png  used on input line 60.
 (pdftex.def)             Requested size: 170.71652pt x 80.75345pt.
-<images/appendix2/Homol-SuperGlue_MEC-Malt_Tapas_1970_MEC-Malt_2014.png, id=160
-5, 1426.32875pt x 501.875pt>
+<images/appendix2/Homol-SuperGlue_MEC-Malt_Tapas_1970_MEC-Malt_2014.png, id=173
+4, 1426.32875pt x 501.875pt>
 File: images/appendix2/Homol-SuperGlue_MEC-Malt_Tapas_1970_MEC-Malt_2014.png Gr
 aphic file (type png)
 <use images/appendix2/Homol-SuperGlue_MEC-Malt_Tapas_1970_MEC-Malt_2014.png>
 Package pdftex.def Info: images/appendix2/Homol-SuperGlue_MEC-Malt_Tapas_1970_M
 EC-Malt_2014.png  used on input line 66.
 (pdftex.def)             Requested size: 170.71652pt x 60.06923pt.
-) [69] [70 <./images/appendix2/PlotCurves_TileTest-Ortho-MEC-Malt_Tapas_1970_Or
+) [67] [68 <./images/appendix2/PlotCurves_TileTest-Ortho-MEC-Malt_Tapas_1970_Or
 tho-MEC-Malt_2014.png> <./images/appendix2/Homol-SuperGlue_Ortho-MEC-Malt_Tapas
-_1970_Ortho-MEC-Malt_2014.png (PNG copy)>] [71 <./images/appendix2/PlotCurves_T
+_1970_Ortho-MEC-Malt_2014.png (PNG copy)>] [69 <./images/appendix2/PlotCurves_T
 ileTest-MEC-Malt_Tapas_1970_MEC-Malt_2014.png> <./images/appendix2/Homol-SuperG
 lue_MEC-Malt_Tapas_1970_MEC-Malt_2014.png (PNG copy)>]
 \openout2 = `Appendix4.aux'.
 
  (./Appendix4.tex
-[72
+[70
 
 
 
@@ -3942,42 +4475,42 @@ Package xcolor Warning: Incompatible color definition on input line 7.
 
 Package xcolor Warning: Incompatible color definition on input line 9.
 
-<images/appendix4/TiePtOriImg.png, id=1639, 800.9925pt x 603.25375pt>
+<images/appendix4/TiePtOriImg.png, id=1767, 800.9925pt x 603.25375pt>
 File: images/appendix4/TiePtOriImg.png Graphic file (type png)
 <use images/appendix4/TiePtOriImg.png>
 Package pdftex.def Info: images/appendix4/TiePtOriImg.png  used on input line 1
 8.
 (pdftex.def)             Requested size: 170.71652pt x 128.56482pt.
-<images/appendix4/TiePtDepth.png, id=1640, 803.0pt x 602.25pt>
+<images/appendix4/TiePtDepth.png, id=1768, 803.0pt x 602.25pt>
 File: images/appendix4/TiePtDepth.png Graphic file (type png)
 <use images/appendix4/TiePtDepth.png>
 Package pdftex.def Info: images/appendix4/TiePtDepth.png  used on input line 25
 .
 (pdftex.def)             Requested size: 170.71652pt x 128.03845pt.
-<images/appendix4/pdfdepth.png, id=1641, 462.528pt x 346.896pt>
+<images/appendix4/pdfdepth.png, id=1769, 462.528pt x 346.896pt>
 File: images/appendix4/pdfdepth.png Graphic file (type png)
 <use images/appendix4/pdfdepth.png>
 Package pdftex.def Info: images/appendix4/pdfdepth.png  used on input line 32.
 (pdftex.def)             Requested size: 199.16928pt x 149.37938pt.
-<images/appendix4/DepthShade.png, id=1642, 582.175pt x 583.17876pt>
+<images/appendix4/DepthShade.png, id=1770, 582.175pt x 583.17876pt>
 File: images/appendix4/DepthShade.png Graphic file (type png)
 <use images/appendix4/DepthShade.png>
 Package pdftex.def Info: images/appendix4/DepthShade.png  used on input line 39
 .
 (pdftex.def)             Requested size: 142.26378pt x 142.50185pt.
-) [73] [74 <./images/appendix4/TiePtOriImg.png> <./images/appendix4/TiePtDepth.
+) [71] [72 <./images/appendix4/TiePtOriImg.png> <./images/appendix4/TiePtDepth.
 png> <./images/appendix4/pdfdepth.png> <./images/appendix4/DepthShade.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 70--72
+Underfull \hbox (badness 10000) in paragraph at lines 58--60
 
  []
 
 (./Manuscript.bbl (./Manuscript.brf)
-\tf@brf=\write6
-\openout6 = `Manuscript.brf'.
+\tf@brf=\write9
+\openout9 = `Manuscript.brf'.
 
- [75
+ [73
 
-] [76
+] [74
 
 ]
 
@@ -4016,7 +4549,7 @@ Package xcolor Warning: Incompatible color definition on input line 57.
 
 Package xcolor Warning: Incompatible color definition on input line 63.
 
-[77]
+[75]
 
 Package xcolor Warning: Incompatible color definition on input line 70.
 
@@ -4052,7 +4585,7 @@ Package xcolor Warning: Incompatible color definition on input line 115.
 
 Package xcolor Warning: Incompatible color definition on input line 122.
 
-[78]
+[76]
 
 Package xcolor Warning: Incompatible color definition on input line 129.
 
@@ -4083,7 +4616,7 @@ Package xcolor Warning: Incompatible color definition on input line 178.
 
 Package xcolor Warning: Incompatible color definition on input line 183.
 
-[79]
+[77]
 
 Package xcolor Warning: Incompatible color definition on input line 190.
 
@@ -4135,7 +4668,7 @@ Package xcolor Warning: Incompatible color definition on input line 249.
 
 Package xcolor Warning: Incompatible color definition on input line 255.
 
-[80]
+[78]
 
 Package xcolor Warning: Incompatible color definition on input line 261.
 
@@ -4182,7 +4715,7 @@ Underfull \hbox (badness 1867) in paragraph at lines 314--314
 []\T1/cmr/m/n/10.95 Manuela Per-sia, Emanuele Barca, Roberto Greco, Maria
  []
 
-[81]
+[79]
 
 Package xcolor Warning: Incompatible color definition on input line 321.
 
@@ -4210,10 +4743,10 @@ Package xcolor Warning: Incompatible color definition on input line 367.
 
 Package xcolor Warning: Incompatible color definition on input line 374.
 
-[82]
 
 Package xcolor Warning: Incompatible color definition on input line 382.
 
+[80]
 
 Package xcolor Warning: Incompatible color definition on input line 387.
 
@@ -4259,7 +4792,7 @@ Package xcolor Warning: Incompatible color definition on input line 436.
 
 Package xcolor Warning: Incompatible color definition on input line 443.
 
-[83]
+[81]
 
 Package xcolor Warning: Incompatible color definition on input line 449.
 
@@ -4272,7 +4805,7 @@ Package xcolor Warning: Incompatible color definition on input line 454.
 
 Package xcolor Warning: Incompatible color definition on input line 460.
 
-) [84]
+) [82]
 Package minitoc Info: I0009
 (minitoc)             Listing minitoc auxiliary files. 
 (minitoc)             Creating the Manuscript.maf file.
@@ -4283,21 +4816,26 @@ Package minitoc(hints) Info: I0053
 (minitoc(hints))             please be aware that the minitoc package 
 (minitoc(hints))             facilities can not be used for new types 
 (minitoc(hints))             of floats defined by the float package.
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 103.
- [85
+
+
+Package glossaries Warning: No \printglossary or \printglossaries found. 
+(Remove \makeglossaries if you don't want any glossaries.) 
+This document will not have a glossary.
+
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 91.
+[83
 
 ]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 103.
- (./Manuscript.aux (./TitlePage.aux) (./Acronyms.aux)
-(./Chapter1.aux) (./Chapter2.aux) (./Chapter3.aux) (./Chapter4.aux)
-(./Chapter5.aux) (./Appendix3.aux) (./Appendix1.aux) (./Appendix2.aux)
-(./Appendix4.aux))
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 103.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 103.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 91.
+ (./Manuscript.aux (./TitlePage.aux) (./Acronyms.aux) (./Chapter1.aux)
+(./Chapter2.aux) (./Chapter3.aux) (./Chapter4.aux) (./Chapter5.aux)
+(./Appendix3.aux) (./Appendix1.aux) (./Appendix2.aux) (./Appendix4.aux))
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 91.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 91.
 Package rerunfilecheck Info: File `Manuscript.out' has not changed.
-(rerunfilecheck)             Checksum: D9C19CC6A3CDDC956724E1F2D3D80139;3476.
+(rerunfilecheck)             Checksum: A94D44E2B6D24D591706D39F6DE66ADC;3666.
 Package rerunfilecheck Info: File `Manuscript.brf' has not changed.
-(rerunfilecheck)             Checksum: 302C31E39AA7FD27E10D0AC24C12C681;5029.
+(rerunfilecheck)             Checksum: 497FC9D36516381194147D9C80CF820F;4986.
 
 
 LaTeX Warning: There were undefined references.
@@ -4305,13 +4843,13 @@ LaTeX Warning: There were undefined references.
 
 LaTeX Warning: There were multiply-defined labels.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 103.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 91.
  ) 
 Here is how much of TeX's memory you used:
- 14860 strings out of 481239
- 269860 string characters out of 5920377
- 655707 words of memory out of 5000000
- 28772 multiletter control sequences out of 15000+600000
+ 21044 strings out of 481239
+ 387524 string characters out of 5920377
+ 822387 words of memory out of 5000000
+ 34807 multiletter control sequences out of 15000+600000
  567215 words of font info for 112 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  58i,13n,70p,1787b,589s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -4349,10 +4887,10 @@ ype1/public/cm-super/sfti0800.pfb></usr/share/texmf/fonts/type1/public/cm-super
 share/texmf/fonts/type1/public/cm-super/sfti1095.pfb></usr/share/texmf/fonts/ty
 pe1/public/cm-super/sftt1095.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw
 /zapfding/uzdr.pfb>
-Output written on Manuscript.pdf (93 pages, 129099599 bytes).
+Output written on Manuscript.pdf (91 pages, 131688299 bytes).
 PDF statistics:
- 2034 PDF objects out of 2073 (max. 8388607)
- 1515 compressed objects within 16 object streams
- 544 named destinations out of 1000 (max. 500000)
- 1655 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 2166 PDF objects out of 2487 (max. 8388607)
+ 1635 compressed objects within 17 object streams
+ 564 named destinations out of 1000 (max. 500000)
+ 1694 words of extra memory for PDF output out of 10000 (max. 10000000)
 
