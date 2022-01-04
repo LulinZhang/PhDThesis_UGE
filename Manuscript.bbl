@@ -327,6 +327,12 @@ Marc Pierrot-Deseilligny and Nicolas Paparoditis.
 \newblock Archives of Photogrammetry, Remote Sensing and Spatial Information
   Sciences, vol.~36, no.~1/W41, pages 1--5, 2006.
 
+\bibitem[Pierrot-Deseilligny \textit{et~al.}~2015]{marc2016micmac}
+Marc Pierrot-Deseilligny, Ewelina Rupnik, Luc Girod, J{\'e}r{\'e}mie Belvaux,
+  Gregoire Maillet, Matthieu Deveau and G{\'e}rald Choqueux.
+\newblock {\em MicMac, Apero, Pastis and Other Beverages in a Nutshell}.
+\newblock MicMac documentation, vol.~4, 2015.
+
 \bibitem[Pinto \textit{et~al.}~2019]{pinto2019archived}
 Ana~Teresa Pinto, Jos{\'e}~A Gon{\c{c}}alves, Pedro Beja and Jo{\~a}o
   Pradinho~Honrado.
@@ -351,6 +357,13 @@ Jerome Revaud, Cesar De~Souza, Martin Humenberger and Philippe Weinzaepfel.
 Edward Rosten and Tom Drummond.
 \newblock {\em Machine learning for high-speed corner detection}.
 \newblock In European conference on computer vision, pages 430--443, 2006.
+
+\bibitem[Rosu \textit{et~al.}~2015]{rosu2015measurement}
+AM~Rosu, M.~Pierrot-Deseilligny, A.~Delorme, R.~Binet and Y.~Klinger.
+\newblock {\em Measurement of ground displacement from optical satellite image
+  correlation using the free open-source software MicMac}.
+\newblock ISPRS Journal of Photogrammetry and Remote Sensing, vol.~100, pages
+  48--59, 2015.
 
 \bibitem[Sarlin \textit{et~al.}~2020]{sarlin2020superglue}
 Paul-Edouard Sarlin, Daniel DeTone, Tomasz Malisiewicz and Andrew Rabinovich.

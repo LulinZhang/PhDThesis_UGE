@@ -31,24 +31,25 @@
 \BOOKMARK [2][]{subsection.4.2.1}{Get tentative matches}{section.4.2}% 31
 \BOOKMARK [2][]{subsection.4.2.2}{Get enhanced matches}{section.4.2}% 32
 \BOOKMARK [2][]{subsection.4.2.3}{Get final matches}{section.4.2}% 33
-\BOOKMARK [1][]{section.4.3}{Experiments}{chapter.4}% 34
-\BOOKMARK [2][]{subsection.4.3.1}{Implementation details}{section.4.3}% 35
-\BOOKMARK [2][]{subsection.4.3.2}{Datasets}{section.4.3}% 36
-\BOOKMARK [2][]{subsection.4.3.3}{Evaluation}{section.4.3}% 37
-\BOOKMARK [2][]{subsection.4.3.4}{Comparison}{section.4.3}% 38
-\BOOKMARK [1][]{section.4.4}{Conclusion}{chapter.4}% 39
-\BOOKMARK [1][]{section.4.5}{Discussion}{chapter.4}% 40
-\BOOKMARK [0][]{chapter.5}{Conclusion and Perspective}{}% 41
-\BOOKMARK [-1][]{chapter.5}{Appendices}{}% 42
-\BOOKMARK [0][]{appendix.A}{Use case of matching guided by 2D similarity transformation}{chapter.5}% 43
-\BOOKMARK [1][]{section.A.1}{Dataset}{appendix.A}% 44
-\BOOKMARK [1][]{section.A.2}{Result}{appendix.A}% 45
-\BOOKMARK [0][]{appendix.B}{Comparison between SIFTAdapted and SIFTDefault}{chapter.5}% 46
-\BOOKMARK [1][]{section.B.1}{Comparison on matching image pair}{appendix.B}% 47
-\BOOKMARK [1][]{section.B.2}{Comparison on matching orthophotos}{appendix.B}% 48
-\BOOKMARK [1][]{section.B.3}{Comparison on matching DSMs}{appendix.B}% 49
-\BOOKMARK [0][]{appendix.C}{Comparison between SuperGluetiling and SuperGlueorig}{chapter.5}% 50
-\BOOKMARK [1][]{section.C.1}{Comparison on matching orthophotos}{appendix.C}% 51
-\BOOKMARK [1][]{section.C.2}{Comparison on matching DSMs}{appendix.C}% 52
-\BOOKMARK [0][]{appendix.D}{Comparison of precise matching on DSMs and original RGB images}{chapter.5}% 53
-\BOOKMARK [0][]{appendix*.13}{Bibliography}{chapter.5}% 54
+\BOOKMARK [2][]{subsection.4.2.4}{Refine orientations}{section.4.2}% 34
+\BOOKMARK [1][]{section.4.3}{Experiments}{chapter.4}% 35
+\BOOKMARK [2][]{subsection.4.3.1}{Implementation details}{section.4.3}% 36
+\BOOKMARK [2][]{subsection.4.3.2}{Datasets}{section.4.3}% 37
+\BOOKMARK [2][]{subsection.4.3.3}{Evaluation}{section.4.3}% 38
+\BOOKMARK [2][]{subsection.4.3.4}{Comparison}{section.4.3}% 39
+\BOOKMARK [1][]{section.4.4}{Conclusion}{chapter.4}% 40
+\BOOKMARK [1][]{section.4.5}{Discussion}{chapter.4}% 41
+\BOOKMARK [0][]{chapter.5}{Conclusion and Perspective}{}% 42
+\BOOKMARK [-1][]{chapter.5}{Appendices}{}% 43
+\BOOKMARK [0][]{appendix.A}{Use case of matching guided by 2D similarity transformation}{chapter.5}% 44
+\BOOKMARK [1][]{section.A.1}{Dataset}{appendix.A}% 45
+\BOOKMARK [1][]{section.A.2}{Result}{appendix.A}% 46
+\BOOKMARK [0][]{appendix.B}{Comparison between SIFTAdapted and SIFTDefault}{chapter.5}% 47
+\BOOKMARK [1][]{section.B.1}{Comparison on matching image pair}{appendix.B}% 48
+\BOOKMARK [1][]{section.B.2}{Comparison on matching orthophotos}{appendix.B}% 49
+\BOOKMARK [1][]{section.B.3}{Comparison on matching DSMs}{appendix.B}% 50
+\BOOKMARK [0][]{appendix.C}{Comparison between SuperGluetiling and SuperGlueorig}{chapter.5}% 51
+\BOOKMARK [1][]{section.C.1}{Comparison on matching orthophotos}{appendix.C}% 52
+\BOOKMARK [1][]{section.C.2}{Comparison on matching DSMs}{appendix.C}% 53
+\BOOKMARK [0][]{appendix.D}{Comparison of precise matching on DSMs and original RGB images}{chapter.5}% 54
+\BOOKMARK [0][]{appendix*.14}{Bibliography}{chapter.5}% 55

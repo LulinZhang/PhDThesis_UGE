@@ -152,6 +152,10 @@ In the preceding step we got rid of a substantial number of outliers, however, w
 	\end{center}
 \end{figure*}
 
+\subsection{Refine orientations}
+Based on the intra-epoch and inter-epoch matches, a free network \ac{BBA} is performed to refine all the image orientations and camera calibrations. If the results need to be analyzed in a metric scale, a spatial similarity transformation will be performed to move the refined acquisitions in an arbitrary reference frame to a metric one. If the precise orientations for one of the epochs were known, their parameters will be fixed during the \ac{BBA} and the subsequent spatial similarity transformation will be skipped.
+We adopted the Fraser model ~\cite{fraser1997digital} to calibrate the cameras and allowed image-dependent affine parameters, the remaining parameters were shared among all images.
+
 
 \section{Experiments}
 As described in the previous section, our precise matching pipeline consists of 3 main steps to get the tentative, enhanced and final matches. There are 2 alternatives for obtaining tentative matches (i.e. patch or guided matching), leading to 2 precise matching methods:\\
@@ -161,20 +165,35 @@ As described in the previous section, our precise matching pipeline consists of 
 \end{enumerate}
 For each dataset, we choose the rough co-registration results calculated with $SIFT_{DSM}$ and $SuperGlue_{DSM}$ individually (as they are the most robust methods for rough co-registration) to guide the precise matching \textit{Patch} or \textit{Guided}, leading to 4 sets of result, which are referred to as:\\
 \begin{enumerate}
-	\item $Patch_{SIFT-DSM}$
-	\item $Guided_{SIFT-DSM}$
-	\item $Patch_{SpG-DSM}$
-	\item $Guided_{SpG-DSM}$
+	\item $Patch_{SpGDSM}$
+	\item $Guided_{SpGDSM}$
+	\item $Patch_{SIFTDSM}$
+	\item $Guided_{SIFTDSM}$
 \end{enumerate}
 
 \subsection{Implementation details}
+Same as Section ~\ref{Implementationdetails}, all input images are downsampled by a factor of 3 beforehand to improve efficiency. To calculate the DSMs, we further downsample the images by a factor of 4 (different from 8 in Section ~\ref{Implementationdetails}), which amounts to a total downsampling factor of 12 with respect to the input images. For example, the images in Fr{\'e}jus 1970 are downsampled from [8766, 8763] to [730, 730] for calculating DSMs. 
+Note that the DSMs serve 2 purposes in precise matching: (1) narrowing down the search space in precise matching, (2) providing 3D coordinates for 3D-RANSAC filter. A low resolution surface is good enough for these tasks and improves the efficiency.\\
+To balance the number of the intra- and inter-epoch matches, we perform intra-epoch matches reduction available in MicMac~\cite{marc2016micmac}, followed by setting the relative observation weight in the \ac{BBA}, if necessary. The matches reduction algorithm maximizes good spatial distribution, points' multiplicity and low reprojection error, it also helps to speed up the \ac{BBA}.\\
+Inter-epoch matches are extracted {for every possible combination of 2 epochs and finally merged}.\\
+
+
 \subsection{Datasets}
 We tested our precise matching methods on three sets of datasets: Fr{\'e}jus, Pezenas and Kobe. Details of the datasets are demonstrated in Section~\ref{Datasets}.\\
 For Fr{\'e}jus and Kobe, we keep all the epochs for experiments, as the former displayed drastic scene changes and the latter witnessed an earthquake. For Pezenas, we choose aerial epoch 1971 and satellite epoch 2014 to test our precise matching and ignore other epochs to simplify the processing, since Pezenas is less challenging case.\\
+The orientations of \ac{GT} epochs (i.e. Pezenas 2014 and Fr{\'e}jus 2014) were treated as fixed during the combined \ac{BBA} since they were accurately known \textit{a-priori}, while all the remaining orientations were considered as free parameters. At first, {interior orientation parameters} were shared among all images. Once stable initial values were known, interior parameters were further refined with image-dependent affine parameters. The affine component of the camera calibration is expected to model, at least partially, the shear of the analog film.\\
 \subsection{Evaluation}
 %Bar chart of recovered match numbers, Match visulization after CC (4 methods, 3 bars each. Kobe and Pezenas: one kit; Frejus: 6 kits)? DoD and statistic info, ground displacment, check pts? 
-Based on the intra-epoch and inter-epoch matches, a free network \ac{BBA} is performed to refine all the image orientations and camera calibrations. If the results need to be analyzed in a metric scale, a spatial similarity transformation will be performed to move the refined acquisitions in an arbitrary reference frame to a metric one. If the precise orientations for one of the epochs were known, their parameters will be fixed during the \ac{BBA} and the subsequent spatial similarity transformation will be skipped.
-We adopted the Fraser model ~\cite{fraser1997digital} to calibrate the cameras and allowed image-dependent affine parameters, the remaining parameters were shared among all images.
+In order to evaluate the results qualitatively and quantitatively, the following criterias would be applied:\\
+\begin{enumerate}
+	\item \textbf{Matches visualization}. The number of tentative, enhanced and final matches would be displayed together in bar charts; in the meantime, the final matches would be visualized and demonstrated.
+	%    \item Ground check points: the co-registered orientations calculated by our methods would be used to triangulate the ground check points and the coordinate differences \textcolor{red}{(explain the diff means the mean diff of x, y and z)} will be displayed. The better the epochs co-register, the smaller the difference is.
+	\item \textbf{\ac{DoD}}. For each method, the refined orientations would be used to calculate DSMs in order to generate \ac{DoD}. The visualization of \ac{DoD} as well as the statistical information would be displayed. Since the orientations are refined with precise matches, \ac{DoD}s with dome effect mitigated or even eliminated are expected.\\
+	For Pezenas and Fr\'ejus datasets, DoDs are calculated between historical epochs and the available \ac{GT} epochs. For Kobe dataset there is no \ac{GT} so we calculate the \ac{DoD} between 1991 and 1995 instead.\\
+	%ideally the DoD should only display the scene changes without dome effect. If the dome effect appears, it indicates the systematic errors caused by poorly estimated camera parameters.   
+	\item \textbf{Ground displacement}. For the dataset that witnessed an earthquake (i.e. Kobe), we: (1) calculate the DSMs; (2) orthorectify the images; and (3) perform 2D correlation of the respective orthophotos ~\cite{rosu2015measurement} to see whether we can observe the slip of the tectonic plate.
+\end{enumerate}
+
 
 \subsection{Comparison}
 

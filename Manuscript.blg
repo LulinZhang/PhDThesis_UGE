@@ -1,5 +1,5 @@
-This is BibTeX, Version 0.99d (TeX Live 2019/Debian)
-Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+This is BibTeX, Version 0.99d (TeX Live 2017/Debian)
+Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
 The top-level auxiliary file: Manuscript.aux
 A level-1 auxiliary file: TitlePage.aux
 A level-1 auxiliary file: Acronyms.aux
@@ -11,46 +11,47 @@ A level-1 auxiliary file: Chapter5.aux
 A level-1 auxiliary file: Appendix3.aux
 A level-1 auxiliary file: Appendix1.aux
 A level-1 auxiliary file: Appendix2.aux
+A level-1 auxiliary file: Appendix4.aux
 The style file: ThesisStyleWithEtAl.bst
 Database file #1: Thesis.bib
-You've used 72 entries,
+You've used 74 entries,
             2460 wiz_defined-function locations,
-            951 strings with 18397 characters,
-and the built_in function-call counts, 35927 in all, are:
-= -- 3706
-> -- 1545
-< -- 85
-+ -- 511
-- -- 506
-* -- 2588
-:= -- 5259
-add.period$ -- 220
-call.type$ -- 72
-change.case$ -- 470
-chr.to.int$ -- 72
-cite$ -- 72
-duplicate$ -- 1675
-empty$ -- 2524
-format.name$ -- 616
-if$ -- 7814
+            962 strings with 18978 characters,
+and the built_in function-call counts, 36920 in all, are:
+= -- 3801
+> -- 1613
+< -- 86
++ -- 535
+- -- 530
+* -- 2673
+:= -- 5426
+add.period$ -- 226
+call.type$ -- 74
+change.case$ -- 488
+chr.to.int$ -- 74
+cite$ -- 74
+duplicate$ -- 1712
+empty$ -- 2576
+format.name$ -- 642
+if$ -- 8011
 int.to.chr$ -- 1
 int.to.str$ -- 0
-missing$ -- 67
-newline$ -- 363
-num.names$ -- 216
-pop$ -- 594
+missing$ -- 69
+newline$ -- 373
+num.names$ -- 222
+pop$ -- 613
 preamble$ -- 1
-purify$ -- 613
+purify$ -- 635
 quote$ -- 0
-skip$ -- 1484
+skip$ -- 1511
 stack$ -- 0
-substring$ -- 2244
-swap$ -- 629
-text.length$ -- 58
+substring$ -- 2282
+swap$ -- 638
+text.length$ -- 59
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 572
+type$ -- 588
 warning$ -- 0
-while$ -- 295
-width$ -- 78
-write$ -- 977
+while$ -- 302
+width$ -- 81
+write$ -- 1004
