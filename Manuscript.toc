@@ -47,20 +47,21 @@
 \contentsline {subsection}{\numberline {4.3.2}Datasets}{52}{subsection.4.3.2}
 \contentsline {subsection}{\numberline {4.3.3}Evaluation}{52}{subsection.4.3.3}
 \contentsline {subsection}{\numberline {4.3.4}Comparison}{53}{subsection.4.3.4}
-\contentsline {section}{\numberline {4.4}Conclusion}{53}{section.4.4}
-\contentsline {section}{\numberline {4.5}Discussion}{53}{section.4.5}
-\contentsline {chapter}{\numberline {5}Conclusion and Perspective}{55}{chapter.5}
-\contentsline {part}{Appendices}{57}{chapter.5}
+\contentsline {subsubsection}{\numberline {4.3.4.1}Matches visualization}{53}{subsubsection.4.3.4.1}
+\contentsline {section}{\numberline {4.4}Conclusion}{55}{section.4.4}
+\contentsline {section}{\numberline {4.5}Discussion}{55}{section.4.5}
+\contentsline {chapter}{\numberline {5}Conclusion and Perspective}{57}{chapter.5}
+\contentsline {part}{Appendices}{59}{chapter.5}
 \partbegin 
-\contentsline {chapter}{\numberline {A}Use case of matching guided by 2D similarity transformation}{59}{appendix.A}
-\contentsline {section}{\numberline {A.1}Dataset}{59}{section.A.1}
-\contentsline {section}{\numberline {A.2}Result}{59}{section.A.2}
-\contentsline {chapter}{\numberline {B}Comparison between $SIFT_{Adapted}$ and $SIFT_{Default}$}{63}{appendix.B}
-\contentsline {section}{\numberline {B.1}Comparison on matching image pair}{63}{section.B.1}
-\contentsline {section}{\numberline {B.2}Comparison on matching orthophotos}{63}{section.B.2}
-\contentsline {section}{\numberline {B.3}Comparison on matching DSMs}{63}{section.B.3}
-\contentsline {chapter}{\numberline {C}Comparison between $SuperGlue_{tiling}$ and $SuperGlue_{orig}$}{67}{appendix.C}
-\contentsline {section}{\numberline {C.1}Comparison on matching orthophotos}{67}{section.C.1}
-\contentsline {section}{\numberline {C.2}Comparison on matching DSMs}{67}{section.C.2}
-\contentsline {chapter}{\numberline {D}Comparison of precise matching on DSMs and original RGB images}{71}{appendix.D}
-\contentsline {chapter}{Bibliography}{75}{appendix*.14}
+\contentsline {chapter}{\numberline {A}Use case of matching guided by 2D similarity transformation}{61}{appendix.A}
+\contentsline {section}{\numberline {A.1}Dataset}{61}{section.A.1}
+\contentsline {section}{\numberline {A.2}Result}{61}{section.A.2}
+\contentsline {chapter}{\numberline {B}Comparison between $SIFT_{Adapted}$ and $SIFT_{Default}$}{65}{appendix.B}
+\contentsline {section}{\numberline {B.1}Comparison on matching image pair}{65}{section.B.1}
+\contentsline {section}{\numberline {B.2}Comparison on matching orthophotos}{65}{section.B.2}
+\contentsline {section}{\numberline {B.3}Comparison on matching DSMs}{65}{section.B.3}
+\contentsline {chapter}{\numberline {C}Comparison between $SuperGlue_{tiling}$ and $SuperGlue_{orig}$}{69}{appendix.C}
+\contentsline {section}{\numberline {C.1}Comparison on matching orthophotos}{69}{section.C.1}
+\contentsline {section}{\numberline {C.2}Comparison on matching DSMs}{69}{section.C.2}
+\contentsline {chapter}{\numberline {D}Comparison of precise matching on DSMs and original RGB images}{73}{appendix.D}
+\contentsline {chapter}{Bibliography}{77}{appendix*.14}
