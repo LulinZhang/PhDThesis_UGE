@@ -362,12 +362,37 @@ For $SuperGlue_{ImgPairs}$, $SuperGlue_{Ortho}$ and $SuperGlue_{DSM}$, the image
 \subsection{Datasets}
 \label{Datasets}
 %Frejus, Pezenas, Kobe\\
-We tested our rough co-registration methods on three sets of datasets: Fr{\'e}jus, Pezenas and Kobe. Details of the datasets are listed in Table~\ref{AerialData}, ~\ref{SatelliteData} and Figure~\ref{FrejusData},~\ref{PezenasData}, ~\ref{KobeData}.
+We tested our rough co-registration methods on 4 sets of datasets: Fr{\'e}jus, Pezenas, Kobe and Alberona. Details of the datasets are listed in Table~\ref{AerialData}, ~\ref{SatelliteData} and Figure~\ref{FrejusData},~\ref{PezenasData}, ~\ref{KobeData}.
 \par
 \paragraph{Fr{\'e}jus} It is a 15 $km^2$ rectangular area located in Fr{\'e}jus, a commune in southeastern France. The area is mainly covered with buildings along with scattered farmlands, except a half-moon-shaped bay located in south. We have four sets of aerial images acquired in 1954, 1966, 1970 and 2014. The epoch 2014 was acquired with the \ac{IGN}'s digital metric camera ~\cite{souchon2010ign}, its orientations are both in global reference frame and precise. Therefore it is treated as \ac{GT} during our processing (in other words, the epoch 2014 is chosen as the reference epoch). 
 The area exhibits drastic scene changes in the 60-year period, as can be seen in Figure~\ref{FrejusEvolution}, where evolution of a subregion is displayed.\\
 \paragraph{Pezenas} It is a 420 $km^2$ rectangular area located in Pezenas in the Occitanie region in southern France. The area is mainly covered with vegetation and several sparsely populated urban zones. We have at our disposal three sets of aerial images acquired in 1971, 1981 and 2015, and one set of satellite images acquired in 2014. Both the epoch 2014 and 2015 are treated as \ac{GT}. In this dataset we are interested in matching historical epochs (1971 and 1981) with aerial \ac{GT} and satellite \ac{GT} individually. The area exhibits changes in scene appearance in the 44-year period.\\
 \paragraph{Kobe} It is a 90 $km^2$ area of irregular shape located in the north of Awaji Island, Japan. The well-known Kobe earthquake happened here in January 1995. We have two sets of aerial images: pre-event acquired in 1991 and post-event acquired in 1995. It is mainly covered with mountain area and narrow urban zones along the sea. There is no \ac{GT}, hence we chose the latter epoch (i.e. epoch 1995) as the reference epoch and measured 2 points on Google map to scale the result to metric units. In this dataset we are interested in localizing the earthquake fault.
+
+\paragraph{Alberona} It is located in the province of Foggia and region of Apulia, in southeast Italy.
+
+\begin{table}[htbp]
+	\scriptsize %\footnotesize
+	\centering
+	\begin{tabular}{||c|c||c|c|c||c|c|c|c||c||}\hline
+\multicolumn{2}{||c||}{ } &   F [pix] &   Wid [mm] &   Hei [mm] &   GSD [m] &   F. o. &   S. o. &   H  [m] &   Nb \\\hline
+\multirow{4}{*}{Fr{\'e}jus} & E1954 & 23350 & 300 & 300 & \color{black}0.11 & 60\% & 20\% & 2500 & 19\\
+& E1966 & 10230 & 180 & 180 & \color{black}0.17 & 60\% & 30\% & 1700 & 15\\
+& E1970 & 10230 & 180 & 180 & 0.17 & 60\% & 30\% & 1700 & 19\\
+& E2014 & \color{black}18281 & 99.28 & 72.42 & 0.35 & 60\% & 30\% & 6500 & 33\\\hline
+\multirow{4}{*}{Pezenas} & E1971 & 7589 & 230 & 230 & 0.32 &    60\% &    20\% & 2400 & 57\\
+& E1981 & 7607 & 230 & 230 & 0.59 & 60\% & 20\% & 4500 & 27\\
+& \multirow{2}{*}{E2015} & 9967.5 & 47 & 35 & 0.46 & 60\% & 50\% & 4600 & 308\\
+&  & 9204.5 & 50 & 36 & 0.5 & 60\% & 50\% & 4600 & 74\\\hline
+\multirow{2}{*}{Kobe}& E1991& 7662 & 212 & 212 & 0.5 &    65\% &    35\% & 3800 & 15\\
+& E1995& 7662 & 212 & 212 & 0.18 & 65\% & 65\% & 1400 & 83\\\hline
+
+\multirow{2}{*}{Alberona}& E1954 & 7662 & 212 & 212 & 0.5 &    65\% &    35\% & 3800 & 15\\
+& E2003 & 7662 & 212 & 212 & 0.18 & 65\% & 65\% & 1400 & 83\\\hline
+	\end{tabular}
+	\caption{Aerial dataset details of Fr{\'e}jus, Pezenas and Kobe. The 2015 acquisition of Pezenas is obtained with two sets of camera. E stands for epoch, F means focal length, Wid and Hei are the width and height of image, GSD is the ground sampling distance, F.o. and S.o. are forward and side overlap, H is the flying height, Nb is the number of images.}
+	\label{AerialData}
+\end{table}
 
 \begin{table}[htbp]
     \scriptsize %\footnotesize

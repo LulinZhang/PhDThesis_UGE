@@ -26,44 +26,45 @@
 \contentsline {paragraph}{Fr{\'e}jus}{25}{section*.6}
 \contentsline {paragraph}{Pezenas}{26}{section*.9}
 \contentsline {paragraph}{Kobe}{26}{section*.10}
-\contentsline {subsection}{\numberline {3.3.3}Evaluation}{26}{subsection.3.3.3}
+\contentsline {paragraph}{Alberona}{26}{section*.11}
+\contentsline {subsection}{\numberline {3.3.3}Evaluation}{31}{subsection.3.3.3}
 \contentsline {subsection}{\numberline {3.3.4}Comparison}{31}{subsection.3.3.4}
 \contentsline {subsubsection}{\numberline {3.3.4.1}Matches visualization}{31}{subsubsection.3.3.4.1}
 \contentsline {subsubsection}{\numberline {3.3.4.2}\ac {DoD}}{33}{subsubsection.3.3.4.2}
-\contentsline {section}{\numberline {3.4}Conclusion}{33}{section.3.4}
-\contentsline {chapter}{\numberline {4}Precise matching}{47}{chapter.4}
-\contentsline {section}{\numberline {4.1}Introduction}{47}{section.4.1}
-\contentsline {subsection}{\numberline {4.1.1}Motivation}{47}{subsection.4.1.1}
-\contentsline {subsection}{\numberline {4.1.2}Contribution}{47}{subsection.4.1.2}
-\contentsline {section}{\numberline {4.2}Methodology}{47}{section.4.2}
-\contentsline {subsection}{\numberline {4.2.1}Get tentative matches}{48}{subsection.4.2.1}
-\contentsline {subsubsection}{\numberline {4.2.1.1}Patch matching for learned features}{49}{subsubsection.4.2.1.1}
-\contentsline {subsubsection}{\numberline {4.2.1.2}Guided matching for hand-crafted features}{49}{subsubsection.4.2.1.2}
-\contentsline {subsection}{\numberline {4.2.2}Get enhanced matches}{51}{subsection.4.2.2}
-\contentsline {subsection}{\numberline {4.2.3}Get final matches}{52}{subsection.4.2.3}
-\contentsline {subsection}{\numberline {4.2.4}Refine orientations}{52}{subsection.4.2.4}
-\contentsline {section}{\numberline {4.3}Experiments}{53}{section.4.3}
-\contentsline {subsection}{\numberline {4.3.1}Implementation details}{53}{subsection.4.3.1}
-\contentsline {subsection}{\numberline {4.3.2}Datasets}{54}{subsection.4.3.2}
-\contentsline {subsection}{\numberline {4.3.3}Evaluation}{54}{subsection.4.3.3}
-\contentsline {subsection}{\numberline {4.3.4}Comparison}{55}{subsection.4.3.4}
-\contentsline {subsubsection}{\numberline {4.3.4.1}Matches visualization}{55}{subsubsection.4.3.4.1}
-\contentsline {subsubsection}{\numberline {4.3.4.2}DoD}{67}{subsubsection.4.3.4.2}
-\contentsline {subsubsection}{\numberline {4.3.4.3}Ground displacement}{67}{subsubsection.4.3.4.3}
-\contentsline {section}{\numberline {4.4}Conclusion}{67}{section.4.4}
-\contentsline {section}{\numberline {4.5}Discussion}{67}{section.4.5}
-\contentsline {chapter}{\numberline {5}Conclusion and Perspective}{69}{chapter.5}
-\contentsline {part}{Appendices}{71}{chapter.5}
+\contentsline {section}{\numberline {3.4}Conclusion}{42}{section.3.4}
+\contentsline {chapter}{\numberline {4}Precise matching}{49}{chapter.4}
+\contentsline {section}{\numberline {4.1}Introduction}{49}{section.4.1}
+\contentsline {subsection}{\numberline {4.1.1}Motivation}{49}{subsection.4.1.1}
+\contentsline {subsection}{\numberline {4.1.2}Contribution}{49}{subsection.4.1.2}
+\contentsline {section}{\numberline {4.2}Methodology}{49}{section.4.2}
+\contentsline {subsection}{\numberline {4.2.1}Get tentative matches}{50}{subsection.4.2.1}
+\contentsline {subsubsection}{\numberline {4.2.1.1}Patch matching for learned features}{51}{subsubsection.4.2.1.1}
+\contentsline {subsubsection}{\numberline {4.2.1.2}Guided matching for hand-crafted features}{51}{subsubsection.4.2.1.2}
+\contentsline {subsection}{\numberline {4.2.2}Get enhanced matches}{53}{subsection.4.2.2}
+\contentsline {subsection}{\numberline {4.2.3}Get final matches}{54}{subsection.4.2.3}
+\contentsline {subsection}{\numberline {4.2.4}Refine orientations}{54}{subsection.4.2.4}
+\contentsline {section}{\numberline {4.3}Experiments}{55}{section.4.3}
+\contentsline {subsection}{\numberline {4.3.1}Implementation details}{55}{subsection.4.3.1}
+\contentsline {subsection}{\numberline {4.3.2}Datasets}{56}{subsection.4.3.2}
+\contentsline {subsection}{\numberline {4.3.3}Evaluation}{56}{subsection.4.3.3}
+\contentsline {subsection}{\numberline {4.3.4}Comparison}{57}{subsection.4.3.4}
+\contentsline {subsubsection}{\numberline {4.3.4.1}Matches visualization}{57}{subsubsection.4.3.4.1}
+\contentsline {subsubsection}{\numberline {4.3.4.2}DoD}{69}{subsubsection.4.3.4.2}
+\contentsline {subsubsection}{\numberline {4.3.4.3}Ground displacement}{69}{subsubsection.4.3.4.3}
+\contentsline {section}{\numberline {4.4}Conclusion}{69}{section.4.4}
+\contentsline {section}{\numberline {4.5}Discussion}{69}{section.4.5}
+\contentsline {chapter}{\numberline {5}Conclusion and Perspective}{71}{chapter.5}
+\contentsline {part}{Appendices}{73}{chapter.5}
 \partbegin 
-\contentsline {chapter}{\numberline {A}Use case of matching guided by 2D similarity transformation}{73}{appendix.A}
-\contentsline {section}{\numberline {A.1}Dataset}{73}{section.A.1}
-\contentsline {section}{\numberline {A.2}Result}{73}{section.A.2}
-\contentsline {chapter}{\numberline {B}Comparison between $SIFT_{Adapted}$ and $SIFT_{Default}$}{77}{appendix.B}
-\contentsline {section}{\numberline {B.1}Comparison on matching image pair}{77}{section.B.1}
-\contentsline {section}{\numberline {B.2}Comparison on matching orthophotos}{77}{section.B.2}
-\contentsline {section}{\numberline {B.3}Comparison on matching DSMs}{77}{section.B.3}
-\contentsline {chapter}{\numberline {C}Comparison between $SuperGlue_{tiling}$ and $SuperGlue_{orig}$}{81}{appendix.C}
-\contentsline {section}{\numberline {C.1}Comparison on matching orthophotos}{81}{section.C.1}
-\contentsline {section}{\numberline {C.2}Comparison on matching DSMs}{81}{section.C.2}
-\contentsline {chapter}{\numberline {D}Comparison of precise matching on DSMs and original RGB images}{85}{appendix.D}
-\contentsline {chapter}{Bibliography}{89}{appendix*.14}
+\contentsline {chapter}{\numberline {A}Use case of matching guided by 2D similarity transformation}{75}{appendix.A}
+\contentsline {section}{\numberline {A.1}Dataset}{75}{section.A.1}
+\contentsline {section}{\numberline {A.2}Result}{75}{section.A.2}
+\contentsline {chapter}{\numberline {B}Comparison between $SIFT_{Adapted}$ and $SIFT_{Default}$}{79}{appendix.B}
+\contentsline {section}{\numberline {B.1}Comparison on matching image pair}{79}{section.B.1}
+\contentsline {section}{\numberline {B.2}Comparison on matching orthophotos}{79}{section.B.2}
+\contentsline {section}{\numberline {B.3}Comparison on matching DSMs}{79}{section.B.3}
+\contentsline {chapter}{\numberline {C}Comparison between $SuperGlue_{tiling}$ and $SuperGlue_{orig}$}{83}{appendix.C}
+\contentsline {section}{\numberline {C.1}Comparison on matching orthophotos}{83}{section.C.1}
+\contentsline {section}{\numberline {C.2}Comparison on matching DSMs}{83}{section.C.2}
+\contentsline {chapter}{\numberline {D}Comparison of precise matching on DSMs and original RGB images}{87}{appendix.D}
+\contentsline {chapter}{Bibliography}{91}{appendix*.15}
