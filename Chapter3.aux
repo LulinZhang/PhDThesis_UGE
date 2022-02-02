@@ -1,211 +1,207 @@
 \relax 
 \providecommand\hyper@newdestlabel[2]{}
-\@writefile{toc}{\contentsline {chapter}{\numberline {3}Rough co-registration}{13}{chapter.3}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {3}Rough co-registration}{15}{chapter.3}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\@writefile{lof}{\contentsline {xchapter}{Rough co-registration}{13}{chapter.3}}
-\@writefile{lot}{\contentsline {xchapter}{Rough co-registration}{13}{chapter.3}}
-\newlabel{chap:intro}{{3}{13}{Rough co-registration}{chapter.3}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {3.1}Introduction}{13}{section.3.1}}
+\@writefile{lof}{\contentsline {xchapter}{Rough co-registration}{15}{chapter.3}}
+\@writefile{lot}{\contentsline {xchapter}{Rough co-registration}{15}{chapter.3}}
+\newlabel{chap:intro}{{3}{15}{Rough co-registration}{chapter.3}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {3.1}Introduction}{15}{section.3.1}}
 \citation{deseilligny2011apero}
 \citation{schonberger2016structure}
 \citation{openMVG}
 \citation{theia}
 \citation{lowe2004distinctive}
 \citation{mpd:06:sgm}
-\@writefile{toc}{\contentsline {section}{\numberline {3.2}Methodology}{15}{section.3.2}}
-\@writefile{brf}{\backcite{deseilligny2011apero}{{15}{3.2}{Item.17}}}
-\@writefile{brf}{\backcite{schonberger2016structure}{{15}{3.2}{Item.17}}}
-\@writefile{brf}{\backcite{openMVG}{{15}{3.2}{Item.17}}}
-\@writefile{brf}{\backcite{theia}{{15}{3.2}{Item.17}}}
-\@writefile{brf}{\backcite{lowe2004distinctive}{{15}{1}{Item.18}}}
-\@writefile{brf}{\backcite{mpd:06:sgm}{{15}{3}{Item.20}}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.2.1}Strategy 1: Matching image pairs (\textit  {ImgPairs})}{16}{subsection.3.2.1}}
-\newlabel{eq:2DSim}{{3.1}{16}{Strategy 1: Matching image pairs (\textit {ImgPairs})}{equation.3.2.1}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3.1}{\ignorespaces Rough co-registration by matching image pairs. (a) Workflow of \textit  {ImgPairs}. Each inter-epoch image pair is matched (with 4 rotation hypotheses which are explained in (b), if the matching method is not rotation invariant), followed by projecting the matches onto ground to find the globally consistent inliers. (b) Four rotation hypotheses. We rotate the secondary image by 90 $^\circ $ four times to match with master image and keep the best one with most numerous matches (red rectangle).}}{17}{figure.3.1}}
-\newlabel{WorkflowImgPair}{{3.1}{17}{Rough co-registration by matching image pairs. (a) Workflow of \textit {ImgPairs}. Each inter-epoch image pair is matched (with 4 rotation hypotheses which are explained in (b), if the matching method is not rotation invariant), followed by projecting the matches onto ground to find the globally consistent inliers. (b) Four rotation hypotheses. We rotate the secondary image by 90 $^\circ $ four times to match with master image and keep the best one with most numerous matches (red rectangle)}{figure.3.1}{}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {Workflow of \textit {ImgPairs}}}}{17}{figure.3.1}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {Four rotation hypotheses}}}{17}{figure.3.1}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.2.2}Strategy 2: Matching Orthophotos/DSMs (\textit  {Ortho} or \textit  {DSM})}{18}{subsection.3.2.2}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3.2}{\ignorespaces Rough co-registration by matching orthophotos. (a) Workflow of \textit  {Ortho}. Orthophotos are matched (with \textit  {one-to-many tiling scheme} combined with 4 rotation hypotheses which are explained in (b), if the matching method is unsatisfactory on large images and not rotation invariant), followed by projecting the inlier matches onto ground to build 3D Helmert transformation model. (b) Four rotation hypotheses combined with \textit  {one-to-many tiling scheme}. We rotate the secondary orthophoto by 90 $^\circ $ four times to match with master orthophoto and keep the best one with most numerous RANSAC inliers (red rectangle). \textit  {One-to-many tiling scheme} is applied during each hypothesis, with both orthophotos croped into tiles followed by matching all the tile pairs and merging the matches.}}{19}{figure.3.2}}
-\newlabel{WorkflowOrtho}{{3.2}{19}{Rough co-registration by matching orthophotos. (a) Workflow of \textit {Ortho}. Orthophotos are matched (with \textit {one-to-many tiling scheme} combined with 4 rotation hypotheses which are explained in (b), if the matching method is unsatisfactory on large images and not rotation invariant), followed by projecting the inlier matches onto ground to build 3D Helmert transformation model. (b) Four rotation hypotheses combined with \textit {one-to-many tiling scheme}. We rotate the secondary orthophoto by 90 $^\circ $ four times to match with master orthophoto and keep the best one with most numerous RANSAC inliers (red rectangle). \textit {One-to-many tiling scheme} is applied during each hypothesis, with both orthophotos croped into tiles followed by matching all the tile pairs and merging the matches}{figure.3.2}{}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {Workflow of \textit {Ortho}}}}{19}{figure.3.2}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {Four rotation hypotheses combined with \textit {one-to-many tiling scheme}}}}{19}{figure.3.2}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3.3}{\ignorespaces Rough co-registration by matching DSMs. (a) Workflow of \textit  {DSM}. DSMs are matched (with \textit  {one-to-many tiling scheme} combined with 4 rotation hypotheses which are explained in (b), if the matching method is unsatisfactory on large images and not rotation invariant), followed by projecting the inlier matches onto ground to build 3D Helmert transformation model. (b) Four rotation hypotheses combined with tiling scheme. We rotate the secondary DSM by 90 $^\circ $ four times to match with master DSM and keep the best one with most numerous RANSAC inliers (red rectangle). Tiling scheme is applied during each hypothesis, with both DSMs croped into tiles followed by matching all the tile pairs and merging the matches.}}{20}{figure.3.3}}
-\newlabel{WorkflowDSM}{{3.3}{20}{Rough co-registration by matching DSMs. (a) Workflow of \textit {DSM}. DSMs are matched (with \textit {one-to-many tiling scheme} combined with 4 rotation hypotheses which are explained in (b), if the matching method is unsatisfactory on large images and not rotation invariant), followed by projecting the inlier matches onto ground to build 3D Helmert transformation model. (b) Four rotation hypotheses combined with tiling scheme. We rotate the secondary DSM by 90 $^\circ $ four times to match with master DSM and keep the best one with most numerous RANSAC inliers (red rectangle). Tiling scheme is applied during each hypothesis, with both DSMs croped into tiles followed by matching all the tile pairs and merging the matches}{figure.3.3}{}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {Workflow of \textit {DSM}}}}{20}{figure.3.3}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {Four rotation hypotheses combined with tiling scheme}}}{20}{figure.3.3}}
-\newlabel{eq:2DSim}{{3.2}{21}{Strategy 2: Matching Orthophotos/DSMs (\textit {Ortho} or \textit {DSM})}{equation.3.2.2}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {3.3}Experiments}{22}{section.3.3}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.3.1}Implementation details}{22}{subsection.3.3.1}}
-\newlabel{Implementationdetails}{{3.3.1}{22}{Implementation details}{subsection.3.3.1}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {3.2}Methodology}{17}{section.3.2}}
+\@writefile{brf}{\backcite{deseilligny2011apero}{{17}{3.2}{Item.23}}}
+\@writefile{brf}{\backcite{schonberger2016structure}{{17}{3.2}{Item.23}}}
+\@writefile{brf}{\backcite{openMVG}{{17}{3.2}{Item.23}}}
+\@writefile{brf}{\backcite{theia}{{17}{3.2}{Item.23}}}
+\@writefile{brf}{\backcite{lowe2004distinctive}{{17}{1}{Item.24}}}
+\@writefile{brf}{\backcite{mpd:06:sgm}{{17}{3}{Item.26}}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.2.1}Strategy 1: Matching image pairs (\textit  {ImgPairs})}{18}{subsection.3.2.1}}
+\newlabel{eq:2DSim}{{3.1}{18}{Strategy 1: Matching image pairs (\textit {ImgPairs})}{equation.3.2.1}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.1}{\ignorespaces Rough co-registration by matching image pairs. (a) Workflow of \textit  {ImgPairs}. Each inter-epoch image pair is matched (with 4 rotation hypotheses which are explained in (b), if the matching method is not rotation invariant), followed by projecting the matches onto ground to find the globally consistent inliers. (b) Four rotation hypotheses. We rotate the secondary image by 90 $^\circ $ four times to match with master image and keep the best one with most numerous matches (red rectangle).}}{19}{figure.3.1}}
+\newlabel{WorkflowImgPair}{{3.1}{19}{Rough co-registration by matching image pairs. (a) Workflow of \textit {ImgPairs}. Each inter-epoch image pair is matched (with 4 rotation hypotheses which are explained in (b), if the matching method is not rotation invariant), followed by projecting the matches onto ground to find the globally consistent inliers. (b) Four rotation hypotheses. We rotate the secondary image by 90 $^\circ $ four times to match with master image and keep the best one with most numerous matches (red rectangle)}{figure.3.1}{}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {Workflow of \textit {ImgPairs}}}}{19}{figure.3.1}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {Four rotation hypotheses}}}{19}{figure.3.1}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.2.2}Strategy 2: Matching Orthophotos/DSMs (\textit  {Ortho} or \textit  {DSM})}{20}{subsection.3.2.2}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.2}{\ignorespaces Rough co-registration by matching orthophotos. (a) Workflow of \textit  {Ortho}. Orthophotos are matched (with \textit  {one-to-many tiling scheme} combined with 4 rotation hypotheses which are explained in (b), if the matching method is unsatisfactory on large images and not rotation invariant), followed by projecting the inlier matches onto ground to build 3D Helmert transformation model. (b) Four rotation hypotheses combined with \textit  {one-to-many tiling scheme}. We rotate the secondary orthophoto by 90 $^\circ $ four times to match with master orthophoto and keep the best one with most numerous RANSAC inliers (red rectangle). \textit  {One-to-many tiling scheme} is applied during each hypothesis, with both orthophotos croped into tiles followed by matching all the tile pairs and merging the matches.}}{21}{figure.3.2}}
+\newlabel{WorkflowOrtho}{{3.2}{21}{Rough co-registration by matching orthophotos. (a) Workflow of \textit {Ortho}. Orthophotos are matched (with \textit {one-to-many tiling scheme} combined with 4 rotation hypotheses which are explained in (b), if the matching method is unsatisfactory on large images and not rotation invariant), followed by projecting the inlier matches onto ground to build 3D Helmert transformation model. (b) Four rotation hypotheses combined with \textit {one-to-many tiling scheme}. We rotate the secondary orthophoto by 90 $^\circ $ four times to match with master orthophoto and keep the best one with most numerous RANSAC inliers (red rectangle). \textit {One-to-many tiling scheme} is applied during each hypothesis, with both orthophotos croped into tiles followed by matching all the tile pairs and merging the matches}{figure.3.2}{}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {Workflow of \textit {Ortho}}}}{21}{figure.3.2}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {Four rotation hypotheses combined with \textit {one-to-many tiling scheme}}}}{21}{figure.3.2}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.3}{\ignorespaces Rough co-registration by matching DSMs. (a) Workflow of \textit  {DSM}. DSMs are matched (with \textit  {one-to-many tiling scheme} combined with 4 rotation hypotheses which are explained in (b), if the matching method is unsatisfactory on large images and not rotation invariant), followed by projecting the inlier matches onto ground to build 3D Helmert transformation model. (b) Four rotation hypotheses combined with tiling scheme. We rotate the secondary DSM by 90 $^\circ $ four times to match with master DSM and keep the best one with most numerous RANSAC inliers (red rectangle). Tiling scheme is applied during each hypothesis, with both DSMs croped into tiles followed by matching all the tile pairs and merging the matches.}}{22}{figure.3.3}}
+\newlabel{WorkflowDSM}{{3.3}{22}{Rough co-registration by matching DSMs. (a) Workflow of \textit {DSM}. DSMs are matched (with \textit {one-to-many tiling scheme} combined with 4 rotation hypotheses which are explained in (b), if the matching method is unsatisfactory on large images and not rotation invariant), followed by projecting the inlier matches onto ground to build 3D Helmert transformation model. (b) Four rotation hypotheses combined with tiling scheme. We rotate the secondary DSM by 90 $^\circ $ four times to match with master DSM and keep the best one with most numerous RANSAC inliers (red rectangle). Tiling scheme is applied during each hypothesis, with both DSMs croped into tiles followed by matching all the tile pairs and merging the matches}{figure.3.3}{}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {Workflow of \textit {DSM}}}}{22}{figure.3.3}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {Four rotation hypotheses combined with tiling scheme}}}{22}{figure.3.3}}
+\newlabel{eq:2DSim}{{3.2}{23}{Strategy 2: Matching Orthophotos/DSMs (\textit {Ortho} or \textit {DSM})}{equation.3.2.2}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {3.3}Experiments}{24}{section.3.3}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.3.1}Implementation details}{24}{subsection.3.3.1}}
+\newlabel{Implementationdetails}{{3.3.1}{24}{Implementation details}{subsection.3.3.1}{}}
 \citation{souchon2010ign}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.3.2}Datasets}{23}{subsection.3.3.2}}
-\newlabel{Datasets}{{3.3.2}{23}{Datasets}{subsection.3.3.2}{}}
-\@writefile{toc}{\contentsline {paragraph}{Fr{\'e}jus}{23}{section*.6}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.3.2}Datasets}{25}{subsection.3.3.2}}
+\newlabel{Datasets}{{3.3.2}{25}{Datasets}{subsection.3.3.2}{}}
+\@writefile{toc}{\contentsline {paragraph}{Fr{\'e}jus}{25}{section*.6}}
 \AC@undonewlabel{acro:IGN}
-\newlabel{acro:IGN}{{3.3.2}{23}{Fr{\'e}jus}{section*.7}{}}
+\newlabel{acro:IGN}{{3.3.2}{25}{Fr{\'e}jus}{section*.7}{}}
 \acronymused{IGN}
-\@writefile{brf}{\backcite{souchon2010ign}{{23}{3.3.2}{section*.6}}}
+\@writefile{brf}{\backcite{souchon2010ign}{{25}{3.3.2}{section*.6}}}
 \AC@undonewlabel{acro:GT}
-\newlabel{acro:GT}{{3.3.2}{23}{Fr{\'e}jus}{section*.8}{}}
+\newlabel{acro:GT}{{3.3.2}{25}{Fr{\'e}jus}{section*.8}{}}
 \acronymused{GT}
-\@writefile{toc}{\contentsline {paragraph}{Pezenas}{24}{section*.9}}
+\@writefile{toc}{\contentsline {paragraph}{Pezenas}{26}{section*.9}}
 \acronymused{GT}
 \acronymused{GT}
 \acronymused{GT}
-\@writefile{toc}{\contentsline {paragraph}{Kobe}{24}{section*.10}}
+\@writefile{toc}{\contentsline {paragraph}{Kobe}{26}{section*.10}}
 \acronymused{GT}
-\@writefile{lot}{\contentsline {table}{\numberline {3.1}{\ignorespaces Aerial dataset details of Fr{\'e}jus, Pezenas and Kobe. The 2015 acquisition of Pezenas is obtained with two sets of camera. E stands for epoch, F means focal length, Wid and Hei are the width and height of image, GSD is the ground sampling distance, F.o. and S.o. are forward and side overlap, H is the flying height, Nb is the number of images.}}{24}{table.3.1}}
-\newlabel{AerialData}{{3.1}{24}{Aerial dataset details of Fr{\'e}jus, Pezenas and Kobe. The 2015 acquisition of Pezenas is obtained with two sets of camera. E stands for epoch, F means focal length, Wid and Hei are the width and height of image, GSD is the ground sampling distance, F.o. and S.o. are forward and side overlap, H is the flying height, Nb is the number of images}{table.3.1}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.3.3}Evaluation}{24}{subsection.3.3.3}}
-\@writefile{lot}{\contentsline {table}{\numberline {3.2}{\ignorespaces Satellite dataset details of Pezenas. GSD means the ground sampling distance.}}{25}{table.3.2}}
-\newlabel{SatelliteData}{{3.2}{25}{Satellite dataset details of Pezenas. GSD means the ground sampling distance}{table.3.2}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3.4}{\ignorespaces Images demonstration of different aerial epochs in Fr{\'e}jus, image number of each epoch is displayed in the parenthesis of each sub headline. The common zone between all the epochs is indicated by the red rectangles. Epoch 2014 is chosen as the reference epoch $E_r$ and the other epochs (i.e. epoch 1954, 1966 and 1970) are free epochs $E_f$ that should be co-registered to the frame of $E_r$. Graphic scale is demonstrated on $E_r$ in (d).}}{25}{figure.3.4}}
-\newlabel{FrejusData}{{3.4}{25}{Images demonstration of different aerial epochs in Fr{\'e}jus, image number of each epoch is displayed in the parenthesis of each sub headline. The common zone between all the epochs is indicated by the red rectangles. Epoch 2014 is chosen as the reference epoch $E_r$ and the other epochs (i.e. epoch 1954, 1966 and 1970) are free epochs $E_f$ that should be co-registered to the frame of $E_r$. Graphic scale is demonstrated on $E_r$ in (d)}{figure.3.4}{}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {Fr{\'e}jus 1954 (19 images)}}}{25}{figure.3.4}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {Fr{\'e}jus 1966 (15 images)}}}{25}{figure.3.4}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(c)}{\ignorespaces {Fr{\'e}jus 1970 (19 images)}}}{25}{figure.3.4}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(d)}{\ignorespaces {Fr{\'e}jus 2014 (36 images)}}}{25}{figure.3.4}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3.5}{\ignorespaces Images demonstration of different aerial epochs as well as satellite epoch in Pezenas, image number of each epoch is displayed in the parenthesis of each sub headline. There are 2 historical aerial epochs (1971 and 1981) and 2 \ac {GT} epochs (2014 the satellite epoch and 2015 the aerial epoch) in this dataset. The common zone between the historical epochs and the 2014 satellite epoch is indicated by the blue rectangles, while that between historical epochs and the 2015 aerial epoch is in red rectangles. Epoch 2014 and 2015 are chosen as the reference epoch $E_r$ and the other epochs (i.e. epoch 1971 and 1981) are free epochs $E_f$ that should be co-registered to the frame of $E_r$. Graphic scales are demonstrated on $E_r$ in (c) and (d).}}{26}{figure.3.5}}
+\@writefile{lot}{\contentsline {table}{\numberline {3.1}{\ignorespaces Aerial dataset details of Fr{\'e}jus, Pezenas and Kobe. The 2015 acquisition of Pezenas is obtained with two sets of camera. E stands for epoch, F means focal length, Wid and Hei are the width and height of image, GSD is the ground sampling distance, F.o. and S.o. are forward and side overlap, H is the flying height, Nb is the number of images.}}{26}{table.3.1}}
+\newlabel{AerialData}{{3.1}{26}{Aerial dataset details of Fr{\'e}jus, Pezenas and Kobe. The 2015 acquisition of Pezenas is obtained with two sets of camera. E stands for epoch, F means focal length, Wid and Hei are the width and height of image, GSD is the ground sampling distance, F.o. and S.o. are forward and side overlap, H is the flying height, Nb is the number of images}{table.3.1}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.3.3}Evaluation}{26}{subsection.3.3.3}}
+\@writefile{lot}{\contentsline {table}{\numberline {3.2}{\ignorespaces Satellite dataset details of Pezenas. GSD means the ground sampling distance.}}{27}{table.3.2}}
+\newlabel{SatelliteData}{{3.2}{27}{Satellite dataset details of Pezenas. GSD means the ground sampling distance}{table.3.2}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.4}{\ignorespaces Images demonstration of different aerial epochs in Fr{\'e}jus, image number of each epoch is displayed in the parenthesis of each sub headline. The common zone between all the epochs is indicated by the red rectangles. Epoch 2014 is chosen as the reference epoch $E_r$ and the other epochs (i.e. epoch 1954, 1966 and 1970) are free epochs $E_f$ that should be co-registered to the frame of $E_r$. Graphic scale is demonstrated on $E_r$ in (d).}}{27}{figure.3.4}}
+\newlabel{FrejusData}{{3.4}{27}{Images demonstration of different aerial epochs in Fr{\'e}jus, image number of each epoch is displayed in the parenthesis of each sub headline. The common zone between all the epochs is indicated by the red rectangles. Epoch 2014 is chosen as the reference epoch $E_r$ and the other epochs (i.e. epoch 1954, 1966 and 1970) are free epochs $E_f$ that should be co-registered to the frame of $E_r$. Graphic scale is demonstrated on $E_r$ in (d)}{figure.3.4}{}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {Fr{\'e}jus 1954 (19 images)}}}{27}{figure.3.4}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {Fr{\'e}jus 1966 (15 images)}}}{27}{figure.3.4}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(c)}{\ignorespaces {Fr{\'e}jus 1970 (19 images)}}}{27}{figure.3.4}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(d)}{\ignorespaces {Fr{\'e}jus 2014 (36 images)}}}{27}{figure.3.4}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.5}{\ignorespaces Images demonstration of different aerial epochs as well as satellite epoch in Pezenas, image number of each epoch is displayed in the parenthesis of each sub headline. There are 2 historical aerial epochs (1971 and 1981) and 2 \ac {GT} epochs (2014 the satellite epoch and 2015 the aerial epoch) in this dataset. The common zone between the historical epochs and the 2014 satellite epoch is indicated by the blue rectangles, while that between historical epochs and the 2015 aerial epoch is in red rectangles. Epoch 2014 and 2015 are chosen as the reference epoch $E_r$ and the other epochs (i.e. epoch 1971 and 1981) are free epochs $E_f$ that should be co-registered to the frame of $E_r$. Graphic scales are demonstrated on $E_r$ in (c) and (d).}}{28}{figure.3.5}}
 \acronymused{GT}
-\newlabel{PezenasData}{{3.5}{26}{Images demonstration of different aerial epochs as well as satellite epoch in Pezenas, image number of each epoch is displayed in the parenthesis of each sub headline. There are 2 historical aerial epochs (1971 and 1981) and 2 \ac {GT} epochs (2014 the satellite epoch and 2015 the aerial epoch) in this dataset. The common zone between the historical epochs and the 2014 satellite epoch is indicated by the blue rectangles, while that between historical epochs and the 2015 aerial epoch is in red rectangles. Epoch 2014 and 2015 are chosen as the reference epoch $E_r$ and the other epochs (i.e. epoch 1971 and 1981) are free epochs $E_f$ that should be co-registered to the frame of $E_r$. Graphic scales are demonstrated on $E_r$ in (c) and (d)}{figure.3.5}{}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {Pezenas 1971 (57 images)}}}{26}{figure.3.5}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {Pezenas 1981 (27 images)}}}{26}{figure.3.5}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(c)}{\ignorespaces {Pezenas 2014 (2 satellite images)}}}{26}{figure.3.5}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(d)}{\ignorespaces {Pezenas 2015 (382 images)}}}{26}{figure.3.5}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3.6}{\ignorespaces Images demonstration of different aerial epochs in Kobe, image number of each epoch is displayed in the parenthesis of each sub headline. The common zone between all the epochs is indicated by the red rectangles. Epoch 1995 is chosen as the reference epoch $E_r$ and the other epoch (i.e. epoch 1991) is free epoch $E_f$ that should be co-registered to the frame of $E_r$. Graphic scale is demonstrated on $E_r$ in (b).}}{27}{figure.3.6}}
-\newlabel{KobeData}{{3.6}{27}{Images demonstration of different aerial epochs in Kobe, image number of each epoch is displayed in the parenthesis of each sub headline. The common zone between all the epochs is indicated by the red rectangles. Epoch 1995 is chosen as the reference epoch $E_r$ and the other epoch (i.e. epoch 1991) is free epoch $E_f$ that should be co-registered to the frame of $E_r$. Graphic scale is demonstrated on $E_r$ in (b)}{figure.3.6}{}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {Kobe 1991 (15 images)}}}{27}{figure.3.6}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {Kobe 1995 (83 images)}}}{27}{figure.3.6}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3.7}{\ignorespaces Evolution of a subregion in Fr{\'e}jus.}}{28}{figure.3.7}}
-\newlabel{FrejusEvolution}{{3.7}{28}{Evolution of a subregion in Fr{\'e}jus}{figure.3.7}{}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {Subregion of Fr{\'e}jus 1954}}}{28}{figure.3.7}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {Subregion of Fr{\'e}jus 2014}}}{28}{figure.3.7}}
+\newlabel{PezenasData}{{3.5}{28}{Images demonstration of different aerial epochs as well as satellite epoch in Pezenas, image number of each epoch is displayed in the parenthesis of each sub headline. There are 2 historical aerial epochs (1971 and 1981) and 2 \ac {GT} epochs (2014 the satellite epoch and 2015 the aerial epoch) in this dataset. The common zone between the historical epochs and the 2014 satellite epoch is indicated by the blue rectangles, while that between historical epochs and the 2015 aerial epoch is in red rectangles. Epoch 2014 and 2015 are chosen as the reference epoch $E_r$ and the other epochs (i.e. epoch 1971 and 1981) are free epochs $E_f$ that should be co-registered to the frame of $E_r$. Graphic scales are demonstrated on $E_r$ in (c) and (d)}{figure.3.5}{}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {Pezenas 1971 (57 images)}}}{28}{figure.3.5}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {Pezenas 1981 (27 images)}}}{28}{figure.3.5}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(c)}{\ignorespaces {Pezenas 2014 (2 satellite images)}}}{28}{figure.3.5}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(d)}{\ignorespaces {Pezenas 2015 (382 images)}}}{28}{figure.3.5}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.6}{\ignorespaces Images demonstration of different aerial epochs in Kobe, image number of each epoch is displayed in the parenthesis of each sub headline. The common zone between all the epochs is indicated by the red rectangles. Epoch 1995 is chosen as the reference epoch $E_r$ and the other epoch (i.e. epoch 1991) is free epoch $E_f$ that should be co-registered to the frame of $E_r$. Graphic scale is demonstrated on $E_r$ in (b).}}{29}{figure.3.6}}
+\newlabel{KobeData}{{3.6}{29}{Images demonstration of different aerial epochs in Kobe, image number of each epoch is displayed in the parenthesis of each sub headline. The common zone between all the epochs is indicated by the red rectangles. Epoch 1995 is chosen as the reference epoch $E_r$ and the other epoch (i.e. epoch 1991) is free epoch $E_f$ that should be co-registered to the frame of $E_r$. Graphic scale is demonstrated on $E_r$ in (b)}{figure.3.6}{}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {Kobe 1991 (15 images)}}}{29}{figure.3.6}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {Kobe 1995 (83 images)}}}{29}{figure.3.6}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.7}{\ignorespaces Evolution of a subregion in Fr{\'e}jus.}}{30}{figure.3.7}}
+\newlabel{FrejusEvolution}{{3.7}{30}{Evolution of a subregion in Fr{\'e}jus}{figure.3.7}{}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {Subregion of Fr{\'e}jus 1954}}}{30}{figure.3.7}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {Subregion of Fr{\'e}jus 2014}}}{30}{figure.3.7}}
 \AC@undonewlabel{acro:DoD}
-\newlabel{acro:DoD}{{2}{29}{Evaluation}{section*.11}{}}
+\newlabel{acro:DoD}{{2}{31}{Evaluation}{section*.11}{}}
 \acronymused{DoD}
 \acronymused{DoD}
 \acronymused{DoD}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.3.4}Comparison}{29}{subsection.3.3.4}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.3.4.1}Matches visualization}{29}{subsubsection.3.3.4.1}}
-\@writefile{lot}{\contentsline {table}{\numberline {3.3}{\ignorespaces Demonstration of 6 methods succeeding or failing on each dataset.}}{30}{table.3.3}}
-\newlabel{succeedorfail}{{3.3}{30}{Demonstration of 6 methods succeeding or failing on each dataset}{table.3.3}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.3.4}Comparison}{31}{subsection.3.3.4}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.3.4.1}Matches visualization}{31}{subsubsection.3.3.4.1}}
+\@writefile{lot}{\contentsline {table}{\numberline {3.3}{\ignorespaces Demonstration of 6 methods succeeding or failing on each dataset.}}{32}{table.3.3}}
+\newlabel{succeedorfail}{{3.3}{32}{Demonstration of 6 methods succeeding or failing on each dataset}{table.3.3}{}}
 \acronymused{DoD}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.3.4.2}\ac {DoD}}{31}{subsubsection.3.3.4.2}}
-\acronymused{DoD}
-\acronymused{DoD}
-\acronymused{DoD}
-\acronymused{DoD}
-\@writefile{toc}{\contentsline {section}{\numberline {3.4}Conclusion}{31}{section.3.4}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3.8}{\ignorespaces {\relax \fontsize  {8}{9.5}\selectfont  Result of \textit  {ImgPairs} (a-d), \textit  {Ortho} (e-h) and \textit  {DSM} (i-l) on matching \textbf  {Fr{\'e}jus 1954 and 2014}. (a, e, i) Image pairs/orthophotos/DSMs to be matched, with red rectangles indicating the common zone. (b, f, j) Numbers of total matches and RANSAC inliers of both SIFT and SuperGlue on methods \textit  {ImgPairs}, \textit  {Ortho} and \textit  {DSM} individually. (c, g, k) Visualization of RANSAC inliers based on $SIFT_{ImgPairs}$, $SIFT_{Ortho}$ and $SIFT_{DSM}$. (d, h, l) Visualization of RANSAC inliers based on $SuperGlue_{ImgPairs}$, $SuperGlue_{Ortho}$ and $SuperGlue_{DSM}$.}}}{32}{figure.3.8}}
-\newlabel{MatchVizFrejus1954DSM}{{3.8}{32}{\scriptsize Result of \textit {ImgPairs} (a-d), \textit {Ortho} (e-h) and \textit {DSM} (i-l) on matching \textbf {Fr{\'e}jus 1954 and 2014}. (a, e, i) Image pairs/orthophotos/DSMs to be matched, with red rectangles indicating the common zone. (b, f, j) Numbers of total matches and RANSAC inliers of both SIFT and SuperGlue on methods \textit {ImgPairs}, \textit {Ortho} and \textit {DSM} individually. (c, g, k) Visualization of RANSAC inliers based on $SIFT_{ImgPairs}$, $SIFT_{Ortho}$ and $SIFT_{DSM}$. (d, h, l) Visualization of RANSAC inliers based on $SuperGlue_{ImgPairs}$, $SuperGlue_{Ortho}$ and $SuperGlue_{DSM}$}{figure.3.8}{}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {Image pairs (19$\times $36 pairs)}}}{32}{figure.3.8}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {Number of recovered matches(\textit {ImgPairs})}}}{32}{figure.3.8}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(c)}{\ignorespaces {$SIFT_{ImgPairs}^{RANSAC Inliers}$}}}{32}{figure.3.8}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(d)}{\ignorespaces {$SuperGlue_{ImgPairs}^{RANSAC Inliers}$}}}{32}{figure.3.8}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(e)}{\ignorespaces {Orthophotos}}}{32}{figure.3.8}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(f)}{\ignorespaces {Number of recovered matches(\textit {Ortho})}}}{32}{figure.3.8}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(g)}{\ignorespaces {$SIFT_{Ortho}^{RANSAC Inliers}$}}}{32}{figure.3.8}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(h)}{\ignorespaces {$SuperGlue_{Ortho}^{RANSAC Inliers}$}}}{32}{figure.3.8}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(i)}{\ignorespaces {DSMs}}}{32}{figure.3.8}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(j)}{\ignorespaces {Number of recovered matches(\textit {DSM})}}}{32}{figure.3.8}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(k)}{\ignorespaces {$SIFT_{DSM}^{RANSAC Inliers}$}}}{32}{figure.3.8}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(l)}{\ignorespaces {$SuperGlue_{DSM}^{RANSAC Inliers}$}}}{32}{figure.3.8}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3.9}{\ignorespaces {\relax \fontsize  {8}{9.5}\selectfont  Result of \textit  {ImgPairs} (a-d), \textit  {Ortho} (e-h) and \textit  {DSM} (i-l) on matching \textbf  {Fr{\'e}jus 1966 and 2014}. (a, e, i) Image pairs/orthophotos/DSMs to be matched, with red rectangles indicating the common zone. (b, f, j) Numbers of total matches and RANSAC inliers of both SIFT and SuperGlue on methods \textit  {ImgPairs}, \textit  {Ortho} and \textit  {DSM} individually. (c, g, k) Visualization of RANSAC inliers based on $SIFT_{ImgPairs}$, $SIFT_{Ortho}$ and $SIFT_{DSM}$. (d, h, l) Visualization of RANSAC inliers based on $SuperGlue_{ImgPairs}$, $SuperGlue_{Ortho}$ and $SuperGlue_{DSM}$.}}}{33}{figure.3.9}}
-\newlabel{MatchVizFrejus1966DSM}{{3.9}{33}{\scriptsize Result of \textit {ImgPairs} (a-d), \textit {Ortho} (e-h) and \textit {DSM} (i-l) on matching \textbf {Fr{\'e}jus 1966 and 2014}. (a, e, i) Image pairs/orthophotos/DSMs to be matched, with red rectangles indicating the common zone. (b, f, j) Numbers of total matches and RANSAC inliers of both SIFT and SuperGlue on methods \textit {ImgPairs}, \textit {Ortho} and \textit {DSM} individually. (c, g, k) Visualization of RANSAC inliers based on $SIFT_{ImgPairs}$, $SIFT_{Ortho}$ and $SIFT_{DSM}$. (d, h, l) Visualization of RANSAC inliers based on $SuperGlue_{ImgPairs}$, $SuperGlue_{Ortho}$ and $SuperGlue_{DSM}$}{figure.3.9}{}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {Image pairs (15$\times $36 pairs)}}}{33}{figure.3.9}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {Number of recovered matches(\textit {ImgPairs})}}}{33}{figure.3.9}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(c)}{\ignorespaces {$SIFT_{ImgPairs}^{RANSAC Inliers}$}}}{33}{figure.3.9}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(d)}{\ignorespaces {$SuperGlue_{ImgPairs}^{RANSAC Inliers}$}}}{33}{figure.3.9}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(e)}{\ignorespaces {Orthophotos}}}{33}{figure.3.9}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(f)}{\ignorespaces {Number of recovered matches(\textit {Ortho})}}}{33}{figure.3.9}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(g)}{\ignorespaces {$SIFT_{Ortho}^{RANSAC Inliers}$}}}{33}{figure.3.9}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(h)}{\ignorespaces {$SuperGlue_{Ortho}^{RANSAC Inliers}$}}}{33}{figure.3.9}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(i)}{\ignorespaces {DSMs}}}{33}{figure.3.9}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(j)}{\ignorespaces {Number of recovered matches(\textit {DSM})}}}{33}{figure.3.9}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(k)}{\ignorespaces {$SIFT_{DSM}^{RANSAC Inliers}$}}}{33}{figure.3.9}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(l)}{\ignorespaces {$SuperGlue_{DSM}^{RANSAC Inliers}$}}}{33}{figure.3.9}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3.10}{\ignorespaces {\relax \fontsize  {8}{9.5}\selectfont  Result of \textit  {ImgPairs} (a-d), \textit  {Ortho} (e-h) and \textit  {DSM} (i-l) on matching \textbf  {Fr{\'e}jus 1970 and 2014}. (a, e, i) Image pairs/orthophotos/DSMs to be matched, with red rectangles indicating the common zone. (b, f, j) Numbers of total matches and RANSAC inliers of both SIFT and SuperGlue on methods \textit  {ImgPairs}, \textit  {Ortho} and \textit  {DSM} individually. (c, g, k) Visualization of RANSAC inliers based on $SIFT_{ImgPairs}$, $SIFT_{Ortho}$ and $SIFT_{DSM}$. (d, h, l) Visualization of RANSAC inliers based on $SuperGlue_{ImgPairs}$, $SuperGlue_{Ortho}$ and $SuperGlue_{DSM}$.}}}{34}{figure.3.10}}
-\newlabel{MatchVizFrejus1970DSM}{{3.10}{34}{\scriptsize Result of \textit {ImgPairs} (a-d), \textit {Ortho} (e-h) and \textit {DSM} (i-l) on matching \textbf {Fr{\'e}jus 1970 and 2014}. (a, e, i) Image pairs/orthophotos/DSMs to be matched, with red rectangles indicating the common zone. (b, f, j) Numbers of total matches and RANSAC inliers of both SIFT and SuperGlue on methods \textit {ImgPairs}, \textit {Ortho} and \textit {DSM} individually. (c, g, k) Visualization of RANSAC inliers based on $SIFT_{ImgPairs}$, $SIFT_{Ortho}$ and $SIFT_{DSM}$. (d, h, l) Visualization of RANSAC inliers based on $SuperGlue_{ImgPairs}$, $SuperGlue_{Ortho}$ and $SuperGlue_{DSM}$}{figure.3.10}{}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {Image pairs (19$\times $36 pairs)}}}{34}{figure.3.10}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {Number of recovered matches(\textit {ImgPairs})}}}{34}{figure.3.10}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(c)}{\ignorespaces {$SIFT_{ImgPairs}^{RANSAC Inliers}$}}}{34}{figure.3.10}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(d)}{\ignorespaces {$SuperGlue_{ImgPairs}^{RANSAC Inliers}$}}}{34}{figure.3.10}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(e)}{\ignorespaces {Orthophotos}}}{34}{figure.3.10}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(f)}{\ignorespaces {Number of recovered matches(\textit {Ortho})}}}{34}{figure.3.10}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(g)}{\ignorespaces {$SIFT_{Ortho}^{RANSAC Inliers}$}}}{34}{figure.3.10}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(h)}{\ignorespaces {$SuperGlue_{Ortho}^{RANSAC Inliers}$}}}{34}{figure.3.10}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(i)}{\ignorespaces {DSMs}}}{34}{figure.3.10}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(j)}{\ignorespaces {Number of recovered matches(\textit {DSM})}}}{34}{figure.3.10}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(k)}{\ignorespaces {$SIFT_{DSM}^{RANSAC Inliers}$}}}{34}{figure.3.10}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(l)}{\ignorespaces {$SuperGlue_{DSM}^{RANSAC Inliers}$}}}{34}{figure.3.10}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3.11}{\ignorespaces {\relax \fontsize  {8}{9.5}\selectfont  Result of \textit  {ImgPairs} (a-d), \textit  {Ortho} (e-h) and \textit  {DSM} (i-l) on matching \textbf  {Pezenas 1971 and 2015}. (a, e, i) Image pairs/orthophotos/DSMs to be matched, with red rectangles indicating the common zone. (b, f, j) Numbers of total matches and RANSAC inliers of both SIFT and SuperGlue on methods \textit  {ImgPairs}, \textit  {Ortho} and \textit  {DSM} individually. (c, g, k) Visualization of RANSAC inliers based on $SIFT_{ImgPairs}$, $SIFT_{Ortho}$ and $SIFT_{DSM}$. (d, h, l) Visualization of RANSAC inliers based on $SuperGlue_{ImgPairs}$, $SuperGlue_{Ortho}$ and $SuperGlue_{DSM}$.}}}{35}{figure.3.11}}
-\newlabel{MatchVizPezenas1971DSM}{{3.11}{35}{\scriptsize Result of \textit {ImgPairs} (a-d), \textit {Ortho} (e-h) and \textit {DSM} (i-l) on matching \textbf {Pezenas 1971 and 2015}. (a, e, i) Image pairs/orthophotos/DSMs to be matched, with red rectangles indicating the common zone. (b, f, j) Numbers of total matches and RANSAC inliers of both SIFT and SuperGlue on methods \textit {ImgPairs}, \textit {Ortho} and \textit {DSM} individually. (c, g, k) Visualization of RANSAC inliers based on $SIFT_{ImgPairs}$, $SIFT_{Ortho}$ and $SIFT_{DSM}$. (d, h, l) Visualization of RANSAC inliers based on $SuperGlue_{ImgPairs}$, $SuperGlue_{Ortho}$ and $SuperGlue_{DSM}$}{figure.3.11}{}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {Image pairs (57$\times $382 pairs)}}}{35}{figure.3.11}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {Number of recovered matches(\textit {ImgPairs})}}}{35}{figure.3.11}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(c)}{\ignorespaces {$SIFT_{ImgPairs}^{RANSAC Inliers}$}}}{35}{figure.3.11}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(d)}{\ignorespaces {$SuperGlue_{ImgPairs}^{RANSAC Inliers}$}}}{35}{figure.3.11}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(e)}{\ignorespaces {Orthophotos}}}{35}{figure.3.11}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(f)}{\ignorespaces {Number of recovered matches(\textit {Ortho})}}}{35}{figure.3.11}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(g)}{\ignorespaces {$SIFT_{Ortho}^{RANSAC Inliers}$}}}{35}{figure.3.11}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(h)}{\ignorespaces {$SuperGlue_{Ortho}^{RANSAC Inliers}$}}}{35}{figure.3.11}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(i)}{\ignorespaces {DSMs}}}{35}{figure.3.11}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(j)}{\ignorespaces {Number of recovered matches(\textit {DSM})}}}{35}{figure.3.11}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(k)}{\ignorespaces {$SIFT_{DSM}^{RANSAC Inliers}$}}}{35}{figure.3.11}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(l)}{\ignorespaces {$SuperGlue_{DSM}^{RANSAC Inliers}$}}}{35}{figure.3.11}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3.12}{\ignorespaces {\relax \fontsize  {8}{9.5}\selectfont  Result of \textit  {ImgPairs} (a-d), \textit  {Ortho} (e-h) and \textit  {DSM} (i-l) on matching \textbf  {Pezenas 1981 and 2015}. (a, e, i) Image pairs/orthophotos/DSMs to be matched, with red rectangles indicating the common zone. (b, f, j) Numbers of total matches and RANSAC inliers of both SIFT and SuperGlue on methods \textit  {ImgPairs}, \textit  {Ortho} and \textit  {DSM} individually. (c, g, k) Visualization of RANSAC inliers based on $SIFT_{ImgPairs}$, $SIFT_{Ortho}$ and $SIFT_{DSM}$. (d, h, l) Visualization of RANSAC inliers based on $SuperGlue_{ImgPairs}$, $SuperGlue_{Ortho}$ and $SuperGlue_{DSM}$.}}}{36}{figure.3.12}}
-\newlabel{MatchVizPezenas1981DSM}{{3.12}{36}{\scriptsize Result of \textit {ImgPairs} (a-d), \textit {Ortho} (e-h) and \textit {DSM} (i-l) on matching \textbf {Pezenas 1981 and 2015}. (a, e, i) Image pairs/orthophotos/DSMs to be matched, with red rectangles indicating the common zone. (b, f, j) Numbers of total matches and RANSAC inliers of both SIFT and SuperGlue on methods \textit {ImgPairs}, \textit {Ortho} and \textit {DSM} individually. (c, g, k) Visualization of RANSAC inliers based on $SIFT_{ImgPairs}$, $SIFT_{Ortho}$ and $SIFT_{DSM}$. (d, h, l) Visualization of RANSAC inliers based on $SuperGlue_{ImgPairs}$, $SuperGlue_{Ortho}$ and $SuperGlue_{DSM}$}{figure.3.12}{}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {Image pairs (27$\times $382 pairs)}}}{36}{figure.3.12}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {Number of recovered matches(\textit {ImgPairs})}}}{36}{figure.3.12}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(c)}{\ignorespaces {$SIFT_{ImgPairs}^{RANSAC Inliers}$}}}{36}{figure.3.12}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(d)}{\ignorespaces {$SuperGlue_{ImgPairs}^{RANSAC Inliers}$}}}{36}{figure.3.12}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(e)}{\ignorespaces {Orthophotos}}}{36}{figure.3.12}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(f)}{\ignorespaces {Number of recovered matches(\textit {Ortho})}}}{36}{figure.3.12}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(g)}{\ignorespaces {$SIFT_{Ortho}^{RANSAC Inliers}$}}}{36}{figure.3.12}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(h)}{\ignorespaces {$SuperGlue_{Ortho}^{RANSAC Inliers}$}}}{36}{figure.3.12}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(i)}{\ignorespaces {DSMs}}}{36}{figure.3.12}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(j)}{\ignorespaces {Number of recovered matches(\textit {DSM})}}}{36}{figure.3.12}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(k)}{\ignorespaces {$SIFT_{DSM}^{RANSAC Inliers}$}}}{36}{figure.3.12}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(l)}{\ignorespaces {$SuperGlue_{DSM}^{RANSAC Inliers}$}}}{36}{figure.3.12}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3.13}{\ignorespaces {\relax \fontsize  {8}{9.5}\selectfont  Result of \textit  {ImgPairs} (a-d), \textit  {Ortho} (e-h) and \textit  {DSM} (i-l) on matching \textbf  {Pezenas 1971 and 2014 (Satellite)}. (a, e, i) Image pairs/orthophotos/DSMs to be matched, with red rectangles indicating the common zone. (b, f, j) Numbers of total matches and RANSAC inliers of both SIFT and SuperGlue on methods \textit  {ImgPairs}, \textit  {Ortho} and \textit  {DSM} individually. (c, g, k) Visualization of RANSAC inliers based on $SIFT_{ImgPairs}$, $SIFT_{Ortho}$ and $SIFT_{DSM}$. (d, h, l) Visualization of RANSAC inliers based on $SuperGlue_{ImgPairs}$, $SuperGlue_{Ortho}$ and $SuperGlue_{DSM}$.}}}{37}{figure.3.13}}
-\newlabel{MatchVizPezenas-Satellite1971DSM}{{3.13}{37}{\scriptsize Result of \textit {ImgPairs} (a-d), \textit {Ortho} (e-h) and \textit {DSM} (i-l) on matching \textbf {Pezenas 1971 and 2014 (Satellite)}. (a, e, i) Image pairs/orthophotos/DSMs to be matched, with red rectangles indicating the common zone. (b, f, j) Numbers of total matches and RANSAC inliers of both SIFT and SuperGlue on methods \textit {ImgPairs}, \textit {Ortho} and \textit {DSM} individually. (c, g, k) Visualization of RANSAC inliers based on $SIFT_{ImgPairs}$, $SIFT_{Ortho}$ and $SIFT_{DSM}$. (d, h, l) Visualization of RANSAC inliers based on $SuperGlue_{ImgPairs}$, $SuperGlue_{Ortho}$ and $SuperGlue_{DSM}$}{figure.3.13}{}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {Orthophotos}}}{37}{figure.3.13}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {Number of recovered matches(\textit {Ortho})}}}{37}{figure.3.13}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(c)}{\ignorespaces {$SIFT_{Ortho}^{RANSAC Inliers}$}}}{37}{figure.3.13}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(d)}{\ignorespaces {$SuperGlue_{Ortho}^{RANSAC Inliers}$}}}{37}{figure.3.13}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(e)}{\ignorespaces {DSMs}}}{37}{figure.3.13}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(f)}{\ignorespaces {Number of recovered matches(\textit {DSM})}}}{37}{figure.3.13}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(g)}{\ignorespaces {$SIFT_{DSM}^{RANSAC Inliers}$}}}{37}{figure.3.13}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(h)}{\ignorespaces {$SuperGlue_{DSM}^{RANSAC Inliers}$}}}{37}{figure.3.13}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3.14}{\ignorespaces {\relax \fontsize  {8}{9.5}\selectfont  Result of \textit  {ImgPairs} (a-d), \textit  {Ortho} (e-h) and \textit  {DSM} (i-l) on matching \textbf  {Pezenas 1981 and 2014 (Satellite)}. (a, e, i) Image pairs/orthophotos/DSMs to be matched, with red rectangles indicating the common zone. (b, f, j) Numbers of total matches and RANSAC inliers of both SIFT and SuperGlue on methods \textit  {ImgPairs}, \textit  {Ortho} and \textit  {DSM} individually. (c, g, k) Visualization of RANSAC inliers based on $SIFT_{ImgPairs}$, $SIFT_{Ortho}$ and $SIFT_{DSM}$. (d, h, l) Visualization of RANSAC inliers based on $SuperGlue_{ImgPairs}$, $SuperGlue_{Ortho}$ and $SuperGlue_{DSM}$.}}}{38}{figure.3.14}}
-\newlabel{MatchVizPezenas-Satellite1981DSM}{{3.14}{38}{\scriptsize Result of \textit {ImgPairs} (a-d), \textit {Ortho} (e-h) and \textit {DSM} (i-l) on matching \textbf {Pezenas 1981 and 2014 (Satellite)}. (a, e, i) Image pairs/orthophotos/DSMs to be matched, with red rectangles indicating the common zone. (b, f, j) Numbers of total matches and RANSAC inliers of both SIFT and SuperGlue on methods \textit {ImgPairs}, \textit {Ortho} and \textit {DSM} individually. (c, g, k) Visualization of RANSAC inliers based on $SIFT_{ImgPairs}$, $SIFT_{Ortho}$ and $SIFT_{DSM}$. (d, h, l) Visualization of RANSAC inliers based on $SuperGlue_{ImgPairs}$, $SuperGlue_{Ortho}$ and $SuperGlue_{DSM}$}{figure.3.14}{}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {Orthophotos}}}{38}{figure.3.14}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {Number of recovered matches(\textit {Ortho})}}}{38}{figure.3.14}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(c)}{\ignorespaces {$SIFT_{Ortho}^{RANSAC Inliers}$}}}{38}{figure.3.14}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(d)}{\ignorespaces {$SuperGlue_{Ortho}^{RANSAC Inliers}$}}}{38}{figure.3.14}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(e)}{\ignorespaces {DSMs}}}{38}{figure.3.14}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(f)}{\ignorespaces {Number of recovered matches(\textit {DSM})}}}{38}{figure.3.14}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(g)}{\ignorespaces {$SIFT_{DSM}^{RANSAC Inliers}$}}}{38}{figure.3.14}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(h)}{\ignorespaces {$SuperGlue_{DSM}^{RANSAC Inliers}$}}}{38}{figure.3.14}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3.15}{\ignorespaces {\relax \fontsize  {8}{9.5}\selectfont  Result of \textit  {ImgPairs} (a-d), \textit  {Ortho} (e-h) and \textit  {DSM} (i-l) on matching \textbf  {Kobe 1991 and 1995}. (a, e, i) Image pairs/orthophotos/DSMs to be matched, with red rectangles indicating the common zone. (b, f, j) Numbers of total matches and RANSAC inliers of both SIFT and SuperGlue on methods \textit  {ImgPairs}, \textit  {Ortho} and \textit  {DSM} individually. (c, g, k) Visualization of RANSAC inliers based on $SIFT_{ImgPairs}$, $SIFT_{Ortho}$ and $SIFT_{DSM}$. (d, h, l) Visualization of RANSAC inliers based on $SuperGlue_{ImgPairs}$, $SuperGlue_{Ortho}$ and $SuperGlue_{DSM}$.}}}{39}{figure.3.15}}
-\newlabel{MatchVizKobe1991DSM}{{3.15}{39}{\scriptsize Result of \textit {ImgPairs} (a-d), \textit {Ortho} (e-h) and \textit {DSM} (i-l) on matching \textbf {Kobe 1991 and 1995}. (a, e, i) Image pairs/orthophotos/DSMs to be matched, with red rectangles indicating the common zone. (b, f, j) Numbers of total matches and RANSAC inliers of both SIFT and SuperGlue on methods \textit {ImgPairs}, \textit {Ortho} and \textit {DSM} individually. (c, g, k) Visualization of RANSAC inliers based on $SIFT_{ImgPairs}$, $SIFT_{Ortho}$ and $SIFT_{DSM}$. (d, h, l) Visualization of RANSAC inliers based on $SuperGlue_{ImgPairs}$, $SuperGlue_{Ortho}$ and $SuperGlue_{DSM}$}{figure.3.15}{}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {Image pairs (15$\times $83 pairs)}}}{39}{figure.3.15}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {Number of recovered matches(\textit {ImgPairs})}}}{39}{figure.3.15}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(c)}{\ignorespaces {$SIFT_{ImgPairs}^{RANSAC Inliers}$}}}{39}{figure.3.15}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(d)}{\ignorespaces {$SuperGlue_{ImgPairs}^{RANSAC Inliers}$}}}{39}{figure.3.15}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(e)}{\ignorespaces {Orthophotos}}}{39}{figure.3.15}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(f)}{\ignorespaces {Number of recovered matches(\textit {Ortho})}}}{39}{figure.3.15}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(g)}{\ignorespaces {$SIFT_{Ortho}^{RANSAC Inliers}$}}}{39}{figure.3.15}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(h)}{\ignorespaces {$SuperGlue_{Ortho}^{RANSAC Inliers}$}}}{39}{figure.3.15}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(i)}{\ignorespaces {DSMs}}}{39}{figure.3.15}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(j)}{\ignorespaces {Number of recovered matches(\textit {DSM})}}}{39}{figure.3.15}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(k)}{\ignorespaces {$SIFT_{DSM}^{RANSAC Inliers}$}}}{39}{figure.3.15}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(l)}{\ignorespaces {$SuperGlue_{DSM}^{RANSAC Inliers}$}}}{39}{figure.3.15}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.3.4.2}\ac {DoD}}{33}{subsubsection.3.3.4.2}}
 \acronymused{DoD}
 \acronymused{DoD}
 \acronymused{DoD}
 \acronymused{DoD}
+\@writefile{toc}{\contentsline {section}{\numberline {3.4}Conclusion}{33}{section.3.4}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.8}{\ignorespaces {\relax \fontsize  {8}{9.5}\selectfont  Result of \textit  {ImgPairs} (a-d), \textit  {Ortho} (e-h) and \textit  {DSM} (i-l) on matching \textbf  {Fr{\'e}jus 1954 and 2014}. (a, e, i) Image pairs/orthophotos/DSMs to be matched, with red rectangles indicating the common zone. (b, f, j) Numbers of total matches and RANSAC inliers of both SIFT and SuperGlue on methods \textit  {ImgPairs}, \textit  {Ortho} and \textit  {DSM} individually. (c, g, k) Visualization of RANSAC inliers based on $SIFT_{ImgPairs}$, $SIFT_{Ortho}$ and $SIFT_{DSM}$. (d, h, l) Visualization of RANSAC inliers based on $SuperGlue_{ImgPairs}$, $SuperGlue_{Ortho}$ and $SuperGlue_{DSM}$.}}}{34}{figure.3.8}}
+\newlabel{MatchVizFrejus1954DSM}{{3.8}{34}{\scriptsize Result of \textit {ImgPairs} (a-d), \textit {Ortho} (e-h) and \textit {DSM} (i-l) on matching \textbf {Fr{\'e}jus 1954 and 2014}. (a, e, i) Image pairs/orthophotos/DSMs to be matched, with red rectangles indicating the common zone. (b, f, j) Numbers of total matches and RANSAC inliers of both SIFT and SuperGlue on methods \textit {ImgPairs}, \textit {Ortho} and \textit {DSM} individually. (c, g, k) Visualization of RANSAC inliers based on $SIFT_{ImgPairs}$, $SIFT_{Ortho}$ and $SIFT_{DSM}$. (d, h, l) Visualization of RANSAC inliers based on $SuperGlue_{ImgPairs}$, $SuperGlue_{Ortho}$ and $SuperGlue_{DSM}$}{figure.3.8}{}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {Image pairs (19$\times $36 pairs)}}}{34}{figure.3.8}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {Number of recovered matches(\textit {ImgPairs})}}}{34}{figure.3.8}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(c)}{\ignorespaces {$SIFT_{ImgPairs}^{RANSAC Inliers}$}}}{34}{figure.3.8}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(d)}{\ignorespaces {$SuperGlue_{ImgPairs}^{RANSAC Inliers}$}}}{34}{figure.3.8}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(e)}{\ignorespaces {Orthophotos}}}{34}{figure.3.8}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(f)}{\ignorespaces {Number of recovered matches(\textit {Ortho})}}}{34}{figure.3.8}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(g)}{\ignorespaces {$SIFT_{Ortho}^{RANSAC Inliers}$}}}{34}{figure.3.8}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(h)}{\ignorespaces {$SuperGlue_{Ortho}^{RANSAC Inliers}$}}}{34}{figure.3.8}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(i)}{\ignorespaces {DSMs}}}{34}{figure.3.8}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(j)}{\ignorespaces {Number of recovered matches(\textit {DSM})}}}{34}{figure.3.8}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(k)}{\ignorespaces {$SIFT_{DSM}^{RANSAC Inliers}$}}}{34}{figure.3.8}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(l)}{\ignorespaces {$SuperGlue_{DSM}^{RANSAC Inliers}$}}}{34}{figure.3.8}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.9}{\ignorespaces {\relax \fontsize  {8}{9.5}\selectfont  Result of \textit  {ImgPairs} (a-d), \textit  {Ortho} (e-h) and \textit  {DSM} (i-l) on matching \textbf  {Fr{\'e}jus 1966 and 2014}. (a, e, i) Image pairs/orthophotos/DSMs to be matched, with red rectangles indicating the common zone. (b, f, j) Numbers of total matches and RANSAC inliers of both SIFT and SuperGlue on methods \textit  {ImgPairs}, \textit  {Ortho} and \textit  {DSM} individually. (c, g, k) Visualization of RANSAC inliers based on $SIFT_{ImgPairs}$, $SIFT_{Ortho}$ and $SIFT_{DSM}$. (d, h, l) Visualization of RANSAC inliers based on $SuperGlue_{ImgPairs}$, $SuperGlue_{Ortho}$ and $SuperGlue_{DSM}$.}}}{35}{figure.3.9}}
+\newlabel{MatchVizFrejus1966DSM}{{3.9}{35}{\scriptsize Result of \textit {ImgPairs} (a-d), \textit {Ortho} (e-h) and \textit {DSM} (i-l) on matching \textbf {Fr{\'e}jus 1966 and 2014}. (a, e, i) Image pairs/orthophotos/DSMs to be matched, with red rectangles indicating the common zone. (b, f, j) Numbers of total matches and RANSAC inliers of both SIFT and SuperGlue on methods \textit {ImgPairs}, \textit {Ortho} and \textit {DSM} individually. (c, g, k) Visualization of RANSAC inliers based on $SIFT_{ImgPairs}$, $SIFT_{Ortho}$ and $SIFT_{DSM}$. (d, h, l) Visualization of RANSAC inliers based on $SuperGlue_{ImgPairs}$, $SuperGlue_{Ortho}$ and $SuperGlue_{DSM}$}{figure.3.9}{}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {Image pairs (15$\times $36 pairs)}}}{35}{figure.3.9}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {Number of recovered matches(\textit {ImgPairs})}}}{35}{figure.3.9}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(c)}{\ignorespaces {$SIFT_{ImgPairs}^{RANSAC Inliers}$}}}{35}{figure.3.9}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(d)}{\ignorespaces {$SuperGlue_{ImgPairs}^{RANSAC Inliers}$}}}{35}{figure.3.9}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(e)}{\ignorespaces {Orthophotos}}}{35}{figure.3.9}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(f)}{\ignorespaces {Number of recovered matches(\textit {Ortho})}}}{35}{figure.3.9}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(g)}{\ignorespaces {$SIFT_{Ortho}^{RANSAC Inliers}$}}}{35}{figure.3.9}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(h)}{\ignorespaces {$SuperGlue_{Ortho}^{RANSAC Inliers}$}}}{35}{figure.3.9}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(i)}{\ignorespaces {DSMs}}}{35}{figure.3.9}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(j)}{\ignorespaces {Number of recovered matches(\textit {DSM})}}}{35}{figure.3.9}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(k)}{\ignorespaces {$SIFT_{DSM}^{RANSAC Inliers}$}}}{35}{figure.3.9}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(l)}{\ignorespaces {$SuperGlue_{DSM}^{RANSAC Inliers}$}}}{35}{figure.3.9}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.10}{\ignorespaces {\relax \fontsize  {8}{9.5}\selectfont  Result of \textit  {ImgPairs} (a-d), \textit  {Ortho} (e-h) and \textit  {DSM} (i-l) on matching \textbf  {Fr{\'e}jus 1970 and 2014}. (a, e, i) Image pairs/orthophotos/DSMs to be matched, with red rectangles indicating the common zone. (b, f, j) Numbers of total matches and RANSAC inliers of both SIFT and SuperGlue on methods \textit  {ImgPairs}, \textit  {Ortho} and \textit  {DSM} individually. (c, g, k) Visualization of RANSAC inliers based on $SIFT_{ImgPairs}$, $SIFT_{Ortho}$ and $SIFT_{DSM}$. (d, h, l) Visualization of RANSAC inliers based on $SuperGlue_{ImgPairs}$, $SuperGlue_{Ortho}$ and $SuperGlue_{DSM}$.}}}{36}{figure.3.10}}
+\newlabel{MatchVizFrejus1970DSM}{{3.10}{36}{\scriptsize Result of \textit {ImgPairs} (a-d), \textit {Ortho} (e-h) and \textit {DSM} (i-l) on matching \textbf {Fr{\'e}jus 1970 and 2014}. (a, e, i) Image pairs/orthophotos/DSMs to be matched, with red rectangles indicating the common zone. (b, f, j) Numbers of total matches and RANSAC inliers of both SIFT and SuperGlue on methods \textit {ImgPairs}, \textit {Ortho} and \textit {DSM} individually. (c, g, k) Visualization of RANSAC inliers based on $SIFT_{ImgPairs}$, $SIFT_{Ortho}$ and $SIFT_{DSM}$. (d, h, l) Visualization of RANSAC inliers based on $SuperGlue_{ImgPairs}$, $SuperGlue_{Ortho}$ and $SuperGlue_{DSM}$}{figure.3.10}{}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {Image pairs (19$\times $36 pairs)}}}{36}{figure.3.10}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {Number of recovered matches(\textit {ImgPairs})}}}{36}{figure.3.10}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(c)}{\ignorespaces {$SIFT_{ImgPairs}^{RANSAC Inliers}$}}}{36}{figure.3.10}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(d)}{\ignorespaces {$SuperGlue_{ImgPairs}^{RANSAC Inliers}$}}}{36}{figure.3.10}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(e)}{\ignorespaces {Orthophotos}}}{36}{figure.3.10}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(f)}{\ignorespaces {Number of recovered matches(\textit {Ortho})}}}{36}{figure.3.10}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(g)}{\ignorespaces {$SIFT_{Ortho}^{RANSAC Inliers}$}}}{36}{figure.3.10}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(h)}{\ignorespaces {$SuperGlue_{Ortho}^{RANSAC Inliers}$}}}{36}{figure.3.10}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(i)}{\ignorespaces {DSMs}}}{36}{figure.3.10}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(j)}{\ignorespaces {Number of recovered matches(\textit {DSM})}}}{36}{figure.3.10}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(k)}{\ignorespaces {$SIFT_{DSM}^{RANSAC Inliers}$}}}{36}{figure.3.10}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(l)}{\ignorespaces {$SuperGlue_{DSM}^{RANSAC Inliers}$}}}{36}{figure.3.10}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.11}{\ignorespaces {\relax \fontsize  {8}{9.5}\selectfont  Result of \textit  {ImgPairs} (a-d), \textit  {Ortho} (e-h) and \textit  {DSM} (i-l) on matching \textbf  {Pezenas 1971 and 2015}. (a, e, i) Image pairs/orthophotos/DSMs to be matched, with red rectangles indicating the common zone. (b, f, j) Numbers of total matches and RANSAC inliers of both SIFT and SuperGlue on methods \textit  {ImgPairs}, \textit  {Ortho} and \textit  {DSM} individually. (c, g, k) Visualization of RANSAC inliers based on $SIFT_{ImgPairs}$, $SIFT_{Ortho}$ and $SIFT_{DSM}$. (d, h, l) Visualization of RANSAC inliers based on $SuperGlue_{ImgPairs}$, $SuperGlue_{Ortho}$ and $SuperGlue_{DSM}$.}}}{37}{figure.3.11}}
+\newlabel{MatchVizPezenas1971DSM}{{3.11}{37}{\scriptsize Result of \textit {ImgPairs} (a-d), \textit {Ortho} (e-h) and \textit {DSM} (i-l) on matching \textbf {Pezenas 1971 and 2015}. (a, e, i) Image pairs/orthophotos/DSMs to be matched, with red rectangles indicating the common zone. (b, f, j) Numbers of total matches and RANSAC inliers of both SIFT and SuperGlue on methods \textit {ImgPairs}, \textit {Ortho} and \textit {DSM} individually. (c, g, k) Visualization of RANSAC inliers based on $SIFT_{ImgPairs}$, $SIFT_{Ortho}$ and $SIFT_{DSM}$. (d, h, l) Visualization of RANSAC inliers based on $SuperGlue_{ImgPairs}$, $SuperGlue_{Ortho}$ and $SuperGlue_{DSM}$}{figure.3.11}{}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {Image pairs (57$\times $382 pairs)}}}{37}{figure.3.11}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {Number of recovered matches(\textit {ImgPairs})}}}{37}{figure.3.11}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(c)}{\ignorespaces {$SIFT_{ImgPairs}^{RANSAC Inliers}$}}}{37}{figure.3.11}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(d)}{\ignorespaces {$SuperGlue_{ImgPairs}^{RANSAC Inliers}$}}}{37}{figure.3.11}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(e)}{\ignorespaces {Orthophotos}}}{37}{figure.3.11}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(f)}{\ignorespaces {Number of recovered matches(\textit {Ortho})}}}{37}{figure.3.11}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(g)}{\ignorespaces {$SIFT_{Ortho}^{RANSAC Inliers}$}}}{37}{figure.3.11}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(h)}{\ignorespaces {$SuperGlue_{Ortho}^{RANSAC Inliers}$}}}{37}{figure.3.11}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(i)}{\ignorespaces {DSMs}}}{37}{figure.3.11}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(j)}{\ignorespaces {Number of recovered matches(\textit {DSM})}}}{37}{figure.3.11}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(k)}{\ignorespaces {$SIFT_{DSM}^{RANSAC Inliers}$}}}{37}{figure.3.11}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(l)}{\ignorespaces {$SuperGlue_{DSM}^{RANSAC Inliers}$}}}{37}{figure.3.11}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.12}{\ignorespaces {\relax \fontsize  {8}{9.5}\selectfont  Result of \textit  {ImgPairs} (a-d), \textit  {Ortho} (e-h) and \textit  {DSM} (i-l) on matching \textbf  {Pezenas 1981 and 2015}. (a, e, i) Image pairs/orthophotos/DSMs to be matched, with red rectangles indicating the common zone. (b, f, j) Numbers of total matches and RANSAC inliers of both SIFT and SuperGlue on methods \textit  {ImgPairs}, \textit  {Ortho} and \textit  {DSM} individually. (c, g, k) Visualization of RANSAC inliers based on $SIFT_{ImgPairs}$, $SIFT_{Ortho}$ and $SIFT_{DSM}$. (d, h, l) Visualization of RANSAC inliers based on $SuperGlue_{ImgPairs}$, $SuperGlue_{Ortho}$ and $SuperGlue_{DSM}$.}}}{38}{figure.3.12}}
+\newlabel{MatchVizPezenas1981DSM}{{3.12}{38}{\scriptsize Result of \textit {ImgPairs} (a-d), \textit {Ortho} (e-h) and \textit {DSM} (i-l) on matching \textbf {Pezenas 1981 and 2015}. (a, e, i) Image pairs/orthophotos/DSMs to be matched, with red rectangles indicating the common zone. (b, f, j) Numbers of total matches and RANSAC inliers of both SIFT and SuperGlue on methods \textit {ImgPairs}, \textit {Ortho} and \textit {DSM} individually. (c, g, k) Visualization of RANSAC inliers based on $SIFT_{ImgPairs}$, $SIFT_{Ortho}$ and $SIFT_{DSM}$. (d, h, l) Visualization of RANSAC inliers based on $SuperGlue_{ImgPairs}$, $SuperGlue_{Ortho}$ and $SuperGlue_{DSM}$}{figure.3.12}{}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {Image pairs (27$\times $382 pairs)}}}{38}{figure.3.12}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {Number of recovered matches(\textit {ImgPairs})}}}{38}{figure.3.12}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(c)}{\ignorespaces {$SIFT_{ImgPairs}^{RANSAC Inliers}$}}}{38}{figure.3.12}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(d)}{\ignorespaces {$SuperGlue_{ImgPairs}^{RANSAC Inliers}$}}}{38}{figure.3.12}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(e)}{\ignorespaces {Orthophotos}}}{38}{figure.3.12}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(f)}{\ignorespaces {Number of recovered matches(\textit {Ortho})}}}{38}{figure.3.12}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(g)}{\ignorespaces {$SIFT_{Ortho}^{RANSAC Inliers}$}}}{38}{figure.3.12}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(h)}{\ignorespaces {$SuperGlue_{Ortho}^{RANSAC Inliers}$}}}{38}{figure.3.12}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(i)}{\ignorespaces {DSMs}}}{38}{figure.3.12}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(j)}{\ignorespaces {Number of recovered matches(\textit {DSM})}}}{38}{figure.3.12}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(k)}{\ignorespaces {$SIFT_{DSM}^{RANSAC Inliers}$}}}{38}{figure.3.12}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(l)}{\ignorespaces {$SuperGlue_{DSM}^{RANSAC Inliers}$}}}{38}{figure.3.12}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.13}{\ignorespaces {\relax \fontsize  {8}{9.5}\selectfont  Result of \textit  {ImgPairs} (a-d), \textit  {Ortho} (e-h) and \textit  {DSM} (i-l) on matching \textbf  {Pezenas 1971 and 2014 (Satellite)}. (a, e, i) Image pairs/orthophotos/DSMs to be matched, with red rectangles indicating the common zone. (b, f, j) Numbers of total matches and RANSAC inliers of both SIFT and SuperGlue on methods \textit  {ImgPairs}, \textit  {Ortho} and \textit  {DSM} individually. (c, g, k) Visualization of RANSAC inliers based on $SIFT_{ImgPairs}$, $SIFT_{Ortho}$ and $SIFT_{DSM}$. (d, h, l) Visualization of RANSAC inliers based on $SuperGlue_{ImgPairs}$, $SuperGlue_{Ortho}$ and $SuperGlue_{DSM}$.}}}{39}{figure.3.13}}
+\newlabel{MatchVizPezenas-Satellite1971DSM}{{3.13}{39}{\scriptsize Result of \textit {ImgPairs} (a-d), \textit {Ortho} (e-h) and \textit {DSM} (i-l) on matching \textbf {Pezenas 1971 and 2014 (Satellite)}. (a, e, i) Image pairs/orthophotos/DSMs to be matched, with red rectangles indicating the common zone. (b, f, j) Numbers of total matches and RANSAC inliers of both SIFT and SuperGlue on methods \textit {ImgPairs}, \textit {Ortho} and \textit {DSM} individually. (c, g, k) Visualization of RANSAC inliers based on $SIFT_{ImgPairs}$, $SIFT_{Ortho}$ and $SIFT_{DSM}$. (d, h, l) Visualization of RANSAC inliers based on $SuperGlue_{ImgPairs}$, $SuperGlue_{Ortho}$ and $SuperGlue_{DSM}$}{figure.3.13}{}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {Orthophotos}}}{39}{figure.3.13}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {Number of recovered matches(\textit {Ortho})}}}{39}{figure.3.13}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(c)}{\ignorespaces {$SIFT_{Ortho}^{RANSAC Inliers}$}}}{39}{figure.3.13}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(d)}{\ignorespaces {$SuperGlue_{Ortho}^{RANSAC Inliers}$}}}{39}{figure.3.13}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(e)}{\ignorespaces {DSMs}}}{39}{figure.3.13}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(f)}{\ignorespaces {Number of recovered matches(\textit {DSM})}}}{39}{figure.3.13}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(g)}{\ignorespaces {$SIFT_{DSM}^{RANSAC Inliers}$}}}{39}{figure.3.13}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(h)}{\ignorespaces {$SuperGlue_{DSM}^{RANSAC Inliers}$}}}{39}{figure.3.13}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.14}{\ignorespaces {\relax \fontsize  {8}{9.5}\selectfont  Result of \textit  {ImgPairs} (a-d), \textit  {Ortho} (e-h) and \textit  {DSM} (i-l) on matching \textbf  {Pezenas 1981 and 2014 (Satellite)}. (a, e, i) Image pairs/orthophotos/DSMs to be matched, with red rectangles indicating the common zone. (b, f, j) Numbers of total matches and RANSAC inliers of both SIFT and SuperGlue on methods \textit  {ImgPairs}, \textit  {Ortho} and \textit  {DSM} individually. (c, g, k) Visualization of RANSAC inliers based on $SIFT_{ImgPairs}$, $SIFT_{Ortho}$ and $SIFT_{DSM}$. (d, h, l) Visualization of RANSAC inliers based on $SuperGlue_{ImgPairs}$, $SuperGlue_{Ortho}$ and $SuperGlue_{DSM}$.}}}{40}{figure.3.14}}
+\newlabel{MatchVizPezenas-Satellite1981DSM}{{3.14}{40}{\scriptsize Result of \textit {ImgPairs} (a-d), \textit {Ortho} (e-h) and \textit {DSM} (i-l) on matching \textbf {Pezenas 1981 and 2014 (Satellite)}. (a, e, i) Image pairs/orthophotos/DSMs to be matched, with red rectangles indicating the common zone. (b, f, j) Numbers of total matches and RANSAC inliers of both SIFT and SuperGlue on methods \textit {ImgPairs}, \textit {Ortho} and \textit {DSM} individually. (c, g, k) Visualization of RANSAC inliers based on $SIFT_{ImgPairs}$, $SIFT_{Ortho}$ and $SIFT_{DSM}$. (d, h, l) Visualization of RANSAC inliers based on $SuperGlue_{ImgPairs}$, $SuperGlue_{Ortho}$ and $SuperGlue_{DSM}$}{figure.3.14}{}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {Orthophotos}}}{40}{figure.3.14}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {Number of recovered matches(\textit {Ortho})}}}{40}{figure.3.14}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(c)}{\ignorespaces {$SIFT_{Ortho}^{RANSAC Inliers}$}}}{40}{figure.3.14}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(d)}{\ignorespaces {$SuperGlue_{Ortho}^{RANSAC Inliers}$}}}{40}{figure.3.14}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(e)}{\ignorespaces {DSMs}}}{40}{figure.3.14}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(f)}{\ignorespaces {Number of recovered matches(\textit {DSM})}}}{40}{figure.3.14}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(g)}{\ignorespaces {$SIFT_{DSM}^{RANSAC Inliers}$}}}{40}{figure.3.14}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(h)}{\ignorespaces {$SuperGlue_{DSM}^{RANSAC Inliers}$}}}{40}{figure.3.14}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.15}{\ignorespaces {\relax \fontsize  {8}{9.5}\selectfont  Result of \textit  {ImgPairs} (a-d), \textit  {Ortho} (e-h) and \textit  {DSM} (i-l) on matching \textbf  {Kobe 1991 and 1995}. (a, e, i) Image pairs/orthophotos/DSMs to be matched, with red rectangles indicating the common zone. (b, f, j) Numbers of total matches and RANSAC inliers of both SIFT and SuperGlue on methods \textit  {ImgPairs}, \textit  {Ortho} and \textit  {DSM} individually. (c, g, k) Visualization of RANSAC inliers based on $SIFT_{ImgPairs}$, $SIFT_{Ortho}$ and $SIFT_{DSM}$. (d, h, l) Visualization of RANSAC inliers based on $SuperGlue_{ImgPairs}$, $SuperGlue_{Ortho}$ and $SuperGlue_{DSM}$.}}}{41}{figure.3.15}}
+\newlabel{MatchVizKobe1991DSM}{{3.15}{41}{\scriptsize Result of \textit {ImgPairs} (a-d), \textit {Ortho} (e-h) and \textit {DSM} (i-l) on matching \textbf {Kobe 1991 and 1995}. (a, e, i) Image pairs/orthophotos/DSMs to be matched, with red rectangles indicating the common zone. (b, f, j) Numbers of total matches and RANSAC inliers of both SIFT and SuperGlue on methods \textit {ImgPairs}, \textit {Ortho} and \textit {DSM} individually. (c, g, k) Visualization of RANSAC inliers based on $SIFT_{ImgPairs}$, $SIFT_{Ortho}$ and $SIFT_{DSM}$. (d, h, l) Visualization of RANSAC inliers based on $SuperGlue_{ImgPairs}$, $SuperGlue_{Ortho}$ and $SuperGlue_{DSM}$}{figure.3.15}{}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {Image pairs (15$\times $83 pairs)}}}{41}{figure.3.15}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {Number of recovered matches(\textit {ImgPairs})}}}{41}{figure.3.15}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(c)}{\ignorespaces {$SIFT_{ImgPairs}^{RANSAC Inliers}$}}}{41}{figure.3.15}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(d)}{\ignorespaces {$SuperGlue_{ImgPairs}^{RANSAC Inliers}$}}}{41}{figure.3.15}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(e)}{\ignorespaces {Orthophotos}}}{41}{figure.3.15}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(f)}{\ignorespaces {Number of recovered matches(\textit {Ortho})}}}{41}{figure.3.15}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(g)}{\ignorespaces {$SIFT_{Ortho}^{RANSAC Inliers}$}}}{41}{figure.3.15}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(h)}{\ignorespaces {$SuperGlue_{Ortho}^{RANSAC Inliers}$}}}{41}{figure.3.15}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(i)}{\ignorespaces {DSMs}}}{41}{figure.3.15}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(j)}{\ignorespaces {Number of recovered matches(\textit {DSM})}}}{41}{figure.3.15}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(k)}{\ignorespaces {$SIFT_{DSM}^{RANSAC Inliers}$}}}{41}{figure.3.15}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(l)}{\ignorespaces {$SuperGlue_{DSM}^{RANSAC Inliers}$}}}{41}{figure.3.15}}
 \acronymused{DoD}
 \acronymused{DoD}
 \acronymused{DoD}
@@ -221,57 +217,32 @@
 \acronymused{DoD}
 \acronymused{DoD}
 \acronymused{DoD}
-\@writefile{lof}{\contentsline {figure}{\numberline {3.16}{\ignorespaces {\relax \fontsize  {8}{9.5}\selectfont  \ac {DoD}s between free epoch \textbf  {Fr{\'e}jus 1954, 1966, 1970} and reference epoch \textbf  {2014} with methods $SuperGlue_{ImgPairs}$ (a, g, m), $SuperGlue_{Ortho}$ (b, h, n), $SuperGlue_{DSM}$ (c, i, o), $SIFT_{ImgPairs}$ (d, j, p), $SIFT_{Ortho}$ (e, k, q) and $SIFT_{DSM}$ (f, l, r). The prohibition sign means the corresponding method failed.}}}{40}{figure.3.16}}
-\acronymused{DoD}
-\newlabel{DoDFrejus}{{3.16}{40}{\scriptsize \ac {DoD}s between free epoch \textbf {Fr{\'e}jus 1954, 1966, 1970} and reference epoch \textbf {2014} with methods $SuperGlue_{ImgPairs}$ (a, g, m), $SuperGlue_{Ortho}$ (b, h, n), $SuperGlue_{DSM}$ (c, i, o), $SIFT_{ImgPairs}$ (d, j, p), $SIFT_{Ortho}$ (e, k, q) and $SIFT_{DSM}$ (f, l, r). The prohibition sign means the corresponding method failed}{figure.3.16}{}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {\ac {DoD}$_{Frejus1954}^{SuperGlue_{ImgPairs}}$}}}{40}{figure.3.16}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {\ac {DoD}$_{Frejus1954}^{SuperGlue_{Ortho}}$}}}{40}{figure.3.16}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(c)}{\ignorespaces {\ac {DoD}$_{Frejus1954}^{SuperGlue_{DSM}}$}}}{40}{figure.3.16}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(d)}{\ignorespaces {\ac {DoD}$_{Frejus1954}^{SIFT_{ImgPairs}}$}}}{40}{figure.3.16}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(e)}{\ignorespaces {\ac {DoD}$_{Frejus1954}^{SIFT_{Ortho}}$}}}{40}{figure.3.16}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(f)}{\ignorespaces {\ac {DoD}$_{Frejus1954}^{SIFT_{DSM}}$}}}{40}{figure.3.16}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(g)}{\ignorespaces {\ac {DoD}$_{Frejus1966}^{SuperGlue_{ImgPairs}}$}}}{40}{figure.3.16}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(h)}{\ignorespaces {\ac {DoD}$_{Frejus1966}^{SuperGlue_{Ortho}}$}}}{40}{figure.3.16}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(i)}{\ignorespaces {\ac {DoD}$_{Frejus1966}^{SuperGlue_{DSM}}$}}}{40}{figure.3.16}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(j)}{\ignorespaces {\ac {DoD}$_{Frejus1966}^{SIFT_{ImgPairs}}$}}}{40}{figure.3.16}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(k)}{\ignorespaces {\ac {DoD}$_{Frejus1966}^{SIFT_{Ortho}}$}}}{40}{figure.3.16}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(l)}{\ignorespaces {\ac {DoD}$_{Frejus1966}^{SIFT_{DSM}}$}}}{40}{figure.3.16}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(m)}{\ignorespaces {\ac {DoD}$_{Frejus1970}^{SuperGlue_{ImgPairs}}$}}}{40}{figure.3.16}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(n)}{\ignorespaces {\ac {DoD}$_{Frejus1970}^{SuperGlue_{Ortho}}$}}}{40}{figure.3.16}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(o)}{\ignorespaces {\ac {DoD}$_{Frejus1970}^{SuperGlue_{DSM}}$}}}{40}{figure.3.16}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(p)}{\ignorespaces {\ac {DoD}$_{Frejus1970}^{SIFT_{ImgPairs}}$}}}{40}{figure.3.16}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(q)}{\ignorespaces {\ac {DoD}$_{Frejus1970}^{SIFT_{Ortho}}$}}}{40}{figure.3.16}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(r)}{\ignorespaces {\ac {DoD}$_{Frejus1970}^{SIFT_{DSM}}$}}}{40}{figure.3.16}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(s)}{\ignorespaces {\ac {DoD} legend}}}{40}{figure.3.16}}
 \acronymused{DoD}
 \acronymused{DoD}
 \acronymused{DoD}
 \acronymused{DoD}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.16}{\ignorespaces {\relax \fontsize  {8}{9.5}\selectfont  \ac {DoD}s between free epoch \textbf  {Fr{\'e}jus 1954, 1966, 1970} and reference epoch \textbf  {2014} with methods $SuperGlue_{ImgPairs}$ (a, g, m), $SuperGlue_{Ortho}$ (b, h, n), $SuperGlue_{DSM}$ (c, i, o), $SIFT_{ImgPairs}$ (d, j, p), $SIFT_{Ortho}$ (e, k, q) and $SIFT_{DSM}$ (f, l, r). The prohibition sign means the corresponding method failed.}}}{42}{figure.3.16}}
 \acronymused{DoD}
-\acronymused{DoD}
-\acronymused{DoD}
-\acronymused{DoD}
-\acronymused{DoD}
-\acronymused{DoD}
-\acronymused{DoD}
-\acronymused{DoD}
-\acronymused{DoD}
-\@writefile{lof}{\contentsline {figure}{\numberline {3.17}{\ignorespaces {\relax \fontsize  {8}{9.5}\selectfont  \ac {DoD}s between free epoch \textbf  {Pezenas 1971, 1981} and reference aerial epoch \textbf  {2015} with methods $SuperGlue_{ImgPairs}$ (a, g), $SuperGlue_{Ortho}$ (b, h), $SuperGlue_{DSM}$ (c, i), $SIFT_{ImgPairs}$ (d, j), $SIFT_{Ortho}$ (e, k) and $SIFT_{DSM}$ (f, l). The prohibition sign means the corresponding method failed.}}}{41}{figure.3.17}}
-\acronymused{DoD}
-\newlabel{DoDPezenas}{{3.17}{41}{\scriptsize \ac {DoD}s between free epoch \textbf {Pezenas 1971, 1981} and reference aerial epoch \textbf {2015} with methods $SuperGlue_{ImgPairs}$ (a, g), $SuperGlue_{Ortho}$ (b, h), $SuperGlue_{DSM}$ (c, i), $SIFT_{ImgPairs}$ (d, j), $SIFT_{Ortho}$ (e, k) and $SIFT_{DSM}$ (f, l). The prohibition sign means the corresponding method failed}{figure.3.17}{}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {\ac {DoD}$_{Pezenas1971}^{SuperGlue_{ImgPairs}}$}}}{41}{figure.3.17}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {\ac {DoD}$_{Pezenas1971}^{SuperGlue_{Ortho}}$}}}{41}{figure.3.17}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(c)}{\ignorespaces {\ac {DoD}$_{Pezenas1971}^{SuperGlue_{DSM}}$}}}{41}{figure.3.17}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(d)}{\ignorespaces {\ac {DoD}$_{Pezenas1971}^{SIFT_{ImgPairs}}$}}}{41}{figure.3.17}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(e)}{\ignorespaces {\ac {DoD}$_{Pezenas1971}^{SIFT_{Ortho}}$}}}{41}{figure.3.17}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(f)}{\ignorespaces {\ac {DoD}$_{Pezenas1971}^{SIFT_{DSM}}$}}}{41}{figure.3.17}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(g)}{\ignorespaces {\ac {DoD}$_{Pezenas1981}^{SuperGlue_{ImgPairs}}$}}}{41}{figure.3.17}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(h)}{\ignorespaces {\ac {DoD}$_{Pezenas1981}^{SuperGlue_{Ortho}}$}}}{41}{figure.3.17}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(i)}{\ignorespaces {\ac {DoD}$_{Pezenas1981}^{SuperGlue_{DSM}}$}}}{41}{figure.3.17}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(j)}{\ignorespaces {\ac {DoD}$_{Pezenas1981}^{SIFT_{ImgPairs}}$}}}{41}{figure.3.17}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(k)}{\ignorespaces {\ac {DoD}$_{Pezenas1981}^{SIFT_{Ortho}}$}}}{41}{figure.3.17}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(l)}{\ignorespaces {\ac {DoD}$_{Pezenas1981}^{SIFT_{DSM}}$}}}{41}{figure.3.17}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(m)}{\ignorespaces {\ac {DoD} legend}}}{41}{figure.3.17}}
+\newlabel{DoDFrejus}{{3.16}{42}{\scriptsize \ac {DoD}s between free epoch \textbf {Fr{\'e}jus 1954, 1966, 1970} and reference epoch \textbf {2014} with methods $SuperGlue_{ImgPairs}$ (a, g, m), $SuperGlue_{Ortho}$ (b, h, n), $SuperGlue_{DSM}$ (c, i, o), $SIFT_{ImgPairs}$ (d, j, p), $SIFT_{Ortho}$ (e, k, q) and $SIFT_{DSM}$ (f, l, r). The prohibition sign means the corresponding method failed}{figure.3.16}{}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {\ac {DoD}$_{Frejus1954}^{SuperGlue_{ImgPairs}}$}}}{42}{figure.3.16}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {\ac {DoD}$_{Frejus1954}^{SuperGlue_{Ortho}}$}}}{42}{figure.3.16}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(c)}{\ignorespaces {\ac {DoD}$_{Frejus1954}^{SuperGlue_{DSM}}$}}}{42}{figure.3.16}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(d)}{\ignorespaces {\ac {DoD}$_{Frejus1954}^{SIFT_{ImgPairs}}$}}}{42}{figure.3.16}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(e)}{\ignorespaces {\ac {DoD}$_{Frejus1954}^{SIFT_{Ortho}}$}}}{42}{figure.3.16}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(f)}{\ignorespaces {\ac {DoD}$_{Frejus1954}^{SIFT_{DSM}}$}}}{42}{figure.3.16}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(g)}{\ignorespaces {\ac {DoD}$_{Frejus1966}^{SuperGlue_{ImgPairs}}$}}}{42}{figure.3.16}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(h)}{\ignorespaces {\ac {DoD}$_{Frejus1966}^{SuperGlue_{Ortho}}$}}}{42}{figure.3.16}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(i)}{\ignorespaces {\ac {DoD}$_{Frejus1966}^{SuperGlue_{DSM}}$}}}{42}{figure.3.16}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(j)}{\ignorespaces {\ac {DoD}$_{Frejus1966}^{SIFT_{ImgPairs}}$}}}{42}{figure.3.16}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(k)}{\ignorespaces {\ac {DoD}$_{Frejus1966}^{SIFT_{Ortho}}$}}}{42}{figure.3.16}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(l)}{\ignorespaces {\ac {DoD}$_{Frejus1966}^{SIFT_{DSM}}$}}}{42}{figure.3.16}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(m)}{\ignorespaces {\ac {DoD}$_{Frejus1970}^{SuperGlue_{ImgPairs}}$}}}{42}{figure.3.16}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(n)}{\ignorespaces {\ac {DoD}$_{Frejus1970}^{SuperGlue_{Ortho}}$}}}{42}{figure.3.16}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(o)}{\ignorespaces {\ac {DoD}$_{Frejus1970}^{SuperGlue_{DSM}}$}}}{42}{figure.3.16}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(p)}{\ignorespaces {\ac {DoD}$_{Frejus1970}^{SIFT_{ImgPairs}}$}}}{42}{figure.3.16}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(q)}{\ignorespaces {\ac {DoD}$_{Frejus1970}^{SIFT_{Ortho}}$}}}{42}{figure.3.16}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(r)}{\ignorespaces {\ac {DoD}$_{Frejus1970}^{SIFT_{DSM}}$}}}{42}{figure.3.16}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(s)}{\ignorespaces {\ac {DoD} legend}}}{42}{figure.3.16}}
 \acronymused{DoD}
 \acronymused{DoD}
 \acronymused{DoD}
@@ -281,40 +252,69 @@
 \acronymused{DoD}
 \acronymused{DoD}
 \acronymused{DoD}
-\@writefile{lof}{\contentsline {figure}{\numberline {3.18}{\ignorespaces {\relax \fontsize  {8}{9.5}\selectfont  \ac {DoD}s between free epoch \textbf  {Pezenas 1971, 1981} and reference satellite epoch \textbf  {2014} with methods $SuperGlue_{Ortho}$ (a, e), $SuperGlue_{DSM}$ (b, f), $SIFT_{Ortho}$ (c, g) and $SIFT_{DSM}$ (d, h). The holes among them are areas covered with clouds which are masked out. The prohibition sign means the corresponding method failed.}}}{42}{figure.3.18}}
-\acronymused{DoD}
-\newlabel{DoDPezenas-Satellite}{{3.18}{42}{\scriptsize \ac {DoD}s between free epoch \textbf {Pezenas 1971, 1981} and reference satellite epoch \textbf {2014} with methods $SuperGlue_{Ortho}$ (a, e), $SuperGlue_{DSM}$ (b, f), $SIFT_{Ortho}$ (c, g) and $SIFT_{DSM}$ (d, h). The holes among them are areas covered with clouds which are masked out. The prohibition sign means the corresponding method failed}{figure.3.18}{}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {\ac {DoD}$_{Pezenas1971}^{SuperGlue_{Ortho}}$}}}{42}{figure.3.18}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {\ac {DoD}$_{Pezenas1971}^{SuperGlue_{DSM}}$}}}{42}{figure.3.18}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(c)}{\ignorespaces {\ac {DoD}$_{Pezenas1971}^{SIFT_{Ortho}}$}}}{42}{figure.3.18}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(d)}{\ignorespaces {\ac {DoD}$_{Pezenas1971}^{SIFT_{DSM}}$}}}{42}{figure.3.18}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(e)}{\ignorespaces {\ac {DoD}$_{Pezenas1981}^{SuperGlue_{Ortho}}$}}}{42}{figure.3.18}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(f)}{\ignorespaces {\ac {DoD}$_{Pezenas1981}^{SuperGlue_{DSM}}$}}}{42}{figure.3.18}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(g)}{\ignorespaces {\ac {DoD}$_{Pezenas1981}^{SIFT_{Ortho}}$}}}{42}{figure.3.18}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(h)}{\ignorespaces {\ac {DoD}$_{Pezenas1981}^{SIFT_{DSM}}$}}}{42}{figure.3.18}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(i)}{\ignorespaces {\ac {DoD} legend}}}{42}{figure.3.18}}
 \acronymused{DoD}
 \acronymused{DoD}
 \acronymused{DoD}
 \acronymused{DoD}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.17}{\ignorespaces {\relax \fontsize  {8}{9.5}\selectfont  \ac {DoD}s between free epoch \textbf  {Pezenas 1971, 1981} and reference aerial epoch \textbf  {2015} with methods $SuperGlue_{ImgPairs}$ (a, g), $SuperGlue_{Ortho}$ (b, h), $SuperGlue_{DSM}$ (c, i), $SIFT_{ImgPairs}$ (d, j), $SIFT_{Ortho}$ (e, k) and $SIFT_{DSM}$ (f, l). The prohibition sign means the corresponding method failed.}}}{43}{figure.3.17}}
+\acronymused{DoD}
+\newlabel{DoDPezenas}{{3.17}{43}{\scriptsize \ac {DoD}s between free epoch \textbf {Pezenas 1971, 1981} and reference aerial epoch \textbf {2015} with methods $SuperGlue_{ImgPairs}$ (a, g), $SuperGlue_{Ortho}$ (b, h), $SuperGlue_{DSM}$ (c, i), $SIFT_{ImgPairs}$ (d, j), $SIFT_{Ortho}$ (e, k) and $SIFT_{DSM}$ (f, l). The prohibition sign means the corresponding method failed}{figure.3.17}{}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {\ac {DoD}$_{Pezenas1971}^{SuperGlue_{ImgPairs}}$}}}{43}{figure.3.17}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {\ac {DoD}$_{Pezenas1971}^{SuperGlue_{Ortho}}$}}}{43}{figure.3.17}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(c)}{\ignorespaces {\ac {DoD}$_{Pezenas1971}^{SuperGlue_{DSM}}$}}}{43}{figure.3.17}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(d)}{\ignorespaces {\ac {DoD}$_{Pezenas1971}^{SIFT_{ImgPairs}}$}}}{43}{figure.3.17}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(e)}{\ignorespaces {\ac {DoD}$_{Pezenas1971}^{SIFT_{Ortho}}$}}}{43}{figure.3.17}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(f)}{\ignorespaces {\ac {DoD}$_{Pezenas1971}^{SIFT_{DSM}}$}}}{43}{figure.3.17}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(g)}{\ignorespaces {\ac {DoD}$_{Pezenas1981}^{SuperGlue_{ImgPairs}}$}}}{43}{figure.3.17}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(h)}{\ignorespaces {\ac {DoD}$_{Pezenas1981}^{SuperGlue_{Ortho}}$}}}{43}{figure.3.17}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(i)}{\ignorespaces {\ac {DoD}$_{Pezenas1981}^{SuperGlue_{DSM}}$}}}{43}{figure.3.17}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(j)}{\ignorespaces {\ac {DoD}$_{Pezenas1981}^{SIFT_{ImgPairs}}$}}}{43}{figure.3.17}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(k)}{\ignorespaces {\ac {DoD}$_{Pezenas1981}^{SIFT_{Ortho}}$}}}{43}{figure.3.17}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(l)}{\ignorespaces {\ac {DoD}$_{Pezenas1981}^{SIFT_{DSM}}$}}}{43}{figure.3.17}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(m)}{\ignorespaces {\ac {DoD} legend}}}{43}{figure.3.17}}
 \acronymused{DoD}
 \acronymused{DoD}
 \acronymused{DoD}
-\@writefile{lof}{\contentsline {figure}{\numberline {3.19}{\ignorespaces {\relax \fontsize  {8}{9.5}\selectfont  \ac {DoD}s between free epoch \textbf  {Kobe 1991} and reference epoch \textbf  {1995} with methods $SuperGlue_{ImgPairs}$ (a), $SuperGlue_{Ortho}$ (b), $SuperGlue_{DSM}$ (c), $SIFT_{ImgPairs}$ (d), $SIFT_{Ortho}$ (e) and $SIFT_{DSM}$ (f). The prohibition sign means the corresponding method failed.}}}{43}{figure.3.19}}
 \acronymused{DoD}
-\newlabel{DoDKobe}{{3.19}{43}{\scriptsize \ac {DoD}s between free epoch \textbf {Kobe 1991} and reference epoch \textbf {1995} with methods $SuperGlue_{ImgPairs}$ (a), $SuperGlue_{Ortho}$ (b), $SuperGlue_{DSM}$ (c), $SIFT_{ImgPairs}$ (d), $SIFT_{Ortho}$ (e) and $SIFT_{DSM}$ (f). The prohibition sign means the corresponding method failed}{figure.3.19}{}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {\ac {DoD}$_{Kobe}^{SuperGlue_{ImgPairs}}$}}}{43}{figure.3.19}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {\ac {DoD}$_{Kobe}^{SuperGlue_{Ortho}}$}}}{43}{figure.3.19}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(c)}{\ignorespaces {\ac {DoD}$_{Kobe}^{SuperGlue_{DSM}}$}}}{43}{figure.3.19}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(d)}{\ignorespaces {\ac {DoD}$_{Kobe}^{SIFT_{ImgPairs}}$}}}{43}{figure.3.19}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(e)}{\ignorespaces {\ac {DoD}$_{Kobe}^{SIFT_{Ortho}}$}}}{43}{figure.3.19}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(f)}{\ignorespaces {\ac {DoD}$_{Kobe}^{SIFT_{DSM}}$}}}{43}{figure.3.19}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(g)}{\ignorespaces {\ac {DoD} legend}}}{43}{figure.3.19}}
-\@writefile{lot}{\contentsline {table}{\numberline {3.4}{\ignorespaces Average value $\mu $, standard deviation $\sigma $, and absolute average value $|\mu |$ of all the \ac {DoD}s in Figure~\ref  {DoDFrejus}, ~\ref  {DoDPezenas}, ~\ref  {DoDPezenas-Satellite} and ~\ref  {DoDKobe}.}}{44}{table.3.4}}
 \acronymused{DoD}
-\newlabel{DoDStatistic}{{3.4}{44}{Average value $\mu $, standard deviation $\sigma $, and absolute average value $|\mu |$ of all the \ac {DoD}s in Figure~\ref {DoDFrejus}, ~\ref {DoDPezenas}, ~\ref {DoDPezenas-Satellite} and ~\ref {DoDKobe}}{table.3.4}{}}
+\acronymused{DoD}
+\acronymused{DoD}
+\acronymused{DoD}
+\acronymused{DoD}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.18}{\ignorespaces {\relax \fontsize  {8}{9.5}\selectfont  \ac {DoD}s between free epoch \textbf  {Pezenas 1971, 1981} and reference satellite epoch \textbf  {2014} with methods $SuperGlue_{Ortho}$ (a, e), $SuperGlue_{DSM}$ (b, f), $SIFT_{Ortho}$ (c, g) and $SIFT_{DSM}$ (d, h). The holes among them are areas covered with clouds which are masked out. The prohibition sign means the corresponding method failed.}}}{44}{figure.3.18}}
+\acronymused{DoD}
+\newlabel{DoDPezenas-Satellite}{{3.18}{44}{\scriptsize \ac {DoD}s between free epoch \textbf {Pezenas 1971, 1981} and reference satellite epoch \textbf {2014} with methods $SuperGlue_{Ortho}$ (a, e), $SuperGlue_{DSM}$ (b, f), $SIFT_{Ortho}$ (c, g) and $SIFT_{DSM}$ (d, h). The holes among them are areas covered with clouds which are masked out. The prohibition sign means the corresponding method failed}{figure.3.18}{}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {\ac {DoD}$_{Pezenas1971}^{SuperGlue_{Ortho}}$}}}{44}{figure.3.18}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {\ac {DoD}$_{Pezenas1971}^{SuperGlue_{DSM}}$}}}{44}{figure.3.18}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(c)}{\ignorespaces {\ac {DoD}$_{Pezenas1971}^{SIFT_{Ortho}}$}}}{44}{figure.3.18}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(d)}{\ignorespaces {\ac {DoD}$_{Pezenas1971}^{SIFT_{DSM}}$}}}{44}{figure.3.18}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(e)}{\ignorespaces {\ac {DoD}$_{Pezenas1981}^{SuperGlue_{Ortho}}$}}}{44}{figure.3.18}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(f)}{\ignorespaces {\ac {DoD}$_{Pezenas1981}^{SuperGlue_{DSM}}$}}}{44}{figure.3.18}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(g)}{\ignorespaces {\ac {DoD}$_{Pezenas1981}^{SIFT_{Ortho}}$}}}{44}{figure.3.18}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(h)}{\ignorespaces {\ac {DoD}$_{Pezenas1981}^{SIFT_{DSM}}$}}}{44}{figure.3.18}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(i)}{\ignorespaces {\ac {DoD} legend}}}{44}{figure.3.18}}
+\acronymused{DoD}
+\acronymused{DoD}
+\acronymused{DoD}
+\acronymused{DoD}
+\acronymused{DoD}
+\acronymused{DoD}
+\acronymused{DoD}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.19}{\ignorespaces {\relax \fontsize  {8}{9.5}\selectfont  \ac {DoD}s between free epoch \textbf  {Kobe 1991} and reference epoch \textbf  {1995} with methods $SuperGlue_{ImgPairs}$ (a), $SuperGlue_{Ortho}$ (b), $SuperGlue_{DSM}$ (c), $SIFT_{ImgPairs}$ (d), $SIFT_{Ortho}$ (e) and $SIFT_{DSM}$ (f). The prohibition sign means the corresponding method failed.}}}{45}{figure.3.19}}
+\acronymused{DoD}
+\newlabel{DoDKobe}{{3.19}{45}{\scriptsize \ac {DoD}s between free epoch \textbf {Kobe 1991} and reference epoch \textbf {1995} with methods $SuperGlue_{ImgPairs}$ (a), $SuperGlue_{Ortho}$ (b), $SuperGlue_{DSM}$ (c), $SIFT_{ImgPairs}$ (d), $SIFT_{Ortho}$ (e) and $SIFT_{DSM}$ (f). The prohibition sign means the corresponding method failed}{figure.3.19}{}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {\ac {DoD}$_{Kobe}^{SuperGlue_{ImgPairs}}$}}}{45}{figure.3.19}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {\ac {DoD}$_{Kobe}^{SuperGlue_{Ortho}}$}}}{45}{figure.3.19}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(c)}{\ignorespaces {\ac {DoD}$_{Kobe}^{SuperGlue_{DSM}}$}}}{45}{figure.3.19}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(d)}{\ignorespaces {\ac {DoD}$_{Kobe}^{SIFT_{ImgPairs}}$}}}{45}{figure.3.19}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(e)}{\ignorespaces {\ac {DoD}$_{Kobe}^{SIFT_{Ortho}}$}}}{45}{figure.3.19}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(f)}{\ignorespaces {\ac {DoD}$_{Kobe}^{SIFT_{DSM}}$}}}{45}{figure.3.19}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(g)}{\ignorespaces {\ac {DoD} legend}}}{45}{figure.3.19}}
+\@writefile{lot}{\contentsline {table}{\numberline {3.4}{\ignorespaces Average value $\mu $, standard deviation $\sigma $, and absolute average value $|\mu |$ of all the \ac {DoD}s in Figure~\ref  {DoDFrejus}, ~\ref  {DoDPezenas}, ~\ref  {DoDPezenas-Satellite} and ~\ref  {DoDKobe}.}}{46}{table.3.4}}
+\acronymused{DoD}
+\newlabel{DoDStatistic}{{3.4}{46}{Average value $\mu $, standard deviation $\sigma $, and absolute average value $|\mu |$ of all the \ac {DoD}s in Figure~\ref {DoDFrejus}, ~\ref {DoDPezenas}, ~\ref {DoDPezenas-Satellite} and ~\ref {DoDKobe}}{table.3.4}{}}
 \@setckpt{Chapter3}{
-\setcounter{page}{45}
+\setcounter{page}{47}
 \setcounter{equation}{2}
 \setcounter{enumi}{3}
 \setcounter{enumii}{0}
@@ -346,7 +346,7 @@
 \setcounter{subtable}{0}
 \setcounter{lotdepth}{1}
 \setcounter{definition}{0}
-\setcounter{Item}{62}
+\setcounter{Item}{68}
 \setcounter{Hfootnote}{0}
 \setcounter{bookmark@seq@number}{25}
 \setcounter{su@anzahl}{0}

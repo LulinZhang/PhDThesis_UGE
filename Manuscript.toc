@@ -4,66 +4,66 @@
 \contentsline {section}{\numberline {1.1}Motivation}{1}{section.1.1}
 \contentsline {subsection}{\numberline {1.1.1}Why are historical images interesting}{1}{subsection.1.1.1}
 \contentsline {subsection}{\numberline {1.1.2}How to match multi-epoch historical images}{2}{subsection.1.1.2}
-\contentsline {subsubsection}{\numberline {1.1.2.1}Take advantage of 3D geometry}{2}{subsubsection.1.1.2.1}
-\contentsline {subsubsection}{\numberline {1.1.2.2}Divide and conquer}{5}{subsubsection.1.1.2.2}
-\contentsline {section}{\numberline {1.2}Objective}{5}{section.1.2}
-\contentsline {section}{\numberline {1.3}Contribution}{5}{section.1.3}
-\contentsline {section}{\numberline {1.4}Organization of the thesis}{5}{section.1.4}
-\contentsline {chapter}{\numberline {2}Literature review}{7}{chapter.2}
-\contentsline {section}{\numberline {2.1}Local feature matching}{7}{section.2.1}
-\contentsline {subsection}{\numberline {2.1.1}Hand-crafted methods}{7}{subsection.2.1.1}
-\contentsline {subsection}{\numberline {2.1.2}Learned methods}{8}{subsection.2.1.2}
-\contentsline {section}{\numberline {2.2}Historical image processing}{9}{section.2.2}
-\contentsline {section}{\numberline {2.3}Robust matching}{10}{section.2.3}
-\contentsline {chapter}{\numberline {3}Rough co-registration}{13}{chapter.3}
-\contentsline {section}{\numberline {3.1}Introduction}{13}{section.3.1}
-\contentsline {section}{\numberline {3.2}Methodology}{15}{section.3.2}
-\contentsline {subsection}{\numberline {3.2.1}Strategy 1: Matching image pairs (\textit {ImgPairs})}{16}{subsection.3.2.1}
-\contentsline {subsection}{\numberline {3.2.2}Strategy 2: Matching Orthophotos/DSMs (\textit {Ortho} or \textit {DSM})}{18}{subsection.3.2.2}
-\contentsline {section}{\numberline {3.3}Experiments}{22}{section.3.3}
-\contentsline {subsection}{\numberline {3.3.1}Implementation details}{22}{subsection.3.3.1}
-\contentsline {subsection}{\numberline {3.3.2}Datasets}{23}{subsection.3.3.2}
-\contentsline {paragraph}{Fr{\'e}jus}{23}{section*.6}
-\contentsline {paragraph}{Pezenas}{24}{section*.9}
-\contentsline {paragraph}{Kobe}{24}{section*.10}
-\contentsline {subsection}{\numberline {3.3.3}Evaluation}{24}{subsection.3.3.3}
-\contentsline {subsection}{\numberline {3.3.4}Comparison}{29}{subsection.3.3.4}
-\contentsline {subsubsection}{\numberline {3.3.4.1}Matches visualization}{29}{subsubsection.3.3.4.1}
-\contentsline {subsubsection}{\numberline {3.3.4.2}\ac {DoD}}{31}{subsubsection.3.3.4.2}
-\contentsline {section}{\numberline {3.4}Conclusion}{31}{section.3.4}
-\contentsline {chapter}{\numberline {4}Precise matching}{45}{chapter.4}
-\contentsline {section}{\numberline {4.1}Introduction}{45}{section.4.1}
-\contentsline {subsection}{\numberline {4.1.1}Motivation}{45}{subsection.4.1.1}
-\contentsline {subsection}{\numberline {4.1.2}Contribution}{45}{subsection.4.1.2}
-\contentsline {section}{\numberline {4.2}Methodology}{45}{section.4.2}
-\contentsline {subsection}{\numberline {4.2.1}Get tentative matches}{46}{subsection.4.2.1}
-\contentsline {subsubsection}{\numberline {4.2.1.1}Patch matching for learned features}{47}{subsubsection.4.2.1.1}
-\contentsline {subsubsection}{\numberline {4.2.1.2}Guided matching for hand-crafted features}{47}{subsubsection.4.2.1.2}
-\contentsline {subsection}{\numberline {4.2.2}Get enhanced matches}{49}{subsection.4.2.2}
-\contentsline {subsection}{\numberline {4.2.3}Get final matches}{50}{subsection.4.2.3}
-\contentsline {subsection}{\numberline {4.2.4}Refine orientations}{50}{subsection.4.2.4}
-\contentsline {section}{\numberline {4.3}Experiments}{51}{section.4.3}
-\contentsline {subsection}{\numberline {4.3.1}Implementation details}{51}{subsection.4.3.1}
-\contentsline {subsection}{\numberline {4.3.2}Datasets}{52}{subsection.4.3.2}
-\contentsline {subsection}{\numberline {4.3.3}Evaluation}{52}{subsection.4.3.3}
-\contentsline {subsection}{\numberline {4.3.4}Comparison}{53}{subsection.4.3.4}
-\contentsline {subsubsection}{\numberline {4.3.4.1}Matches visualization}{53}{subsubsection.4.3.4.1}
-\contentsline {subsubsection}{\numberline {4.3.4.2}DoD}{62}{subsubsection.4.3.4.2}
-\contentsline {subsubsection}{\numberline {4.3.4.3}Ground displacement}{62}{subsubsection.4.3.4.3}
-\contentsline {section}{\numberline {4.4}Conclusion}{62}{section.4.4}
-\contentsline {section}{\numberline {4.5}Discussion}{62}{section.4.5}
-\contentsline {chapter}{\numberline {5}Conclusion and Perspective}{63}{chapter.5}
-\contentsline {part}{Appendices}{65}{chapter.5}
+\contentsline {subsubsection}{\numberline {1.1.2.1}Take advantage of 3D geometry}{3}{subsubsection.1.1.2.1}
+\contentsline {subsubsection}{\numberline {1.1.2.2}Rough-to-precise strategy}{6}{subsubsection.1.1.2.2}
+\contentsline {section}{\numberline {1.2}Objective}{6}{section.1.2}
+\contentsline {section}{\numberline {1.3}Contribution}{6}{section.1.3}
+\contentsline {section}{\numberline {1.4}Organization of the thesis}{6}{section.1.4}
+\contentsline {chapter}{\numberline {2}Literature review}{9}{chapter.2}
+\contentsline {section}{\numberline {2.1}Local feature matching}{9}{section.2.1}
+\contentsline {subsection}{\numberline {2.1.1}Hand-crafted methods}{9}{subsection.2.1.1}
+\contentsline {subsection}{\numberline {2.1.2}Learned methods}{10}{subsection.2.1.2}
+\contentsline {section}{\numberline {2.2}Historical image processing}{11}{section.2.2}
+\contentsline {section}{\numberline {2.3}Robust matching}{12}{section.2.3}
+\contentsline {chapter}{\numberline {3}Rough co-registration}{15}{chapter.3}
+\contentsline {section}{\numberline {3.1}Introduction}{15}{section.3.1}
+\contentsline {section}{\numberline {3.2}Methodology}{17}{section.3.2}
+\contentsline {subsection}{\numberline {3.2.1}Strategy 1: Matching image pairs (\textit {ImgPairs})}{18}{subsection.3.2.1}
+\contentsline {subsection}{\numberline {3.2.2}Strategy 2: Matching Orthophotos/DSMs (\textit {Ortho} or \textit {DSM})}{20}{subsection.3.2.2}
+\contentsline {section}{\numberline {3.3}Experiments}{24}{section.3.3}
+\contentsline {subsection}{\numberline {3.3.1}Implementation details}{24}{subsection.3.3.1}
+\contentsline {subsection}{\numberline {3.3.2}Datasets}{25}{subsection.3.3.2}
+\contentsline {paragraph}{Fr{\'e}jus}{25}{section*.6}
+\contentsline {paragraph}{Pezenas}{26}{section*.9}
+\contentsline {paragraph}{Kobe}{26}{section*.10}
+\contentsline {subsection}{\numberline {3.3.3}Evaluation}{26}{subsection.3.3.3}
+\contentsline {subsection}{\numberline {3.3.4}Comparison}{31}{subsection.3.3.4}
+\contentsline {subsubsection}{\numberline {3.3.4.1}Matches visualization}{31}{subsubsection.3.3.4.1}
+\contentsline {subsubsection}{\numberline {3.3.4.2}\ac {DoD}}{33}{subsubsection.3.3.4.2}
+\contentsline {section}{\numberline {3.4}Conclusion}{33}{section.3.4}
+\contentsline {chapter}{\numberline {4}Precise matching}{47}{chapter.4}
+\contentsline {section}{\numberline {4.1}Introduction}{47}{section.4.1}
+\contentsline {subsection}{\numberline {4.1.1}Motivation}{47}{subsection.4.1.1}
+\contentsline {subsection}{\numberline {4.1.2}Contribution}{47}{subsection.4.1.2}
+\contentsline {section}{\numberline {4.2}Methodology}{47}{section.4.2}
+\contentsline {subsection}{\numberline {4.2.1}Get tentative matches}{48}{subsection.4.2.1}
+\contentsline {subsubsection}{\numberline {4.2.1.1}Patch matching for learned features}{49}{subsubsection.4.2.1.1}
+\contentsline {subsubsection}{\numberline {4.2.1.2}Guided matching for hand-crafted features}{49}{subsubsection.4.2.1.2}
+\contentsline {subsection}{\numberline {4.2.2}Get enhanced matches}{51}{subsection.4.2.2}
+\contentsline {subsection}{\numberline {4.2.3}Get final matches}{52}{subsection.4.2.3}
+\contentsline {subsection}{\numberline {4.2.4}Refine orientations}{52}{subsection.4.2.4}
+\contentsline {section}{\numberline {4.3}Experiments}{53}{section.4.3}
+\contentsline {subsection}{\numberline {4.3.1}Implementation details}{53}{subsection.4.3.1}
+\contentsline {subsection}{\numberline {4.3.2}Datasets}{54}{subsection.4.3.2}
+\contentsline {subsection}{\numberline {4.3.3}Evaluation}{54}{subsection.4.3.3}
+\contentsline {subsection}{\numberline {4.3.4}Comparison}{55}{subsection.4.3.4}
+\contentsline {subsubsection}{\numberline {4.3.4.1}Matches visualization}{55}{subsubsection.4.3.4.1}
+\contentsline {subsubsection}{\numberline {4.3.4.2}DoD}{67}{subsubsection.4.3.4.2}
+\contentsline {subsubsection}{\numberline {4.3.4.3}Ground displacement}{67}{subsubsection.4.3.4.3}
+\contentsline {section}{\numberline {4.4}Conclusion}{67}{section.4.4}
+\contentsline {section}{\numberline {4.5}Discussion}{67}{section.4.5}
+\contentsline {chapter}{\numberline {5}Conclusion and Perspective}{69}{chapter.5}
+\contentsline {part}{Appendices}{71}{chapter.5}
 \partbegin 
-\contentsline {chapter}{\numberline {A}Use case of matching guided by 2D similarity transformation}{67}{appendix.A}
-\contentsline {section}{\numberline {A.1}Dataset}{67}{section.A.1}
-\contentsline {section}{\numberline {A.2}Result}{67}{section.A.2}
-\contentsline {chapter}{\numberline {B}Comparison between $SIFT_{Adapted}$ and $SIFT_{Default}$}{71}{appendix.B}
-\contentsline {section}{\numberline {B.1}Comparison on matching image pair}{71}{section.B.1}
-\contentsline {section}{\numberline {B.2}Comparison on matching orthophotos}{71}{section.B.2}
-\contentsline {section}{\numberline {B.3}Comparison on matching DSMs}{71}{section.B.3}
-\contentsline {chapter}{\numberline {C}Comparison between $SuperGlue_{tiling}$ and $SuperGlue_{orig}$}{75}{appendix.C}
-\contentsline {section}{\numberline {C.1}Comparison on matching orthophotos}{75}{section.C.1}
-\contentsline {section}{\numberline {C.2}Comparison on matching DSMs}{75}{section.C.2}
-\contentsline {chapter}{\numberline {D}Comparison of precise matching on DSMs and original RGB images}{79}{appendix.D}
-\contentsline {chapter}{Bibliography}{83}{appendix*.14}
+\contentsline {chapter}{\numberline {A}Use case of matching guided by 2D similarity transformation}{73}{appendix.A}
+\contentsline {section}{\numberline {A.1}Dataset}{73}{section.A.1}
+\contentsline {section}{\numberline {A.2}Result}{73}{section.A.2}
+\contentsline {chapter}{\numberline {B}Comparison between $SIFT_{Adapted}$ and $SIFT_{Default}$}{77}{appendix.B}
+\contentsline {section}{\numberline {B.1}Comparison on matching image pair}{77}{section.B.1}
+\contentsline {section}{\numberline {B.2}Comparison on matching orthophotos}{77}{section.B.2}
+\contentsline {section}{\numberline {B.3}Comparison on matching DSMs}{77}{section.B.3}
+\contentsline {chapter}{\numberline {C}Comparison between $SuperGlue_{tiling}$ and $SuperGlue_{orig}$}{81}{appendix.C}
+\contentsline {section}{\numberline {C.1}Comparison on matching orthophotos}{81}{section.C.1}
+\contentsline {section}{\numberline {C.2}Comparison on matching DSMs}{81}{section.C.2}
+\contentsline {chapter}{\numberline {D}Comparison of precise matching on DSMs and original RGB images}{85}{appendix.D}
+\contentsline {chapter}{Bibliography}{89}{appendix*.14}
