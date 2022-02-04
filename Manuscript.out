@@ -12,44 +12,51 @@
 \BOOKMARK [2][]{subsection.2.1.2}{Learned methods}{section.2.1}% 12
 \BOOKMARK [1][]{section.2.2}{Historical image processing}{chapter.2}% 13
 \BOOKMARK [1][]{section.2.3}{Robust matching}{chapter.2}% 14
-\BOOKMARK [0][]{chapter.3}{Rough co-registration}{}% 15
-\BOOKMARK [1][]{section.3.1}{Introduction}{chapter.3}% 16
-\BOOKMARK [1][]{section.3.2}{Methodology}{chapter.3}% 17
-\BOOKMARK [2][]{subsection.3.2.1}{Strategy 1: Matching image pairs \(ImgPairs\)}{section.3.2}% 18
-\BOOKMARK [2][]{subsection.3.2.2}{Strategy 2: Matching Orthophotos/DSMs \(Ortho or DSM\)}{section.3.2}% 19
-\BOOKMARK [1][]{section.3.3}{Experiments}{chapter.3}% 20
-\BOOKMARK [2][]{subsection.3.3.1}{Implementation details}{section.3.3}% 21
-\BOOKMARK [2][]{subsection.3.3.2}{Datasets}{section.3.3}% 22
-\BOOKMARK [2][]{subsection.3.3.3}{Evaluation}{section.3.3}% 23
-\BOOKMARK [2][]{subsection.3.3.4}{Comparison}{section.3.3}% 24
-\BOOKMARK [1][]{section.3.4}{Conclusion}{chapter.3}% 25
-\BOOKMARK [0][]{chapter.4}{Precise matching}{}% 26
-\BOOKMARK [1][]{section.4.1}{Introduction}{chapter.4}% 27
-\BOOKMARK [2][]{subsection.4.1.1}{Motivation}{section.4.1}% 28
-\BOOKMARK [2][]{subsection.4.1.2}{Contribution}{section.4.1}% 29
-\BOOKMARK [1][]{section.4.2}{Methodology}{chapter.4}% 30
-\BOOKMARK [2][]{subsection.4.2.1}{Get tentative matches}{section.4.2}% 31
-\BOOKMARK [2][]{subsection.4.2.2}{Get enhanced matches}{section.4.2}% 32
-\BOOKMARK [2][]{subsection.4.2.3}{Get final matches}{section.4.2}% 33
-\BOOKMARK [2][]{subsection.4.2.4}{Refine orientations}{section.4.2}% 34
-\BOOKMARK [1][]{section.4.3}{Experiments}{chapter.4}% 35
-\BOOKMARK [2][]{subsection.4.3.1}{Implementation details}{section.4.3}% 36
-\BOOKMARK [2][]{subsection.4.3.2}{Datasets}{section.4.3}% 37
-\BOOKMARK [2][]{subsection.4.3.3}{Evaluation}{section.4.3}% 38
-\BOOKMARK [2][]{subsection.4.3.4}{Comparison}{section.4.3}% 39
-\BOOKMARK [1][]{section.4.4}{Conclusion}{chapter.4}% 40
-\BOOKMARK [1][]{section.4.5}{Discussion}{chapter.4}% 41
-\BOOKMARK [0][]{chapter.5}{Conclusion and Perspective}{}% 42
-\BOOKMARK [-1][]{chapter.5}{Appendices}{}% 43
-\BOOKMARK [0][]{appendix.A}{Use case of matching guided by 2D similarity transformation}{chapter.5}% 44
-\BOOKMARK [1][]{section.A.1}{Dataset}{appendix.A}% 45
-\BOOKMARK [1][]{section.A.2}{Result}{appendix.A}% 46
-\BOOKMARK [0][]{appendix.B}{Comparison between SIFTAdapted and SIFTDefault}{chapter.5}% 47
-\BOOKMARK [1][]{section.B.1}{Comparison on matching image pair}{appendix.B}% 48
-\BOOKMARK [1][]{section.B.2}{Comparison on matching orthophotos}{appendix.B}% 49
-\BOOKMARK [1][]{section.B.3}{Comparison on matching DSMs}{appendix.B}% 50
-\BOOKMARK [0][]{appendix.C}{Comparison between SuperGluetiling and SuperGlueorig}{chapter.5}% 51
-\BOOKMARK [1][]{section.C.1}{Comparison on matching orthophotos}{appendix.C}% 52
-\BOOKMARK [1][]{section.C.2}{Comparison on matching DSMs}{appendix.C}% 53
-\BOOKMARK [0][]{appendix.D}{Comparison of precise matching on DSMs and original RGB images}{chapter.5}% 54
-\BOOKMARK [0][]{appendix*.15}{Bibliography}{chapter.5}% 55
+\BOOKMARK [0][]{chapter.3}{Applications and Datasets}{}% 15
+\BOOKMARK [1][]{section.3.1}{General case for change detection}{chapter.3}% 16
+\BOOKMARK [2][]{subsection.3.1.1}{Urban area: Fr\351jus}{section.3.1}% 17
+\BOOKMARK [2][]{subsection.3.1.2}{Rural area: Pezenas}{section.3.1}% 18
+\BOOKMARK [1][]{section.3.2}{Earthquake case: Kobe}{chapter.3}% 19
+\BOOKMARK [1][]{section.3.3}{Landslide case: Alberona}{chapter.3}% 20
+\BOOKMARK [1][]{section.3.4}{Glacier case: Hofsj\366kull}{chapter.3}% 21
+\BOOKMARK [0][]{chapter.4}{Rough co-registration}{}% 22
+\BOOKMARK [1][]{section.4.1}{Introduction}{chapter.4}% 23
+\BOOKMARK [1][]{section.4.2}{Methodology}{chapter.4}% 24
+\BOOKMARK [2][]{subsection.4.2.1}{Strategy 1: Matching image pairs \(ImgPairs\)}{section.4.2}% 25
+\BOOKMARK [2][]{subsection.4.2.2}{Strategy 2: Matching Orthophotos/DSMs \(Ortho or DSM\)}{section.4.2}% 26
+\BOOKMARK [1][]{section.4.3}{Experiments}{chapter.4}% 27
+\BOOKMARK [2][]{subsection.4.3.1}{Implementation details}{section.4.3}% 28
+\BOOKMARK [2][]{subsection.4.3.2}{Datasets}{section.4.3}% 29
+\BOOKMARK [2][]{subsection.4.3.3}{Evaluation}{section.4.3}% 30
+\BOOKMARK [2][]{subsection.4.3.4}{Comparison}{section.4.3}% 31
+\BOOKMARK [1][]{section.4.4}{Conclusion}{chapter.4}% 32
+\BOOKMARK [0][]{chapter.5}{Precise matching}{}% 33
+\BOOKMARK [1][]{section.5.1}{Introduction}{chapter.5}% 34
+\BOOKMARK [2][]{subsection.5.1.1}{Motivation}{section.5.1}% 35
+\BOOKMARK [2][]{subsection.5.1.2}{Contribution}{section.5.1}% 36
+\BOOKMARK [1][]{section.5.2}{Methodology}{chapter.5}% 37
+\BOOKMARK [2][]{subsection.5.2.1}{Get tentative matches}{section.5.2}% 38
+\BOOKMARK [2][]{subsection.5.2.2}{Get enhanced matches}{section.5.2}% 39
+\BOOKMARK [2][]{subsection.5.2.3}{Get final matches}{section.5.2}% 40
+\BOOKMARK [2][]{subsection.5.2.4}{Refine orientations}{section.5.2}% 41
+\BOOKMARK [1][]{section.5.3}{Experiments}{chapter.5}% 42
+\BOOKMARK [2][]{subsection.5.3.1}{Implementation details}{section.5.3}% 43
+\BOOKMARK [2][]{subsection.5.3.2}{Datasets}{section.5.3}% 44
+\BOOKMARK [2][]{subsection.5.3.3}{Evaluation}{section.5.3}% 45
+\BOOKMARK [2][]{subsection.5.3.4}{Comparison}{section.5.3}% 46
+\BOOKMARK [1][]{section.5.4}{Conclusion}{chapter.5}% 47
+\BOOKMARK [1][]{section.5.5}{Discussion}{chapter.5}% 48
+\BOOKMARK [0][]{chapter.6}{Conclusion and Perspective}{}% 49
+\BOOKMARK [-1][]{chapter.6}{Appendices}{}% 50
+\BOOKMARK [0][]{appendix.A}{Use case of matching guided by 2D similarity transformation}{chapter.6}% 51
+\BOOKMARK [1][]{section.A.1}{Dataset}{appendix.A}% 52
+\BOOKMARK [1][]{section.A.2}{Result}{appendix.A}% 53
+\BOOKMARK [0][]{appendix.B}{Comparison between SIFTAdapted and SIFTDefault}{chapter.6}% 54
+\BOOKMARK [1][]{section.B.1}{Comparison on matching image pair}{appendix.B}% 55
+\BOOKMARK [1][]{section.B.2}{Comparison on matching orthophotos}{appendix.B}% 56
+\BOOKMARK [1][]{section.B.3}{Comparison on matching DSMs}{appendix.B}% 57
+\BOOKMARK [0][]{appendix.C}{Comparison between SuperGluetiling and SuperGlueorig}{chapter.6}% 58
+\BOOKMARK [1][]{section.C.1}{Comparison on matching orthophotos}{appendix.C}% 59
+\BOOKMARK [1][]{section.C.2}{Comparison on matching DSMs}{appendix.C}% 60
+\BOOKMARK [0][]{appendix.D}{Comparison of precise matching on DSMs and original RGB images}{chapter.6}% 61
+\BOOKMARK [0][]{appendix*.11}{Bibliography}{chapter.6}% 62
