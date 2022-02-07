@@ -1,7 +1,7 @@
 %!TEX root = Manuscript.tex
 
 \chapter{Applications and Datasets}
-\label{ApplicationsAndDatasets}
+\label{chap:ApplicationsAndDatasets}
 %Before revealing the details of the rough-to-precise matching strategy, 
 In this section, five sets of datasets categorized in four application scenarios are introduced (cf. Table ~\ref{application}), which will be used to test our pipeline.
 
@@ -40,15 +40,17 @@ The area exhibits drastic scene changes in the 60-year period, as can be seen in
 The dataset Pezenas is a rural area, mainly covered with vegetation and several sparsely populated urban zones. It is a 420 $km^2$ rectangular area located in Pezenas in the Occitanie region in southern France. We have at our disposal three sets of aerial images acquired in 1971, 1981 and 2015, and one set of satellite images acquired in 2014. Both the epoch 2014 and 2015 are treated as \ac{GT}. In this dataset we are interested in matching historical epochs (1971 and 1981) with aerial \ac{GT} and satellite \ac{GT} individually. The area exhibits changes in scene appearance in the 44-year period.\\
 
 \section{Earthquake case: Kobe}
-The dataset Kobe witnessed the well-known Kobe earthquake in January 1995. It is a 90 $km^2$ area of irregular shape located in the north of Awaji Island, Japan. We have two sets of aerial images: pre-event acquired in 1991 and post-event acquired in 1995. It is mainly covered with mountain area and narrow urban zones along the sea. There is no \ac{GT}, hence we chose the latter epoch (i.e. epoch 1995) as the reference epoch and measured 2 points on Google map to scale the result to metric units. In this dataset we are interested in localizing the earthquake fault.
+The dataset Kobe witnessed the well-known Kobe earthquake in January 1995. It is a 90 $km^2$ area of irregular shape located in the north of Awaji Island, Japan. We have two sets of aerial images: pre-event acquired in 1991 and post-event acquired in 1995. It is mainly covered with mountain area and narrow urban zones along the sea. There are neither \ac{GT} epochs nor \ac{GCP}s, therefore we measured 2 points on Google map to scale the result to metric units. In this dataset we are interested in localizing the earthquake fault.
 
 \section{Landslide case: Alberona}
 The dataset Alberona is characterized by the diffuse presence of clay rich lithologies which confers to the landscape a typical smooth topography, with the wide presence of slow moving landslides of the slide and slide-earthflow type. It is a 90 $km^2$ rectangular area located in Southern Italy, near the village of Alberona (Puglia region). 
 In the study area, the land use is typical of rural areas, poorly inhabited and mainly agricultural and wooded. A slow moving slide-earthflow has been detected there since the 1950s. 
-Images were scanned with non photogrammetric scanner with 800 dpi. The films were poorlypreserved before scanning, which present some scratches and dust, a typical feature for images that were not preserved forphotogrammetric purposes.
+Images were scanned with non photogrammetric scanner with 800 dpi. The films were poorly preserved before scanning, which present some scratches and dust, a typical feature for images that were not preserved for photogrammetric purposes.
+There are no \ac{GT} epochs but 7 \ac{GCP}s which could be used to move the results in relative coordinate systems to the absolute one.
+In this dataset we are interested in localizing the landslide.
 
 \section{Glacier case: Hofsjökull}
-The dataset Hofsjökull is a snow-covered area located in Hofsjökull in central Iceland. It consists of several archival aerial images acquired in the year 1960, provided by the National Survey of Iceland. In Figure~\ref{SnowData} we displayed 6 consecutive images in the same flight strip, with snow-covered area gradually expanding. They were scanned with a photogrammetric scanner Wehrli RM-6, in 16micron/px and 12 bit, in order to digitize as much information as possible appearing in the films.
+The dataset Hofsjökull is a snow-covered area located in Hofsjökull in central Iceland. Unlike other datasets discribed previously, Hofsjökull consists of only one epoch, as in this dataset we are only interested in matching challenging intra-epoch image pairs. It contains several archival aerial images acquired in the year 1960, provided by the National Survey of Iceland. They were scanned with a photogrammetric scanner Wehrli RM-6, in 16micron/px and 12 bit, in order to digitize as much information as possible appearing in the films. In Figure~\ref{Hofsjökull} we displayed 6 consecutive images in the same flight strip, with snow-covered area gradually expanding. The most challenging image pair (i.e. image 5 and 6, as they are fully snow-covered with very limited context) are chosen for testing. Their common zone is labeled with red rectangles. 
 
 \begin{table}[htbp]
 	\scriptsize %\footnotesize
@@ -73,7 +75,7 @@ The dataset Hofsjökull is a snow-covered area located in Hofsjökull in central
 \multirow{2}{*}{Alberona}& 1954 & 4760 & 230 & 230 & 1.0 & 65\% & / & 6000 & 3& North-South \\
 & 2003 & 4650 & 230 & 230 & 0.85 & 65\% & 30\% & 4850 & 7 & West-Est \\\hline\hline
 
-Hofsjökull & 1960 & 9656 & 224 & 224 & 0.85 & 60\% & / & 4850 & 6 & North-South \\\hline
+Hofsjökull & 1960 & 9656 & 224 & 224 & 0.57 & 60\% & / & 5480 & 6 & North-South \\\hline
 	\end{tabular}
 	\caption{Aerial dataset details of Fr{\'e}jus, Pezenas, Kobe, Alberona and Hofsjökull. The 2015 acquisition of Pezenas is obtained with two sets of camera. F means focal length, Wid and Hei are the width and height of image, GSD is the ground sampling distance, F.o. and S.o. are forward and side overlap, H is the flying height, Nb is the number of images.}
 	\label{AerialData}
@@ -275,7 +277,7 @@ Hofsjökull & 1960 & 9656 & 224 & 224 & 0.85 & 60\% & / & 4850 & 6 & North-South
 				\includegraphics[width=4.3cm]{images/ChapitreNew/3-6371_crp_8Bits_Zoom8.png}
 			\end{minipage}%
 		}
-		\caption{Images demonstration of epoch 1960 in \textbf{Hofsjökull}}
+		\caption{Images demonstration of epoch 1960 in \textbf{Hofsjökull}.}
 		\label{Hofsjökull}
 	\end{center}
 \end{figure*} 

@@ -5,7 +5,7 @@
 \label{chap:intro}
 \minitoc
 
-\section{Motivation}
+\section{Motivation and objectives}
 \subsection{Why are historical images interesting}
 Historical (i.e. analogue or archival) aerial images play an important role in providing unique information about evolution of land-covers. 
 They are objective witness over time and sometimes the only remaining visual source of historical land-form. Therefore, they are valuable assets for a wide range of applications such as: (1) change detection, (2) spatial and urban planning, (3) long-term environmental monitoring including but not limited to forests, ice glaciers and coastlines, (4) analysis of natural disaster (e.g. earthquake, volcano eruption, landslide, to name a few) and the estimation of its future trends, etc.
@@ -178,8 +178,20 @@ In order to recover robust and precise matches on multi-epoch image pairs, we di
 	\end{center}
 \end{figure*}
 
-\section{Objective}
+%\section{Objective}
 
 \section{Contribution}
+Our main contributions include:\\
+\begin{enumerate}
+	\item Rough-to-precise matching strategy that helps to drastically reduce ambiguity. In particular, we use the depth information to roughly co-register our epochs. The 3D landscape is globally stable over time and provides sufficient correspondences through time. Once co-registered, we levarage the 3D a priori to narrow down the search space in precise matching.
+	\item Upscaling of the learning based feature matching algorithms to high resolution imagery. To do that, we introduced an image tiling scheme.
+\end{enumerate}
 
 \section{Organization of the thesis}
+In this thesis, we present a fully automatic approach to computing robust inter-epoch feature correspondences. It consists of two steps: a rough co-registration by finding feature correspondences between \ac{DSM}s derived within single epochs, and a precise feature matching on original RGB images. \\
+A brief presentation of the state of the art is given in \textbf{Chapter}~\ref{chap:review}. 
+In \textbf{Chapter}~\ref{chap:ApplicationsAndDatasets}, five datasets categorized in four kinds of application scenarios are introduced, which would be used to test our pipeline.
+In \textbf{Chapter}~\ref{chap:RoughCoReg}, three rough co-registration pipelines are elaborated to get robust matches between different epochs, including (1) matching every possible image pairs followed by merging the matches in order to search for globally consistent inliers, and matching (2) \ac{DSM}s or (3) orthophotos followed by RANSAC routine to remove outliers.
+Experiments as well as comparisons are present.
+In \textbf{Chapter}~\ref{chap:Precisematching}, two precise matching pipelines (\textit{Patch} and \textit{Guided}) are introduced to get accurate matches under the guidance of rough co-registered orientations and \ac{DSM}s.
+Finally, in \textbf{Chapter} ~\ref{chap:conclusion} conclusions are given.

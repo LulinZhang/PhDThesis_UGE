@@ -1,7 +1,7 @@
 %!TEX root = Manuscript.tex
 
 \chapter{Literature review}
-\label{chap:intro}
+\label{chap:review}
 \minitoc
 
 \section{Local feature matching}
@@ -42,7 +42,7 @@ Jin et al.~\cite{jin2020image} introduced a comprehensive benchmark for local fe
 %Archiving and geoprocessing of historical aerial images: current status in europe,official publication no 70. European Spatial Data Research~\cite{sebastien2019archiving}
 %\subsection{Inter-epoch historical images alignment}
 When it comes to inter-epoch historical images, however, directly applying SIFT or SuperGlue often results in inferior results due to large radiometric differences.
-In Figure~\ref{comparison} we showed an example where SIFT and SuperGlue failed on an inter-epoch image pair with drastic scene changes. It is understandable as (1) SIFT is not sufficiently invariant over time, while (2) SuperGlue is not invariant to rotations and it underperforms on larger images because it was presumably trained on small images.\\
+In Figure~\ref{MultiEpochImgPair} we showed an example where SIFT and SuperGlue failed to recover good matches on an inter-epoch image pair with drastic scene changes. It is understandable as (1) SIFT is not sufficiently invariant over time, while (2) SuperGlue is not invariant to rotations and it underperforms on larger images because it was presumably trained on small images.\\
 Therefore, many previous researches bypassed the task of extracting inter-epoch correspondences by processing different epochs separately followed by an inter-epoch co-registration relying on Ground Control Points(GCPs).
 Between 10 and 169 GCPs are required in ~\cite{pinto2019archived}, ~\cite{bozek2019analysis}, ~\cite{persia2020archival}, ~\cite{micheletti2015application}, ~\cite{molg2017structure}.
 GCPs are usually measured with the help of photointerpretation on recent orthophotos, however, it is still monotonous and time-consuming. Furthermore, it is difficult to find salient points that are stable over time.\\
