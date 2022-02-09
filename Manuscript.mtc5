@@ -12,13 +12,13 @@
 {\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {4.3.4}Comparison}{\reset@font\mtcSSfont 34}{subsection.4.3.4}}
 {\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \numberline {4.3.4.1}Matches visualization}{\reset@font\mtcSSSfont 34}{subsubsection.4.3.4.1}}
 {\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \numberline {4.3.4.2}\ac {DoD}}{\reset@font\mtcSSSfont 35}{subsubsection.4.3.4.2}}
-{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {4.4}Discussion}{\reset@font\mtcSfont 38}{section.4.4}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {4.4.1}Comparison between $SIFT_{Adapted}$ and $SIFT_{Default}$}{\reset@font\mtcSSfont 38}{subsection.4.4.1}}
-{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \numberline {4.4.1.1}Comparison on matching image pair}{\reset@font\mtcSSSfont 38}{subsubsection.4.4.1.1}}
-{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \numberline {4.4.1.2}Comparison on matching orthophotos}{\reset@font\mtcSSSfont 38}{subsubsection.4.4.1.2}}
-{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \numberline {4.4.1.3}Comparison on matching DSMs}{\reset@font\mtcSSSfont 38}{subsubsection.4.4.1.3}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {4.4.2}Comparison between $SuperGlue_{tiling}$ and $SuperGlue_{orig}$}{\reset@font\mtcSSfont 38}{subsection.4.4.2}}
-{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \numberline {4.4.2.1}Comparison on matching orthophotos}{\reset@font\mtcSSSfont 41}{subsubsection.4.4.2.1}}
-{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \numberline {4.4.2.2}Comparison on matching DSMs}{\reset@font\mtcSSSfont 41}{subsubsection.4.4.2.2}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {4.4.3}Use case of matching guided by 2D similarity transformation}{\reset@font\mtcSSfont 41}{subsection.4.4.3}}
-{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {4.5}Conclusion}{\reset@font\mtcSfont 43}{section.4.5}}
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {4.4}Discussion}{\reset@font\mtcSfont 37}{section.4.4}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {4.4.1}Comparison between $SIFT_{Adapted}$ and $SIFT_{Default}$}{\reset@font\mtcSSfont 37}{subsection.4.4.1}}
+{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \numberline {4.4.1.1}Comparison on matching image pair}{\reset@font\mtcSSSfont 37}{subsubsection.4.4.1.1}}
+{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \numberline {4.4.1.2}Comparison on matching orthophotos}{\reset@font\mtcSSSfont 37}{subsubsection.4.4.1.2}}
+{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \numberline {4.4.1.3}Comparison on matching DSMs}{\reset@font\mtcSSSfont 37}{subsubsection.4.4.1.3}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {4.4.2}Comparison between $SuperGlue_{tiling}$ and $SuperGlue_{orig}$}{\reset@font\mtcSSfont 37}{subsection.4.4.2}}
+{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \numberline {4.4.2.1}Comparison on matching orthophotos}{\reset@font\mtcSSSfont 40}{subsubsection.4.4.2.1}}
+{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \numberline {4.4.2.2}Comparison on matching DSMs}{\reset@font\mtcSSSfont 40}{subsubsection.4.4.2.2}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {4.4.3}Use case of matching guided by 2D similarity transformation}{\reset@font\mtcSSfont 40}{subsection.4.4.3}}
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {4.5}Conclusion}{\reset@font\mtcSfont 45}{section.4.5}}

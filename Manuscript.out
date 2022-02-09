@@ -52,11 +52,14 @@
 \BOOKMARK [2][]{subsection.5.3.4}{Comparison}{section.5.3}% 52
 \BOOKMARK [1][]{section.5.4}{Discussion}{chapter.5}% 53
 \BOOKMARK [2][]{subsection.5.4.1}{Comparison of precise matching on DSMs and original RGB images}{section.5.4}% 54
-\BOOKMARK [1][]{section.5.5}{Conclusion}{chapter.5}% 55
-\BOOKMARK [0][]{chapter.6}{Conclusion and Perspective}{}% 56
-\BOOKMARK [-1][]{chapter.6}{Appendices}{}% 57
-\BOOKMARK [0][]{appendix.A}{Result of rough co-registration}{chapter.6}% 58
-\BOOKMARK [1][]{section.A.1}{Matches visualization}{appendix.A}% 59
-\BOOKMARK [1][]{section.A.2}{DoD}{appendix.A}% 60
-\BOOKMARK [0][]{appendix.B}{Result of precise matching}{chapter.6}% 61
-\BOOKMARK [0][]{appendix*.11}{Bibliography}{chapter.6}% 62
+\BOOKMARK [2][]{subsection.5.4.2}{Comparison between SIFT and SuperGlue}{section.5.4}% 55
+\BOOKMARK [1][]{section.5.5}{Conclusion}{chapter.5}% 56
+\BOOKMARK [0][]{chapter.6}{Conclusion and Perspective}{}% 57
+\BOOKMARK [-1][]{chapter.6}{Appendices}{}% 58
+\BOOKMARK [0][]{appendix.A}{Result of rough co-registration}{chapter.6}% 59
+\BOOKMARK [1][]{section.A.1}{Matches visualization}{appendix.A}% 60
+\BOOKMARK [1][]{section.A.2}{DoD}{appendix.A}% 61
+\BOOKMARK [0][]{appendix.B}{Result of precise matching}{chapter.6}% 62
+\BOOKMARK [1][]{section.B.1}{Matches visualization}{appendix.B}% 63
+\BOOKMARK [1][]{section.B.2}{DoD}{appendix.B}% 64
+\BOOKMARK [0][]{appendix*.11}{Bibliography}{chapter.6}% 65

@@ -188,9 +188,10 @@ For each dataset, we choose the rough co-registration results calculated with $S
 \end{enumerate}
 
 \subsection{Implementation details}
-Same as Section ~\ref{Implementationdetails}, all input images are downsampled by a factor of 3 beforehand to improve efficiency. To calculate the DSMs, we further downsample the images by a factor of 4 (different from 8 in Section ~\ref{Implementationdetails}), which amounts to a total downsampling factor of 12 with respect to the input images. For example, the images in Fr{\'e}jus 1970 are downsampled from [8766, 8763] to [730, 730] for calculating DSMs. 
+Same as Section ~\ref{Implementationdetails}, all input images are downsampled by a factor of 3 beforehand to improve efficiency except for dataset Alberona. To calculate the DSMs, we further downsample the images by a factor of 4 (different from 8 in Section ~\ref{Implementationdetails}), which amounts to a total downsampling factor of 12 with respect to the input images (total factor of 4 for Alberona). For example, the images in Fr{\'e}jus 1970 are downsampled from [8766, 8763] to [730, 730] for calculating DSMs. 
 Note that the DSMs serve 2 purposes in precise matching: (1) narrowing down the search space in precise matching, (2) providing 3D coordinates for 3D-RANSAC filter. A low resolution surface is good enough for these tasks and improves the efficiency.\\
-To balance the number of the intra- and inter-epoch matches, we perform intra-epoch matches reduction available in MicMac~\cite{marc2016micmac}, followed by setting the relative observation weight in the \ac{BBA}, if necessary. The matches reduction algorithm maximizes good spatial distribution, points' multiplicity and low reprojection error, it also helps to speed up the \ac{BBA}.\\
+To balance the number of the intra- and inter-epoch matches, we perform intra-epoch matches reduction available as command \textit{Ratafia} in MicMac~\cite{marc2016micmac}. %, with the objective of limiting the number of matches while maintaining a good photogrammetric distribution. 
+If the intra-epoch matches after reduction are still obviously more numerous than the inter-epoch ones, we can set the relative observation weight in the \ac{BBA}. The matches reduction algorithm maximizes good spatial distribution, points' multiplicity and low reprojection error, it also helps to speed up the \ac{BBA}.\\
 Inter-epoch matches are extracted {for every possible combination of 2 epochs and finally merged}.\\
 
 
@@ -204,10 +205,10 @@ The orientations of \ac{GT} epochs (i.e. Pezenas 2014 and Fr{\'e}jus 2014) were 
 %Bar chart of recovered match numbers, Match visulization after CC (4 methods, 3 bars each. Kobe and Pezenas: one kit; Frejus: 6 kits)? DoD and statistic info, ground displacment, check pts? 
 In order to evaluate the results qualitatively and quantitatively, the following criterias would be applied:\\
 \begin{enumerate}
-	\item \textbf{Matches visualization}. The number of tentative, enhanced and final matches would be displayed together in bar charts; in the meantime, the final matches would be visualized and demonstrated.
+	\item \textbf{Matches visualization}. The number of tentative, enhanced and final matches are displayed together in bar charts; in the meantime, the final matches are visualized and demonstrated.
 	%    \item Ground check points: the co-registered orientations calculated by our methods would be used to triangulate the ground check points and the coordinate differences \textcolor{red}{(explain the diff means the mean diff of x, y and z)} will be displayed. The better the epochs co-register, the smaller the difference is.
 	\item \textbf{\ac{DoD}}. For each method, the refined orientations would be used to calculate DSMs in order to generate \ac{DoD}. The visualization of \ac{DoD} as well as the statistical information would be displayed. Since the orientations are refined with precise matches, \ac{DoD}s with dome effect mitigated or even eliminated are expected.\\
-	For Pezenas and Fr\'ejus datasets, DoDs are calculated between historical epochs and the available \ac{GT} epochs. For Kobe dataset there is no \ac{GT} so we calculate the \ac{DoD} between 1991 and 1995 instead.\\
+	For Pezenas and Fr\'ejus datasets, DoDs are calculated between historical epochs and the available \ac{GT} epochs. For Kobe and Alberona datasets there is no \ac{GT} so we calculate the \ac{DoD}s between the 2 epochs available in each dataset instead.\\
 	%ideally the DoD should only display the scene changes without dome effect. If the dome effect appears, it indicates the systematic errors caused by poorly estimated camera parameters.   
 	\item \textbf{Ground displacement}. For the dataset that witnessed an earthquake (i.e. Kobe), we: (1) calculate the DSMs; (2) orthorectify the images; and (3) perform 2D correlation of the respective orthophotos ~\cite{rosu2015measurement} to see whether we can observe the slip of the tectonic plate.
 \end{enumerate}
@@ -215,10 +216,366 @@ In order to evaluate the results qualitatively and quantitatively, the following
 
 \subsection{Comparison}
 \subsubsection{Matches visualization}
+\label{matchVizMainBody}
+For each dataset, every possible combination of 2 epochs are matched with 4 methods (\ding{172} $Patch_{SpGDSM}$, \ding{173} $Guided_{SpGDSM}$, \ding{174} $Patch_{SIFTDSM}$ and \ding{175} $Guided_{SIFTDSM}$). 
 
+As the matches showed similar pattern, for the sake of simplicity, the matches visualizations of datasets Fr{\'e}jus and Alberona are displayed in this chapter, the rest results of Pezenas and Kobe are demonstrated in Section~\ref{sec:PrecisematchViz}.\\
+
+%The matches for dataset Alberona are visualized and displayed in Figure~\ref{MatchVizAlberona}. Matches visualization for datasets Fr{\'e}jus, Pezenas and Kobe are displayed in Section~\ref{chap:appendixB} for the sake of simplicity.\\
+\begin{enumerate}
+	\item For Fr{\'e}jus, there exist 4 epochs, leading to 6 sets of epoch combination, the matches visualizations of which are displayed in Figure \ref{MatchVizFrejus1954-2014}, \ref{MatchVizFrejus1966-2014}, \ref{MatchVizFrejus1970-2014}, \ref{MatchVizFrejus1954-1970}, \ref{MatchVizFrejus1954-1966} and \ref{MatchVizFrejus1966-1970}. Both $Patch$ and $Guided$ recovered a lot of final matches, except for the ones involving epoch 1954 based on rough co-registration of $SIFT_{DSM}$ (Figue \ref{MatchVizFrejus1954-2014} (e, f), \ref{MatchVizFrejus1954-1970} (e, f) and \ref{MatchVizFrejus1954-1966} (e, f)). The reason lies in the fact that the rough co-registration basic of $SIFT_{DSM}$ for epoch 1954 is inferior, as we mentioned in Section ~\ref{sec:matchViz}.
+
+	\item For Alberona, there exist 2 epochs, leading to 1 set of epoch combination, the matches visualization of which is displayed in Figure~\ref{MatchVizAlberona}. As the basics of rough co-registration are reliable, both $Patch$ and $Guided$ recovered numerous final matches for all the methods.
+\end{enumerate}
+
+Besides, common pattern presents in both datasets: 3D-RANSAC filter and cross correlation removed considerable number of matches, at the same time enough matches survived, which guaranteed robustness of our method. Moreover, $Patch$ recovered considerably more matches than $Guided$, which is understandable as SuperGlue is more invariant over time than SIFT.\\
+
+Similar pattern appears for the datasets Pezenas and Kobe. For more details please refer to Section~\ref{sec:PrecisematchViz}.
+
+\begin{figure*}[htbp]
+	\begin{center}
+		\subfigure[Common zone]{
+			\begin{minipage}[t]{0.48\linewidth}
+				\centering
+				\includegraphics[width=6.8cm]{images/Chapitre3/Pseudo-Ortho-MEC-Malt_Tapas_1954_Ortho-MEC-Malt_2014.png}
+			\end{minipage}%
+		}
+		\subfigure[Number of recovered matches]{
+			\begin{minipage}[t]{0.48\linewidth}
+				\centering
+				\includegraphics[width=5.8cm]{images/Chapitre4/PlotBarH-Frejus1954-2014.png}
+			\end{minipage}%
+		}
+		\subfigure[$Patch_{SpGDSM}$]{
+			\begin{minipage}[t]{0.48\linewidth}
+				\centering
+				\includegraphics[width=6.8cm]{images/Chapitre4/Precise-SpGDSMHomol-1954-2014-SuperGlue-3DRANSAC-CrossCorrelation-PileImg_Ortho-MEC-Malt_Tapas_1954_Ortho-MEC-Malt_2014.png}
+			\end{minipage}%
+		}
+		\subfigure[$Guided_{SpGDSM}$]{
+			\begin{minipage}[t]{0.48\linewidth}
+				\centering
+				\includegraphics[width=6.8cm]{images/Chapitre4/Precise-SpGDSMHomol-1954-2014-GuidedSIFT-3DRANSAC-CrossCorrelation-PileImg_Ortho-MEC-Malt_Tapas_1954_Ortho-MEC-Malt_2014.png}
+			\end{minipage}%
+		}
+		\subfigure[$Patch_{SIFTDSM}$]{
+			\begin{minipage}[t]{0.48\linewidth}
+				\centering
+				\includegraphics[width=6.8cm]{images/Chapitre4/Precise-SIFTDSMHomol-1954-2014-SuperGlue-3DRANSAC-CrossCorrelation-PileImg_Ortho-MEC-Malt_Tapas_1954_Ortho-MEC-Malt_2014.png}
+			\end{minipage}%
+		}
+		\subfigure[$Guided_{SIFTDSM}$]{
+			\begin{minipage}[t]{0.48\linewidth}
+				\centering
+				\includegraphics[width=6.8cm]{images/Chapitre4/Precise-SIFTDSMHomol-1954-2014-GuidedSIFT-3DRANSAC-CrossCorrelation-PileImg_Ortho-MEC-Malt_Tapas_1954_Ortho-MEC-Malt_2014.png}
+			\end{minipage}%
+		}
+		\caption{Precise matching visualization of \textbf{Fr{\'e}jus 1954 and 2014}. (a) Image pairs to be matched, with red rectangles indicating the common zone. (b) Numbers of tentative, enhanced and final matches recovered with $Patch_{SpGDSM}$, $Guided_{SpGDSM}$, $Patch_{SIFTDSM}$ and $Guided_{SIFTDSM}$ individually. (c-f) Visualization of final matches recovered with $Patch_{SpGDSM}$, $Guided_{SpGDSM}$, $Patch_{SIFTDSM}$ and $Guided_{SIFTDSM}$ individually.}
+		\label{MatchVizFrejus1954-2014}
+	\end{center}
+\end{figure*} 
+
+
+\begin{figure*}[htbp]
+	\begin{center}
+		\subfigure[Common zone]{
+			\begin{minipage}[t]{0.48\linewidth}
+				\centering
+				\includegraphics[width=6.8cm]{images/Chapitre3/Pseudo-Ortho-MEC-Malt_Tapas_1966_Ortho-MEC-Malt_2014.png}
+			\end{minipage}%
+		}
+		\subfigure[Number of recovered matches]{
+			\begin{minipage}[t]{0.48\linewidth}
+				\centering
+				\includegraphics[width=5.8cm]{images/Chapitre4/PlotBarH-Frejus1966-2014.png}
+			\end{minipage}%
+		}
+		\subfigure[$Patch_{SpGDSM}$]{
+			\begin{minipage}[t]{0.48\linewidth}
+				\centering
+				\includegraphics[width=6.8cm]{images/Chapitre4/Precise-SpGDSMHomol-1966-2014-SuperGlue-3DRANSAC-CrossCorrelation-PileImg_Ortho-MEC-Malt_Tapas_1966_Ortho-MEC-Malt_2014.png}
+			\end{minipage}%
+		}
+		\subfigure[$Guided_{SpGDSM}$]{
+			\begin{minipage}[t]{0.48\linewidth}
+				\centering
+				\includegraphics[width=6.8cm]{images/Chapitre4/Precise-SpGDSMHomol-1966-2014-GuidedSIFT-3DRANSAC-CrossCorrelation-PileImg_Ortho-MEC-Malt_Tapas_1966_Ortho-MEC-Malt_2014.png}
+			\end{minipage}%
+		}
+		\subfigure[$Patch_{SIFTDSM}$]{
+			\begin{minipage}[t]{0.48\linewidth}
+				\centering
+				\includegraphics[width=6.8cm]{images/Chapitre4/Precise-SIFTDSMHomol-1966-2014-SuperGlue-3DRANSAC-CrossCorrelation-PileImg_Ortho-MEC-Malt_Tapas_1966_Ortho-MEC-Malt_2014.png}
+			\end{minipage}%
+		}
+		\subfigure[$Guided_{SIFTDSM}$]{
+			\begin{minipage}[t]{0.48\linewidth}
+				\centering
+				\includegraphics[width=6.8cm]{images/Chapitre4/Precise-SIFTDSMHomol-1966-2014-GuidedSIFT-3DRANSAC-CrossCorrelation-PileImg_Ortho-MEC-Malt_Tapas_1966_Ortho-MEC-Malt_2014.png}
+			\end{minipage}%
+		}
+		\caption{Precise matching visualization of \textbf{Fr{\'e}jus 1966 and 2014}. (a) Image pairs to be matched, with red rectangles indicating the common zone. (b) Numbers of tentative, enhanced and final matches recovered with $Patch_{SpGDSM}$, $Guided_{SpGDSM}$, $Patch_{SIFTDSM}$ and $Guided_{SIFTDSM}$ individually. (c-f) Visualization of final matches recovered with $Patch_{SpGDSM}$, $Guided_{SpGDSM}$, $Patch_{SIFTDSM}$ and $Guided_{SIFTDSM}$ individually.}
+		\label{MatchVizFrejus1966-2014}
+	\end{center}
+\end{figure*} 
+
+
+\begin{figure*}[htbp]
+	\begin{center}
+		\subfigure[Common zone]{
+			\begin{minipage}[t]{0.48\linewidth}
+				\centering
+				\includegraphics[width=6.8cm]{images/Chapitre3/Pseudo-Ortho-MEC-Malt_Tapas_1970_Ortho-MEC-Malt_2014.png}
+			\end{minipage}%
+		}
+		\subfigure[Number of recovered matches]{
+			\begin{minipage}[t]{0.48\linewidth}
+				\centering
+				\includegraphics[width=5.8cm]{images/Chapitre4/PlotBarH-Frejus1970-2014.png}
+			\end{minipage}%
+		}
+		\subfigure[$Patch_{SpGDSM}$]{
+			\begin{minipage}[t]{0.48\linewidth}
+				\centering
+				\includegraphics[width=6.8cm]{images/Chapitre4/Precise-SpGDSMHomol-1970-2014-SuperGlue-3DRANSAC-CrossCorrelation-PileImg_Ortho-MEC-Malt_Tapas_1970_Ortho-MEC-Malt_2014.png}
+			\end{minipage}%
+		}
+		\subfigure[$Guided_{SpGDSM}$]{
+			\begin{minipage}[t]{0.48\linewidth}
+				\centering
+				\includegraphics[width=6.8cm]{images/Chapitre4/Precise-SpGDSMHomol-1970-2014-GuidedSIFT-3DRANSAC-CrossCorrelation-PileImg_Ortho-MEC-Malt_Tapas_1970_Ortho-MEC-Malt_2014.png}
+			\end{minipage}%
+		}
+		\subfigure[$Patch_{SIFTDSM}$]{
+			\begin{minipage}[t]{0.48\linewidth}
+				\centering
+				\includegraphics[width=6.8cm]{images/Chapitre4/Precise-SIFTDSMHomol-1970-2014-SuperGlue-3DRANSAC-CrossCorrelation-PileImg_Ortho-MEC-Malt_Tapas_1970_Ortho-MEC-Malt_2014.png}
+			\end{minipage}%
+		}
+		\subfigure[$Guided_{SIFTDSM}$]{
+			\begin{minipage}[t]{0.48\linewidth}
+				\centering
+				\includegraphics[width=6.8cm]{images/Chapitre4/Precise-SIFTDSMHomol-1970-2014-GuidedSIFT-3DRANSAC-CrossCorrelation-PileImg_Ortho-MEC-Malt_Tapas_1970_Ortho-MEC-Malt_2014.png}
+			\end{minipage}%
+		}
+		\caption{Precise matching visualization of \textbf{Fr{\'e}jus 1970 and 2014}. (a) Image pairs to be matched, with red rectangles indicating the common zone. (b) Numbers of tentative, enhanced and final matches recovered with $Patch_{SpGDSM}$, $Guided_{SpGDSM}$, $Patch_{SIFTDSM}$ and $Guided_{SIFTDSM}$ individually. (c-f) Visualization of final matches recovered with $Patch_{SpGDSM}$, $Guided_{SpGDSM}$, $Patch_{SIFTDSM}$ and $Guided_{SIFTDSM}$ individually.}
+		\label{MatchVizFrejus1970-2014}
+	\end{center}
+\end{figure*} 
+
+%%%%%%%%%%%%%%%%%%Frejus histo
+
+\begin{figure*}[htbp]
+	\begin{center}
+		\subfigure[Common zone]{
+			\begin{minipage}[t]{0.48\linewidth}
+				\centering
+				\includegraphics[width=6.8cm]{images/Chapitre4/Pseudo-Ortho-MEC-Malt_Tapas_1954_Ortho-MEC-Malt_Tapas_1970.png}
+			\end{minipage}%
+		}
+		\subfigure[Number of recovered matches]{
+			\begin{minipage}[t]{0.48\linewidth}
+				\centering
+				\includegraphics[width=5.8cm]{images/Chapitre4/PlotBarH-Frejus1954-1970.png}
+			\end{minipage}%
+		}
+		\subfigure[$Patch_{SpGDSM}$]{
+			\begin{minipage}[t]{0.48\linewidth}
+				\centering
+				\includegraphics[width=6.8cm]{images/Chapitre4/Precise-SpGDSMHomol-1954-1970-SuperGlue-3DRANSAC-CrossCorrelation-PileImg_Ortho-MEC-Malt_Tapas_1954_Ortho-MEC-Malt_Tapas_1970.png}
+			\end{minipage}%
+		}
+		\subfigure[$Guided_{SpGDSM}$]{
+			\begin{minipage}[t]{0.48\linewidth}
+				\centering
+				\includegraphics[width=6.8cm]{images/Chapitre4/Precise-SpGDSMHomol-1954-1970-GuidedSIFT-3DRANSAC-CrossCorrelation-PileImg_Ortho-MEC-Malt_Tapas_1954_Ortho-MEC-Malt_Tapas_1970.png}
+			\end{minipage}%
+		}
+		\subfigure[$Patch_{SIFTDSM}$]{
+			\begin{minipage}[t]{0.48\linewidth}
+				\centering
+				\includegraphics[width=6.8cm]{images/Chapitre4/Precise-SIFTDSMHomol-1954-1970-SuperGlue-3DRANSAC-CrossCorrelation-PileImg_Ortho-MEC-Malt_Tapas_1954_Ortho-MEC-Malt_Tapas_1970.png}
+			\end{minipage}%
+		}
+		\subfigure[$Guided_{SIFTDSM}$]{
+			\begin{minipage}[t]{0.48\linewidth}
+				\centering
+				\includegraphics[width=6.8cm]{images/Chapitre4/Precise-SIFTDSMHomol-1954-1970-GuidedSIFT-3DRANSAC-CrossCorrelation-PileImg_Ortho-MEC-Malt_Tapas_1954_Ortho-MEC-Malt_Tapas_1970.png}
+			\end{minipage}%
+		}
+		\caption{Precise matching visualization of \textbf{Fr{\'e}jus 1954 and 1970}. (a) Image pairs to be matched, with red rectangles indicating the common zone. (b) Numbers of tentative, enhanced and final matches recovered with $Patch_{SpGDSM}$, $Guided_{SpGDSM}$, $Patch_{SIFTDSM}$ and $Guided_{SIFTDSM}$ individually. (c-f) Visualization of final matches recovered with $Patch_{SpGDSM}$, $Guided_{SpGDSM}$, $Patch_{SIFTDSM}$ and $Guided_{SIFTDSM}$ individually.}
+		\label{MatchVizFrejus1954-1970}
+	\end{center}
+\end{figure*} 
+
+
+
+\begin{figure*}[htbp]
+	\begin{center}
+		\subfigure[Common zone]{
+			\begin{minipage}[t]{0.48\linewidth}
+				\centering
+				\includegraphics[width=6.8cm]{images/Chapitre4/Pseudo-Ortho-MEC-Malt_Tapas_1966_Ortho-MEC-Malt_Tapas_1970.png}
+			\end{minipage}%
+		}
+		\subfigure[Number of recovered matches]{
+			\begin{minipage}[t]{0.48\linewidth}
+				\centering
+				\includegraphics[width=5.8cm]{images/Chapitre4/PlotBarH-Frejus1966-1970.png}
+			\end{minipage}%
+		}
+		\subfigure[$Patch_{SpGDSM}$]{
+			\begin{minipage}[t]{0.48\linewidth}
+				\centering
+				\includegraphics[width=6.8cm]{images/Chapitre4/Precise-SpGDSMHomol-1966-1970-SuperGlue-3DRANSAC-CrossCorrelation-PileImg_Ortho-MEC-Malt_Tapas_1966_Ortho-MEC-Malt_Tapas_1970.png}
+			\end{minipage}%
+		}
+		\subfigure[$Guided_{SpGDSM}$]{
+			\begin{minipage}[t]{0.48\linewidth}
+				\centering
+				\includegraphics[width=6.8cm]{images/Chapitre4/Precise-SpGDSMHomol-1966-1970-GuidedSIFT-3DRANSAC-CrossCorrelation-PileImg_Ortho-MEC-Malt_Tapas_1966_Ortho-MEC-Malt_Tapas_1970.png}
+			\end{minipage}%
+		}
+		\subfigure[$Patch_{SIFTDSM}$]{
+			\begin{minipage}[t]{0.48\linewidth}
+				\centering
+				\includegraphics[width=6.8cm]{images/Chapitre4/Precise-SIFTDSMHomol-1966-1970-SuperGlue-3DRANSAC-CrossCorrelation-PileImg_Ortho-MEC-Malt_Tapas_1966_Ortho-MEC-Malt_Tapas_1970.png}
+			\end{minipage}%
+		}
+		\subfigure[$Guided_{SIFTDSM}$]{
+			\begin{minipage}[t]{0.48\linewidth}
+				\centering
+				\includegraphics[width=6.8cm]{images/Chapitre4/Precise-SIFTDSMHomol-1966-1970-GuidedSIFT-3DRANSAC-CrossCorrelation-PileImg_Ortho-MEC-Malt_Tapas_1966_Ortho-MEC-Malt_Tapas_1970.png}
+			\end{minipage}%
+		}
+		\caption{Precise matching visualization of \textbf{Fr{\'e}jus 1966 and 1970}. (a) Image pairs to be matched, with red rectangles indicating the common zone. (b) Numbers of tentative, enhanced and final matches recovered with $Patch_{SpGDSM}$, $Guided_{SpGDSM}$, $Patch_{SIFTDSM}$ and $Guided_{SIFTDSM}$ individually. (c-f) Visualization of final matches recovered with $Patch_{SpGDSM}$, $Guided_{SpGDSM}$, $Patch_{SIFTDSM}$ and $Guided_{SIFTDSM}$ individually.}
+		\label{MatchVizFrejus1966-1970}
+	\end{center}
+\end{figure*} 
+
+
+\begin{figure*}[htbp]
+	\begin{center}
+		\subfigure[Common zone]{
+			\begin{minipage}[t]{0.48\linewidth}
+				\centering
+				\includegraphics[width=6.8cm]{images/Chapitre4/Pseudo-Ortho-MEC-Malt_Tapas_1954_Ortho-MEC-Malt_Tapas_1966.png}
+			\end{minipage}%
+		}
+		\subfigure[Number of recovered matches]{
+			\begin{minipage}[t]{0.48\linewidth}
+				\centering
+				\includegraphics[width=5.8cm]{images/Chapitre4/PlotBarH-Frejus1954-1966.png}
+			\end{minipage}%
+		}
+		\subfigure[$Patch_{SpGDSM}$]{
+			\begin{minipage}[t]{0.48\linewidth}
+				\centering
+				\includegraphics[width=6.8cm]{images/Chapitre4/Precise-SpGDSMHomol-1954-1966-SuperGlue-3DRANSAC-CrossCorrelation-PileImg_Ortho-MEC-Malt_Tapas_1954_Ortho-MEC-Malt_Tapas_1966.png}
+			\end{minipage}%
+		}
+		\subfigure[$Guided_{SpGDSM}$]{
+			\begin{minipage}[t]{0.48\linewidth}
+				\centering
+				\includegraphics[width=6.8cm]{images/Chapitre4/Precise-SpGDSMHomol-1954-1966-GuidedSIFT-3DRANSAC-CrossCorrelation-PileImg_Ortho-MEC-Malt_Tapas_1954_Ortho-MEC-Malt_Tapas_1966.png}
+			\end{minipage}%
+		}
+		\subfigure[$Patch_{SIFTDSM}$]{
+			\begin{minipage}[t]{0.48\linewidth}
+				\centering
+				\includegraphics[width=6.8cm]{images/Chapitre4/Precise-SIFTDSMHomol-1954-1966-SuperGlue-3DRANSAC-CrossCorrelation-PileImg_Ortho-MEC-Malt_Tapas_1954_Ortho-MEC-Malt_Tapas_1966.png}
+			\end{minipage}%
+		}
+		\subfigure[$Guided_{SIFTDSM}$]{
+			\begin{minipage}[t]{0.48\linewidth}
+				\centering
+				\includegraphics[width=6.8cm]{images/Chapitre4/Precise-SIFTDSMHomol-1954-1966-GuidedSIFT-3DRANSAC-CrossCorrelation-PileImg_Ortho-MEC-Malt_Tapas_1954_Ortho-MEC-Malt_Tapas_1966.png}
+			\end{minipage}%
+		}
+		\caption{Precise matching visualization of \textbf{Fr{\'e}jus 1954 and 1966}. (a) Image pairs to be matched, with red rectangles indicating the common zone. (b) Numbers of tentative, enhanced and final matches recovered with $Patch_{SpGDSM}$, $Guided_{SpGDSM}$, $Patch_{SIFTDSM}$ and $Guided_{SIFTDSM}$ individually. (c-f) Visualization of final matches recovered with $Patch_{SpGDSM}$, $Guided_{SpGDSM}$, $Patch_{SIFTDSM}$ and $Guided_{SIFTDSM}$ individually.}
+		\label{MatchVizFrejus1954-1966}
+	\end{center}
+\end{figure*} 
+
+\begin{figure*}[htbp]
+	\begin{center}
+		\subfigure[Common zone]{
+			\begin{minipage}[t]{0.48\linewidth}
+				\centering
+				\includegraphics[width=4.8cm]{images/Chapitre3/Pseudo-Ortho-MEC-Malt_Tapas_1954_Ortho-MEC-Malt_Tapas_2003.png}
+			\end{minipage}%
+		}
+%		\subfigure[Number of recovered matches]{
+%			\begin{minipage}[t]{0.48\linewidth}
+%				\centering
+%				\includegraphics[width=5.8cm]{images/Chapitre4/PlotBarH-Alberona1954-2003.png}
+%			\end{minipage}%
+%		}
+%		\subfigure[$Patch_{SpGDSM}$]{
+%			\begin{minipage}[t]{0.48\linewidth}
+%				\centering
+%				\includegraphics[width=3.8cm]{images/Chapitre4/Precise-SpGDSMHomol-SuperGlue-3DRANSAC-CrossCorrelation-PileImg_Ortho-MEC-Malt_Tapas_1954_Ortho-MEC-Malt_Tapas_2003.png}
+%			\end{minipage}%
+%		}
+%		\subfigure[$Guided_{SpGDSM}$]{
+%			\begin{minipage}[t]{0.48\linewidth}
+%				\centering
+%				\includegraphics[width=3.8cm]{images/Chapitre4/Precise-SpGDSMHomol-GuidedSIFT-3DRANSAC-CrossCorrelation-PileImg_Ortho-MEC-Malt_Tapas_1954_Ortho-MEC-Malt_Tapas_2003.png}
+%			\end{minipage}%
+%		}
+%		\subfigure[$Patch_{SIFTDSM}$]{
+%			\begin{minipage}[t]{0.48\linewidth}
+%				\centering
+%				\includegraphics[width=3.8cm]{images/Chapitre4/Precise-SIFTDSMHomol-SuperGlue-3DRANSAC-CrossCorrelation-PileImg_Ortho-MEC-Malt_Tapas_1954_Ortho-MEC-Malt_Tapas_2003.png}
+%			\end{minipage}%
+%		}
+%		\subfigure[$Guided_{SIFTDSM}$]{
+%			\begin{minipage}[t]{0.48\linewidth}
+%				\centering
+%				\includegraphics[width=3.8cm]{images/Chapitre4/Precise-SIFTDSMHomol-GuidedSIFT-3DRANSAC-CrossCorrelation-PileImg_Ortho-MEC-Malt_Tapas_1954_Ortho-MEC-Malt_Tapas_2003.png}
+%			\end{minipage}%
+%		}
+		\caption{Precise matching visualization of \textbf{Alberona 1954 and 2003}. (a) Image pairs to be matched, with red rectangles indicating the common zone. (b) Numbers of tentative, enhanced and final matches recovered with $Patch_{SpGDSM}$, $Guided_{SpGDSM}$, $Patch_{SIFTDSM}$ and $Guided_{SIFTDSM}$ individually. (c-f) Visualization of final matches recovered with $Patch_{SpGDSM}$, $Guided_{SpGDSM}$, $Patch_{SIFTDSM}$ and $Guided_{SIFTDSM}$ individually.}
+		\label{MatchVizAlberona}
+	\end{center}
+\end{figure*} 
 
 
 \subsubsection{DoD}
+%The visualization of \ac{DoD}s for dataset Alberona is demonstrated in~\ref{DoDAlberona}. The corresponding statistical information is displayed in ~\ref{PreciseDoDStatistic}.\\
+
+As the \ac{DoD}s showed similar pattern, for the sake of simplicity, 
+we only show the results of 2 sets of datasets: Fr{\'e}jus and Alberona, as Fr{\'e}jus is interesting for representing the general case for change detection, and Alberona is interesting as it witnessed landslide. 
+For Kobe, the more interesting result is the ground displacement caused by the earthquake, which would be demonstrated later, so we move the \ac{DoD}s of Kobe as well as Pezenas to Section~\ref{sec:PreciseDoD}.\\
+
+The \ac{DoD}s for Fr{\'e}jus and Alberona are demonstrated in Figure~\ref{PreciseDoDFrejus} and ~\ref{PreciseDoDAlberona}. 
+In each figure, the \ac{DoD}s resulted from rough co-registered orientations using methods $SuperGlue_{DSM}$ and $SIFT_{DSM}$ (elaborated in Chapter~\ref{chap:RoughCoReg}, hereinafter referred to as DoD$^{SpGDSM}$ and DoD$^{SIFTDSM}$) are displayed as bases, and the \ac{DoD}s resulted from refined orientations using methods $Patch_{SpGDSM}$, $Guided_{SpGDSM}$, $Patch_{SIFTDSM}$ and $Guided_{SIFTDSM}$ (hereinafter termed as DoD$^{Patch_{SpGDSM}}$, DoD$^{Guided_{SpGDSM}}$, DoD$^Patch_{SIFTDSM}$ and DoD$^Guided_{SIFTDSM}$) are given for comparison. 
+The corresponding statistical information is displayed in Table~\ref{PreciseDoDStatistic}.\\
+
+For dataset Fr{\'e}jus, as can be seen in Figure~\ref{PreciseDoDFrejus}:\\
+\begin{enumerate}
+	\item The dome effect appears in all the DoD$^{SpGDSM}$ and DoD$^{SIFTDSM}$ (i.e. the first column of the subgraphs), as the camera parameters are poorly estimated without the precise matches.
+	\item For (e) \ac{DoD}$_{Frejus1954}^{Patch_{SIFTDSM}}$ and (f) \ac{DoD}$_{Frejus1954}^{Guided_{SIFTDSM}}$, the dome effect is worse than their corresponding basic (i.e. (d) \ac{DoD}$_{Frejus1954}^{{SIFTDSM}}$).  The reason lies in the fact that the rough co-registration basic is inferior, as we mentioned in Section ~\ref{sec:matchViz}.
+	\item For the other \ac{DoD}s resulted from refined orientations (i.e. the second and third columns of subgraphs except for (e) and (f)), the dome effect is effectively mitigated thanks to our numerous and precise matches. In the meantime, the real scene changes are reserved, such as the new buildings and seaports.
+\end{enumerate}
+
+For dataset Alberona, as can be seen in Figure~\ref{PreciseDoDAlberona}:\\
+\begin{enumerate}
+	\item The dome effect presented in DoD$^{SpGDSM}$ and DoD$^{SIFTDSM}$ (the first column of the subgraphs) is mitigated in DoD$^{Patch_{SpGDSM}}$, DoD$^{Guided_{SpGDSM}}$, DoD$^Patch_{SIFTDSM}$ and DoD$^Guided_{SIFTDSM}$ (the second and third column of subgraphs). However, we still observer some systematic errors such as the slightly residual dome effect, which we attribute to: (1) the images are poorly preserved and scanned with non photogrammetric scanner; (2) limited number of images lead to a lack of redundant observation.
+	\item In DoD$^{Patch_{SpGDSM}}$, DoD$^{Guided_{SpGDSM}}$, DoD$^Patch_{SIFTDSM}$ and DoD$^Guided_{SIFTDSM}$ (the second and third column of subgraphs), the topographic changes are well detected in the landslide area (indicated with black lines).
+\end{enumerate}
+
+Regarding to the comparison between $Patch$ and $Guided$, according to the absolute average value $|\mu|$ of all the \ac{DoD}s in Figure \ref{PreciseDoDFrejus} and \ref{PreciseDoDAlberona} (cf. Talbe \ref{PreciseDoDStatistic}), $Guided$ leads to \ac{DoD}s with slightly better accuracy, even though it is less invariant than $Patch$, it recovers less numerous but more precise matches with the help of rough co-registered orientations and \ac{DSM}s.
+%In conclusion:\\
+%\begin{itemize}
+%	\item Both precise matching pipelines (i.e. $Patch$ and $Guided$) works, as long as the rough co-registration basic is reliable.\\
+%\end{itemize}
+
+%, the dome effect presented in DoD$^{SpGDSM}$ and DoD$^{SIFTDSM}$ (the first column of the subgraphs) is effectively mitigated in DoD$^{Patch_{SpGDSM}}$, DoD$^{Guided_{SpGDSM}}$, DoD$^Patch_{SIFTDSM}$ and DoD$^Guided_{SIFTDSM}$ for all the 3 historical epochs (the second and third column of subgraphs), except for (e) \ac{DoD}$_{Frejus1954}^{Patch_{SIFTDSM}}$ and (f) \ac{DoD}$_{Frejus1954}^{Guided_{SIFTDSM}}$. The reason lies in the fact that the rough co-registration basic of (e) and (f) is inferior, as we mentioned in Section ~\ref{sec:matchViz}. For the other \ac{DoD}s resulted from refined orientations, \\
+%, thanks to the numerous and accurate matches recovered in the precise matching stage
+
+%Both precise matching pipelines (i.e. $Patch$ and $Guided$) works for all the datasets, as long as the rough co-registration basic is reliable.\\
+
 
 
 \begin{figure*}[htbp]
@@ -346,106 +703,6 @@ In order to evaluate the results qualitatively and quantitatively, the following
 	\end{center}
 \end{figure*} 
 
-
-\begin{figure*}[htbp]
-	\begin{center}
-		\subfigure[\ac{DoD}$_{Pezenas1971}^{{SpGDSM}}$]{
-		\begin{minipage}[t]{0.31\linewidth}
-			\centering
-			\includegraphics[width=4.5cm,trim=740 80 50 230,clip]{images/Chapitre3/DoD1971DSM-SuperGlue-Satellite.png}
-			\end{minipage}%
-		}
-		\subfigure[\ac{DoD}$_{Pezenas1971}^{Patch_{SpGDSM}}$]{
-			\begin{minipage}[t]{0.31\linewidth}
-				\centering
-				\includegraphics[width=4.5cm,trim=840 70 290 340,clip]{images/Chapitre4/DoD1971_Patch_SpGDSM.png}
-			\end{minipage}%
-		}
-		\subfigure[\ac{DoD}$_{Pezenas1971}^{Guided_{SpGDSM}}$]{
-			\begin{minipage}[t]{0.31\linewidth}
-				\centering
-				\includegraphics[width=4.5cm,trim=840 70 290 340,clip]{images/Chapitre4/DoD1971_Guided_SpGDSM.png}
-			\end{minipage}%
-		}\\
-		\subfigure[\ac{DoD}$_{Pezenas1971}^{{SIFTDSM}}$]{
-			\begin{minipage}[t]{0.31\linewidth}
-				\centering
-				\includegraphics[width=4.5cm,trim=740 100 50 200,clip]{images/Chapitre3/DoD1971DSM-SIFT-Satellite.png}
-			\end{minipage}%
-		}
-		\subfigure[\ac{DoD}$_{Pezenas1971}^{Patch_{SIFTDSM}}$]{
-			\begin{minipage}[t]{0.31\linewidth}
-				\centering
-				\includegraphics[width=4.5cm,trim=840 70 290 340,clip]{images/Chapitre4/DoD1971_Patch_SIFTDSM.png}
-			\end{minipage}%
-		}
-		\subfigure[\ac{DoD}$_{Pezenas1971}^{Guided_{SIFTDSM}}$]{
-			\begin{minipage}[t]{0.31\linewidth}
-				\centering
-				\includegraphics[width=4.5cm,trim=840 70 290 340,clip]{images/Chapitre4/DoD1971_Guided_SIFTDSM.png}
-			\end{minipage}%
-		}\\
-		
-		\subfigure[\ac{DoD} legend]{
-			\begin{minipage}[t]{1\linewidth}
-				\centering
-				\includegraphics[width=11cm]{images/Chapitre4/LegendDoD.png}
-			\end{minipage}%
-		}
-		\caption{{\scriptsize \ac{DoD}s between free epoch \textbf{Pezenas 1971} and reference satellite epoch \textbf{2014}. (a) and (d) are \ac{DoD}s resulted from roughly co-registered orientations using methods $SuperGlue_{DSM}$ and $SIFT_{DSM}$ (elaborated in Chapter 3). (b, c, e, f) are \ac{DoD}s resulted from refined orientations using methods $Patch_{SpGDSM}$, $Guided_{SpGDSM}$, $Patch_{SIFTDSM}$ and $Guided_{SIFTDSM}$ individually. The holes among them are areas covered with clouds which are masked out.}}
-		\label{PreciseDoDPezenas-Satellite}
-	\end{center}
-\end{figure*} 
-
-\begin{figure*}[htbp]
-	\begin{center}
-\subfigure[\ac{DoD}$_{Kobe}^{{SpGDSM}}$]{
-	\begin{minipage}[t]{1\linewidth}
-		\centering
-		\includegraphics[width=12cm,trim=700 450 180 560,clip]{images/Chapitre3/DoD1991DSM-SuperGlue.png}
-	\end{minipage}%
-}
-		\subfigure[\ac{DoD}$_{Kobe}^{Patch_{SpGDSM}}$]{
-	\begin{minipage}[t]{1\linewidth}
-	\centering
-	\includegraphics[width=12cm,trim=680 330 100 570,clip]{images/Chapitre4/DoD1991_Patch_SpGDSM.png}
-\end{minipage}%
-}
-		\subfigure[\ac{DoD}$_{Kobe}^{Guided_{SpGDSM}}$]{
-	\begin{minipage}[t]{1\linewidth}
-	\centering
-	\includegraphics[width=12cm,trim=680 330 100 570,clip]{images/Chapitre4/DoD1991_Guided_SpGDSM.png}
-\end{minipage}%
-}\\
-		\subfigure[\ac{DoD}$_{Kobe}^{{SIFTDSM}}$]{
-	\begin{minipage}[t]{1\linewidth}
-	\centering
-	\includegraphics[width=12cm,trim=700 450 180 560,clip]{images/Chapitre3/DoD1991DSM-SIFT.png}
-\end{minipage}%
-}
-		\subfigure[\ac{DoD}$_{Kobe}^{Patch_{SIFTDSM}}$]{
-	\begin{minipage}[t]{1\linewidth}
-		\centering
-		\includegraphics[width=12cm,trim=680 330 100 570,clip]{images/Chapitre4/DoD1991_Patch_SIFTDSM.png}
-	\end{minipage}%
-}
-\subfigure[\ac{DoD}$_{Kobe}^{Guided_{SIFTDSM}}$]{
-	\begin{minipage}[t]{1\linewidth}
-		\centering
-		\includegraphics[width=12cm,trim=680 330 100 570,clip]{images/Chapitre4/DoD1991_Guided_SIFTDSM.png}
-	\end{minipage}%
-}
-
-		\subfigure[\ac{DoD} legend]{
-			\begin{minipage}[t]{1\linewidth}
-				\centering
-				\includegraphics[width=11cm]{images/Chapitre4/LegendDoD.png}
-			\end{minipage}%
-		}
-		\caption{{\scriptsize \ac{DoD}s between free epoch \textbf{Kobe 1991} and reference epoch \textbf{1995}. (a) and (d) are \ac{DoD}s resulted from roughly co-registered orientations using methods $SuperGlue_{DSM}$ and $SIFT_{DSM}$ (elaborated in Chapter 3). (b, c, e, f) are \ac{DoD}s resulted from refined orientations using methods $Patch_{SpGDSM}$, $Guided_{SpGDSM}$, $Patch_{SIFTDSM}$ and $Guided_{SIFTDSM}$ individually.}}
-		\label{PreciseDoDKobe}
-	\end{center}
-\end{figure*} 
 
 \begin{figure*}[htbp]
 	\begin{center}
@@ -577,98 +834,40 @@ In order to evaluate the results qualitatively and quantitatively, the following
 	\centering
 	\begin{tabular}{||l|l|c|c|c||}\hline
 		& &$\mu$ [m]&$\sigma$ [m]&$|\mu|$ [m]\\\hline\hline
-		\multirow{6}{*}{$DoD^{Frejus}_{1954-2014}$}
-		&${{SpGDSM}}$ & 2.07 & 4.87 & {3.83} \\
-		&${Patch_{SpGDSM}}$ & -1.91 & 3.24 & 2.69\\
-		&${Guided_{SpGDSM}}$ & -1.33 & 3.28 & \textbf{2.30}\\
-		&${{SIFTDSM}}$ & 6.92 & 8.47 & 8.04\\
-		&${Patch_{SIFTDSM}}$ & -6.28 & 6.72 & 6.62\\
-		&${Guided_{SIFTDSM}}$ & 3.58 & 16.62 & 12.56\\\hline
-		%		&${SuperGlue_{ImgPairs}}$ & 5.70 & 6.32 & 6.62\\
-		%		&${SuperGlue_{Ortho}}$ & 2.19 & 6.46 & 4.55\\
-		%		&${SuperGlue_{DSM}}$ & 2.07 & 4.87 & \textbf{3.83} \\
-		%		&${SIFT_{ImgPairs}}$ & / & / & / \\
-		%		&${SIFT_{Ortho}}$ & / & / & / \\
-		%		&${SIFT_{DSM}}$ & 6.92 & 8.47 & 8.04\\\hline
-		%		
-		\multirow{6}{*}{$DoD^{Frejus}_{1966-2014}$}
-		&${{SpGDSM}}$ & -0.46 & 3.77 & {2.68}\\
-		&${Patch_{SpGDSM}}$ & -0.56 & 3.44 & 2.27\\
-		&${Guided_{SpGDSM}}$ & -0.12 & 3.45 & \textbf{2.19}\\
-		&${{SIFTDSM}}$ & -1.72 & 4.92 & 3.75\\
-		&${Patch_{SIFTDSM}}$ & -0.59 & 3.36 & 2.29\\
-		&${Guided_{SIFTDSM}}$ & 0.14 & 3.35 & 2.25\\\hline
-		%		&${SuperGlue_{ImgPairs}}$ & -1.36 & 3.82 & 2.90\\
-		%		&${SuperGlue_{Ortho}}$ & -0.37 & 4.22 & 3.01\\
-		%		&${SuperGlue_{DSM}}$ & -0.46 & 3.77 & \textbf{2.68}\\
-		%		&${SIFT_{ImgPairs}}$ & / & / & / \\
-		%		&${SIFT_{Ortho}}$ & / & / & / \\
-		%		&${SIFT_{DSM}}$ & -1.72 & 4.92 & 3.75\\\hline
-		%		
-		\multirow{6}{*}{$DoD^{Frejus}_{1970-2014}$}
-		&${{SpGDSM}}$ & -1.71 & 5.75 & 4.61\\
-		&${Patch_{SpGDSM}}$ & -0.86 & 3.20 & 2.12\\
-		&${Guided_{SpGDSM}}$ & -0.18 & 3.27 & 2.12\\
-		&${{SIFTDSM}}$ & -3.17 & 5.44 & 4.71\\
-		&${Patch_{SIFTDSM}}$ & -0.98 & 3.26 & 2.20\\
-		&${Guided_{SIFTDSM}}$ & -0.15 & 3.17 & \textbf{2.05}\\\hline
-		%		&${SuperGlue_{ImgPairs}}$ & -5.04 & 5.09 & 5.70\\
-		%		&${SuperGlue_{Ortho}}$ & -2.63 & 5.18 & \textbf{4.39}\\
-		%		&${SuperGlue_{DSM}}$ & -1.71 & 5.75 & 4.61\\
-		%		&${SIFT_{ImgPairs}}$ & / & / & / \\
-		%		&${SIFT_{Ortho}}$ & / & / & / \\
-		%		&${SIFT_{DSM}}$ & -3.17 & 5.44 & 4.71\\\hline
-		
-		%%%%%%%%%%%%%%%%%%%%%%%%satellite
-		\multirow{4}{*}{$DoD^{Pezenas}_{1971-2014(Satellite)}$}
-		&${{SpGDSM}}$ & -3.70 & 10.65 & 8.29\\
-		&${Patch_{SpGDSM}}$ & -0.34 & 4.39 & 2.28\\
-		&${Guided_{SpGDSM}}$ & -0.65 & 4.46 & 2.45\\
-		&${{SIFTDSM}}$ & -0.68 & 8.11 & 5.80\\
-		&${Patch_{SIFTDSM}}$ & -0.49 & 4.41 & 2.29\\
-		&${Guided_{SIFTDSM}}$ & -0.57 & 4.38 & \textbf{2.27}\\\hline
-		
-		
-		%		\multirow{4}{*}{$DoD^{Pezenas}_{1971-2014(Satellite)}$}
-		%		%&${SuperGlue_{DSM}}$ & -3.70 & 10.65 & 8.29\\
-		%		&${Patch_{SpGDSM}}$ & -0.45 & 4.62 & 2.34\\
-		%		&${Guided_{SpGDSM}}$ & -0.61 & 4.75 & 2.47\\
-		%		%&${SIFT_{DSM}}$ & -0.68 & 8.11 & 5.80 \\
-		%		&${Patch_{SIFTDSM}}$ & -0.35 & 4.70 & \textbf{2.28}\\
-		%		&${Guided_{SIFTDSM}}$ & -0.48 & 4.39 & 2.33\\\hline
-		
-		%		&${SuperGlue_{Ortho}}$ & / & / & /\\
-		%		&${SuperGlue_{DSM}}$ & -3.70 & 10.65 & 8.29\\
-		%		%&${SuperGlue_{DSM}}$ & -1.85 & 13.24 & 9.15\\
-		%		&${SIFT_{Ortho}}$ & / & / & /\\
-		%		&${SIFT_{DSM}}$ & -0.68 & 8.11 & \textbf{5.80} \\\hline
-		%		%&${SIFT_{DSM}}$ & 0.58 & 7.82 & \textbf{3.18}\\\hline
-		
-		\multirow{6}{*}{$DoD^{Kobe}_{1991-1995}$}
-		&${{SpGDSM}}$ & -0.75 & 14.62 & 7.95\\
-		&${Patch_{SpGDSM}}$ & 1.93 & 10.26 & 3.99\\
-		&${Guided_{SpGDSM}}$ & 2.03 & 11.74 & 4.30\\
-		&${{SIFTDSM}}$ & 0.27 & 14.40 & 7.57\\
-		&${Patch_{SIFTDSM}}$ & 1.80 & 10.36 & 4.00\\
-		&${Guided_{SIFTDSM}}$ & 1.84 & 9.48 & \textbf{3.87}\\\hline
-		
-		%		&${SuperGlue_{ImgPairs}}$ & -1.63 & 13.85 & \textbf{7.24}\\
-		%		%&${SIFT_{ImgPairs}}$ & 167.46 & 121.26 & 168.47\\
-		%		&${SuperGlue_{Ortho}}$ & -0.54 & 14.83 & 7.78\\
-		%		%&${SIFT_{Ortho}}$ & 4.29 & 41.89 & 26.01\\
-		%		&${SuperGlue_{DSM}}$ & -0.75 & 14.62 & 7.95\\
-		%		&${SIFT_{ImgPairs}}$ & / & / & / \\
-		%		&${SIFT_{Ortho}}$ & / & / & / \\
-		%		&${SIFT_{DSM}}$ & 0.27 & 14.40 & 7.57\\\hline
-		
+\multirow{6}{*}{$DoD^{Frejus}_{1954-2014}$}
+&${{SpGDSM}}$ & 2.07 & 4.87 & {3.83} \\
+&${Patch_{SpGDSM}}$ & -1.91 & 3.24 & 2.69\\
+&${Guided_{SpGDSM}}$ & -1.33 & 3.28 & \textbf{2.30}\\
+&${{SIFTDSM}}$ & 6.92 & 8.47 & 8.04\\
+&${Patch_{SIFTDSM}}$ & -6.28 & 6.72 & 6.62\\
+&${Guided_{SIFTDSM}}$ & 3.58 & 16.62 & 12.56\\\hline
+
+\multirow{6}{*}{$DoD^{Frejus}_{1966-2014}$}
+&${{SpGDSM}}$ & -0.46 & 3.77 & {2.68}\\
+&${Patch_{SpGDSM}}$ & -0.56 & 3.44 & 2.27\\
+&${Guided_{SpGDSM}}$ & -0.12 & 3.45 & \textbf{2.19}\\
+&${{SIFTDSM}}$ & -1.72 & 4.92 & 3.75\\
+&${Patch_{SIFTDSM}}$ & -0.59 & 3.36 & 2.29\\
+&${Guided_{SIFTDSM}}$ & 0.14 & 3.35 & 2.25\\\hline
+
+\multirow{6}{*}{$DoD^{Frejus}_{1970-2014}$}
+&${{SpGDSM}}$ & -1.71 & 5.75 & 4.61\\
+&${Patch_{SpGDSM}}$ & -0.86 & 3.20 & 2.12\\
+&${Guided_{SpGDSM}}$ & -0.18 & 3.27 & 2.12\\
+&${{SIFTDSM}}$ & -3.17 & 5.44 & 4.71\\
+&${Patch_{SIFTDSM}}$ & -0.98 & 3.26 & 2.20\\
+&${Guided_{SIFTDSM}}$ & -0.15 & 3.17 & \textbf{2.05}\\\hline		
+
 	\end{tabular}
-	\caption{Average value $\mu$, standard deviation $\sigma$, and absolute average value $|\mu|$ of all the \ac{DoD}s in Figure~\ref{PreciseDoDFrejus}, ~\ref{PreciseDoDPezenas-Satellite} and ~\ref{PreciseDoDKobe}.}
-	\label{DoDStatistic}
+	\caption{Average value $\mu$, standard deviation $\sigma$, and absolute average value $|\mu|$ of all the \ac{DoD}s in Figure~\ref{PreciseDoDPezenas-Satellite} and ~\ref{PreciseDoDAlberona}.}
+	\label{PreciseDoDStatistic}
 \end{table}
 
 
 \subsubsection{Ground displacement}
-
+The northeastward displacement maps of Kobe dataset (hereinafter termed as Gd) as well as the \ac{GT} Gd provided by the Japan meteorological agency~\cite{ian1996morphological} are presented in Figure~\ref{GdKobe}. 
+The Gds resulted from rough co-registered orientations using methods $SuperGlue_{DSM}$ and $SIFT_{DSM}$ (i.e. (b) and (e), elaborated in Chapter~\ref{chap:RoughCoReg}) are displayed as bases, and the Gds resulted from refined orientations using methods $Patch_{SpGDSM}$, $Guided_{SpGDSM}$, $Patch_{SIFTDSM}$ and $Guided_{SIFTDSM}$ (i.e. (c, d) and (f, g)) are given for comparison. 
+An up-lateral strike-slip movement along the sea is present in Figure~\ref{GdKobe} (c, d) and (f, g), but not in (b) and (e). The observed signal is coherent with the fault of the Kobe earthquake known from \ac{GT}, according to which a striking north $30^{\circ}$-$60^{\circ}$ east rupture occurred along the northeast-southwest coastline across $ \sim $18 km.\\
 
 \begin{figure*}[htbp]
 	\begin{center}
@@ -729,6 +928,58 @@ In order to evaluate the results qualitatively and quantitatively, the following
 \section{Discussion}
 \subsection{Comparison of precise matching on DSMs and original RGB images}
 \label{CompareRGBDSM}
+In order to decide which type of images (DSMs or original images) is more suitable for executing the precise matching, we apply our pipeline \textit{Patch} on both DSMs and original images of Fr{\'e}jus 1970 and 2014.
+The final matches are displayed in Figure~\ref{precisematchingdepth} (a) and (b). 
+To asses quantitatively the results, we created a GT depth map and calculated the accuracy (correct matches / total matches). In Figure~\ref{precisematchingdepth}~(c) we plot the accuracy curves while varying the reprojection error threshold from 0 to 10 pixels. 
+It is clear that the result using the original images is more accurate, even though the DSMs recovered more matches.
+This is because historical RGB images are inevitably accompanied with noise, and the noise gets worse in \ac{DSM}s at full resolution (see the DSM shaded image in Figure~\ref{precisematchingdepth} (d)) due to the information loss and errors introduced in calculating the \ac{DSM}. Therefore RGB images are more suitable for precise matching.\\
+\begin{figure*}[htbp]
+	\begin{center}
+		\subfigure[Matches on RGB images]{
+			\begin{minipage}[t]{0.48\linewidth}
+				\centering
+				\includegraphics[width=6cm]{images/appendix4/TiePtOriImg.png}
+				%\caption{DoD$_{Pezenas\_1971}^{Co-Reg}$}
+			\end{minipage}%
+		}
+		\subfigure[Matches on DSMs]{
+			\begin{minipage}[t]{0.48\linewidth}
+				\centering
+				\includegraphics[width=6cm]{images/appendix4/TiePtDepth.png}
+				%\caption{DoD$_{Pezenas\_1971}^{Guided}$}
+			\end{minipage}  
+		}       
+		\subfigure[Accuracy of (a) and (b)]{
+			\begin{minipage}[t]{0.58\linewidth}
+				\centering
+				\includegraphics[width=7cm]{images/appendix4/pdfdepth.png}
+				%\caption{DoD$_{Pezenas\_1981}^{Co-Reg}$}
+			\end{minipage}%
+		}
+		\subfigure[Shaded image of historical DSM]{
+			\begin{minipage}[t]{0.38\linewidth}
+				\centering
+				\includegraphics[width=5cm]{images/appendix4/DepthShade.png}
+				%\caption{DoD$_{Pezenas\_1981}^{Co-Reg}$}
+			\end{minipage}%
+		}
+		\caption{Comparison of precise matching on original RGB images and DSMs.}
+		\label{precisematchingdepth}
+	\end{center}
+\end{figure*} 
+
+\subsection{Comparison between SIFT and SuperGlue}
+SuperGlue is more invariant over time than SIFT, leading to more numerous matches in the precise matching stage. However, combined with reliable rough co-registration result, SIFT is able to recover less numerous yet more accurate matches than SuperGlue.
 
 \section{Conclusion}
+In this section we elaborated two pipelines for precise matching: $Patch$ and $Guided$. 
+We tested each pipeline on two sets of rough co-registration basics: $SIFT_{DSM}$ and $SuperGlue_{DSM}$, which leads to 4 methods (\ding{172} $Patch_{SpGDSM}$, \ding{173} $Guided_{SpGDSM}$, \ding{174} $Patch_{SIFTDSM}$ and \ding{175} $Guided_{SIFTDSM}$.
+We applied all the 4 methods on 4 datasets (Fr{\'e}jus, Pezenas, Kobe and Alberona), including the cases of (1) matching aerial epochs only and (2) matching aerial and satellite epochs mixed.
+Experiments showed that:\\
+\begin{enumerate}
+	\item Both precise matching pipelines (i.e. $Patch$ and $Guided$) are capable of recovering numerous and accurate matches, as long as the rough co-registration basic is reliable.\\
+	\item By adopting the precise matches in a \ac{BBA} routine, the systematic errors in the surfaces are effectively mitigated while the real scene changes are reserved.
+	\item Our pipelines are able to provide precise results for variable application cases including general change detection, landslides and earthquakes.
+\end{enumerate}
+%\section{Discussion}
 
