@@ -7,9 +7,9 @@
 \section{Introduction}
 \subsection{Objective and motivation}
 %Inter-epoch image pairs are roughly aligned 
-The rough co-registration stage elaborated in chapter~\ref{chap:RoughCoReg} laid a solid foundation for matching inter-epoch images, as they roughly aligned images from different epochs in a globally consistent way. However, the alignment is not accurate enough for high precision ground surveys. Therefore, we propose a precise matching stage to get matches with higher accuracy. 
-For each inter-epoch image pair $I^{e_1}$ and $I^{e_2}$ to be matched, our goal is to find precise matches $M({\mathbf{K}^{e_1},\mathbf{K}^{e_2}})$ ($\mathbf{K}^{e_i}$ represents keypoints in image $I^{e_i}$). 
-Based on the roughly co-registered orientations and \ac{DSM}s resulted from chapter~\ref{chap:RoughCoReg}, 
+The rough co-registration stage elaborated in Section~\ref{chap:RoughCoReg} laid a solid foundation for matching inter-epoch images, as they roughly aligned images from different epochs in a globally consistent way. However, the alignment is not accurate enough for high precision ground surveys. Therefore, we propose a precise matching stage to get matches with higher accuracy. 
+For each inter-epoch image pair $I^{e_1}$ and $I^{e_2}$ to be matched, our goal is to find enough precise matches $M({\mathbf{K}^{e_1},\mathbf{K}^{e_2}})$ ($\mathbf{K}^{e_i}$ represents keypoints in image $I^{e_i}$). 
+Based on the roughly co-registered orientations and \ac{DSM}s resulted from Chapter~\ref{chap:RoughCoReg}, 
 we can readily predict a potential matching point $\widetilde{\mathbf{K}}^{e_2}$ in $I^{e_2}$ for keypoint ${K}^{e_1}$ in $I^{e_1}$. As rough co-registration provides robust alignment which is inferior in accuracy, the precise matching point for keypoint ${K}^{e_1}$ must located in somewhere near the predicted point $\widetilde{\mathbf{K}}^{e_2}$. Therefore, we can narrow down the search space in precise matching stage by only considering the neighborhood of the predicted point to reduce the ambiguity tremendously.\\
 Similar to rough co-registration, both SIFT and SuperGlue are adopted in our precise matching pipeline.\\
 For hand-crafted methods like SIFT, the strategy of predicting keypoints followed by narrowing down the search space can be readily applied. Besides, as SIFT provides explicitly the scale and rotation angle of the keypoints, we can take advantage of that to check if they coincide with the scale and rotation difference predicted by rough co-registration.\\
@@ -28,7 +28,7 @@ Our main contributions include:\\
 \section{Methodology}
 To compute precise {inter-epoch} matches, we perform matching on original RGB images {under the guidance of co-registered orientations and DSMs}. {It consists of extracting tentative inter-epoch matches, followed by a 3D-RANSAC filter and a cross correlation stage to remove outliers.} The workflow is displayed in Figure~\ref{WorkflowPatch}(a).
 \par
-We choose matching RGB images for precise matching instead of DSMs, as the DSMs are noisy due to low radiometric quality of the images. In section ~\ref{CompareRGBDSM} %Appendix~\ref{chap:appendix4} 
+We choose matching RGB images for precise matching instead of DSMs, as the DSMs are noisy due to low radiometric quality of the images. In Section ~\ref{CompareRGBDSM} %Appendix~\ref{chap:appendix4} 
 we compared the matching results on RGB images and DSMs over the same area. It demonstrated that there are more numerous but less accurate matches found in DSMs. As the goal of precise matching is to recover accurate matches, the RGB images are more suitable than DSMs.\\
 
 \begin{figure*}[htbp]
@@ -174,12 +174,12 @@ We adopted the Fraser model ~\cite{fraser1997digital} to calibrate the cameras a
 
 
 \section{Experiments}
-As described in the previous section, our precise matching pipeline consists of 3 main steps to get the tentative, enhanced and final matches. There are 2 alternatives for obtaining tentative matches (i.e. patch or guided matching), leading to 2 precise matching methods:\\
+As described in the previous section, our precise matching pipeline consists of 3 main steps to get the tentative, enhanced and final matches. There are 2 (i.e. patch or guided matching) alternatives for obtaining tentative matches, leading to 2 precise matching methods:\\
 \begin{enumerate}
 	\item \textit{Patch}: recover tentative matches with patch matching, followed by 3D-RANSAC and cross correlation to remove outliers;
 	\item \textit{Guided}: same as \textit{Patch}, except replacing patch matching with guided matching.
 \end{enumerate}
-For each dataset, we choose the rough co-registration results calculated with $SIFT_{DSM}$ and $SuperGlue_{DSM}$ individually (as they are the most robust methods for rough co-registration) to guide the precise matching \textit{Patch} or \textit{Guided}, leading to 4 sets of result, which are referred to as:\\
+For each dataset, we choose the rough co-registration results calculated with $SIFT_{DSM}$ and $SuperGlue_{DSM}$ individually (as they are the most robust methods for rough co-registration) to guide the precise matching \textit{Patch} or \textit{Guided}, leading to 4 sets of results, which are referred to as:\\
 \begin{enumerate}
 	\item $Patch_{SpGDSM}$
 	\item $Guided_{SpGDSM}$
@@ -196,7 +196,7 @@ Inter-epoch matches are extracted {for every possible combination of 2 epochs an
 
 
 \subsection{Datasets}
-We tested our precise matching methods on the 4 sets of datasets which are elaborated in Chapter~\ref{chap:ApplicationsAndDatasets}: Fr{\'e}jus, Pezenas, Kobe and Alberona.
+We tested our precise matching methods on all the multi-epoch datasets which are elaborated in Chapter~\ref{chap:ApplicationsAndDatasets}: Fr{\'e}jus, Pezenas, Kobe and Alberona.
 
 %We tested our precise matching methods on the 4 sets of datasets: Fr{\'e}jus, Pezenas and Kobe. Details of the datasets are demonstrated in Section~\ref{Datasets}.\\
 For Fr{\'e}jus, Kobe and Alberona, we keep all the epochs for experiments, as Fr{\'e}jus displayed drastic scene changes, while Kobe and Alberona witnessed earthquake and landslide individually. For Pezenas, we choose aerial epoch 1971 and satellite epoch 2014 to test our precise matching and ignore other epochs to simplify the processing, since Pezenas is less challenging case.\\
@@ -217,20 +217,20 @@ In order to evaluate the results qualitatively and quantitatively, the following
 \subsection{Comparison}
 \subsubsection{Matches visualization}
 \label{matchVizMainBody}
-For each dataset, every possible combination of 2 epochs are matched with 4 methods (\ding{172} $Patch_{SpGDSM}$, \ding{173} $Guided_{SpGDSM}$, \ding{174} $Patch_{SIFTDSM}$ and \ding{175} $Guided_{SIFTDSM}$). 
+For each dataset, every possible combination of 2 epochs are matched with 4 methods (i.e. \ding{172} $Patch_{SpGDSM}$, \ding{173} $Guided_{SpGDSM}$, \ding{174} $Patch_{SIFTDSM}$ and \ding{175} $Guided_{SIFTDSM}$). 
 
-As the matches showed similar pattern, for the sake of simplicity, the matches visualizations of datasets Fr{\'e}jus and Alberona are displayed in this chapter, the rest results of Pezenas and Kobe are demonstrated in Section~\ref{sec:PrecisematchViz}.\\
+As the matches showed similar pattern, for the sake of simplicity, the matches visualizations of datasets Fr{\'e}jus and Alberona are displayed in this chapter, the results of Pezenas and Kobe are demonstrated in Appendix~\ref{sec:PrecisematchViz}.\\
 
 %The matches for dataset Alberona are visualized and displayed in Figure~\ref{MatchVizAlberona}. Matches visualization for datasets Fr{\'e}jus, Pezenas and Kobe are displayed in Section~\ref{chap:appendixB} for the sake of simplicity.\\
 \begin{enumerate}
-	\item For Fr{\'e}jus, there exist 4 epochs, leading to 6 sets of epoch combination, the matches visualizations of which are displayed in Figure \ref{MatchVizFrejus1954-2014}, \ref{MatchVizFrejus1966-2014}, \ref{MatchVizFrejus1970-2014}, \ref{MatchVizFrejus1954-1970}, \ref{MatchVizFrejus1954-1966} and \ref{MatchVizFrejus1966-1970}. Both $Patch$ and $Guided$ recovered a lot of final matches, except for the ones involving epoch 1954 based on rough co-registration of $SIFT_{DSM}$ (Figue \ref{MatchVizFrejus1954-2014} (e, f), \ref{MatchVizFrejus1954-1970} (e, f) and \ref{MatchVizFrejus1954-1966} (e, f)). The reason lies in the fact that the rough co-registration basic of $SIFT_{DSM}$ for epoch 1954 is inferior, as we mentioned in Section ~\ref{sec:matchViz}.
+	\item For Fr{\'e}jus, there exist 4 epochs, leading to 6 sets of epoch combination, the matches visualizations of which are displayed in Figure \ref{MatchVizFrejus1954-2014}, \ref{MatchVizFrejus1966-2014}, \ref{MatchVizFrejus1970-2014}, \ref{MatchVizFrejus1954-1970}, \ref{MatchVizFrejus1966-1970} and \ref{MatchVizFrejus1954-1966}. Both $Patch$ and $Guided$ recovered a lot of final matches, except for the ones involving epoch 1954 based on rough co-registration of $SIFT_{DSM}$ (Figue \ref{MatchVizFrejus1954-2014} (e, f), \ref{MatchVizFrejus1954-1970} (e, f) and \ref{MatchVizFrejus1954-1966} (e, f)). The reason lies in the fact that the rough co-registration basic of $SIFT_{DSM}$ for epoch 1954 is inferior, as was mentioned in Section ~\ref{sec:MatchVizMainBody}.
 
 	\item For Alberona, there exist 2 epochs, leading to 1 set of epoch combination, the matches visualization of which is displayed in Figure~\ref{MatchVizAlberona}. As the basics of rough co-registration are reliable, both $Patch$ and $Guided$ recovered numerous final matches for all the methods.
 \end{enumerate}
 
 Besides, common pattern presents in both datasets: 3D-RANSAC filter and cross correlation removed considerable number of matches, at the same time enough matches survived, which guaranteed robustness of our method. Moreover, $Patch$ recovered considerably more matches than $Guided$, which is understandable as SuperGlue is more invariant over time than SIFT.\\
 
-Similar pattern appears for the datasets Pezenas and Kobe. For more details please refer to Section~\ref{sec:PrecisematchViz}.
+Similar pattern appears for the datasets Pezenas and Kobe. For more details please refer to Appendix~\ref{sec:PrecisematchViz}.
 
 \begin{figure*}[htbp]
 	\begin{center}
@@ -459,7 +459,7 @@ Similar pattern appears for the datasets Pezenas and Kobe. For more details plea
 		\subfigure[Common zone]{
 			\begin{minipage}[t]{0.48\linewidth}
 				\centering
-				\includegraphics[width=6.8cm]{images/Chapitre4/Pseudo-Ortho-MEC-Malt_Tapas_1954_Ortho-MEC-Malt_Tapas_1966.png}
+				\includegraphics[width=7.8cm]{images/Chapitre4/Pseudo-Ortho-MEC-Malt_Tapas_1954_Ortho-MEC-Malt_Tapas_1966.png}
 			\end{minipage}%
 		}
 		\subfigure[Number of recovered matches]{
@@ -502,39 +502,39 @@ Similar pattern appears for the datasets Pezenas and Kobe. For more details plea
 		\subfigure[Common zone]{
 			\begin{minipage}[t]{0.48\linewidth}
 				\centering
-				\includegraphics[width=4.8cm]{images/Chapitre3/Pseudo-Ortho-MEC-Malt_Tapas_1954_Ortho-MEC-Malt_Tapas_2003.png}
+				\includegraphics[width=6.8cm]{images/Chapitre3/Pseudo-Ortho-MEC-Malt_Tapas_1954_Ortho-MEC-Malt_Tapas_2003.png}
 			\end{minipage}%
 		}
-%		\subfigure[Number of recovered matches]{
-%			\begin{minipage}[t]{0.48\linewidth}
-%				\centering
-%				\includegraphics[width=5.8cm]{images/Chapitre4/PlotBarH-Alberona1954-2003.png}
-%			\end{minipage}%
-%		}
-%		\subfigure[$Patch_{SpGDSM}$]{
-%			\begin{minipage}[t]{0.48\linewidth}
-%				\centering
-%				\includegraphics[width=3.8cm]{images/Chapitre4/Precise-SpGDSMHomol-SuperGlue-3DRANSAC-CrossCorrelation-PileImg_Ortho-MEC-Malt_Tapas_1954_Ortho-MEC-Malt_Tapas_2003.png}
-%			\end{minipage}%
-%		}
-%		\subfigure[$Guided_{SpGDSM}$]{
-%			\begin{minipage}[t]{0.48\linewidth}
-%				\centering
-%				\includegraphics[width=3.8cm]{images/Chapitre4/Precise-SpGDSMHomol-GuidedSIFT-3DRANSAC-CrossCorrelation-PileImg_Ortho-MEC-Malt_Tapas_1954_Ortho-MEC-Malt_Tapas_2003.png}
-%			\end{minipage}%
-%		}
-%		\subfigure[$Patch_{SIFTDSM}$]{
-%			\begin{minipage}[t]{0.48\linewidth}
-%				\centering
-%				\includegraphics[width=3.8cm]{images/Chapitre4/Precise-SIFTDSMHomol-SuperGlue-3DRANSAC-CrossCorrelation-PileImg_Ortho-MEC-Malt_Tapas_1954_Ortho-MEC-Malt_Tapas_2003.png}
-%			\end{minipage}%
-%		}
-%		\subfigure[$Guided_{SIFTDSM}$]{
-%			\begin{minipage}[t]{0.48\linewidth}
-%				\centering
-%				\includegraphics[width=3.8cm]{images/Chapitre4/Precise-SIFTDSMHomol-GuidedSIFT-3DRANSAC-CrossCorrelation-PileImg_Ortho-MEC-Malt_Tapas_1954_Ortho-MEC-Malt_Tapas_2003.png}
-%			\end{minipage}%
-%		}
+		\subfigure[Number of recovered matches]{
+			\begin{minipage}[t]{0.48\linewidth}
+				\centering
+				\includegraphics[width=5.8cm]{images/Chapitre4/PlotBarH-Alberona1954-2003.png}
+			\end{minipage}%
+		}
+		\subfigure[$Patch_{SpGDSM}$]{
+			\begin{minipage}[t]{0.48\linewidth}
+				\centering
+				\includegraphics[width=6.8cm]{images/Chapitre4/Precise-SpGDSMHomol-SuperGlue-3DRANSAC-CrossCorrelation-PileImg_Ortho-MEC-Malt_Tapas_1954_Ortho-MEC-Malt_Tapas_2003.png}
+			\end{minipage}%
+		}
+		\subfigure[$Guided_{SpGDSM}$]{
+			\begin{minipage}[t]{0.48\linewidth}
+				\centering
+				\includegraphics[width=6.8cm]{images/Chapitre4/Precise-SpGDSMHomol-GuidedSIFT-3DRANSAC-CrossCorrelation-PileImg_Ortho-MEC-Malt_Tapas_1954_Ortho-MEC-Malt_Tapas_2003.png}
+			\end{minipage}%
+		}
+		\subfigure[$Patch_{SIFTDSM}$]{
+			\begin{minipage}[t]{0.48\linewidth}
+				\centering
+				\includegraphics[width=6.8cm]{images/Chapitre4/Precise-SIFTDSMHomol-SuperGlue-3DRANSAC-CrossCorrelation-PileImg_Ortho-MEC-Malt_Tapas_1954_Ortho-MEC-Malt_Tapas_2003.png}
+			\end{minipage}%
+		}
+		\subfigure[$Guided_{SIFTDSM}$]{
+			\begin{minipage}[t]{0.48\linewidth}
+				\centering
+				\includegraphics[width=6.8cm]{images/Chapitre4/Precise-SIFTDSMHomol-GuidedSIFT-3DRANSAC-CrossCorrelation-PileImg_Ortho-MEC-Malt_Tapas_1954_Ortho-MEC-Malt_Tapas_2003.png}
+			\end{minipage}%
+		}
 		\caption{Precise matching visualization of \textbf{Alberona 1954 and 2003}. (a) Image pairs to be matched, with red rectangles indicating the common zone. (b) Numbers of tentative, enhanced and final matches recovered with $Patch_{SpGDSM}$, $Guided_{SpGDSM}$, $Patch_{SIFTDSM}$ and $Guided_{SIFTDSM}$ individually. (c-f) Visualization of final matches recovered with $Patch_{SpGDSM}$, $Guided_{SpGDSM}$, $Patch_{SIFTDSM}$ and $Guided_{SIFTDSM}$ individually.}
 		\label{MatchVizAlberona}
 	\end{center}
@@ -546,26 +546,27 @@ Similar pattern appears for the datasets Pezenas and Kobe. For more details plea
 
 As the \ac{DoD}s showed similar pattern, for the sake of simplicity, 
 we only show the results of 2 sets of datasets: Fr{\'e}jus and Alberona, as Fr{\'e}jus is interesting for representing the general case for change detection, and Alberona is interesting as it witnessed landslide. 
-For Kobe, the more interesting result is the ground displacement caused by the earthquake, which would be demonstrated later, so we move the \ac{DoD}s of Kobe as well as Pezenas to Section~\ref{sec:PreciseDoD}.\\
+For Kobe, the more interesting result is the ground displacement caused by the earthquake, which would be demonstrated later, so we move the \ac{DoD}s of Kobe as well as Pezenas to Appendix~\ref{sec:PreciseDoD}.\\
 
 The \ac{DoD}s for Fr{\'e}jus and Alberona are demonstrated in Figure~\ref{PreciseDoDFrejus} and ~\ref{PreciseDoDAlberona}. 
-In each figure, the \ac{DoD}s resulted from rough co-registered orientations using methods $SuperGlue_{DSM}$ and $SIFT_{DSM}$ (elaborated in Chapter~\ref{chap:RoughCoReg}, hereinafter referred to as DoD$^{SpGDSM}$ and DoD$^{SIFTDSM}$) are displayed as bases, and the \ac{DoD}s resulted from refined orientations using methods $Patch_{SpGDSM}$, $Guided_{SpGDSM}$, $Patch_{SIFTDSM}$ and $Guided_{SIFTDSM}$ (hereinafter termed as DoD$^{Patch_{SpGDSM}}$, DoD$^{Guided_{SpGDSM}}$, DoD$^Patch_{SIFTDSM}$ and DoD$^Guided_{SIFTDSM}$) are given for comparison. 
+In each figure, the \ac{DoD}s resulted from rough co-registered orientations using methods $SuperGlue_{DSM}$ and $SIFT_{DSM}$ (elaborated in Chapter~\ref{chap:RoughCoReg}, hereinafter referred to as DoD$^{SpGDSM}$ and DoD$^{SIFTDSM}$) are displayed as basics, and the \ac{DoD}s resulted from refined orientations using methods $Patch_{SpGDSM}$, $Guided_{SpGDSM}$, $Patch_{SIFTDSM}$ and $Guided_{SIFTDSM}$ (hereinafter termed as DoD$^{Patch_{SpGDSM}}$, DoD$^{Guided_{SpGDSM}}$, DoD$^{Patch_{SIFTDSM}}$ and DoD$^{Guided_{SIFTDSM}}$) are given for comparison. 
 The corresponding statistical information is displayed in Table~\ref{PreciseDoDStatistic}.\\
 
 For dataset Fr{\'e}jus, as can be seen in Figure~\ref{PreciseDoDFrejus}:\\
 \begin{enumerate}
 	\item The dome effect appears in all the DoD$^{SpGDSM}$ and DoD$^{SIFTDSM}$ (i.e. the first column of the subgraphs), as the camera parameters are poorly estimated without the precise matches.
-	\item For (e) \ac{DoD}$_{Frejus1954}^{Patch_{SIFTDSM}}$ and (f) \ac{DoD}$_{Frejus1954}^{Guided_{SIFTDSM}}$, the dome effect is worse than their corresponding basic (i.e. (d) \ac{DoD}$_{Frejus1954}^{{SIFTDSM}}$).  The reason lies in the fact that the rough co-registration basic is inferior, as we mentioned in Section ~\ref{sec:matchViz}.
+	\item For (e) \ac{DoD}$_{Frejus1954}^{Patch_{SIFTDSM}}$ and (f) \ac{DoD}$_{Frejus1954}^{Guided_{SIFTDSM}}$, the dome effect is worse than their corresponding basic (i.e. (d) \ac{DoD}$_{Frejus1954}^{{SIFTDSM}}$).  The reason lies in the fact that the rough co-registration basic is inferior, as we mentioned in Section ~\ref{sec:MatchVizMainBody}.
 	\item For the other \ac{DoD}s resulted from refined orientations (i.e. the second and third columns of subgraphs except for (e) and (f)), the dome effect is effectively mitigated thanks to our numerous and precise matches. In the meantime, the real scene changes are reserved, such as the new buildings and seaports.
+	\item Regarding to the comparison between $Patch$ and $Guided$, according to the absolute average value $|\mu|$ of all the \ac{DoD}s in Figure \ref{PreciseDoDFrejus} (cf. Talbe \ref{PreciseDoDStatistic}), $Guided$ leads to \ac{DoD}s with slightly better accuracy, even though it is less invariant than $Patch$, it recovers less numerous but more precise matches with the help of rough co-registered orientations and \ac{DSM}s.
 \end{enumerate}
 
-For dataset Alberona, as can be seen in Figure~\ref{PreciseDoDAlberona}:\\
+For dataset Alberona, the \ac{DoD}s are displayed in Figure~\ref{PreciseDoDAlberona}. They are superposed with the extent of the landslide area, which is provided by expert geomorphologists indicated with black lines. As can be seen:\\
 \begin{enumerate}
-	\item The dome effect presented in DoD$^{SpGDSM}$ and DoD$^{SIFTDSM}$ (the first column of the subgraphs) is mitigated in DoD$^{Patch_{SpGDSM}}$, DoD$^{Guided_{SpGDSM}}$, DoD$^Patch_{SIFTDSM}$ and DoD$^Guided_{SIFTDSM}$ (the second and third column of subgraphs). However, we still observer some systematic errors such as the slightly residual dome effect, which we attribute to: (1) the images are poorly preserved and scanned with non photogrammetric scanner; (2) limited number of images lead to a lack of redundant observation.
-	\item In DoD$^{Patch_{SpGDSM}}$, DoD$^{Guided_{SpGDSM}}$, DoD$^Patch_{SIFTDSM}$ and DoD$^Guided_{SIFTDSM}$ (the second and third column of subgraphs), the topographic changes are well detected in the landslide area (indicated with black lines).
+	\item The dome effect presented in DoD$^{SpGDSM}$ and DoD$^{SIFTDSM}$ (the first column of the subgraphs) is mitigated in DoD$^{Patch_{SpGDSM}}$, DoD$^{Guided_{SpGDSM}}$, DoD$^{Patch_{SIFTDSM}}$ and DoD$^{Guided_{SIFTDSM}}$ (the second and third column of subgraphs). However, even in the best result (i.e. Figure~\ref{PreciseDoDAlberona} (e) \ac{DoD}$_{Alberona}^{Patch_{SIFTDSM}}$) we still observe some systematic errors such as the slightly residual dome effect, which we attribute to: (1) the images are poorly preserved and scanned with non photogrammetric scanner; (2) limited number of images lead to a lack of redundant observation.
+	\item In Figure~\ref{PreciseDoDAlberona} (e), we can see that the topographic changes in the landslide area are well detected by our method ${Patch_{SIFTDSM}}$. The other refined \ac{DoD}s (i.e. Figure~\ref{PreciseDoDAlberona} (b, c) and (f)) give less satisfactory results, because (1) the rough co-registration basic of ${Patch_{SpGDSM}}$ is inferior, as present in Section \ref{sec:RoughDoDMainBody}, and (2) $Guided$ recovered less accurate matches in this dataset than $Patch$ due to large variation in image tones.
+	%In DoD$^{Patch_{SpGDSM}}$, DoD$^{Guided_{SpGDSM}}$, DoD$^Patch_{SIFTDSM}$ and DoD$^Guided_{SIFTDSM}$ (the second and third column of subgraphs), t
 \end{enumerate}
 
-Regarding to the comparison between $Patch$ and $Guided$, according to the absolute average value $|\mu|$ of all the \ac{DoD}s in Figure \ref{PreciseDoDFrejus} and \ref{PreciseDoDAlberona} (cf. Talbe \ref{PreciseDoDStatistic}), $Guided$ leads to \ac{DoD}s with slightly better accuracy, even though it is less invariant than $Patch$, it recovers less numerous but more precise matches with the help of rough co-registered orientations and \ac{DSM}s.
 %In conclusion:\\
 %\begin{itemize}
 %	\item Both precise matching pipelines (i.e. $Patch$ and $Guided$) works, as long as the rough co-registration basic is reliable.\\
@@ -709,37 +710,39 @@ Regarding to the comparison between $Patch$ and $Guided$, according to the absol
 		\subfigure[\ac{DoD}$_{Alberona}^{{SpGDSM}}$]{
 			\begin{minipage}[t]{0.31\linewidth}
 				\centering
-				\includegraphics[width=4.3cm,trim=870 100 180 180,clip]{images/Chapitre3/DoDAlberona1954DSM-SuperGlue.png}
+				%\includegraphics[width=4.3cm,trim=870 100 180 180,clip]{images/Chapitre3/DoDAlberona1954DSM-SuperGlue.png}
+				\includegraphics[width=4.5cm,trim=560 30 810 160,clip]{images/Chapitre4/AlberonaDoD1954_SpGDSM.png}
 			\end{minipage}%
 		}
 		\subfigure[\ac{DoD}$_{Alberona}^{Patch_{SpGDSM}}$]{
 			\begin{minipage}[t]{0.31\linewidth}
 				\centering
-				\includegraphics[width=4.5cm,trim=580 30 780 160,clip]{images/Chapitre4/AlberonaDoD1954_Patch_SpGDSM.png}
+				\includegraphics[width=4.6cm,trim=580 30 780 160,clip]{images/Chapitre4/AlberonaDoD1954_Patch_SpGDSM.png}
 			\end{minipage}%
 		}
 		\subfigure[\ac{DoD}$_{Alberona}^{Guided_{SpGDSM}}$]{
 			\begin{minipage}[t]{0.31\linewidth}
 				\centering
-				\includegraphics[width=4.5cm]{images/Chapitre4/AlberonaDoD1954_Guided_SpGDSM.png}
+				\includegraphics[width=4.5cm,trim=560 30 810 160,clip]{images/Chapitre4/AlberonaDoD1954_Guided_SpGDSM.png}
 			\end{minipage}%
 		}\\
 		\subfigure[\ac{DoD}$_{Alberona}^{{SIFTDSM}}$]{
 			\begin{minipage}[t]{0.31\linewidth}
 				\centering
-				\includegraphics[width=4.3cm,trim=870 100 180 180,clip]{images/Chapitre3/DoDAlberona1954DSM-SIFT.png}
+				%\includegraphics[width=4.3cm,trim=870 100 180 180,clip]{images/Chapitre3/DoDAlberona1954DSM-SIFT.png}
+				\includegraphics[width=4.5cm,trim=560 30 810 160,clip]{images/Chapitre4/AlberonaDoD1954_SIFTDSM.png}
 			\end{minipage}%
 		}
 		\subfigure[\ac{DoD}$_{Alberona}^{Patch_{SIFTDSM}}$]{
 			\begin{minipage}[t]{0.31\linewidth}
 				\centering
-				\includegraphics[width=4.5cm,trim=580 30 780 160,clip]{images/Chapitre4/AlberonaDoD1954_Patch_SIFTDSM.png}
+				\includegraphics[width=4.6cm,trim=580 30 780 160,clip]{images/Chapitre4/AlberonaDoD1954_Patch_SIFTDSM.png}
 			\end{minipage}%
 		}
 		\subfigure[\ac{DoD}$_{Alberona}^{Guided_{SIFTDSM}}$]{
 			\begin{minipage}[t]{0.31\linewidth}
 				\centering
-				\includegraphics[width=4.5cm]{images/Chapitre4/AlberonaDoD1954_Guided_SIFTDSM.png}
+				\includegraphics[width=4.5cm,trim=560 30 810 160,clip]{images/Chapitre4/AlberonaDoD1954_Guided_SIFTDSM.png}
 			\end{minipage}%
 		}
 		
@@ -858,16 +861,23 @@ Regarding to the comparison between $Patch$ and $Guided$, according to the absol
 &${Patch_{SIFTDSM}}$ & -0.98 & 3.26 & 2.20\\
 &${Guided_{SIFTDSM}}$ & -0.15 & 3.17 & \textbf{2.05}\\\hline		
 
+\multirow{6}{*}{$DoD^{Alberona}_{1954-2003}$}
+&${SpGDSM}$ & -0.28 & 7.84 & 6.17\\
+&${Patch_{SpGDSM}}$ & -0.80 & 4.44 & 3.22\\
+&${Guided_{SpGDSM}}$ & -0.20 & 6.20 & 4.86\\
+&${SIFTDSM}$ & -1.88 & 7.44 & 5.89\\
+&${Patch_{SIFTDSM}}$ & -1.00 & 3.73 & \textbf{2.75}\\
+&${Guided_{SIFTDSM}}$ & 2.11 & 5.86 & 4.63\\\hline
 	\end{tabular}
-	\caption{Average value $\mu$, standard deviation $\sigma$, and absolute average value $|\mu|$ of all the \ac{DoD}s in Figure~\ref{PreciseDoDPezenas-Satellite} and ~\ref{PreciseDoDAlberona}.}
+	\caption{Average value $\mu$, standard deviation $\sigma$, and absolute average value $|\mu|$ of all the \ac{DoD}s in Figure~\ref{PreciseDoDFrejus} and ~\ref{PreciseDoDAlberona}.}
 	\label{PreciseDoDStatistic}
 \end{table}
 
 
 \subsubsection{Ground displacement}
-The northeastward displacement maps of Kobe dataset (hereinafter termed as Gd) as well as the \ac{GT} Gd provided by the Japan meteorological agency~\cite{ian1996morphological} are presented in Figure~\ref{GdKobe}. 
-The Gds resulted from rough co-registered orientations using methods $SuperGlue_{DSM}$ and $SIFT_{DSM}$ (i.e. (b) and (e), elaborated in Chapter~\ref{chap:RoughCoReg}) are displayed as bases, and the Gds resulted from refined orientations using methods $Patch_{SpGDSM}$, $Guided_{SpGDSM}$, $Patch_{SIFTDSM}$ and $Guided_{SIFTDSM}$ (i.e. (c, d) and (f, g)) are given for comparison. 
-An up-lateral strike-slip movement along the sea is present in Figure~\ref{GdKobe} (c, d) and (f, g), but not in (b) and (e). The observed signal is coherent with the fault of the Kobe earthquake known from \ac{GT}, according to which a striking north $30^{\circ}$-$60^{\circ}$ east rupture occurred along the northeast-southwest coastline across $ \sim $18 km.\\
+The northeastward displacement maps of Kobe dataset (hereinafter termed as Gd) as well as the ground truth Gd provided by the Japan meteorological agency~\cite{ian1996morphological} are presented in Figure~\ref{GdKobe}. 
+The Gds resulted from rough co-registered orientations using methods $SuperGlue_{DSM}$ and $SIFT_{DSM}$ (i.e. Figure~\ref{GdKobe} (b) and (e), elaborated in Chapter~\ref{chap:RoughCoReg}) are displayed as basics, and the Gds resulted from refined orientations using methods $Patch_{SpGDSM}$, $Guided_{SpGDSM}$, $Patch_{SIFTDSM}$ and $Guided_{SIFTDSM}$ (i.e. Figure~\ref{GdKobe} (c, d) and (f, g)) are given for comparison. 
+An up-lateral strike-slip movement along the sea is present in Figure~\ref{GdKobe} (c, d) and (f, g), but not in (b) and (e). The observed signal is coherent with the fault of the Kobe earthquake known from \ac{GT} (i.e. Figure~\ref{GdKobe} (a)), according to which a striking north $30^{\circ}$-$60^{\circ}$ east rupture occurred along the northeast-southwest coastline across $ \sim $18 km.\\
 
 \begin{figure*}[htbp]
 	\begin{center}
@@ -920,7 +930,7 @@ An up-lateral strike-slip movement along the sea is present in Figure~\ref{GdKob
 				\includegraphics[width=11cm]{images/Chapitre4/legend-Gd.png}
 			\end{minipage}%
 		}
-		\caption{{\scriptsize ground displacement(Gd) between free epoch \textbf{Kobe 1991} and reference epoch \textbf{1995}. (a) is the ground truth GD provided by the Japan meteorological agency. (b) and (e) are Gds resulted from roughly co-registered orientations using methods $SuperGlue_{DSM}$ and $SIFT_{DSM}$ (elaborated in Chapter 3). (c, d, f, g) are Gds resulted from refined orientations using methods $Patch_{SpGDSM}$, $Guided_{SpGDSM}$, $Patch_{SIFTDSM}$ and $Guided_{SIFTDSM}$ individually.}}
+		\caption{{\scriptsize ground displacement(Gd) between free epoch \textbf{Kobe 1991} and reference epoch \textbf{1995}. (a) is the ground truth Gd provided by the Japan meteorological agency. (b) and (e) are Gds resulted from roughly co-registered orientations using methods $SuperGlue_{DSM}$ and $SIFT_{DSM}$ (elaborated in Chapter 3). (c, d, f, g) are Gds resulted from refined orientations using methods $Patch_{SpGDSM}$, $Guided_{SpGDSM}$, $Patch_{SIFTDSM}$ and $Guided_{SIFTDSM}$ individually.}}
 		\label{GdKobe}
 	\end{center}
 \end{figure*} 
@@ -968,12 +978,12 @@ This is because historical RGB images are inevitably accompanied with noise, and
 	\end{center}
 \end{figure*} 
 
-\subsection{Comparison between SIFT and SuperGlue}
-SuperGlue is more invariant over time than SIFT, leading to more numerous matches in the precise matching stage. However, combined with reliable rough co-registration result, SIFT is able to recover less numerous yet more accurate matches than SuperGlue.
+%\subsection{Comparison between SIFT and SuperGlue}
+%SuperGlue is more invariant over time than SIFT, leading to more numerous matches in the precise matching stage. However, combined with reliable rough co-registration result, SIFT is able to recover less numerous yet more accurate matches than SuperGlue.
 
 \section{Conclusion}
 In this section we elaborated two pipelines for precise matching: $Patch$ and $Guided$. 
-We tested each pipeline on two sets of rough co-registration basics: $SIFT_{DSM}$ and $SuperGlue_{DSM}$, which leads to 4 methods (\ding{172} $Patch_{SpGDSM}$, \ding{173} $Guided_{SpGDSM}$, \ding{174} $Patch_{SIFTDSM}$ and \ding{175} $Guided_{SIFTDSM}$.
+We tested each pipeline on two sets of rough co-registration basics: $SIFT_{DSM}$ and $SuperGlue_{DSM}$, which leads to 4 methods (i.e. \ding{172} $Patch_{SpGDSM}$, \ding{173} $Guided_{SpGDSM}$, \ding{174} $Patch_{SIFTDSM}$ and \ding{175} $Guided_{SIFTDSM}$.
 We applied all the 4 methods on 4 datasets (Fr{\'e}jus, Pezenas, Kobe and Alberona), including the cases of (1) matching aerial epochs only and (2) matching aerial and satellite epochs mixed.
 Experiments showed that:\\
 \begin{enumerate}
@@ -982,4 +992,5 @@ Experiments showed that:\\
 	\item Our pipelines are able to provide precise results for variable application cases including general change detection, landslides and earthquakes.
 \end{enumerate}
 %\section{Discussion}
+
 

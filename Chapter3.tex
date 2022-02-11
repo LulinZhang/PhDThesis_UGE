@@ -9,7 +9,7 @@
 The goal of rough co-registration is to move different epochs to the same coordinate frame, so that they can be latter used to guide the precise matching by narrowing down the search space. 
 It plays a fundamental role as wrongly aligned results would lead to deviation from the right search space. Therefore robustness is the most critical target in rough co-registration. In the meantime, it doesn't need to be very accurate as the precision would be improved in the precise matching part via searching the neighborhood.
 \subsection{Motivation}
-The goal of moving multi-epoch to the same frame could be accomplished by building transformation models from one epoch to another. Generally, every inter-epoch image pair would be matched, followed by a RANSAC routine to recover the best transformation model between each image pair.
+The task of moving multi-epoch to the same frame could be accomplished by building transformation models from one epoch to another. Generally, every inter-epoch image pair would be matched, followed by a RANSAC routine to recover the best transformation model between each image pair.
 However, inter-epoch image pairs often demonstrate different appearances due to scene changes and heterogeneous acquisition conditions, which makes it difficult to establish robust transformation models for each single image pair.
 %Minimum matches between different epochs are required, depending on the model type:\\
 %\begin{enumerate}
@@ -338,7 +338,7 @@ In the following we introduce the implementation details, the datasets and the e
 \subsection{Datasets}
 \label{Datasets}
 %Frejus, Pezenas, Kobe\\
-We tested our rough co-registration methods on the 4 sets of datasets which are elaborated in Chapter~\ref{chap:ApplicationsAndDatasets}: Fr{\'e}jus, Pezenas, Kobe and Alberona.
+We tested our rough co-registration methods on all the multi-epoch datasets which are elaborated in Chapter~\ref{chap:ApplicationsAndDatasets}: Fr{\'e}jus, Pezenas, Kobe and Alberona.
 
 %####################################Start Dataset
 %Details of the datasets are listed in Table~\ref{AerialData}, ~\ref{SatelliteData} and Figure~\ref{FrejusData},~\ref{PezenasData}, ~\ref{KobeData}.
@@ -522,7 +522,7 @@ For the SIFT algorithm applied in methods $SIFT_{ImgPairs}$, $SIFT_{Ortho}$ and 
 %	\item Downsample the images by a factor of 3 (i.e. a total downsampling factor of 9 with respect to the input images) to focus on the global outline of the scene for improving robustness;
 %	\item Relax the matching restriction by skipping the ratio test to obtain more tentative matches followed by applying RANSAC based on 2D similarity transformation model to remove outliers.
 %\end{enumerate}
-Experiments comparing $SIFT_{Default}$ and $SIFT_{Adapted}$ on methods ${ImgPairs}$, ${Ortho}$ and ${DSM}$ are displayed in section ~\ref{Compare2SIFTs}, %Appendix ~\ref{chap:appendix1}, 
+Experiments comparing $SIFT_{Default}$ and $SIFT_{Adapted}$ on pipelines ${ImgPairs}$, ${Ortho}$ and ${DSM}$ are displayed in section ~\ref{Compare2SIFTs}, %Appendix ~\ref{chap:appendix1}, 
 in which $SIFT_{Adapted}$ recovered enough good matches while $SIFT_{Default}$ failed. It is reasonable as inter-epoch images often look very different, $SIFT_{Default}$ generally recover very few matches. By downsamping the images, we are able to focus on the global outline of the scene for improving robustness. 
 %By relaxing the matching restriction of ratio test and FIGNN, right matches would be reserved while wrong matches would be removed in the subsequent RANSAC.\\
 By relaxing the matching restriction of ratio test, right matches would be reserved while wrong matches would be removed in the subsequent RANSAC.\\
@@ -558,11 +558,11 @@ In order to evaluate the results qualitatively and quantitatively, the following
 %1张表表示6种方法的(1)和(2)，1张大图放6种方法的DoD, inlier tie pt图（R3D, DSM, ortho各3张（无点图，SIFT点图，SpG点图））
 %As the \ac{DoD}s showed similar pattern, we only show the results of 2 sets of datasets (i.e. Fr{\'e}jus and Alberona), as the former represents challenging cases with drastic scene changes and the latter stands for general case, and we move the \ac{DoD}s of Kobe as well as Pezenas to Section~\ref{sec:PreciseDoD} to keep the current section tidy.\\
 
-As the results showed similar pattern, for the sake of simplicity, we only show the results of 2 sets of datasets (i.e. Fr{\'e}jus and Alberona), as the former represents challenging case with drastic scene changes and the latter stands for general case, and we move the results of Kobe as well as Pezenas to Chapter~\ref{chap:appendixA} to keep the current section tidy.\\
+As the results showed similar pattern, for the sake of simplicity, we only show the results of 2 sets of datasets (i.e. Fr{\'e}jus and Alberona), as the former represents challenging case with drastic scene changes and the latter stands for general case, and we move the results of Kobe as well as Pezenas to Appendix~\ref{chap:appendixA} to keep the current section tidy.\\
 
 \subsubsection{Matches visualization}
 \label{sec:MatchVizMainBody}
-For each dataset, each free epoch $E_f$ is matched with reference epoch $E_r$ for rough co-registration with 6 methods (\ding{172} $SIFT_{ImgPairs}$, \ding{173} $SuperGlue_{ImgPairs}$, \ding{174} $SIFT_{Ortho}$, \ding{175} $SuperGlue_{Ortho}$, \ding{176} $SIFT_{DSM}$ and \ding{177} $SuperGlue_{DSM}$), the matches are visualized and displayed together for comparison. In Table~\ref{succeedorfail} we displayed whether the 6 methods succeeded or failed on all the datasets.\\
+For each dataset, each free epoch $E_f$ is matched with reference epoch $E_r$ for rough co-registration with 6 methods (i.e. \ding{172} $SIFT_{ImgPairs}$, \ding{173} $SuperGlue_{ImgPairs}$, \ding{174} $SIFT_{Ortho}$, \ding{175} $SuperGlue_{Ortho}$, \ding{176} $SIFT_{DSM}$ and \ding{177} $SuperGlue_{DSM}$), the matches are visualized and displayed together for comparison. In Table~\ref{succeedorfail} we displayed whether the 6 methods succeeded or failed on all the datasets.\\
 
 
 \begin{table}[htbp]
@@ -1031,6 +1031,7 @@ In conclusion:\\
 
 
 \subsubsection{\ac{DoD}}
+\label{sec:RoughDoDMainBody}
 According to Table~\ref{succeedorfail}, by applying 6 methods (or 4 methods for satellite images) on each free epoch and the reference epoch, we got 44 testing cases. Among all the cases, there are 33 of them succeeded, which leads to 33 sets of co-registered orientations. For each set of resulted orientations, we use them to calculate DSMs in free epoch and reference epoch individually in order to generate \ac{DoD}. \\
 
 %As the \ac{DoD}s showed similar pattern, we only show the results of 2 sets of datasets (i.e. Fr{\'e}jus and Alberona), as the former represents challenging cases with drastic scene changes and the latter stands for general case, and we move the \ac{DoD}s of Kobe as well as Pezenas to Section~\ref{sec:PreciseDoD} to keep the current section tidy.\\
@@ -1039,10 +1040,9 @@ The visualizations of \ac{DoD}s for datasets Fr{\'e}jus and Alberona are demonst
 %are demonstrated in Figure~\ref{DoDFrejus}, ~\ref{DoDPezenas}, ~\ref{DoDPezenas-Satellite} and ~\ref{DoDKobe}.
 %The statistical information of the 33 \ac{DoD}s are displayed in Table~\ref{DoDStatistic}.\\
 As can be seen, dome effect is present in all the \ac{DoD}s. This is because the camera parameters are estimated within the same epoch, therefore the deformation of historical images inevitably leads to unsatisfactory results. This is acceptable for rough co-registration as our goal is only to provide guidance for precise matching. 
-According to the absolute average value $|\mu|$ displayed in Table~\ref{RoughDoDStatistic}, method $SuperGlue_{DSM}$ performed the best for matching Fr{\'e}jus 1954 and 1966 to 2014, where drastic scene changes present. %For the case of matching Fr{\'e}jus 1970 to 2014, as the 2 epochs are with shorter time gap,\\
-Similar pattern is present in other datasets (Fr{\'e}jus, Pezenas and Kobe), for more details please refer to section~\ref{sec:RoughDoD}.\\
+Similar pattern is present in other datasets (Pezenas and Kobe), for more details please refer to Appendix~\ref{sec:RoughDoD}.\\
 
-It is worth noting that the \ac{DoD}s between Fr{\'e}jus 1954 and 2014 based on method $SIFT_{DSM}$ (i.e. \ref{DoDFrejus} (f)) is accompanied with specifically obvious dome effect, with its absolute average value $|\mu|$ reached 8.04m as shown in Table \ref{RoughDoDStatistic}. This is consistent with the results shown in Section \ref{sec:MatchVizMainBody}, as its inlier ratio of matches in the RANSAC procedure is too low to guarantee reliable rough co-registration.
+It is worth noting that the \ac{DoD}s between Fr{\'e}jus 1954 and 2014 based on method $SIFT_{DSM}$ (i.e. Figure \ref{DoDFrejus} (f)) is accompanied with specifically obvious dome effect, with its absolute average value $|\mu|$ reached 8.04m as shown in Table \ref{RoughDoDStatistic}. This is consistent with the results shown in Section \ref{sec:MatchVizMainBody}, as its inlier ratio of matches in the RANSAC procedure is too low to guarantee reliable rough co-registration. According to the absolute average value $|\mu|$ displayed in Table~\ref{RoughDoDStatistic}, method $SuperGlue_{DSM}$ performed the best for matching Fr{\'e}jus 1954 and 1966 to 2014, where drastic scene changes present, while methods $SuperGlue_{Ortho}$ and $SIFT_{DSM}$ performed the best for less challenging cases (i.e. matching Fr{\'e}jus 1970 to 2014, and Alberona 1954 to 2003). %For the case of matching Fr{\'e}jus 1970 to 2014, as the 2 epochs are with shorter time gap,\\
 
 \begin{figure*}[htbp]
 	\begin{center}
@@ -1399,9 +1399,10 @@ It is worth noting that the \ac{DoD}s between Fr{\'e}jus 1954 and 2014 based on 
 \section{Discussion}
 \subsection{Comparison between $SIFT_{Adapted}$ and $SIFT_{Default}$}
 \label{Compare2SIFTs}
+In this section we adopt both $SIFT_{Default}$ and $SIFT_{Adapted}$ on pipelines ${ImgPairs}$, ${Ortho}$ and ${DSM}$ for comparison. The definition of $SIFT_{Default}$ and $SIFT_{Adapted}$ is given in Section \ref{Implementationdetails}.
 
 \subsubsection{Comparison on matching image pair}
-
+For pipeline ${ImgPairs}$, we choose a pair of images from dataset Pezenas consists of images taken at 1971 and 2015 individually. The results are displayed in Figure \ref{SIFTComp_ImgPair}. As can be seen, $SIFT_{Adapted}$ recovered 101 good matches out of 2592 total matches, however, $SIFT_{Default}$ found only 3 matches in total, even though 2 of them are correct matches, it is impossible for the RANSAC procedure to screen the correct ones.\\
 \begin{figure*}[htbp]
 	\scriptsize 
 	\begin{center}
@@ -1429,12 +1430,13 @@ It is worth noting that the \ac{DoD}s between Fr{\'e}jus 1954 and 2014 based on 
 				\includegraphics[width=6cm]{images/appendix/Homol-txt_OIS-Reech_IGNF_PVA_1-0__1971-06-21__C2844-0141_1971_FR2117_1124_15FD3425x00034_02911.png}
 			\end{minipage}%
 		}
-		\caption{{\scriptsize Comparison between $SIFT_{Adapted}$ and $SIFT_{Default}$ on a pair of images from Pezenas 1971 and Pezenas 2015 individually. (a) Image pair to be matched, with red rectangles (\textcolor{red}{red rectangled to be drawn}) indicating the common zone. (b) Numbers of total matches, GT inliers and RANSAC inliers of $SIFT_{Adapted}$ and $SIFT_{Default}$. (c) Visualization of RANSAC inliers based on $SIFT_{Adapted}$. (d)Visualization of RANSAC inliers based on $SIFT_{Default}$.}}
-		\label{Match result}
+		\caption{{\scriptsize Comparison between $SIFT_{Adapted}$ and $SIFT_{Default}$ on a pair of images from Pezenas 1971 and Pezenas 2015 individually. (a) Image pair to be matched, with red rectangles indicating the common zone. (b) Numbers of total matches and RANSAC inliers of $SIFT_{Adapted}$ and $SIFT_{Default}$. (c) Visualization of RANSAC inliers based on $SIFT_{Adapted}$. (d)Visualization of RANSAC inliers based on $SIFT_{Default}$.}}
+		\label{SIFTComp_ImgPair}
 	\end{center}
 \end{figure*} 
 
 \subsubsection{Comparison on matching orthophotos}
+For pipeline ${Ortho}$, we choose orthophotos from Pezenas 1981 and 2015 individually. The results are displayed in Figure \ref{SIFTComp_Ortho}. As can be seen, $SIFT_{Adapted}$ recovered 44 good matches out of 855 total matches, while $SIFT_{Default}$ found 8 total matches which are all wrong.\\
 \begin{figure*}[htbp]
 	\begin{center}
 		\subfigure[Orthophotos]{
@@ -1461,12 +1463,13 @@ It is worth noting that the \ac{DoD}s between Fr{\'e}jus 1954 and 2014 based on 
 				\includegraphics[width=6cm]{images/appendix/Homol-SIFT_Ortho-MEC-Malt_Tapas_1981_Ortho-MEC-Malt_2015.png}
 			\end{minipage}%
 		}
-		\caption{Comparison between $SIFT_{Adapted}$ and $SIFT_{Default}$ on orthophotos from Pezenas 1981 and Pezenas 2015 individually. (a) Orthophotos to be matched, with red rectangles indicating the common zone. (b) Numbers of total matches, GT inliers and RANSAC inliers of $SIFT_{Adapted}$ and $SIFT_{Default}$. (c) Visualization of RANSAC inliers based on $SIFT_{Adapted}$. (d)Visualization of RANSAC inliers based on $SIFT_{Default}$.}
-		\label{Match result}
+		\caption{Comparison between $SIFT_{Adapted}$ and $SIFT_{Default}$ on orthophotos from Pezenas 1981 and Pezenas 2015 individually. (a) Orthophotos to be matched, with red rectangles indicating the common zone. (b) Numbers of total matches and RANSAC inliers of $SIFT_{Adapted}$ and $SIFT_{Default}$. (c) Visualization of RANSAC inliers based on $SIFT_{Adapted}$. (d)Visualization of RANSAC inliers based on $SIFT_{Default}$.}
+		\label{SIFTComp_Ortho}
 	\end{center}
 \end{figure*} 
 
 \subsubsection{Comparison on matching DSMs}
+For pipeline ${DSM}$, we choose DSMs from Fr{\'e}jus 1954 and 2014 individually. The results are displayed in Figure \ref{SIFTComp_DSM}. As dataset Fr{\'e}jus displayed drastic scene changes, $SIFT_{Default}$ failed to find any matches. $SIFT_{Adapted}$, however, recovered 11 good matches, even though the inlier ratio is dangerously low.\\
 \begin{figure*}[htbp]
 	\begin{center}
 		\subfigure[DSMs]{
@@ -1493,8 +1496,8 @@ It is worth noting that the \ac{DoD}s between Fr{\'e}jus 1954 and 2014 based on 
 				\includegraphics[width=6.8cm]{images/appendix/Homol-txt_MEC-Malt_Tapas_1954_MEC-Malt_2014.png}
 			\end{minipage}%
 		}
-		\caption{Comparison between $SIFT_{Adapted}$ and $SIFT_{Default}$ on DSMs from Fr{\'e}jus 1954 and Fr{\'e}jus 2014 individually. (a) DSMs to be matched, with red rectangles indicating the common zone. (b) Numbers of total matches, GT inliers and RANSAC inliers of $SIFT_{Adapted}$ and $SIFT_{Default}$. (c) Visualization of RANSAC inliers based on $SIFT_{Adapted}$. (d)Visualization of RANSAC inliers based on $SIFT_{Default}$.}
-		\label{Match result}
+		\caption{Comparison between $SIFT_{Adapted}$ and $SIFT_{Default}$ on DSMs from Fr{\'e}jus 1954 and Fr{\'e}jus 2014 individually. (a) DSMs to be matched, with red rectangles indicating the common zone. (b) Numbers of total matches and RANSAC inliers of $SIFT_{Adapted}$ and $SIFT_{Default}$. (c) Visualization of RANSAC inliers based on $SIFT_{Adapted}$. (d)Visualization of RANSAC inliers based on $SIFT_{Default}$.}
+		\label{SIFTComp_DSM}
 	\end{center}
 \end{figure*} 
 
@@ -1529,7 +1532,7 @@ Figure~\ref{MatchOrtho} displayed the results of matching orthophotos with $Supe
 				\includegraphics[width=6cm]{images/appendix2/Homol-SuperGlue_Ortho-MEC-Malt_Tapas_1970_Ortho-MEC-Malt_2014.png}
 			\end{minipage}%
 		}
-		\caption{Comparison between $SuperGlue_{tiling}$ and $SuperGlue_{orig}$ on orthophotos from Fr{\'e}jus 1970 and 2014 individually. (a) Orthophotos to be matched, with red rectangles indicating the common zone. (b) Numbers of total matches, GT inliers and RANSAC inliers of $SuperGlue_{tiling}$ and $SuperGlue_{orig}$. (c) Visualization of RANSAC inliers based on $SuperGlue_{tiling}$. (d)Visualization of total matches based on $SuperGlue_{orig}$.}
+		\caption{Comparison between $SuperGlue_{tiling}$ and $SuperGlue_{orig}$ on orthophotos from Fr{\'e}jus 1970 and 2014 individually. (a) Orthophotos to be matched, with red rectangles indicating the common zone. (b) Numbers of total matches and RANSAC inliers of $SuperGlue_{tiling}$ and $SuperGlue_{orig}$. (c) Visualization of RANSAC inliers based on $SuperGlue_{tiling}$. (d)Visualization of total matches based on $SuperGlue_{orig}$.}
 		\label{MatchOrtho}
 	\end{center}
 \end{figure*} 
@@ -1562,7 +1565,7 @@ Figure~\ref{MatchDSM} displayed the results of matching DSMs with $SuperGlue_{ti
 				\includegraphics[width=6cm]{images/appendix2/Homol-SuperGlue_MEC-Malt_Tapas_1970_MEC-Malt_2014.png}
 			\end{minipage}%
 		}
-		\caption{Comparison between $SuperGlue_{tiling}$ and $SuperGlue_{orig}$ on DSMs from Fr{\'e}jus 1970 and 2014 individually. (a) DSMs to be matched, with red rectangles indicating the common zone. (b) Numbers of total matches, GT inliers and RANSAC inliers of $SuperGlue_{tiling}$ and $SuperGlue_{orig}$. (c) Visualization of RANSAC inliers based on $SuperGlue_{tiling}$. (d)Visualization of total matches based on $SuperGlue_{orig}$.}
+		\caption{Comparison between $SuperGlue_{tiling}$ and $SuperGlue_{orig}$ on DSMs from Fr{\'e}jus 1970 and 2014 individually. (a) DSMs to be matched, with red rectangles indicating the common zone. (b) Numbers of total matches and RANSAC inliers of $SuperGlue_{tiling}$ and $SuperGlue_{orig}$. (c) Visualization of RANSAC inliers based on $SuperGlue_{tiling}$. (d)Visualization of total matches based on $SuperGlue_{orig}$.}
 		\label{MatchDSM}
 	\end{center}
 \end{figure*} 
@@ -1571,8 +1574,8 @@ Figure~\ref{MatchDSM} displayed the results of matching DSMs with $SuperGlue_{ti
 \label{inputHomography}
 In this section we compare the performance of \textit{state-of-the-art} matching methods: (1) SIFT and (2) SuperGlue, as well as our matching strategy: (3) SIFT under the guidance of 2D similarity transformation model followed by RANSAC to remove outliers. 
 \par
-For each keypoint in the master image, our strategy uses 2D similarity transformation model to predict a location in the secondary image and search only its neighborhood (30 pixel in our experiment) to reduce ambiguity.\\
-The Hofsjökull dataset, with the details elaborated in section~\ref{chap:ApplicationsAndDatasets} is chosen to perform the experiment.
+For each keypoint in the master image, our strategy uses 2D similarity transformation model to predict a location in the secondary image and search only its neighborhood (30 pixels in our experiment) to reduce ambiguity.\\
+The Hofsjökull dataset, with the details elaborated in Section~\ref{chap:ApplicationsAndDatasets}, is chosen to perform the experiment.
 
 Figure~\ref{Matchresult} demonstrated the matching result of SIFT, SuperGlue and our matching strategy. As can be seen, SIFT and SuperGlue failed to found any correct matches, while our strategy obtained a large number of good matches with negligible manual labor.
 \begin{figure*}[htbp]
@@ -1605,8 +1608,8 @@ Figure~\ref{Matchresult} demonstrated the matching result of SIFT, SuperGlue and
 
 \section{Conclusion}
 We provide 2 strategies for multi-epoch rough co-registration: (1) match image pairs (i.e. pipeline \textit{ImgPairs}) and (2) match orthophotos/DSMs (i.e. pipelines \textit{Ortho} and \textit{DSM}).
-For each pipelines, we tested 2 feature matching methods (SIFT and SuperGlue), which leads to 6 methods (\ding{172} $SIFT_{ImgPairs}$, \ding{173} $SuperGlue_{ImgPairs}$, \ding{174} $SIFT_{Ortho}$, \ding{175} $SuperGlue_{Ortho}$, \ding{176} $SIFT_{DSM}$ and \ding{177} $SuperGlue_{DSM}$).
-We applied all the 6 methods on 3 datasets (Fr{\'e}jus, Pezenas, Kobe and Alberona), including the cases of (1) matching aerial epochs only and (2) matching aerial and satellite epochs mixed.
+For each pipelines, we tested 2 feature matching methods (SIFT and SuperGlue), which leads to 6 methods (i.e. \ding{172} $SIFT_{ImgPairs}$, \ding{173} $SuperGlue_{ImgPairs}$, \ding{174} $SIFT_{Ortho}$, \ding{175} $SuperGlue_{Ortho}$, \ding{176} $SIFT_{DSM}$ and \ding{177} $SuperGlue_{DSM}$).
+We applied all the 6 methods on 4 datasets (Fr{\'e}jus, Pezenas, Kobe and Alberona), including the cases of (1) matching aerial epochs only and (2) matching aerial and satellite epochs mixed.
 Experiments showed that:\\
 \begin{enumerate}
 	\item The only 2 methods that recovered enough good matches for all the datasets are $SIFT_{DSM}$ and $SuperGlue_{DSM}$, since landcover provides more reliable information as scene evolves.
@@ -1615,4 +1618,5 @@ Experiments showed that:\\
 	\item $SIFT_{ImgPairs}$ and $SIFT_{Ortho}$ failed over half of the testing cases, as SIFT is not sufficiently invariant over time. 
 \end{enumerate}
 %\section{Discussion}
+
 

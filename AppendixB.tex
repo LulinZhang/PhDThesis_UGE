@@ -2,23 +2,18 @@
 
 \chapter{Result of precise matching}
 \label{chap:appendixB}
-In this section we demonstrate the matches visualization and \ac{DoD}s of precise matching result on dataset Pezenas and Kobe.\\
+In this section we demonstrate the matches visualizations and \ac{DoD}s of precise matching results on datasets Pezenas and Kobe.\\
 
 \section{Matches visualization}
 \label{sec:PrecisematchViz}
-For each dataset, every possible combination of 2 epochs are matched with 4 methods (\ding{172} $Patch_{SpGDSM}$, \ding{173} $Guided_{SpGDSM}$, \ding{174} $Patch_{SIFTDSM}$ and \ding{175} $Guided_{SIFTDSM}$). 
+For both datasets, there exist 2 epochs, leading to 1 set of epoch combination for precise matching. Four methods (i.e. \ding{172} $Patch_{SpGDSM}$, \ding{173} $Guided_{SpGDSM}$, \ding{174} $Patch_{SIFTDSM}$ and \ding{175} $Guided_{SIFTDSM}$) are tested on both datasets, the resulted matches are visualized in Figure \ref{MatchVizPezenas} and \ref{MatchVizKobe}. 
 
-\begin{enumerate}
-%	\begin{itemize}
-%		\item[-] 
-%		\item[-] 
-%	\end{itemize}
+%For each dataset, every possible combination of 2 epochs are matched with 4 methods (\ding{172} $Patch_{SpGDSM}$, \ding{173} $Guided_{SpGDSM}$, \ding{174} $Patch_{SIFTDSM}$ and \ding{175} $Guided_{SIFTDSM}$). 
 
-	\item For Pezenas, there exist 2 epochs, leading to 1 set of epoch combination, the matches visualization of which is displayed in Figure \ref{MatchVizPezenas}.
-
-	\item For Kobe, there exist 2 epochs, leading to 1 set of epoch combination, the matches visualization of which is displayed in Figure \ref{MatchVizKobe}.
-
-\end{enumerate}
+%\begin{enumerate}
+%	\item For Pezenas, there exist 2 epochs, leading to 1 set of epoch combination, the matches visualization of which is displayed in Figure \ref{MatchVizPezenas}.
+%	\item For Kobe, there exist 2 epochs, leading to 1 set of epoch combination, the matches visualization of which is displayed in Figure \ref{MatchVizKobe}.
+%\end{enumerate}
 
 Patterns similar to Fr{\'e}jus and Alberona (elaborated in Section \ref{matchVizMainBody}) are present in Pezenas and Kobe:\\
 \begin{enumerate}
@@ -122,7 +117,7 @@ The \ac{DoD}s for Pezenas and Kobe are demonstrated in Figure~\ref{PreciseDoDPez
 %In each figure, the \ac{DoD}s resulted from rough co-registered orientations using methods $SuperGlue_{DSM}$ and $SIFT_{DSM}$ (elaborated in Chapter~\ref{chap:RoughCoReg}, hereinafter referred to as DoD$^{SpGDSM}$ and DoD$^{SIFTDSM}$) are displayed as bases, and the \ac{DoD}s resulted from refined orientations using methods $Patch_{SpGDSM}$, $Guided_{SpGDSM}$, $Patch_{SIFTDSM}$ and $Guided_{SIFTDSM}$ (hereinafter termed as DoD$^{Patch_{SpGDSM}}$, DoD$^{Guided_{SpGDSM}}$, DoD$^Patch_{SIFTDSM}$ and DoD$^Guided_{SIFTDSM}$) are given for comparison. 
 The corresponding statistical information is displayed in Table~\ref{PreciseDoDStatistic1}.\\
 
-For both dataset, the dome effect presented in DoD$^{SpGDSM}$ and DoD$^{SIFTDSM}$ (the first column of the subgraphs) is mitigated in DoD$^{Patch_{SpGDSM}}$, DoD$^{Guided_{SpGDSM}}$, DoD$^Patch_{SIFTDSM}$ and DoD$^Guided_{SIFTDSM}$ (the second and third column of subgraphs). 
+For both datasets, the dome effect presented in DoD$^{SpGDSM}$ and DoD$^{SIFTDSM}$ (the first column of the subgraphs) is mitigated in DoD$^{Patch_{SpGDSM}}$, DoD$^{Guided_{SpGDSM}}$, DoD$^Patch_{SIFTDSM}$ and DoD$^Guided_{SIFTDSM}$ (the second and third column of subgraphs). 
 According to the absolute average value $|\mu|$ of all the \ac{DoD}s in Figure \ref{PreciseDoDPezenas-Satellite} and \ref{PreciseDoDKobe} (cf. Talbe \ref{PreciseDoDStatistic1}), $Guided$ leads to \ac{DoD}s with slightly better accuracy than $Patch$.\\
 
 \begin{figure*}[htbp]
@@ -251,7 +246,8 @@ According to the absolute average value $|\mu|$ of all the \ac{DoD}s in Figure \
 		&${Guided_{SIFTDSM}}$ & 1.84 & 9.48 & \textbf{3.87}\\\hline
 				
 	\end{tabular}
-	\caption{Average value $\mu$, standard deviation $\sigma$, and absolute average value $|\mu|$ of all the \ac{DoD}s in Figure~\ref{PreciseDoDFrejus} and ~\ref{PreciseDoDKobe}.}
+	\caption{Average value $\mu$, standard deviation $\sigma$, and absolute average value $|\mu|$ of all the \ac{DoD}s in Figure~\ref{PreciseDoDPezenas-Satellite} and ~\ref{PreciseDoDKobe}.}
 	\label{PreciseDoDStatistic1}
 \end{table}
+
 
