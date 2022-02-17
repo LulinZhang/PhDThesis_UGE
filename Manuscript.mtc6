@@ -1,21 +1,19 @@
 {\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {5.1}Introduction}{\reset@font\mtcSfont 51}{section.5.1}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {5.1.1}Objective and motivation}{\reset@font\mtcSSfont 51}{subsection.5.1.1}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {5.1.1}Motivation and objective}{\reset@font\mtcSSfont 51}{subsection.5.1.1}}
 {\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {5.1.2}Contributions}{\reset@font\mtcSSfont 52}{subsection.5.1.2}}
 {\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {5.2}Methodology}{\reset@font\mtcSfont 52}{section.5.2}}
 {\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {5.2.1}Get tentative matches with patch/guided matching}{\reset@font\mtcSSfont 53}{subsection.5.2.1}}
-{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \numberline {5.2.1.1}Patch matching for learned features}{\reset@font\mtcSSSfont 54}{subsubsection.5.2.1.1}}
-{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \numberline {5.2.1.2}Guided matching for hand-crafted features}{\reset@font\mtcSSSfont 54}{subsubsection.5.2.1.2}}
+{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode Patch matching for learned features.}{\reset@font\mtcPfont 54}{section*.34}}
+{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode Guided matching for hand-crafted features.}{\reset@font\mtcPfont 54}{section*.35}}
 {\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {5.2.2}Get enhanced matches with 3D-RANSAC}{\reset@font\mtcSSfont 56}{subsection.5.2.2}}
 {\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {5.2.3}Get final matches with cross correlation}{\reset@font\mtcSSfont 57}{subsection.5.2.3}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {5.2.4}Refine orientations}{\reset@font\mtcSSfont 58}{subsection.5.2.4}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {5.2.4}Refine orientations}{\reset@font\mtcSSfont 57}{subsection.5.2.4}}
 {\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {5.3}Experiments}{\reset@font\mtcSfont 58}{section.5.3}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {5.3.1}Implementation details}{\reset@font\mtcSSfont 58}{subsection.5.3.1}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {5.3.2}Datasets}{\reset@font\mtcSSfont 59}{subsection.5.3.2}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {5.3.3}Evaluation}{\reset@font\mtcSSfont 59}{subsection.5.3.3}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {5.3.4}Comparison}{\reset@font\mtcSSfont 60}{subsection.5.3.4}}
-{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \numberline {5.3.4.1}Matches visualization}{\reset@font\mtcSSSfont 60}{subsubsection.5.3.4.1}}
-{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \numberline {5.3.4.2}DoD}{\reset@font\mtcSSSfont 68}{subsubsection.5.3.4.2}}
-{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \numberline {5.3.4.3}Ground displacement}{\reset@font\mtcSSSfont 69}{subsubsection.5.3.4.3}}
-{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {5.4}Discussion}{\reset@font\mtcSfont 72}{section.5.4}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {5.4.1}Comparison of precise matching on DSMs and original RGB images}{\reset@font\mtcSSfont 72}{subsection.5.4.1}}
-{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {5.5}Conclusion}{\reset@font\mtcSfont 72}{section.5.5}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {5.3.1}Implementation details}{\reset@font\mtcSSfont 59}{subsection.5.3.1}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {5.3.2}Comparison of precise matching on \ac {DSM}s and original RGB images}{\reset@font\mtcSSfont 59}{subsection.5.3.2}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {5.3.3}Comparison of 6 variants}{\reset@font\mtcSSfont 61}{subsection.5.3.3}}
+{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode Matches visualization.}{\reset@font\mtcPfont 61}{section*.36}}
+{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode \ac {DoD}.}{\reset@font\mtcPfont 61}{section*.37}}
+{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode Ground displacement (i.e. Gd).}{\reset@font\mtcPfont 69}{section*.38}}
+{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode Discussion.}{\reset@font\mtcPfont 69}{section*.39}}
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {5.4}Conclusion}{\reset@font\mtcSfont 73}{section.5.4}}

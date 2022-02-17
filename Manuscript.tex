@@ -4,6 +4,8 @@
 \usepackage{subfigure}
 \usepackage{xcolor}
 \usepackage{pifont}
+\usepackage{url}
+\usepackage{hyperref}
 \usepackage[acronym]{glossaries}
 \makeglossaries
 
@@ -16,6 +18,33 @@
 
 \setcounter{page}{0}
 \cleardoublepage
+\section*{Résumé}
+
+\paragraph{Mots clefs:} 
+
+\newpage
+
+\section*{Abstract}
+Historical imagery is characterized by high spatial resolution and stereoscopic acquisitions, providing a valuable resource for change detection and long-term environmental monitoring. Millions of historical images have been digitized. They are objective witness over time and sometimes the only remaining visual source of historical land-form. However, the huge potential of diachronic historical images is suppressed due to the bottleneck of their accurate geo-referencing.
+%tracking environmental conditions such as the impact of natural disasters and urban expansion, finding changes in vegetation, evaluating desertification and detecting specific urban or natural variations in the environment. 
+%\par
+%Accurate geo-referencing of historical images is crucial in unlocking their huge potential for comparing 3D land-cover information over time. 
+It involves a process called self-calibrating bundle adjustment to estimate the camera calibration parameters. Sufficient amount of matches under evolving landscapes are required, which are difficult to be obtained automatically, due to scene changes and heterogeneous image acquisition conditions.
+%{Accurate geo-referencing of diachronic historical images by means of self-calibration} remains a bottleneck because of the difficulty to find sufficient amount of matches under evolving landscapes. 
+\par
+In this research, we present fully automatic pipelines to finding matches between historical images taken at different times (i.e., inter-epoch), without auxiliary data required. 
+By taking advantage of 3D geometry and "rough-to-precise" strategy, we (1) roughly co-register different epochs by establishing a globally consistent transformation model over the whole block, and (2) precisely match inter-epoch images under the guidance of rough co-registration to reduce ambiguity. Six variants are explored for rough co-registration stage, and two variants for precise matching stage. 
+Our pipelines are suitable for diverse applications of environmental monitoring. Five representative sets of datasets are chosen for experiments, each one represents a characteristic application. 
+With the recovered inter-epoch matches, we refine the image orientations and quantitatively evaluate the results with \ac{DoD}s and ground displacements due to an earthquake. We demonstrate that our method: (1) can automatically georeference diachronic historical images; (2) can effectively mitigate systematic errors induced by poorly estimated camera parameters; (3) is robust to drastic scene changes. Compared to the \textit{state-of-the-art}, our method improves the image georeferencing accuracy by a factor of 2. The proposed methods are implemented in MicMac, a free, open-source photogrammetric software.\\
+
+%Recovered inter-epoch matches are visualized as qualitative and Quantitative results are demonstrated 
+
+%Based on relative orientations computed within the same epoch (i.e., intra-epoch), we obtain \ac{DSM}s and incorporate them in a rough-to-precise matching.
+%The {method consists} of: (1) an inter-epoch DSMs matching {to roughly co-register the orientations and DSMs} (i.e, the {3D} Helmert transformation), followed by (2) a precise inter-epoch feature matching using the original {RGB} images. The innate ambiguity of the latter is largely alleviated by narrowing down the search space using the co-registered {data}.
+%With the inter-epoch features, we refine the image orientations and quantitatively evaluate the results (1) with DoD ({\textit{Difference of DSMs}}), (2) with ground check points, and (3) by quantifying ground displacement due to an earthquake. We demonstrate that our method: (1) can automatically georeference diachronic historical images; (2) can effectively mitigate systematic errors induced by poorly estimated camera parameters; (3) is robust to drastic scene changes. Compared to the \textit{state-of-the-art}, our method improves the image georeferencing accuracy by a factor of 2. {The proposed methods are implemented in MicMac, a free, open-source photogrammetric software.}\\
+\paragraph{Keywords:} Feature matching, Historical images, Multi-epoch, Pose estimation, Self-calibration
+
+\newpage
 
 \section*{Acknowledgments}
 %After nearly 3 years of research, I am about to finish my PhD career. Looking back on these years, tons of feelings well up in my mind, among them there are content, promising, stressful, determined, and most importantly grateful feelings. I am deeply grateful for the people and things I met.\\
@@ -55,6 +84,8 @@
 \include{AppendixA}
 
 \include{AppendixB}
+
+\include{AppendixC}
 
 %\include{Appendix3}
 %\include{Appendix1}

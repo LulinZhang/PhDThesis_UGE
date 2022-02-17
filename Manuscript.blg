@@ -1,5 +1,5 @@
-This is BibTeX, Version 0.99d (TeX Live 2017/Debian)
-Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
+This is BibTeX, Version 0.99d (TeX Live 2019/Debian)
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
 The top-level auxiliary file: Manuscript.aux
 A level-1 auxiliary file: TitlePage.aux
 A level-1 auxiliary file: Acronyms.aux
@@ -11,46 +11,54 @@ A level-1 auxiliary file: Chapter4.aux
 A level-1 auxiliary file: Chapter5.aux
 A level-1 auxiliary file: AppendixA.aux
 A level-1 auxiliary file: AppendixB.aux
+A level-1 auxiliary file: AppendixC.aux
 The style file: ThesisStyleWithEtAl.bst
 Database file #1: Thesis.bib
-You've used 75 entries,
+Repeated entry---line 1104 of file Thesis.bib
+ : @article{james2014mitigating
+ :                             ,
+I'm skipping whatever remains of this entry
+Warning--empty chapter and pages in article
+Warning--empty publisher in snavely2006photo
+You've used 89 entries,
             2460 wiz_defined-function locations,
-            967 strings with 19177 characters,
-and the built_in function-call counts, 37344 in all, are:
-= -- 3848
-> -- 1627
-< -- 88
-+ -- 539
-- -- 534
-* -- 2705
-:= -- 5490
-add.period$ -- 229
-call.type$ -- 75
-change.case$ -- 493
-chr.to.int$ -- 75
-cite$ -- 75
-duplicate$ -- 1732
-empty$ -- 2605
-format.name$ -- 649
-if$ -- 8103
-int.to.chr$ -- 1
+            1033 strings with 21641 characters,
+and the built_in function-call counts, 43555 in all, are:
+= -- 4468
+> -- 1927
+< -- 98
++ -- 642
+- -- 632
+* -- 3162
+:= -- 6421
+add.period$ -- 272
+call.type$ -- 89
+change.case$ -- 584
+chr.to.int$ -- 84
+cite$ -- 91
+duplicate$ -- 2001
+empty$ -- 3044
+format.name$ -- 765
+if$ -- 9428
+int.to.chr$ -- 6
 int.to.str$ -- 0
-missing$ -- 70
-newline$ -- 378
-num.names$ -- 225
-pop$ -- 616
+missing$ -- 79
+newline$ -- 448
+num.names$ -- 267
+pop$ -- 751
 preamble$ -- 1
-purify$ -- 642
+purify$ -- 760
 quote$ -- 0
-skip$ -- 1528
+skip$ -- 1764
 stack$ -- 0
-substring$ -- 2308
-swap$ -- 644
-text.length$ -- 60
+substring$ -- 2614
+swap$ -- 731
+text.length$ -- 67
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 596
-warning$ -- 0
-while$ -- 307
-width$ -- 82
-write$ -- 1019
+type$ -- 704
+warning$ -- 2
+while$ -- 354
+width$ -- 97
+write$ -- 1202
+(There was 1 error message)

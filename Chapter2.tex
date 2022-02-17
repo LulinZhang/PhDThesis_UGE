@@ -37,19 +37,6 @@ Early learned methods (LIFT ~\cite{yi2016lift}, L2-Net~\cite{tian2017l2}, HardNe
 Even though they demonstrate better performance when compared to hand-crafted features on certain benchmark, it does not necessarily imply a better performance in terms of subsequent processing steps. For example, in the context of Structure from Motion (SfM), finding additional correspondences for image pairs where SIFT already provides enough matches does not necessarily results in more accurate or complete reconstructions \cite{schonberger2017comparative}.
 Jin et al.~\cite{jin2020image} introduced a comprehensive benchmark for local features and robust estimation algorithms, focusing on the accuracy of the reconstructed camera pose as the primary metric. Using the new metric, SIFT ~\cite{lowe2004distinctive} and SuperGlue ~\cite{sarlin2020superglue} take the lead~\cite{imagematchingchallenge2020}.
 
-\section{Historical image processing}
-%\subsection{General processing pipeline}
-%Archiving and geoprocessing of historical aerial images: current status in europe,official publication no 70. European Spatial Data Research~\cite{sebastien2019archiving}
-%\subsection{Inter-epoch historical images alignment}
-When it comes to inter-epoch historical images, however, directly applying SIFT or SuperGlue often results in inferior results due to large radiometric differences.
-In Figure~\ref{MultiEpochImgPair} we showed an example where SIFT and SuperGlue failed to recover good matches on an inter-epoch image pair with drastic scene changes. It is understandable as (1) SIFT is not sufficiently invariant over time, while (2) SuperGlue is not invariant to rotations and it underperforms on larger images because it was presumably trained on small images.\\
-Therefore, many previous researches bypassed the task of extracting inter-epoch correspondences by processing different epochs separately followed by an inter-epoch co-registration relying on Ground Control Points(GCPs).
-Between 10 and 169 GCPs are required in ~\cite{pinto2019archived}, ~\cite{bozek2019analysis}, ~\cite{persia2020archival}, ~\cite{micheletti2015application}, ~\cite{molg2017structure}.
-GCPs are usually measured with the help of photointerpretation on recent orthophotos, however, it is still monotonous and time-consuming. Furthermore, it is difficult to find salient points that are stable over time.\\
-Certain attempts were made to extract inter-epoch correspondences. Giordano et al.~\cite{giordano2018toward} extract feature correspondences between historical and recent images relying on HoG descriptors~\cite{dalal2005histograms}. The authors require flight plans as input, which are not commonly available as mentioned in Section 1. Feurer et al.~\cite{feurer2018joining}, Filhol et al.~\cite{filhol2019time}, Cook et al.~\cite{cook2019simple}, Parente et al.~\cite{parente2021automated} and Blanch et al.~\cite{blanch2021multi} assume that a sufficient number of keypoints remain invariant across time and employ SIFT to extract inter-epoch feature correspondences. It remains questionable whether the method is capable of handling drastic scene changes.
-Zhang et al.~\cite{zhang2020guided} extract inter-epoch correspondences from SIFT-detected keypoints based on the hypothesis that points follow 2D and 3D spatial similarity model. This method works in simple cases with few scene changes.
-{Additionally, a stream of research works focuses on historical terrestrial images (~\cite{maiwald2021automatic}, ~\cite{beltrami20193d}, ~\cite{bevilacqua2019reconstruction}, ~\cite{maiwald2019generation}) and historical video recordings (~\cite{maiwald2019generation}). However, their algorithms are not suitable to the aerial case.}\\
-This work is an extention of~\cite{zhang2020guided}. Unlike in~\cite{zhang2020guided}, we introduce a rough co-registration between different epochs based on matching DSMs with SuperGlue, and use it to guide a precise matching. Our rough co-registration is robust under extreme scene changes because (1) SuperGlue utilizes context to enhance feature descriptors and (2) DSMs are generally stable over time. With the guidance of roughly co-registered orientations and DSMs, both SIFT and SuperGlue achieved good performance, as shown in our experiments.
 \section{Robust matching}
 The goal of robust matching is to tell apart inliers from outliers, and eliminate the latter from further processing.
 \par
@@ -67,3 +54,49 @@ CNe (Context Networks) \cite{moo2018learning} trains deep networks in an end-to-
 \par
 In this research, we use RANSAC to estimate the 3D Helmert transformation between surfaces (i.e., DSMs) calculated in different epochs. Compared to the classical essential/fundamental matrix filtering, with less data (3 versus 5 points) we impose stricter rules on the sets of points. Lastly, we eliminate the remaining false correspondences by looking at their cross-correlation.
 
+\section{Pose estimation}
+Pose estimation describes the intrinsic and extrinsic parameters of an image and is classically solved with the SfM algorithms \cite{snavely2006photo,deseilligny2011apero,schonberger2016structure} based on local feature matches. 
+%If the image pose should be known in a reference coordinate system, i.e. be georeferenced, a 7-parameter transformation followed by \textit{a posteriori} bundle block adjustment must be carried out.
+As local features are sparse, their accuracy plays an important role throughout the SfM process, since small inaccuracies in their locations can result in large errors for the estimated poses.
+Good features will lead to better results on image orientation, camera calibration and 3D reconstruction \cite{lindenberger2021pixel}, \cite{sarlin2021back}, \cite{truong2018second}.
+%Sarlin et al. \cite{lindenberger2021pixel}, Lindenberger et al. \cite{lindenberger2021pixel} and Truong Giang et al. \cite{truong2018second} show.
+
+\par
+Unlike in modern images where the image coordinate system overlaps with the planimetric camera coordinate system, in historical images the overlap is not maintained due to the scanning procedure. To account for this, an additional 2D transformation is estimated in the SfM procedure \cite{article}, which puts higher demands on the features. %Inaccurate features 
+\cite{giordano2018toward} demonstrates the importance of good features in estimating the camera calibration and its great impact on the planimetric and altimetric accuracies of the resulted \ac{DSM}. 
+Systematic errors expressed as \textit{dome} effect (i.e. a vertical doming of the surface) could appear in the \ac{DSM}s when camera models are poorly estimated, which restricts the wider use of \ac{DSM}s. It results from inaccurately estimated lens distortion parameters \cite{wackrow2008minimising}, \cite{james2014mitigating}.
+
+%\cite{giordano2018toward} demonstrates the importance of the self-calibration of historical images and its impact on 3D accuracy. Poorly modelled intrinsic parameters result in the known \textit{dome}-like deformations that the authors eliminate with the help of automatic GCPs from exiting orthophotos. 
+
+
+%The tie-point extraction step is the opening in the photogrammetric
+%processing chain and therefore plays a key role in the quality of the subsequent image orientation,
+%camera calibration and 3D reconstruction. Improving its precision will have an impact on the
+%obtained 3D. In this research work we describe a method which aims at enhancing the accuracy of
+%image orientation by adding a second iteration photogrammetric processing.
+
+%\par 
+
+%The uncertain internal geometry can be partially resolved by calibration. Research recent conducted at Loughborough University indicated the potential of consumer grade digital sensors to maintain their internal geometry but also identified residual systematic error surfaces, discernible in digital elevation models (DEM), which are caused by slightly inaccurately estimated lens distortion parameters.
+
+
+%\par
+%Unlike in modern images where the image coordinate system overlaps with the planimetric camera coordinate system, in historical images the overlap is not maintained due to the scanning procedure. To account for this, an additional 2D transformation is estimated in the course of the processing \cite{article}. \cite{giordano2018toward} demonstrates the importance of the self-calibration of historical images and its impact on 3D accuracy. Poorly modelled intrinsic parameters result in the known \textit{dome}-like deformations that the authors eliminate with the help of automatic GCPs from exiting orthophotos. 
+%\par 
+%Many cases reported in the literature calculate the image poses with SfM using features matched exclusively within the same epoch \cite{nurminen2015automation,cardenal2006use,fox2008unlocking,walstra2004time}. In multi-epoch scenarios, the individual epochs should be defined in a common frame, be it the frame of a reference epoch or an absolute reference frame (i.e., a projection coordinate frame). Control points derived from recent orthophotos and DEM \cite{nurminen2015automation,ellis2006measuring,fox2008unlocking} or GPS survey \cite{micheletti2015application,walstra2004time,cardenal2006use} serve to transform the individual epochs to the common frame. Alternatively, a coarse flight plan may provide an approximate co-registration \cite{giordano2018toward}.
+%\par  
+%To increase relative accuracy between several epochs,  \cite{cardenal2006use,korpela2006geometrically,micheletti2015application} manually insert inter-epoch tie-points. \cite{giordano2018toward} extracts tie-points between analogue images and recent images based on the method of \cite{aubry2014painting}. \cite{feurer2018joining} joins multi-epoch images in a single SfM block based on SIFT-like algorithm \cite{lowe2004distinctive,semyonov2011algorithms} by making the assumption that a sufficient number of feature points remain invariant across each time period. Identifying permanent points over a long time-span has not reached a maturity and research in this domain remains insignificant. Most of the mentioned approaches rely on manual effort, auxiliary input or limiting hypothesis.
+
+\section{Historical image processing}
+%\subsection{General processing pipeline}
+%Archiving and geoprocessing of historical aerial images: current status in europe,official publication no 70. European Spatial Data Research~\cite{sebastien2019archiving}
+%\subsection{Inter-epoch historical images alignment}
+When it comes to inter-epoch historical images, however, directly applying SIFT or SuperGlue often results in inferior results due to large radiometric differences.
+In Figure~\ref{MultiEpochImgPair} we showed an example where SIFT and SuperGlue failed to recover good matches on an inter-epoch image pair with drastic scene changes. It is understandable as (1) SIFT is not sufficiently invariant over time, while (2) SuperGlue is not invariant to rotations and it underperforms on larger images because it was presumably trained on small images.\\
+Therefore, many previous researches bypassed the task of extracting inter-epoch correspondences by processing different epochs separately followed by an inter-epoch co-registration relying on Ground Control Points(GCPs).
+Between 10 and 169 GCPs are required in ~\cite{pinto2019archived}, ~\cite{bozek2019analysis}, ~\cite{persia2020archival}, ~\cite{micheletti2015application}, ~\cite{molg2017structure}.
+GCPs are usually measured with the help of photointerpretation on recent orthophotos, however, it is still monotonous and time-consuming. Furthermore, it is difficult to find salient points that are stable over time.\\
+Certain attempts were made to extract inter-epoch correspondences. Giordano et al.~\cite{giordano2018toward} extract feature correspondences between historical and recent images relying on HoG descriptors~\cite{dalal2005histograms}. The authors require flight plans as input, which are not commonly available as mentioned in Section \ref{chap:intro}. 
+Feurer et al.~\cite{feurer2018joining} joins multi-epoch images in a single SfM block based on SIFT-like algorithm by making the assumption that a sufficient number of feature points remain invariant across each time period. Their methods are widely used in the subsequent works~\cite{filhol2019time}, ~\cite{cook2019simple},~\cite{parente2021automated} and~\cite{blanch2021multi}. It remains questionable whether the method is capable of handling drastic scene changes.
+Zhang et al.~\cite{zhang2020guided} extract inter-epoch correspondences from SIFT-detected keypoints based on the hypothesis that points follow 2D and 3D spatial similarity model. This method works in simple cases with few scene changes. {Additionally, a stream of research works focuses on historical terrestrial images (~\cite{maiwald2021automatic}, ~\cite{beltrami20193d}, ~\cite{bevilacqua2019reconstruction}, ~\cite{maiwald2019generation}) and historical video recordings (~\cite{maiwald2019generation}). However, their algorithms are not suitable to the aerial case.}\\
+This work is an extention of~\cite{zhang2020guided}. Unlike in~\cite{zhang2020guided}, we introduce a rough co-registration between different epochs based on matching DSMs with SuperGlue, and use it to guide a precise matching. Our rough co-registration is robust under extreme scene changes because (1) SuperGlue utilizes context to enhance feature descriptors and (2) DSMs are generally stable over time. With the guidance of roughly co-registered orientations and DSMs, both SIFT and SuperGlue achieved good performance, as shown in our experiments.

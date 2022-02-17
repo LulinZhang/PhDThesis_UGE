@@ -1,0 +1,23 @@
+%!TEX root = Manuscript.tex
+
+\chapter{Tutorial of our pipeline}
+\label{chap:appendixC}
+
+We provide two thorough tutorials \cite{tuto-aerial}, \cite{tuto-mixed} with test dataset to familiarize users with our pipeline. 
+%In this tutorial we will introduce you to tie-points extraction in diachronic images (only aerial images) in MicMac. (For processing both satellite and aerial images, please refer to Historical_Satellite_TiePtExtraction_pipeline.ipynb) 
+The goal of the tutorials is to recover matches for multi-epoch images. %We refer to images obtained within one epoch as intra-epoch images, and images obtained at different epochs as inter-epoch images.
+The tutorial performs an intra-epoch processing, followed by an inter-epoch processing. The latter consists of 2 main steps: rough co-registration and precise matching. 
+The pipeline works as follows:
+\begin{itemize}
+	\item[-] Intra-epoch processing:
+	\begin{enumerate}
+		\item \textbf{Feature matching}: Applying feature matching based on SIFT on images within the same epoch.
+		\item \textbf{Relative orientation}: Computing relative orientations for each epoch.
+		\item \textbf{DSM generation}: Computing DSM of each epoch based on relative orientations.
+	\end{enumerate}
+	\item[-] Inter-epoch processing:
+	\begin{enumerate}
+		\item \textbf{Automated pipeline}. The automated pipeline will launch the whole inter-epoch processing pipeline by calling several subcommands.
+		\item \textbf{Deep-dive in submodules}: We also provide deep-dive to explain all the submodules used in the automated pipeline. It consists of: (1) rough co-registration, which roughly co-register the DSMs and image orientations from different epochs; (2) precise matching, which obtains precise matches under the guidance of rough co-registration.
+	\end{enumerate}	
+\end{itemize}

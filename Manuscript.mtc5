@@ -1,24 +1,26 @@
 {\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {4.1}Introduction}{\reset@font\mtcSfont 23}{section.4.1}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {4.1.1}Objective}{\reset@font\mtcSSfont 23}{subsection.4.1.1}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {4.1.2}Motivation}{\reset@font\mtcSSfont 24}{subsection.4.1.2}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {4.1.3}Contributions}{\reset@font\mtcSSfont 24}{subsection.4.1.3}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {4.1.1}Motivation and objective}{\reset@font\mtcSSfont 23}{subsection.4.1.1}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {4.1.2}Contributions}{\reset@font\mtcSSfont 24}{subsection.4.1.2}}
 {\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {4.2}Methodology}{\reset@font\mtcSfont 25}{section.4.2}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {4.2.1}Strategy 1: Matching image pairs (\textit {ImgPairs})}{\reset@font\mtcSSfont 26}{subsection.4.2.1}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {4.2.2}Strategy 2: Matching Orthophotos/DSMs (\textit {Ortho} or \textit {DSM})}{\reset@font\mtcSSfont 27}{subsection.4.2.2}}
-{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {4.3}Experiments}{\reset@font\mtcSfont 32}{section.4.3}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {4.3.1}Datasets}{\reset@font\mtcSSfont 33}{subsection.4.3.1}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {4.3.2}Implementation details}{\reset@font\mtcSSfont 33}{subsection.4.3.2}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {4.3.3}Evaluation}{\reset@font\mtcSSfont 34}{subsection.4.3.3}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {4.3.4}Comparison}{\reset@font\mtcSSfont 34}{subsection.4.3.4}}
-{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \numberline {4.3.4.1}Matches visualization}{\reset@font\mtcSSSfont 34}{subsubsection.4.3.4.1}}
-{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \numberline {4.3.4.2}\ac {DoD}}{\reset@font\mtcSSSfont 40}{subsubsection.4.3.4.2}}
-{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {4.4}Discussion}{\reset@font\mtcSfont 40}{section.4.4}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {4.4.1}Comparison between $SIFT_{Adapted}$ and $SIFT_{Default}$}{\reset@font\mtcSSfont 40}{subsection.4.4.1}}
-{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \numberline {4.4.1.1}Comparison on matching image pair}{\reset@font\mtcSSSfont 40}{subsubsection.4.4.1.1}}
-{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \numberline {4.4.1.2}Comparison on matching orthophotos}{\reset@font\mtcSSSfont 44}{subsubsection.4.4.1.2}}
-{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \numberline {4.4.1.3}Comparison on matching DSMs}{\reset@font\mtcSSSfont 44}{subsubsection.4.4.1.3}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {4.4.2}Comparison between $SuperGlue_{tiling}$ and $SuperGlue_{orig}$}{\reset@font\mtcSSfont 47}{subsection.4.4.2}}
-{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \numberline {4.4.2.1}Comparison on matching orthophotos}{\reset@font\mtcSSSfont 47}{subsubsection.4.4.2.1}}
-{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \numberline {4.4.2.2}Comparison on matching DSMs}{\reset@font\mtcSSSfont 47}{subsubsection.4.4.2.2}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {4.4.3}Use case of matching guided by 2D similarity transformation}{\reset@font\mtcSSfont 48}{subsection.4.4.3}}
-{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {4.5}Conclusion}{\reset@font\mtcSfont 50}{section.4.5}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {4.2.1}Strategy 1: Matching image pairs (\textit {ImgPairs})}{\reset@font\mtcSSfont 25}{subsection.4.2.1}}
+{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode \textit {Four rotation hypotheses}.}{\reset@font\mtcPfont 26}{section*.21}}
+{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode Workflow of \textit {ImgPairs}.}{\reset@font\mtcPfont 26}{section*.22}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {4.2.2}Strategy 2: Matching Orthophotos/DSMs (\textit {Ortho} or \textit {DSM})}{\reset@font\mtcSSfont 28}{subsection.4.2.2}}
+{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode Converting \ac {DSM} to grayscale image.}{\reset@font\mtcPfont 28}{section*.23}}
+{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode \textit {One-to-many tiling scheme}.}{\reset@font\mtcPfont 28}{section*.24}}
+{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode Workflow of \textit {Ortho} and \textit {DSM}.}{\reset@font\mtcPfont 31}{section*.25}}
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {4.3}Experiments}{\reset@font\mtcSfont 31}{section.4.3}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {4.3.1}Implementation details}{\reset@font\mtcSSfont 32}{subsection.4.3.1}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {4.3.2}Comparison between $SIFT_{Adapted}$ and $SIFT_{Default}$}{\reset@font\mtcSSfont 33}{subsection.4.3.2}}
+{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode Comparison on matching image pair.}{\reset@font\mtcPfont 33}{section*.26}}
+{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode Comparison on matching orthophotos.}{\reset@font\mtcPfont 33}{section*.27}}
+{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode Comparison on matching DSMs.}{\reset@font\mtcPfont 33}{section*.28}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {4.3.3}Comparison between $SuperGlue_{tiling}$ and $SuperGlue_{orig}$}{\reset@font\mtcSSfont 34}{subsection.4.3.3}}
+{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode Comparison on matching orthophotos.}{\reset@font\mtcPfont 34}{section*.29}}
+{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode Comparison on matching DSMs.}{\reset@font\mtcPfont 38}{section*.30}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {4.3.4}Use case of matching guided by 2D similarity transformation}{\reset@font\mtcSSfont 38}{subsection.4.3.4}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {4.3.5}Comparison of 6 variants}{\reset@font\mtcSSfont 39}{subsection.4.3.5}}
+{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode Matches visualization.}{\reset@font\mtcPfont 39}{section*.31}}
+{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode \ac {DoD}.}{\reset@font\mtcPfont 41}{section*.32}}
+{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode Discussion.}{\reset@font\mtcPfont 41}{section*.33}}
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {4.4}Conclusion}{\reset@font\mtcSfont 49}{section.4.4}}

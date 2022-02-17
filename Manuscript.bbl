@@ -188,6 +188,13 @@ IGN.
 \newblock {\em {remonterletemps}}.
 \newblock https://remonterletemps.ign.fr/, 2019.
 
+\bibitem[James \& Robson~2014]{james2014mitigating}
+Mike~R James and Stuart Robson.
+\newblock {\em Mitigating systematic error in topographic models derived from
+  UAV and ground-based image networks}.
+\newblock Earth Surface Processes and Landforms, vol.~39, no.~10, pages
+  1413--1420, 2014.
+
 \bibitem[Jin \textit{et~al.}~2020]{jin2020image}
 Yuhe Jin, Dmytro Mishkin, Anastasiia Mishchuk, Jiri Matas, Pascal Fua,
   Kwang~Moo Yi and Eduard Trulls.
@@ -199,6 +206,13 @@ Yuhe Jin, Dmytro Mishkin, Anastasiia Mishchuk, Jiri Matas, Pascal Fua,
 Annick~M Leroy and Peter~J Rousseeuw.
 \newblock {\em Robust regression and outlier detection}.
 \newblock Wiley, 1987.
+
+\bibitem[Lindenberger \textit{et~al.}~2021]{lindenberger2021pixel}
+Philipp Lindenberger, Paul-Edouard Sarlin, Viktor Larsson and Marc Pollefeys.
+\newblock {\em Pixel-Perfect Structure-from-Motion with Featuremetric
+  Refinement}.
+\newblock In Proceedings of the IEEE/CVF International Conference on Computer
+  Vision, pages 5987--5997, 2021.
 
 \bibitem[Lowe~2004]{lowe2004distinctive}
 David~G Lowe.
@@ -234,6 +248,11 @@ F~Maiwald.
   for an Automated Evaluation of Different Feature Matching Methods.}
 \newblock International Archives of the Photogrammetry, Remote Sensing \&
   Spatial Information Sciences, 2019.
+
+\bibitem[McGlone~2013]{article}
+Chris McGlone.
+\newblock Manual of photogrammetry.
+\newblock American Society for Photogrammetry and Remote Sensing (ASPRS), 2013.
 
 \bibitem[Micheletti \textit{et~al.}~2015]{micheletti2015application}
 Natan Micheletti, Stuart~N Lane and Jim~H Chandler.
@@ -279,6 +298,13 @@ Hans Moravec.
   robot rover.}
 \newblock Technical report CMU-RI-TR-80-03, Carnegie Mellon University,
   Pittsburgh, PA, 1980.
+
+\bibitem[Morel \& Yu~2009]{morel2009asift}
+Jean-Michel Morel and Guoshen Yu.
+\newblock {\em ASIFT: A new framework for fully affine invariant image
+  comparison}.
+\newblock SIAM journal on imaging sciences, vol.~2, no.~2, pages 438--469,
+  2009.
 
 \bibitem[Moulon \textit{et~al.}~2016]{openMVG}
 Pierre Moulon, Pascal Monasse, Renaud Marlet and Others.
@@ -379,6 +405,15 @@ Paul-Edouard Sarlin, Daniel DeTone, Tomasz Malisiewicz and Andrew Rabinovich.
 \newblock In Proceedings of the IEEE/CVF Conference on Computer Vision and
   Pattern Recognition, pages 4938--4947, 2020.
 
+\bibitem[Sarlin \textit{et~al.}~2021]{sarlin2021back}
+Paul-Edouard Sarlin, Ajaykumar Unagar, Mans Larsson, Hugo Germain, Carl Toft,
+  Viktor Larsson, Marc Pollefeys, Vincent Lepetit, Lars Hammarstrand, Fredrik
+  Kahl{\em  et~al.}
+\newblock {\em Back to the feature: Learning robust camera localization from
+  pixels to pose}.
+\newblock In Proceedings of the IEEE/CVF Conference on Computer Vision and
+  Pattern Recognition, pages 3247--3257, 2021.
+
 \bibitem[Schonberger \& Frahm~2016]{schonberger2016structure}
 Johannes~L Schonberger and Jan-Michael Frahm.
 \newblock {\em Structure-from-motion revisited}.
@@ -399,6 +434,11 @@ Edgar Simo-Serra, Eduard Trulls, Luis Ferraz, Iasonas Kokkinos, Pascal Fua and
   descriptors}.
 \newblock In Proceedings of the IEEE International Conference on Computer
   Vision, pages 118--126, 2015.
+
+\bibitem[Snavely \textit{et~al.}~2006]{snavely2006photo}
+Noah Snavely, Steven~M Seitz and Richard Szeliski.
+\newblock {\em Photo tourism: exploring photo collections in 3D}.
+\newblock In ACM Siggraph 2006 Papers, pages 835--846. 2006.
 
 \bibitem[Sonka \textit{et~al.}~2014]{sonka2014image}
 Milan Sonka, Vaclav Hlavac and Roger Boyle.
@@ -443,6 +483,13 @@ Eduard Trulls, Yuhe Jin, Kwang~Moo Yi, Dmytro Mishkin, Jiri Matas and Pascal
 \newblock {\em {Image Matching Challenge 2020}}.
 \newblock https://vision.uvic.ca/image-matching-challenge/, 2020.
 
+\bibitem[Truong~Giang \textit{et~al.}~2018]{truong2018second}
+Nguyen Truong~Giang, Jean-Micha{\"e}l Muller, Ewelina Rupnik, Christian Thom
+  and Marc Pierrot-Deseilligny.
+\newblock {\em Second iteration of photogrammetric processing to refine image
+  orientation with improved tie-points}.
+\newblock Sensors, vol.~18, no.~7, page 2150, 2018.
+
 \bibitem[USGS~2019]{earthexplorer}
 USGS.
 \newblock {\em {earthexplorer}}.
@@ -453,6 +500,13 @@ Yannick Verdie, Kwang Yi, Pascal Fua and Vincent Lepetit.
 \newblock {\em TILDE: a temporally invariant learned detector}.
 \newblock In Proceedings of the IEEE Conference on Computer Vision and Pattern
   Recognition, pages 5279--5288, 2015.
+
+\bibitem[Wackrow \textit{et~al.}~2008]{wackrow2008minimising}
+R~Wackrow, JH~Chandler and T~Gardner.
+\newblock {\em Minimising systematic errors in DEMs caused by an inaccurate
+  lens model}.
+\newblock International Archives of the Photogrammetry, Remote Sensing and
+  Spatial Information Sciences, vol.~37, no.~B5, pages 1--6, 2008.
 
 \bibitem[Walstra \textit{et~al.}~2004]{walstra2004time}
 Jan Walstra, JH~Chandler, N~Dixon and TA~Dijkstra.
@@ -477,5 +531,43 @@ Lulin Zhang, Ewelina Rupnik and Marc Pierrot-Deseilligny.
 \newblock {\em Guided feature matching for multi-epoch historical image blocks
   pose estimation}.
 \newblock In ISPRS Ann. Photogramm. Remote Sens. Spatial Inf. Sci., 2020.
+
+\bibitem[Zhang \textit{et~al.}~2021a]{HistoPcode}
+Lulin Zhang, Ewelina Rupnik and Marc Pierrot-Deseilligny.
+\newblock {\em Code in micmac for matching multi-epoch images}.
+\newblock
+  \url{https://github.com/micmacIGN/micmac/tree/master/src/uti_phgrm/TiePHistorical},
+  2021.
+
+\bibitem[Zhang \textit{et~al.}~2021b]{HistoPProj}
+Lulin Zhang, Ewelina Rupnik and Marc Pierrot-Deseilligny.
+\newblock {\em Project website for matching multi-epoch images}.
+\newblock
+  \url{https://www.umr-lastig.fr/ewelina-rupnik/historicalfeatures.html}, 2021.
+
+\bibitem[Zhang \textit{et~al.}~2021c]{HistoPSlides}
+Lulin Zhang, Ewelina Rupnik and Marc Pierrot-Deseilligny.
+\newblock {\em Slides for matching multi-epoch images}.
+\newblock
+  \url{https://drive.google.com/uc?id=16sJZiY3sTZSRZKBzpy2IHVloCLj6pEwP}, 2021.
+
+\bibitem[Zhang \textit{et~al.}~2021d]{tuto-mixed}
+Lulin Zhang, Ewelina Rupnik and Marc Pierrot-Deseilligny.
+\newblock {\em Tutorial of matching multi-epoch aerial and satellite images}.
+\newblock
+  \url{https://colab.research.google.com/drive/14okQ8bBhEZmy6EGRIQvazTqrN39oc_K5},
+  2021.
+
+\bibitem[Zhang \textit{et~al.}~2021e]{tuto-aerial}
+Lulin Zhang, Ewelina Rupnik and Marc Pierrot-Deseilligny.
+\newblock {\em Tutorial of matching multi-epoch aerial images}.
+\newblock
+  \url{https://colab.research.google.com/drive/1poEXIeKbPcJT_2hyQOBhzcj1EEhO8OgD},
+  2021.
+
+\bibitem[Zhang \textit{et~al.}~2021f]{HistoPVideo}
+Lulin Zhang, Ewelina Rupnik and Marc Pierrot-Deseilligny.
+\newblock {\em Video for matching multi-epoch images}.
+\newblock \url{https://youtu.be/YnF-F0UJaSM}, 2021.
 
 \end{thebibliography}

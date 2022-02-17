@@ -8,8 +8,13 @@
 \section{Motivation and objectives}
 \subsection{Why are historical images interesting}
 Historical (i.e. analogue or archival) aerial images play an important role in providing unique information about evolution of land-covers. 
-They are objective witness over time and sometimes the only remaining visual source of historical land-form. Therefore, they are valuable assets for a wide range of applications such as: (1) change detection, (2) spatial and urban planning, (3) long-term environmental monitoring including but not limited to forests, ice glaciers and coastlines, (4) analysis of natural disaster (e.g. earthquake, volcano eruption, landslide, to name a few) and the estimation of its future trends, etc.
+%They are objective witness over time and sometimes the only remaining visual source of historical land-form. 
+They are valuable assets for a wide range of applications such as (1) analyzing of natural disasters (e.g. earthquake, landslides, volcano, floods, avalanche, etc), (2) eco-environmental monitoring (e.g. forest, atmosphere, glaciers, water, etc), (3) urban expansion and (4) environmental pollution and protection.
+%, (4) change detection
+
+% (1) change detection, (2) spatial and urban planning, (3) long-term environmental monitoring including but not limited to forests, ice glaciers and coastlines, (4) analysis of natural disaster (e.g. earthquake, volcano eruption, landslide, to name a few) and the estimation of its future trends, etc.
 %用途：地震，冰川，土地规划？
+
 %long-term environmental monitoring: forests, ice glaciers, coastlines etc.
 %change detection; 
 %spatial and urban planning, boundary disputes, etc.
@@ -19,7 +24,7 @@ Historical aerial images have regularly been acquired since the 1920’s by mapp
 For example, according to a survey taken place at the beginning of 2017 in Europe~\cite{sebastien2019archiving}, there are approximately 50 million of aerial images archived in Europe, with around 37.8\% of them digitized.
 %A survey called "State of current practices concerning archival aerial images" in Europe~\cite{sebastien2019archiving} took place in 2017, 19 organizations from 13 countries (including Austria, Norway, Finland, Spain, Slovenia, Cyprus, Czech Republic, Finland, Germany, Switzerland, Sweden, Poland, France and United Kingdom) replied. According to it, there are in total 50 million of aerial images archived, with around 37.8\% of them digitized.
 The images are of high spatial resolution, and are acquired in stereoscopic configuration, allowing for 3D restitution of territories. 
-They are often accompanied by metadata, in most cases including the camera focal length and the physical sensor size. Other metadata such as flight plans, camera calibration certificates or orientations are not commonly available. 
+They are often accompanied by metadata, in most cases including the camera focal length and the physical sensor size, which is usually saved or mentioned on the films. Other metadata such as flight plans, camera calibration certificates or orientations are not commonly available. 
 \par
 When the camera calibration parameters are unknown, they should be evaluated by a process called self-calibrating bundle adjustment. Adequate \ac{GCP}s are required, otherwise inaccurately estimated camera parameters will lead to systematic error surfaces called dome effect (i.e. bowel effect).
 Generally, \ac{GCP}s originate from (1) field surveys \cite{micheletti2015application,walstra2004time,cardenal2006use}, (2) recent orthophotos and DEM \cite{nurminen2015automation,ellis2006measuring,fox2008unlocking} and (3) recent satellite images \cite{ellis2006measuring,ford2013shoreline}. The most challenging part is to identify the \ac{GCP}s on the historical images, due to inevitable scene changes. \ac{GCP}s are usually manually measured with the help of recent photos, however, it is still monotonous and time-consuming. 
@@ -42,7 +47,7 @@ However, matching multi-epoch historical images remains challenging, despite the
 	\item Multi-epoch images often exhibit heterogeneous spatial resolutions, accompanied with different acquisition conditions (sensors, spectral channels, etc.).
 	\item Historical images are often facing low radiometric quality, including low contrast, image noise, deterioration due to the aging of the films, or even scratches on the films.
 \end{enumerate}
-Simply applying \textit{state-of-the-art} feature matching methods (e.g. SIFT~\cite{lowe2004distinctive} or SuperGlue~\cite{sarlin2020superglue}) on multi-epoch image pair often leads to unsatisfactory results. An example is given in Figure~\ref{MultiEpochImgPair}. A pair of multi-epoch images are demonstrated with red rectangles indicating the common area in Figure~\ref{MultiEpochImgPair}(a). The left and right images are taken at the same place in 1954 and 1970 individually. The scene changed significantly, a lot of new buildings arose, the color tones are very different. In Figure~\ref{MultiEpochImgPair}(b-d), the matching result of SIFT, SuperGlue and Ours are displayed for comparison. As can be seen, SIFT failed to find any matches. SuperGlue recovered 369 matches, most of which seem good, but at a closer look the details reveal poor localization precision. Our method found 1463 matches with high accuracy, thanks to the help of (1) 3D geometry and (2) the "rough-to-precise" strategy, which are elaborated in the following text.
+Simply applying \textit{state-of-the-art} feature matching methods (e.g. SIFT~\cite{lowe2004distinctive} or SuperGlue~\cite{sarlin2020superglue}) on multi-epoch image pair often leads to unsatisfactory results. An example is given in Figure~\ref{MultiEpochImgPair}. A pair of multi-epoch images are demonstrated with red rectangles indicating the common area in Figure~\ref{MultiEpochImgPair}(a). The left and right images are taken at the same place in 1954 and 1970 individually. The scene changed significantly, a lot of new buildings arose, the color tones are very different. In Figure~\ref{MultiEpochImgPair}(b-d), the matching result of SIFT, SuperGlue and Ours are displayed for comparison. As can be seen, SIFT failed to find any matches. SuperGlue recovered 369 matches, most of which seem good, but at a closer look the details reveal poor localization precision. Our method found 1463 matches with high accuracy, thanks to the help of (1) 3D geometry and (2) the "rough-to-precise" strategy, which are elaborated in the following texts.
 \begin{figure*}[htbp]
 	\begin{center}
 		\subfigure[Multi-epoch image pair]{
@@ -74,12 +79,13 @@ Simply applying \textit{state-of-the-art} feature matching methods (e.g. SIFT~\c
 	\end{center}
 \end{figure*}
 
-\subsubsection{Take advantage of 3D geometry}
-The key idea of our method is to use 3D geometry to guide matching. This idea comes from the observation that RGB images have the following shortcomings:\\
+%\subsubsection{Take advantage of 3D geometry}
+\paragraph{Take advantage of 3D geometry}
+RGB images have the following shortcomings:\\
 (1) Their appearances change over time (see Figure~\ref{AppearanceChange}), and with varying view angles on non-Lambertian surfaces (see Figure~\ref{PoorlyTextured}).\\
 (2) Self similarities (e.g. repetitive patterns) favor false matches (see Figure~\ref{PoorlyTextured}).\\
-Fortunately, 3D geometry, such as DSM, makes up for these shortcomings perfectly. As can be seen in Figure~\ref{AppearanceChange}, the RGB images look very different because the scene changed a lot. However, the corresponding DSMs look similar, which is reasonable, as the 3D landscape is more stable over time. Besides, the DSM is more distinctive than RGB images when it comes to non-Lambertian surfaces and repetitive patterns, as shown in Figure~\ref{PoorlyTextured}. 
-
+Fortunately, 3D geometry such as DSM makes up for these shortcomings perfectly. As can be seen in Figure~\ref{AppearanceChange}, the RGB images look very different because the scene changed a lot. However, the corresponding DSMs look similar, which is reasonable, as the 3D landscape is more stable over time. Besides, the DSM is more distinctive than RGB images when it comes to non-Lambertian surfaces and repetitive patterns, as shown in Figure~\ref{PoorlyTextured}. 
+Even though 3D geometry is lack of textures and details compared to RGB images, it serves as an ideal supplement. Besides, it plays an important role in provides the 3D information for establish 3D Helmert transformation model between epochs to (1) move different epochs into the same coordinate frame and (2) remove false matches in a RANSAC routine which is more reliable than 2D transformation models.
 
 \begin{figure*}[htbp]
 	\begin{center}
@@ -144,7 +150,8 @@ Fortunately, 3D geometry, such as DSM, makes up for these shortcomings perfectly
 	\end{center}
 \end{figure*} 
 
-\subsubsection{Rough-to-precise strategy}
+%\subsubsection{Rough-to-precise strategy}
+\paragraph{Rough-to-precise strategy}
 In order to recover robust and precise matches on multi-epoch image pairs, we divide the task into two sub-tasks and conquer them individually with the "rough-to-precise" strategy. It is illustrated in Figure~\ref{rough-to-precise}. The two sub-tasks includes:\\
 %\par 
 \begin{enumerate}
@@ -180,19 +187,57 @@ In order to recover robust and precise matches on multi-epoch image pairs, we di
 
 %\section{Objective}
 
-\section{Contribution}
-Our main contributions include:\\
+\section{Contributions}
+\label{sec:contributions}
+%Our main contributions include:\\
+%\begin{enumerate}
+%	\item Rough-to-precise matching strategy that helps to drastically reduce ambiguity. In particular, we use the depth information to roughly co-register our epochs. The 3D landscape is globally stable over time and provides sufficient correspondences through time. Once co-registered, we levarage the 3D a priori to narrow down the search space in precise matching.
+%	\item Upscaling of the learning based feature matching algorithms to high resolution imagery. To do that, we introduced an image tiling scheme.
+%\end{enumerate}
+
+In this thesis we present a rough-to-precise pipeline for matching multi-epoch images. It is suitable for aerial, satellite and mixed images, which makes it easy for geo-referencing historical images. Six variants are provided for the rough co-registration stage and two variants for the precise matching stage. Each variant has its own characteristic:\\
 \begin{enumerate}
-	\item Rough-to-precise matching strategy that helps to drastically reduce ambiguity. In particular, we use the depth information to roughly co-register our epochs. The 3D landscape is globally stable over time and provides sufficient correspondences through time. Once co-registered, we levarage the 3D a priori to narrow down the search space in precise matching.
-	\item Upscaling of the learning based feature matching algorithms to high resolution imagery. To do that, we introduced an image tiling scheme.
+	\item For rough co-registration variants: (1) $SIFT_{DSM}$ and $SuperGlue_{DSM}$ match \ac{DSM}s from different epoch for co-registration, which generally lead to the most robust results. (2) $SIFT_{Ortho}$ and $SuperGlue_{Ortho}$ match orthophotos, which could serve as an alternate in rare scenarios with perfectly flat terrain where \ac{DSM}s fail to provide useful information. (3) $SIFT_{ImgPairs}$ and $SuperGlue_{ImgPairs}$ match original image pairs, which often lead to less satisfactory results, but they are the only options suitable for terrestrial images.
+	\item For precise matching variants: (1) $Patch$ is based on learned matching methods, it generally results in more matches as it is more invariant over time. (2) $Guided$ is based on hand-crafted methods, it is more efficient in terms of the use of memory and CPU resources as it doesn't involve resampling patches, which is necessary for $Patch$. %often provides relatively more accurate matches under moderate scene changes.
+\end{enumerate}
+\par
+Our pipeline is aim to unlock the huge potential of historical images for tracking environmental conditions.
+% such as (1) the impact of natural disasters (e.g. earthquake, landslides, volcano, floods, etc), (2) urban expansion, (3) landuse evolution (e.g. cultivated land, forest, meadow, badlands, etc), 
+%finding changes in vegetation, evaluating desertification and detecting specific urban or natural variations in the environment. 
+Based on our pipeline, we are collaborating with several institutes including:
+\begin{enumerate}
+	\item Institut de Physique du Globe de Paris (IPGP) and Korea Institute of Geoscience and Mineral Resources (KIGAM) for quantification of deformations of the earth crust to understand the seismic events.
+	\item National Research Council, Research Institute for Hydrogeological Protection (CNR-IRPI) for analyzing landslide evolution in Italy.
+	\item Department of Earth and Environmental Sciences in University of Pavia for analyzing badland evolution in Europe.
+\end{enumerate}
+\par
+We also developed two thorough tutorials accompanied with test dataset to familiarize users with our pipeline (more details are introduced in Appendix \ref{chap:appendixC}) implemented in MicMac\cite{HistoPcode}:
+\begin{enumerate}
+	\item Tutorial of matching aerial images \cite{tuto-aerial} %\href{https://colab.research.google.com/drive/1poEXIeKbPcJT_2hyQOBhzcj1EEhO8OgD}
+	\item Tutorial of matching mixed images (i.e. aerial images and satellite images) \cite{tuto-mixed} %\href{https://colab.research.google.com/drive/14okQ8bBhEZmy6EGRIQvazTqrN39oc_K5}
 \end{enumerate}
 
+\par
+Publications of the author:
+\begin{enumerate}
+	\item Zhang, L., Rupnik, E., Pierrot-Deseilligny, M., 2021. Feature matching for multi-epoch historical aerial images. ISPRS Journal of Photogrammetry and Remote Sensing, 182, 176-189.
+	\item Lulin Zhang, Ewelina Rupnik and Marc Pierrot-Deseilligny.
+	Guided feature matching for multi-epoch historical image blocks pose esti-
+	mation. In ISPRS Ann. Photogramm. Remote Sens. Spatial Inf. Sci., 2020.
+\end{enumerate}
+%, blog \cite{HistoPBlog}
+We also provide video \cite{HistoPVideo}, slides \cite{HistoPSlides} and project website \cite{HistoPProj} to improve the visibility of our work.
+
 \section{Organization of the thesis}
-In this thesis, we present a fully automatic approach to computing robust inter-epoch feature correspondences. It consists of two steps: a rough co-registration by finding feature correspondences between \ac{DSM}s derived within single epochs, and a precise feature matching on original RGB images. \\
-A brief presentation of the state of the art is given in \textbf{Chapter}~\ref{chap:review}. 
-In \textbf{Chapter}~\ref{chap:ApplicationsAndDatasets}, five datasets categorized in four kinds of application scenarios are introduced, which would be used to test our pipeline.
-In \textbf{Chapter}~\ref{chap:RoughCoReg}, three rough co-registration pipelines are elaborated to get robust matches between different epochs, including (1) matching every possible image pairs followed by merging the matches in order to search for globally consistent inliers, and matching (2) \ac{DSM}s or (3) orthophotos followed by RANSAC routine to remove outliers.
+In this thesis, we present a fully automatic pipeline to recovering robust and accurate inter-epoch matches. %It consists of two steps: a rough co-registration which roughly align the whole block by building a globally consistent transformation model between epochs, and a precise matching under the guidance of the rough co-registration result to reduce ambiguity. \\
+A brief presentation of the \textit{state-of-the-art} is given in \textbf{Chapter}~\ref{chap:review}. 
+
+In \textbf{Chapter}~\ref{chap:ApplicationsAndDatasets}, applications as well as 5 sets of datasets are introduced, which would be used to test our pipeline.
+
+In \textbf{Chapter}~\ref{chap:RoughCoReg}, six rough co-registration variants are elaborated to roughly align the whole block by building a globally consistent transformation model between epochs.
 Experiments as well as comparisons are present.
-In \textbf{Chapter}~\ref{chap:Precisematching}, two precise matching pipelines (\textit{Patch} and \textit{Guided}) are introduced to get accurate matches under the guidance of rough co-registered orientations and \ac{DSM}s.
+
+In \textbf{Chapter}~\ref{chap:Precisematching}, two precise matching variants are introduced to get accurate matches under the guidance of rough co-registered orientations and \ac{DSM}s.
+
 Finally, in \textbf{Chapter} ~\ref{chap:conclusion} conclusions are given.
 
