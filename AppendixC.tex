@@ -3,21 +3,355 @@
 \chapter{Tutorial of our pipeline}
 \label{chap:appendixC}
 
-We provide two thorough tutorials \cite{tuto-aerial}, \cite{tuto-mixed} with test dataset to familiarize users with our pipeline. 
+We provide two thorough tutorials \cite{tuto-aerial}, \cite{tuto-mixed} with test datasets to familiarize users with our pipelines. 
 %In this tutorial we will introduce you to tie-points extraction in diachronic images (only aerial images) in MicMac. (For processing both satellite and aerial images, please refer to Historical_Satellite_TiePtExtraction_pipeline.ipynb) 
 The goal of the tutorials is to recover matches for multi-epoch images. %We refer to images obtained within one epoch as intra-epoch images, and images obtained at different epochs as inter-epoch images.
-The tutorial performs an intra-epoch processing, followed by an inter-epoch processing. The latter consists of 2 main steps: rough co-registration and precise matching. 
-The pipeline works as follows:
+The tutorial performs an intra-epoch processing, followed by an inter-epoch processing. The latter consists of 2 main steps: rough co-registration and precise matching. At the end, an evaluation part is presented to generate and display the resulted \ac{DoD}s.
+The structure of the tutorial is as follows:
 \begin{itemize}
 	\item[-] Intra-epoch processing:
 	\begin{enumerate}
-		\item \textbf{Feature matching}: Applying feature matching based on SIFT on images within the same epoch.
-		\item \textbf{Relative orientation}: Computing relative orientations for each epoch.
-		\item \textbf{DSM generation}: Computing DSM of each epoch based on relative orientations.
+		\item \textbf{Feature matching}. Apply feature matching based on SIFT on images within the same epoch.
+		\item \textbf{Relative orientation}. Compute relative orientations for each epoch.
+		\item \textbf{DSM generation}. Compute \ac{DSM} of each epoch based on relative orientations.
 	\end{enumerate}
 	\item[-] Inter-epoch processing:
 	\begin{enumerate}
 		\item \textbf{Automated pipeline}. The automated pipeline will launch the whole inter-epoch processing pipeline by calling several subcommands.
-		\item \textbf{Deep-dive in submodules}: We also provide deep-dive to explain all the submodules used in the automated pipeline. It consists of: (1) rough co-registration, which roughly co-register the DSMs and image orientations from different epochs; (2) precise matching, which obtains precise matches under the guidance of rough co-registration.
+		\item \textbf{Deep-dive in submodules}. We also provide deep-dive to explain all the submodules used in the automated pipeline. It consists of: (1) rough co-registration, which roughly co-register the \ac{DSM}s and image orientations from different epochs; (2) precise matching, which obtains precise matches under the guidance of rough co-registration.
 	\end{enumerate}	
+	\item[-] Evaluation:
+	\begin{enumerate}
+	\item \textbf{Roughly co-registered DoD}.
+	\item \textbf{Refined DoD based on SuperGlue}.
+	\item \textbf{Refined DoD based on SIFT}.
+\end{enumerate}	
 \end{itemize}
+
+Take one tutorial (i.e., \cite{tuto-aerial}) as example, in the following we display the commands used in the tutorial. The dataset used in the tutorial consists of 2 epochs (i.e., 1971 and 1981).
+
+\section{Intra-epoch processing}
+In this section, both epochs 1971 and 1981 go through the same commands individually. For the sake of simplicity, we take only epoch 1981 as an example to demonstrate the commands.\\
+\subsection{Feature matching}
+
+\begin{enumerate}
+\item{Recover tie-points with command \textit{Tapioca}:}
+
+\begin{verbatim}
+mm3d Tapioca MulScale OIS-Reech_IGNF_PVA_1-0__1981.*tif 500 -1 PostFix=_1981
+\end{verbatim}
+
+\item{Remove tie-points on the fiducial marks with command \textit{HomolFilterMasq}:}
+\begin{verbatim}
+mm3d HomolFilterMasq OIS-Reech_IGNF_PVA_1-0__1981.*tif
+ GlobalMasq=Fiducial_marks_masq-1981-3.tif PostIn=_1981 PostOut=_1981-Masq
+\end{verbatim}
+
+\item{Tie-points reduction with command \textit{Ratafia}:}
+\begin{verbatim}
+mm3d TestLib NO_AllOri2Im OIS-Reech_IGNF_PVA_1-0__1981.*tif SH=_1981-Masq
+
+mm3d Ratafia OIS-Reech_IGNF_PVA_1-0__1981.*tif SH=_1981-Masq Out=_1981-Ratafia
+\end{verbatim}
+\end{enumerate}
+
+\subsection{Relative orientation}
+Recover relative orientation with command \textit{Tapas}:\\
+\begin{verbatim}
+mm3d Tapas FraserBasic OIS-Reech_IGNF_PVA_1-0__1981.*tif Out=1981 SH=_1981-Masq
+\end{verbatim}
+
+\subsection{DSM generation}
+Calculate \ac{DSM} with command \textit{Malt}:\\
+\begin{verbatim}
+mm3d Malt Ortho OIS-Reech_IGNF_PVA_1-0__1981.*tif 1981 NbVI=2 
+MasqImGlob=Fiducial_marks_masq-1981-3.tif DirMEC=MEC-Malt_1981 EZA=1 ZoomF=2 
+DoOrtho=0
+\end{verbatim}
+
+\section{Inter-epoch processing}
+\subsection{Automated pipeline with command \textit{TiePHistoP}}
+
+\begin{enumerate}
+
+\item{Option 1: SuperGlue:}
+\begin{verbatim}
+mm3d TiePHistoP Ori-1971 Ori-1981 ImgList1971all.txt ImgList1981all.txt 
+ MEC-Malt_1971 MEC-Malt_1981 CoRegPatchLSz=[1280,960]
+ CoRegPatchRSz=[1280,960] PrecisePatchSz=[1280,960] Feature=SuperGlue
+\end{verbatim}
+
+\item{Option 2: SIFT:}
+\begin{verbatim}
+mm3d TiePHistoP Ori-1971 Ori-1981 ImgList1971all.txt ImgList1981all.txt 
+ MEC-Malt_1971 MEC-Malt_1981 PrecisePatchSz=[1280,960] Feature=SIFT 
+ SkipCoReg=1 CoRegOri1=1971_CoReg_SuperGlue
+\end{verbatim}
+\end{enumerate}
+
+\subsection{Deep-dive in the pipeline's submodules}
+\begin{enumerate}
+
+\item{Rough co-registration}
+ 
+(1) \ac{DSM} Equalization for each epoch with command \textit{TestLib DSM\_Equalization}:\\
+\begin{verbatim}
+mm3d TestLib DSM_Equalization MEC-Malt_1981 DSMFile=MMLastNuage.xml
+ OutImg=DSM1981-gray.tif
+ 
+mm3d TestLib DSM_Equalization MEC-Malt_1971 DSMFile=MMLastNuage.xml
+ OutImg=DSM1971-gray.tif
+\end{verbatim}
+
+(2) \ac{DSM} Wallis filter for each epoch with command \textit{TestLib Wallis}:\\
+\begin{verbatim}
+mm3d TestLib Wallis DSM1981-gray.tif Dir=MEC-Malt_1981
+ OutImg=DSM1981-gray.tif_sfs.tif
+ 
+mm3d TestLib Wallis DSM1971-gray.tif Dir=MEC-Malt_1971
+ OutImg=DSM1971-gray.tif_sfs.tif
+\end{verbatim}
+(3) Matching \ac{DSM} based on SuperGlue with 4 rotation hypotheses.\\
+
+ (3.1) Rotate the secondary \ac{DSM} four times and split \ac{DSM} pairs into patch pairs with command \textit{TestLib GetPatchPair}:\\
+\begin{verbatim}
+mm3d TestLib GetPatchPair BruteForce MEC-Malt_1971/DSM1971-gray.tif_sfs.tif 
+ MEC-Malt_1981/DSM1981-gray.tif_sfs.tif  OutDir=./Tmp_Patches-CoReg
+ Rotate=1 PatchLSz=[1280,960] PatchRSz=[1280,960]
+\end{verbatim}
+ (3.2) Hypothesis 0 $^\circ$:\\
+\begin{verbatim}
+mm3d TestLib SuperGlue SuperGlueInput.txt  InDir=./Tmp_Patches-CoReg/ 
+ OutDir=./Tmp_Patches-CoReg/ SpGOutSH=-SuperGlue
+
+mm3d TestLib MergeTiePt ./Tmp_Patches-CoReg/  HomoXml=SubPatch.xml 
+ MergeInSH=-SuperGlue MergeOutSH=-SubPatch PatchSz=[1280,960]
+
+mm3d TestLib RANSAC R2D MEC-Malt_1971.tif MEC-Malt_1981.tif
+ Dir=./Tmp_Patches-CoReg/ 2DRANInSH=-SubPatch
+ 2DRANOutSH=-SubPatch-2DRANSAC
+\end{verbatim}
+ (3.3) Hypothesis 90 $^\circ$:\\
+\begin{verbatim}
+mm3d TestLib SuperGlue SuperGlueInput_R90.txt  InDir=./Tmp_Patches-CoReg/ 
+ OutDir=./Tmp_Patches-CoReg/ SpGOutSH=-SuperGlue
+
+mm3d TestLib MergeTiePt ./Tmp_Patches-CoReg/  HomoXml=SubPatch_R90.xml 
+MergeInSH=-SuperGlue MergeOutSH=-SubPatch_R90
+ PatchSz=[1280,960]
+
+mm3d TestLib RANSAC R2D MEC-Malt_1971.tif MEC-Malt_1981.tif
+ Dir=./Tmp_Patches-CoReg/ 2DRANInSH=-SubPatch_R90 
+ 2DRANOutSH=-SubPatch_R90-2DRANSAC
+\end{verbatim}
+ (3.4) Hypothesis 180 $^\circ$:\\
+\begin{verbatim}
+mm3d TestLib SuperGlue SuperGlueInput_R180.txt  InDir=./Tmp_Patches-CoReg/ 
+ OutDir=./Tmp_Patches-CoReg/ SpGOutSH=-SuperGlue
+
+mm3d TestLib MergeTiePt ./Tmp_Patches-CoReg/  HomoXml=SubPatch_R180.xml 
+ MergeInSH=-SuperGlue MergeOutSH=-SubPatch_R180 PatchSz=[1280,960]
+
+mm3d TestLib RANSAC R2D MEC-Malt_1971.tif MEC-Malt_1981.tif
+ Dir=./Tmp_Patches-CoReg/ 2DRANInSH=-SubPatch_R180 
+ 2DRANOutSH=-SubPatch_R180-2DRANSAC
+\end{verbatim}
+ (3.5) Hypothesis 270 $^\circ$:\\
+\begin{verbatim}
+mm3d TestLib SuperGlue SuperGlueInput_R270.txt  InDir=./Tmp_Patches-CoReg/ 
+ OutDir=./Tmp_Patches-CoReg/ SpGOutSH=-SuperGlue
+
+mm3d TestLib MergeTiePt ./Tmp_Patches-CoReg/  HomoXml=SubPatch_R270.xml 
+ MergeInSH=-SuperGlue MergeOutSH=-SubPatch_R270 PatchSz=[1280,960]
+
+mm3d TestLib RANSAC R2D MEC-Malt_1971.tif MEC-Malt_1981.tif
+ Dir=./Tmp_Patches-CoReg/ 2DRANInSH=-SubPatch_R270 
+ 2DRANOutSH=-SubPatch_R270-2DRANSAC
+\end{verbatim}
+(4) Create GCPs with command \textit{TestLib CreateGCPs}:\\
+\begin{verbatim}
+mm3d TestLib CreateGCPs ./Tmp_Patches-CoReg MEC-Malt_1971.tif
+ MEC-Malt_1981.tif ./ ImgList1971all.txt ImgList1981all.txt
+ Ori-1971 Ori-1981 MEC-Malt_1971 MEC-Malt_1981 
+ CreateGCPsInSH=-SubPatch_R180-2DRANSAC Out2DXml1=OutGCP2D_epoch1971.xml
+ Out3DXml1=OutGCP3D_epoch1971.xml Out2DXml2=OutGCP2D_epoch1981.xml 
+ Out3DXml2=OutGCP3D_epoch1981.xml
+\end{verbatim}
+(5) 3D Helmert transformation with command \textit{GCPBascule}:\\
+\begin{verbatim}
+mm3d GCPBascule "OIS-Reech_IGNF_PVA_1-0__1971.*tif" 1971 1981
+ OutGCP3D_epoch1981.xml OutGCP2D_epoch1971.xml
+\end{verbatim}
+\item{Precise matching}
+
+(1) Get overlapped images with command \textit{TestLib GetOverlappedImages}:\\
+\begin{verbatim}
+mm3d TestLib GetOverlappedImages 1971 1981 ImgList1971all.txt
+ ImgList1981all.txt Para3DH=Basc-1971-2-1981.xml
+\end{verbatim}
+(2) Get Patch Pair with command \textit{TestLib GetPatchPair Guided}:\\
+\begin{verbatim}
+mm3d TestLib GetPatchPair Guided
+ OIS-Reech_IGNF_PVA_1-0__1971-06-21__C2844-0141_1971_FR2117_0974.tif 
+ OIS-Reech_IGNF_PVA_1-0__1981-06-16__C2544-0021_1981_F2544-2644_0064.tif 
+ Ori-1971 Ori-1981 OutDir=./Tmp_Patches-Precise 
+ SubPXml=OIS-Reech_IGNF_PVA_1-0__1971-06-21__C2844-0141_1971_FR2117_0974_
+OIS-Reech_IGNF_PVA_1-0__1981-06-16__C2544-0021_1981_F2544-2644_0064_SubPatch.xml 
+ ImgPair=OIS-Reech_IGNF_PVA_1-0__1971-06-21__C2844-0141_1971_FR2117_0974_
+OIS-Reech_IGNF_PVA_1-0__1981-06-16__C2544-0021_1981_F2544-2644_0064
+_SuperGlueInput.txt
+ PatchSz=[1280,960] Para3DH=Basc-1971-2-1981.xml DSMDirL=MEC-Malt_1971
+\end{verbatim}
+
+(3) Get tentative tie-points (option1: SuperGlue) with command \textit{TestLib SuperGlue} and \textit{TestLib MergeTiePt}:\\
+\begin{verbatim}
+mm3d TestLib SuperGlue
+ OIS-Reech_IGNF_PVA_1-0__1971-06-21__C2844-0141_1971_FR2117_0974_
+OIS-Reech_IGNF_PVA_1-0__1981-06-16__C2544-0021_1981_F2544-2644_0064
+_SuperGlueInput.txt  
+ InDir=./Tmp_Patches-Precise/ OutDir=./Tmp_Patches-Precise/ 
+ SpGOutSH=-SuperGlue CheckNb=100
+
+mm3d TestLib MergeTiePt ./Tmp_Patches-Precise/ 
+ HomoXml=OIS-Reech_IGNF_PVA_1-0__1971-06-21__C2844-0141_1971_FR2117_0974_
+OIS-Reech_IGNF_PVA_1-0__1981-06-16__C2544-0021_1981_F2544-2644_0064_SubPatch.xml 
+ MergeInSH=-SuperGlue MergeOutSH=-SuperGlue  OutDir=./ PatchSz=[1280,960] 
+ BufferSz=[128,96]
+\end{verbatim}
+
+(4) Get tentative tie-points (option1: SIFT) with command \textit{TestLib GuidedSIFTMatch}:\\
+\begin{verbatim}
+mm3d TestLib GuidedSIFTMatch
+ OIS-Reech_IGNF_PVA_1-0__1971-06-21__C2844-0141_1971_FR2117_0974.tif     
+ OIS-Reech_IGNF_PVA_1-0__1981-06-16__C2544-0021_1981_F2544-2644_0064.tif 
+ Ori-1971 Ori-1981  SkipSIFT=false DSMDirL=MEC-Malt_1971 DSMDirR=MEC-Malt_1981 
+ Para3DH=Basc-1971-2-1981.xml
+\end{verbatim}
+(5) 3D-RANSAC with command \textit{TestLib RANSAC R3D}:\\
+\begin{verbatim}
+mm3d TestLib RANSAC R3D
+ OIS-Reech_IGNF_PVA_1-0__1971-06-21__C2844-0141_1971_FR2117_0974.tif  
+ OIS-Reech_IGNF_PVA_1-0__1981-06-16__C2544-0021_1981_F2544-2644_0064.tif 
+ Ori-1971 Ori-1981 Dir=./  DSMDirL=MEC-Malt_1971 DSMDirR=MEC-Malt_1981 
+ DSMFileL=MMLastNuage.xml DSMFileR=MMLastNuage.xml 3DRANInSH=-SuperGlue 
+ 3DRANOutSH=-SuperGlue-3DRANSAC
+\end{verbatim}
+(6) Cross correlation with command \textit{TestLib CrossCorrelation}:\\
+\begin{verbatim}
+mm3d TestLib CrossCorrelation
+ OIS-Reech_IGNF_PVA_1-0__1971-06-21__C2844-0141_1971_FR2117_0974.tif 
+ OIS-Reech_IGNF_PVA_1-0__1981-06-16__C2544-0021_1981_F2544-2644_0064.tif
+ CCInSH=-SuperGlue-3DRANSAC CCOutSH=-SuperGlue-3DRANSAC-CrossCorrelation
+ SzW=32 CCTh=0.6 PatchSz=[1280,960] BufferSz=[30,60] 
+ PatchDir=./Tmp_Patches-Precise
+ SubPXml=OIS-Reech_IGNF_PVA_1-0__1971-06-21__C2844-0141_1971_FR2117_0974_
+OIS-Reech_IGNF_PVA_1-0__1981-06-16__C2544-0021_1981_F2544-2644_0064_SubPatch.xml
+\end{verbatim}
+\end{enumerate}
+
+\section{Evaluation}
+\subsection{Roughly co-registered DoD}
+\begin{enumerate}
+
+\item{Get \ac{DSM} of epoch 1971:}
+\begin{verbatim}
+mm3d Malt Ortho OIS-Reech_IGNF_PVA_1-0__1971.*tif 1981 NbVI=2 
+ DirMEC=MEC-Malt_1971_CoReg EZA=1 MasqImGlob=Fiducial_marks_masq-1971-3.tif 
+ ZoomF=4 DoOrtho=0
+\end{verbatim}
+\item{Calculate DoD with command \textit{CmpIm}:}
+\begin{verbatim}
+mm3d CmpIm MEC-Malt_1971_CoReg/Z_Num7_DeZoom4_STD-MALT.tif 
+ MEC-Malt_1981/Z_Num8_DeZoom2_STD-MALT.tif UseFOM=1 FileDiff=DoD-CoReg.tif 
+ 16Bit=1
+\end{verbatim}
+\end{enumerate}
+
+\subsection{Refined DoD based on SuperGlue}
+\begin{enumerate}
+
+\item{Set weight of inter-epoch tie-points with command \textit{TestLib TiePtAddWeight }:}
+\begin{verbatim}
+mm3d TestLib TiePtAddWeight 10 InSH=-SuperGlue-3DRANSAC-CrossCorrelation
+\end{verbatim}
+\item{Txt to binary conversion with command \textit{HomolFilterMasq}:}
+\begin{verbatim}
+mm3d HomolFilterMasq "O.*tif" PostIn=-SuperGlue-3DRANSAC-CrossCorrelation-W10 
+ PostOut=-SuperGlue-3DRANSAC-CrossCorrelation-W10-dat ANM=1 ExpTxt=1 
+ ExpTxtOut=0
+\end{verbatim}
+\item{Merge intra- and inter-epoch tie-points with command \textit{MergeHomol}:}
+\begin{verbatim}
+mm3d MergeHomol "Homol_1971-Ratafia|Homol_1981-Ratafia
+|Homol-SuperGlue-3DRANSAC-CrossCorrelation-W10-dat"
+ Homol_Merged-SuperGlue
+\end{verbatim}
+\item{Run bundle adjustment with command \textit{Campari}:}
+\begin{verbatim}
+mm3d Campari "O.*tif" 1981 Campari_Refined-SuperGlue SH=_Merged-SuperGlue 
+AllFree=1 NbIterEnd=20 SigmaTieP=0.25
+\end{verbatim}
+\item{Get \ac{DSM} of epoch 1981:}
+\begin{verbatim}
+mm3d Malt Ortho OIS-Reech_IGNF_PVA_1-0__1981.*tif Campari_Refined-SuperGlue
+ NbVI=2 DirMEC=MEC-Malt_1981_Refined-SuperGlue EZA=1 
+ MasqImGlob=Fiducial_marks_masq-1981-3.tif ZoomF=2 DoOrtho=0
+\end{verbatim}
+\item{Get \ac{DSM} of epoch 1971:}
+\begin{verbatim}
+mm3d Malt Ortho OIS-Reech_IGNF_PVA_1-0__1971.*tif Campari_Refined-SuperGlue
+ NbVI=2 DirMEC=MEC-Malt_1971_Refined-SuperGlue EZA=1 
+ MasqImGlob=Fiducial_marks_masq-1971-3.tif ZoomF=4 DoOrtho=0
+\end{verbatim}
+\item{Calculate DoD:}
+\begin{verbatim}
+mm3d CmpIm MEC-Malt_1971_Refined-SuperGlue/Z_Num7_DeZoom4_STD-MALT.tif 
+ MEC-Malt_1981_Refined-SuperGlue/Z_Num8_DeZoom2_STD-MALT.tif UseFOM=1 
+ FileDiff=DoD-Refined-SuperGlue.tif 16Bit=1
+\end{verbatim}
+\end{enumerate}
+
+\subsection{Refined DoD based on SIFT}
+\begin{enumerate}
+
+\item{Set weight of inter-epoch tie-points:}
+\begin{verbatim}
+mm3d TestLib TiePtAddWeight 10 InSH=-GuidedSIFT-3DRANSAC-CrossCorrelation
+\end{verbatim}
+\item{Txt to binary conversion:}
+\begin{verbatim}
+mm3d HomolFilterMasq "O.*tif" PostIn=-GuidedSIFT-3DRANSAC-CrossCorrelation-W10 
+ PostOut=-GuidedSIFT-3DRANSAC-CrossCorrelation-W10-dat ANM=1 ExpTxt=1 
+ ExpTxtOut=0
+\end{verbatim}
+\item{Merge intra- and inter-epoch tie-points:}
+\begin{verbatim}
+mm3d MergeHomol "Homol_1971-Ratafia|Homol_1981-Ratafia
+|Homol-GuidedSIFT-3DRANSAC-CrossCorrelation-W10-dat"
+ Homol_Merged-GuidedSIFT
+\end{verbatim}
+\item{Run bundle adjustment:}
+\begin{verbatim}
+mm3d Campari "O.*tif" 1981 Campari_Refined-GuidedSIFT SH=_Merged-GuidedSIFT
+ AllFree=1 NbIterEnd=20 SigmaTieP=0.25
+\end{verbatim}
+\item{Get \ac{DSM} of epoch 1981:}
+\begin{verbatim}
+mm3d Malt Ortho OIS-Reech_IGNF_PVA_1-0__1981.*tif Campari_Refined-GuidedSIFT 
+ NbVI=2 DirMEC=MEC-Malt_1981_Refined-GuidedSIFT EZA=1
+ MasqImGlob=Fiducial_marks_masq-1981-3.tif ZoomF=2 DoOrtho=0
+\end{verbatim}
+\item{Get \ac{DSM} of epoch 1971:}
+\begin{verbatim}
+mm3d Malt Ortho OIS-Reech_IGNF_PVA_1-0__1971.*tif Campari_Refined-GuidedSIFT 
+ NbVI=2 DirMEC=MEC-Malt_1971_Refined-GuidedSIFT
+ MasqImGlob=Fiducial_marks_masq-1971-3.tif EZA=1 ZoomF=4 DoOrtho=0
+\end{verbatim}
+\item{Calculate DoD:}
+\begin{verbatim}
+mm3d CmpIm MEC-Malt_1971_Refined-GuidedSIFT/Z_Num7_DeZoom4_STD-MALT.tif 
+ MEC-Malt_1981_Refined-GuidedSIFT/Z_Num8_DeZoom2_STD-MALT.tif UseFOM=1 
+ FileDiff=DoD-Refined-GuidedSIFT.tif 16Bit=1
+\end{verbatim}
+\end{enumerate}
+

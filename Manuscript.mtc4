@@ -1,5 +1,6 @@
-{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode Fr{\'e}jus.}{\reset@font\mtcPfont 15}{section*.13}}
-{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode Pezenas.}{\reset@font\mtcPfont 16}{section*.17}}
-{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode Kobe.}{\reset@font\mtcPfont 16}{section*.18}}
-{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode Alberona.}{\reset@font\mtcPfont 16}{section*.19}}
-{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode Hofsjökull.}{\reset@font\mtcPfont 16}{section*.20}}
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {3.1}Local feature matching}{\reset@font\mtcSfont 19}{section.3.1}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {3.1.1}Hand-crafted methods}{\reset@font\mtcSSfont 19}{subsection.3.1.1}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {3.1.2}Learned methods}{\reset@font\mtcSSfont 20}{subsection.3.1.2}}
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {3.2}Robust matching}{\reset@font\mtcSfont 21}{section.3.2}}
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {3.3}Pose estimation}{\reset@font\mtcSfont 22}{section.3.3}}
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {3.4}Historical image processing}{\reset@font\mtcSfont 23}{section.3.4}}

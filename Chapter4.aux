@@ -1,20 +1,18 @@
 \relax 
 \providecommand\hyper@newdestlabel[2]{}
-\@writefile{toc}{\contentsline {chapter}{\numberline {5}Precise matching}{51}{chapter.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {chapter}{\numberline {6}Precise matching}{63}{chapter.6}\protected@file@percent }
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\@writefile{lof}{\contentsline {xchapter}{Precise matching}{51}{chapter.5}\protected@file@percent }
-\@writefile{lot}{\contentsline {xchapter}{Precise matching}{51}{chapter.5}\protected@file@percent }
-\newlabel{chap:Precisematching}{{5}{51}{Precise matching}{chapter.5}{}}
+\@writefile{lof}{\contentsline {xchapter}{Precise matching}{63}{chapter.6}\protected@file@percent }
+\@writefile{lot}{\contentsline {xchapter}{Precise matching}{63}{chapter.6}\protected@file@percent }
+\newlabel{chap:Precisematching}{{6}{63}{Precise matching}{chapter.6}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {6.1}Introduction}{63}{section.6.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.1.1}Motivation and objective}{63}{subsection.6.1.1}\protected@file@percent }
 \acronymused{DSM}
-\@writefile{toc}{\contentsline {section}{\numberline {5.1}Introduction}{51}{section.5.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.1.1}Motivation and objective}{51}{subsection.5.1.1}\protected@file@percent }
-\acronymused{DSM}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.1.2}Contributions}{52}{subsection.5.1.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.1.2}Contributions}{64}{subsection.6.1.2}\protected@file@percent }
 \acronymused{DSM}
 \acronymused{DSM}
-\@writefile{toc}{\contentsline {section}{\numberline {5.2}Methodology}{52}{section.5.2}\protected@file@percent }
-\acronymused{DSM}
+\@writefile{toc}{\contentsline {section}{\numberline {6.2}Methodology}{64}{section.6.2}\protected@file@percent }
 \acronymused{DSM}
 \acronymused{DSM}
 \acronymused{DSM}
@@ -22,49 +20,54 @@
 \acronymused{DSM}
 \acronymused{DSM}
 \acronymused{DSM}
-\@writefile{lof}{\contentsline {figure}{\numberline {5.1}{\ignorespaces (a) Workflow of precise matching. It is carried out by performing patch or guided matching to obtain tentative matches, followed by 3D-RANSAC filter and cross correlation, giving rise to final matches. (b) and (d) illustrate toy-examples of the patch matching and guided matching, respectively. (c) displays the feature correspondences where $\mathbf  {K}^{e_1}$ exceeds the original tile size (dark green area) and therefore will be abandoned.}}{53}{figure.5.1}\protected@file@percent }
-\newlabel{WorkflowPatch}{{5.1}{53}{(a) Workflow of precise matching. It is carried out by performing patch or guided matching to obtain tentative matches, followed by 3D-RANSAC filter and cross correlation, giving rise to final matches. (b) and (d) illustrate toy-examples of the patch matching and guided matching, respectively. (c) displays the feature correspondences where $\mathbf {K}^{e_1}$ exceeds the original tile size (dark green area) and therefore will be abandoned}{figure.5.1}{}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {Workflow}}}{53}{figure.5.1}\protected@file@percent }
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {Patch matching}}}{53}{figure.5.1}\protected@file@percent }
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(c)}{\ignorespaces {Buffer zone of tiles}}}{53}{figure.5.1}\protected@file@percent }
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(d)}{\ignorespaces {Guided matching}}}{53}{figure.5.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.2.1}Get tentative matches with patch/guided matching}{53}{subsection.5.2.1}\protected@file@percent }
-\newlabel{patch matching}{{5.2.1}{53}{Get tentative matches with patch/guided matching}{subsection.5.2.1}{}}
-\@writefile{toc}{\contentsline {paragraph}{Patch matching for learned features.}{54}{section*.34}\protected@file@percent }
 \acronymused{DSM}
-\@writefile{toc}{\contentsline {paragraph}{Guided matching for hand-crafted features.}{54}{section*.35}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {5.2}{\ignorespaces Illustration of patch matching applied on an image pair. (a) Example demonstration of an image pair. The master image ($I^{e_1}$) and secondary image ($I^{e_2}$) are taken at Fr{\'e}jus in 1954 and 2014 individually. (b) Tile pairs resulted from \textit  {one-to-one tiling scheme}, the tile zones before and after buffering are marked as red and green rectangles.}}{55}{figure.5.2}\protected@file@percent }
-\newlabel{patchexample}{{5.2}{55}{Illustration of patch matching applied on an image pair. (a) Example demonstration of an image pair. The master image ($I^{e_1}$) and secondary image ($I^{e_2}$) are taken at Fr{\'e}jus in 1954 and 2014 individually. (b) Tile pairs resulted from \textit {one-to-one tiling scheme}, the tile zones before and after buffering are marked as red and green rectangles}{figure.5.2}{}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {Example of an image pair}}}{55}{figure.5.2}\protected@file@percent }
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {Demonstration of tile pairs}}}{55}{figure.5.2}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {6.1}{\ignorespaces (a) Workflow of precise matching. It is carried out by performing patch or guided matching to obtain tentative matches, followed by 3D-RANSAC filter and cross correlation, giving rise to final matches. (b) and (d) illustrate toy-examples of the patch and guided matching, respectively. (c) displays the match where $\mathbf  {K}^{e_1}$ exceeds the original tile size (dark green area) and is therefore abandoned.}}{65}{figure.6.1}\protected@file@percent }
+\newlabel{WorkflowPatch}{{6.1}{65}{(a) Workflow of precise matching. It is carried out by performing patch or guided matching to obtain tentative matches, followed by 3D-RANSAC filter and cross correlation, giving rise to final matches. (b) and (d) illustrate toy-examples of the patch and guided matching, respectively. (c) displays the match where $\mathbf {K}^{e_1}$ exceeds the original tile size (dark green area) and is therefore abandoned}{figure.6.1}{}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {Workflow}}}{65}{figure.6.1}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {Patch matching}}}{65}{figure.6.1}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(c)}{\ignorespaces {Buffer zone of tiles}}}{65}{figure.6.1}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(d)}{\ignorespaces {Guided matching}}}{65}{figure.6.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.2.1}Get tentative matches with patch/guided matching}{65}{subsection.6.2.1}\protected@file@percent }
+\newlabel{patch matching}{{6.2.1}{65}{Get tentative matches with patch/guided matching}{subsection.6.2.1}{}}
+\@writefile{toc}{\contentsline {paragraph}{Patch matching for learned features.}{65}{section*.39}\protected@file@percent }
 \citation{lowe2004distinctive}
-\@writefile{lof}{\contentsline {figure}{\numberline {5.3}{\ignorespaces Example demonstration of keypoint prediction (cross symbols) accompanied with search space (circles) on an image pair, the master image ($I^{e_1}$) and secondary image ($I^{e_2}$) are taken at Fr{\'e}jus in 1954 and 2014 individually.}}{56}{figure.5.3}\protected@file@percent }
-\newlabel{guidedexample}{{5.3}{56}{Example demonstration of keypoint prediction (cross symbols) accompanied with search space (circles) on an image pair, the master image ($I^{e_1}$) and secondary image ($I^{e_2}$) are taken at Fr{\'e}jus in 1954 and 2014 individually}{figure.5.3}{}}
-\@writefile{brf}{\backcite{lowe2004distinctive}{{56}{7}{Item.79}}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.2.2}Get enhanced matches with 3D-RANSAC}{56}{subsection.5.2.2}\protected@file@percent }
-\newlabel{eq:2DSim}{{5.1}{56}{Get enhanced matches with 3D-RANSAC}{equation.5.2.1}{}}
+\acronymused{DSM}
+\acronymused{DSM}
+\@writefile{toc}{\contentsline {paragraph}{Guided matching for hand-crafted features.}{66}{section*.40}\protected@file@percent }
+\acronymused{DSM}
+\acronymused{DSM}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.2}{\ignorespaces Illustration of patch matching applied on an inter-epoch image pair. (a) The master image ($I^{e_1}$) and secondary image ($I^{e_2}$) are taken at Fr{\'e}jus in 1954 and 2014 individually. (b) Tile pairs resulted from \textit  {one-to-one tiling scheme}, the tile zones before and after buffering are marked as red and green rectangles.}}{67}{figure.6.2}\protected@file@percent }
+\newlabel{patchexample}{{6.2}{67}{Illustration of patch matching applied on an inter-epoch image pair. (a) The master image ($I^{e_1}$) and secondary image ($I^{e_2}$) are taken at Fr{\'e}jus in 1954 and 2014 individually. (b) Tile pairs resulted from \textit {one-to-one tiling scheme}, the tile zones before and after buffering are marked as red and green rectangles}{figure.6.2}{}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {Example of an image pair}}}{67}{figure.6.2}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {Demonstration of tile pairs}}}{67}{figure.6.2}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {6.3}{\ignorespaces Illustration of keypoint prediction (cross symbols) accompanied with search space (circles), the master image ($I^{e_1}$) and secondary image ($I^{e_2}$) are taken at Fr{\'e}jus in 1954 and 2014 individually.}}{68}{figure.6.3}\protected@file@percent }
+\newlabel{guidedexample}{{6.3}{68}{Illustration of keypoint prediction (cross symbols) accompanied with search space (circles), the master image ($I^{e_1}$) and secondary image ($I^{e_2}$) are taken at Fr{\'e}jus in 1954 and 2014 individually}{figure.6.3}{}}
+\@writefile{brf}{\backcite{lowe2004distinctive}{{68}{7}{Item.94}}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.2.2}Get enhanced matches with 3D-RANSAC}{68}{subsection.6.2.2}\protected@file@percent }
+\acronymused{DSM}
+\newlabel{eq:3DSimP}{{6.1}{68}{Get enhanced matches with 3D-RANSAC}{equation.6.2.1}{}}
 \citation{fraser1997digital}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.2.3}Get final matches with cross correlation}{57}{subsection.5.2.3}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {5.4}{\ignorespaces Demonstration of the validation with cross-correlation. Considering poor quality of historical images, the window size (blue and red rectangles) was set to 32$\times $32 pixels. False match (red) is eliminated by cross correlation, while true match (blue) is kept.}}{57}{figure.5.4}\protected@file@percent }
-\newlabel{crossc}{{5.4}{57}{Demonstration of the validation with cross-correlation. Considering poor quality of historical images, the window size (blue and red rectangles) was set to 32$\times $32 pixels. False match (red) is eliminated by cross correlation, while true match (blue) is kept}{figure.5.4}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.2.4}Refine orientations}{57}{subsection.5.2.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.2.3}Get final matches with cross correlation}{69}{subsection.6.2.3}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {6.4}{\ignorespaces Demonstration of the validation with cross-correlation. Considering poor quality of historical images, the window size (blue and red rectangles) was set to 32$\times $32 pixels. False match (red) is eliminated by cross correlation, while true match (blue) is kept.}}{69}{figure.6.4}\protected@file@percent }
+\newlabel{crossc}{{6.4}{69}{Demonstration of the validation with cross-correlation. Considering poor quality of historical images, the window size (blue and red rectangles) was set to 32$\times $32 pixels. False match (red) is eliminated by cross correlation, while true match (blue) is kept}{figure.6.4}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.2.4}Refine orientations}{69}{subsection.6.2.4}\protected@file@percent }
 \acronymused{BBA}
 \acronymused{BBA}
-\@writefile{brf}{\backcite{fraser1997digital}{{58}{5.2.4}{subsection.5.2.4}}}
-\@writefile{toc}{\contentsline {section}{\numberline {5.3}Experiments}{58}{section.5.3}\protected@file@percent }
-\acronymused{GT}
-\acronymused{BBA}
+\@writefile{brf}{\backcite{fraser1997digital}{{69}{6.2.4}{subsection.6.2.4}}}
 \citation{marc2016micmac}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.3.1}Implementation details}{59}{subsection.5.3.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {6.3}Experiments}{70}{section.6.3}\protected@file@percent }
+\acronymused{DSM}
+\acronymused{GT}
+\acronymused{BBA}
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.3.1}Implementation details}{71}{subsection.6.3.1}\protected@file@percent }
 \acronymused{DSM}
 \acronymused{DSM}
 \acronymused{DSM}
-\@writefile{brf}{\backcite{marc2016micmac}{{59}{5.3.1}{subsection.5.3.1}}}
+\@writefile{brf}{\backcite{marc2016micmac}{{71}{6.3.1}{subsection.6.3.1}}}
 \acronymused{BBA}
 \acronymused{BBA}
-\acronymused{DSM}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.3.2}Comparison of precise matching on \ac {DSM}s and original RGB images}{59}{subsection.5.3.2}\protected@file@percent }
-\newlabel{CompareRGBDSM}{{5.3.2}{59}{Comparison of precise matching on \ac {DSM}s and original RGB images}{subsection.5.3.2}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.3.2}Comparison of precise matching on DSMs and original RGB images}{71}{subsection.6.3.2}\protected@file@percent }
+\newlabel{CompareRGBDSM}{{6.3.2}{71}{Comparison of precise matching on DSMs and original RGB images}{subsection.6.3.2}{}}
 \acronymused{DSM}
 \acronymused{DSM}
 \acronymused{GT}
@@ -72,106 +75,96 @@
 \acronymused{DSM}
 \acronymused{DSM}
 \acronymused{DSM}
-\@writefile{lof}{\contentsline {figure}{\numberline {5.5}{\ignorespaces Comparison of precise matching on original RGB images and \ac {DSM}s.}}{60}{figure.5.5}\protected@file@percent }
 \acronymused{DSM}
-\newlabel{precisematchingdepth}{{5.5}{60}{Comparison of precise matching on original RGB images and \ac {DSM}s}{figure.5.5}{}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {Matches on RGB images}}}{60}{figure.5.5}\protected@file@percent }
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {Matches on \ac {DSM}s}}}{60}{figure.5.5}\protected@file@percent }
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(c)}{\ignorespaces {Accuracy of (a) and (b)}}}{60}{figure.5.5}\protected@file@percent }
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(d)}{\ignorespaces {Shaded image of historical DSM}}}{60}{figure.5.5}\protected@file@percent }
+\acronymused{DSM}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.5}{\ignorespaces Comparison of precise matching on original RGB images and \ac {DSM}s.}}{72}{figure.6.5}\protected@file@percent }
+\acronymused{DSM}
+\newlabel{precisematchingdepth}{{6.5}{72}{Comparison of precise matching on original RGB images and \ac {DSM}s}{figure.6.5}{}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {Matches on RGB images}}}{72}{figure.6.5}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {Matches on \ac {DSM}s}}}{72}{figure.6.5}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(c)}{\ignorespaces {Accuracy of (a) and (b)}}}{72}{figure.6.5}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(d)}{\ignorespaces {Shaded image of historical \ac {DSM}}}}{72}{figure.6.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.3.3}Comparison of 6 variants}{72}{subsection.6.3.3}\protected@file@percent }
+\newlabel{Comparisonof6variantsP}{{6.3.3}{72}{Comparison of 6 variants}{subsection.6.3.3}{}}
+\acronymused{DoD}
+\acronymused{DSM}
+\acronymused{DoD}
+\acronymused{DoD}
 \citation{rosu2015measurement}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.3.3}Comparison of 6 variants}{61}{subsection.5.3.3}\protected@file@percent }
-\acronymused{DoD}
-\acronymused{DSM}
-\acronymused{DoD}
-\acronymused{DoD}
-\acronymused{DoD}
-\acronymused{GT}
-\acronymused{GT}
-\acronymused{DoD}
-\acronymused{DSM}
-\@writefile{brf}{\backcite{rosu2015measurement}{{61}{3}{Item.88}}}
-\newlabel{matchVizMainBody}{{5.3.3}{61}{Matches visualization}{section*.36}{}}
-\@writefile{toc}{\contentsline {paragraph}{Matches visualization.}{61}{section*.36}\protected@file@percent }
-\acronymused{DoD}
-\@writefile{toc}{\contentsline {paragraph}{\ac {DoD}.}{61}{section*.37}\protected@file@percent }
-\acronymused{DoD}
-\acronymused{DoD}
-\acronymused{DoD}
-\@writefile{lof}{\contentsline {figure}{\numberline {5.6}{\ignorespaces Precise matching visualization of \textbf  {Fr{\'e}jus 1954 and 2014}. (a) Image pairs to be matched, with red rectangles indicating the common zone. (b) Numbers of tentative, enhanced and final matches recovered with $Patch_{SpGDSM}$, $Guided_{SpGDSM}$, $Patch_{SIFTDSM}$ and $Guided_{SIFTDSM}$ individually. (c-f) Visualization of final matches recovered with $Patch_{SpGDSM}$, $Guided_{SpGDSM}$, $Patch_{SIFTDSM}$ and $Guided_{SIFTDSM}$ individually.}}{62}{figure.5.6}\protected@file@percent }
-\newlabel{MatchVizFrejus1954-2014}{{5.6}{62}{Precise matching visualization of \textbf {Fr{\'e}jus 1954 and 2014}. (a) Image pairs to be matched, with red rectangles indicating the common zone. (b) Numbers of tentative, enhanced and final matches recovered with $Patch_{SpGDSM}$, $Guided_{SpGDSM}$, $Patch_{SIFTDSM}$ and $Guided_{SIFTDSM}$ individually. (c-f) Visualization of final matches recovered with $Patch_{SpGDSM}$, $Guided_{SpGDSM}$, $Patch_{SIFTDSM}$ and $Guided_{SIFTDSM}$ individually}{figure.5.6}{}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {Common zone}}}{62}{figure.5.6}\protected@file@percent }
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {Number of recovered matches}}}{62}{figure.5.6}\protected@file@percent }
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(c)}{\ignorespaces {$Patch_{SpGDSM}$}}}{62}{figure.5.6}\protected@file@percent }
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(d)}{\ignorespaces {$Guided_{SpGDSM}$}}}{62}{figure.5.6}\protected@file@percent }
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(e)}{\ignorespaces {$Patch_{SIFTDSM}$}}}{62}{figure.5.6}\protected@file@percent }
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(f)}{\ignorespaces {$Guided_{SIFTDSM}$}}}{62}{figure.5.6}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {5.7}{\ignorespaces Precise matching visualization of \textbf  {Fr{\'e}jus 1966 and 2014}. (a) Image pairs to be matched, with red rectangles indicating the common zone. (b) Numbers of tentative, enhanced and final matches recovered with $Patch_{SpGDSM}$, $Guided_{SpGDSM}$, $Patch_{SIFTDSM}$ and $Guided_{SIFTDSM}$ individually. (c-f) Visualization of final matches recovered with $Patch_{SpGDSM}$, $Guided_{SpGDSM}$, $Patch_{SIFTDSM}$ and $Guided_{SIFTDSM}$ individually.}}{63}{figure.5.7}\protected@file@percent }
-\newlabel{MatchVizFrejus1966-2014}{{5.7}{63}{Precise matching visualization of \textbf {Fr{\'e}jus 1966 and 2014}. (a) Image pairs to be matched, with red rectangles indicating the common zone. (b) Numbers of tentative, enhanced and final matches recovered with $Patch_{SpGDSM}$, $Guided_{SpGDSM}$, $Patch_{SIFTDSM}$ and $Guided_{SIFTDSM}$ individually. (c-f) Visualization of final matches recovered with $Patch_{SpGDSM}$, $Guided_{SpGDSM}$, $Patch_{SIFTDSM}$ and $Guided_{SIFTDSM}$ individually}{figure.5.7}{}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {Common zone}}}{63}{figure.5.7}\protected@file@percent }
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {Number of recovered matches}}}{63}{figure.5.7}\protected@file@percent }
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(c)}{\ignorespaces {$Patch_{SpGDSM}$}}}{63}{figure.5.7}\protected@file@percent }
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(d)}{\ignorespaces {$Guided_{SpGDSM}$}}}{63}{figure.5.7}\protected@file@percent }
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(e)}{\ignorespaces {$Patch_{SIFTDSM}$}}}{63}{figure.5.7}\protected@file@percent }
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(f)}{\ignorespaces {$Guided_{SIFTDSM}$}}}{63}{figure.5.7}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {5.8}{\ignorespaces Precise matching visualization of \textbf  {Fr{\'e}jus 1970 and 2014}. (a) Image pairs to be matched, with red rectangles indicating the common zone. (b) Numbers of tentative, enhanced and final matches recovered with $Patch_{SpGDSM}$, $Guided_{SpGDSM}$, $Patch_{SIFTDSM}$ and $Guided_{SIFTDSM}$ individually. (c-f) Visualization of final matches recovered with $Patch_{SpGDSM}$, $Guided_{SpGDSM}$, $Patch_{SIFTDSM}$ and $Guided_{SIFTDSM}$ individually.}}{64}{figure.5.8}\protected@file@percent }
-\newlabel{MatchVizFrejus1970-2014}{{5.8}{64}{Precise matching visualization of \textbf {Fr{\'e}jus 1970 and 2014}. (a) Image pairs to be matched, with red rectangles indicating the common zone. (b) Numbers of tentative, enhanced and final matches recovered with $Patch_{SpGDSM}$, $Guided_{SpGDSM}$, $Patch_{SIFTDSM}$ and $Guided_{SIFTDSM}$ individually. (c-f) Visualization of final matches recovered with $Patch_{SpGDSM}$, $Guided_{SpGDSM}$, $Patch_{SIFTDSM}$ and $Guided_{SIFTDSM}$ individually}{figure.5.8}{}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {Common zone}}}{64}{figure.5.8}\protected@file@percent }
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {Number of recovered matches}}}{64}{figure.5.8}\protected@file@percent }
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(c)}{\ignorespaces {$Patch_{SpGDSM}$}}}{64}{figure.5.8}\protected@file@percent }
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(d)}{\ignorespaces {$Guided_{SpGDSM}$}}}{64}{figure.5.8}\protected@file@percent }
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(e)}{\ignorespaces {$Patch_{SIFTDSM}$}}}{64}{figure.5.8}\protected@file@percent }
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(f)}{\ignorespaces {$Guided_{SIFTDSM}$}}}{64}{figure.5.8}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {5.9}{\ignorespaces Precise matching visualization of \textbf  {Fr{\'e}jus 1954 and 1970}. (a) Image pairs to be matched, with red rectangles indicating the common zone. (b) Numbers of tentative, enhanced and final matches recovered with $Patch_{SpGDSM}$, $Guided_{SpGDSM}$, $Patch_{SIFTDSM}$ and $Guided_{SIFTDSM}$ individually. (c-f) Visualization of final matches recovered with $Patch_{SpGDSM}$, $Guided_{SpGDSM}$, $Patch_{SIFTDSM}$ and $Guided_{SIFTDSM}$ individually.}}{65}{figure.5.9}\protected@file@percent }
-\newlabel{MatchVizFrejus1954-1970}{{5.9}{65}{Precise matching visualization of \textbf {Fr{\'e}jus 1954 and 1970}. (a) Image pairs to be matched, with red rectangles indicating the common zone. (b) Numbers of tentative, enhanced and final matches recovered with $Patch_{SpGDSM}$, $Guided_{SpGDSM}$, $Patch_{SIFTDSM}$ and $Guided_{SIFTDSM}$ individually. (c-f) Visualization of final matches recovered with $Patch_{SpGDSM}$, $Guided_{SpGDSM}$, $Patch_{SIFTDSM}$ and $Guided_{SIFTDSM}$ individually}{figure.5.9}{}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {Common zone}}}{65}{figure.5.9}\protected@file@percent }
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {Number of recovered matches}}}{65}{figure.5.9}\protected@file@percent }
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(c)}{\ignorespaces {$Patch_{SpGDSM}$}}}{65}{figure.5.9}\protected@file@percent }
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(d)}{\ignorespaces {$Guided_{SpGDSM}$}}}{65}{figure.5.9}\protected@file@percent }
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(e)}{\ignorespaces {$Patch_{SIFTDSM}$}}}{65}{figure.5.9}\protected@file@percent }
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(f)}{\ignorespaces {$Guided_{SIFTDSM}$}}}{65}{figure.5.9}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {5.10}{\ignorespaces Precise matching visualization of \textbf  {Fr{\'e}jus 1966 and 1970}. (a) Image pairs to be matched, with red rectangles indicating the common zone. (b) Numbers of tentative, enhanced and final matches recovered with $Patch_{SpGDSM}$, $Guided_{SpGDSM}$, $Patch_{SIFTDSM}$ and $Guided_{SIFTDSM}$ individually. (c-f) Visualization of final matches recovered with $Patch_{SpGDSM}$, $Guided_{SpGDSM}$, $Patch_{SIFTDSM}$ and $Guided_{SIFTDSM}$ individually.}}{66}{figure.5.10}\protected@file@percent }
-\newlabel{MatchVizFrejus1966-1970}{{5.10}{66}{Precise matching visualization of \textbf {Fr{\'e}jus 1966 and 1970}. (a) Image pairs to be matched, with red rectangles indicating the common zone. (b) Numbers of tentative, enhanced and final matches recovered with $Patch_{SpGDSM}$, $Guided_{SpGDSM}$, $Patch_{SIFTDSM}$ and $Guided_{SIFTDSM}$ individually. (c-f) Visualization of final matches recovered with $Patch_{SpGDSM}$, $Guided_{SpGDSM}$, $Patch_{SIFTDSM}$ and $Guided_{SIFTDSM}$ individually}{figure.5.10}{}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {Common zone}}}{66}{figure.5.10}\protected@file@percent }
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {Number of recovered matches}}}{66}{figure.5.10}\protected@file@percent }
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(c)}{\ignorespaces {$Patch_{SpGDSM}$}}}{66}{figure.5.10}\protected@file@percent }
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(d)}{\ignorespaces {$Guided_{SpGDSM}$}}}{66}{figure.5.10}\protected@file@percent }
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(e)}{\ignorespaces {$Patch_{SIFTDSM}$}}}{66}{figure.5.10}\protected@file@percent }
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(f)}{\ignorespaces {$Guided_{SIFTDSM}$}}}{66}{figure.5.10}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {5.11}{\ignorespaces Precise matching visualization of \textbf  {Fr{\'e}jus 1954 and 1966}. (a) Image pairs to be matched, with red rectangles indicating the common zone. (b) Numbers of tentative, enhanced and final matches recovered with $Patch_{SpGDSM}$, $Guided_{SpGDSM}$, $Patch_{SIFTDSM}$ and $Guided_{SIFTDSM}$ individually. (c-f) Visualization of final matches recovered with $Patch_{SpGDSM}$, $Guided_{SpGDSM}$, $Patch_{SIFTDSM}$ and $Guided_{SIFTDSM}$ individually.}}{67}{figure.5.11}\protected@file@percent }
-\newlabel{MatchVizFrejus1954-1966}{{5.11}{67}{Precise matching visualization of \textbf {Fr{\'e}jus 1954 and 1966}. (a) Image pairs to be matched, with red rectangles indicating the common zone. (b) Numbers of tentative, enhanced and final matches recovered with $Patch_{SpGDSM}$, $Guided_{SpGDSM}$, $Patch_{SIFTDSM}$ and $Guided_{SIFTDSM}$ individually. (c-f) Visualization of final matches recovered with $Patch_{SpGDSM}$, $Guided_{SpGDSM}$, $Patch_{SIFTDSM}$ and $Guided_{SIFTDSM}$ individually}{figure.5.11}{}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {Common zone}}}{67}{figure.5.11}\protected@file@percent }
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {Number of recovered matches}}}{67}{figure.5.11}\protected@file@percent }
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(c)}{\ignorespaces {$Patch_{SpGDSM}$}}}{67}{figure.5.11}\protected@file@percent }
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(d)}{\ignorespaces {$Guided_{SpGDSM}$}}}{67}{figure.5.11}\protected@file@percent }
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(e)}{\ignorespaces {$Patch_{SIFTDSM}$}}}{67}{figure.5.11}\protected@file@percent }
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(f)}{\ignorespaces {$Guided_{SIFTDSM}$}}}{67}{figure.5.11}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {5.12}{\ignorespaces Precise matching visualization of \textbf  {Alberona 1954 and 2003}. (a) Image pairs to be matched, with red rectangles indicating the common zone. (b) Numbers of tentative, enhanced and final matches recovered with $Patch_{SpGDSM}$, $Guided_{SpGDSM}$, $Patch_{SIFTDSM}$ and $Guided_{SIFTDSM}$ individually. (c-f) Visualization of final matches recovered with $Patch_{SpGDSM}$, $Guided_{SpGDSM}$, $Patch_{SIFTDSM}$ and $Guided_{SIFTDSM}$ individually.}}{68}{figure.5.12}\protected@file@percent }
-\newlabel{MatchVizAlberona}{{5.12}{68}{Precise matching visualization of \textbf {Alberona 1954 and 2003}. (a) Image pairs to be matched, with red rectangles indicating the common zone. (b) Numbers of tentative, enhanced and final matches recovered with $Patch_{SpGDSM}$, $Guided_{SpGDSM}$, $Patch_{SIFTDSM}$ and $Guided_{SIFTDSM}$ individually. (c-f) Visualization of final matches recovered with $Patch_{SpGDSM}$, $Guided_{SpGDSM}$, $Patch_{SIFTDSM}$ and $Guided_{SIFTDSM}$ individually}{figure.5.12}{}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {Common zone}}}{68}{figure.5.12}\protected@file@percent }
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {Number of recovered matches}}}{68}{figure.5.12}\protected@file@percent }
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(c)}{\ignorespaces {$Patch_{SpGDSM}$}}}{68}{figure.5.12}\protected@file@percent }
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(d)}{\ignorespaces {$Guided_{SpGDSM}$}}}{68}{figure.5.12}\protected@file@percent }
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(e)}{\ignorespaces {$Patch_{SIFTDSM}$}}}{68}{figure.5.12}\protected@file@percent }
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(f)}{\ignorespaces {$Guided_{SIFTDSM}$}}}{68}{figure.5.12}\protected@file@percent }
 \citation{ian1996morphological}
-\@writefile{lot}{\contentsline {table}{\numberline {5.1}{\ignorespaces Average value $\mu $, standard deviation $\sigma $, and absolute average value $|\mu |$ of all the \ac {DoD}s in Figure~\ref  {PreciseDoDFrejus} and ~\ref  {PreciseDoDAlberona}.}}{69}{table.5.1}\protected@file@percent }
-\acronymused{DoD}
-\newlabel{PreciseDoDStatistic}{{5.1}{69}{Average value $\mu $, standard deviation $\sigma $, and absolute average value $|\mu |$ of all the \ac {DoD}s in Figure~\ref {PreciseDoDFrejus} and ~\ref {PreciseDoDAlberona}}{table.5.1}{}}
-\acronymused{DoD}
-\@writefile{toc}{\contentsline {paragraph}{Ground displacement (i.e. Gd).}{69}{section*.38}\protected@file@percent }
-\@writefile{brf}{\backcite{ian1996morphological}{{69}{5.3.3}{section*.38}}}
-\newlabel{para:DiscussionP}{{5.3.3}{69}{Discussion}{section*.39}{}}
-\@writefile{toc}{\contentsline {paragraph}{Discussion.}{69}{section*.39}\protected@file@percent }
 \acronymused{DoD}
 \acronymused{DoD}
+\acronymused{GT}
+\acronymused{GT}
 \acronymused{DoD}
+\acronymused{DSM}
+\@writefile{brf}{\backcite{rosu2015measurement}{{73}{3}{Item.103}}}
+\newlabel{matchVizMainBody}{{6.3.3}{73}{Matches visualization}{section*.41}{}}
+\@writefile{toc}{\contentsline {paragraph}{Matches visualization.}{73}{section*.41}\protected@file@percent }
 \acronymused{DoD}
-\acronymused{DoD}
+\@writefile{toc}{\contentsline {paragraph}{\ac {DoD}.}{73}{section*.42}\protected@file@percent }
 \acronymused{DoD}
 \acronymused{DoD}
 \acronymused{DoD}
 \acronymused{DoD}
+\@writefile{toc}{\contentsline {paragraph}{Ground displacement (i.e., Gd).}{73}{section*.43}\protected@file@percent }
+\@writefile{brf}{\backcite{ian1996morphological}{{73}{6.3.3}{section*.43}}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.6}{\ignorespaces Precise matching visualization of \textbf  {Fr{\'e}jus 1954 and 2014}. (a) Image pairs to be matched, with red rectangles indicating the overlapping zone. (b) Numbers of tentative, enhanced and final matches recovered with $Patch_{SpGDSM}$, $Guided_{SpGDSM}$, $Patch_{SIFTDSM}$ and $Guided_{SIFTDSM}$ individually. (c-f) Visualization of final matches recovered with $Patch_{SpGDSM}$, $Guided_{SpGDSM}$, $Patch_{SIFTDSM}$ and $Guided_{SIFTDSM}$ individually.}}{74}{figure.6.6}\protected@file@percent }
+\newlabel{MatchVizFrejus1954-2014}{{6.6}{74}{Precise matching visualization of \textbf {Fr{\'e}jus 1954 and 2014}. (a) Image pairs to be matched, with red rectangles indicating the overlapping zone. (b) Numbers of tentative, enhanced and final matches recovered with $Patch_{SpGDSM}$, $Guided_{SpGDSM}$, $Patch_{SIFTDSM}$ and $Guided_{SIFTDSM}$ individually. (c-f) Visualization of final matches recovered with $Patch_{SpGDSM}$, $Guided_{SpGDSM}$, $Patch_{SIFTDSM}$ and $Guided_{SIFTDSM}$ individually}{figure.6.6}{}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {Overlapping zone}}}{74}{figure.6.6}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {Number of recovered matches}}}{74}{figure.6.6}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(c)}{\ignorespaces {$Patch_{SpGDSM}$}}}{74}{figure.6.6}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(d)}{\ignorespaces {$Guided_{SpGDSM}$}}}{74}{figure.6.6}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(e)}{\ignorespaces {$Patch_{SIFTDSM}$}}}{74}{figure.6.6}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(f)}{\ignorespaces {$Guided_{SIFTDSM}$}}}{74}{figure.6.6}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {6.7}{\ignorespaces Precise matching visualization of \textbf  {Fr{\'e}jus 1966 and 2014}. (a) Image pairs to be matched, with red rectangles indicating the overlapping zone. (b) Numbers of tentative, enhanced and final matches recovered with $Patch_{SpGDSM}$, $Guided_{SpGDSM}$, $Patch_{SIFTDSM}$ and $Guided_{SIFTDSM}$ individually. (c-f) Visualization of final matches recovered with $Patch_{SpGDSM}$, $Guided_{SpGDSM}$, $Patch_{SIFTDSM}$ and $Guided_{SIFTDSM}$ individually.}}{75}{figure.6.7}\protected@file@percent }
+\newlabel{MatchVizFrejus1966-2014}{{6.7}{75}{Precise matching visualization of \textbf {Fr{\'e}jus 1966 and 2014}. (a) Image pairs to be matched, with red rectangles indicating the overlapping zone. (b) Numbers of tentative, enhanced and final matches recovered with $Patch_{SpGDSM}$, $Guided_{SpGDSM}$, $Patch_{SIFTDSM}$ and $Guided_{SIFTDSM}$ individually. (c-f) Visualization of final matches recovered with $Patch_{SpGDSM}$, $Guided_{SpGDSM}$, $Patch_{SIFTDSM}$ and $Guided_{SIFTDSM}$ individually}{figure.6.7}{}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {Overlapping zone}}}{75}{figure.6.7}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {Number of recovered matches}}}{75}{figure.6.7}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(c)}{\ignorespaces {$Patch_{SpGDSM}$}}}{75}{figure.6.7}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(d)}{\ignorespaces {$Guided_{SpGDSM}$}}}{75}{figure.6.7}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(e)}{\ignorespaces {$Patch_{SIFTDSM}$}}}{75}{figure.6.7}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(f)}{\ignorespaces {$Guided_{SIFTDSM}$}}}{75}{figure.6.7}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {6.8}{\ignorespaces Precise matching visualization of \textbf  {Fr{\'e}jus 1970 and 2014}. (a) Image pairs to be matched, with red rectangles indicating the overlapping zone. (b) Numbers of tentative, enhanced and final matches recovered with $Patch_{SpGDSM}$, $Guided_{SpGDSM}$, $Patch_{SIFTDSM}$ and $Guided_{SIFTDSM}$ individually. (c-f) Visualization of final matches recovered with $Patch_{SpGDSM}$, $Guided_{SpGDSM}$, $Patch_{SIFTDSM}$ and $Guided_{SIFTDSM}$ individually.}}{76}{figure.6.8}\protected@file@percent }
+\newlabel{MatchVizFrejus1970-2014}{{6.8}{76}{Precise matching visualization of \textbf {Fr{\'e}jus 1970 and 2014}. (a) Image pairs to be matched, with red rectangles indicating the overlapping zone. (b) Numbers of tentative, enhanced and final matches recovered with $Patch_{SpGDSM}$, $Guided_{SpGDSM}$, $Patch_{SIFTDSM}$ and $Guided_{SIFTDSM}$ individually. (c-f) Visualization of final matches recovered with $Patch_{SpGDSM}$, $Guided_{SpGDSM}$, $Patch_{SIFTDSM}$ and $Guided_{SIFTDSM}$ individually}{figure.6.8}{}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {Overlapping zone}}}{76}{figure.6.8}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {Number of recovered matches}}}{76}{figure.6.8}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(c)}{\ignorespaces {$Patch_{SpGDSM}$}}}{76}{figure.6.8}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(d)}{\ignorespaces {$Guided_{SpGDSM}$}}}{76}{figure.6.8}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(e)}{\ignorespaces {$Patch_{SIFTDSM}$}}}{76}{figure.6.8}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(f)}{\ignorespaces {$Guided_{SIFTDSM}$}}}{76}{figure.6.8}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {6.9}{\ignorespaces Precise matching visualization of \textbf  {Fr{\'e}jus 1954 and 1970}. (a) Image pairs to be matched, with red rectangles indicating the overlapping zone. (b) Numbers of tentative, enhanced and final matches recovered with $Patch_{SpGDSM}$, $Guided_{SpGDSM}$, $Patch_{SIFTDSM}$ and $Guided_{SIFTDSM}$ individually. (c-f) Visualization of final matches recovered with $Patch_{SpGDSM}$, $Guided_{SpGDSM}$, $Patch_{SIFTDSM}$ and $Guided_{SIFTDSM}$ individually.}}{77}{figure.6.9}\protected@file@percent }
+\newlabel{MatchVizFrejus1954-1970}{{6.9}{77}{Precise matching visualization of \textbf {Fr{\'e}jus 1954 and 1970}. (a) Image pairs to be matched, with red rectangles indicating the overlapping zone. (b) Numbers of tentative, enhanced and final matches recovered with $Patch_{SpGDSM}$, $Guided_{SpGDSM}$, $Patch_{SIFTDSM}$ and $Guided_{SIFTDSM}$ individually. (c-f) Visualization of final matches recovered with $Patch_{SpGDSM}$, $Guided_{SpGDSM}$, $Patch_{SIFTDSM}$ and $Guided_{SIFTDSM}$ individually}{figure.6.9}{}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {Overlapping zone}}}{77}{figure.6.9}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {Number of recovered matches}}}{77}{figure.6.9}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(c)}{\ignorespaces {$Patch_{SpGDSM}$}}}{77}{figure.6.9}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(d)}{\ignorespaces {$Guided_{SpGDSM}$}}}{77}{figure.6.9}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(e)}{\ignorespaces {$Patch_{SIFTDSM}$}}}{77}{figure.6.9}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(f)}{\ignorespaces {$Guided_{SIFTDSM}$}}}{77}{figure.6.9}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {6.10}{\ignorespaces Precise matching visualization of \textbf  {Fr{\'e}jus 1966 and 1970}. (a) Image pairs to be matched, with red rectangles indicating the overlapping zone. (b) Numbers of tentative, enhanced and final matches recovered with $Patch_{SpGDSM}$, $Guided_{SpGDSM}$, $Patch_{SIFTDSM}$ and $Guided_{SIFTDSM}$ individually. (c-f) Visualization of final matches recovered with $Patch_{SpGDSM}$, $Guided_{SpGDSM}$, $Patch_{SIFTDSM}$ and $Guided_{SIFTDSM}$ individually.}}{78}{figure.6.10}\protected@file@percent }
+\newlabel{MatchVizFrejus1966-1970}{{6.10}{78}{Precise matching visualization of \textbf {Fr{\'e}jus 1966 and 1970}. (a) Image pairs to be matched, with red rectangles indicating the overlapping zone. (b) Numbers of tentative, enhanced and final matches recovered with $Patch_{SpGDSM}$, $Guided_{SpGDSM}$, $Patch_{SIFTDSM}$ and $Guided_{SIFTDSM}$ individually. (c-f) Visualization of final matches recovered with $Patch_{SpGDSM}$, $Guided_{SpGDSM}$, $Patch_{SIFTDSM}$ and $Guided_{SIFTDSM}$ individually}{figure.6.10}{}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {Overlapping zone}}}{78}{figure.6.10}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {Number of recovered matches}}}{78}{figure.6.10}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(c)}{\ignorespaces {$Patch_{SpGDSM}$}}}{78}{figure.6.10}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(d)}{\ignorespaces {$Guided_{SpGDSM}$}}}{78}{figure.6.10}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(e)}{\ignorespaces {$Patch_{SIFTDSM}$}}}{78}{figure.6.10}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(f)}{\ignorespaces {$Guided_{SIFTDSM}$}}}{78}{figure.6.10}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {6.11}{\ignorespaces Precise matching visualization of \textbf  {Fr{\'e}jus 1954 and 1966}. (a) Image pairs to be matched, with red rectangles indicating the overlapping zone. (b) Numbers of tentative, enhanced and final matches recovered with $Patch_{SpGDSM}$, $Guided_{SpGDSM}$, $Patch_{SIFTDSM}$ and $Guided_{SIFTDSM}$ individually. (c-f) Visualization of final matches recovered with $Patch_{SpGDSM}$, $Guided_{SpGDSM}$, $Patch_{SIFTDSM}$ and $Guided_{SIFTDSM}$ individually.}}{79}{figure.6.11}\protected@file@percent }
+\newlabel{MatchVizFrejus1954-1966}{{6.11}{79}{Precise matching visualization of \textbf {Fr{\'e}jus 1954 and 1966}. (a) Image pairs to be matched, with red rectangles indicating the overlapping zone. (b) Numbers of tentative, enhanced and final matches recovered with $Patch_{SpGDSM}$, $Guided_{SpGDSM}$, $Patch_{SIFTDSM}$ and $Guided_{SIFTDSM}$ individually. (c-f) Visualization of final matches recovered with $Patch_{SpGDSM}$, $Guided_{SpGDSM}$, $Patch_{SIFTDSM}$ and $Guided_{SIFTDSM}$ individually}{figure.6.11}{}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {Overlapping zone}}}{79}{figure.6.11}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {Number of recovered matches}}}{79}{figure.6.11}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(c)}{\ignorespaces {$Patch_{SpGDSM}$}}}{79}{figure.6.11}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(d)}{\ignorespaces {$Guided_{SpGDSM}$}}}{79}{figure.6.11}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(e)}{\ignorespaces {$Patch_{SIFTDSM}$}}}{79}{figure.6.11}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(f)}{\ignorespaces {$Guided_{SIFTDSM}$}}}{79}{figure.6.11}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {6.12}{\ignorespaces Precise matching visualization of \textbf  {Alberona 1954 and 2003}. (a) Image pairs to be matched, with red rectangles indicating the overlapping zone. (b) Numbers of tentative, enhanced and final matches recovered with $Patch_{SpGDSM}$, $Guided_{SpGDSM}$, $Patch_{SIFTDSM}$ and $Guided_{SIFTDSM}$ individually. (c-f) Visualization of final matches recovered with $Patch_{SpGDSM}$, $Guided_{SpGDSM}$, $Patch_{SIFTDSM}$ and $Guided_{SIFTDSM}$ individually.}}{80}{figure.6.12}\protected@file@percent }
+\newlabel{MatchVizAlberona}{{6.12}{80}{Precise matching visualization of \textbf {Alberona 1954 and 2003}. (a) Image pairs to be matched, with red rectangles indicating the overlapping zone. (b) Numbers of tentative, enhanced and final matches recovered with $Patch_{SpGDSM}$, $Guided_{SpGDSM}$, $Patch_{SIFTDSM}$ and $Guided_{SIFTDSM}$ individually. (c-f) Visualization of final matches recovered with $Patch_{SpGDSM}$, $Guided_{SpGDSM}$, $Patch_{SIFTDSM}$ and $Guided_{SIFTDSM}$ individually}{figure.6.12}{}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {Overlapping zone}}}{80}{figure.6.12}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {Number of recovered matches}}}{80}{figure.6.12}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(c)}{\ignorespaces {$Patch_{SpGDSM}$}}}{80}{figure.6.12}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(d)}{\ignorespaces {$Guided_{SpGDSM}$}}}{80}{figure.6.12}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(e)}{\ignorespaces {$Patch_{SIFTDSM}$}}}{80}{figure.6.12}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(f)}{\ignorespaces {$Guided_{SIFTDSM}$}}}{80}{figure.6.12}\protected@file@percent }
 \acronymused{DoD}
 \acronymused{DoD}
 \acronymused{DoD}
@@ -182,32 +175,6 @@
 \acronymused{DoD}
 \acronymused{DoD}
 \acronymused{DoD}
-\@writefile{lof}{\contentsline {figure}{\numberline {5.13}{\ignorespaces {\scriptsize  (a-f) \ac {DoD}s between free epoch \textbf  {Frejus 1954} and reference epoch \textbf  {2014}. (g-l) \ac {DoD}s between free epoch \textbf  {Frejus 1966} and reference epoch \textbf  {2014}. (m-r) \ac {DoD}s between free epoch \textbf  {Frejus 1970} and reference epoch \textbf  {2014}. (a, d, g, j, m, p) are \ac {DoD}s resulted from roughly co-registered orientations using variants $SuperGlue_{DSM}$ and $SIFT_{DSM}$ (elaborated in Chapter 3). (b, c, e, f, h, i, k, l, n, o, q, r) are \ac {DoD}s resulted from refined orientations using variants $Patch_{SpGDSM}$, $Guided_{SpGDSM}$, $Patch_{SIFTDSM}$ and $Guided_{SIFTDSM}$ individually.}}}{70}{figure.5.13}\protected@file@percent }
-\acronymused{DoD}
-\acronymused{DoD}
-\acronymused{DoD}
-\acronymused{DoD}
-\acronymused{DoD}
-\newlabel{PreciseDoDFrejus}{{5.13}{70}{\scriptsize (a-f) \ac {DoD}s between free epoch \textbf {Frejus 1954} and reference epoch \textbf {2014}. (g-l) \ac {DoD}s between free epoch \textbf {Frejus 1966} and reference epoch \textbf {2014}. (m-r) \ac {DoD}s between free epoch \textbf {Frejus 1970} and reference epoch \textbf {2014}. (a, d, g, j, m, p) are \ac {DoD}s resulted from roughly co-registered orientations using variants $SuperGlue_{DSM}$ and $SIFT_{DSM}$ (elaborated in Chapter 3). (b, c, e, f, h, i, k, l, n, o, q, r) are \ac {DoD}s resulted from refined orientations using variants $Patch_{SpGDSM}$, $Guided_{SpGDSM}$, $Patch_{SIFTDSM}$ and $Guided_{SIFTDSM}$ individually}{figure.5.13}{}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {\ac {DoD}$_{Frejus1954}^{{SpGDSM}}$}}}{70}{figure.5.13}\protected@file@percent }
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {\ac {DoD}$_{Frejus1954}^{Patch_{SpGDSM}}$}}}{70}{figure.5.13}\protected@file@percent }
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(c)}{\ignorespaces {\ac {DoD}$_{Frejus1954}^{Guided_{SpGDSM}}$}}}{70}{figure.5.13}\protected@file@percent }
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(d)}{\ignorespaces {\ac {DoD}$_{Frejus1954}^{{SIFTDSM}}$}}}{70}{figure.5.13}\protected@file@percent }
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(e)}{\ignorespaces {\ac {DoD}$_{Frejus1954}^{Patch_{SIFTDSM}}$}}}{70}{figure.5.13}\protected@file@percent }
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(f)}{\ignorespaces {\ac {DoD}$_{Frejus1954}^{Guided_{SIFTDSM}}$}}}{70}{figure.5.13}\protected@file@percent }
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(g)}{\ignorespaces {\ac {DoD}$_{Frejus1966}^{{SpGDSM}}$}}}{70}{figure.5.13}\protected@file@percent }
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(h)}{\ignorespaces {\ac {DoD}$_{Frejus1966}^{Patch_{SpGDSM}}$}}}{70}{figure.5.13}\protected@file@percent }
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(i)}{\ignorespaces {\ac {DoD}$_{Frejus1966}^{Guided_{SpGDSM}}$}}}{70}{figure.5.13}\protected@file@percent }
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(j)}{\ignorespaces {\ac {DoD}$_{Frejus1966}^{{SIFTDSM}}$}}}{70}{figure.5.13}\protected@file@percent }
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(k)}{\ignorespaces {\ac {DoD}$_{Frejus1966}^{Patch_{SIFTDSM}}$}}}{70}{figure.5.13}\protected@file@percent }
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(l)}{\ignorespaces {\ac {DoD}$_{Frejus1966}^{Guided_{SIFTDSM}}$}}}{70}{figure.5.13}\protected@file@percent }
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(m)}{\ignorespaces {\ac {DoD}$_{Frejus1970}^{{SpGDSM}}$}}}{70}{figure.5.13}\protected@file@percent }
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(n)}{\ignorespaces {\ac {DoD}$_{Frejus1970}^{Patch_{SpGDSM}}$}}}{70}{figure.5.13}\protected@file@percent }
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(o)}{\ignorespaces {\ac {DoD}$_{Frejus1970}^{Guided_{SpGDSM}}$}}}{70}{figure.5.13}\protected@file@percent }
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(p)}{\ignorespaces {\ac {DoD}$_{Frejus1970}^{{SIFTDSM}}$}}}{70}{figure.5.13}\protected@file@percent }
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(q)}{\ignorespaces {\ac {DoD}$_{Frejus1970}^{Patch_{SIFTDSM}}$}}}{70}{figure.5.13}\protected@file@percent }
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(r)}{\ignorespaces {\ac {DoD}$_{Frejus1970}^{Guided_{SIFTDSM}}$}}}{70}{figure.5.13}\protected@file@percent }
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(s)}{\ignorespaces {\ac {DoD} legend}}}{70}{figure.5.13}\protected@file@percent }
 \acronymused{DoD}
 \acronymused{DoD}
 \acronymused{DoD}
@@ -215,28 +182,58 @@
 \acronymused{DoD}
 \acronymused{DoD}
 \acronymused{DoD}
-\@writefile{lof}{\contentsline {figure}{\numberline {5.14}{\ignorespaces {\scriptsize  \ac {DoD}s between free epoch \textbf  {Alberona 1954} and reference epoch \textbf  {2003}. (a) and (d) are \ac {DoD}s resulted from roughly co-registered orientations using variants $SuperGlue_{DSM}$ and $SIFT_{DSM}$ (elaborated in Chapter 3). (b, c, e, f) are \ac {DoD}s resulted from refined orientations using variants $Patch_{SpGDSM}$, $Guided_{SpGDSM}$, $Patch_{SIFTDSM}$ and $Guided_{SIFTDSM}$ individually.}}}{71}{figure.5.14}\protected@file@percent }
+\acronymused{DoD}
+\acronymused{DoD}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.13}{\ignorespaces (a-f) \ac {DoD}s between free epoch \textbf  {Fr{\'e}jus 1954} and reference epoch \textbf  {2014}. (g-l) \ac {DoD}s between free epoch \textbf  {Fr{\'e}jus 1966} and reference epoch \textbf  {2014}. (m-r) \ac {DoD}s between free epoch \textbf  {Fr{\'e}jus 1970} and reference epoch \textbf  {2014}. (a, d, g, j, m, p) are roughly co-registered \ac {DoD}s resulted from variants $SuperGlue_{DSM}$ and $SIFT_{DSM}$ (elaborated in Chapter \ref  {chap:RoughCoReg}). (b, c, e, f, h, i, k, l, n, o, q, r) are refined \ac {DoD}s resulted from variants $Patch_{SpGDSM}$, $Guided_{SpGDSM}$, $Patch_{SIFTDSM}$ and $Guided_{SIFTDSM}$ individually.}}{81}{figure.6.13}\protected@file@percent }
 \acronymused{DoD}
 \acronymused{DoD}
 \acronymused{DoD}
-\newlabel{PreciseDoDAlberona}{{5.14}{71}{\scriptsize \ac {DoD}s between free epoch \textbf {Alberona 1954} and reference epoch \textbf {2003}. (a) and (d) are \ac {DoD}s resulted from roughly co-registered orientations using variants $SuperGlue_{DSM}$ and $SIFT_{DSM}$ (elaborated in Chapter 3). (b, c, e, f) are \ac {DoD}s resulted from refined orientations using variants $Patch_{SpGDSM}$, $Guided_{SpGDSM}$, $Patch_{SIFTDSM}$ and $Guided_{SIFTDSM}$ individually}{figure.5.14}{}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {\ac {DoD}$_{Alberona}^{{SpGDSM}}$}}}{71}{figure.5.14}\protected@file@percent }
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {\ac {DoD}$_{Alberona}^{Patch_{SpGDSM}}$}}}{71}{figure.5.14}\protected@file@percent }
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(c)}{\ignorespaces {\ac {DoD}$_{Alberona}^{Guided_{SpGDSM}}$}}}{71}{figure.5.14}\protected@file@percent }
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(d)}{\ignorespaces {\ac {DoD}$_{Alberona}^{{SIFTDSM}}$}}}{71}{figure.5.14}\protected@file@percent }
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(e)}{\ignorespaces {\ac {DoD}$_{Alberona}^{Patch_{SIFTDSM}}$}}}{71}{figure.5.14}\protected@file@percent }
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(f)}{\ignorespaces {\ac {DoD}$_{Alberona}^{Guided_{SIFTDSM}}$}}}{71}{figure.5.14}\protected@file@percent }
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(g)}{\ignorespaces {\ac {DoD} legend}}}{71}{figure.5.14}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {5.15}{\ignorespaces {\scriptsize  ground displacement(Gd) between free epoch \textbf  {Kobe 1991} and reference epoch \textbf  {1995}. (a) is the ground truth Gd provided by the Japan meteorological agency. (b) and (e) are Gds resulted from roughly co-registered orientations using variants $SuperGlue_{DSM}$ and $SIFT_{DSM}$ (elaborated in Chapter 3). (c, d, f, g) are Gds resulted from refined orientations using variants $Patch_{SpGDSM}$, $Guided_{SpGDSM}$, $Patch_{SIFTDSM}$ and $Guided_{SIFTDSM}$ individually.}}}{72}{figure.5.15}\protected@file@percent }
-\newlabel{GdKobe}{{5.15}{72}{\scriptsize ground displacement(Gd) between free epoch \textbf {Kobe 1991} and reference epoch \textbf {1995}. (a) is the ground truth Gd provided by the Japan meteorological agency. (b) and (e) are Gds resulted from roughly co-registered orientations using variants $SuperGlue_{DSM}$ and $SIFT_{DSM}$ (elaborated in Chapter 3). (c, d, f, g) are Gds resulted from refined orientations using variants $Patch_{SpGDSM}$, $Guided_{SpGDSM}$, $Patch_{SIFTDSM}$ and $Guided_{SIFTDSM}$ individually}{figure.5.15}{}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {Gd$_{Kobe}^{{GT}}$}}}{72}{figure.5.15}\protected@file@percent }
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {Gd$_{Kobe}^{{SpGDSM}}$}}}{72}{figure.5.15}\protected@file@percent }
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(c)}{\ignorespaces {Gd$_{Kobe}^{Patch_{SpGDSM}}$}}}{72}{figure.5.15}\protected@file@percent }
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(d)}{\ignorespaces {Gd$_{Kobe}^{Guided_{SpGDSM}}$}}}{72}{figure.5.15}\protected@file@percent }
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(e)}{\ignorespaces {Gd$_{Kobe}^{{SIFTDSM}}$}}}{72}{figure.5.15}\protected@file@percent }
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(f)}{\ignorespaces {Gd$_{Kobe}^{Patch_{SIFTDSM}}$}}}{72}{figure.5.15}\protected@file@percent }
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(g)}{\ignorespaces {Gd$_{Kobe}^{Guided_{SIFTDSM}}$}}}{72}{figure.5.15}\protected@file@percent }
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(h)}{\ignorespaces {Gd legend}}}{72}{figure.5.15}\protected@file@percent }
+\acronymused{DoD}
+\acronymused{DoD}
+\newlabel{PreciseDoDFrejus}{{6.13}{81}{(a-f) \ac {DoD}s between free epoch \textbf {Fr{\'e}jus 1954} and reference epoch \textbf {2014}. (g-l) \ac {DoD}s between free epoch \textbf {Fr{\'e}jus 1966} and reference epoch \textbf {2014}. (m-r) \ac {DoD}s between free epoch \textbf {Fr{\'e}jus 1970} and reference epoch \textbf {2014}. (a, d, g, j, m, p) are roughly co-registered \ac {DoD}s resulted from variants $SuperGlue_{DSM}$ and $SIFT_{DSM}$ (elaborated in Chapter \ref {chap:RoughCoReg}). (b, c, e, f, h, i, k, l, n, o, q, r) are refined \ac {DoD}s resulted from variants $Patch_{SpGDSM}$, $Guided_{SpGDSM}$, $Patch_{SIFTDSM}$ and $Guided_{SIFTDSM}$ individually}{figure.6.13}{}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {\ac {DoD}$_{Frejus1954}^{{SpGDSM}}$}}}{81}{figure.6.13}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {\ac {DoD}$_{Frejus1954}^{Patch_{SpGDSM}}$}}}{81}{figure.6.13}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(c)}{\ignorespaces {\ac {DoD}$_{Frejus1954}^{Guided_{SpGDSM}}$}}}{81}{figure.6.13}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(d)}{\ignorespaces {\ac {DoD}$_{Frejus1954}^{{SIFTDSM}}$}}}{81}{figure.6.13}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(e)}{\ignorespaces {\ac {DoD}$_{Frejus1954}^{Patch_{SIFTDSM}}$}}}{81}{figure.6.13}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(f)}{\ignorespaces {\ac {DoD}$_{Frejus1954}^{Guided_{SIFTDSM}}$}}}{81}{figure.6.13}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(g)}{\ignorespaces {\ac {DoD}$_{Frejus1966}^{{SpGDSM}}$}}}{81}{figure.6.13}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(h)}{\ignorespaces {\ac {DoD}$_{Frejus1966}^{Patch_{SpGDSM}}$}}}{81}{figure.6.13}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(i)}{\ignorespaces {\ac {DoD}$_{Frejus1966}^{Guided_{SpGDSM}}$}}}{81}{figure.6.13}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(j)}{\ignorespaces {\ac {DoD}$_{Frejus1966}^{{SIFTDSM}}$}}}{81}{figure.6.13}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(k)}{\ignorespaces {\ac {DoD}$_{Frejus1966}^{Patch_{SIFTDSM}}$}}}{81}{figure.6.13}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(l)}{\ignorespaces {\ac {DoD}$_{Frejus1966}^{Guided_{SIFTDSM}}$}}}{81}{figure.6.13}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(m)}{\ignorespaces {\ac {DoD}$_{Frejus1970}^{{SpGDSM}}$}}}{81}{figure.6.13}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(n)}{\ignorespaces {\ac {DoD}$_{Frejus1970}^{Patch_{SpGDSM}}$}}}{81}{figure.6.13}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(o)}{\ignorespaces {\ac {DoD}$_{Frejus1970}^{Guided_{SpGDSM}}$}}}{81}{figure.6.13}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(p)}{\ignorespaces {\ac {DoD}$_{Frejus1970}^{{SIFTDSM}}$}}}{81}{figure.6.13}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(q)}{\ignorespaces {\ac {DoD}$_{Frejus1970}^{Patch_{SIFTDSM}}$}}}{81}{figure.6.13}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(r)}{\ignorespaces {\ac {DoD}$_{Frejus1970}^{Guided_{SIFTDSM}}$}}}{81}{figure.6.13}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(s)}{\ignorespaces {\ac {DoD} legend}}}{81}{figure.6.13}\protected@file@percent }
+\acronymused{DoD}
+\acronymused{DoD}
+\acronymused{DoD}
+\acronymused{DoD}
+\acronymused{DoD}
+\acronymused{DoD}
+\acronymused{DoD}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.14}{\ignorespaces \ac {DoD}s between free epoch \textbf  {Alberona 1954} and reference epoch \textbf  {2003}. (a) and (d) are roughly co-registered \ac {DoD}s resulted from variants $SuperGlue_{DSM}$ and $SIFT_{DSM}$ (elaborated in Chapter \ref  {chap:RoughCoReg}). (b, c, e, f) are refined \ac {DoD}s resulted from variants $Patch_{SpGDSM}$, $Guided_{SpGDSM}$, $Patch_{SIFTDSM}$ and $Guided_{SIFTDSM}$ individually.}}{82}{figure.6.14}\protected@file@percent }
+\acronymused{DoD}
+\acronymused{DoD}
+\acronymused{DoD}
+\newlabel{PreciseDoDAlberona}{{6.14}{82}{\ac {DoD}s between free epoch \textbf {Alberona 1954} and reference epoch \textbf {2003}. (a) and (d) are roughly co-registered \ac {DoD}s resulted from variants $SuperGlue_{DSM}$ and $SIFT_{DSM}$ (elaborated in Chapter \ref {chap:RoughCoReg}). (b, c, e, f) are refined \ac {DoD}s resulted from variants $Patch_{SpGDSM}$, $Guided_{SpGDSM}$, $Patch_{SIFTDSM}$ and $Guided_{SIFTDSM}$ individually}{figure.6.14}{}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {\ac {DoD}$_{Alberona}^{{SpGDSM}}$}}}{82}{figure.6.14}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {\ac {DoD}$_{Alberona}^{Patch_{SpGDSM}}$}}}{82}{figure.6.14}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(c)}{\ignorespaces {\ac {DoD}$_{Alberona}^{Guided_{SpGDSM}}$}}}{82}{figure.6.14}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(d)}{\ignorespaces {\ac {DoD}$_{Alberona}^{{SIFTDSM}}$}}}{82}{figure.6.14}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(e)}{\ignorespaces {\ac {DoD}$_{Alberona}^{Patch_{SIFTDSM}}$}}}{82}{figure.6.14}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(f)}{\ignorespaces {\ac {DoD}$_{Alberona}^{Guided_{SIFTDSM}}$}}}{82}{figure.6.14}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(g)}{\ignorespaces {\ac {DoD} legend}}}{82}{figure.6.14}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {6.1}{\ignorespaces Average value $\mu $, standard deviation $\sigma $, and absolute average value $|\mu |$ of all the \ac {DoD}s in Figure~\ref  {PreciseDoDFrejus} and ~\ref  {PreciseDoDAlberona}.}}{83}{table.6.1}\protected@file@percent }
+\acronymused{DoD}
+\newlabel{PreciseDoDStatistic}{{6.1}{83}{Average value $\mu $, standard deviation $\sigma $, and absolute average value $|\mu |$ of all the \ac {DoD}s in Figure~\ref {PreciseDoDFrejus} and ~\ref {PreciseDoDAlberona}}{table.6.1}{}}
+\newlabel{para:DiscussionP}{{6.3.3}{84}{Discussion}{section*.44}{}}
+\@writefile{toc}{\contentsline {paragraph}{Discussion.}{84}{section*.44}\protected@file@percent }
 \acronymused{DoD}
 \acronymused{DoD}
 \acronymused{DoD}
@@ -245,10 +242,20 @@
 \acronymused{DoD}
 \acronymused{DoD}
 \acronymused{GT}
-\@writefile{toc}{\contentsline {section}{\numberline {5.4}Conclusion}{73}{section.5.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {6.4}Conclusion}{84}{section.6.4}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {6.15}{\ignorespaces ground displacement(Gd) between free epoch \textbf  {Kobe 1991} and reference epoch \textbf  {1995}. (a) is the ground truth Gd provided by the Japan meteorological agency. (b) and (e) are roughly co-registered Gds resulted from variants $SuperGlue_{DSM}$ and $SIFT_{DSM}$ (elaborated in Chapter \ref  {chap:RoughCoReg}). (c, d, f, g) are refined Gds resulted from variants $Patch_{SpGDSM}$, $Guided_{SpGDSM}$, $Patch_{SIFTDSM}$ and $Guided_{SIFTDSM}$ individually.}}{85}{figure.6.15}\protected@file@percent }
+\newlabel{GdKobe}{{6.15}{85}{ground displacement(Gd) between free epoch \textbf {Kobe 1991} and reference epoch \textbf {1995}. (a) is the ground truth Gd provided by the Japan meteorological agency. (b) and (e) are roughly co-registered Gds resulted from variants $SuperGlue_{DSM}$ and $SIFT_{DSM}$ (elaborated in Chapter \ref {chap:RoughCoReg}). (c, d, f, g) are refined Gds resulted from variants $Patch_{SpGDSM}$, $Guided_{SpGDSM}$, $Patch_{SIFTDSM}$ and $Guided_{SIFTDSM}$ individually}{figure.6.15}{}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {Gd$_{Kobe}^{{GT}}$}}}{85}{figure.6.15}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {Gd$_{Kobe}^{{SpGDSM}}$}}}{85}{figure.6.15}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(c)}{\ignorespaces {Gd$_{Kobe}^{Patch_{SpGDSM}}$}}}{85}{figure.6.15}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(d)}{\ignorespaces {Gd$_{Kobe}^{Guided_{SpGDSM}}$}}}{85}{figure.6.15}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(e)}{\ignorespaces {Gd$_{Kobe}^{{SIFTDSM}}$}}}{85}{figure.6.15}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(f)}{\ignorespaces {Gd$_{Kobe}^{Patch_{SIFTDSM}}$}}}{85}{figure.6.15}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(g)}{\ignorespaces {Gd$_{Kobe}^{Guided_{SIFTDSM}}$}}}{85}{figure.6.15}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(h)}{\ignorespaces {Gd legend}}}{85}{figure.6.15}\protected@file@percent }
 \acronymused{BBA}
 \@setckpt{Chapter4}{
-\setcounter{page}{75}
+\setcounter{page}{87}
 \setcounter{equation}{1}
 \setcounter{enumi}{2}
 \setcounter{enumii}{0}
@@ -257,7 +264,7 @@
 \setcounter{footnote}{0}
 \setcounter{mpfootnote}{0}
 \setcounter{part}{0}
-\setcounter{chapter}{5}
+\setcounter{chapter}{6}
 \setcounter{section}{4}
 \setcounter{subsection}{0}
 \setcounter{subsubsection}{0}
@@ -266,7 +273,7 @@
 \setcounter{figure}{15}
 \setcounter{table}{1}
 \setcounter{parentequation}{0}
-\setcounter{mtc}{6}
+\setcounter{mtc}{7}
 \setcounter{minitocdepth}{2}
 \setcounter{ptc}{0}
 \setcounter{parttocdepth}{2}
@@ -280,9 +287,9 @@
 \setcounter{subtable}{0}
 \setcounter{lotdepth}{1}
 \setcounter{definition}{0}
-\setcounter{Item}{90}
+\setcounter{Item}{105}
 \setcounter{Hfootnote}{0}
-\setcounter{bookmark@seq@number}{43}
+\setcounter{bookmark@seq@number}{49}
 \setcounter{su@anzahl}{0}
 \setcounter{LT@tables}{0}
 \setcounter{LT@chunks}{0}

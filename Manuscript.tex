@@ -1,6 +1,7 @@
 \documentclass[a4paper,11pt,twoside]{ThesisStyle}
 
 \include{formatAndDefs}
+\usepackage{geometry}
 \usepackage{subfigure}
 \usepackage{xcolor}
 \usepackage{pifont}
@@ -9,8 +10,22 @@
 \usepackage[acronym]{glossaries}
 \makeglossaries
 
+\usepackage{afterpage}
+\newcommand\myemptypage{
+	\null
+	\thispagestyle{empty}
+	\addtocounter{page}{-1}
+	\newpage
+}
+\newcommand{\zll}[1]{\textcolor{black}{#1}}  
+
 \begin{document}
 
+\include{TitlePageFrench}
+\myemptypage
+%\cleardoublepage
+%\newpage
+%\clearpage
 \include{TitlePage}
 
 \pagenumbering{roman}
@@ -19,61 +34,82 @@
 \setcounter{page}{0}
 \cleardoublepage
 \section*{Résumé}
+L'imagerie historique se caractérise par une haute résolution spatiale et des acquisitions stéréoscopiques. Elle constitue une ressource précieuse pour la détection des changements et la surveillance environnementale à long terme. Des millions d'images historiques ont été numérisées. Elles sont des témoins objectifs du temps et parfois la seule source visuelle restante de la forme historique du territoire. Cependant, l'énorme potentiel des images historiques diachroniques est supprimé en raison du goulot d'étranglement que constitue leur géoréférencement précis. 
+Il s'agit d'un processus appelé ajustement de faisceau auto-calibré pour estimer les paramètres de calibrage de la caméra. Il faut un nombre suffisant de correspondances dans des paysages évolutifs, qui sont difficiles à obtenir automatiquement, en raison des changements de scène et des conditions hétérogènes d'acquisition des images.\\
 
-\paragraph{Mots clefs:} 
+Dans cette recherche, nous présentons des pipelines entièrement automatiques pour trouver des correspondances entre des images historiques prises à différents temps (c'est-à-dire, inter-époques), sans données auxiliaires nécessaires. 
+En profitant de la géométrie 3D et de la stratégie grossier-à-précis, nous (1) enregistrons grossièrement les différentes époques en établissant un modèle de transformation globalement cohérent sur l'ensemble du bloc, et (2) nous apparions précisément les images inter-époques sous la direction du co-enregistrement grossier pour réduire l'ambiguïté. Six variantes de deux stratégies sont explorées pour l'étape de co-enregistrement grossier, et deux variantes pour l'étape d'appariement précis. 
+Nos pipelines sont adaptés à diverses applications de surveillance environnementale. Cinq données représentatifs sont choisis pour les expériences, chacun représentant une application caractéristique. 
+Avec les correspondances inter-époques récupérées, nous améliorons les orientations de l'image puis calculons les Digital Surface Models (DSMs) à chaque époque, et évaluons quantitativement les résultats avec les Difference of DSMs (DoDs) et le déplacement du sol dû à un séisme. Nous démontrons que notre méthode (1) peut géoréférencer automatiquement des images historiques diachroniques ; (2) peut atténuer efficacement les erreurs systématiques induites par des paramètres de caméra mal estimés ; et (3) est robuste contre les changements drastiques de la scène. Les pipelines proposés sont mis en œuvre dans MicMac, un logiciel de photogrammétrie libre et gratuit.\\
 
-\newpage
+\paragraph{Mots clefs:} Appariement des caractéristiques, Images historiques, Multi-époques, Estimation de la pose, Auto-étalonnage
+
+\cleardoublepage
 
 \section*{Abstract}
 Historical imagery is characterized by high spatial resolution and stereoscopic acquisitions, providing a valuable resource for change detection and long-term environmental monitoring. Millions of historical images have been digitized. They are objective witness over time and sometimes the only remaining visual source of historical land-form. However, the huge potential of diachronic historical images is suppressed due to the bottleneck of their accurate geo-referencing.
 %tracking environmental conditions such as the impact of natural disasters and urban expansion, finding changes in vegetation, evaluating desertification and detecting specific urban or natural variations in the environment. 
 %\par
 %Accurate geo-referencing of historical images is crucial in unlocking their huge potential for comparing 3D land-cover information over time. 
-It involves a process called self-calibrating bundle adjustment to estimate the camera calibration parameters. Sufficient amount of matches under evolving landscapes are required, which are difficult to be obtained automatically, due to scene changes and heterogeneous image acquisition conditions.
+It involves a process called self-calibrating bundle adjustment to estimate the camera calibration parameters. Sufficient amount of matches under evolving landscapes are required, which are difficult to be obtained automatically, due to scene changes and heterogeneous image acquisition conditions.\\
 %{Accurate geo-referencing of diachronic historical images by means of self-calibration} remains a bottleneck because of the difficulty to find sufficient amount of matches under evolving landscapes. 
-\par
+
 In this research, we present fully automatic pipelines to finding matches between historical images taken at different times (i.e., inter-epoch), without auxiliary data required. 
-By taking advantage of 3D geometry and "rough-to-precise" strategy, we (1) roughly co-register different epochs by establishing a globally consistent transformation model over the whole block, and (2) precisely match inter-epoch images under the guidance of rough co-registration to reduce ambiguity. Six variants are explored for rough co-registration stage, and two variants for precise matching stage. 
+By taking advantage of 3D geometry and rough-to-precise strategy, we (1) roughly co-register different epochs by establishing a globally consistent transformation model over the whole block, and (2) precisely match inter-epoch images under the guidance of rough co-registration to reduce ambiguity. Six variants out of 2 strategies are explored for rough co-registration stage, and two variants for precise matching stage. 
 Our pipelines are suitable for diverse applications of environmental monitoring. Five representative sets of datasets are chosen for experiments, each one represents a characteristic application. 
-With the recovered inter-epoch matches, we refine the image orientations and quantitatively evaluate the results with \ac{DoD}s and ground displacements due to an earthquake. We demonstrate that our method: (1) can automatically georeference diachronic historical images; (2) can effectively mitigate systematic errors induced by poorly estimated camera parameters; (3) is robust to drastic scene changes. Compared to the \textit{state-of-the-art}, our method improves the image georeferencing accuracy by a factor of 2. The proposed methods are implemented in MicMac, a free, open-source photogrammetric software.\\
+With the recovered inter-epoch matches, we refine the image orientations followed by calculating \ac{DSM}s in each epoch, and quantitatively evaluate the results with \ac{DoD}s and ground displacement due to an earthquake. We demonstrate that our method (1) can automatically geo-reference diachronic historical images; (2) can effectively mitigate systematic errors induced by poorly estimated camera parameters; and (3) is robust against drastic scene changes. 
+%Compared to the \textit{state-of-the-art}, our method improves the image georeferencing accuracy by a factor of 2. 
+The proposed pipelines are implemented in MicMac, a free, open-source photogrammetric software.\\
 
 %Recovered inter-epoch matches are visualized as qualitative and Quantitative results are demonstrated 
 
 %Based on relative orientations computed within the same epoch (i.e., intra-epoch), we obtain \ac{DSM}s and incorporate them in a rough-to-precise matching.
-%The {method consists} of: (1) an inter-epoch DSMs matching {to roughly co-register the orientations and DSMs} (i.e, the {3D} Helmert transformation), followed by (2) a precise inter-epoch feature matching using the original {RGB} images. The innate ambiguity of the latter is largely alleviated by narrowing down the search space using the co-registered {data}.
-%With the inter-epoch features, we refine the image orientations and quantitatively evaluate the results (1) with DoD ({\textit{Difference of DSMs}}), (2) with ground check points, and (3) by quantifying ground displacement due to an earthquake. We demonstrate that our method: (1) can automatically georeference diachronic historical images; (2) can effectively mitigate systematic errors induced by poorly estimated camera parameters; (3) is robust to drastic scene changes. Compared to the \textit{state-of-the-art}, our method improves the image georeferencing accuracy by a factor of 2. {The proposed methods are implemented in MicMac, a free, open-source photogrammetric software.}\\
+%The {method consists} of: (1) an inter-epoch \ac{DSM}s matching {to roughly co-register the orientations and \ac{DSM}s} (i.e, the {3D} Helmert transformation), followed by (2) a precise inter-epoch feature matching using the original {RGB} images. The innate ambiguity of the latter is largely alleviated by narrowing down the search space using the co-registered {data}.
+%With the inter-epoch features, we refine the image orientations and quantitatively evaluate the results (1) with DoD ({\textit{Difference of \ac{DSM}s}}), (2) with ground check points, and (3) by quantifying ground displacement due to an earthquake. We demonstrate that our method: (1) can automatically georeference diachronic historical images; (2) can effectively mitigate systematic errors induced by poorly estimated camera parameters; (3) is robust to drastic scene changes. Compared to the \textit{state-of-the-art}, our method improves the image georeferencing accuracy by a factor of 2. {The proposed methods are implemented in MicMac, a free, open-source photogrammetric software.}\\
 \paragraph{Keywords:} Feature matching, Historical images, Multi-epoch, Pose estimation, Self-calibration
 
-\newpage
+\cleardoublepage
 
 \section*{Acknowledgments}
-%After nearly 3 years of research, I am about to finish my PhD career. Looking back on these years, tons of feelings well up in my mind, among them there are content, promising, stressful, determined, and most importantly grateful feelings. I am deeply grateful for the people and things I met.\\
-%First of all, I would like to thank my supervisors Marc and Ewelina. They offered me this PhD position when I needed a new start in France, and I thank them for their recognition and trust in me. During my PhD, they gave me a lot of guidance and help in my work, I learned a lot from them. Marc is a senior specialist in photogrammetry, he possesses profound experience in this domain, from which I benefited a lot. He is like a steersman, very good at controlling the direction. Ewelina is versatile, she is there for me whenever I have a problem. She is capable of many unexpected skills that surprises me, both in algorithm and operation. More importantly, both of them are rigorous scholars, they set up role models for me in my future research.
-%I'd also like to thank Yann Klinger and Institut de Physique du Globe de Paris who made this PhD position possible. 
-%%sebastian, KAGAM for providing data
-%\\
-%Secondly, I would like to thank my husband, Teng Wu, who is also an academic in photogrammetry. He gave me a lot of useful advises in my work. He is also a very reliable partner in life, I got countless help and support from him. Although he is not very expressive, he is fully devoted to me and our family. I know that he will support me unconditionally whenever I need him, he met all the expectations I had for a life partner.\\
-%Thanks to the gift of life, we have two healthy and lovely daughters who bring joy and hope into our lives. Since having them, we have a deeper sense of responsibility and a stronger motivation to become better examples for them.\\
-%Besides, I am grateful to my parents for raising me and for supporting all the choices I made in my life. Thanks to my brother, who took over the responsibility of taking care of my parents for me after I left China. As an aged PhD student, it is not easy to balance work and life, I can't imagine pursuing my PhD without the support from all the family members I mentioned before.\\
-%During my research at Lastig, I met many warm-hearted friends: Manchun, Yilin, Imane, Mohamed, Arthur, Christophe, Jean-Michael, Jean-Philippe, Lanfa, Nathan, Raphael, Evelyn etc., who made my work environment full of friendliness and laughter. I am grateful to all the friends in my life who enriched me and I look forward to meeting and talking with them more often after the covid is alleviated.
+I recollect the beginning of my PhD career as if it was yesterday. 
+I resigned from a job that lasted 6 years in China and came to Paris in search of a new start, hoping to find a more research-oriented position in photogrammetry and computer vision. 
+I still remember how excited I was when I received the offer of this PhD position. 
+Now that I'm approaching the end of this meaningful journey, I can't help but feel how quickly time flies. 
+Looking back on the past three years, mixed feelings well up in my mind, among them there are pleasure and delight, as well as regret, and most importantly gratitude. I am deeply grateful for the people I met.\\
+
+First of all, sincere thanks go to my supervisors Marc Pierrot-Deseilligny and Ewelina Rupnik. They offered me this precious opportunity which met all my needs, and I thank them from the bottom of my heart for their recognition and trust in me. During my PhD research, they have given me a lot of guidance and help in my work, I learned a lot from them. Marc is a senior specialist in photogrammetry. He possesses profound experience in this domain, from which I benefited a lot. He is a first-rate helmsman who is good at controlling direction with ease. Ewelina is versatile, she is always there for me whenever I have a problem. She is capable of many unexpected skills that surprises me, both in theory and application. 
+More importantly, both of them are rigorous scholars, they set up role models for me in my future research.
+Besides, Ewelina is an exemplary feminism to me and sets an instance for women pursuing their careers.\\
+
+I would also like to express my special gratitude to Yann Klinger and Arthur Delorme in Institut de Physique du Globe de Paris (IPGP), Michele Santangelo in National Research Council, Research Institute for Hydrogeological Protection (CNR-IRPI), Han-Kyung Bae and Dong-Eun Kim in Korea Institute of Geoscience and Mineral Resources (KIGAM), Joaquín Muñoz-Cobo Belart in National Land Survey of Iceland. Thanks to all of them, I learned a lot about the possible applications for my research. \\
+
+Heartfelt acknowledgment is made to Denis Feurer and Fabrice Vinatier for their contribution to the interior calibration of the Pezenas dataset, Benjamin Ferrand for the 2015 acquisition of Pezenas, Sebastien Giordano for the Fr{\'e}jus dataset, Han-Kyung Bae and Dong-Eun Kim for the Kobe dataset, Michele Santangelo for the Alberona dataset, and Joaquín Muñoz-Cobo Belart for the Hofsjökull dataset. We are thankful to ANR project DISRUPT (ANR-18-CE31-0012–0) for supporting this work.\\
+
+In particular, I deeply appreciate my husband, Teng Wu, who is also an academic in photogrammetry. He gave me a lot of useful advises in my work and life. He is also a very reliable partner, I got countless help and support from him. Although he is not very expressive, he is fully devoted to me and our family. I know that he will support me unconditionally whenever I need him, he met all the expectations I had for a life partner. Thanks to the gift of life, we have two healthy and lovely children who brought hope and joy into our lives. Since having them, we've got a deeper sense of responsibility and a stronger motivation to become better examples for them. With a great sense of debt, I am grateful to my parents for raising me and supporting all the choices I made in my life. Thanks to my brother, who took over the responsibility of taking care of my parents for me after I left China. As an aged PhD student, it is not easy to balance work and life, I can't imagine pursuing my PhD without the support from all the family members I mentioned before.\\
+
+Last but not least, during my research at Lastig, I met many warm-hearted friends: Manchun Lei, Yilin Zhou, Imane Fikri, Mohamed Ali Chebbi, Christophe Meynard, Jean-Michael Muller, Jean-Philippe Souchon, Olivier Martin, Lanfa Liu, Nathan Piasco, Emile Blettery, Raphael Sulzer, Stephane Guinard, Oussama Ennafii, Evelyn Paiz etc., who made my work environment full of friendliness and laughter. I am grateful to all the friends in my life who enriched me and I look forward to meeting them more often after the COVID subsides.\\
+
+
 
 \dominitoc
 \tableofcontents
-
+\cleardoublepage
 \include{Acronyms}
 
 \mainmatter
-
+\cleardoublepage
+\include{Chapter1French}
+\cleardoublepage
 \include{Chapter1}
-
+\cleardoublepage
 \include{Chapter2}
-
+\cleardoublepage
 \include{ChapterNew}
-
+\cleardoublepage
 \include{Chapter3}
-
+\cleardoublepage
 \include{Chapter4}
-
+\cleardoublepage
 \include{Chapter5}
 
 \appendix
@@ -82,11 +118,11 @@ With the recovered inter-epoch matches, we refine the image orientations and qua
 \mtcaddpart[Appendices]
 \part*{Appendices}
 \include{AppendixA}
-
+\cleardoublepage
 \include{AppendixB}
-
+\cleardoublepage
 \include{AppendixC}
-
+\cleardoublepage
 %\include{Appendix3}
 %\include{Appendix1}
 %\include{Appendix2}
@@ -108,7 +144,7 @@ With the recovered inter-epoch matches, we refine the image orientations and qua
 %{\large\textbf{Abstract:}}
 %The main objective of this thesis is to provide radio-oncology specialists with automatic tools for delineating organs at risk of a patient undergoing a radiotherapy treatment of cerebral or head and neck tumors.
 %\\
-%To achieve this goal, we use an anatomical atlas, i.e. a representative anatomy associated to a clinical image representing it. The registration of this atlas allows to segment automatically the patient structures and to accelerate this process. Contributions in this method are presented on three axes.
+%To achieve this goal, we use an anatomical atlas, i.e., a representative anatomy associated to a clinical image representing it. The registration of this atlas allows to segment automatically the patient structures and to accelerate this process. Contributions in this method are presented on three axes.
 %\\
 %First, we want to obtain a registration method which is as independent as possible w.r.t. the setting of its parameters. This setting, done by the clinician, indeed needs to be minimal while guaranteeing a robust result. We therefore propose registration methods allowing to better control the obtained transformation, using outlier rejection techniques or locally affine transformations.
 %\\

@@ -1,186 +1,255 @@
 \relax 
 \providecommand\hyper@newdestlabel[2]{}
-\@writefile{toc}{\contentsline {chapter}{\numberline {4}Rough co-registration}{23}{chapter.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {chapter}{\numberline {5}Rough co-registration}{35}{chapter.5}\protected@file@percent }
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\@writefile{lof}{\contentsline {xchapter}{Rough co-registration}{23}{chapter.4}\protected@file@percent }
-\@writefile{lot}{\contentsline {xchapter}{Rough co-registration}{23}{chapter.4}\protected@file@percent }
-\newlabel{chap:RoughCoReg}{{4}{23}{Rough co-registration}{chapter.4}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {4.1}Introduction}{23}{section.4.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.1.1}Motivation and objective}{23}{subsection.4.1.1}\protected@file@percent }
+\@writefile{lof}{\contentsline {xchapter}{Rough co-registration}{35}{chapter.5}\protected@file@percent }
+\@writefile{lot}{\contentsline {xchapter}{Rough co-registration}{35}{chapter.5}\protected@file@percent }
+\newlabel{chap:RoughCoReg}{{5}{35}{Rough co-registration}{chapter.5}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {5.1}Introduction}{35}{section.5.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.1.1}Motivation and objective}{35}{subsection.5.1.1}\protected@file@percent }
 \acronymused{DSM}
 \acronymused{BBA}
 \acronymused{DSM}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.1.2}Contributions}{24}{subsection.4.1.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.1.2}Contributions}{36}{subsection.5.1.2}\protected@file@percent }
+\acronymused{DSM}
+\acronymused{DSM}
+\@writefile{toc}{\contentsline {section}{\numberline {5.2}Methodology}{36}{section.5.2}\protected@file@percent }
 \citation{deseilligny2011apero}
 \citation{schonberger2016structure}
 \citation{openMVG}
 \citation{theia}
 \citation{lowe2004distinctive}
 \citation{mpd:06:sgm}
-\@writefile{toc}{\contentsline {section}{\numberline {4.2}Methodology}{25}{section.4.2}\protected@file@percent }
 \acronymused{DSM}
 \acronymused{DSM}
-\@writefile{brf}{\backcite{deseilligny2011apero}{{25}{4.2}{section.4.2}}}
-\@writefile{brf}{\backcite{schonberger2016structure}{{25}{4.2}{section.4.2}}}
-\@writefile{brf}{\backcite{openMVG}{{25}{4.2}{section.4.2}}}
-\@writefile{brf}{\backcite{theia}{{25}{4.2}{section.4.2}}}
-\@writefile{brf}{\backcite{lowe2004distinctive}{{25}{1}{Item.27}}}
-\@writefile{brf}{\backcite{mpd:06:sgm}{{25}{3}{Item.29}}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.2.1}Strategy 1: Matching image pairs (\textit  {ImgPairs})}{25}{subsection.4.2.1}\protected@file@percent }
+\acronymused{DSM}
+\acronymused{SfM}
+\@writefile{brf}{\backcite{deseilligny2011apero}{{37}{5.2}{Item.43}}}
+\@writefile{brf}{\backcite{schonberger2016structure}{{37}{5.2}{Item.43}}}
+\@writefile{brf}{\backcite{openMVG}{{37}{5.2}{Item.43}}}
+\@writefile{brf}{\backcite{theia}{{37}{5.2}{Item.43}}}
+\@writefile{brf}{\backcite{lowe2004distinctive}{{37}{1}{Item.44}}}
+\acronymused{SfM}
+\AC@undonewlabel{acro:RPC}
+\newlabel{acro:RPC}{{2}{37}{Methodology}{section*.25}{}}
+\acronymused{RPC}
+\@writefile{brf}{\backcite{mpd:06:sgm}{{37}{3}{Item.46}}}
+\acronymused{DSM}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.2.1}Strategy 1: Matching image pairs (\textit  {ImgPairs})}{37}{subsection.5.2.1}\protected@file@percent }
 \citation{morel2009asift}
+\@writefile{toc}{\contentsline {paragraph}{\textit  {Four rotation hypotheses}.}{38}{section*.26}\protected@file@percent }
+\@writefile{brf}{\backcite{morel2009asift}{{38}{5.2.1}{section*.26}}}
+\@writefile{toc}{\contentsline {paragraph}{Workflow of \textit  {ImgPairs}.}{38}{section*.27}\protected@file@percent }
+\newlabel{eq:2DSim}{{5.1}{38}{Workflow of \textit {ImgPairs}}{equation.5.2.1}{}}
+\acronymused{DSM}
+\newlabel{eq:3DSim}{{5.2}{38}{Workflow of \textit {ImgPairs}}{equation.5.2.2}{}}
 \citation{zhang2020guided}
-\@writefile{toc}{\contentsline {paragraph}{\textit  {Four rotation hypotheses}.}{26}{section*.21}\protected@file@percent }
-\@writefile{brf}{\backcite{morel2009asift}{{26}{4.2.1}{section*.21}}}
-\@writefile{toc}{\contentsline {paragraph}{Workflow of \textit  {ImgPairs}.}{26}{section*.22}\protected@file@percent }
-\newlabel{eq:2DSim}{{4.1}{26}{Workflow of \textit {ImgPairs}}{equation.4.2.1}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4.1}{\ignorespaces Rough co-registration by matching image pairs. (a) Workflow of \textit  {ImgPairs}. Each inter-epoch image pair is matched, followed by projecting the matches onto ground to find globally consistent inliers. (b) Four rotation hypotheses. We rotate the secondary image by 90 $^\circ $ four times to match with master image and keep the best one with the largest number of matches (red rectangle).}}{27}{figure.4.1}\protected@file@percent }
-\newlabel{WorkflowImgPair}{{4.1}{27}{Rough co-registration by matching image pairs. (a) Workflow of \textit {ImgPairs}. Each inter-epoch image pair is matched, followed by projecting the matches onto ground to find globally consistent inliers. (b) Four rotation hypotheses. We rotate the secondary image by 90 $^\circ $ four times to match with master image and keep the best one with the largest number of matches (red rectangle)}{figure.4.1}{}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {Workflow of \textit {ImgPairs}}}}{27}{figure.4.1}\protected@file@percent }
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {Four rotation hypotheses}}}{27}{figure.4.1}\protected@file@percent }
-\@writefile{brf}{\backcite{zhang2020guided}{{28}{4.2.1}{figure.4.1}}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.2.2}Strategy 2: Matching Orthophotos/DSMs (\textit  {Ortho} or \textit  {DSM})}{28}{subsection.4.2.2}\protected@file@percent }
+\@writefile{brf}{\backcite{zhang2020guided}{{39}{5.2.1}{figure.5.1}}}
 \acronymused{DSM}
-\@writefile{toc}{\contentsline {paragraph}{Converting \ac {DSM} to grayscale image.}{28}{section*.23}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{\textit  {One-to-many tiling scheme}.}{28}{section*.24}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {4.2}{\ignorespaces Rough co-registration by matching orthophotos. (a) Workflow of \textit  {Ortho}. Orthophotos are matched, followed by projecting the inlier matches onto ground to build 3D Helmert transformation model. (b) Four rotation hypotheses combined with \textit  {one-to-many tiling scheme}. We rotate the secondary orthophoto by 90 $^\circ $ four times to match with master orthophoto and keep the best one with the largest number of RANSAC inliers (red rectangle). \textit  {One-to-many tiling scheme} is applied during each hypothesis, with both orthophotos croped into tiles followed by matching all the tile pairs and merging the matches.}}{29}{figure.4.2}\protected@file@percent }
-\newlabel{WorkflowOrtho}{{4.2}{29}{Rough co-registration by matching orthophotos. (a) Workflow of \textit {Ortho}. Orthophotos are matched, followed by projecting the inlier matches onto ground to build 3D Helmert transformation model. (b) Four rotation hypotheses combined with \textit {one-to-many tiling scheme}. We rotate the secondary orthophoto by 90 $^\circ $ four times to match with master orthophoto and keep the best one with the largest number of RANSAC inliers (red rectangle). \textit {One-to-many tiling scheme} is applied during each hypothesis, with both orthophotos croped into tiles followed by matching all the tile pairs and merging the matches}{figure.4.2}{}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {Workflow of \textit {Ortho}}}}{29}{figure.4.2}\protected@file@percent }
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {Four rotation hypotheses combined with \textit {one-to-many tiling scheme}}}}{29}{figure.4.2}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {4.3}{\ignorespaces Rough co-registration by matching DSMs. (a) Workflow of \textit  {DSM}. DSMs are matched, followed by projecting the inlier matches onto ground to build 3D Helmert transformation model. (b) Four rotation hypotheses combined with tiling scheme. We rotate the secondary DSM by 90 $^\circ $ four times to match with master DSM and keep the best one with the largest number of RANSAC inliers (red rectangle). Tiling scheme is applied during each hypothesis, with both DSMs croped into tiles followed by matching all the tile pairs and merging the matches.}}{30}{figure.4.3}\protected@file@percent }
-\newlabel{WorkflowDSM}{{4.3}{30}{Rough co-registration by matching DSMs. (a) Workflow of \textit {DSM}. DSMs are matched, followed by projecting the inlier matches onto ground to build 3D Helmert transformation model. (b) Four rotation hypotheses combined with tiling scheme. We rotate the secondary DSM by 90 $^\circ $ four times to match with master DSM and keep the best one with the largest number of RANSAC inliers (red rectangle). Tiling scheme is applied during each hypothesis, with both DSMs croped into tiles followed by matching all the tile pairs and merging the matches}{figure.4.3}{}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {Workflow of \textit {DSM}}}}{30}{figure.4.3}\protected@file@percent }
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {Four rotation hypotheses combined with tiling scheme}}}{30}{figure.4.3}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Workflow of \textit  {Ortho} and \textit  {DSM}.}{31}{section*.25}\protected@file@percent }
-\newlabel{eq:2DSim}{{4.2}{31}{Workflow of \textit {Ortho} and \textit {DSM}}{equation.4.2.2}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {4.3}Experiments}{31}{section.4.3}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.3.1}Implementation details}{32}{subsection.4.3.1}\protected@file@percent }
-\newlabel{Implementationdetails}{{4.3.1}{32}{Implementation details}{subsection.4.3.1}{}}
 \acronymused{DSM}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.3.2}Comparison between $SIFT_{Adapted}$ and $SIFT_{Default}$}{33}{subsection.4.3.2}\protected@file@percent }
-\newlabel{Compare2SIFTs}{{4.3.2}{33}{Comparison between $SIFT_{Adapted}$ and $SIFT_{Default}$}{subsection.4.3.2}{}}
-\@writefile{toc}{\contentsline {paragraph}{Comparison on matching image pair.}{33}{section*.26}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Comparison on matching orthophotos.}{33}{section*.27}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Comparison on matching DSMs.}{33}{section*.28}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {4.4}{\ignorespaces {\scriptsize  Comparison between $SIFT_{Adapted}$ and $SIFT_{Default}$ on a pair of images from Pezenas 1971 and Pezenas 2015 individually. (a) Image pair to be matched, with red rectangles indicating the common zone. (b) Numbers of total matches and RANSAC inliers of $SIFT_{Adapted}$ and $SIFT_{Default}$. (c) Visualization of RANSAC inliers based on $SIFT_{Adapted}$. (d)Visualization of RANSAC inliers based on $SIFT_{Default}$.}}}{34}{figure.4.4}\protected@file@percent }
-\newlabel{SIFTComp_ImgPair}{{4.4}{34}{\scriptsize Comparison between $SIFT_{Adapted}$ and $SIFT_{Default}$ on a pair of images from Pezenas 1971 and Pezenas 2015 individually. (a) Image pair to be matched, with red rectangles indicating the common zone. (b) Numbers of total matches and RANSAC inliers of $SIFT_{Adapted}$ and $SIFT_{Default}$. (c) Visualization of RANSAC inliers based on $SIFT_{Adapted}$. (d)Visualization of RANSAC inliers based on $SIFT_{Default}$}{figure.4.4}{}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {Image pair}}}{34}{figure.4.4}\protected@file@percent }
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {Number of recovered matches}}}{34}{figure.4.4}\protected@file@percent }
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(c)}{\ignorespaces {$SIFT_{Adapted}^{RANSAC Inliers}$}}}{34}{figure.4.4}\protected@file@percent }
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(d)}{\ignorespaces {$SIFT_{Default}^{TotalMatches}$}}}{34}{figure.4.4}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.3.3}Comparison between $SuperGlue_{tiling}$ and $SuperGlue_{orig}$}{34}{subsection.4.3.3}\protected@file@percent }
-\newlabel{Compare2SpGs}{{4.3.3}{34}{Comparison between $SuperGlue_{tiling}$ and $SuperGlue_{orig}$}{subsection.4.3.3}{}}
-\@writefile{toc}{\contentsline {paragraph}{Comparison on matching orthophotos.}{34}{section*.29}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {4.5}{\ignorespaces Comparison between $SIFT_{Adapted}$ and $SIFT_{Default}$ on orthophotos from Pezenas 1981 and Pezenas 2015 individually. (a) Orthophotos to be matched, with red rectangles indicating the common zone. (b) Numbers of total matches and RANSAC inliers of $SIFT_{Adapted}$ and $SIFT_{Default}$. (c) Visualization of RANSAC inliers based on $SIFT_{Adapted}$. (d)Visualization of RANSAC inliers based on $SIFT_{Default}$.}}{35}{figure.4.5}\protected@file@percent }
-\newlabel{SIFTComp_Ortho}{{4.5}{35}{Comparison between $SIFT_{Adapted}$ and $SIFT_{Default}$ on orthophotos from Pezenas 1981 and Pezenas 2015 individually. (a) Orthophotos to be matched, with red rectangles indicating the common zone. (b) Numbers of total matches and RANSAC inliers of $SIFT_{Adapted}$ and $SIFT_{Default}$. (c) Visualization of RANSAC inliers based on $SIFT_{Adapted}$. (d)Visualization of RANSAC inliers based on $SIFT_{Default}$}{figure.4.5}{}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {Orthophotos}}}{35}{figure.4.5}\protected@file@percent }
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {Number of recovered matches}}}{35}{figure.4.5}\protected@file@percent }
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(c)}{\ignorespaces {$SIFT_{Adapted}^{RANSAC Inliers}$}}}{35}{figure.4.5}\protected@file@percent }
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(d)}{\ignorespaces {$SIFT_{Default}^{TotalMatches}$}}}{35}{figure.4.5}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {4.6}{\ignorespaces Comparison between $SIFT_{Adapted}$ and $SIFT_{Default}$ on DSMs from Fr{\'e}jus 1954 and Fr{\'e}jus 2014 individually. (a) DSMs to be matched, with red rectangles indicating the common zone. (b) Numbers of total matches and RANSAC inliers of $SIFT_{Adapted}$ and $SIFT_{Default}$. (c) Visualization of RANSAC inliers based on $SIFT_{Adapted}$. (d)Visualization of RANSAC inliers based on $SIFT_{Default}$.}}{36}{figure.4.6}\protected@file@percent }
-\newlabel{SIFTComp_DSM}{{4.6}{36}{Comparison between $SIFT_{Adapted}$ and $SIFT_{Default}$ on DSMs from Fr{\'e}jus 1954 and Fr{\'e}jus 2014 individually. (a) DSMs to be matched, with red rectangles indicating the common zone. (b) Numbers of total matches and RANSAC inliers of $SIFT_{Adapted}$ and $SIFT_{Default}$. (c) Visualization of RANSAC inliers based on $SIFT_{Adapted}$. (d)Visualization of RANSAC inliers based on $SIFT_{Default}$}{figure.4.6}{}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {DSMs}}}{36}{figure.4.6}\protected@file@percent }
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {Number of recovered matches}}}{36}{figure.4.6}\protected@file@percent }
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(c)}{\ignorespaces {$SIFT_{Adapted}^{RANSAC Inliers}$}}}{36}{figure.4.6}\protected@file@percent }
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(d)}{\ignorespaces {$SIFT_{Default}^{TotalMatches}$}}}{36}{figure.4.6}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {4.7}{\ignorespaces Comparison between $SuperGlue_{tiling}$ and $SuperGlue_{orig}$ on orthophotos from Fr{\'e}jus 1970 and 2014 individually. (a) Orthophotos to be matched, with red rectangles indicating the common zone. (b) Numbers of total matches and RANSAC inliers of $SuperGlue_{tiling}$ and $SuperGlue_{orig}$. (c) Visualization of RANSAC inliers based on $SuperGlue_{tiling}$. (d)Visualization of total matches based on $SuperGlue_{orig}$.}}{37}{figure.4.7}\protected@file@percent }
-\newlabel{MatchOrtho}{{4.7}{37}{Comparison between $SuperGlue_{tiling}$ and $SuperGlue_{orig}$ on orthophotos from Fr{\'e}jus 1970 and 2014 individually. (a) Orthophotos to be matched, with red rectangles indicating the common zone. (b) Numbers of total matches and RANSAC inliers of $SuperGlue_{tiling}$ and $SuperGlue_{orig}$. (c) Visualization of RANSAC inliers based on $SuperGlue_{tiling}$. (d)Visualization of total matches based on $SuperGlue_{orig}$}{figure.4.7}{}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {Orthophotos}}}{37}{figure.4.7}\protected@file@percent }
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {Number of recovered matches}}}{37}{figure.4.7}\protected@file@percent }
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(c)}{\ignorespaces {$SuperGlue_{tiling}^{RANSAC Inliers}$}}}{37}{figure.4.7}\protected@file@percent }
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(d)}{\ignorespaces {$SuperGlue_{orig}^{TotalMatches}$}}}{37}{figure.4.7}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Comparison on matching DSMs.}{38}{section*.30}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {4.8}{\ignorespaces Comparison between $SuperGlue_{tiling}$ and $SuperGlue_{orig}$ on DSMs from Fr{\'e}jus 1970 and 2014 individually. (a) DSMs to be matched, with red rectangles indicating the common zone. (b) Numbers of total matches and RANSAC inliers of $SuperGlue_{tiling}$ and $SuperGlue_{orig}$. (c) Visualization of RANSAC inliers based on $SuperGlue_{tiling}$. (d)Visualization of total matches based on $SuperGlue_{orig}$.}}{38}{figure.4.8}\protected@file@percent }
-\newlabel{MatchDSM}{{4.8}{38}{Comparison between $SuperGlue_{tiling}$ and $SuperGlue_{orig}$ on DSMs from Fr{\'e}jus 1970 and 2014 individually. (a) DSMs to be matched, with red rectangles indicating the common zone. (b) Numbers of total matches and RANSAC inliers of $SuperGlue_{tiling}$ and $SuperGlue_{orig}$. (c) Visualization of RANSAC inliers based on $SuperGlue_{tiling}$. (d)Visualization of total matches based on $SuperGlue_{orig}$}{figure.4.8}{}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {DSMs}}}{38}{figure.4.8}\protected@file@percent }
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {Number of recovered matches}}}{38}{figure.4.8}\protected@file@percent }
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(c)}{\ignorespaces {$SuperGlue_{tiling}^{RANSAC Inliers}$}}}{38}{figure.4.8}\protected@file@percent }
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(d)}{\ignorespaces {$SuperGlue_{orig}^{TotalMatches}$}}}{38}{figure.4.8}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.3.4}Use case of matching guided by 2D similarity transformation}{38}{subsection.4.3.4}\protected@file@percent }
-\newlabel{inputHomography}{{4.3.4}{38}{Use case of matching guided by 2D similarity transformation}{subsection.4.3.4}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.3.5}Comparison of 6 variants}{39}{subsection.4.3.5}\protected@file@percent }
-\newlabel{Comparisonof6variants}{{4.3.5}{39}{Comparison of 6 variants}{subsection.4.3.5}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.2.2}Strategy 2: Matching Orthophotos/DSMs (\textit  {Ortho} or \textit  {DSM})}{39}{subsection.5.2.2}\protected@file@percent }
+\acronymused{DSM}
+\acronymused{DSM}
+\acronymused{DSM}
+\acronymused{DSM}
+\acronymused{DSM}
+\acronymused{DSM}
+\acronymused{DSM}
+\@writefile{toc}{\contentsline {paragraph}{Converting \ac {DSM} to grayscale image.}{39}{section*.28}\protected@file@percent }
+\acronymused{DSM}
+\acronymused{DSM}
+\acronymused{DSM}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.1}{\ignorespaces Rough co-registration by matching image pairs (i.e., \textit  {ImgPairs}). (a) Whole workflow. Each inter-epoch image pair is matched individually, followed by projecting the matches onto ground to find globally consistent inliers. (b) Match image pairs with SIFT, which involves matching followed by 2D similarity RANSAC to find inliers. (c) Match image pairs with SuperGlue, which involves matching combined with \textit  {four rotation hypotheses}. (d) Four rotation hypotheses. We rotate the secondary image by 90 $^\circ $ four times to match with master image and keep the best one with the largest number of matches (red rectangle).}}{40}{figure.5.1}\protected@file@percent }
+\newlabel{WorkflowImgPair}{{5.1}{40}{Rough co-registration by matching image pairs (i.e., \textit {ImgPairs}). (a) Whole workflow. Each inter-epoch image pair is matched individually, followed by projecting the matches onto ground to find globally consistent inliers. (b) Match image pairs with SIFT, which involves matching followed by 2D similarity RANSAC to find inliers. (c) Match image pairs with SuperGlue, which involves matching combined with \textit {four rotation hypotheses}. (d) Four rotation hypotheses. We rotate the secondary image by 90 $^\circ $ four times to match with master image and keep the best one with the largest number of matches (red rectangle)}{figure.5.1}{}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {Workflow of \textit {ImgPairs}}}}{40}{figure.5.1}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {Match image pairs with SIFT}}}{40}{figure.5.1}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(c)}{\ignorespaces {Match image pairs with SuperGlue}}}{40}{figure.5.1}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(d)}{\ignorespaces {Four rotation hypotheses}}}{40}{figure.5.1}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {5.2}{\ignorespaces Rough co-registration by matching orthophotos (i.e., \textit  {Ortho}). (a) Whole workflow. Orthophotos are matched, followed by projecting the inlier matches onto ground to build 3D Helmert transformation model. (b) Four rotation hypotheses combined with \textit  {one-to-many tiling scheme}. We rotate the secondary orthophoto by 90 $^\circ $ four times to match with master orthophoto and keep the best one with the largest number of RANSAC inliers (red rectangle). \textit  {One-to-many tiling scheme} is applied during each hypothesis, with both orthophotos croped into tiles followed by matching all the tile pairs and merging the matches.}}{41}{figure.5.2}\protected@file@percent }
+\newlabel{WorkflowOrtho}{{5.2}{41}{Rough co-registration by matching orthophotos (i.e., \textit {Ortho}). (a) Whole workflow. Orthophotos are matched, followed by projecting the inlier matches onto ground to build 3D Helmert transformation model. (b) Four rotation hypotheses combined with \textit {one-to-many tiling scheme}. We rotate the secondary orthophoto by 90 $^\circ $ four times to match with master orthophoto and keep the best one with the largest number of RANSAC inliers (red rectangle). \textit {One-to-many tiling scheme} is applied during each hypothesis, with both orthophotos croped into tiles followed by matching all the tile pairs and merging the matches}{figure.5.2}{}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {Workflow of \textit {Ortho}}}}{41}{figure.5.2}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {Four rotation hypotheses combined with \textit {one-to-many tiling scheme}}}}{41}{figure.5.2}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {5.3}{\ignorespaces Rough co-registration by matching \ac {DSM}s (i.e., \textit  {DSM}). (a) Whole workflow. \ac {DSM}s are matched, followed by projecting the inlier matches onto ground to build 3D Helmert transformation model. (b) Four rotation hypotheses combined with tiling scheme. We rotate the secondary \ac {DSM} by 90 $^\circ $ four times to match with master \ac {DSM} and keep the best one with the largest number of RANSAC inliers (red rectangle). Tiling scheme is applied during each hypothesis, with both \ac {DSM}s cropped into tiles followed by matching all the tile pairs and merging the matches.}}{42}{figure.5.3}\protected@file@percent }
+\acronymused{DSM}
+\acronymused{DSM}
+\acronymused{DSM}
+\acronymused{DSM}
+\acronymused{DSM}
+\newlabel{WorkflowDSM}{{5.3}{42}{Rough co-registration by matching \ac {DSM}s (i.e., \textit {DSM}). (a) Whole workflow. \ac {DSM}s are matched, followed by projecting the inlier matches onto ground to build 3D Helmert transformation model. (b) Four rotation hypotheses combined with tiling scheme. We rotate the secondary \ac {DSM} by 90 $^\circ $ four times to match with master \ac {DSM} and keep the best one with the largest number of RANSAC inliers (red rectangle). Tiling scheme is applied during each hypothesis, with both \ac {DSM}s cropped into tiles followed by matching all the tile pairs and merging the matches}{figure.5.3}{}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {Workflow of \textit {DSM}}}}{42}{figure.5.3}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {Four rotation hypotheses combined with tiling scheme}}}{42}{figure.5.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{\textit  {One-to-many tiling scheme}.}{43}{section*.29}\protected@file@percent }
+\acronymused{DSM}
+\acronymused{CNN}
+\@writefile{toc}{\contentsline {paragraph}{Workflow of \textit  {Ortho} and \textit  {DSM}.}{43}{section*.30}\protected@file@percent }
+\acronymused{DSM}
+\acronymused{DSM}
+\acronymused{DSM}
+\acronymused{DSM}
+\newlabel{eq:2DSim}{{5.3}{43}{Workflow of \textit {Ortho} and \textit {DSM}}{equation.5.2.3}{}}
+\acronymused{DSM}
+\@writefile{toc}{\contentsline {section}{\numberline {5.3}Experiments}{44}{section.5.3}\protected@file@percent }
+\acronymused{DSM}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.3.1}Implementation details}{44}{subsection.5.3.1}\protected@file@percent }
+\newlabel{Implementationdetails}{{5.3.1}{44}{Implementation details}{subsection.5.3.1}{}}
+\acronymused{DSM}
+\acronymused{DSM}
+\acronymused{DSM}
+\acronymused{DSM}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.3.2}Comparison between $SIFT_{Adapted}$ and $SIFT_{Default}$}{45}{subsection.5.3.2}\protected@file@percent }
+\newlabel{Compare2SIFTs}{{5.3.2}{45}{Comparison between $SIFT_{Adapted}$ and $SIFT_{Default}$}{subsection.5.3.2}{}}
+\@writefile{toc}{\contentsline {paragraph}{Results on matching image pairs.}{45}{section*.31}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Results on matching orthophotos.}{45}{section*.32}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {5.4}{\ignorespaces Comparison between $SIFT_{Adapted}$ and $SIFT_{Default}$ on a pair of images from Pezenas 1971 and Pezenas 2015 individually. (a) Image pair to be matched, with red rectangles indicating the overlapping zone. (b) Numbers of total matches and RANSAC inliers of $SIFT_{Adapted}$ and $SIFT_{Default}$. (c) Visualization of RANSAC inliers based on $SIFT_{Adapted}$. (d)Visualization of total matches based on $SIFT_{Default}$.}}{46}{figure.5.4}\protected@file@percent }
+\newlabel{SIFTComp_ImgPair}{{5.4}{46}{Comparison between $SIFT_{Adapted}$ and $SIFT_{Default}$ on a pair of images from Pezenas 1971 and Pezenas 2015 individually. (a) Image pair to be matched, with red rectangles indicating the overlapping zone. (b) Numbers of total matches and RANSAC inliers of $SIFT_{Adapted}$ and $SIFT_{Default}$. (c) Visualization of RANSAC inliers based on $SIFT_{Adapted}$. (d)Visualization of total matches based on $SIFT_{Default}$}{figure.5.4}{}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {Image pair}}}{46}{figure.5.4}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {Number of recovered matches}}}{46}{figure.5.4}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(c)}{\ignorespaces {$SIFT_{Adapted}^{RANSAC Inliers}$}}}{46}{figure.5.4}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(d)}{\ignorespaces {$SIFT_{Default}^{TotalMatches}$}}}{46}{figure.5.4}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {5.5}{\ignorespaces Comparison between $SIFT_{Adapted}$ and $SIFT_{Default}$ on orthophotos from Pezenas 1981 and Pezenas 2015 individually. (a) Orthophotos to be matched, with red rectangles indicating the overlapping zone. (b) Numbers of total matches and RANSAC inliers of $SIFT_{Adapted}$ and $SIFT_{Default}$. (c) Visualization of RANSAC inliers based on $SIFT_{Adapted}$. (d)Visualization of total matches based on $SIFT_{Default}$.}}{47}{figure.5.5}\protected@file@percent }
+\newlabel{SIFTComp_Ortho}{{5.5}{47}{Comparison between $SIFT_{Adapted}$ and $SIFT_{Default}$ on orthophotos from Pezenas 1981 and Pezenas 2015 individually. (a) Orthophotos to be matched, with red rectangles indicating the overlapping zone. (b) Numbers of total matches and RANSAC inliers of $SIFT_{Adapted}$ and $SIFT_{Default}$. (c) Visualization of RANSAC inliers based on $SIFT_{Adapted}$. (d)Visualization of total matches based on $SIFT_{Default}$}{figure.5.5}{}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {Orthophotos}}}{47}{figure.5.5}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {Number of recovered matches}}}{47}{figure.5.5}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(c)}{\ignorespaces {$SIFT_{Adapted}^{RANSAC Inliers}$}}}{47}{figure.5.5}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(d)}{\ignorespaces {$SIFT_{Default}^{TotalMatches}$}}}{47}{figure.5.5}\protected@file@percent }
+\acronymused{DSM}
+\@writefile{toc}{\contentsline {paragraph}{Results on matching \ac {DSM}s.}{48}{section*.33}\protected@file@percent }
+\acronymused{DSM}
+\acronymused{DSM}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.6}{\ignorespaces Comparison between $SIFT_{Adapted}$ and $SIFT_{Default}$ on \ac {DSM}s from Fr{\'e}jus 1954 and Fr{\'e}jus 2014 individually. (a) \ac {DSM}s to be matched, with red rectangles indicating the overlapping zone. (b) Numbers of total matches and RANSAC inliers of $SIFT_{Adapted}$ and $SIFT_{Default}$. (c) Visualization of RANSAC inliers based on $SIFT_{Adapted}$. (d)Visualization of total matches based on $SIFT_{Default}$.}}{48}{figure.5.6}\protected@file@percent }
+\acronymused{DSM}
+\acronymused{DSM}
+\newlabel{SIFTComp_DSM}{{5.6}{48}{Comparison between $SIFT_{Adapted}$ and $SIFT_{Default}$ on \ac {DSM}s from Fr{\'e}jus 1954 and Fr{\'e}jus 2014 individually. (a) \ac {DSM}s to be matched, with red rectangles indicating the overlapping zone. (b) Numbers of total matches and RANSAC inliers of $SIFT_{Adapted}$ and $SIFT_{Default}$. (c) Visualization of RANSAC inliers based on $SIFT_{Adapted}$. (d)Visualization of total matches based on $SIFT_{Default}$}{figure.5.6}{}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {\ac {DSM}s}}}{48}{figure.5.6}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {Number of recovered matches}}}{48}{figure.5.6}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(c)}{\ignorespaces {$SIFT_{Adapted}^{RANSAC Inliers}$}}}{48}{figure.5.6}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(d)}{\ignorespaces {$SIFT_{Default}^{TotalMatches}$}}}{48}{figure.5.6}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.3.3}Comparison between $SuperGlue_{tiling}$ and $SuperGlue_{orig}$}{48}{subsection.5.3.3}\protected@file@percent }
+\newlabel{Compare2SpGs}{{5.3.3}{48}{Comparison between $SuperGlue_{tiling}$ and $SuperGlue_{orig}$}{subsection.5.3.3}{}}
+\acronymused{DSM}
+\acronymused{DSM}
+\@writefile{lot}{\contentsline {table}{\numberline {5.1}{\ignorespaces Size of orthophotos and \ac {DSM}s from Fr{\'e}jus 1970 and 2014.}}{49}{table.5.1}\protected@file@percent }
+\acronymused{DSM}
+\newlabel{ImgSize}{{5.1}{49}{Size of orthophotos and \ac {DSM}s from Fr{\'e}jus 1970 and 2014}{table.5.1}{}}
+\acronymused{DSM}
+\@writefile{lot}{\contentsline {table}{\numberline {5.2}{\ignorespaces Comparison of downsampling ratio between $SuperGlue_{tiling}$ and $SuperGlue_{orig}$ for both orthophotos and \ac {DSM}s from Fr{\'e}jus 1970 and 2014.}}{49}{table.5.2}\protected@file@percent }
+\acronymused{DSM}
+\newlabel{ImgDownRatio}{{5.2}{49}{Comparison of downsampling ratio between $SuperGlue_{tiling}$ and $SuperGlue_{orig}$ for both orthophotos and \ac {DSM}s from Fr{\'e}jus 1970 and 2014}{table.5.2}{}}
+\acronymused{DSM}
+\acronymused{DSM}
+\acronymused{DSM}
+\@writefile{toc}{\contentsline {paragraph}{Results on matching orthophotos.}{49}{section*.34}\protected@file@percent }
+\acronymused{DSM}
+\@writefile{toc}{\contentsline {paragraph}{Results on matching \ac {DSM}s.}{49}{section*.35}\protected@file@percent }
+\acronymused{DSM}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.7}{\ignorespaces Comparison between $SuperGlue_{tiling}$ and $SuperGlue_{orig}$ on orthophotos from Fr{\'e}jus 1970 and 2014 individually. (a) Orthophotos to be matched, with red rectangles indicating the overlapping zone. (b) Numbers of total matches and RANSAC inliers of $SuperGlue_{tiling}$ and $SuperGlue_{orig}$. (c) Visualization of RANSAC inliers based on $SuperGlue_{tiling}$. (d)Visualization of total matches based on $SuperGlue_{orig}$.}}{50}{figure.5.7}\protected@file@percent }
+\newlabel{MatchOrtho}{{5.7}{50}{Comparison between $SuperGlue_{tiling}$ and $SuperGlue_{orig}$ on orthophotos from Fr{\'e}jus 1970 and 2014 individually. (a) Orthophotos to be matched, with red rectangles indicating the overlapping zone. (b) Numbers of total matches and RANSAC inliers of $SuperGlue_{tiling}$ and $SuperGlue_{orig}$. (c) Visualization of RANSAC inliers based on $SuperGlue_{tiling}$. (d)Visualization of total matches based on $SuperGlue_{orig}$}{figure.5.7}{}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {Orthophotos}}}{50}{figure.5.7}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {Number of recovered matches}}}{50}{figure.5.7}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(c)}{\ignorespaces {$SuperGlue_{tiling}^{RANSAC Inliers}$}}}{50}{figure.5.7}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(d)}{\ignorespaces {$SuperGlue_{orig}^{TotalMatches}$}}}{50}{figure.5.7}\protected@file@percent }
+\acronymused{DSM}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.8}{\ignorespaces Comparison between $SuperGlue_{tiling}$ and $SuperGlue_{orig}$ on \ac {DSM}s from Fr{\'e}jus 1970 and 2014 individually. (a) \ac {DSM}s to be matched, with red rectangles indicating the overlapping zone. (b) Numbers of total matches and RANSAC inliers of $SuperGlue_{tiling}$ and $SuperGlue_{orig}$. (c) Visualization of RANSAC inliers based on $SuperGlue_{tiling}$. (d)Visualization of total matches based on $SuperGlue_{orig}$.}}{51}{figure.5.8}\protected@file@percent }
+\acronymused{DSM}
+\acronymused{DSM}
+\newlabel{MatchDSM}{{5.8}{51}{Comparison between $SuperGlue_{tiling}$ and $SuperGlue_{orig}$ on \ac {DSM}s from Fr{\'e}jus 1970 and 2014 individually. (a) \ac {DSM}s to be matched, with red rectangles indicating the overlapping zone. (b) Numbers of total matches and RANSAC inliers of $SuperGlue_{tiling}$ and $SuperGlue_{orig}$. (c) Visualization of RANSAC inliers based on $SuperGlue_{tiling}$. (d)Visualization of total matches based on $SuperGlue_{orig}$}{figure.5.8}{}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {\ac {DSM}s}}}{51}{figure.5.8}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {Number of recovered matches}}}{51}{figure.5.8}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(c)}{\ignorespaces {$SuperGlue_{tiling}^{RANSAC Inliers}$}}}{51}{figure.5.8}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(d)}{\ignorespaces {$SuperGlue_{orig}^{TotalMatches}$}}}{51}{figure.5.8}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.3.4}Use case of matching guided by 2D similarity transformation}{52}{subsection.5.3.4}\protected@file@percent }
+\newlabel{inputHomography}{{5.3.4}{52}{Use case of matching guided by 2D similarity transformation}{subsection.5.3.4}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.3.5}Comparison of 6 variants}{52}{subsection.5.3.5}\protected@file@percent }
+\newlabel{Comparisonof6variants}{{5.3.5}{52}{Comparison of 6 variants}{subsection.5.3.5}{}}
+\acronymused{DoD}
+\acronymused{DSM}
+\acronymused{DoD}
+\acronymused{DoD}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.9}{\ignorespaces Matching results of an intra-epoch image pair from dataset Hofsjökull. (a) Image pairs to be matched, with red rectangles indicating the overlapping zone. \leavevmode {\color  {black}Details are revealed in purple squares.} (b) and (c) are matches recovered by SIFT and SuperGlue individually. (d-f) displays matches found by our matching strategy with search radius set to be 45, 30 and 15 pixels individually, with purple squares indicating the details.}}{53}{figure.5.9}\protected@file@percent }
+\newlabel{Matchresult}{{5.9}{53}{Matching results of an intra-epoch image pair from dataset Hofsjökull. (a) Image pairs to be matched, with red rectangles indicating the overlapping zone. \zll {Details are revealed in purple squares.} (b) and (c) are matches recovered by SIFT and SuperGlue individually. (d-f) displays matches found by our matching strategy with search radius set to be 45, 30 and 15 pixels individually, with purple squares indicating the details}{figure.5.9}{}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {Overlapping zone with details}}}{53}{figure.5.9}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {SIFT}}}{53}{figure.5.9}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(c)}{\ignorespaces {SuperGlue}}}{53}{figure.5.9}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(d)}{\ignorespaces {Guided SIFT (S=45)}}}{53}{figure.5.9}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(e)}{\ignorespaces {Guided SIFT (S=30)}}}{53}{figure.5.9}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(f)}{\ignorespaces {Guided SIFT (S=15)}}}{53}{figure.5.9}\protected@file@percent }
+\newlabel{sec:MatchVizMainBody}{{5.3.5}{54}{Matches visualization}{section*.36}{}}
+\@writefile{toc}{\contentsline {paragraph}{Matches visualization.}{54}{section*.36}\protected@file@percent }
+\acronymused{DSM}
+\@writefile{lot}{\contentsline {table}{\numberline {5.3}{\ignorespaces Demonstration of 6 variants succeeding or failing on each dataset.}}{54}{table.5.3}\protected@file@percent }
+\newlabel{succeedorfail}{{5.3}{54}{Demonstration of 6 variants succeeding or failing on each dataset}{table.5.3}{}}
+\newlabel{sec:RoughDoDMainBody}{{5.3.5}{54}{\ac {DoD}}{section*.37}{}}
+\acronymused{DoD}
+\@writefile{toc}{\contentsline {paragraph}{\ac {DoD}.}{54}{section*.37}\protected@file@percent }
+\acronymused{DSM}
 \acronymused{DoD}
 \acronymused{DoD}
 \acronymused{DoD}
-\newlabel{sec:MatchVizMainBody}{{4.3.5}{39}{Matches visualization}{section*.31}{}}
-\@writefile{toc}{\contentsline {paragraph}{Matches visualization.}{39}{section*.31}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {4.9}{\ignorespaces Matching results of an intra-epoch image pair from dataset Hofsjökull. (a) Image pairs to be matched, with red rectangles indicating the common zone. (b) and (c) are matches recovered by SIFT and SuperGlue individually. (d-f) displays matches found by our matching strategy with search radius set to be 45, 30 and 15 pixels individually.}}{40}{figure.4.9}\protected@file@percent }
-\newlabel{Matchresult}{{4.9}{40}{Matching results of an intra-epoch image pair from dataset Hofsjökull. (a) Image pairs to be matched, with red rectangles indicating the common zone. (b) and (c) are matches recovered by SIFT and SuperGlue individually. (d-f) displays matches found by our matching strategy with search radius set to be 45, 30 and 15 pixels individually}{figure.4.9}{}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {Common zone}}}{40}{figure.4.9}\protected@file@percent }
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {SIFT}}}{40}{figure.4.9}\protected@file@percent }
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(c)}{\ignorespaces {SuperGlue}}}{40}{figure.4.9}\protected@file@percent }
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(d)}{\ignorespaces {Guided SIFT (S=45)}}}{40}{figure.4.9}\protected@file@percent }
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(e)}{\ignorespaces {Guided SIFT (S=30)}}}{40}{figure.4.9}\protected@file@percent }
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(f)}{\ignorespaces {Guided SIFT (S=15)}}}{40}{figure.4.9}\protected@file@percent }
-\@writefile{lot}{\contentsline {table}{\numberline {4.1}{\ignorespaces Demonstration of 6 variants succeeding or failing on each dataset.}}{41}{table.4.1}\protected@file@percent }
-\newlabel{succeedorfail}{{4.1}{41}{Demonstration of 6 variants succeeding or failing on each dataset}{table.4.1}{}}
-\newlabel{sec:RoughDoDMainBody}{{4.3.5}{41}{\ac {DoD}}{section*.32}{}}
-\acronymused{DoD}
-\@writefile{toc}{\contentsline {paragraph}{\ac {DoD}.}{41}{section*.32}\protected@file@percent }
-\acronymused{DoD}
-\acronymused{DoD}
-\acronymused{DoD}
-\newlabel{para:Discussion}{{4.3.5}{41}{Discussion}{section*.33}{}}
-\@writefile{toc}{\contentsline {paragraph}{Discussion.}{41}{section*.33}\protected@file@percent }
-\acronymused{DoD}
-\acronymused{DoD}
-\@writefile{lof}{\contentsline {figure}{\numberline {4.10}{\ignorespaces {\scriptsize  Result of \textit  {ImgPairs} (a-d), \textit  {Ortho} (e-h) and \textit  {DSM} (i-l) on matching \textbf  {Fr{\'e}jus 1954 and 2014}. (a, e, i) Image pairs/orthophotos/DSMs to be matched, with red rectangles indicating the common zone. (b, f, j) Numbers of total matches and RANSAC inliers of both SIFT and SuperGlue on variants \textit  {ImgPairs}, \textit  {Ortho} and \textit  {DSM} individually. (c, g, k) Visualization of RANSAC inliers based on $SIFT_{ImgPairs}$, $SIFT_{Ortho}$ and $SIFT_{DSM}$. (d, h, l) Visualization of RANSAC inliers based on $SuperGlue_{ImgPairs}$, $SuperGlue_{Ortho}$ and $SuperGlue_{DSM}$.}}}{42}{figure.4.10}\protected@file@percent }
-\newlabel{MatchVizFrejus1954DSM}{{4.10}{42}{\scriptsize Result of \textit {ImgPairs} (a-d), \textit {Ortho} (e-h) and \textit {DSM} (i-l) on matching \textbf {Fr{\'e}jus 1954 and 2014}. (a, e, i) Image pairs/orthophotos/DSMs to be matched, with red rectangles indicating the common zone. (b, f, j) Numbers of total matches and RANSAC inliers of both SIFT and SuperGlue on variants \textit {ImgPairs}, \textit {Ortho} and \textit {DSM} individually. (c, g, k) Visualization of RANSAC inliers based on $SIFT_{ImgPairs}$, $SIFT_{Ortho}$ and $SIFT_{DSM}$. (d, h, l) Visualization of RANSAC inliers based on $SuperGlue_{ImgPairs}$, $SuperGlue_{Ortho}$ and $SuperGlue_{DSM}$}{figure.4.10}{}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {Image pairs (19$\times $36 pairs)}}}{42}{figure.4.10}\protected@file@percent }
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {Number of recovered matches(\textit {ImgPairs})}}}{42}{figure.4.10}\protected@file@percent }
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(c)}{\ignorespaces {$SIFT_{ImgPairs}^{RANSAC Inliers}$}}}{42}{figure.4.10}\protected@file@percent }
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(d)}{\ignorespaces {$SuperGlue_{ImgPairs}^{RANSAC Inliers}$}}}{42}{figure.4.10}\protected@file@percent }
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(e)}{\ignorespaces {Orthophotos}}}{42}{figure.4.10}\protected@file@percent }
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(f)}{\ignorespaces {Number of recovered matches(\textit {Ortho})}}}{42}{figure.4.10}\protected@file@percent }
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(g)}{\ignorespaces {$SIFT_{Ortho}^{RANSAC Inliers}$}}}{42}{figure.4.10}\protected@file@percent }
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(h)}{\ignorespaces {$SuperGlue_{Ortho}^{RANSAC Inliers}$}}}{42}{figure.4.10}\protected@file@percent }
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(i)}{\ignorespaces {DSMs}}}{42}{figure.4.10}\protected@file@percent }
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(j)}{\ignorespaces {Number of recovered matches(\textit {DSM})}}}{42}{figure.4.10}\protected@file@percent }
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(k)}{\ignorespaces {$SIFT_{DSM}^{RANSAC Inliers}$}}}{42}{figure.4.10}\protected@file@percent }
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(l)}{\ignorespaces {$SuperGlue_{DSM}^{RANSAC Inliers}$}}}{42}{figure.4.10}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {4.11}{\ignorespaces {\scriptsize  Result of \textit  {ImgPairs} (a-d), \textit  {Ortho} (e-h) and \textit  {DSM} (i-l) on matching \textbf  {Fr{\'e}jus 1966 and 2014}. (a, e, i) Image pairs/orthophotos/DSMs to be matched, with red rectangles indicating the common zone. (b, f, j) Numbers of total matches and RANSAC inliers of both SIFT and SuperGlue on variants \textit  {ImgPairs}, \textit  {Ortho} and \textit  {DSM} individually. (c, g, k) Visualization of RANSAC inliers based on $SIFT_{ImgPairs}$, $SIFT_{Ortho}$ and $SIFT_{DSM}$. (d, h, l) Visualization of RANSAC inliers based on $SuperGlue_{ImgPairs}$, $SuperGlue_{Ortho}$ and $SuperGlue_{DSM}$.}}}{43}{figure.4.11}\protected@file@percent }
-\newlabel{MatchVizFrejus1966DSM}{{4.11}{43}{\scriptsize Result of \textit {ImgPairs} (a-d), \textit {Ortho} (e-h) and \textit {DSM} (i-l) on matching \textbf {Fr{\'e}jus 1966 and 2014}. (a, e, i) Image pairs/orthophotos/DSMs to be matched, with red rectangles indicating the common zone. (b, f, j) Numbers of total matches and RANSAC inliers of both SIFT and SuperGlue on variants \textit {ImgPairs}, \textit {Ortho} and \textit {DSM} individually. (c, g, k) Visualization of RANSAC inliers based on $SIFT_{ImgPairs}$, $SIFT_{Ortho}$ and $SIFT_{DSM}$. (d, h, l) Visualization of RANSAC inliers based on $SuperGlue_{ImgPairs}$, $SuperGlue_{Ortho}$ and $SuperGlue_{DSM}$}{figure.4.11}{}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {Image pairs (15$\times $36 pairs)}}}{43}{figure.4.11}\protected@file@percent }
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {Number of recovered matches(\textit {ImgPairs})}}}{43}{figure.4.11}\protected@file@percent }
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(c)}{\ignorespaces {$SIFT_{ImgPairs}^{RANSAC Inliers}$}}}{43}{figure.4.11}\protected@file@percent }
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(d)}{\ignorespaces {$SuperGlue_{ImgPairs}^{RANSAC Inliers}$}}}{43}{figure.4.11}\protected@file@percent }
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(e)}{\ignorespaces {Orthophotos}}}{43}{figure.4.11}\protected@file@percent }
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(f)}{\ignorespaces {Number of recovered matches(\textit {Ortho})}}}{43}{figure.4.11}\protected@file@percent }
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(g)}{\ignorespaces {$SIFT_{Ortho}^{RANSAC Inliers}$}}}{43}{figure.4.11}\protected@file@percent }
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(h)}{\ignorespaces {$SuperGlue_{Ortho}^{RANSAC Inliers}$}}}{43}{figure.4.11}\protected@file@percent }
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(i)}{\ignorespaces {DSMs}}}{43}{figure.4.11}\protected@file@percent }
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(j)}{\ignorespaces {Number of recovered matches(\textit {DSM})}}}{43}{figure.4.11}\protected@file@percent }
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(k)}{\ignorespaces {$SIFT_{DSM}^{RANSAC Inliers}$}}}{43}{figure.4.11}\protected@file@percent }
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(l)}{\ignorespaces {$SuperGlue_{DSM}^{RANSAC Inliers}$}}}{43}{figure.4.11}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {4.12}{\ignorespaces {\scriptsize  Result of \textit  {ImgPairs} (a-d), \textit  {Ortho} (e-h) and \textit  {DSM} (i-l) on matching \textbf  {Fr{\'e}jus 1970 and 2014}. (a, e, i) Image pairs/orthophotos/DSMs to be matched, with red rectangles indicating the common zone. (b, f, j) Numbers of total matches and RANSAC inliers of both SIFT and SuperGlue on variants \textit  {ImgPairs}, \textit  {Ortho} and \textit  {DSM} individually. (c, g, k) Visualization of RANSAC inliers based on $SIFT_{ImgPairs}$, $SIFT_{Ortho}$ and $SIFT_{DSM}$. (d, h, l) Visualization of RANSAC inliers based on $SuperGlue_{ImgPairs}$, $SuperGlue_{Ortho}$ and $SuperGlue_{DSM}$.}}}{44}{figure.4.12}\protected@file@percent }
-\newlabel{MatchVizFrejus1970DSM}{{4.12}{44}{\scriptsize Result of \textit {ImgPairs} (a-d), \textit {Ortho} (e-h) and \textit {DSM} (i-l) on matching \textbf {Fr{\'e}jus 1970 and 2014}. (a, e, i) Image pairs/orthophotos/DSMs to be matched, with red rectangles indicating the common zone. (b, f, j) Numbers of total matches and RANSAC inliers of both SIFT and SuperGlue on variants \textit {ImgPairs}, \textit {Ortho} and \textit {DSM} individually. (c, g, k) Visualization of RANSAC inliers based on $SIFT_{ImgPairs}$, $SIFT_{Ortho}$ and $SIFT_{DSM}$. (d, h, l) Visualization of RANSAC inliers based on $SuperGlue_{ImgPairs}$, $SuperGlue_{Ortho}$ and $SuperGlue_{DSM}$}{figure.4.12}{}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {Image pairs (19$\times $36 pairs)}}}{44}{figure.4.12}\protected@file@percent }
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {Number of recovered matches(\textit {ImgPairs})}}}{44}{figure.4.12}\protected@file@percent }
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(c)}{\ignorespaces {$SIFT_{ImgPairs}^{RANSAC Inliers}$}}}{44}{figure.4.12}\protected@file@percent }
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(d)}{\ignorespaces {$SuperGlue_{ImgPairs}^{RANSAC Inliers}$}}}{44}{figure.4.12}\protected@file@percent }
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(e)}{\ignorespaces {Orthophotos}}}{44}{figure.4.12}\protected@file@percent }
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(f)}{\ignorespaces {Number of recovered matches(\textit {Ortho})}}}{44}{figure.4.12}\protected@file@percent }
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(g)}{\ignorespaces {$SIFT_{Ortho}^{RANSAC Inliers}$}}}{44}{figure.4.12}\protected@file@percent }
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(h)}{\ignorespaces {$SuperGlue_{Ortho}^{RANSAC Inliers}$}}}{44}{figure.4.12}\protected@file@percent }
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(i)}{\ignorespaces {DSMs}}}{44}{figure.4.12}\protected@file@percent }
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(j)}{\ignorespaces {Number of recovered matches(\textit {DSM})}}}{44}{figure.4.12}\protected@file@percent }
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(k)}{\ignorespaces {$SIFT_{DSM}^{RANSAC Inliers}$}}}{44}{figure.4.12}\protected@file@percent }
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(l)}{\ignorespaces {$SuperGlue_{DSM}^{RANSAC Inliers}$}}}{44}{figure.4.12}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {4.13}{\ignorespaces {\scriptsize  Result of \textit  {ImgPairs} (a-d), \textit  {Ortho} (e-h) and \textit  {DSM} (i-l) on matching \textbf  {Alberona 1954 and 2003}. (a, e, i) Image pairs/orthophotos/DSMs to be matched, with red rectangles indicating the common zone. (b, f, j) Numbers of total matches and RANSAC inliers of both SIFT and SuperGlue on variants \textit  {ImgPairs}, \textit  {Ortho} and \textit  {DSM} individually. (c, g, k) Visualization of RANSAC inliers based on $SIFT_{ImgPairs}$, $SIFT_{Ortho}$ and $SIFT_{DSM}$. (d, h, l) Visualization of RANSAC inliers based on $SuperGlue_{ImgPairs}$, $SuperGlue_{Ortho}$ and $SuperGlue_{DSM}$.}}}{45}{figure.4.13}\protected@file@percent }
-\newlabel{MatchVizAlberona1954DSM}{{4.13}{45}{\scriptsize Result of \textit {ImgPairs} (a-d), \textit {Ortho} (e-h) and \textit {DSM} (i-l) on matching \textbf {Alberona 1954 and 2003}. (a, e, i) Image pairs/orthophotos/DSMs to be matched, with red rectangles indicating the common zone. (b, f, j) Numbers of total matches and RANSAC inliers of both SIFT and SuperGlue on variants \textit {ImgPairs}, \textit {Ortho} and \textit {DSM} individually. (c, g, k) Visualization of RANSAC inliers based on $SIFT_{ImgPairs}$, $SIFT_{Ortho}$ and $SIFT_{DSM}$. (d, h, l) Visualization of RANSAC inliers based on $SuperGlue_{ImgPairs}$, $SuperGlue_{Ortho}$ and $SuperGlue_{DSM}$}{figure.4.13}{}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {Image pairs (19$\times $36 pairs)}}}{45}{figure.4.13}\protected@file@percent }
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {Number of recovered matches(\textit {ImgPairs})}}}{45}{figure.4.13}\protected@file@percent }
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(c)}{\ignorespaces {$SIFT_{ImgPairs}^{RANSAC Inliers}$}}}{45}{figure.4.13}\protected@file@percent }
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(d)}{\ignorespaces {$SuperGlue_{ImgPairs}^{RANSAC Inliers}$}}}{45}{figure.4.13}\protected@file@percent }
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(e)}{\ignorespaces {Orthophotos}}}{45}{figure.4.13}\protected@file@percent }
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(f)}{\ignorespaces {Number of recovered matches(\textit {Ortho})}}}{45}{figure.4.13}\protected@file@percent }
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(g)}{\ignorespaces {$SIFT_{Ortho}^{RANSAC Inliers}$}}}{45}{figure.4.13}\protected@file@percent }
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(h)}{\ignorespaces {$SuperGlue_{Ortho}^{RANSAC Inliers}$}}}{45}{figure.4.13}\protected@file@percent }
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(i)}{\ignorespaces {DSMs}}}{45}{figure.4.13}\protected@file@percent }
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(j)}{\ignorespaces {Number of recovered matches(\textit {DSM})}}}{45}{figure.4.13}\protected@file@percent }
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(k)}{\ignorespaces {$SIFT_{DSM}^{RANSAC Inliers}$}}}{45}{figure.4.13}\protected@file@percent }
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(l)}{\ignorespaces {$SuperGlue_{DSM}^{RANSAC Inliers}$}}}{45}{figure.4.13}\protected@file@percent }
+\acronymused{DSM}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.10}{\ignorespaces Result of \textit  {ImgPairs} (a-d), \textit  {Ortho} (e-h) and \textit  {DSM} (i-l) on matching \textbf  {Fr{\'e}jus 1954 and 2014}. (a, e, i) Image pairs/orthophotos/\ac {DSM}s to be matched, with red rectangles indicating the overlapping zone. (b, f, j) Numbers of total matches and RANSAC inliers of both SIFT and SuperGlue on variants \textit  {ImgPairs}, \textit  {Ortho} and \textit  {DSM} individually. (c, g, k) Visualization of RANSAC inliers based on $SIFT_{ImgPairs}$, $SIFT_{Ortho}$ and $SIFT_{DSM}$. (d, h, l) Visualization of RANSAC inliers based on $SuperGlue_{ImgPairs}$, $SuperGlue_{Ortho}$ and $SuperGlue_{DSM}$.}}{55}{figure.5.10}\protected@file@percent }
+\acronymused{DSM}
+\newlabel{MatchVizFrejus1954DSM}{{5.10}{55}{Result of \textit {ImgPairs} (a-d), \textit {Ortho} (e-h) and \textit {DSM} (i-l) on matching \textbf {Fr{\'e}jus 1954 and 2014}. (a, e, i) Image pairs/orthophotos/\ac {DSM}s to be matched, with red rectangles indicating the overlapping zone. (b, f, j) Numbers of total matches and RANSAC inliers of both SIFT and SuperGlue on variants \textit {ImgPairs}, \textit {Ortho} and \textit {DSM} individually. (c, g, k) Visualization of RANSAC inliers based on $SIFT_{ImgPairs}$, $SIFT_{Ortho}$ and $SIFT_{DSM}$. (d, h, l) Visualization of RANSAC inliers based on $SuperGlue_{ImgPairs}$, $SuperGlue_{Ortho}$ and $SuperGlue_{DSM}$}{figure.5.10}{}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {Image pairs (19$\times $33 pairs)}}}{55}{figure.5.10}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {Number of recovered matches(\textit {ImgPairs})}}}{55}{figure.5.10}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(c)}{\ignorespaces {$SIFT_{ImgPairs}^{RANSAC Inliers}$}}}{55}{figure.5.10}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(d)}{\ignorespaces {$SuperGlue_{ImgPairs}^{RANSAC Inliers}$}}}{55}{figure.5.10}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(e)}{\ignorespaces {Orthophotos}}}{55}{figure.5.10}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(f)}{\ignorespaces {Number of recovered matches(\textit {Ortho})}}}{55}{figure.5.10}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(g)}{\ignorespaces {$SIFT_{Ortho}^{RANSAC Inliers}$}}}{55}{figure.5.10}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(h)}{\ignorespaces {$SuperGlue_{Ortho}^{RANSAC Inliers}$}}}{55}{figure.5.10}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(i)}{\ignorespaces {\ac {DSM}s}}}{55}{figure.5.10}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(j)}{\ignorespaces {Number of recovered matches(\textit {DSM})}}}{55}{figure.5.10}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(k)}{\ignorespaces {$SIFT_{DSM}^{RANSAC Inliers}$}}}{55}{figure.5.10}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(l)}{\ignorespaces {$SuperGlue_{DSM}^{RANSAC Inliers}$}}}{55}{figure.5.10}\protected@file@percent }
+\acronymused{DSM}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.11}{\ignorespaces Result of \textit  {ImgPairs} (a-d), \textit  {Ortho} (e-h) and \textit  {DSM} (i-l) on matching \textbf  {Fr{\'e}jus 1966 and 2014}. (a, e, i) Image pairs/orthophotos/\ac {DSM}s to be matched, with red rectangles indicating the overlapping zone. (b, f, j) Numbers of total matches and RANSAC inliers of both SIFT and SuperGlue on variants \textit  {ImgPairs}, \textit  {Ortho} and \textit  {DSM} individually. (c, g, k) Visualization of RANSAC inliers based on $SIFT_{ImgPairs}$, $SIFT_{Ortho}$ and $SIFT_{DSM}$. (d, h, l) Visualization of RANSAC inliers based on $SuperGlue_{ImgPairs}$, $SuperGlue_{Ortho}$ and $SuperGlue_{DSM}$.}}{56}{figure.5.11}\protected@file@percent }
+\acronymused{DSM}
+\newlabel{MatchVizFrejus1966DSM}{{5.11}{56}{Result of \textit {ImgPairs} (a-d), \textit {Ortho} (e-h) and \textit {DSM} (i-l) on matching \textbf {Fr{\'e}jus 1966 and 2014}. (a, e, i) Image pairs/orthophotos/\ac {DSM}s to be matched, with red rectangles indicating the overlapping zone. (b, f, j) Numbers of total matches and RANSAC inliers of both SIFT and SuperGlue on variants \textit {ImgPairs}, \textit {Ortho} and \textit {DSM} individually. (c, g, k) Visualization of RANSAC inliers based on $SIFT_{ImgPairs}$, $SIFT_{Ortho}$ and $SIFT_{DSM}$. (d, h, l) Visualization of RANSAC inliers based on $SuperGlue_{ImgPairs}$, $SuperGlue_{Ortho}$ and $SuperGlue_{DSM}$}{figure.5.11}{}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {Image pairs (15$\times $33 pairs)}}}{56}{figure.5.11}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {Number of recovered matches(\textit {ImgPairs})}}}{56}{figure.5.11}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(c)}{\ignorespaces {$SIFT_{ImgPairs}^{RANSAC Inliers}$}}}{56}{figure.5.11}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(d)}{\ignorespaces {$SuperGlue_{ImgPairs}^{RANSAC Inliers}$}}}{56}{figure.5.11}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(e)}{\ignorespaces {Orthophotos}}}{56}{figure.5.11}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(f)}{\ignorespaces {Number of recovered matches(\textit {Ortho})}}}{56}{figure.5.11}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(g)}{\ignorespaces {$SIFT_{Ortho}^{RANSAC Inliers}$}}}{56}{figure.5.11}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(h)}{\ignorespaces {$SuperGlue_{Ortho}^{RANSAC Inliers}$}}}{56}{figure.5.11}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(i)}{\ignorespaces {\ac {DSM}s}}}{56}{figure.5.11}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(j)}{\ignorespaces {Number of recovered matches(\textit {DSM})}}}{56}{figure.5.11}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(k)}{\ignorespaces {$SIFT_{DSM}^{RANSAC Inliers}$}}}{56}{figure.5.11}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(l)}{\ignorespaces {$SuperGlue_{DSM}^{RANSAC Inliers}$}}}{56}{figure.5.11}\protected@file@percent }
+\acronymused{DSM}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.12}{\ignorespaces Result of \textit  {ImgPairs} (a-d), \textit  {Ortho} (e-h) and \textit  {DSM} (i-l) on matching \textbf  {Fr{\'e}jus 1970 and 2014}. (a, e, i) Image pairs/orthophotos/\ac {DSM}s to be matched, with red rectangles indicating the overlapping zone. (b, f, j) Numbers of total matches and RANSAC inliers of both SIFT and SuperGlue on variants \textit  {ImgPairs}, \textit  {Ortho} and \textit  {DSM} individually. (c, g, k) Visualization of RANSAC inliers based on $SIFT_{ImgPairs}$, $SIFT_{Ortho}$ and $SIFT_{DSM}$. (d, h, l) Visualization of RANSAC inliers based on $SuperGlue_{ImgPairs}$, $SuperGlue_{Ortho}$ and $SuperGlue_{DSM}$.}}{57}{figure.5.12}\protected@file@percent }
+\acronymused{DSM}
+\newlabel{MatchVizFrejus1970DSM}{{5.12}{57}{Result of \textit {ImgPairs} (a-d), \textit {Ortho} (e-h) and \textit {DSM} (i-l) on matching \textbf {Fr{\'e}jus 1970 and 2014}. (a, e, i) Image pairs/orthophotos/\ac {DSM}s to be matched, with red rectangles indicating the overlapping zone. (b, f, j) Numbers of total matches and RANSAC inliers of both SIFT and SuperGlue on variants \textit {ImgPairs}, \textit {Ortho} and \textit {DSM} individually. (c, g, k) Visualization of RANSAC inliers based on $SIFT_{ImgPairs}$, $SIFT_{Ortho}$ and $SIFT_{DSM}$. (d, h, l) Visualization of RANSAC inliers based on $SuperGlue_{ImgPairs}$, $SuperGlue_{Ortho}$ and $SuperGlue_{DSM}$}{figure.5.12}{}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {Image pairs (19$\times $33 pairs)}}}{57}{figure.5.12}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {Number of recovered matches(\textit {ImgPairs})}}}{57}{figure.5.12}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(c)}{\ignorespaces {$SIFT_{ImgPairs}^{RANSAC Inliers}$}}}{57}{figure.5.12}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(d)}{\ignorespaces {$SuperGlue_{ImgPairs}^{RANSAC Inliers}$}}}{57}{figure.5.12}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(e)}{\ignorespaces {Orthophotos}}}{57}{figure.5.12}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(f)}{\ignorespaces {Number of recovered matches(\textit {Ortho})}}}{57}{figure.5.12}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(g)}{\ignorespaces {$SIFT_{Ortho}^{RANSAC Inliers}$}}}{57}{figure.5.12}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(h)}{\ignorespaces {$SuperGlue_{Ortho}^{RANSAC Inliers}$}}}{57}{figure.5.12}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(i)}{\ignorespaces {\ac {DSM}s}}}{57}{figure.5.12}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(j)}{\ignorespaces {Number of recovered matches(\textit {DSM})}}}{57}{figure.5.12}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(k)}{\ignorespaces {$SIFT_{DSM}^{RANSAC Inliers}$}}}{57}{figure.5.12}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(l)}{\ignorespaces {$SuperGlue_{DSM}^{RANSAC Inliers}$}}}{57}{figure.5.12}\protected@file@percent }
+\acronymused{DSM}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.13}{\ignorespaces Result of \textit  {ImgPairs} (a-d), \textit  {Ortho} (e-h) and \textit  {DSM} (i-l) on matching \textbf  {Alberona 1954 and 2003}. (a, e, i) Image pairs/orthophotos/\ac {DSM}s to be matched, with red rectangles indicating the overlapping zone. (b, f, j) Numbers of total matches and RANSAC inliers of both SIFT and SuperGlue on variants \textit  {ImgPairs}, \textit  {Ortho} and \textit  {DSM} individually. (c, g, k) Visualization of RANSAC inliers based on $SIFT_{ImgPairs}$, $SIFT_{Ortho}$ and $SIFT_{DSM}$. (d, h, l) Visualization of RANSAC inliers based on $SuperGlue_{ImgPairs}$, $SuperGlue_{Ortho}$ and $SuperGlue_{DSM}$.}}{58}{figure.5.13}\protected@file@percent }
+\acronymused{DSM}
+\newlabel{MatchVizAlberona1954DSM}{{5.13}{58}{Result of \textit {ImgPairs} (a-d), \textit {Ortho} (e-h) and \textit {DSM} (i-l) on matching \textbf {Alberona 1954 and 2003}. (a, e, i) Image pairs/orthophotos/\ac {DSM}s to be matched, with red rectangles indicating the overlapping zone. (b, f, j) Numbers of total matches and RANSAC inliers of both SIFT and SuperGlue on variants \textit {ImgPairs}, \textit {Ortho} and \textit {DSM} individually. (c, g, k) Visualization of RANSAC inliers based on $SIFT_{ImgPairs}$, $SIFT_{Ortho}$ and $SIFT_{DSM}$. (d, h, l) Visualization of RANSAC inliers based on $SuperGlue_{ImgPairs}$, $SuperGlue_{Ortho}$ and $SuperGlue_{DSM}$}{figure.5.13}{}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {Image pairs (3$\times $7 pairs)}}}{58}{figure.5.13}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {Number of recovered matches(\textit {ImgPairs})}}}{58}{figure.5.13}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(c)}{\ignorespaces {$SIFT_{ImgPairs}^{RANSAC Inliers}$}}}{58}{figure.5.13}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(d)}{\ignorespaces {$SuperGlue_{ImgPairs}^{RANSAC Inliers}$}}}{58}{figure.5.13}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(e)}{\ignorespaces {Orthophotos}}}{58}{figure.5.13}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(f)}{\ignorespaces {Number of recovered matches(\textit {Ortho})}}}{58}{figure.5.13}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(g)}{\ignorespaces {$SIFT_{Ortho}^{RANSAC Inliers}$}}}{58}{figure.5.13}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(h)}{\ignorespaces {$SuperGlue_{Ortho}^{RANSAC Inliers}$}}}{58}{figure.5.13}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(i)}{\ignorespaces {\ac {DSM}s}}}{58}{figure.5.13}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(j)}{\ignorespaces {Number of recovered matches(\textit {DSM})}}}{58}{figure.5.13}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(k)}{\ignorespaces {$SIFT_{DSM}^{RANSAC Inliers}$}}}{58}{figure.5.13}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(l)}{\ignorespaces {$SuperGlue_{DSM}^{RANSAC Inliers}$}}}{58}{figure.5.13}\protected@file@percent }
 \acronymused{DoD}
 \acronymused{DoD}
 \acronymused{DoD}
@@ -200,53 +269,58 @@
 \acronymused{DoD}
 \acronymused{DoD}
 \acronymused{DoD}
-\@writefile{lof}{\contentsline {figure}{\numberline {4.14}{\ignorespaces {\scriptsize  \ac {DoD}s between free epoch \textbf  {Fr{\'e}jus 1954, 1966, 1970} and reference epoch \textbf  {2014} with variants $SuperGlue_{ImgPairs}$ (a, g, m), $SuperGlue_{Ortho}$ (b, h, n), $SuperGlue_{DSM}$ (c, i, o), $SIFT_{ImgPairs}$ (d, j, p), $SIFT_{Ortho}$ (e, k, q) and $SIFT_{DSM}$ (f, l, r). The prohibition sign means the corresponding variant failed.}}}{46}{figure.4.14}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {5.14}{\ignorespaces \ac {DoD}s between free epoch \textbf  {Fr{\'e}jus 1954, 1966, 1970} and reference epoch \textbf  {2014} with variants $SuperGlue_{ImgPairs}$ (a, g, m), $SuperGlue_{Ortho}$ (b, h, n), $SuperGlue_{DSM}$ (c, i, o), $SIFT_{ImgPairs}$ (d, j, p), $SIFT_{Ortho}$ (e, k, q) and $SIFT_{DSM}$ (f, l, r). The prohibition sign means the corresponding variant failed.}}{59}{figure.5.14}\protected@file@percent }
 \acronymused{DoD}
-\newlabel{DoDFrejus}{{4.14}{46}{\scriptsize \ac {DoD}s between free epoch \textbf {Fr{\'e}jus 1954, 1966, 1970} and reference epoch \textbf {2014} with variants $SuperGlue_{ImgPairs}$ (a, g, m), $SuperGlue_{Ortho}$ (b, h, n), $SuperGlue_{DSM}$ (c, i, o), $SIFT_{ImgPairs}$ (d, j, p), $SIFT_{Ortho}$ (e, k, q) and $SIFT_{DSM}$ (f, l, r). The prohibition sign means the corresponding variant failed}{figure.4.14}{}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {\ac {DoD}$_{Frejus1954}^{SuperGlue_{ImgPairs}}$}}}{46}{figure.4.14}\protected@file@percent }
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {\ac {DoD}$_{Frejus1954}^{SuperGlue_{Ortho}}$}}}{46}{figure.4.14}\protected@file@percent }
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(c)}{\ignorespaces {\ac {DoD}$_{Frejus1954}^{SuperGlue_{DSM}}$}}}{46}{figure.4.14}\protected@file@percent }
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(d)}{\ignorespaces {\ac {DoD}$_{Frejus1954}^{SIFT_{ImgPairs}}$}}}{46}{figure.4.14}\protected@file@percent }
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(e)}{\ignorespaces {\ac {DoD}$_{Frejus1954}^{SIFT_{Ortho}}$}}}{46}{figure.4.14}\protected@file@percent }
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(f)}{\ignorespaces {\ac {DoD}$_{Frejus1954}^{SIFT_{DSM}}$}}}{46}{figure.4.14}\protected@file@percent }
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(g)}{\ignorespaces {\ac {DoD}$_{Frejus1966}^{SuperGlue_{ImgPairs}}$}}}{46}{figure.4.14}\protected@file@percent }
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(h)}{\ignorespaces {\ac {DoD}$_{Frejus1966}^{SuperGlue_{Ortho}}$}}}{46}{figure.4.14}\protected@file@percent }
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(i)}{\ignorespaces {\ac {DoD}$_{Frejus1966}^{SuperGlue_{DSM}}$}}}{46}{figure.4.14}\protected@file@percent }
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(j)}{\ignorespaces {\ac {DoD}$_{Frejus1966}^{SIFT_{ImgPairs}}$}}}{46}{figure.4.14}\protected@file@percent }
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(k)}{\ignorespaces {\ac {DoD}$_{Frejus1966}^{SIFT_{Ortho}}$}}}{46}{figure.4.14}\protected@file@percent }
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(l)}{\ignorespaces {\ac {DoD}$_{Frejus1966}^{SIFT_{DSM}}$}}}{46}{figure.4.14}\protected@file@percent }
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(m)}{\ignorespaces {\ac {DoD}$_{Frejus1970}^{SuperGlue_{ImgPairs}}$}}}{46}{figure.4.14}\protected@file@percent }
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(n)}{\ignorespaces {\ac {DoD}$_{Frejus1970}^{SuperGlue_{Ortho}}$}}}{46}{figure.4.14}\protected@file@percent }
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(o)}{\ignorespaces {\ac {DoD}$_{Frejus1970}^{SuperGlue_{DSM}}$}}}{46}{figure.4.14}\protected@file@percent }
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(p)}{\ignorespaces {\ac {DoD}$_{Frejus1970}^{SIFT_{ImgPairs}}$}}}{46}{figure.4.14}\protected@file@percent }
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(q)}{\ignorespaces {\ac {DoD}$_{Frejus1970}^{SIFT_{Ortho}}$}}}{46}{figure.4.14}\protected@file@percent }
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(r)}{\ignorespaces {\ac {DoD}$_{Frejus1970}^{SIFT_{DSM}}$}}}{46}{figure.4.14}\protected@file@percent }
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(s)}{\ignorespaces {\ac {DoD} legend}}}{46}{figure.4.14}\protected@file@percent }
-\acronymused{DoD}
-\acronymused{DoD}
+\newlabel{DoDFrejus}{{5.14}{59}{\ac {DoD}s between free epoch \textbf {Fr{\'e}jus 1954, 1966, 1970} and reference epoch \textbf {2014} with variants $SuperGlue_{ImgPairs}$ (a, g, m), $SuperGlue_{Ortho}$ (b, h, n), $SuperGlue_{DSM}$ (c, i, o), $SIFT_{ImgPairs}$ (d, j, p), $SIFT_{Ortho}$ (e, k, q) and $SIFT_{DSM}$ (f, l, r). The prohibition sign means the corresponding variant failed}{figure.5.14}{}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {\ac {DoD}$_{Frejus1954}^{SuperGlue_{ImgPairs}}$}}}{59}{figure.5.14}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {\ac {DoD}$_{Frejus1954}^{SuperGlue_{Ortho}}$}}}{59}{figure.5.14}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(c)}{\ignorespaces {\ac {DoD}$_{Frejus1954}^{SuperGlue_{DSM}}$}}}{59}{figure.5.14}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(d)}{\ignorespaces {\ac {DoD}$_{Frejus1954}^{SIFT_{ImgPairs}}$}}}{59}{figure.5.14}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(e)}{\ignorespaces {\ac {DoD}$_{Frejus1954}^{SIFT_{Ortho}}$}}}{59}{figure.5.14}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(f)}{\ignorespaces {\ac {DoD}$_{Frejus1954}^{SIFT_{DSM}}$}}}{59}{figure.5.14}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(g)}{\ignorespaces {\ac {DoD}$_{Frejus1966}^{SuperGlue_{ImgPairs}}$}}}{59}{figure.5.14}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(h)}{\ignorespaces {\ac {DoD}$_{Frejus1966}^{SuperGlue_{Ortho}}$}}}{59}{figure.5.14}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(i)}{\ignorespaces {\ac {DoD}$_{Frejus1966}^{SuperGlue_{DSM}}$}}}{59}{figure.5.14}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(j)}{\ignorespaces {\ac {DoD}$_{Frejus1966}^{SIFT_{ImgPairs}}$}}}{59}{figure.5.14}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(k)}{\ignorespaces {\ac {DoD}$_{Frejus1966}^{SIFT_{Ortho}}$}}}{59}{figure.5.14}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(l)}{\ignorespaces {\ac {DoD}$_{Frejus1966}^{SIFT_{DSM}}$}}}{59}{figure.5.14}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(m)}{\ignorespaces {\ac {DoD}$_{Frejus1970}^{SuperGlue_{ImgPairs}}$}}}{59}{figure.5.14}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(n)}{\ignorespaces {\ac {DoD}$_{Frejus1970}^{SuperGlue_{Ortho}}$}}}{59}{figure.5.14}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(o)}{\ignorespaces {\ac {DoD}$_{Frejus1970}^{SuperGlue_{DSM}}$}}}{59}{figure.5.14}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(p)}{\ignorespaces {\ac {DoD}$_{Frejus1970}^{SIFT_{ImgPairs}}$}}}{59}{figure.5.14}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(q)}{\ignorespaces {\ac {DoD}$_{Frejus1970}^{SIFT_{Ortho}}$}}}{59}{figure.5.14}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(r)}{\ignorespaces {\ac {DoD}$_{Frejus1970}^{SIFT_{DSM}}$}}}{59}{figure.5.14}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(s)}{\ignorespaces {\ac {DoD} legend}}}{59}{figure.5.14}\protected@file@percent }
 \acronymused{DoD}
 \acronymused{DoD}
 \acronymused{DoD}
 \acronymused{DoD}
 \acronymused{DoD}
-\@writefile{lof}{\contentsline {figure}{\numberline {4.15}{\ignorespaces {\scriptsize  \ac {DoD}s between free epoch \textbf  {Alberona 1954} and reference epoch \textbf  {2003} with variants $SuperGlue_{ImgPairs}$ (a), $SuperGlue_{Ortho}$ (b), $SuperGlue_{DSM}$ (c), $SIFT_{ImgPairs}$ (d), $SIFT_{Ortho}$ (e) and $SIFT_{DSM}$ (f). The prohibition sign means the corresponding variant failed.}}}{47}{figure.4.15}\protected@file@percent }
 \acronymused{DoD}
-\newlabel{DoDAlberona}{{4.15}{47}{\scriptsize \ac {DoD}s between free epoch \textbf {Alberona 1954} and reference epoch \textbf {2003} with variants $SuperGlue_{ImgPairs}$ (a), $SuperGlue_{Ortho}$ (b), $SuperGlue_{DSM}$ (c), $SIFT_{ImgPairs}$ (d), $SIFT_{Ortho}$ (e) and $SIFT_{DSM}$ (f). The prohibition sign means the corresponding variant failed}{figure.4.15}{}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {\ac {DoD}$_{Alberona}^{SuperGlue_{ImgPairs}}$}}}{47}{figure.4.15}\protected@file@percent }
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {\ac {DoD}$_{Alberona}^{SuperGlue_{Ortho}}$}}}{47}{figure.4.15}\protected@file@percent }
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(c)}{\ignorespaces {\ac {DoD}$_{Alberona}^{SuperGlue_{DSM}}$}}}{47}{figure.4.15}\protected@file@percent }
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(d)}{\ignorespaces {\ac {DoD}$_{Alberona}^{SIFT_{ImgPairs}}$}}}{47}{figure.4.15}\protected@file@percent }
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(e)}{\ignorespaces {\ac {DoD}$_{Alberona}^{SIFT_{Ortho}}$}}}{47}{figure.4.15}\protected@file@percent }
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(f)}{\ignorespaces {\ac {DoD}$_{Alberona}^{SIFT_{DSM}}$}}}{47}{figure.4.15}\protected@file@percent }
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(g)}{\ignorespaces {\ac {DoD} legend}}}{47}{figure.4.15}\protected@file@percent }
-\@writefile{lot}{\contentsline {table}{\numberline {4.2}{\ignorespaces Average value $\mu $, standard deviation $\sigma $, and absolute average value $|\mu |$ of all the \ac {DoD}s in Figure~\ref  {DoDFrejus}, and ~\ref  {DoDAlberona}.}}{48}{table.4.2}\protected@file@percent }
 \acronymused{DoD}
-\newlabel{RoughDoDStatistic}{{4.2}{48}{Average value $\mu $, standard deviation $\sigma $, and absolute average value $|\mu |$ of all the \ac {DoD}s in Figure~\ref {DoDFrejus}, and ~\ref {DoDAlberona}}{table.4.2}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.15}{\ignorespaces \ac {DoD}s between free epoch \textbf  {Alberona 1954} and reference epoch \textbf  {2003} with variants $SuperGlue_{ImgPairs}$ (a), $SuperGlue_{Ortho}$ (b), $SuperGlue_{DSM}$ (c), $SIFT_{ImgPairs}$ (d), $SIFT_{Ortho}$ (e) and $SIFT_{DSM}$ (f). The prohibition sign means the corresponding variant failed.}}{60}{figure.5.15}\protected@file@percent }
 \acronymused{DoD}
-\@writefile{toc}{\contentsline {section}{\numberline {4.4}Conclusion}{49}{section.4.4}\protected@file@percent }
+\newlabel{DoDAlberona}{{5.15}{60}{\ac {DoD}s between free epoch \textbf {Alberona 1954} and reference epoch \textbf {2003} with variants $SuperGlue_{ImgPairs}$ (a), $SuperGlue_{Ortho}$ (b), $SuperGlue_{DSM}$ (c), $SIFT_{ImgPairs}$ (d), $SIFT_{Ortho}$ (e) and $SIFT_{DSM}$ (f). The prohibition sign means the corresponding variant failed}{figure.5.15}{}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {\ac {DoD}$_{Alberona}^{SuperGlue_{ImgPairs}}$}}}{60}{figure.5.15}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {\ac {DoD}$_{Alberona}^{SuperGlue_{Ortho}}$}}}{60}{figure.5.15}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(c)}{\ignorespaces {\ac {DoD}$_{Alberona}^{SuperGlue_{DSM}}$}}}{60}{figure.5.15}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(d)}{\ignorespaces {\ac {DoD}$_{Alberona}^{SIFT_{ImgPairs}}$}}}{60}{figure.5.15}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(e)}{\ignorespaces {\ac {DoD}$_{Alberona}^{SIFT_{Ortho}}$}}}{60}{figure.5.15}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(f)}{\ignorespaces {\ac {DoD}$_{Alberona}^{SIFT_{DSM}}$}}}{60}{figure.5.15}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(g)}{\ignorespaces {\ac {DoD} legend}}}{60}{figure.5.15}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {5.4}{\ignorespaces Average value $\mu $, standard deviation $\sigma $, and absolute average value $|\mu |$ of all the \ac {DoD}s in Figure~\ref  {DoDFrejus} and ~\ref  {DoDAlberona}.}}{61}{table.5.4}\protected@file@percent }
+\acronymused{DoD}
+\newlabel{RoughDoDStatistic}{{5.4}{61}{Average value $\mu $, standard deviation $\sigma $, and absolute average value $|\mu |$ of all the \ac {DoD}s in Figure~\ref {DoDFrejus} and ~\ref {DoDAlberona}}{table.5.4}{}}
+\newlabel{para:Discussion}{{5.3.5}{62}{Discussion}{section*.38}{}}
+\@writefile{toc}{\contentsline {paragraph}{Discussion.}{62}{section*.38}\protected@file@percent }
+\acronymused{DSM}
+\acronymused{DoD}
+\acronymused{DoD}
+\@writefile{toc}{\contentsline {section}{\numberline {5.4}Conclusion}{62}{section.5.4}\protected@file@percent }
+\acronymused{DSM}
 \@setckpt{Chapter3}{
-\setcounter{page}{50}
-\setcounter{equation}{2}
+\setcounter{page}{63}
+\setcounter{equation}{3}
 \setcounter{enumi}{2}
 \setcounter{enumii}{0}
 \setcounter{enumiii}{0}
@@ -254,16 +328,16 @@
 \setcounter{footnote}{0}
 \setcounter{mpfootnote}{0}
 \setcounter{part}{0}
-\setcounter{chapter}{4}
+\setcounter{chapter}{5}
 \setcounter{section}{4}
 \setcounter{subsection}{0}
 \setcounter{subsubsection}{0}
 \setcounter{paragraph}{0}
 \setcounter{subparagraph}{0}
 \setcounter{figure}{15}
-\setcounter{table}{2}
+\setcounter{table}{4}
 \setcounter{parentequation}{0}
-\setcounter{mtc}{5}
+\setcounter{mtc}{6}
 \setcounter{minitocdepth}{2}
 \setcounter{ptc}{0}
 \setcounter{parttocdepth}{2}
@@ -277,9 +351,9 @@
 \setcounter{subtable}{0}
 \setcounter{lotdepth}{1}
 \setcounter{definition}{0}
-\setcounter{Item}{63}
+\setcounter{Item}{80}
 \setcounter{Hfootnote}{0}
-\setcounter{bookmark@seq@number}{29}
+\setcounter{bookmark@seq@number}{35}
 \setcounter{su@anzahl}{0}
 \setcounter{LT@tables}{0}
 \setcounter{LT@chunks}{0}

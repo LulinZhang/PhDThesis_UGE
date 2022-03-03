@@ -2,20 +2,17 @@
 
 \chapter{Result of precise matching}
 \label{chap:appendixB}
-In this section we demonstrate the matches visualizations and \ac{DoD}s of precise matching results on datasets Pezenas and Kobe.\\
-
+\zll{In Section \ref{Comparisonof6variantsP}, we demonstrate the matches visualization and \ac{DoD}s of precise matching results on representative datasets Fr{\'e}jus and Alberona. In this section the remaining results on other datasets (i.e., Pezenas and Kobe) are displayed.}
+%In this section we demonstrate the matches visualizations and \ac{DoD}s of precise matching results on datasets Pezenas and Kobe.\\
 \section{Matches visualization}
 \label{sec:PrecisematchViz}
-For both datasets, there exist 2 epochs, leading to 1 set of epoch combination for precise matching. Four variants (i.e. \ding{172} $Patch_{SpGDSM}$, \ding{173} $Guided_{SpGDSM}$, \ding{174} $Patch_{SIFTDSM}$ and \ding{175} $Guided_{SIFTDSM}$) are tested on both datasets, the resulted matches are visualized in Figure \ref{MatchVizPezenas} and \ref{MatchVizKobe}. 
-
+For both datasets, there exist 2 epochs, leading to 1 set of epoch combination for precise matching. Four variants (i.e., \ding{172} $Patch_{SpGDSM}$, \ding{173} $Guided_{SpGDSM}$, \ding{174} $Patch_{SIFTDSM}$ and \ding{175} $Guided_{SIFTDSM}$) are tested on both datasets, the resulted matches are visualized in Figure \ref{MatchVizPezenas} and \ref{MatchVizKobe}. 
 %For each dataset, every possible combination of 2 epochs are matched with 4 variants (\ding{172} $Patch_{SpGDSM}$, \ding{173} $Guided_{SpGDSM}$, \ding{174} $Patch_{SIFTDSM}$ and \ding{175} $Guided_{SIFTDSM}$). 
-
 %\begin{enumerate}
 %	\item For Pezenas, there exist 2 epochs, leading to 1 set of epoch combination, the matches visualization of which is displayed in Figure \ref{MatchVizPezenas}.
 %	\item For Kobe, there exist 2 epochs, leading to 1 set of epoch combination, the matches visualization of which is displayed in Figure \ref{MatchVizKobe}.
 %\end{enumerate}
-
-Patterns similar to Fr{\'e}jus and Alberona (c.f. Section \ref{para:DiscussionP}) are present in Pezenas and Kobe. %:\\
+As can be seen, patterns similar to Fr{\'e}jus and Alberona (c.f., Section \ref{para:DiscussionP}) are present.% in Pezenas and Kobe. %:\\
 %Patterns similar to Fr{\'e}jus and Alberona (elaborated in Section \ref{matchVizMainBody}) are present in Pezenas and Kobe. %:\\
 %\begin{enumerate}
 %	\item $Patch$ recovered considerably more matches than $Guided$, which is understandable as SuperGlue is more invariant over time than SIFT.\\
@@ -26,7 +23,7 @@ Patterns similar to Fr{\'e}jus and Alberona (c.f. Section \ref{para:DiscussionP}
 %%%%%%%%%%%%%%%%%Pezenas
 \begin{figure*}[htbp]
 	\begin{center}
-		\subfigure[Common zone]{
+		\subfigure[Overlapping zone]{
 			\begin{minipage}[t]{0.48\linewidth}
 				\centering
 				\includegraphics[width=6.8cm]{images/Chapitre4/Pseudo-Ortho-MEC-Malt_Tapas_1971_Ortho-MEC-Malt_Satellite.png}
@@ -62,7 +59,7 @@ Patterns similar to Fr{\'e}jus and Alberona (c.f. Section \ref{para:DiscussionP}
 				\includegraphics[width=6.8cm]{images/Chapitre4/Precise-SIFTDSMHomol-GuidedSIFT-3DRANSAC-CrossCorrelation-PileImg_Ortho-MEC-Malt_Tapas_1971_Ortho-MEC-Malt_Satellite.png}
 			\end{minipage}%
 		}
-		\caption{Precise matching visualization of \textbf{Pezenas 1971 and 2014 (Satellite)}. (a) Image pairs to be matched, with red rectangles indicating the common zone. (b) Numbers of tentative, enhanced and final matches recovered with $Patch_{SpGDSM}$, $Guided_{SpGDSM}$, $Patch_{SIFTDSM}$ and $Guided_{SIFTDSM}$ individually. (c-f) Visualization of final matches recovered with $Patch_{SpGDSM}$, $Guided_{SpGDSM}$, $Patch_{SIFTDSM}$ and $Guided_{SIFTDSM}$ individually.}
+		\caption{Precise matching visualization of \textbf{Pezenas 1971 and 2014 (Satellite)}. (a) Image pairs to be matched, with red rectangles indicating the overlapping zone. (b) Numbers of tentative, enhanced and final matches recovered with $Patch_{SpGDSM}$, $Guided_{SpGDSM}$, $Patch_{SIFTDSM}$ and $Guided_{SIFTDSM}$ individually. (c-f) Visualization of final matches recovered with $Patch_{SpGDSM}$, $Guided_{SpGDSM}$, $Patch_{SIFTDSM}$ and $Guided_{SIFTDSM}$ individually.}
 		\label{MatchVizPezenas}
 	\end{center}
 \end{figure*} 
@@ -71,7 +68,7 @@ Patterns similar to Fr{\'e}jus and Alberona (c.f. Section \ref{para:DiscussionP}
 
 \begin{figure*}[htbp]
 	\begin{center}
-		\subfigure[Common zone]{
+		\subfigure[Overlapping zone]{
 			\begin{minipage}[t]{0.48\linewidth}
 				\centering
 				\includegraphics[width=3.8cm,angle=90]{images/Chapitre3/Pseudo-Ortho-MEC-Malt_Tapas_1991_Ortho-MEC-Malt_Tapas_1994.png}
@@ -107,7 +104,7 @@ Patterns similar to Fr{\'e}jus and Alberona (c.f. Section \ref{para:DiscussionP}
 				\includegraphics[width=3.8cm,angle=90]{images/Chapitre4/Precise-SIFTDSMHomol-GuidedSIFT-3DRANSAC-CrossCorrelation-PileImg_Ortho-MEC-Malt_Tapas_1991_Ortho-MEC-Malt_Tapas_1994.png}
 			\end{minipage}%
 		}
-		\caption{Precise matching visualization of \textbf{Kobe 1991 and 1995}. (a) Image pairs to be matched, with red rectangles indicating the common zone. (b) Numbers of tentative, enhanced and final matches recovered with $Patch_{SpGDSM}$, $Guided_{SpGDSM}$, $Patch_{SIFTDSM}$ and $Guided_{SIFTDSM}$ individually. (c-f) Visualization of final matches recovered with $Patch_{SpGDSM}$, $Guided_{SpGDSM}$, $Patch_{SIFTDSM}$ and $Guided_{SIFTDSM}$ individually.}
+		\caption{Precise matching visualization of \textbf{Kobe 1991 and 1995}. (a) Image pairs to be matched, with red rectangles indicating the overlapping zone. (b) Numbers of tentative, enhanced and final matches recovered with $Patch_{SpGDSM}$, $Guided_{SpGDSM}$, $Patch_{SIFTDSM}$ and $Guided_{SIFTDSM}$ individually. (c-f) Visualization of final matches recovered with $Patch_{SpGDSM}$, $Guided_{SpGDSM}$, $Patch_{SIFTDSM}$ and $Guided_{SIFTDSM}$ individually.}
 		\label{MatchVizKobe}
 	\end{center}
 \end{figure*} 
@@ -116,8 +113,8 @@ Patterns similar to Fr{\'e}jus and Alberona (c.f. Section \ref{para:DiscussionP}
 \label{sec:PreciseDoD}
 The \ac{DoD}s for Pezenas and Kobe are demonstrated in Figure~\ref{PreciseDoDPezenas-Satellite} and ~\ref{PreciseDoDKobe}. 
 %In each figure, the \ac{DoD}s resulted from rough co-registered orientations using variants $SuperGlue_{DSM}$ and $SIFT_{DSM}$ (elaborated in Chapter~\ref{chap:RoughCoReg}, hereinafter referred to as DoD$^{SpGDSM}$ and DoD$^{SIFTDSM}$) are displayed as bases, and the \ac{DoD}s resulted from refined orientations using variants $Patch_{SpGDSM}$, $Guided_{SpGDSM}$, $Patch_{SIFTDSM}$ and $Guided_{SIFTDSM}$ (hereinafter termed as DoD$^{Patch_{SpGDSM}}$, DoD$^{Guided_{SpGDSM}}$, DoD$^Patch_{SIFTDSM}$ and DoD$^Guided_{SIFTDSM}$) are given for comparison. 
-The corresponding statistical information is displayed in Table~\ref{PreciseDoDStatistic1}.\\
-Patterns similar to Fr{\'e}jus and Alberona (c.f. Section \ref{para:DiscussionP}) are present in Pezenas and Kobe. %:\\
+The corresponding statistical information is displayed in Table~\ref{PreciseDoDStatistic1}.
+As can be seen, patterns similar to Fr{\'e}jus and Alberona (c.f., Section \ref{para:DiscussionP}) are present.% in Pezenas and Kobe. %:\\
 
 %For both datasets, the \textit{dome} effect presented in DoD$^{SpGDSM}$ and DoD$^{SIFTDSM}$ (the first column of the subgraphs) is mitigated in DoD$^{Patch_{SpGDSM}}$, DoD$^{Guided_{SpGDSM}}$, DoD$^Patch_{SIFTDSM}$ and DoD$^Guided_{SIFTDSM}$ (the second and third column of subgraphs). 
 %According to the absolute average value $|\mu|$ of all the \ac{DoD}s in Figure \ref{PreciseDoDPezenas-Satellite} and \ref{PreciseDoDKobe} (cf. Talbe \ref{PreciseDoDStatistic1}), $Guided$ leads to \ac{DoD}s with slightly better accuracy than $Patch$.\\
@@ -167,7 +164,7 @@ Patterns similar to Fr{\'e}jus and Alberona (c.f. Section \ref{para:DiscussionP}
 				\includegraphics[width=11cm]{images/Chapitre4/LegendDoD.png}
 			\end{minipage}%
 		}
-		\caption{{\scriptsize \ac{DoD}s between free epoch \textbf{Pezenas 1971} and reference satellite epoch \textbf{2014}. (a) and (d) are \ac{DoD}s resulted from roughly co-registered orientations using variants $SuperGlue_{DSM}$ and $SIFT_{DSM}$ (elaborated in Chapter 3). (b, c, e, f) are \ac{DoD}s resulted from refined orientations using variants $Patch_{SpGDSM}$, $Guided_{SpGDSM}$, $Patch_{SIFTDSM}$ and $Guided_{SIFTDSM}$ individually. The holes among them are areas covered with clouds which are masked out.}}
+		\caption{{\ac{DoD}s between free epoch \textbf{Pezenas 1971} and reference satellite epoch \textbf{2014}. (a) and (d) are roughly co-registered \ac{DoD}s resulted from variants $SuperGlue_{DSM}$ and $SIFT_{DSM}$ (elaborated in Chapter \ref{chap:RoughCoReg}). (b, c, e, f) are refined \ac{DoD}s resulted from variants $Patch_{SpGDSM}$, $Guided_{SpGDSM}$, $Patch_{SIFTDSM}$ and $Guided_{SIFTDSM}$ individually. The holes among them are areas covered with clouds which are masked out.}}
 		\label{PreciseDoDPezenas-Satellite}
 	\end{center}
 \end{figure*} 
@@ -218,7 +215,7 @@ Patterns similar to Fr{\'e}jus and Alberona (c.f. Section \ref{para:DiscussionP}
 				\includegraphics[width=11cm]{images/Chapitre4/LegendDoD.png}
 			\end{minipage}%
 		}
-		\caption{{\scriptsize \ac{DoD}s between free epoch \textbf{Kobe 1991} and reference epoch \textbf{1995}. (a) and (d) are \ac{DoD}s resulted from roughly co-registered orientations using variants $SuperGlue_{DSM}$ and $SIFT_{DSM}$ (elaborated in Chapter~\ref{chap:RoughCoReg}). (b, c, e, f) are \ac{DoD}s resulted from refined orientations using variants $Patch_{SpGDSM}$, $Guided_{SpGDSM}$, $Patch_{SIFTDSM}$ and $Guided_{SIFTDSM}$ individually.}}
+		\caption{{\ac{DoD}s between free epoch \textbf{Kobe 1991} and reference epoch \textbf{1995}. (a) and (d) are roughly co-registered \ac{DoD}s resulted from variants $SuperGlue_{DSM}$ and $SIFT_{DSM}$ (elaborated in Chapter~\ref{chap:RoughCoReg}). (b, c, e, f) are refined \ac{DoD}s resulted from variants $Patch_{SpGDSM}$, $Guided_{SpGDSM}$, $Patch_{SIFTDSM}$ and $Guided_{SIFTDSM}$ individually.}}
 		\label{PreciseDoDKobe}
 	\end{center}
 \end{figure*} 
@@ -231,7 +228,7 @@ Patterns similar to Fr{\'e}jus and Alberona (c.f. Section \ref{para:DiscussionP}
 	\begin{tabular}{||l|l|c|c|c||}\hline
 		& &$\mu$ [m]&$\sigma$ [m]&$|\mu|$ [m]\\\hline\hline
 				%%%%%%%%%%%%%%%%%%%%%%%%satellite
-		\multirow{4}{*}{$DoD^{Pezenas}_{1971-2014(Satellite)}$}
+		\multirow{6}{*}{$DoD^{Pezenas}_{1971-2014(Satellite)}$}
 		&${{SpGDSM}}$ & -3.70 & 10.65 & 8.29\\
 		&${Patch_{SpGDSM}}$ & -0.34 & 4.39 & 2.28\\
 		&${Guided_{SpGDSM}}$ & -0.65 & 4.46 & 2.45\\

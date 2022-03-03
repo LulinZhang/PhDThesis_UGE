@@ -3,14 +3,15 @@
 \chapter{Applications and Datasets}
 \label{chap:ApplicationsAndDatasets}
 %Before revealing the details of the rough-to-precise matching strategy, 
-As mentioned in Section \ref{chap:intro}, our pipeline opens the possibility for millions of historical images to come into play in diverse applications of geoscience, including but not limited to analyzing of disaster analysis, eco-environmental monitoring, urban expansion and so on. 
-In order to reveal the potential of our pipeline, we choose five representative sets of datasets for experiments:\\
+%As mentioned in Section \ref{chap:intro}, o
+Our pipelines open the possibility for millions of historical images to come into play in diverse applications of geoscience, including but not limited to disaster analysis, eco-environmental monitoring, urban expansion and so on. 
+In order to reveal the potential of our pipelines, we choose five representative datasets for experiments:\\
 \begin{enumerate}
-	\item \textbf{Fr{\'e}jus}: city proper in France which exhibited notable urban expansion from 1954 to 2014.
-	\item \textbf{Pezenas}: mountain area in France mainly covered with vegetation that demonstrated large-scale landuse changes from 1971 to 2015. 
-	\item \textbf{Kobe}: dataset over an island in Japan that chronicled an earthquake with images taken before and after event (i.e. 1991 and 1995).
-	\item \textbf{Alberona}: rural area in Italy that witnessed a landslide with images taken before and after event (i.e. 1954 and 2003).
-	\item \textbf{Hofsjökull}: ice cap area in Iceland with only one epoch. Instead of aiming at inter-epoch image alignment, in this dataset we are interested in studying extremely challenging case in matching intra-epoch images for glacier monitoring.
+	\item \textbf{Fr{\'e}jus}: city zone in France which exhibited notable urban expansion between 1954 and 2014. It contains 4 epochs of aerial images.
+	\item \textbf{Pezenas}: mountain area in France mainly covered with vegetation that demonstrated large-scale landuse changes between 1971 and 2015. Four epochs are available, including 3 aerial epochs and a satellite epoch.
+	\item \textbf{Kobe}: dataset over an island in Japan that chronicled an earthquake with 2 sets of aerial images taken before and after the event (i.e., 1991 and 1995).
+	\item \textbf{Alberona}: rural area in Italy that witnessed a landslide with 2 epochs taken before and after the event (i.e., 1954 and 2003).
+	\item \textbf{Hofsjökull}: ice cap area in Iceland with only one aerial epoch. Instead of aiming at inter-epoch images alignment, in this dataset we are interested in studying extremely challenging case in matching intra-epoch images for glacier monitoring.
 \end{enumerate}
 
 
@@ -31,8 +32,27 @@ In order to reveal the potential of our pipeline, we choose five representative 
 %	\label{application}
 %\end{table}
 
-Details of the datasets are listed in Table~\ref{AerialData} and \ref{SatelliteData}. 
-Images demonstrations of each dataset are displayed in Figure \ref{FrejusData}, \ref{PezenasData}, \ref{KobeData}, \ref{AlberonaData} and \ref{Hofsjökull}.
+The datasets contain both aerial and satellite images, details of the former are listed in Table~\ref{AerialData} and \ref{AerialDataContinue}, while that of the latter are displayed in Table \ref{SatelliteData}. All the historical aerial images are scanned from films followed by resampling to the geometry of the fiducial marks. The resampling procedure is illustrated in Figure \ref{Resample}. \\
+The images of each dataset are demonstrated in Figure \ref{FrejusData}, \ref{PezenasData}, \ref{KobeData}, \ref{AlberonaData} and \ref{Hofsjökull} individually. 
+
+\begin{figure*}[htbp]
+	\begin{center}
+		\subfigure[Original image and the fiducial mark]{
+			\begin{minipage}[t]{0.55\linewidth}
+				\centering
+				\includegraphics[width=7.3cm]{images/ChapitreNew/OriImg.png}
+			\end{minipage}%
+		}
+		\subfigure[Resampled image]{
+			\begin{minipage}[t]{0.41\linewidth}
+				\centering
+				\includegraphics[width=5.3cm]{images/ChapitreNew/Resampled.png}
+			\end{minipage}%
+		}
+		\caption{Illustration of resampling historical image to the geometry of the fiducial marks. (a) Original image with enlarged detail of the fiducial mark on the bottom right corner displayed. (b) Image resampled based on the 4 fiducial marks in the corner.} 
+		\label{Resample}
+	\end{center}
+\end{figure*} 
 
 %General case for change detection
 %	Rural area: Pezenas
@@ -42,53 +62,168 @@ Images demonstrations of each dataset are displayed in Figure \ref{FrejusData}, 
 %Glacier case: Hofsjökull
 
 \paragraph{Fr{\'e}jus.}
-The dataset Fr{\'e}jus is an urban area, mainly covered with buildings along with scattered farmlands, except a half-moon-shaped bay located in south. It is a 15 $km^2$ rectangular area located in Fr{\'e}jus, a commune in southeastern France. We have four sets of aerial images acquired in 1954, 1966, 1970 and 2014. The epoch 2014 was acquired with the \ac{IGN}'s digital metric camera ~\cite{souchon2010ign}, its orientations are both in global reference frame and precise. Therefore it is treated as \ac{GT} during our processing (in other words, their parameters will be fixed during the \ac{BBA}). 
+The dataset Fr{\'e}jus is mainly covered with buildings along with scattered farmlands, except a half-moon-shaped bay located in south. It is a 15 $km^2$ rectangular area located in Fr{\'e}jus, a commune in southeastern France. We have four sets of aerial images acquired in 1954, 1966, 1970 and 2014. The epoch 2014 was acquired with the \ac{IGN}'s digital metric camera ~\cite{souchon2010ign}, its orientations are both in global reference frame and precise. Therefore it is treated as \ac{GT} during our processing (in other words, their parameters will be fixed during the \ac{BBA}). 
 The area exhibits drastic scene changes in the 60-year period, as can be seen in Figure~\ref{FrejusEvolution}, where evolution of a subregion is displayed.\\
 
 \paragraph{Pezenas.}
-The dataset Pezenas is a rural area, mainly covered with vegetation and several sparsely populated urban zones. It is a 420 $km^2$ rectangular area located in Pezenas in the Occitanie region in southern France. We have at our disposal three sets of aerial images acquired in 1971, 1981 and 2015, and one set of satellite images acquired in 2014. Both the epoch 2014 and 2015 are treated as \ac{GT}. In this dataset we are interested in matching historical epochs (1971 and 1981) with aerial \ac{GT} and satellite \ac{GT} individually. The area exhibits changes in scene appearance in the 44-year period.\\
+The dataset Pezenas is mainly covered with vegetation and several sparsely populated urban zones. It is a 420 $km^2$ rectangular area located in Pezenas in the Occitanie region in southern France. We have at our disposal three sets of aerial images acquired in 1971, 1981 and 2015, and one set of satellite images acquired in 2014. Both the epoch 2014 and 2015 are treated as \ac{GT}. In this dataset we are interested in matching historical epochs (1971 and 1981) with aerial \ac{GT} and satellite \ac{GT} individually. The area exhibits changes in scene appearance in the 44-year period.\\
 
 \paragraph{Kobe.}
 The dataset Kobe witnessed the well-known Kobe earthquake in January 1995. It is a 90 $km^2$ area of irregular shape located in the north of Awaji Island, Japan. We have two sets of aerial images: pre-event acquired in 1991 and post-event acquired in 1995. It is mainly covered with mountain area and narrow urban zones along the sea. There are neither \ac{GT} epochs nor \ac{GCP}s, therefore we measured 2 points on Google map to scale the result to metric units. In this dataset we are interested in localizing the earthquake fault.
 
 \paragraph{Alberona.}
-The dataset Alberona is characterized by the diffuse presence of clay rich lithologies which confers to the landscape a typical smooth topography, with the wide presence of slow moving landslides of the slide and slide-earthflow type. It is a 90 $km^2$ rectangular area located in Southern Italy, near the village of Alberona (Puglia region). 
-In the study area, the land use is typical of rural areas, poorly inhabited and mainly agricultural and wooded. A slow moving slide-earthflow has been detected there since the 1950s. 
+The dataset Alberona is characterized by the diffuse presence of clay rich lithologies, with the wide presence of slow moving landslides. It is a 90 $km^2$ rectangular area located in southern Italy, near the village of Alberona (Puglia region). 
+It is a rural, poorly inhabited, mainly agricultural and wooded area. A slow moving slide-earthflow has been detected there since the 1950s. We have two sets of aerial images: pre-event acquired in 1954 and post-event acquired in 2003. 
 Images were scanned with non photogrammetric scanner with 800 dpi. The films were poorly preserved before scanning, which present some scratches and dust, a typical feature for images that were not preserved for photogrammetric purposes.
-There are no \ac{GT} epochs but 7 \ac{GCP}s which could be used to move the results from relative coordinate systems to the absolute one.
+There are no \ac{GT} epochs but 7 \ac{GCP}s which could be used to move the results from relative coordinate system to absolute one.
 In this dataset we are interested in localizing the landslide.
 
 \paragraph{Hofsjökull.}
-The dataset Hofsjökull is a snow-covered area located in Hofsjökull in central Iceland. Unlike other datasets discribed previously, Hofsjökull consists of only one epoch, as in this dataset we are only interested in matching challenging intra-epoch image pairs. It contains several archival aerial images acquired in the year 1960, provided by the National Survey of Iceland. They were scanned with a photogrammetric scanner Wehrli RM-6, in 16micron/px and 12 bit, in order to digitize as much information as possible appearing in the films. In Figure~\ref{Hofsjökull} we displayed 6 consecutive images in the same flight strip, with snow-covered area gradually expanding. The most challenging image pair (i.e. image 5 and 6, as they are fully snow-covered with very limited context) are chosen for testing. Their common zone is labeled with red rectangles. 
+The dataset Hofsjökull is a snow-covered area located in Hofsjökull in central Iceland. Unlike other datasets described previously, Hofsjökull consists of only one epoch, as in this dataset we are only interested in matching challenging intra-epoch image pairs. It contains several archival aerial images acquired in the year 1960, provided by the National Survey of Iceland. They were scanned with a photogrammetric scanner Wehrli RM-6, in 16micron/px and 12 bit, in order to digitize as much information as possible appearing in the films. In Figure~\ref{Hofsjökull} we displayed 6 consecutive images in the same flight strip, with snow-covered area gradually expanding. We are interested in matching the most challenging image pair (i.e., image 5 and 6, as they are fully snow-covered with very limited context), whose overlapping zone is labeled with red rectangles. 
+
+
+%\begin{table}[htbp]
+%	\scriptsize %\footnotesize
+%	\centering
+%	\begin{tabular}{||c|c||c|c|c|c|c|c|c|c|c||}\hline
+%		& \multirow{2}{*}{Epoch} & Image & PixSz & \multicolumn{2}{c|}{Focal length} & Physical ImgSz & Digital ImgSz & GSD & H & \multirow{2}{*}{Scale} \\
+%		& & type & [$\mu$m] & [pix] & [mm] & [mm] & [pix] & [m] & [m] & \\\hline\hline
+%		
+%		\multirow{4}{*}{Fr{\'e}jus} & 1954 & Historical & 21.17 & 23350 & 502 & 300 $\times$ 300 & 13932 $\times$ 13902 & 0.11 & 2530 & 1:5000 \\
+%		& 1966 & Historical & 21.17 & 10230 & 210 & 180 $\times$ 180 & 8758 $\times$ 8759 & 0.17 & 1780 & 1:8000 \\
+%		& 1970 & Historical & 21.17 & 10230 & 210 & 180 $\times$ 180 & 8766 $\times$ 8763 & 0.17 & 1770 & 1:8000 \\
+%		& 2014 & Modern & 6.8 & 18281 & 124.3 & 99.28 $\times$ 72.42 & 14600 $\times$ 10650 & 0.35 & 6500 & 1:5000 \\\hline\hline
+%		
+%		\multirow{4}{*}{Pezenas} & 1971 & Historical & 21.17 & 7600 & 160 & 230 $\times$ 230 & 10600 $\times$ 10600 & 0.32 & 2400 & 1:1500 \\
+%		& 1981 & Historical & 21.17 & 7600 & 160 & 230 $\times$ 230 & 10600 $\times$ 10600 & 0.59 & 4500 & 1:3000 \\
+%		& \multirow{2}{*}{2015} & \multirow{2}{*}{Modern} & 6.8 & 9967.5 & 67.8 & 47 $\times$ 35 & 6950 $\times$ 5175 & 0.46 & 4600 & 1:7000 \\
+%		& & & 6.8 & 9204.5 & 62.6 & 50 $\times$ 36 & 7325 $\times$ 5350 & 0.5 & 4600 & 1:7000 \\\hline\hline
+%		
+%		\multirow{2}{*}{Kobe}& 1991 & Historical & 20 & 7662 & 152.66 & 230 $\times$ 230 & 10600 $\times$ 10600 & 0.5 & 3800 & 1:25000\\
+%		& 1995 & Historical & 20 & 7662 & 152.66 & 230 $\times$ 230 & 10600 $\times$ 10600 & 0.18 & 1100 & 1:7000 \\\hline\hline
+%		
+%		\multirow{2}{*}{Alberona}& 1954 & Historical & 31.75 & 4760 & 153.0 & 230 $\times$ 230 & 7113 $\times$ 7109 & 1.0 & 6000 & 1:4000  \\
+%		& 2003 & Historical & 31.75 & 4650 & 152.8 & 230 $\times$ 230 & 6689 $\times$ 7065 & 0.85 & 4850 & 1:3000  \\\hline\hline
+%		
+%		Hofsjökull & 1960 & Historical & 16 & 9656 & 154.49 & 230 $\times$ 230 & 14014 $\times$ 14009 & 0.57 & 5480 & 1:3500  \\\hline
+%	\end{tabular}
+%	\caption{Aerial dataset details of Fr{\'e}jus, Pezenas, Kobe, Alberona and Hofsjökull. The 2015 acquisition of Pezenas is obtained with two sets of camera. PixSz means pixel size, ImgSz stands for image size. GSD is the ground sampling distance, H is the flying height. Physical image size is based on original images, and digital image size is based on images resampled to the geometry of the fiducial marks.}
+%	\label{AerialData}
+%\end{table}
 
 \begin{table}[htbp]
-	\scriptsize %\footnotesize
 	\centering
-	\begin{tabular}{||c|c||c|c|c|c|c|c|c|c|c||}\hline
-& \multirow{2}{*}{Epoch} & F & Wid & Hei & GSD & \multirow{2}{*}{F. o.} & \multirow{2}{*}{S. o.} & H & \multirow{2}{*}{Nb} & \multirow{2}{*}{Flightline} \\
-&  & [pix] & [mm] & [mm] & [m] & & & [m] & & \\\hline\hline
-
-\multirow{4}{*}{Fr{\'e}jus} & 1954 & 23350 & 300 & 300 & \color{black}0.11 & 60\% & 20\% & 2500 & 19 & West-Est \\
-& 1966 & 10230 & 180 & 180 & \color{black}0.17 & 60\% & 30\% & 1700 & 15& West-Est \\
-& 1970 & 10230 & 180 & 180 & 0.17 & 60\% & 30\% & 1700 & 19& West-Est \\
-& 2014 & \color{black}18281 & 99.28 & 72.42 & 0.35 & 60\% & 30\% & 6500 & 33& West-Est \\\hline\hline
-
-\multirow{4}{*}{Pezenas} & 1971 & 7589 & 230 & 230 & 0.32 &    60\% &    20\% & 2400 & 57& West-Est \\
-& 1981 & 7607 & 230 & 230 & 0.59 & 60\% & 20\% & 4500 & 27& West-Est \\
-& \multirow{2}{*}{E2015} & 9967.5 & 47 & 35 & 0.46 & 60\% & 50\% & 4600 & 308& West-Est \\
-&  & 9204.5 & 50 & 36 & 0.5 & 60\% & 50\% & 4600 & 74& West-Est \\\hline\hline
-
-\multirow{2}{*}{Kobe}& 1991& 7662 & 212 & 212 & 0.5 &    65\% &    35\% & 3800 & 15 & Northeast-Southwest \\
-& 1995& 7662 & 212 & 212 & 0.18 & 65\% & 65\% & 1400 & 83& Northeast-Southwest \\\hline\hline
-
-\multirow{2}{*}{Alberona}& 1954 & 4760 & 230 & 230 & 1.0 & 65\% & / & 6000 & 3& North-South \\
-& 2003 & 4650 & 230 & 230 & 0.85 & 65\% & 30\% & 4850 & 7 & West-Est \\\hline\hline
-
-Hofsjökull & 1960 & 9656 & 224 & 224 & 0.57 & 60\% & / & 5480 & 6 & North-South \\\hline
+	\begin{tabular}{||c|c||c|c|c|c|c|c||}\hline
+		& \multirow{2}{*}{Epoch} & Image & PixSz & \multicolumn{2}{c|}{Focal length} & Physical ImgSz & Digital ImgSz\\
+		& & type & [$\mu$m] & [pix] & [mm] & [mm] & [pix]\\\hline\hline
+		
+		\multirow{4}{*}{Fr{\'e}jus} & 1954 & Historical & 21.17 & 23350 & 502 & 300 $\times$ 300 & 13932 $\times$ 13902 \\
+		& 1966 & Historical & 21.17 & 10230 & 210 & 180 $\times$ 180 & 8758 $\times$ 8759\\
+		& 1970 & Historical & 21.17 & 10230 & 210 & 180 $\times$ 180 & 8766 $\times$ 8763\\
+		& 2014 & Modern & 6.8 & 18281 & 124.3 & 99.28 $\times$ 72.42 & 14600 $\times$ 10650 \\\hline\hline
+		
+		\multirow{4}{*}{Pezenas} & 1971 & Historical & 21.17 & 7600 & 160 & 230 $\times$ 230 & 10600 $\times$ 10600 \\
+		& 1981 & Historical & 21.17 & 7600 & 160 & 230 $\times$ 230 & 10600 $\times$ 10600\\
+		& \multirow{2}{*}{2015} & \multirow{2}{*}{Modern} & 6.8 & 9967.5 & 67.8 & 47 $\times$ 35 & 6950 $\times$ 5175\\
+		& & & 6.8 & 9204.5 & 62.6 & 50 $\times$ 36 & 7325 $\times$ 5350 \\\hline\hline
+		
+		\multirow{2}{*}{Kobe}& 1991 & Historical & 20 & 7662 & 152.66 & 230 $\times$ 230 & 10600 $\times$ 10600\\
+		& 1995 & Historical & 20 & 7662 & 152.66 & 230 $\times$ 230 & 10600 $\times$ 10600\\\hline\hline
+		
+		\multirow{2}{*}{Alberona}& 1954 & Historical & 31.75 & 4760 & 153.0 & 230 $\times$ 230 & 7113 $\times$ 7109 \\
+		& 2003 & Historical & 31.75 & 4650 & 152.8 & 230 $\times$ 230 & 6689 $\times$ 7065 \\\hline\hline
+		
+		Hofsjökull & 1960 & Historical & 16 & 9656 & 154.49 & 230 $\times$ 230 & 14014 $\times$ 14009 \\\hline
 	\end{tabular}
-	\caption{Aerial dataset details of Fr{\'e}jus, Pezenas, Kobe, Alberona and Hofsjökull. The 2015 acquisition of Pezenas is obtained with two sets of camera. F means focal length, Wid and Hei are the width and height of image, GSD is the ground sampling distance, F.o. and S.o. are forward and side overlap, H is the flying height, Nb is the number of images.}
+	\caption{Aerial dataset details of Fr{\'e}jus, Pezenas, Kobe, Alberona and Hofsjökull. The 2015 acquisition of Pezenas is obtained with two sets of camera. PixSz means pixel size, ImgSz stands for image size. Digital image size of historical epoch is based on images resampled to the geometry of the fiducial marks.}
 	\label{AerialData}
 \end{table}
+
+\begin{table}[htbp]
+	\centering
+	\begin{tabular}{||c|c||c|c|c|c|c|c|c||}\hline
+		& \multirow{2}{*}{Epoch} & GSD & H & \multirow{2}{*}{Scale} & Forward & Side & Image & \multirow{2}{*}{Flightline} \\
+		&  & [m] & [m] & & overlap & overlap & number & \\\hline\hline
+		
+		\multirow{4}{*}{Fr{\'e}jus} & 1954 & 0.11 & 2530 & 1:5000 & 60\% & 20\% & 19 & West-Est \\
+		& 1966 & 0.17 & 1780 & 1:8000  & 60\% & 30\% & 15 & West-Est \\
+		& 1970 & 0.17 & 1770 & 1:8000  & 60\% & 30\% & 19 & West-Est \\
+		& 2014 & 0.35 & 6500 & 1:5000  & 60\% & 30\% & 33 & West-Est \\\hline\hline
+		
+		\multirow{4}{*}{Pezenas} & 1971 & 0.32 & 2400 & 1:1500 &  60\% &    20\% &  57 & West-Est \\
+		& 1981 & 0.59 & 4500 & 1:3000  & 60\% & 20\% & 27 & West-Est \\
+		& \multirow{2}{*}{2015} & 0.46 & 4600 & 1:7000  & 60\% & 50\% & 308 & West-Est \\
+		&  & 0.5 & 4600 & 1:7000 & 60\% & 50\% & 74 & West-Est \\\hline\hline
+		
+		\multirow{2}{*}{Kobe}& 1991 & 0.5 & 3800 & 1:25000 & 65\% &    35\% &  15 &  Northeast-Southwest \\
+		& 1995 & 0.18 & 1100 & 1:7000 & 65\% & 65\% &  83 &  Northeast-Southwest \\\hline\hline
+		
+		\multirow{2}{*}{Alberona}& 1954 & 1.0 & 6000 & 1:4000  & 65\% & / & 3 & North-South \\
+		& 2003 & 0.85 & 4850 & 1:3000  & 65\% & 30\% & 7 & West-Est \\\hline\hline
+		
+		Hofsjökull & 1960 & 0.57 & 5480 & 1:3500  & 60\% & / & 6 & North-South \\\hline
+	\end{tabular}
+	\caption{Continuation of Table \ref{AerialData}. GSD is the ground sampling distance, H is the flying height.}
+	\label{AerialDataContinue}
+\end{table}
+
+%\begin{table}[htbp]
+%	\scriptsize %\footnotesize
+%	\centering
+%	\begin{tabular}{||c|c||c|c|c|c||}\hline
+%		& \multirow{2}{*}{Epoch} & Forward & Side & Image & \multirow{2}{*}{Flightline} \\
+%		& & overlap & overlap & number & \\\hline\hline
+%		
+%		\multirow{4}{*}{Fr{\'e}jus} & 1954 & 60\% & 20\% & 19 & West-Est \\
+%		& 1966 & 60\% & 30\% & 15 & West-Est \\
+%		& 1970 & 60\% & 30\% & 19 & West-Est \\
+%		& 2014 & 60\% & 30\% & 33 & West-Est \\\hline\hline
+%		
+%		\multirow{4}{*}{Pezenas} & 1971 &  60\% &    20\% &  57 & West-Est \\
+%		& 1981 & 60\% & 20\% & 27 & West-Est \\
+%		& \multirow{2}{*}{2015} & 60\% & 50\% & 308 & West-Est \\
+%		& & 60\% & 50\% & 74 & West-Est \\\hline\hline
+%		
+%		\multirow{2}{*}{Kobe}& 1991 & 65\% &    35\% &  15 &  Northeast-Southwest \\
+%		& 1995& 65\% & 65\% &  83 &  Northeast-Southwest \\\hline\hline
+%		
+%		\multirow{2}{*}{Alberona}& 1954 & 65\% & / & 3 & North-South \\
+%		& 2003 & 65\% & 30\% & 7 & West-Est \\\hline\hline
+%		
+%		Hofsjökull & 1960 & 60\% & / & 6 & North-South \\\hline
+%	\end{tabular}
+%	\caption{Continuation of Table \ref{AerialData}.}
+%	\label{AerialDataContinue}
+%\end{table}
+
+%\begin{table}[htbp]
+%	\scriptsize %\footnotesize
+%	\centering
+%	\begin{tabular}{||c|c||c|c|c|c|c|c|c|c|c||}\hline
+%& \multirow{2}{*}{Epoch} & F & Wid & Hei & GSD & \multirow{2}{*}{F. o.} & \multirow{2}{*}{S. o.} & H & \multirow{2}{*}{Nb} & \multirow{2}{*}{Flightline} \\
+%&  & [pix] & [mm] & [mm] & [m] & & & [m] & & \\\hline\hline
+%
+%\multirow{4}{*}{Fr{\'e}jus} & 1954 & 23350 & 300 & 300 & \color{black}0.11 & 60\% & 20\% & 2500 & 19 & West-Est \\
+%& 1966 & 10230 & 180 & 180 & \color{black}0.17 & 60\% & 30\% & 1700 & 15& West-Est \\
+%& 1970 & 10230 & 180 & 180 & 0.17 & 60\% & 30\% & 1700 & 19& West-Est \\
+%& 2014 & \color{black}18281 & 99.28 & 72.42 & 0.35 & 60\% & 30\% & 6500 & 33& West-Est \\\hline\hline
+%
+%\multirow{4}{*}{Pezenas} & 1971 & 7589 & 230 & 230 & 0.32 &    60\% &    20\% & 2400 & 57& West-Est \\
+%& 1981 & 7607 & 230 & 230 & 0.59 & 60\% & 20\% & 4500 & 27& West-Est \\
+%& \multirow{2}{*}{2015} & 9967.5 & 47 & 35 & 0.46 & 60\% & 50\% & 4600 & 308& West-Est \\
+%&  & 9204.5 & 50 & 36 & 0.5 & 60\% & 50\% & 4600 & 74& West-Est \\\hline\hline
+%
+%\multirow{2}{*}{Kobe}& 1991& 7662 & 212 & 212 & 0.5 &    65\% &    35\% & 3800 & 15 & NE-SW\\ %Northeast-Southwest \\
+%& 1995& 7662 & 212 & 212 & 0.18 & 65\% & 65\% & 1400 & 83& NE-SW\\\hline\hline %Northeast-Southwest \\\hline\hline
+%
+%\multirow{2}{*}{Alberona}& 1954 & 4760 & 230 & 230 & 1.0 & 65\% & / & 6000 & 3& North-South \\
+%& 2003 & 4650 & 230 & 230 & 0.85 & 65\% & 30\% & 4850 & 7 & West-Est \\\hline\hline
+%
+%Hofsjökull & 1960 & 9656 & 224 & 224 & 0.57 & 60\% & / & 5480 & 6 & North-South \\\hline
+%	\end{tabular}
+%	\caption{Aerial dataset details of Fr{\'e}jus, Pezenas, Kobe, Alberona and Hofsjökull. The 2015 acquisition of Pezenas is obtained with two sets of camera. F means focal length, Wid and Hei are the width and height of image, GSD is the ground sampling distance, F.o. and S.o. are forward and side overlap, H is the flying height, Nb is the number of images. NE-SW means Northeast-Southwest.}
+%	\label{AerialData}
+%\end{table}
 
 %\begin{table}[htbp]
 %    \scriptsize %\footnotesize
@@ -111,7 +246,6 @@ Hofsjökull & 1960 & 9656 & 224 & 224 & 0.57 & 60\% & / & 5480 & 6 & North-South
 %\end{table}
 
 \begin{table}[htbp]
-	\scriptsize %\footnotesize
 	\centering
 	\begin{tabular}{||l|c|c||}\hline
 		& Master image & Secondary image\\\hline
@@ -124,7 +258,7 @@ Hofsjökull & 1960 & 9656 & 224 & 224 & 0.57 & 60\% & / & 5480 & 6 & North-South
 		Snow cover & 0\% & 0\% \\\hline
 		%B/H?
 	\end{tabular}
-	\caption{Satellite dataset details of Pezenas. GSD means the ground sampling distance.}
+	\caption{Satellite dataset details of Pezenas. It consists of 2 images, which is indicated as master and secondary image individually. GSD means the ground sampling distance.}
 	\label{SatelliteData}
 \end{table}
 
@@ -148,13 +282,13 @@ Hofsjökull & 1960 & 9656 & 224 & 224 & 0.57 & 60\% & / & 5480 & 6 & North-South
         \includegraphics[width=6.1cm]{images/Chapitre3/Frejus1970.png}
     \end{minipage}%
 }
-\subfigure[Fr{\'e}jus 2014 (36 images)]{
+\subfigure[Fr{\'e}jus 2014 (33 images)]{
     \begin{minipage}[t]{0.46\linewidth}
         \centering
         \includegraphics[width=6.25cm]{images/Chapitre3/Frejus2014.png}
     \end{minipage}%
 }
-        \caption{Images demonstration of different aerial epochs in \textbf{Fr{\'e}jus}, image number of each epoch is displayed in the parenthesis of each sub headline. The common zone between all the epochs is indicated by the red rectangles. Graphic scale is demonstrated on epoch 2014 in (d).}
+        \caption{Images demonstration of 4 aerial epochs in \textbf{Fr{\'e}jus} (i.e., 1954, 1966, 1970 and 2014), image number of each epoch is displayed in the parenthesis of each sub headline. The overlapping zone between all the epochs is indicated with red rectangles. Graphic scale is demonstrated on epoch 2014 in (d).}
         \label{FrejusData}
     \end{center}
 \end{figure*} 
@@ -204,7 +338,7 @@ Hofsjökull & 1960 & 9656 & 224 & 224 & 0.57 & 60\% & / & 5480 & 6 & North-South
                 \includegraphics[width=6.78cm]{images/Chapitre3/Pezenas2015.png}
             \end{minipage}%
         }
-        \caption{Images demonstration of different aerial epochs as well as satellite epoch in \textbf{Pezenas}, image number of each epoch is displayed in the parenthesis of each sub headline. There are 2 historical aerial epochs (1971 and 1981) and 2 \ac{GT} epochs (2014 the satellite epoch and 2015 the aerial epoch) in this dataset. The common zone between the historical epochs and the 2014 satellite epoch is indicated by the blue rectangles, while that between historical epochs and the 2015 aerial epoch is in red rectangles. Graphic scales are demonstrated on epoch 2014 and 2015 in (c) and (d).}
+        \caption{Images demonstration of 3 aerial epochs (i.e., 1971, 1981 and 2015) as well as satellite epoch (i.e., 2014) in \textbf{Pezenas}, image number of each epoch is displayed in the parenthesis of each sub headline. There are 2 historical aerial epochs (1971 and 1981) and 2 \ac{GT} epochs (2014 the satellite epoch and 2015 the aerial epoch) in this dataset. The overlapping zone between the historical epochs and the 2014 satellite epoch is indicated with blue rectangles, while that between historical epochs and the 2015 aerial epoch is in red rectangles. Graphic scales are demonstrated on epoch 2014 and 2015 in (c) and (d).}
         \label{PezenasData}
     \end{center}
 \end{figure*} 
@@ -224,7 +358,7 @@ Hofsjökull & 1960 & 9656 & 224 & 224 & 0.57 & 60\% & / & 5480 & 6 & North-South
                 \includegraphics[height=13cm,angle=90]{images/Chapitre3/Kobe1995.png}
             \end{minipage}%
         }
-        \caption{Images demonstration of different aerial epochs in \textbf{Kobe}, image number of each epoch is displayed in the parenthesis of each sub headline. The common zone between all the epochs is indicated by the red rectangles. Graphic scale is demonstrated on epoch 1995 in (b).}
+        \caption{Images demonstration of 2 aerial epochs (i.e., 1991 and 1995) in \textbf{Kobe}, image number of each epoch is displayed in the parenthesis of each sub headline. The overlapping zone between different epochs is indicated with red rectangles. Graphic scale is demonstrated on epoch 1995 in (b).}
         \label{KobeData}
     \end{center}
 \end{figure*} 
@@ -243,7 +377,7 @@ Hofsjökull & 1960 & 9656 & 224 & 224 & 0.57 & 60\% & / & 5480 & 6 & North-South
 				\includegraphics[width=6.2cm]{images/ChapitreNew/Ortho-MEC-Malt_Tapas_2003.png}
 			\end{minipage}%
 		}
-		\caption{Images demonstration of different aerial epochs in \textbf{Alberona}, image number of each epoch is displayed in the parenthesis of each sub headline. The common zone between all the epochs is indicated by the red rectangles. Graphic scale is demonstrated on epoch 2003 in (b).}
+		\caption{Images demonstration of 2 aerial epochs (i.e., 1954 and 2003) in \textbf{Alberona}, image number of each epoch is displayed in the parenthesis of each sub headline. The overlapping zone between different epochs is indicated with red rectangles. Graphic scale is demonstrated on epoch 2003 in (b).}
 		\label{AlberonaData}
 	\end{center}
 \end{figure*} 
@@ -286,8 +420,10 @@ Hofsjökull & 1960 & 9656 & 224 & 224 & 0.57 & 60\% & / & 5480 & 6 & North-South
 				\includegraphics[width=4.3cm]{images/ChapitreNew/3-6371_crp_8Bits_Zoom8.png}
 			\end{minipage}%
 		}
-		\caption{Images demonstration of epoch 1960 in \textbf{Hofsjökull}.}
+		\caption{Images demonstration of epoch 1960 in \textbf{Hofsjökull}. \zll{The overlapping zone of the most challenging image pair (i.e., image 5 and 6) is labeled with red rectangles.} 
+		}
 		\label{Hofsjökull}
 	\end{center}
 \end{figure*} 
+
 

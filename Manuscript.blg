@@ -3,6 +3,7 @@ Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
 The top-level auxiliary file: Manuscript.aux
 A level-1 auxiliary file: TitlePage.aux
 A level-1 auxiliary file: Acronyms.aux
+A level-1 auxiliary file: Chapter1French.aux
 A level-1 auxiliary file: Chapter1.aux
 A level-1 auxiliary file: Chapter2.aux
 A level-1 auxiliary file: ChapterNew.aux
@@ -22,7 +23,7 @@ Warning--empty chapter and pages in article
 Warning--empty publisher in snavely2006photo
 You've used 89 entries,
             2460 wiz_defined-function locations,
-            1033 strings with 21641 characters,
+            1034 strings with 21659 characters,
 and the built_in function-call counts, 43555 in all, are:
 = -- 4468
 > -- 1927

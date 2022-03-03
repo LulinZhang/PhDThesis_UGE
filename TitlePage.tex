@@ -2,26 +2,50 @@
 
 \pagenumbering{Alph}
 
+\newgeometry{top=3cm,bottom=3cm,left=3cm,right=3cm}
 \begin{titlepage}
 \begin{center}
-\noindent {\large \textbf{Université Gustave Eiffel}} \\
+\begin{minipage}[t]{1\linewidth}
+	\centering
+	\includegraphics[width=15cm]{images/TitlePage/logo.png}
+\end{minipage}%
+%\begin{minipage}[t]{0.23\linewidth}
+%	\centering
+%	\includegraphics[width=3.5cm]{images/TitlePage/Lastig.png}
+%\end{minipage}%
+%\begin{minipage}[t]{0.23\linewidth}
+%	\centering
+%	\includegraphics[width=3.5cm]{images/TitlePage/Acte.png}
+%\end{minipage}%
+%\begin{minipage}[t]{0.23\linewidth}
+%	\centering
+%	\includegraphics[width=3.5cm]{images/TitlePage/Micmac.png}
+%\end{minipage}%
+%\begin{minipage}[t]{0.23\linewidth}
+%	\centering
+%	\includegraphics[width=3.5cm]{images/TitlePage/UPE.png}
+%\end{minipage}%
+
+	
+%\noindent {\large \textbf{Université Gustave Eiffel}} \\
 \vspace*{0.3cm}
-\noindent {\LARGE \textbf{École Doctorale MSTIC}} \\
-\noindent \textbf{SCIENCES ET TECHNOLOGIES DE L'INFORMATION \\ ET DE LA COMMUNICATION} \\
+\noindent {\LARGE \textbf{MSTIC Doctoral School}} \\
+\noindent \textbf{Mathematics \& Sciences and Technologies\\of Information and Communication} \\
 \vspace*{0.5cm}
-\noindent \Huge \textbf{P H D\ \ T H E S I S} \\
+\noindent \Huge \textbf{Ph.D Thesis} \\
 \vspace*{0.3cm}
 \noindent \large {to obtain the title of} \\
 \vspace*{0.3cm}
-\noindent \LARGE \textbf{PhD of Science} \\
-\vspace*{0.3cm}
-\noindent \Large of the Université Gustave Eiffel \\
+%\noindent \LARGE \textbf{PhD of Science} \\
+%\vspace*{0.3cm}
+\noindent \Large Doctorate of the Gustave Eiffel University \\
 %\noindent \Large \textbf{Specialty : \textsc{Computer Science}}\\
 \vspace*{0.4cm}
 \noindent \large {Defended by\\}
 \noindent \huge Lulin \textsc{Zhang} \\
 \vspace*{0.8cm}
 \noindent {\Huge \textbf{Feature matching for multi-epoch historical aerial images}} \\
+%quasi-nadir
 %\noindent {\Huge \textbf{Supervised learning for interest points matching in archive/analogue and modern/digital images}} \\
 \vspace*{0.8cm}
 \noindent \Large Thesis Advisor: \\
@@ -34,7 +58,23 @@ Marc \textsc{Pierrot Deseilligny}, Ewelina \textsc{Rupnik}\\
 \end{center}
 \noindent \large \textbf{Jury :} \\
 \begin{center}
-\noindent \large 
+%\noindent \large \textbf{Reviewer:} Marie-Odile Berger  INRIA Nancy\\
+%\noindent \large \textbf{Reviewer:} El Mustapha Mouaddib\\
+%\noindent \large \textbf{Examiner:} Denis Feurer\\
+%\noindent \large \textbf{Examiner:} Livio De Luca\\
+%\noindent \large \textbf{Invited Member:} Yann Klinger\\
+%\noindent \large \textbf{Invited Member:} Michele Santangelo\\
+\begin{tabular}{lr}
+\textbf{Reviewer:} Marie-Odile Berger & INRIA Nancy\\
+\textbf{Reviewer:} El Mustapha Mouaddib & UPJV\\
+%Université de Picardie Jules Verne (UPJV)
+\textbf{Examiner:} Denis Feurer & IRD\\
+%Institut de recherche pour le développement (IRD)
+\textbf{Examiner:} Livio De Luca & CNRS\\
+\textbf{Invited Member:} Yann Klinger & IPGP\\
+\textbf{Invited Member:} Michele Santangelo & CNR-IRPI\\
+\end{tabular}
+
 %\begin{tabular}{llcl}
 %      \textit{Reviewers :}	& Patrick \textsc{Clarysse}		& - & CNRS (CREATIS)\\
 %				& Louis \textsc{Collins}		& - & McGill University\\
@@ -53,3 +93,4 @@ Marc \textsc{Pierrot Deseilligny}, Ewelina \textsc{Rupnik}\\
 
 \titlepage
 
+\restoregeometry

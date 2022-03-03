@@ -1,2 +1,4 @@
-{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {A.1}Matches visualization}{\reset@font\mtcSfont 79}{section.A.1}}
-{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {A.2}\ac {DoD}}{\reset@font\mtcSfont 79}{section.A.2}}
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {7.1}Conclusion}{\reset@font\mtcSfont 87}{section.7.1}}
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {7.2}Perspective}{\reset@font\mtcSfont 88}{section.7.2}}
+{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode Historical dataset benchmark}{\reset@font\mtcPfont 88}{section*.45}}
+{\reset@font\mtcPfont\mtc@string\contentsline{paragraph}{\noexpand \leavevmode Train a network with RGB images combined with \ac {DSM}s}{\reset@font\mtcPfont 89}{section*.46}}

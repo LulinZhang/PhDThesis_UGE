@@ -1,0 +1,11 @@
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {C.1}Intra-epoch processing}{\reset@font\mtcSfont 110}{section.C.1}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {C.1.1}Feature matching}{\reset@font\mtcSSfont 110}{subsection.C.1.1}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {C.1.2}Relative orientation}{\reset@font\mtcSSfont 110}{subsection.C.1.2}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {C.1.3}DSM generation}{\reset@font\mtcSSfont 110}{subsection.C.1.3}}
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {C.2}Inter-epoch processing}{\reset@font\mtcSfont 110}{section.C.2}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {C.2.1}Automated pipeline with command \textit {TiePHistoP}}{\reset@font\mtcSSfont 110}{subsection.C.2.1}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {C.2.2}Deep-dive in the pipeline's submodules}{\reset@font\mtcSSfont 111}{subsection.C.2.2}}
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {C.3}Evaluation}{\reset@font\mtcSfont 115}{section.C.3}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {C.3.1}Roughly co-registered DoD}{\reset@font\mtcSSfont 115}{subsection.C.3.1}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {C.3.2}Refined DoD based on SuperGlue}{\reset@font\mtcSSfont 115}{subsection.C.3.2}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {C.3.3}Refined DoD based on SIFT}{\reset@font\mtcSSfont 116}{subsection.C.3.3}}
