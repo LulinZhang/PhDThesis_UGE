@@ -10,7 +10,7 @@ Historical (i.e., analogue or archival) aerial images play an important role in 
 They are valuable assets for a wide range of applications such as (1) analyzing of natural disasters (e.g., earthquake, landslide, volcano, flood, avalanche, etc), (2) eco-environmental monitoring (e.g., forest, atmosphere, glacier, water, coastline, etc), (3) urban expansion and (4) environmental pollution and protection and so on.
 \par
 Historical aerial images have been regularly acquired since the 1920’s by mapping, military or cadastral agencies all over the world. A mass amount of them have been digitized and made accessible through web services~\cite{sebastien2019archiving,earthexplorer,remonterletemps}. 
-For example, according to a survey taken place at the beginning of 2017 in Europe~\cite{sebastien2019archiving}, there are approximately 50 million of aerial images archived in Europe, with around 37.8\% of them digitized. 
+For example, according to a survey taken place at the beginning of 2017 in Europe~\cite{sebastien2019archiving}, there are approximately 50 millions of aerial images archived in Europe, with around 37.8\% of them digitized. 
 The images are of high spatial resolution, and are acquired in stereoscopic configuration, allowing for 3D restitution of territories. 
 They are often accompanied by metadata, in most cases including the camera focal length, flight height, scale and the physical sensor size, which are usually saved or mentioned on the films. Other metadata such as flight plans, camera calibration certificates or orientations are not commonly available. 
 \par
@@ -168,7 +168,7 @@ Since the task of recovering robust and precise matches on multi-epoch image pai
 In this thesis we present rough-to-precise pipelines for matching multi-epoch images. They are suitable for aerial, satellite and mixed images, which open the possibility of geo-referencing millions of historical images without requiring any \ac{GCP}s. 
 Six variants are provided for the rough co-registration stage and two variants for the precise matching stage. Each variant has its own characteristic:\\
 \begin{enumerate}
-	\item For rough co-registration variants: (1) the ones based on the idea of matching \ac{DSM}s generally lead to the most robust results; (2) the ones that match orthophotos could serve as an alternates in rare scenarios of perfectly flat terrain where \ac{DSM}s fail to provide useful information; (3) the others that match original image pairs often lead to less satisfactory results, but they are the only options suitable for terrestrial images.
+	\item For rough co-registration variants: (1) the ones based on the idea of matching \ac{DSM}s generally lead to the most robust results; (2) the ones that match orthophotos could serve as alternates in rare scenarios of perfectly flat terrain where \ac{DSM}s fail to provide useful information; (3) the others that match original image pairs often lead to less satisfactory results, but they are the only options suitable for terrestrial images.
 	\item For precise matching variants: (1) $Patch$ is based on learned matching methods, it generally results in more matches as it is more invariant over time. (2) $Guided$ is based on hand-crafted methods, it is more efficient in terms of the use of memory and CPU resources as it doesn't involve resampling patches, which is necessary for $Patch$. 
 \end{enumerate}
 \par
@@ -189,8 +189,9 @@ We also developed two thorough tutorials accompanied with test datasets to famil
 \par
 Publications of the author:
 \begin{enumerate}
-	\item Lulin Zhang, Ewelina Rupnik and Marc Pierrot-Deseilligny. Feature matching for multi-epoch historical aerial images. ISPRS Journal of Photogrammetry and Remote Sensing, 182, 176-189, 2021.
-	\item Lulin Zhang, Ewelina Rupnik and Marc Pierrot-Deseilligny.	Guided feature matching for multi-epoch historical image blocks pose estimation. In ISPRS Ann. Photogramm. Remote Sens. Spatial Inf. Sci., 2020.
+	\item M Santangelo, \textbf{L Zhang}, E Rupnik, M Pierrot-Deseilligny, M Cardinali. Landslide evolution pattern revealed by multi-temporal DSMs obtained from historical aerial images. ISPRS Archives of the Photogrammetry, Remote Sensing and Spatial Information Sciences, 2022.
+	\item \textbf{L Zhang}, E Rupnik, M Pierrot-Deseilligny. Feature matching for multi-epoch historical aerial images. ISPRS Journal of Photogrammetry and Remote Sensing, 182, 176-189, 2021.
+	\item \textbf{L Zhang}, E Rupnik, M Pierrot-Deseilligny.	Guided feature matching for multi-epoch historical image blocks pose estimation. ISPRS Annals of the Photogrammetry, Remote Sensing and Spatial Information Sciences, 2020.
 \end{enumerate}
 We also provide video \cite{HistoPVideo}, slides \cite{HistoPSlides} and project website \cite{HistoPProj} to improve the visibility of our work.
 

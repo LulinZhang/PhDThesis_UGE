@@ -277,7 +277,7 @@ This is because historical RGB images are inevitably accompanied with noise, and
 %For Fr{\'e}jus, Kobe and Alberona, we keep all the epochs for experiments, as Fr{\'e}jus displayed drastic scene changes, while Kobe and Alberona witnessed earthquake and landslide individually. For Pezenas, we choose aerial epoch 1971 and satellite epoch 2014 to test our precise matching and ignore other epochs to simplify the processing, since Pezenas is less challenging case.\\
 %The orientations of \ac{GT} epochs (i.e., Pezenas 2014 and Fr{\'e}jus 2014) were treated as fixed during the combined \ac{BBA} since they were accurately known \textit{a-priori}, while all the remaining orientations were considered as free parameters. At first, {interior orientation parameters} were shared among all images. Once stable initial values were known, interior parameters were further refined with image-dependent affine parameters. The affine component of the camera calibration is expected to model, at least partially, the shear of the analog film.\\
 %\subsection{Evaluation}
-\subsection{Comparison of 6 variants}
+\subsection{Comparison of 4 variants}
 \label{Comparisonof6variantsP}
 %Bar chart of recovered match numbers, Match visulization after CC (4 methods, 3 bars each. Kobe and Pezenas: one kit; Frejus: 6 kits)? DoD and statistic info, ground displacment, check pts? 
 In order to evaluate the results qualitatively and quantitatively, the following criteria would be applied:\\
@@ -651,13 +651,13 @@ The corresponding statistical information is displayed in Table~\ref{PreciseDoDS
 		\subfigure[\ac{DoD}$_{Frejus1954}^{Patch_{SpGDSM}}$]{
 			\begin{minipage}[t]{0.31\linewidth}
 				\centering
-				\includegraphics[width=3.3cm,trim=840 70 290 340,clip]{images/Chapitre4/DoD1954_Patch_SpGDSM.png}
+				\includegraphics[width=3.3cm,trim=740 80 50 230,clip]{images/Chapitre4/DoD1954_Patch_SpGDSM.png}
 			\end{minipage}%
 		}
 		\subfigure[\ac{DoD}$_{Frejus1954}^{Guided_{SpGDSM}}$]{
 			\begin{minipage}[t]{0.31\linewidth}
 				\centering
-				\includegraphics[width=3.3cm,trim=840 70 290 340,clip]{images/Chapitre4/DoD1954_Guided_SpGDSM.png}
+				\includegraphics[width=3.3cm,trim=740 80 50 230,clip]{images/Chapitre4/DoD1954_Guided_SpGDSM.png}
 			\end{minipage}%
 		}\\
 		\subfigure[\ac{DoD}$_{Frejus1954}^{{SIFTDSM}}$]{
@@ -669,13 +669,13 @@ The corresponding statistical information is displayed in Table~\ref{PreciseDoDS
 		\subfigure[\ac{DoD}$_{Frejus1954}^{Patch_{SIFTDSM}}$]{
 			\begin{minipage}[t]{0.31\linewidth}
 				\centering
-				\includegraphics[width=3.3cm,trim=840 70 290 340,clip]{images/Chapitre4/DoD1954_Patch_SIFTDSM.png}
+				\includegraphics[width=3.3cm,trim=740 80 50 230,clip]{images/Chapitre4/DoD1954_Patch_SIFTDSM.png}
 			\end{minipage}%
 		}
 		\subfigure[\ac{DoD}$_{Frejus1954}^{Guided_{SIFTDSM}}$]{
 			\begin{minipage}[t]{0.31\linewidth}
 				\centering
-				\includegraphics[width=3.3cm,trim=840 70 290 340,clip]{images/Chapitre4/DoD1954_Guided_SIFTDSM.png}
+				\includegraphics[width=3.3cm,trim=740 80 50 230,clip]{images/Chapitre4/DoD1954_Guided_SIFTDSM.png}
 			\end{minipage}%
 		}\\
 		
@@ -688,13 +688,13 @@ The corresponding statistical information is displayed in Table~\ref{PreciseDoDS
 		\subfigure[\ac{DoD}$_{Frejus1966}^{Patch_{SpGDSM}}$]{
 			\begin{minipage}[t]{0.31\linewidth}
 				\centering
-				\includegraphics[width=3.3cm,trim=660 70 80 340,clip]{images/Chapitre4/DoD1966_Patch_SpGDSM.png}
+				\includegraphics[width=3.3cm,trim=740 230 50 380,clip]{images/Chapitre4/DoD1966_Patch_SpGDSM.png}
 			\end{minipage}%
 		}
 		\subfigure[\ac{DoD}$_{Frejus1966}^{Guided_{SpGDSM}}$]{
 			\begin{minipage}[t]{0.31\linewidth}
 				\centering
-				\includegraphics[width=3.3cm,trim=660 70 80 340,clip]{images/Chapitre4/DoD1966_Guided_SpGDSM.png}
+				\includegraphics[width=3.3cm,trim=740 230 50 380,clip]{images/Chapitre4/DoD1966_Guided_SpGDSM.png}
 			\end{minipage}%
 		}\\
 		\subfigure[\ac{DoD}$_{Frejus1966}^{{SIFTDSM}}$]{
@@ -706,13 +706,13 @@ The corresponding statistical information is displayed in Table~\ref{PreciseDoDS
 		\subfigure[\ac{DoD}$_{Frejus1966}^{Patch_{SIFTDSM}}$]{
 			\begin{minipage}[t]{0.31\linewidth}
 				\centering
-				\includegraphics[width=3.3cm,trim=660 70 80 340,clip]{images/Chapitre4/DoD1966_Patch_SIFTDSM.png}
+				\includegraphics[width=3.3cm,trim=740 230 50 380,clip]{images/Chapitre4/DoD1966_Patch_SIFTDSM.png}
 			\end{minipage}%
 		}
 		\subfigure[\ac{DoD}$_{Frejus1966}^{Guided_{SIFTDSM}}$]{
 			\begin{minipage}[t]{0.31\linewidth}
 				\centering
-				\includegraphics[width=3.3cm,trim=660 70 80 340,clip]{images/Chapitre4/DoD1966_Guided_SIFTDSM.png}
+				\includegraphics[width=3.3cm,trim=740 230 50 380,clip]{images/Chapitre4/DoD1966_Guided_SIFTDSM.png}
 			\end{minipage}%
 		}\\
 		
@@ -726,13 +726,13 @@ The corresponding statistical information is displayed in Table~\ref{PreciseDoDS
 		\subfigure[\ac{DoD}$_{Frejus1970}^{Patch_{SpGDSM}}$]{
 			\begin{minipage}[t]{0.31\linewidth}
 				\centering
-				\includegraphics[width=3.3cm,trim=730 50 150 380,clip]{images/Chapitre4/DoD1970_Patch_SpGDSM.png}
+				\includegraphics[width=3.3cm,trim=700 180 50 260,clip]{images/Chapitre4/DoD1970_Patch_SpGDSM.png}
 			\end{minipage}%
 		}
 		\subfigure[\ac{DoD}$_{Frejus1970}^{Guided_{SpGDSM}}$]{
 			\begin{minipage}[t]{0.31\linewidth}
 				\centering
-				\includegraphics[width=3.3cm,trim=730 50 150 380,clip]{images/Chapitre4/DoD1970_Guided_SpGDSM.png}
+				\includegraphics[width=3.3cm,trim=700 180 50 260,clip]{images/Chapitre4/DoD1970_Guided_SpGDSM.png}
 			\end{minipage}%
 		}\\
 		\subfigure[\ac{DoD}$_{Frejus1970}^{{SIFTDSM}}$]{
@@ -744,13 +744,13 @@ The corresponding statistical information is displayed in Table~\ref{PreciseDoDS
 		\subfigure[\ac{DoD}$_{Frejus1970}^{Patch_{SIFTDSM}}$]{
 			\begin{minipage}[t]{0.31\linewidth}
 				\centering
-				\includegraphics[width=3.3cm,trim=730 50 150 380,clip]{images/Chapitre4/DoD1970_Patch_SIFTDSM.png}
+				\includegraphics[width=3.3cm,trim=700 180 50 260,clip]{images/Chapitre4/DoD1970_Patch_SIFTDSM.png}
 			\end{minipage}%
 		}
 		\subfigure[\ac{DoD}$_{Frejus1970}^{Guided_{SIFTDSM}}$]{
 			\begin{minipage}[t]{0.31\linewidth}
 				\centering
-				\includegraphics[width=3.3cm,trim=730 50 150 380,clip]{images/Chapitre4/DoD1970_Guided_SIFTDSM.png}
+				\includegraphics[width=3.3cm,trim=700 180 50 260,clip]{images/Chapitre4/DoD1970_Guided_SIFTDSM.png}
 			\end{minipage}%
 		}\\
 		
@@ -899,28 +899,52 @@ The corresponding statistical information is displayed in Table~\ref{PreciseDoDS
 	\begin{tabular}{||l|l|c|c|c||}\hline
 		& &$\mu$ [m]&$\sigma$ [m]&$|\mu|$ [m]\\\hline\hline
 \multirow{6}{*}{$DoD^{Frejus}_{1954-2014}$}
-&${{SpGDSM}}$ & 2.07 & 4.87 & {3.83} \\
-&${Patch_{SpGDSM}}$ & -1.91 & 3.24 & 2.69\\
-&${Guided_{SpGDSM}}$ & -1.33 & 3.28 & \textbf{2.30}\\
-&${{SIFTDSM}}$ & 6.92 & 8.47 & 8.04\\
-&${Patch_{SIFTDSM}}$ & -6.28 & 6.72 & 6.62\\
-&${Guided_{SIFTDSM}}$ & 3.58 & 16.62 & 12.56\\\hline
+&${SpGDSM}$ & 2.24 & 5.34 & {4.35}\\
+&${Patch_{SpGDSM}}$ & -1.89 & 4.16 & 2.93\\
+&${Guided_{SpGDSM}}$ & -1.29 & 4.03 & \textbf{2.65}\\
+&${SIFTDSM}$ & 6.91 & 8.90 & 8.45\\
+&${Patch_{SIFTDSM}}$ & -6.17 & 6.54 & 6.69\\
+&${Guided_{SIFTDSM}}$ & 3.72 & 17.12 & 12.90\\\hline
 
 \multirow{6}{*}{$DoD^{Frejus}_{1966-2014}$}
-&${{SpGDSM}}$ & -0.46 & 3.77 & {2.68}\\
-&${Patch_{SpGDSM}}$ & -0.56 & 3.44 & 2.27\\
-&${Guided_{SpGDSM}}$ & -0.12 & 3.45 & \textbf{2.19}\\
-&${{SIFTDSM}}$ & -1.72 & 4.92 & 3.75\\
-&${Patch_{SIFTDSM}}$ & -0.59 & 3.36 & 2.29\\
-&${Guided_{SIFTDSM}}$ & 0.14 & 3.35 & 2.25\\\hline
+&${SpGDSM}$ & -0.80 & 4.71 & {3.28}\\
+&${Patch_{SpGDSM}}$ & -0.93 & 4.00 & 2.57\\
+&${Guided_{SpGDSM}}$ & -0.51 & 3.93 & \textbf{2.45}\\
+&${SIFTDSM}$ & -2.12 & 5.66 & 4.42\\
+&${Patch_{SIFTDSM}}$ & -0.99 & 4.01 & 2.58\\
+&${Guided_{SIFTDSM}}$ & -0.24 & 3.92 & 2.56\\\hline
+
 
 \multirow{6}{*}{$DoD^{Frejus}_{1970-2014}$}
-&${{SpGDSM}}$ & -1.71 & 5.75 & 4.61\\
-&${Patch_{SpGDSM}}$ & -0.86 & 3.20 & 2.12\\
-&${Guided_{SpGDSM}}$ & -0.18 & 3.27 & 2.12\\
-&${{SIFTDSM}}$ & -3.17 & 5.44 & 4.71\\
-&${Patch_{SIFTDSM}}$ & -0.98 & 3.26 & 2.20\\
-&${Guided_{SIFTDSM}}$ & -0.15 & 3.17 & \textbf{2.05}\\\hline		
+&${SpGDSM}$ & -2.37 & 6.57 & {5.35}\\
+&${Patch_{SpGDSM}}$ & -1.18 & 3.83 & 2.38\\
+&${Guided_{SpGDSM}}$ & -0.46 & 3.83 & \textbf{2.37}\\
+&${SIFTDSM}$ & -3.76 & 6.21 & 5.47\\
+&${Patch_{SIFTDSM}}$ & -1.28 & 3.92 & 2.45\\
+&${Guided_{SIFTDSM}}$ & -0.43 & 3.79 & 2.40\\\hline
+
+%&${{SpGDSM}}$ & 2.07 & 4.87 & {3.83} \\
+%&${Patch_{SpGDSM}}$ & -1.91 & 3.24 & 2.69\\
+%&${Guided_{SpGDSM}}$ & -1.33 & 3.28 & \textbf{2.30}\\
+%&${{SIFTDSM}}$ & 6.92 & 8.47 & 8.04\\
+%&${Patch_{SIFTDSM}}$ & -6.28 & 6.72 & 6.62\\
+%&${Guided_{SIFTDSM}}$ & 3.58 & 16.62 & 12.56\\\hline
+%
+%\multirow{6}{*}{$DoD^{Frejus}_{1966-2014}$}
+%&${{SpGDSM}}$ & -0.46 & 3.77 & {2.68}\\
+%&${Patch_{SpGDSM}}$ & -0.56 & 3.44 & 2.27\\
+%&${Guided_{SpGDSM}}$ & -0.12 & 3.45 & \textbf{2.19}\\
+%&${{SIFTDSM}}$ & -1.72 & 4.92 & 3.75\\
+%&${Patch_{SIFTDSM}}$ & -0.59 & 3.36 & 2.29\\
+%&${Guided_{SIFTDSM}}$ & 0.14 & 3.35 & 2.25\\\hline
+%
+%\multirow{6}{*}{$DoD^{Frejus}_{1970-2014}$}
+%&${{SpGDSM}}$ & -1.71 & 5.75 & 4.61\\
+%&${Patch_{SpGDSM}}$ & -0.86 & 3.20 & 2.12\\
+%&${Guided_{SpGDSM}}$ & -0.18 & 3.27 & 2.12\\
+%&${{SIFTDSM}}$ & -3.17 & 5.44 & 4.71\\
+%&${Patch_{SIFTDSM}}$ & -0.98 & 3.26 & 2.20\\
+%&${Guided_{SIFTDSM}}$ & -0.15 & 3.17 & \textbf{2.05}\\\hline		
 
 \multirow{6}{*}{$DoD^{Alberona}_{1954-2003}$}
 &${SpGDSM}$ & -0.28 & 7.84 & 6.17\\

@@ -798,7 +798,7 @@ No less than two matches are required to estimate the 2D similarity transformati
 \par
 For each keypoint in the master image, our strategy uses 2D similarity transformation model to predict a location in the secondary image and search only its neighborhood of a circle with a radius S (in our experiment, S is set to be 45, 30 and 15 pixels respectively) to reduce ambiguity.\\
 %The Hofsjökull dataset, with the details elaborated in Section~\ref{chap:ApplicationsAndDatasets}, is chosen to perform the experiment.
-Figure~\ref{Matchresult}(b-f) demonstrates the matching result of SIFT, SuperGlue and our matching strategy. As can be seen, SIFT and SuperGlue fail to find any correct matches, while our strategy obtains a large number of good matches with negligible manual labor. The number of matches increases as the search radius S changes from 45 to 15, which is reasonable due to decrease of ambiguity. However, false matches are introduced when the radius is too small (c.f., Figure~\ref{Matchresult}(f)). The best balance is achieved with S set to be 30 pixels (c.f., Figure~\ref{Matchresult}(e)).\\
+Figure~\ref{Matchresult}(b-f) demonstrates the matching results of SIFT, SuperGlue and our matching strategy. As can be seen, SIFT and SuperGlue fail to find any correct matches, while our strategy obtains a large number of good matches with negligible manual labor. The number of matches increases as the search radius S changes from 45 to 15, which is reasonable due to decrease of ambiguity. However, false matches are introduced when the radius is too small (c.f., Figure~\ref{Matchresult}(f)). The best balance is achieved with S set to be 30 pixels (c.f., Figure~\ref{Matchresult}(e)).\\
 %. Even though it involves manual operation, the work load is negligible and worthy
 \begin{figure*}[htbp]
 	\begin{center}
@@ -1585,29 +1585,52 @@ According to Table~\ref{succeedorfail}, by applying 6 variants (or 4 variants fo
 	\centering
 	\begin{tabular}{||l|l|c|c|c||}\hline
 		& &$\mu$ [m]&$\sigma$ [m]&$|\mu|$ [m]\\\hline\hline
-		\multirow{6}{*}{$DoD^{Frejus}_{1954-2014}$}
-		&${SuperGlue_{ImgPairs}}$ & 5.70 & 6.32 & 6.62\\
-		&${SuperGlue_{Ortho}}$ & 2.19 & 6.46 & 4.55\\
-		&${SuperGlue_{DSM}}$ & 2.07 & 4.87 & \textbf{3.83} \\
+%		\multirow{6}{*}{$DoD^{Frejus}_{1954-2014}$}
+%		&${SuperGlue_{ImgPairs}}$ & 5.70 & 6.32 & 6.62\\
+%		&${SuperGlue_{Ortho}}$ & 2.19 & 6.46 & 4.55\\
+%		&${SuperGlue_{DSM}}$ & 2.07 & 4.87 & \textbf{3.83} \\
+%		&${SIFT_{ImgPairs}}$ & / & / & / \\
+%		&${SIFT_{Ortho}}$ & / & / & / \\
+%		&${SIFT_{DSM}}$ & 6.92 & 8.47 & 8.04\\\hline
+%		
+%		\multirow{6}{*}{$DoD^{Frejus}_{1966-2014}$}
+%		&${SuperGlue_{ImgPairs}}$ & -1.36 & 3.82 & 2.90\\
+%		&${SuperGlue_{Ortho}}$ & -0.37 & 4.22 & 3.01\\
+%		&${SuperGlue_{DSM}}$ & -0.46 & 3.77 & \textbf{2.68}\\
+%		&${SIFT_{ImgPairs}}$ & / & / & / \\
+%		&${SIFT_{Ortho}}$ & / & / & / \\
+%		&${SIFT_{DSM}}$ & -1.72 & 4.92 & 3.75\\\hline
+%		
+%		\multirow{6}{*}{$DoD^{Frejus}_{1970-2014}$}
+%		&${SuperGlue_{ImgPairs}}$ & -5.04 & 5.09 & 5.70\\
+%		&${SuperGlue_{Ortho}}$ & -2.63 & 5.18 & \textbf{4.39}\\
+%		&${SuperGlue_{DSM}}$ & -1.71 & 5.75 & 4.61\\
+%		&${SIFT_{ImgPairs}}$ & / & / & / \\
+%		&${SIFT_{Ortho}}$ & / & / & / \\
+%		&${SIFT_{DSM}}$ & -3.17 & 5.44 & 4.71\\\hline
+				\multirow{6}{*}{$DoD^{Frejus}_{1954-2014}$}
+				&${SuperGlue_{ImgPairs}}$ & 6.02 & 7.04 & 7.39\\
+&${SuperGlue_{Ortho}}$ & 2.55 & 7.31 & 5.29\\
+&${SuperGlue_{DSM}}$ & 2.24 & 5.34 & \textbf{4.35}\\
 		&${SIFT_{ImgPairs}}$ & / & / & / \\
 		&${SIFT_{Ortho}}$ & / & / & / \\
-		&${SIFT_{DSM}}$ & 6.92 & 8.47 & 8.04\\\hline
+&${SIFT_{DSM}}$ & 6.91 & 8.90 & 8.45\\\hline
 		
 		\multirow{6}{*}{$DoD^{Frejus}_{1966-2014}$}
-		&${SuperGlue_{ImgPairs}}$ & -1.36 & 3.82 & 2.90\\
-		&${SuperGlue_{Ortho}}$ & -0.37 & 4.22 & 3.01\\
-		&${SuperGlue_{DSM}}$ & -0.46 & 3.77 & \textbf{2.68}\\
+				&${SuperGlue_{ImgPairs}}$ & -1.74 & 4.78 & 3.55\\
+&${SuperGlue_{Ortho}}$ & -0.69 & 5.11 & 3.59\\
+&${SuperGlue_{DSM}}$ & -0.80 & 4.71 & \textbf{3.28}\\
 		&${SIFT_{ImgPairs}}$ & / & / & / \\
 		&${SIFT_{Ortho}}$ & / & / & / \\
-		&${SIFT_{DSM}}$ & -1.72 & 4.92 & 3.75\\\hline
+&${SIFT_{DSM}}$ & -2.12 & 5.66 & 4.42\\\hline
 		
 		\multirow{6}{*}{$DoD^{Frejus}_{1970-2014}$}
-		&${SuperGlue_{ImgPairs}}$ & -5.04 & 5.09 & 5.70\\
-		&${SuperGlue_{Ortho}}$ & -2.63 & 5.18 & \textbf{4.39}\\
-		&${SuperGlue_{DSM}}$ & -1.71 & 5.75 & 4.61\\
+				&${SuperGlue_{ImgPairs}}$ & -5.60 & 6.16 & 6.54\\
+&${SuperGlue_{Ortho}}$ & -3.34 & 6.50 & 5.48\\
+&${SuperGlue_{DSM}}$ & -2.37 & 6.57 & \textbf{5.35}\\
 		&${SIFT_{ImgPairs}}$ & / & / & / \\
 		&${SIFT_{Ortho}}$ & / & / & / \\
-		&${SIFT_{DSM}}$ & -3.17 & 5.44 & 4.71\\\hline
+&${SIFT_{DSM}}$ & -3.76 & 6.21 & 5.47\\\hline
 		
 %		\multirow{6}{*}{$DoD^{Alberona}_{1954-2003}$}
 %		&${SuperGlue_{ImgPairs}}$ & -2.66 & 7.72 & 6.11\\
