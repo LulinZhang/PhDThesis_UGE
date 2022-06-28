@@ -71,13 +71,13 @@
 \contentsline {subsection}{\numberline {6.2.4}Refine orientations}{69}{subsection.6.2.4}
 \contentsline {section}{\numberline {6.3}Experiments}{70}{section.6.3}
 \contentsline {subsection}{\numberline {6.3.1}Implementation details}{71}{subsection.6.3.1}
-\contentsline {subsection}{\numberline {6.3.2}Comparison of precise matching on DSMs and original RGB images}{71}{subsection.6.3.2}
-\contentsline {subsection}{\numberline {6.3.3}Comparison of 4 variants}{72}{subsection.6.3.3}
+\contentsline {subsection}{\numberline {6.3.2}Comparison of precise matching on DSMs and original RGB images}{72}{subsection.6.3.2}
+\contentsline {subsection}{\numberline {6.3.3}Comparison of 4 variants}{73}{subsection.6.3.3}
 \contentsline {paragraph}{Matches visualization.}{73}{section*.41}
 \contentsline {paragraph}{\ac {DoD}.}{73}{section*.42}
-\contentsline {paragraph}{Ground displacement (i.e., Gd).}{73}{section*.43}
-\contentsline {paragraph}{Discussion.}{84}{section*.44}
-\contentsline {section}{\numberline {6.4}Conclusion}{84}{section.6.4}
+\contentsline {paragraph}{Ground displacement (i.e., Gd).}{81}{section*.43}
+\contentsline {paragraph}{Discussion.}{81}{section*.44}
+\contentsline {section}{\numberline {6.4}Conclusion}{85}{section.6.4}
 \contentsline {chapter}{\numberline {7}Conclusion and Perspective}{87}{chapter.7}
 \contentsline {section}{\numberline {7.1}Conclusion}{87}{section.7.1}
 \contentsline {section}{\numberline {7.2}Perspective}{88}{section.7.2}

@@ -142,7 +142,7 @@ It consists of the following steps:\\
 	\item Intersect the keypoints $\mathbf{K}^{e_1}$ with the co-registered \ac{DSM} $D_{co}^{e_1}$;
 	\item Back-project them to image $I^{e_2}$, giving rise to predicted keypoints $\widetilde{\mathbf{K}}^{e_2}$;
 	\item Search for a subset of points in $\mathbf{K}^{e_2}$ located within a radius $S$ centered at the predicted positions $\widetilde{\mathbf{K}}^{e_2}$;%\textcolor{green}{(I don't use a distance threshold.)}
-	\item Remove candidate matches whose scales and rotations computed by SIFT are incoherent with $R_{scl}$ and $D_{rot}$;% computed from image orientations and the co-registered \ac{DSM} (i.e., step 1);
+	\item Remove candidate matches whose scales and rotations computed by SIFT are out of range [(1-$Th_{scl}$)$\times$$R_{scl}$, (1+$Th_{scl}$)$\times$$R_{scl}$] and [$D_{rot}$-$Th_{rot}$, $D_{rot}$+$Th_{rot}$] ;% computed from image orientations and the co-registered \ac{DSM} (i.e., step 1);
 	\item {Find the best matches with mutual nearest neighbor combined with the first to second nearest neighbor ratio test~\cite{lowe2004distinctive}.}
 \end{enumerate}
 For better understanding, in Figure~\ref{guidedexample} we display an example of an inter-epoch image pair, with keypoint prediction (cross symbols) accompanied with search space (circles) superposed on them.\\
@@ -189,7 +189,8 @@ Matches with their correlation scores below a predefined threshold $T_c$ are dis
 
 \subsection{Refine orientations}
 Based on the intra-epoch and inter-epoch matches, a free network \ac{BBA} is performed to refine all the image orientations and camera calibrations. If the results need to be analyzed in a metric scale, a 3D Helmert transformation will be performed to move the refined acquisitions in an arbitrary reference frame to a metric one. If the precise orientations for one of the epochs were known, their parameters will be fixed during the \ac{BBA} and the subsequent 3D Helmert transformation will be skipped.
-We adopted the Fraser model ~\cite{fraser1997digital} to calibrate the cameras and allowed image-dependent affine parameters, the remaining parameters were shared among all images.
+We adopted the Fraser model ~\cite{fraser1997digital} to calibrate the cameras and allowed image-dependent affine parameters, the remaining parameters were shared among all images. 
+Fraser is a radial model, with decentric and affine parameters, there are 12 degrees of freedom: 1 for focal length , 2 for principal point, 2 for distortion center , 3 for coefficients of radial distorsion, 2 for decentric parameters and 2 for affine parameters. We choose this model because we want to test the versatility of our pipeline, instead of trying different model to achieve the best performance.
 
 \section{Experiments}
 As described in the previous section, our precise matching stage relies on RGB images and consists of 3 main steps to get the tentative, enhanced and final matches. In Section ~\ref{CompareRGBDSM} we compare the matching results on RGB images and \ac{DSM}s to explain why we choose the former over the latter to perform precise matching.\\
@@ -218,8 +219,8 @@ The orientations of \ac{GT} epochs (i.e., Pezenas 2014 and Fr{\'e}jus 2014) were
 \subsection{Implementation details}
 Same as Section ~\ref{Implementationdetails}, all input images are downsampled by a factor of 3 beforehand to improve efficiency except for dataset Alberona. To calculate the \ac{DSM}s, we further downsample the images by a factor of 4 (different from 8 in Section ~\ref{Implementationdetails}), which amounts to a total downsampling factor of 12 with respect to the input images (total factor of 4 for Alberona). For example, the images in Fr{\'e}jus 1970 are downsampled from [8766, 8763] to [730, 730] for calculating \ac{DSM}s. 
 Note that the \ac{DSM}s serve 2 purposes in precise matching: (1) narrowing down the search space in \zll{finding tentative matches}, and (2) providing 3D coordinates for 3D-RANSAC filter. A low resolution surface is good enough for these tasks and improves the efficiency.\\
-\zll{For patch matching, the buffered tile size $SZ_{one-to-one}$ is set to be 640$\times$480 pixels, the buffer size $SZ_{buffer}$ is 10\%$\times$$SZ_{one-to-one}$ (i.e., widening 64 pixels on both left and right sides, 48 pixels on both upper and lower sides). Therefore, the original tile size $SZ_{one-to-one}^{Orig}$ is left to be 512$\times$384 pixels. The tile pairs entering SuperGlue are not downsampled. For guided matching, the search radius $S$ is set to be 100 pixels. 
-For the 3D-RANSAC procedure, we set the number of iteration to 1000, and $T_r$ to 10$\times$$GSD$ where $GSD$ is the mean ground sampling distance in the coordinate frame of reference epoch $E_r$. This distance is computed as the ground distance between two adjacent image pixels. The threshold $T_c$ in cross correlation is set to be 0.6.}
+\zll{For patch matching, the buffered tile size $SZ_{one-to-one}$ is set to be 640$\times$480 pixels, the buffer size $SZ_{buffer}$ is 10\%$\times$$SZ_{one-to-one}$ (i.e., widening 64 pixels on both left and right sides, 48 pixels on both upper and lower sides). Therefore, the original tile size $SZ_{one-to-one}^{Orig}$ is left to be 512$\times$384 pixels. The tile pairs entering SuperGlue are not downsampled. For guided matching, the search radius $S$ is set to be 100 pixels; the thresholds for checking scale and rotation (i.e. $Th_{scl}$ and $Th_{rot}$) are set to be 0.2 and 30$^{\circ}$ individually. 
+For the 3D-RANSAC procedure, we set the number of iteration to 1000, and $T_r$ to 10$\times$$GSD$ where $GSD$ is the mean ground sampling distance in the coordinate frame of reference epoch $E_r$. This distance is computed as the ground distance between two adjacent image pixels. The threshold $T_c$ in cross correlation is set to be 0.6.} 
 To balance the number of the intra- and inter-epoch matches, we perform intra-epoch matches reduction available as command \textit{Ratafia} in MicMac~\cite{marc2016micmac}. %, with the objective of limiting the number of matches while maintaining a good photogrammetric distribution. 
 If the intra-epoch matches after reduction are still obviously more than the inter-epoch ones, we further set the relative observation weight in the \ac{BBA}. The matches reduction algorithm maximizes good spatial distribution, points' multiplicity and low reprojection error, it also helps to speed up the \ac{BBA}.\\
 Inter-epoch matches are extracted {for every possible combination of 2 epochs and finally merged}.\\
@@ -291,13 +292,13 @@ In order to evaluate the results qualitatively and quantitatively, the following
 	\item \textbf{Ground displacement}. For the dataset that witnessed an earthquake (i.e., Kobe), we: (1) calculate the \ac{DSM}s; (2) orthorectify the images; and (3) perform 2D correlation of the respective orthophotos ~\cite{rosu2015measurement} to see whether we can observe the slip of the tectonic plate.
 \end{enumerate}
 
-As the results show similar pattern on different datasets, we only display the results of Fr{\'e}jus and Alberona in the current section for the sake of simplicity, and move the results of Kobe as well as Pezenas to Appendix~\ref{chap:appendixB}.\\
+For matches visualization and \ac{DoD}, as the results show similar pattern on different datasets, we only display the results of Fr{\'e}jus and Alberona in the current section for the sake of simplicity, and move the results of Kobe as well as Pezenas to Appendix~\ref{chap:appendixB}.\\
 
 %\subsection{Comparison}
 %\subsubsection{Matches visualization}
 \paragraph{Matches visualization.}
 \label{matchVizMainBody}
-For each dataset, ze match every possible combination of 2 epochs with 4 variants (i.e., \ding{172} $Patch_{SpGDSM}$, \ding{173} $Guided_{SpGDSM}$, \ding{174} $Patch_{SIFTDSM}$ and \ding{175} $Guided_{SIFTDSM}$). 
+For each dataset, we match every possible combination of 2 epochs with 4 variants (i.e., \ding{172} $Patch_{SpGDSM}$, \ding{173} $Guided_{SpGDSM}$, \ding{174} $Patch_{SIFTDSM}$ and \ding{175} $Guided_{SIFTDSM}$). 
 %As the matches show similar pattern, for the sake of simplicity, the matches visualizations of datasets Fr{\'e}jus and Alberona are displayed in this chapter, the results of Pezenas and Kobe are demonstrated in Appendix~\ref{sec:PrecisematchViz}.\\
 
 %The matches for dataset Alberona are visualized and displayed in Figure~\ref{MatchVizAlberona}. Matches visualization for datasets Fr{\'e}jus, Pezenas and Kobe are displayed in Section~\ref{chap:appendixB} for the sake of simplicity.\\
@@ -962,61 +963,119 @@ The corresponding statistical information is displayed in Table~\ref{PreciseDoDS
 %\subsubsection{Ground displacement}
 \paragraph{Ground displacement (i.e., Gd).}
 The northeastward Gd %ground displacement %(hereinafter termed as Gd)
-maps of Kobe dataset as well as the ground truth Gd provided by the Japan meteorological agency~\cite{ian1996morphological} are presented in Figure~\ref{GdKobe}. 
+%maps of Kobe dataset as well as the ground truth Gd provided by the Japan meteorological agency~\cite{ian1996morphological} are presented in Figure~\ref{GdKobe}. 
+maps of Kobe dataset as well as the ground truth Gd provided by the Geospatial Information Authority of Japan %~\cite{ian1996morphological1}
+are presented in Figure~\ref{GdKobe}. 
 The roughly co-registered Gds resulted from variants $SuperGlue_{DSM}$ and $SIFT_{DSM}$ (i.e., Figure~\ref{GdKobe} (b) and (e), elaborated in Chapter~\ref{chap:RoughCoReg}) are displayed as references, and the refined Gds resulted from variants $Patch_{SpGDSM}$, $Guided_{SpGDSM}$, $Patch_{SIFTDSM}$ and $Guided_{SIFTDSM}$ (i.e., Figure~\ref{GdKobe} (c, d) and (f, g)) are given for comparison. 
+
+%\begin{figure*}[htbp]
+%	\begin{center}
+%		\subfigure[Gd$_{Kobe}^{{GT}}$]{
+%			\begin{minipage}[t]{1\linewidth}
+%				\centering
+%				\includegraphics[width=9cm,angle=2]{images/Chapitre4/Kobe-faultmap.png}
+%			\end{minipage}%
+%		}
+%		\subfigure[Gd$_{Kobe}^{{SpGDSM}}$]{
+%			\begin{minipage}[t]{1\linewidth}
+%				\centering
+%				\includegraphics[width=9cm,trim=680 330 100 570,clip]{images/Chapitre4/Gd1991_SpGDSM.png}
+%			\end{minipage}%
+%		}
+%		\subfigure[Gd$_{Kobe}^{Patch_{SpGDSM}}$]{
+%			\begin{minipage}[t]{1\linewidth}
+%				\centering
+%				\includegraphics[width=9cm,trim=1250 400 100 570,clip]{images/Chapitre4/Gd1991_Patch_SpGDSM.png}
+%			\end{minipage}%
+%		}
+%		\subfigure[Gd$_{Kobe}^{Guided_{SpGDSM}}$]{
+%			\begin{minipage}[t]{1\linewidth}
+%				\centering
+%				\includegraphics[width=9cm,trim=1250 360 100 570,clip]{images/Chapitre4/Gd1991_Guided_SpGDSM.png}
+%			\end{minipage}%
+%		}\\
+%		\subfigure[Gd$_{Kobe}^{{SIFTDSM}}$]{
+%			\begin{minipage}[t]{1\linewidth}
+%				\centering
+%				\includegraphics[width=9cm,trim=680 330 100 570,clip]{images/Chapitre4/Gd1991_SIFTDSM.png}
+%			\end{minipage}%
+%		}
+%		\subfigure[Gd$_{Kobe}^{Patch_{SIFTDSM}}$]{
+%			\begin{minipage}[t]{1\linewidth}
+%				\centering
+%				\includegraphics[width=9cm,trim=680 330 100 570,clip]{images/Chapitre4/Gd1991_Patch_SIFTDSM.png}
+%			\end{minipage}%
+%		}
+%		\subfigure[Gd$_{Kobe}^{Guided_{SIFTDSM}}$]{
+%			\begin{minipage}[t]{1\linewidth}
+%				\centering
+%				\includegraphics[width=9cm,trim=680 330 100 570,clip]{images/Chapitre4/Gd1991_Guided_SIFTDSM.png}
+%			\end{minipage}%
+%		}
+%		
+%		\subfigure[Gd legend]{
+%			\begin{minipage}[t]{1\linewidth}
+%				\centering
+%				\includegraphics[width=11cm]{images/Chapitre4/legend-Gd.png}
+%			\end{minipage}%
+%		}
+%		\caption{ground displacement(Gd) between free epoch \textbf{Kobe 1991} and reference epoch \textbf{1995}. (a) is the ground truth Gd provided by the Japan meteorological agency. (b) and (e) are roughly co-registered Gds resulted from variants $SuperGlue_{DSM}$ and $SIFT_{DSM}$ (elaborated in Chapter \ref{chap:RoughCoReg}). (c, d, f, g) are refined Gds resulted from variants $Patch_{SpGDSM}$, $Guided_{SpGDSM}$, $Patch_{SIFTDSM}$ and $Guided_{SIFTDSM}$ individually.}
+%		\label{GdKobe}
+%	\end{center}
+%\end{figure*} 
 
 \begin{figure*}[htbp]
 	\begin{center}
 		\subfigure[Gd$_{Kobe}^{{GT}}$]{
 			\begin{minipage}[t]{1\linewidth}
 				\centering
-				\includegraphics[width=9cm]{images/Chapitre4/Kobe-faultmap.png}
+				\includegraphics[width=7.8cm,angle=0]{images/Chapitre4/GT.png}
 			\end{minipage}%
 		}
 		\subfigure[Gd$_{Kobe}^{{SpGDSM}}$]{
 			\begin{minipage}[t]{1\linewidth}
 				\centering
-				\includegraphics[width=9cm,trim=680 330 100 570,clip]{images/Chapitre4/Gd1991_SpGDSM.png}
+				\includegraphics[width=7.8cm]{images/Chapitre4/SpGDSM.png}
 			\end{minipage}%
 		}
 		\subfigure[Gd$_{Kobe}^{Patch_{SpGDSM}}$]{
 			\begin{minipage}[t]{1\linewidth}
 				\centering
-				\includegraphics[width=9cm,trim=680 330 100 570,clip]{images/Chapitre4/Gd1991_Patch_SpGDSM.png}
+				\includegraphics[width=7.8cm,trim=0 0 0 20,clip]{images/Chapitre4/patch-spgdsm.png}
 			\end{minipage}%
 		}
 		\subfigure[Gd$_{Kobe}^{Guided_{SpGDSM}}$]{
 			\begin{minipage}[t]{1\linewidth}
 				\centering
-				\includegraphics[width=9cm,trim=680 330 100 570,clip]{images/Chapitre4/Gd1991_Guided_SpGDSM.png}
+				\includegraphics[width=7.8cm,trim=0 0 0 20,clip]{images/Chapitre4/guided-spgdsm.png}
 			\end{minipage}%
 		}\\
 		\subfigure[Gd$_{Kobe}^{{SIFTDSM}}$]{
 			\begin{minipage}[t]{1\linewidth}
 				\centering
-				\includegraphics[width=9cm,trim=680 330 100 570,clip]{images/Chapitre4/Gd1991_SIFTDSM.png}
+				\includegraphics[width=7.8cm]{images/Chapitre4/SIFTDSM.png}
 			\end{minipage}%
 		}
 		\subfigure[Gd$_{Kobe}^{Patch_{SIFTDSM}}$]{
 			\begin{minipage}[t]{1\linewidth}
 				\centering
-				\includegraphics[width=9cm,trim=680 330 100 570,clip]{images/Chapitre4/Gd1991_Patch_SIFTDSM.png}
+				\includegraphics[width=7.8cm,trim=0 0 0 20,clip]{images/Chapitre4/patch-siftdsm.png}
 			\end{minipage}%
 		}
 		\subfigure[Gd$_{Kobe}^{Guided_{SIFTDSM}}$]{
 			\begin{minipage}[t]{1\linewidth}
 				\centering
-				\includegraphics[width=9cm,trim=680 330 100 570,clip]{images/Chapitre4/Gd1991_Guided_SIFTDSM.png}
+				\includegraphics[width=7.8cm,trim=0 0 0 20,clip]{images/Chapitre4/guided-siftdsm.png}
 			\end{minipage}%
 		}
 		
 		\subfigure[Gd legend]{
 			\begin{minipage}[t]{1\linewidth}
 				\centering
-				\includegraphics[width=11cm]{images/Chapitre4/legend-Gd.png}
+				\includegraphics[width=7.8cm]{images/Chapitre4/legend-Gd.png}
 			\end{minipage}%
 		}
-		\caption{ground displacement(Gd) between free epoch \textbf{Kobe 1991} and reference epoch \textbf{1995}. (a) is the ground truth Gd provided by the Japan meteorological agency. (b) and (e) are roughly co-registered Gds resulted from variants $SuperGlue_{DSM}$ and $SIFT_{DSM}$ (elaborated in Chapter \ref{chap:RoughCoReg}). (c, d, f, g) are refined Gds resulted from variants $Patch_{SpGDSM}$, $Guided_{SpGDSM}$, $Patch_{SIFTDSM}$ and $Guided_{SIFTDSM}$ individually.}
+		\caption{Ground displacement(Gd) between free epoch \textbf{Kobe 1991} and reference epoch \textbf{1995}. (a) is the ground truth Gd provided by the Geospatial Information Authority of Japan. (b) and (e) are roughly co-registered Gds resulted from variants $SuperGlue_{DSM}$ and $SIFT_{DSM}$ (elaborated in Chapter \ref{chap:RoughCoReg}). (c, d, f, g) are refined Gds resulted from variants $Patch_{SpGDSM}$, $Guided_{SpGDSM}$, $Patch_{SIFTDSM}$ and $Guided_{SIFTDSM}$ individually.}
 		\label{GdKobe}
 	\end{center}
 \end{figure*} 
@@ -1025,7 +1084,7 @@ The roughly co-registered Gds resulted from variants $SuperGlue_{DSM}$ and $SIFT
 \label{para:DiscussionP}
 As can be seen, both $Patch$ and $Guided$ recover a lot of matches, except for the ones involving epoch 1954 based on rough co-registration of $SIFT_{DSM}$ (Figure \ref{MatchVizFrejus1954-2014} (e, f), \ref{MatchVizFrejus1954-1970} (e, f) and \ref{MatchVizFrejus1954-1966} (e, f)). It is because the rough co-registration result of $SIFT_{DSM}$ for epoch 1954 is unsatisfactory, as was mentioned in Section ~\ref{sec:MatchVizMainBody}.
 %As the basics of rough co-registration are reliable, both $Patch$ and $Guided$ recovered a lot of final matches for all the variants.
-Besides, 3D-RANSAC filter and cross correlation removed a considerable number of matches, at the same time enough matches survived, which guaranteed robustness of our method. %Moreover, $Patch$ recovered more matches than $Guided$, which is understandable as SuperGlue is more invariant over time than SIFT.\\
+Besides, 3D-RANSAC filter and cross correlation removed a considerable number of matches, at the same time enough matches survived, which guaranteed robustness of our method.\\ %Moreover, $Patch$ recovered more matches than $Guided$, which is understandable as SuperGlue is more invariant over time than SIFT.\\
 \par
 %Similar pattern appears for the datasets Pezenas and Kobe. For more details please refer to Appendix~\ref{sec:PrecisematchViz}.
 For the \ac{DoD}s, the \textit{dome} effect appears in all the DoD$^{SpGDSM}$ and DoD$^{SIFTDSM}$ (i.e., the first column of the subgraphs in Figure~\ref{PreciseDoDFrejus} and \ref{PreciseDoDAlberona}), as the camera parameters are poorly estimated without the precise matches.\\
@@ -1035,7 +1094,12 @@ For Figure~\ref{PreciseDoDFrejus} (e) \ac{DoD}$_{Frejus1954}^{Patch_{SIFTDSM}}$ 
 For the refined \ac{DoD}s in Alberona, the \textit{dome} effect is mitigated for the variant $Patch$, but not for $Guided$, as the images from different epochs showed various tone, which is challenging for $Guided$. Besides, the images are poorly preserved and scanned with non photogrammetric scanner, and limited number of images leads to a lack of redundant observation. Therefore, only the \ac{DoD}$_{Alberona}^{Patch_{SIFTDSM}}$ (i.e., Figure~\ref{PreciseDoDAlberona} (e)) showed both useful signs in the landslide zone and limited systematic errors in the whole block, as it is based on good matches recovered with $Patch$ variant under the good rough co-registration resulted from $SIFT_{DSM}$.\\
 %According to the absolute average value $|\mu|$ of all the \ac{DoD}s in Figure~\ref{PreciseDoDFrejus} and ~\ref{PreciseDoDAlberona} (cf. Talbe \ref{PreciseDoDStatistic}), $Guided$ leads to \ac{DoD}s with slightly better accuracy, even though it is less invariant than $Patch$, it recovers less numerous but more precise matches with the help of rough co-registered orientations and \ac{DSM}s.
 \par
-For the Gds, an up-lateral strike-slip movement along the sea is present in Figure~\ref{GdKobe} (c, d) and (f, g), but not in (b) and (e). The observed signal is coherent with the fault of the Kobe earthquake known from \ac{GT} (i.e., Figure~\ref{GdKobe} (a)), according to which a striking north $30^{\circ}$-$60^{\circ}$ east rupture occurred along the northeast-southwest coastline across $ \sim $18 km.\\
+For the Gds, we displayed the \ac{GT} in Figure~\ref{GdKobe} (a), and ours in Figure~\ref{GdKobe} (b-g). The \ac{GT} is produced with a lot of manual work, which is very laborious. However, ours are completely automatic. According to the \ac{GT}, there is a nojima fault caused by the earthquake (i.e. indicated as black line), and the displacement is indicated as small arrows. On the upper side of the fault, the arrows are generally rightward, while on the lower side they are leftward. In ours, the displacement is indicated as colors: blue represents rightward and red leftward. As can be seen, ours after refinement with precise matching (i.e. Figure~\ref{GdKobe} (d-g)) recovered the same signal as ground truth, which is rightward on the upper side of the fault (i.e. indicated as dashed line) and leftward on the lower side.
+
+%For the Gds, according to the \ac{GT} (i.e., Figure~\ref{GdKobe} (a)), a striking north $30^{\circ}$-$60^{\circ}$ east rupture occurred along the northeast-southwest coastline across $ \sim $18 km. The \ac{GT} is produced with a lot of manual work, which is very laborious. but ours is completely automatic. According to the ground truth, there is a fault here caused by the earthquake, and the displacement is indicated as small arrows. on the left side of the fault, the arrows are upward, and on the right side they are downward. In ours, the fault is indicated as dashed line here. And the displacement is indicated as colors, blue represents upward and red represents downward. As can be seen, our method recovered the same signal as ground truth, which is upward on the left side and downward on the right.
+
+
+%For the Gds, an up-lateral strike-slip movement along the sea is present in Figure~\ref{GdKobe} (c, d) and (f, g), but not in (b) and (e). The observed signal is coherent with the fault of the Kobe earthquake known from \ac{GT} (i.e., Figure~\ref{GdKobe} (a)), according to which a striking north $30^{\circ}$-$60^{\circ}$ east rupture occurred along the northeast-southwest coastline across $ \sim $18 km.\\
 
 
 \section{Conclusion}

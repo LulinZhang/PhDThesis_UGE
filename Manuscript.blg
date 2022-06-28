@@ -16,51 +16,51 @@ A level-1 auxiliary file: AppendixB.aux
 A level-1 auxiliary file: AppendixC.aux
 The style file: ThesisStyleWithEtAl.bst
 Database file #1: Thesis.bib
-Repeated entry---line 1104 of file Thesis.bib
+Repeated entry---line 1125 of file Thesis.bib
  : @article{james2014mitigating
  :                             ,
 I'm skipping whatever remains of this entry
 Warning--empty chapter and pages in article
 Warning--empty publisher in snavely2006photo
-You've used 89 entries,
+You've used 88 entries,
             2460 wiz_defined-function locations,
-            1035 strings with 21678 characters,
-and the built_in function-call counts, 43555 in all, are:
-= -- 4468
-> -- 1927
-< -- 98
-+ -- 642
-- -- 632
-* -- 3162
-:= -- 6421
-add.period$ -- 272
-call.type$ -- 89
-change.case$ -- 584
-chr.to.int$ -- 84
-cite$ -- 91
-duplicate$ -- 2001
-empty$ -- 3044
-format.name$ -- 765
-if$ -- 9428
+            1029 strings with 21467 characters,
+and the built_in function-call counts, 43131 in all, are:
+= -- 4421
+> -- 1913
+< -- 96
++ -- 638
+- -- 628
+* -- 3130
+:= -- 6357
+add.period$ -- 269
+call.type$ -- 88
+change.case$ -- 579
+chr.to.int$ -- 83
+cite$ -- 90
+duplicate$ -- 1981
+empty$ -- 3015
+format.name$ -- 758
+if$ -- 9336
 int.to.chr$ -- 6
 int.to.str$ -- 0
-missing$ -- 79
-newline$ -- 448
-num.names$ -- 267
-pop$ -- 751
+missing$ -- 78
+newline$ -- 443
+num.names$ -- 264
+pop$ -- 748
 preamble$ -- 1
-purify$ -- 760
+purify$ -- 753
 quote$ -- 0
-skip$ -- 1764
+skip$ -- 1747
 stack$ -- 0
-substring$ -- 2614
-swap$ -- 731
-text.length$ -- 67
+substring$ -- 2588
+swap$ -- 725
+text.length$ -- 66
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 704
+type$ -- 696
 warning$ -- 2
-while$ -- 354
-width$ -- 97
-write$ -- 1202
+while$ -- 349
+width$ -- 96
+write$ -- 1187
 (There was 1 error message)
